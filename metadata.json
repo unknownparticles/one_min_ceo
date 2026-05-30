@@ -1,0 +1,6 @@
+{
+  "name": "一分钟老板",
+  "description": "AI原生像素叙事探索游戏：60秒体验一次你可能根本想象不到的富豪人生！随机生成的世界、无厘头的蝴蝶效应、以及唯一的结局图鉴。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
