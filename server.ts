@@ -50,7 +50,7 @@ app.post("/api/boss/generate-world", async (req, res) => {
 Generate a completely unique retro top-down tile-map scenario based on the player's identity (or randomized identity if none or "random" is selected).
 Identities could be: CEO, Skiing Champion (滑雪冠军), Deep-sea Diver (深海潜水员), Private Jet Captain (私人飞机机长), Master Chef (名厨), Wilderness Explorer (荒野探险家), Space Traveler (太空探索者), World's Richest Person (世界首富), etc.
 
-Ensure you place 2 to 4 NPCs and 2 to 4 interactive items with proper coordinates that DO NOT collide with the player's coordinates or each other. Keep coords within x in [1, 14] and y in [1, 10] to avoid spawning in border walls.
+Ensure you place 4 to 6 NPCs and 4 to 6 interactive items with proper coordinates that DO NOT collide with the player's coordinates or each other. Keep coords within x in [1, 14] and y in [1, 10] to avoid spawning in border walls.
 The map grid is 16 columns (x from 0 to 15) and 12 rows (y from 0 to 11).
 Tiles must contain keywords: 'floor', 'wall', 'carpet', 'grass', 'snow', 'water', 'deck', 'road', 'metal_plate'. Keep tiles visually matched to the scene (e.g. Ski Champion gets snow/floor, CEO gets floor/carpet/wall, Diver gets deck/water, Space Traveler gets metal_plate/wall, etc.).
 
@@ -224,7 +224,7 @@ Make it full of bizarre twists, pre-generate 3 unique stages of story choices wi
     console.warn("Generate World Error (using high-quality offline fallback scenario due to API rate limits):", error);
     try {
       const fallbackData = getFallbackScenario(req.body.identity);
-      res.json(fallbackData);
+      res.json({ ...fallbackData, isFallback: true });
     } catch (fallbackErr: any) {
       console.error("Critical Fallback Error:", fallbackErr);
       res.status(500).json({ error: error.message || "Failed to generate world scenario. Please check API Key and try again." });
@@ -301,7 +301,8 @@ Player custom or selected action chosen: "${playerAction || "First touch/Greetin
       allowsFreeInput: true,
       soundHint: "alert",
       timeDelta: -5,
-      isEarlyEnd: false
+      isEarlyEnd: false,
+      isFallback: true
     });
   }
 });
@@ -513,7 +514,8 @@ You MUST write the 'endingText' strictly aligning with the matched fixed ending.
           wealthWasted: matchedEnding ? "100% 满重力耗损" : "30% 适度花销",
           butterflyEffectIndex: matchedEnding ? "999% (爆表)" : "120% (微澜)",
           insanityLevel: matchedEnding ? "星际观测级" : "循规蹈矩"
-        }
+        },
+        isFallback: true
       });
     } catch (fallbackErr: any) {
       console.error("Critical Ending Fallback Error:", fallbackErr);

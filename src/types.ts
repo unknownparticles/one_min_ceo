@@ -80,6 +80,7 @@ export interface WorldScenario {
   introText: string;
   ambientMusic: string;
   fixedEndings?: FixedEnding[];
+  isFallback?: boolean;
 }
 
 export interface InteractionChoice {
@@ -94,6 +95,7 @@ export interface InteractionResult {
   soundHint: string;
   timeDelta: number;
   isEarlyEnd: boolean;
+  isFallback?: boolean;
 }
 
 export interface EndingResult {
@@ -107,6 +109,7 @@ export interface EndingResult {
     butterflyEffectIndex: string;
     insanityLevel: string;
   };
+  isFallback?: boolean;
 }
 
 export interface SavedLife {

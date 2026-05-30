@@ -339,6 +339,152 @@ function getCEOScenario(): FallbackScenario {
             ]
           }
         ]
+      },
+      {
+        id: "npc_butler",
+        name: "忠诚老管家 Victor",
+        sprite: "butler",
+        x: 2,
+        y: 9,
+        dialogue: "老爷！我已经为您备好了秘密退路，随时可以弹射撤离！另外如果那个傲慢的李总再敢指指点点，我这边已经把高能电警棍准备好了！",
+        storyline: [
+          {
+            id: "butler_stage1",
+            text: "老管家Victor对你恭敬说道：『老爷，外面的八卦记者已经在暴力凿门了！你是引燃身上的钻石高定西装（ignite_fire）生产烟雾掩护，还是赏给这个看门柴犬一猛脚（kick_dog）吸引他们注意？』",
+            allowsFreeInput: true,
+            options: [
+              {
+                label: "🔥 潇洒点燃钻石西服掩护",
+                outcomeText: "你豪迈地冒着火星引燃了西装！房间里一瞬间浓烟遮天蔽日，所有人和财团高管当场迷得大呼小叫！",
+                timeDelta: -6,
+                actionId: "ignite_fire",
+                soundHint: "laser"
+              },
+              {
+                label: "🦵 给星际间谍狗狠狠一脚",
+                outcomeText: "你一脚飞踹在柴犬屁股上！柴犬发出怪叫同时脖子上的红色坐标警报大作，瞬间把门外所有记者的注意都吸引过去了！",
+                timeDelta: -8,
+                actionId: "kick_dog",
+                soundHint: "dog_bark"
+              }
+            ]
+          },
+          {
+            id: "butler_stage2",
+            text: "Victor默默递过一瓶二爷藏在暗格的雷暴提神老拉菲：『老爷，你要不要直接一口闷下这杯漏电的高能粒子拉菲液体（drink_coffee）强行充能，还是去拉下配电总闸逃避敲钟（pull_lever）？』",
+            allowsFreeInput: true,
+            options: [
+              {
+                label: "🍷 狂饮一整瓶高能漏电拉菲",
+                outcomeText: "你吨吨狂饮！高能强电瞬间流淌你的四肢百骸，你狂嚎一声仿佛二爷在世灵魂附体！",
+                timeDelta: -10,
+                actionId: "drink_coffee",
+                soundHint: "drink"
+              },
+              {
+                label: "🔌 狂暴拉下电源安全总闸",
+                outcomeText: "你顺手推倒配电闸！整栋摩天大楼陷入绝对昏黑！李总在一阵劈里啪啦中踩到了垃圾桶！",
+                timeDelta: -7,
+                actionId: "pull_lever",
+                soundHint: "alert"
+              }
+            ]
+          },
+          {
+            id: "butler_stage3",
+            text: "防雷水压警告频频。Victor惊道：『完蛋，李总的保镖要破门而入了！我们是砸开消防阀门放大水把全场淹没（open_sprinkler），还是干脆大笔挥墨豪迈签署百亿对赌（sign_deal）？』",
+            allowsFreeInput: false,
+            options: [
+              {
+                label: "💦 引爆消防大放水把全场淹没",
+                outcomeText: "你猛砸龙头！冰冷高压水柱瞬间倾泻，高价真皮地毯和电脑瞬间漂在办公室海里！",
+                timeDelta: -12,
+                actionId: "open_sprinkler",
+                soundHint: "explosion"
+              },
+              {
+                label: "✍️ 豪迈签署百亿融资对赌协议",
+                outcomeText: "你大笔一挥盖了公章！百亿信贷额度接通！李总看得满眼发直大呼上帝显灵！",
+                timeDelta: -10,
+                actionId: "sign_deal",
+                soundHint: "bling"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "npc_guard",
+        name: "保安大队长 铁柱",
+        sprite: "guard",
+        x: 14,
+        y: 5,
+        dialogue: "老板！我跟我的安防电警棍已经恭候多时！那帮嚣张董事简直无法无天，要不要铁柱拉上总闸（pull_lever）配合您来一场办公室物理拆台？",
+        storyline: [
+          {
+            id: "guard_stage1",
+            text: "铁柱亮出警棍嘿嘿狂笑：『老板，你是命令我拉下全层配电总闸（pull_lever），还是您要自己喝一杯高能粒子漏电咖啡（drink_coffee）找回激情？』",
+            allowsFreeInput: true,
+            options: [
+              {
+                label: "🔌 配合暗语，全场拉闸断电！",
+                outcomeText: "咔嗒！铁柱一把拽下大铜闸！全楼电力瞬间死灭！李总被暗中的微光吓得当场抱住大花瓶！",
+                timeDelta: -6,
+                actionId: "pull_lever",
+                soundHint: "alert"
+              },
+              {
+                label: "☕ 狂吞高压粒子漏电咖啡",
+                outcomeText: "你一饮而尽！狂暴的电流在胃里炸裂，你感觉自己现在的智商可以和外星战机并驾齐驱！",
+                timeDelta: -8,
+                actionId: "drink_coffee",
+                soundHint: "drink"
+              }
+            ]
+          },
+          {
+            id: "guard_stage2",
+            text: "铁柱指着燃起熊熊大火的总裁办公桌：『天啊，资料起火了（ignite_fire）！我们是立刻开最大应急大喷淋，还是协助您点燃二爷的铁质宝箱以寻求解密？』",
+            allowsFreeInput: true,
+            options: [
+              {
+                label: "💦 全面激活消防大喷淋灭火",
+                outcomeText: "高空飞射洒水！办公室直接变成狂澜水上乐园，所有百亿债券档案当即淋成泡面糊糊！",
+                timeDelta: -10,
+                actionId: "open_sprinkler",
+                soundHint: "explosion"
+              },
+              {
+                label: "🔥 索性一把火点燃整个机密宝箱",
+                outcomeText: "你和铁柱大笑着拍入百亿机密资料一同丢入烈焰引燃，刺鼻的黑烟里洋溢着极品败家的快感！",
+                timeDelta: -12,
+                actionId: "ignite_fire",
+                soundHint: "laser"
+              }
+            ]
+          },
+          {
+            id: "guard_stage3",
+            text: "直升机在窗外嗡嗡大叫。铁柱把飞天头盔扣在你脑门上：『老板，你是直接拍爆红色紧急火箭拉闸飞向天际（press_rocket），还是过去给大发雷霆的投资人李总一记无双电疗（beat_investor）？』",
+            allowsFreeInput: false,
+            options: [
+              {
+                label: "🚀 拍死通电火箭！一飞冲天！",
+                outcomeText: "你一拳砸碎警报阀，怒点推进大引擎！地板应声撕裂，飞车带你狂啸冲出玻璃！",
+                timeDelta: -15,
+                actionId: "press_rocket",
+                soundHint: "explosion"
+              },
+              {
+                label: "🤜 猛力揍李总，教他做老实人",
+                outcomeText: "你一拳暴揍在李总的金丝镜片上！铁柱跟着也是一盾牌，李总发出杀猪般的悲情惨叫！",
+                timeDelta: -12,
+                actionId: "beat_investor",
+                soundHint: "sigh"
+              }
+            ]
+          }
+        ]
       }
     ],
     items: [
@@ -475,6 +621,216 @@ function getCEOScenario(): FallbackScenario {
                 label: "🚀 掌掴拍死那个火箭发射键",
                 outcomeText: "你一拳拍碎警示罩，怒点星际脱逃推进装置！大楼狂震！",
                 timeDelta: -12,
+                actionId: "press_rocket",
+                soundHint: "explosion"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "item_pen",
+        name: "百亿签字笔",
+        sprite: "pen",
+        x: 12,
+        y: 10,
+        description: "一根通体由24K金铸造、能够在一秒钟内流动几百亿资金签字契约的黄金签字笔！",
+        storyline: [
+          {
+            id: "pen_stage1",
+            text: "百亿签字笔散发着璀璨光芒。你是挥笔霸气签署百亿融资框架书（sign_deal），还是扔到打火机火苗里让其强行熔铸销毁（ignite_fire）？",
+            options: [
+              {
+                label: "✍️ 豪迈一笔拍下融资对赌",
+                outcomeText: "你泼洒墨水签字成功，万贯财流瞬间滚滚而来，也把大楼的底裤全抵押给了李总！",
+                timeDelta: -10,
+                actionId: "sign_deal",
+                soundHint: "bling"
+              },
+              {
+                label: "🔥 用火焰打火机爆燃合同资料",
+                outcomeText: "你一言不发点燃了期权抵押复原书！漫天黑烟翻飞，李总的脸顿时绿得像发霉黄瓜！",
+                timeDelta: -6,
+                actionId: "ignite_fire",
+                soundHint: "laser"
+              }
+            ]
+          },
+          {
+            id: "pen_stage2",
+            text: "废纸正在闷烧。机器警卫狗向你递过来因果代码，它是想要你狠踹其屁股（kick_dog）作为掩护，还是拉下电力总铜闸（pull_lever）大唱空心计？",
+            options: [
+              {
+                label: "🦵 给发笑的间谍柴犬一记飞踢",
+                outcomeText: "你一脚狠狠重击！皮鞋和铁合金狗屁股发出赛博红电光，警报红线当场爆满！",
+                timeDelta: -8,
+                actionId: "kick_dog",
+                soundHint: "dog_bark"
+              },
+              {
+                label: "🔌 狂暴拉下电源安全总大开关",
+                outcomeText: "配电总闸被你暴力扳死！全办公室直接沦入黑漆漆一团！",
+                timeDelta: -10,
+                actionId: "pull_lever",
+                soundHint: "alert"
+              }
+            ]
+          },
+          {
+            id: "pen_stage3",
+            text: "李总气疯了大锤乱桌。你要砸消防阀放冷水淹洗办公室，还是拍爆红色按钮点燃弹射动力？",
+            options: [
+              {
+                label: "💦 全面拧开消防自救喷淋放水",
+                outcomeText: "高压瀑布般的水柱打倒全场！一瞬间大水积膝，巨轮账目的财务全成了水花！",
+                timeDelta: -12,
+                actionId: "open_sprinkler",
+                soundHint: "explosion"
+              },
+              {
+                label: "🚀 拍死通电火箭发射键出逃",
+                outcomeText: "你重击火箭，超音速轿车推背感将你一秒射出华尔街，留下一堆瞪眼呆若木鸡的老板！",
+                timeDelta: -15,
+                actionId: "press_rocket",
+                soundHint: "explosion"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "item_chest",
+        name: "神秘百亿黑星宝箱",
+        sprite: "chest",
+        x: 1,
+        y: 1,
+        description: "闪闪发光的防弹密码铁箱。传言内部装有二爷发家时的百亿金票，或者是个巨能的静电发生器！",
+        storyline: [
+          {
+            id: "chest_stage1",
+            text: "宝箱已经过载冒烟。你要狠命踹一脚把它踹飞开（kick_dog），还是直接拿高热火星点燃之（ignite_fire）？",
+            options: [
+              {
+                label: "🦵 用力一鞋底板怒踢宝箱壁",
+                outcomeText: "你重脚踹出！防盗箱短路火流溢满！发出一阵尖锐电哨，当场震晕了正在假笑的狗子！",
+                timeDelta: -5,
+                actionId: "kick_dog",
+                soundHint: "dog_bark"
+              },
+              {
+                label: "🔥 点燃宝箱接口让其过热自毁",
+                outcomeText: "你大把洒下机密草约点起了篝火！宝箱开始疯狂燃烧，引信冒出恐怖白火星！",
+                timeDelta: -10,
+                actionId: "ignite_fire",
+                soundHint: "laser"
+              }
+            ]
+          },
+          {
+            id: "chest_stage2",
+            text: "宝箱震裂，露出里面的强高能漏电粒子咖啡以及配电盘拉扣。你是喝掉漏电咖啡，还是狂拉闸断电（pull_lever）？",
+            options: [
+              {
+                label: "☕ 狂灌高能极光漏电老咖啡",
+                outcomeText: "一饮入怀！雷霆霹雳在你脑神经中狂烈暴走！你觉得你身上充满了狂暴之能！",
+                timeDelta: -12,
+                actionId: "drink_coffee",
+                soundHint: "drink"
+              },
+              {
+                label: "🔌 掰折断电大闸让全层没电",
+                outcomeText: "全楼失去主要电力！所有高管齐声惨啼！李总抱头高呼『核威慑降临了』！",
+                timeDelta: -8,
+                actionId: "pull_lever",
+                soundHint: "alert"
+              }
+            ]
+          },
+          {
+            id: "chest_stage3",
+            text: "水压疯狂暴跌。我们要放漫天喷淋洒水灭火，还是乘飞天推力去大洋彼岸？",
+            options: [
+              {
+                label: "💦 全力拧爆应急消防洒水栓",
+                outcomeText: "滔天豪雨覆盖全摩天大楼办公室！水流冲倒了电脑，办公室直接可以捞鱼！",
+                timeDelta: -10,
+                actionId: "open_sprinkler",
+                soundHint: "explosion"
+              },
+              {
+                label: "🚀 绝地击爆红色火箭发射按钮",
+                outcomeText: "引擎一秒千发！带着你撞碎了巨大的高空天窗，直接呼啸飞上了宇宙黑轨道！",
+                timeDelta: -15,
+                actionId: "press_rocket",
+                soundHint: "explosion"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "item_golf_ball",
+        name: "雷达高尔夫球",
+        sprite: "golf_ball",
+        x: 13,
+        y: 2,
+        description: "高亮绿光频闪的高级陀螺定位仪高尔夫，配备多极气压推进装置！",
+        storyline: [
+          {
+            id: "golf_stage1",
+            text: "高尔夫球正诡异旋转。你是大笔一抖签署对赌书并打飞它（sign_deal），还是拿起一根高尔夫球杆对投资人李总来一次一杆爆头切击（beat_investor）？",
+            options: [
+              {
+                label: "✍️ 优雅挥杆并且写下融资对赌",
+                outcomeText: "你在一大叠债券框架上刷刷落笔，并猛地一球把对赌公章击飞，太狂野了！",
+                timeDelta: -10,
+                actionId: "sign_deal",
+                soundHint: "bling"
+              },
+              {
+                label: "🤜 抄起钛球杆把李总一通猛砸",
+                outcomeText: "你全力一挥杆，球精确无阻将李总的红酒杯连带金牙一同打中飞出！李总大哭！",
+                timeDelta: -12,
+                actionId: "beat_investor",
+                soundHint: "sigh"
+              }
+            ]
+          },
+          {
+            id: "golf_stage2",
+            text: "高尔夫球蹦进了漏电冒黑烟的高能咖啡机里。你是强行狂吨这一杯雷暴粒子漏电咖啡（drink_coffee），还是顺手给看你笑话的柴犬重来一脚（kick_dog）出气？",
+            options: [
+              {
+                label: "☕ 壮烈连球狂喝粒子漏电咖啡",
+                outcomeText: "超电压在你口腔和内脏跳交谊舞！你现在的精神亢奋得像一尊太古神兽！",
+                timeDelta: -8,
+                actionId: "drink_coffee",
+                soundHint: "drink"
+              },
+              {
+                label: "🦵 大吼一声给间谍柴犬屁股一脚",
+                outcomeText: "你皮鞋狠狠一踹！柴犬全身钛合金发出巨震，在空中飞旋并发射无数绿幽电光！",
+                timeDelta: -10,
+                actionId: "kick_dog",
+                soundHint: "dog_bark"
+              }
+            ]
+          },
+          {
+            id: "golf_stage3",
+            text: "高尔夫陀螺仪疯狂尖叫要爆炸了！你要迅速拉闸断电自保，还是推倒红色飞天火箭飞跃黑洞？",
+            options: [
+              {
+                label: "🔌 配合闪卡拉下大闸切断配电",
+                outcomeText: "你一记掌雷把电闸推倒！摩天大楼陷入绝对漆黑，大家在黑暗里互相摸到了对方的脑壳！",
+                timeDelta: -8,
+                actionId: "pull_lever",
+                soundHint: "alert"
+              },
+              {
+                label: "🚀 一拳暴捶红色火箭起爆按键",
+                outcomeText: "星门轰裂！强大的推进机将你平地托升！在大火和浓水交加中飞出了地球圈！",
+                timeDelta: -15,
                 actionId: "press_rocket",
                 soundHint: "explosion"
               }
@@ -1007,6 +1363,61 @@ function getMeetingScenario(): FallbackScenario {
             ]
           }
         ]
+      },
+      {
+        id: "npc_secretary_mei",
+        name: "秘书 小美",
+        sprite: "secretary",
+        x: 4,
+        y: 7,
+        dialogue: "老板！钱总一直在对财务指手画脚。我已经把大楼断电红闸（pull_lever）和消防放水喷淋（open_sprinkler）都秘密锁定，只要您一声令下，马上物理物理拆台！",
+        storyline: [
+          {
+            id: "meeting_sec_stage1",
+            text: "小美眼里闪着星星：『老板，你是命令我立刻拉下全楼电源总开关（pull_lever）还是打开天花板消防淋浴放水（open_sprinkler）淹洗他们？』",
+            allowsFreeInput: true,
+            options: [
+              { label: "🔌 怒拉电闸，全场断电昏死！", outcomeText: "小美一推逆闸！整栋写字楼进入一片黑灯瞎火，钱总正在指手画脚当场一脚踩进垃圾桶！", timeDelta: -8, actionId: "pull_lever" },
+              { label: "💦 启动消防高压喷头大放水！", outcomeText: "天花板开始洒下滔天豪雨！办公室直接变成狂澜水上乐园，所有百亿融资框架书浸泡成了烂糊糊！", timeDelta: -10, actionId: "open_sprinkler" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "npc_sec_dog",
+        name: "安防哈士奇 狗子",
+        sprite: "dog",
+        x: 13,
+        y: 3,
+        dialogue: "汪！警备哈士奇已启动，警告！检测到非法资产转移！",
+        storyline: [
+          {
+            id: "meeting_dog_stage1",
+            text: "机器狗尾巴上的坐标指示灯正在过载频闪。你是要对它屁股狠狠来一脚飞踹（kick_dog），还是去喝一杯高能粒子漏电咖啡（drink_coffee）换换心情？",
+            options: [
+              { label: "🦵 毫不犹豫给二哈屁股一猛脚", outcomeText: "你一脚踢了出去！防卫系统短路冒烟！钱总一瞬间吓尿了以为你安装了高能地雷！", timeDelta: -8, actionId: "kick_dog" },
+              { label: "☕ 狂吞漏电咖啡，获得赛博神志", outcomeText: "你抢过咖啡狂干！超强粒子电流瞬间穿过喉咙，震得你两眼泛极光！", timeDelta: -6, actionId: "drink_coffee" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "npc_butler_victor",
+        name: "忠诚老执事 Victor",
+        sprite: "butler",
+        x: 2,
+        y: 9,
+        dialogue: "大少爷！我已经为您调遣了秘密弹射气艇。如果这帮无礼董事要强行霸占二爷遗产，随时可以一键弹射升天！",
+        storyline: [
+          {
+            id: "meeting_butler_stage1",
+            text: "Victor偷偷亮出高维推进引爆拉环：『少爷，您是要一屁股坐在弹射椅上极速飞天（press_rocket），还是留下来霸气一笔签下百亿对赌（sign_deal）对钱总啪啪打脸？』",
+            options: [
+              { label: "🚀 按破警报拉下飞天弹射火箭", outcomeText: "你一拳拍死火箭引擎！推背力瞬间撞破大厦的双层落地窗，带着你在漫天浮云里呼啸冲出重力！", timeDelta: -15, actionId: "press_rocket" },
+              { label: "✍️ 豪迈大笔签字接纳巨额债务对赌", outcomeText: "你顺势签下了一百亿的超巨重工业投资合同！钱总看得瞠目结舌双膝当场下跪！", timeDelta: -10, actionId: "sign_deal" }
+            ]
+          }
+        ]
       }
     ],
     items: [
@@ -1024,6 +1435,60 @@ function getMeetingScenario(): FallbackScenario {
             options: [
               { label: "☕ 愤倒咖啡浇董事一身", outcomeText: "你抄起杯子将高热浓缩汁优雅而精准地浇在董事新做的地中海发型上，烫得他像只烤鸭般尖叫原地旋转！", timeDelta: -8, actionId: "pour_coffee" },
               { label: "🤤 自己壮烈干了这两大杯", outcomeText: "你一饮而尽，心脏像一台V12引擎一样雷鸣巨响！脑海中突然多出十八个无厘头投资草案！", timeDelta: -5, actionId: "drink_coffee" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "item_custom_table",
+        name: "定制红木判决桌",
+        sprite: "desk",
+        x: 6,
+        y: 3,
+        description: "一张重达五吨的黄花梨豪华会议桌，上面堆满了数十个虚假或真实的投资空壳对赌合契！",
+        storyline: [
+          {
+            id: "meeting_table_stage1",
+            text: "在巨大的判决桌前，你是砸下巨额资金全款买下钱总的所有融资股份（sign_deal），还是大喝一声猛拉逃脱推进拉拉闸（pull_lever）？",
+            options: [
+              { label: "✍️ 签字，把他的股份一键全额收购！", outcomeText: "大笔狂挥！大聪明商业计划强悍注资，钱总的所有公司瞬间归于你膝下！他当场疯颠直喊爸爸！", timeDelta: -10, actionId: "sign_deal" },
+              { label: "🔌 配合闪电拉闸让会议室切断电源", outcomeText: "你一脚踢飞插盘，全场突然电闪雷鸣，整个摩天写字楼全段断电没用！", timeDelta: -8, actionId: "pull_lever" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "item_shining_chest",
+        name: "百亿黑晶密码箱",
+        sprite: "chest",
+        x: 12,
+        y: 9,
+        description: "钱总裁随身携带的指纹安防手提密码箱，内部散发出万两黄金和机密债券特有的尊贵微光。",
+        storyline: [
+          {
+            id: "meeting_chest_stage1",
+            text: "密码箱正滋滋作响漏电。你是用火焰把其过热引爆（ignite_fire），还是给看保大狼狗一记旋风重脚抢飞它（kick_dog）？",
+            options: [
+              { label: "🔥 在接口泼洒咖啡爆燃点起熊熊大火", outcomeText: "轰！火星星星直冒！密码箱过载爆毁，黑烟混着极品资产败家的气味让钱总目瞪口呆！", timeDelta: -10, actionId: "ignite_fire" },
+              { label: "🦵 给发抖二哈重足重击配合声东击西", outcomeText: "你一记皮鞋跟踢飞了哈士奇屁股！警报疯狂咆哮，钱总手忙脚乱扔下箱子去抱头！", timeDelta: -8, actionId: "kick_dog" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "item_red_lever",
+        name: "极速大断电红闸",
+        sprite: "lever",
+        x: 1,
+        y: 1,
+        description: "会议厅应急变阻电拉闸阀门，强暴力一推可以强制切断整层楼板高压负荷电源线！",
+        storyline: [
+          {
+            id: "meeting_lever_stage1",
+            text: "变阻红闸上面闪现着诡异的橙金微电火。你要拉下它切断全电（pull_lever），还是豪气签字对赌百亿（sign_deal）？",
+            options: [
+              { label: "🔌 大哥带头，一扯到底！全场断电！", outcomeText: "咔嗒！火星崩开，全办公室顿时沦落绝对昏暗，钱总在一秒里发出少女般的杀猪叫！", timeDelta: -6, actionId: "pull_lever" },
+              { label: "✍️ 潇洒回首，狂野签下百亿债务", outcomeText: "合同全额过关！大门倒塌，巨量败家现金流彻底宣誓着你的终极挥霍！", timeDelta: -10, actionId: "sign_deal" }
             ]
           }
         ]
@@ -1093,6 +1558,60 @@ function getToiletScenario(): FallbackScenario {
             ]
           }
         ]
+      },
+      {
+        id: "npc_toilet_guard",
+        name: "保洁大队长 铁柱",
+        sprite: "guard",
+        x: 14,
+        y: 10,
+        dialogue: "老板！没有纸也没人能在本大队长面前恶意破门！我已经把走廊的黄金密码箱（buy_savings）给锁上了，任何人不准乱动！",
+        storyline: [
+          {
+            id: "toilet_guard_stage1",
+            text: "铁柱横肉直抖拦在大门旁。你是要强行买下他守护的信托理财（buy_savings），还是顺腿给他屁股来一脚（kick_dog）？",
+            options: [
+              { label: "💰 签了！一键买下保障大礼和理财", outcomeText: "糟了！你不仅没把钱花掉，账户瞬间还多出了几万利息，心疼得你直抠脚！", timeDelta: -10, actionId: "buy_savings" },
+              { label: "🦶 飞踢！让他知道阻挠败家的下场", outcomeText: "你一记扫叶腿震坏了门禁，大叔当场叫保安反抗，全场瞬间陷入极度热闹！", timeDelta: -12, actionId: "kick_dog" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "npc_toilet_secretary",
+        name: "催命秘书 小丽",
+        sprite: "secretary",
+        x: 1,
+        y: 8,
+        dialogue: "王总！三十多家大投行的老总还在会议室等您签字收购呢！钱都在水洗碎纸机里，您怎么蹲在厕所这么久？",
+        storyline: [
+          {
+            id: "toilet_sec_stage1",
+            text: "小丽在外面疯狂敲击磨砂玻璃。你是要命令她把合同从门缝塞进来给你潇洒签字（sign_deal），还是大喊让她拉闸断电（pull_lever）？",
+            options: [
+              { label: "✍️ 在马桶上豪迈手书，全额对赌签字！", outcomeText: "你隔着门缝把合同刷刷签了！三百万全权流失，把大投行股份统统砸空！", timeDelta: -10, actionId: "sign_deal" },
+              { label: "🔌 让她去找电工立刻拉下全楼电闸", outcomeText: "狂野！你让她暴力把写字楼总电闸给断了（pull_lever），电灯瞬间熄灭，外面钱总瞬间发出惨叫！", timeDelta: -8, actionId: "pull_lever" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "npc_toilet_dog",
+        name: "偷纸柴犬 旺财",
+        sprite: "dog",
+        x: 12,
+        y: 2,
+        dialogue: "汪汪！本旺抢到了一整包超高水分纸巾！不给你！除非你给我吃金条！",
+        storyline: [
+          {
+            id: "toilet_dog_stage1",
+            text: "柴犬叼着最后一包湿厕纸在马桶边跑跳。你是踢它一脚（kick_dog）强夺，还是将口袋里的高能粒子老温水泼洗它（pour_coffee）？",
+            options: [
+              { label: "🦵 一猛脚朝柴犬屁股踢去爆夺纸巾", outcomeText: "你一脚飞踹！旺财嗷呜一声撒了口中水巾，但警报声雷鸣巨响！", timeDelta: -10, actionId: "kick_dog" },
+              { label: "☕ 连咖啡带温浓汁一齐泼在狗头顶", outcomeText: "你将热咖啡泼了出去！小狗惨叫着放开面巾并把水闸全拉短路了！", timeDelta: -8, actionId: "pour_coffee" }
+            ]
+          }
+        ]
       }
     ],
     items: [
@@ -1110,6 +1629,60 @@ function getToiletScenario(): FallbackScenario {
             options: [
               { label: "🚨 狠拉消防总闸！给整层楼下一场极乐暴雨", outcomeText: "你不管不顾用吃奶的劲狠拽拉闸！轰！全楼300个干眼消防喷嘴齐刷刷高密度喷淋，大水铺天盖地而来！", timeDelta: -15, actionId: "open_sprinkler" },
               { label: "👟 奋起怒踹这个垃圾消防闸机", outcomeText: "你大长腿反手一记旋风一脚！把闸机外壳爆拆，发出一顿火花和警笛啸叫！", timeDelta: -10, actionId: "kick_dog" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "item_toilet_roll",
+        name: "黄金千亿旧文卷",
+        sprite: "pen",
+        x: 8,
+        y: 2,
+        description: "一整卷散落的金箔信托法文合同，上面印满了复杂的利息条款，被随手丢在洗脸盆旁。",
+        storyline: [
+          {
+            id: "toilet_roll_stage1",
+            text: "你在文卷边颤抖。是要在上面大笔一挥买下月球地皮（buy_moon），还是拿它当面纸用来疯狂擦拭（use_sharp_paper）？",
+            options: [
+              { label: "✍️ 豪气签字，把二爷的黄金地券权当废纸", outcomeText: "大笔一勾！你把月球三万亩沙漠地权彻底买单！钱瞬间划扣，大聪明激动狂呼！", timeDelta: -8, actionId: "buy_moon" },
+              { label: "🧻 别管了，一扯当成普通面纸狠狠擦拭", outcomeText: "刺啦！你用来擦了屁屁！结果昂贵合书瞬间作废掉进污水池，前途茫茫！", timeDelta: -10, actionId: "use_sharp_paper" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "item_toilet_chest",
+        name: "防水百亿信托箱",
+        sprite: "chest",
+        x: 4,
+        y: 9,
+        description: "散着金光的信托财产保护箱，可以全天候自动增殖利息！",
+        storyline: [
+          {
+            id: "toilet_chest_stage1",
+            text: "财产保护箱正静静吃复利。是要一拧手心把它买成理财（buy_savings），还是引爆燃油大火把它熔毁（ignite_fire）？",
+            options: [
+              { label: "💰 签！买成五年期超高额稳健信托理财", outcomeText: "太糟糕了！你一揽子买断了理财合同，余额不仅没花出去，还暴增一笔庞大利息差额！", timeDelta: -12, actionId: "buy_savings" },
+              { label: "🔥 扔进打火机和防蚊喷雾爆燃了它！", outcomeText: "轰隆！防爆门内火光熊熊，资产箱在烈焰中物理超度，你发出反败为胜的狂笑！", timeDelta: -10, actionId: "ignite_fire" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "item_toilet_button",
+        name: "爆水超能气动阀",
+        sprite: "rocket_button",
+        x: 13,
+        y: 7,
+        description: "高压真空冲水红色按钮，按下可以瞬间引发九天惊雷一般的巨量水力。",
+        storyline: [
+          {
+            id: "toilet_btn_stage1",
+            text: "气动按钮滋滋响。你要一掌拍死这个红色按钮弹射冲水（press_rocket），还是狂拉消防断水闸（open_sprinkler）？",
+            options: [
+              { label: "🚀 掌拍红色极速核子火箭冲水按钮！", outcomeText: "轰！伴随着强力真空大吸力，全区地漏开始反向冲涌！钱像海水一样被气旋抽走！", timeDelta: -12, actionId: "press_rocket" },
+              { label: "💦 狂拉消防喷淋，淹没整排便池！", outcomeText: "高位水阀全部爆开！全间厕所瞬间一片惊涛骇浪，你在水花中大笑乘风破浪！", timeDelta: -14, actionId: "open_sprinkler" }
             ]
           }
         ]
@@ -1179,6 +1752,60 @@ function getLayoffScenario(): FallbackScenario {
             ]
           }
         ]
+      },
+      {
+        id: "npc_layoff_investor",
+        name: "死对头精算师 李总",
+        sprite: "investor",
+        x: 11,
+        y: 2,
+        dialogue: "王总！开除大壮不仅不用赔偿，我还可以帮你把员工股票低价全部回购（buy_savings），立刻为你省下并赚得大笔套现资金！哈哈！",
+        storyline: [
+          {
+            id: "layoff_inv_stage1",
+            text: "李总拿着金算盘不怀好意。你是要一笔买下他的节流增殖信托（buy_savings），还是用咖啡热泼他一脸狗血（pour_coffee）？",
+            options: [
+              { label: "💰 签了！一键买下节流定期回购信托", outcomeText: "噢天哪！你这蠢才，一瞬间公司股份重新增值红利发财，手里败不完的三百外更加沉重，当场倒下！", timeDelta: -11, actionId: "buy_savings" },
+              { label: "☕ 连咖啡带滚烫浓汤一齐泼在他西装上", outcomeText: "一泼精准！高爆浓咖将他的金丝眼镜和阿玛尼衬衫浇成了泥潭，他当场哭爹喊娘疯狂叫保镖！", timeDelta: -9, actionId: "pour_coffee" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "npc_layoff_butler",
+        name: "忠诚管家 Victor二代",
+        sprite: "butler",
+        x: 1,
+        y: 9,
+        dialogue: "大少爷！劳委会的特工已经包围了大堂，如果您不想给钱也不想挨骂，这把紧急火箭拉阀（press_rocket）能帮您瞬间逃出生天！",
+        storyline: [
+          {
+            id: "layoff_butler_stage1",
+            text: "Victor亮出了飞天逃脱带。你要拉下火箭飞天（press_rocket），还是留下来与大家全额签字（sign_deal）？",
+            options: [
+              { label: "🚀 按爆警告按钮，引爆气垫背带一秒冲天！", outcomeText: "你一掌拍坏了应急拉手！公司楼顶发生大震裂，火箭推着你像一颗彗星撞向白云深处！", timeDelta: -14, actionId: "press_rocket" },
+              { label: "✍️ 大手一挥，全款注资并签字", outcomeText: "你签了！大笔资金无条件划款划出，大壮和财务一秒惊呆抱头下跪！", timeDelta: -10, actionId: "sign_deal" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "npc_layoff_secretary",
+        name: "眼红的出纳 小美",
+        sprite: "secretary",
+        x: 14,
+        y: 7,
+        dialogue: "老板！裁员的散碎赔偿文书和合同都在这边，要不我们索性买下月球三万亩沙漠（buy_moon）来顶大壮的工资折抵？",
+        storyline: [
+          {
+            id: "layoff_sec_stage1",
+            text: "小美俏皮吐舌。你要把资金拿去买月球沙地（buy_moon），还是踢保洁哈士奇屁股（kick_dog）？",
+            options: [
+              { label: "✍️ 签！全额把三百万换成月球沙地转让地券", outcomeText: "你狂放签字！将遗产资金一口气全部砸给地权，直接拿太空地质单塞大壮嘴里！", timeDelta: -8, actionId: "buy_moon" },
+              { label: "🦵 一大腿飞踢，把看家恶犬踢过去咬烂合同", outcomeText: "你一脚飞踹！恶狗长牙一扯抢过离职合同揉咽了，大壮和外贸特务当场震呆！", timeDelta: -10, actionId: "kick_dog" }
+            ]
+          }
+        ]
       }
     ],
     items: [
@@ -1196,6 +1823,60 @@ function getLayoffScenario(): FallbackScenario {
             options: [
               { label: "📝 优雅塞入并粉碎整个离职合同", outcomeText: "刺刺咔咔！无理的劳务判定当场化为细白雪花屑，大壮愣在原地，两人的矛盾瞬间变得非常无厘头！", timeDelta: -8, actionId: "press_rocket" },
               { label: "🔥 塞进电池引燃碎纸机制造火海", outcomeText: "你大笑着往高密粉碎齿轮里塞了一块干电池，伴随一阵乱响火光闪过，碎纸机轰然爆燃起熊熊烈火！", timeDelta: -10, actionId: "ignite_fire" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "item_layoff_desk",
+        name: "百亿判决红木桌",
+        sprite: "desk",
+        x: 8,
+        y: 10,
+        description: "沉重奢华的黄花梨办公大财务台，红光冲天，上面摆满了裁决文契和解约合同。",
+        storyline: [
+          {
+            id: "layoff_desk_stage1",
+            text: "你面对沉重的办公台。是要签字承认债务重组豪掷三百万（sign_deal），还是命令下属直接狂扯写字楼断电拉闸（pull_lever）？",
+            options: [
+              { label: "✍️ 签字，全款买单并给予顶格三百万补偿！", outcomeText: "笔如龙蛇！大壮当场泣不成声说要和公司共度千秋万载！赔偿款瞬间花完！", timeDelta: -9, actionId: "sign_deal" },
+              { label: "🔌 配合拉闸，切断全大楼负荷电路！", outcomeText: "伴随着电弧闪烁，全办公室瞬间沦为漆黑，算账的精算师李总一脚踩在墨水瓶上长豪！", timeDelta: -8, actionId: "pull_lever" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "item_layoff_coffee",
+        name: "极速高燃温咖啡",
+        sprite: "coffee",
+        x: 2,
+        y: 2,
+        description: "桌子最角落放着的大壮刚刚泡好的滚烫浓缩赛博黑咖啡，热量蒸腾出淡淡红光。",
+        storyline: [
+          {
+            id: "layoff_coffee_stage1",
+            text: "浓香的咖啡正冒泡。你是拿去泼精算极流李总一身（pour_coffee），还是一口气干了它换来精神错落（drink_coffee）？",
+            options: [
+              { label: "☕ 泼他！让死对头李总尝尝赛博美味", outcomeText: "高压泼洒！滚烫黑浓黑液体瞬间给他烫出烤肉的味道，会议室极度爆乱！", timeDelta: -7, actionId: "pour_coffee" },
+              { label: "🤤 自己壮烈干了这两大杯", outcomeText: "你一饮而尽，只觉体内气血冲流上星系，大壮的代码全段逻辑竟然都写进了脑子里！", timeDelta: -5, actionId: "drink_coffee" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "item_layoff_lever",
+        name: "机组高压断电红拉闸",
+        sprite: "lever",
+        x: 12,
+        y: 8,
+        description: "大功率边缘网络机柜总拉闸，拉下去可以强制写字楼全体进入断电断网状态！",
+        storyline: [
+          {
+            id: "layoff_lever_stage1",
+            text: "总变压闸正嗡嗡响。是要扯闸断网（pull_lever），还是大肆扫货收购月球沙地（buy_moon）？",
+            options: [
+              { label: "🔌 铁血狂拉断网大闸！大字楼彻底停电！", outcomeText: "啪！红光在插缝迸射，大办公室瞬息一片幽暗，大壮的自爆硬盘当场短路失灵！", timeDelta: -10, actionId: "pull_lever" },
+              { label: "✍️ 疯狂签字收购月球三万亩沙荒地", outcomeText: "疯狂刷卡！一百五十万划出，大股东们集体晕厥并连喊高明！", timeDelta: -12, actionId: "buy_moon" }
             ]
           }
         ]

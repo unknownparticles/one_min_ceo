@@ -1238,6 +1238,17 @@ export default function App() {
                 </div>
               </div>
 
+              {/* Optional Local Quantum Fallback Engine Warning Banner */}
+              {worldScenario.isFallback && (
+                <div className="bg-amber-500/10 border-2 border-dashed border-amber-500/30 text-amber-300 rounded-xl p-3 md:px-4 font-mono text-xs flex items-center gap-3 animate-pulse">
+                  <div className="w-2 h-2 rounded-full bg-amber-500 animate-ping shrink-0"></div>
+                  <div className="flex-1">
+                    <span className="font-bold">⚠️ 【因果天线阻塞 (Gemini 429)】</span>
+                    已启动离线高维沙盒模拟引擎（Offline High-Fidelity Engine）维持时空运转！部分幽默剧情已预先合成完毕。
+                  </div>
+                </div>
+              )}
+
               {/* World Layout exploration (Interactive map) */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                 
@@ -1482,9 +1493,16 @@ export default function App() {
                 
                 <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4 mb-4">
                   <div className="space-y-0.5">
-                    <span className="text-[10px] bg-slate-950 border border-emerald-500/30 text-emerald-400 px-2 py-0.5 rounded font-mono font-bold tracking-wider">
-                      {endingResult.id}
-                    </span>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-[10px] bg-slate-950 border border-emerald-500/30 text-emerald-400 px-2 py-0.5 rounded font-mono font-bold tracking-wider">
+                        {endingResult.id}
+                      </span>
+                      {endingResult.isFallback && (
+                        <span className="text-[8px] bg-amber-500/10 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded font-mono font-bold animate-pulse">
+                          ★ 离线高维模拟
+                        </span>
+                      )}
+                    </div>
                     <h2 className="text-xl md:text-2xl font-mono font-bold text-white tracking-tight mt-1">
                       {endingResult.title}
                     </h2>
