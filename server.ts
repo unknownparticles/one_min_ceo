@@ -49,16 +49,48 @@ app.post("/api/boss/generate-world", async (req, res) => {
 Generate a completely unique retro top-down tile-map scenario based on the player's identity (or randomized identity if none or "random" is selected).
 Identities could be: CEO, Skiing Champion (滑雪冠军), Deep-sea Diver (深海潜水员), Private Jet Captain (私人飞机机长), Master Chef (名厨), Wilderness Explorer (荒野探险家), Space Traveler (太空探索者), World's Richest Person (世界首富), etc.
 
-You MUST choose or generate a unique ID identity and return map tiles in a grid (16 columns by 12 rows, to fit nicely in pixel ratio), along with NPCs, and interactive items.
+Ensure you place 2 to 4 NPCs and 2 to 4 interactive items with proper coordinates that DO NOT collide with the player's coordinates or each other. Keep coords within x in [1, 14] and y in [1, 10] to avoid spawning in border walls.
 The map grid is 16 columns (x from 0 to 15) and 12 rows (y from 0 to 11).
 Tiles must contain keywords: 'floor', 'wall', 'carpet', 'grass', 'snow', 'water', 'deck', 'road', 'metal_plate'. Keep tiles visually matched to the scene (e.g. Ski Champion gets snow/floor, CEO gets floor/carpet/wall, Diver gets deck/water, Space Traveler gets metal_plate/wall, etc.).
 
-Ensure you place 2 to 4 NPCs and 2 to 4 interactive items with proper coordinates that DO NOT collide with the player's coordinates or each other. Keep coords within x in [1, 14] and y in [1, 10] to avoid spawning in border walls.
-Your output must be structured, logical, interesting, humorous, and full of absurd richness and possibilities!`;
+CRITICAL RULE:
+For EVERY SINGLE NPC and Item, you MUST pre-generate their entire interactive branching storyline (storyline array of exactly 3 sequential StorySteps: e.g. "stage1", "stage2", "stage3").
+Each StoryStep/Event across the whole scenario must be COMPLETELY UNIQUE and NEVER repeat themes or narratives.
+Each option inside options array of each StoryStep must have a completely unique label, outcomeText consequence narrative, timeDelta, and optional isEarlyEnd / soundHint. No options or option actions must repeat across any stage of any entity.
+
+Reference assets from design sources:
+- NPCs: 'secretary' (助理), 'butler' (管家/保镖), 'investor' (投资人), 'robot' (机器人/哈士奇), 'alien' (外星人/科学家), 'guard' (保卫员).
+- Items: 'desk' (办公桌), 'pen' (百亿钢笔), 'coffee' (高能咖啡机), 'chest' (保险箱), 'golf_ball' (定位高尔夫球), 'shoe' (金鞋), 'lever' (拉杆), 'rocket_button' (火箭按钮), 'egg' (外星蛋).
+Ensure everything returned is structured, funny, and full of butterfly effects!`;
 
     const userPrompt = `Generate a world. Identity selected: "${identity || "random"}". Custom modifiers: "${customPrompt || "None"}".
 Choose an exact awesome theme based on this (e.g., IPO上市前60秒, 滑雪比赛开始前60秒, 深海潜水前60秒, 私人飞机起降前60秒, etc.).
-Make it full of bizarre twists (e.g., an alien observing dog, custom high-tech coffee makers, a golden shoe, a secret button, a floating duck, etc.).`;
+Make it full of bizarre twists and pre-generate 3 unique stages of story choices for every NPC/Item.`;
+
+    const storyStepSchema = {
+      type: Type.OBJECT,
+      required: ["id", "text", "options", "allowsFreeInput"],
+      properties: {
+        id: { type: Type.STRING, description: "e.g., 'stage1', 'stage2', 'stage3'" },
+        text: { type: Type.STRING, description: "Hilarious narrative description or character statement for this step/interaction event." },
+        allowsFreeInput: { type: Type.BOOLEAN },
+        options: {
+          type: Type.ARRAY,
+          description: "Exactly 2 or 3 completely unique, creative choice options",
+          items: {
+            type: Type.OBJECT,
+            required: ["label", "outcomeText", "timeDelta"],
+            properties: {
+              label: { type: Type.STRING, description: "Unique choice text/action" },
+              outcomeText: { type: Type.STRING, description: "Unique consequence narrative" },
+              timeDelta: { type: Type.INTEGER, description: "Time impact (0 or negative integer representing cost e.g. -5, -10)" },
+              isEarlyEnd: { type: Type.BOOLEAN },
+              soundHint: { type: Type.STRING }
+            }
+          }
+        }
+      }
+    };
 
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
@@ -100,14 +132,19 @@ Make it full of bizarre twists (e.g., an alien observing dog, custom high-tech c
               type: Type.ARRAY,
               items: {
                 type: Type.OBJECT,
-                required: ["id", "name", "sprite", "x", "y", "dialogue"],
+                required: ["id", "name", "sprite", "x", "y", "dialogue", "storyline"],
                 properties: {
                   id: { type: Type.STRING },
                   name: { type: Type.STRING },
-                  sprite: { type: Type.STRING, description: "Sprite type: e.g. 'secretary', 'dog', 'butler', 'investor', 'robot', 'alien', 'guard', 'spectator'" },
+                  sprite: { type: Type.STRING, description: "Sprite type: 'secretary', 'dog', 'butler', 'investor', 'robot', 'alien', 'guard'" },
                   x: { type: Type.INTEGER },
                   y: { type: Type.INTEGER },
-                  dialogue: { type: Type.STRING, description: "Introductory humorous or bizarre dialogue line" }
+                  dialogue: { type: Type.STRING, description: "Introductory humorous or bizarre dialogue line" },
+                  storyline: {
+                    type: Type.ARRAY,
+                    description: "Complete 3-stage pre-generated storyline list",
+                    items: storyStepSchema
+                  }
                 }
               }
             },
@@ -115,14 +152,19 @@ Make it full of bizarre twists (e.g., an alien observing dog, custom high-tech c
               type: Type.ARRAY,
               items: {
                 type: Type.OBJECT,
-                required: ["id", "name", "sprite", "x", "y", "description"],
+                required: ["id", "name", "sprite", "x", "y", "description", "storyline"],
                 properties: {
                   id: { type: Type.STRING },
                   name: { type: Type.STRING },
-                  sprite: { type: Type.STRING, description: "Sprite type: e.g. 'desk', 'pen', 'coffee', 'chest', 'golf_ball', 'shoe', 'lever', 'rocket_button', 'egg', 'dog_food'" },
+                  sprite: { type: Type.STRING, description: "Sprite type: 'desk', 'pen', 'coffee', 'chest', 'golf_ball', 'shoe', 'lever', 'rocket_button', 'egg'" },
                   x: { type: Type.INTEGER },
                   y: { type: Type.INTEGER },
-                  description: { type: Type.STRING, description: "A humorous description of what happens if walked into" }
+                  description: { type: Type.STRING, description: "A humorous description of what happens if walked into" },
+                  storyline: {
+                    type: Type.ARRAY,
+                    description: "Complete 3-stage pre-generated storyline list",
+                    items: storyStepSchema
+                  }
                 }
               }
             },

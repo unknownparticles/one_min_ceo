@@ -74,6 +74,7 @@ export default function App() {
   const [timer, setTimer] = useState<number>(60.00);
   const [lastInteractedEntity, setLastInteractedEntity] = useState<{ type: "NPC" | "Item", id: string, name: string } | null>(null);
   const [interactionResult, setInteractionResult] = useState<InteractionResult | null>(null);
+  const [entityStageMap, setEntityStageMap] = useState<Record<string, number>>({});
   
   // AI query loading triggers
   const [isAiLoading, setIsAiLoading] = useState<boolean>(false);
@@ -179,6 +180,7 @@ export default function App() {
     setCurrentDialogueHistory([]);
     setLastInteractedEntity(null);
     setInteractionResult(null);
+    setEntityStageMap({});
 
     const chosenIdentity = dailyType || selectedPreset.type;
     const finalPrompt = dailyPrompt || customIdentityInput;
@@ -234,6 +236,46 @@ export default function App() {
     setLastInteractedEntity({ type, id, name });
 
     try {
+      // Find local pre-generated storyline
+      const npc = worldScenario?.npcs?.find(n => n.id === id);
+      const item = worldScenario?.items?.find(it => it.id === id);
+      const entity = npc || item;
+
+      if (entity && entity.storyline && entity.storyline.length > 0) {
+        const stageIndex = entityStageMap[id] || 0;
+        if (stageIndex < entity.storyline.length) {
+          const step = entity.storyline[stageIndex];
+          setInteractionResult({
+            text: step.text,
+            options: step.options.map((opt: any, idx: number) => ({
+              label: opt.label,
+              action: `option_${idx}`
+            })),
+            allowsFreeInput: !!step.allowsFreeInput,
+            soundHint: "",
+            timeDelta: 0,
+            isEarlyEnd: false
+          });
+          setIsAiLoading(false);
+          return;
+        } else {
+          // Exhausted stages
+          setInteractionResult({
+            text: `【时空波动稳定】「${name}」背后的因果世界线已被彻底固化（3个阶段已全部完美收官）。去寻找其他的因果锚点吧，时间一分一秒正在流逝！`,
+            options: [
+              { label: "👌 完成因果 (继续探索)", action: "close_after_advance" }
+            ],
+            allowsFreeInput: false,
+            soundHint: "bling",
+            timeDelta: 0,
+            isEarlyEnd: false
+          });
+          setIsAiLoading(false);
+          return;
+        }
+      }
+
+      // If no pre-generated storyline exists, fetch from endpoint
       const response = await fetch("/api/boss/interact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -259,14 +301,12 @@ export default function App() {
         audio.playSound(data.soundHint);
       }
 
-      // Check early end trigger
       if (data.isEarlyEnd) {
         setTimeout(() => {
           handleTriggerEnding();
         }, 3500);
       }
     } catch (e) {
-      // Fallback response inside iframe
       setInteractionResult({
         text: `【蝴蝶效应激荡】你走向了 "${name}"，瞬间耳边回荡起高维时空的震动：你的钱太多了，这里似乎一切皆可购买！`,
         options: [
@@ -293,68 +333,174 @@ export default function App() {
     const currentText = chosenActionText;
     setCustomActionValue("");
 
-    try {
-      const response = await fetch("/api/boss/interact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          identity: worldScenario.identity,
-          theme: worldScenario.theme,
-          targetType: lastInteractedEntity.type,
-          targetName: lastInteractedEntity.name,
-          targetId: lastInteractedEntity.id,
-          dialogueHistory: [...currentDialogueHistory, `Action: ${currentText}`],
-          playerAction: currentText
-        })
-      });
+    const stageIndex = entityStageMap[lastInteractedEntity.id] || 0;
 
-      if (!response.ok) {
-        throw new Error();
-      }
+    // 1. Close overlay
+    if (actionKey === "close_after_advance") {
+      setInteractionResult(null);
+      setLastInteractedEntity(null);
+      setIsAiLoading(false);
+      return;
+    }
 
-      const data = await response.json();
-
-      // Log interaction outcome to state for ending tracing
-      setHistoryLog(prev => [
-        ...prev,
-        {
-          entity: lastInteractedEntity.name,
-          action: currentText,
-          outcome: data.text
-        }
-      ]);
-
-      // Deduct time delta
-      if (data.timeDelta) {
-        setTimer(t => {
-          const next = Math.max(0, t + data.timeDelta);
-          return parseFloat(next.toFixed(1));
+    // 2. Custom text input
+    if (actionKey === "custom") {
+      try {
+        const response = await fetch("/api/boss/interact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            identity: worldScenario.identity,
+            theme: worldScenario.theme,
+            targetType: lastInteractedEntity.type,
+            targetName: lastInteractedEntity.name,
+            targetId: lastInteractedEntity.id,
+            dialogueHistory: [...currentDialogueHistory, `Action: ${currentText}`],
+            playerAction: currentText
+          })
         });
+
+        if (!response.ok) {
+          throw new Error();
+        }
+
+        const data = await response.json();
+
+        // Log custom reaction
+        setHistoryLog(prev => [
+          ...prev,
+          {
+            entity: lastInteractedEntity.name,
+            action: currentText,
+            outcome: data.text
+          }
+        ]);
+
+        if (data.timeDelta) {
+          setTimer(t => {
+            const next = Math.max(0, t + data.timeDelta);
+            return parseFloat(next.toFixed(1));
+          });
+        }
+
+        setInteractionResult({
+          text: `👉 【你自定义动作为】：${currentText}\n\n🎬 【时空后果】：${data.text}`,
+          options: [
+            { label: "👌 完成因果 (继续探索)", action: "close_after_advance" }
+          ],
+          allowsFreeInput: false,
+          soundHint: data.soundHint || "bling",
+          timeDelta: data.timeDelta || 0,
+          isEarlyEnd: !!data.isEarlyEnd
+        });
+
+        setEntityStageMap(prev => ({
+          ...prev,
+          [lastInteractedEntity.id]: stageIndex + 1
+        }));
+
+        setCurrentDialogueHistory(h => [...h, `你选择: ${currentText}`, `反馈: ${data.text}`]);
+
+        if (data.soundHint) {
+          audio.playSound(data.soundHint);
+        }
+
+        if (data.isEarlyEnd) {
+          setTimeout(() => {
+            handleTriggerEnding();
+          }, 3500);
+        }
+      } catch (e) {
+        setHistoryLog(prev => [
+          ...prev,
+          {
+            entity: lastInteractedEntity.name,
+            action: currentText,
+            outcome: "由于时空扭曲风暴过强，该条因果线在一阵奢华金光中自我重组归于平静。"
+          }
+        ]);
+        setInteractionResult(null);
+        setLastInteractedEntity(null);
+      } finally {
+        setIsAiLoading(false);
       }
+      return;
+    }
 
-      setInteractionResult(data);
-      setCurrentDialogueHistory(h => [...h, `你选择: ${currentText}`, `反馈: ${data.text}`]);
+    // 3. Local pre-generated options
+    try {
+      const npc = worldScenario.npcs.find(n => n.id === lastInteractedEntity.id);
+      const item = worldScenario.items.find(i => i.id === lastInteractedEntity.id);
+      const entity = npc || item;
 
-      if (data.soundHint) {
-        audio.playSound(data.soundHint);
-      }
+      if (entity && entity.storyline && stageIndex < entity.storyline.length) {
+        const step = entity.storyline[stageIndex];
+        const optIndex = actionKey && actionKey.startsWith("option_")
+          ? parseInt(actionKey.split("_")[1])
+          : step.options.findIndex((o: any) => o.label === chosenActionText);
 
-      // If early ending
-      if (data.isEarlyEnd) {
-        setTimeout(() => {
-          handleTriggerEnding();
-        }, 3500);
+        const opt = step.options[optIndex >= 0 ? optIndex : 0];
+
+        // Deduct time
+        if (opt.timeDelta) {
+          setTimer(t => {
+            const next = Math.max(0, t + opt.timeDelta);
+            return parseFloat(next.toFixed(1));
+          });
+        }
+
+        if (opt.soundHint) {
+          audio.playSound(opt.soundHint);
+        }
+
+        // Log choice
+        setHistoryLog(prev => [
+          ...prev,
+          {
+            entity: lastInteractedEntity.name,
+            action: opt.label,
+            outcome: opt.outcomeText
+          }
+        ]);
+
+        setInteractionResult({
+          text: `👉 【你选择】：${opt.label}\n\n🎬 【时空后果】：${opt.outcomeText}`,
+          options: [
+            { label: "👌 完成因果 (继续探索)", action: "close_after_advance" }
+          ],
+          allowsFreeInput: false,
+          soundHint: opt.soundHint || "bling",
+          timeDelta: opt.timeDelta || 0,
+          isEarlyEnd: !!opt.isEarlyEnd
+        });
+
+        setEntityStageMap(prev => ({
+          ...prev,
+          [lastInteractedEntity.id]: stageIndex + 1
+        }));
+
+        setCurrentDialogueHistory(h => [...h, `你选择: ${opt.label}`, `反馈: ${opt.outcomeText}`]);
+
+        if (opt.isEarlyEnd) {
+          setTimeout(() => {
+            handleTriggerEnding();
+          }, 3500);
+        }
+      } else {
+        // Fallback action handle
+        setHistoryLog(prev => [
+          ...prev,
+          {
+            entity: lastInteractedEntity.name,
+            action: currentText,
+            outcome: "时空节点已归顺，继续去探索其他锚点吧！"
+          }
+        ]);
+        setInteractionResult(null);
+        setLastInteractedEntity(null);
       }
     } catch (e) {
-      // Fallback resolve
-      setHistoryLog(prev => [
-        ...prev,
-        {
-          entity: lastInteractedEntity.name,
-          action: currentText,
-          outcome: "由于宇宙风暴过强，该条因果线在一阵奢华光芒中归于平静。"
-        }
-      ]);
+      console.error(e);
       setInteractionResult(null);
       setLastInteractedEntity(null);
     } finally {

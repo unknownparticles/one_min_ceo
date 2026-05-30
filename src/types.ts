@@ -13,6 +13,21 @@ export interface Position {
   y: number;
 }
 
+export interface StoryOption {
+  label: string;
+  outcomeText: string;
+  timeDelta: number;
+  isEarlyEnd?: boolean;
+  soundHint?: string;
+}
+
+export interface StoryStep {
+  id: string;
+  text: string;
+  options: StoryOption[];
+  allowsFreeInput?: boolean;
+}
+
 export interface NPC {
   id: string;
   name: string;
@@ -20,6 +35,7 @@ export interface NPC {
   x: number;
   y: number;
   dialogue: string;
+  storyline?: StoryStep[];
 }
 
 export interface Item {
@@ -29,6 +45,7 @@ export interface Item {
   x: number;
   y: number;
   description: string;
+  storyline?: StoryStep[];
 }
 
 export interface MapLayout {
