@@ -221,10 +221,12 @@ export function getFallbackScenario(identity: string): FallbackScenario {
 
   // 1. Try to match by keyword
   if (norm.length > 0) {
-    for (const world of worlds) {
-      if (world.matchKeywords.some((kw) => norm.includes(kw.toLowerCase()))) {
-        return worldJsonToScenario(world);
-      }
+    const matchedWorlds = worlds.filter((world) =>
+      world.matchKeywords.some((kw) => norm.includes(kw.toLowerCase()))
+    );
+    if (matchedWorlds.length > 0) {
+      const randomIndex = Math.floor(Math.random() * matchedWorlds.length);
+      return worldJsonToScenario(matchedWorlds[randomIndex]);
     }
   }
 

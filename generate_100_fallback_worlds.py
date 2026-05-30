@@ -9,7 +9,7 @@ import re
 import json
 
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
-OUT_DIR = Path("public/fallback-worlds")
+OUT_DIR = Path("fallback-worlds")
 COUNT = 100
 
 if not DEEPSEEK_API_KEY:

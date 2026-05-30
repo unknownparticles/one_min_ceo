@@ -1,0 +1,168 @@
+{
+  "matchKeywords": ["tycoon", "首富", "rich", "billionaire", "大班", "首富大班"],
+  "identity": "世界首富大班 (Tycoon)",
+  "theme": "晚宴天台上红色按钮的60秒神豪抉择",
+  "icon": "👑",
+  "difficulty": 2,
+  "mapLayout": {
+    "width": 16,
+    "height": 12,
+    "tileRules": {
+      "wall": "border",
+      "gold_floor": "row4to8_col4to11",
+      "floor": "default"
+    }
+  },
+  "playerPosition": { "x": 2, "y": 5 },
+  "npcs": [
+    {
+      "id": "npc_secretary",
+      "name": "贴身老管家 Alfred",
+      "sprite": "butler",
+      "x": 4,
+      "y": 4,
+      "dialogue": "老爷！今晚天台的风好大，继承对赌协议马上就要到期了，这架巨型私人飞艇和百亿现金正危在旦夕！",
+      "storyline": [
+        {
+          "id": "tycoon_butler_stage1",
+          "text": "Alfred默默呈上一杯带电的金箔粒子咖啡：『老爷，你要大口喝下这杯漏电咖啡来强行充能灵感（drink_coffee），还是在黄金签字桌上爽快写下并购契约（sign_deal）？』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "☕ 痛饮带电金箔粒子咖啡", "outcomeText": "轰！狂暴的强电直通脑门，你感觉自己现在的灵感能在十秒内赚回百亿！但金箔咖啡机也因电压过载开始剧烈闷烧冒烟！", "timeDelta": -5, "actionId": "drink_coffee", "soundHint": "drink" },
+            { "label": "✍️ 豪迈大笔签字接下百亿框架", "outcomeText": "你刷刷写下大名，公章轰然拍下！百亿信贷额度瞬间解冻入账，但如果接下来你不能圆满交差，你名下的几十座庄园都将归曹董！", "timeDelta": -10, "actionId": "sign_deal", "soundHint": "bling" }
+          ]
+        },
+        {
+          "id": "tycoon_butler_stage2",
+          "text": "天台控制台起火了！Alfred吓得大喊：『不好了！合同起火了（ignite_fire）！我们是要用火机把账册文件全部点燃彻底毁灭痕迹，还是赶紧拉下总闸切断配电（pull_lever）？』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "🔥 顺水推舟将剩余文件全点燃", "outcomeText": "你豪迈大笑，打着火机将满桌的机密合同一同投向大火！耀眼的金钱火光在黑夜天台上格外显眼，烟雾漫天！", "timeDelta": -8, "actionId": "ignite_fire", "soundHint": "laser" },
+            { "label": "🔌 狠狠拉下天台变压配电大闸", "outcomeText": "你一记大雷扳倒大电闸！整座高空观景天台瞬间黑得伸手不见五指，曹董在大黑里慌乱摔倒踩翻了花盆！", "timeDelta": -6, "actionId": "pull_lever", "soundHint": "alert" }
+          ]
+        },
+        {
+          "id": "tycoon_butler_stage3",
+          "text": "火警警报拉满。Alfred抱着保险箱哭喊：『老爷！高度仪表短路了！我们要砸消防龙头放漫天大水淹了天台（open_sprinkler），还是怒砸红色火箭弹射椅逃命（press_rocket）？』",
+          "allowsFreeInput": false,
+          "options": [
+            { "label": "💦 拧开消防阀门引大水灭火", "outcomeText": "高压消防水瞬间横扫整个天台，犹如瀑布冲洗！火灭了，但所有人全部淋成落汤鸡，所有的带电设备也劈啪爆鸣烧毁！", "timeDelta": -10, "actionId": "open_sprinkler", "soundHint": "explosion" },
+            { "label": "🚀 猛力击打红色脱离火箭按钮", "outcomeText": "你一拳粉碎保护盖，重捶红色弹射按钮！推进大火啸叫爆发，直接载着你升空！", "timeDelta": -15, "actionId": "press_rocket", "soundHint": "explosion" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_investor",
+      "name": "合伙人大佬 曹董",
+      "sprite": "investor",
+      "x": 10,
+      "y": 6,
+      "dialogue": "哼！首富先生，距离对赌到期还有几十秒，如果再不签字，你名下的超级摩天楼和巨型邮轮都将归我曹氏财团所有！准备好破产了吗？",
+      "storyline": [
+        {
+          "id": "tycoon_investor_stage1",
+          "text": "曹董得瑟地摇晃着红酒：『你要是跪下叫我曹爷爷，或者你把我狠揍一顿（beat_investor），不然钱你是一分也别想拿到！』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "🤜 给狂傲的曹董狠狠一记老拳", "outcomeText": "你一拳猛砸在曹董的脸上！他惨叫一声喷出金牙，随后大声呼唤大汉保镖和捕快，发誓要让你把底裤都赔光！", "timeDelta": -15, "actionId": "beat_investor", "soundHint": "sigh" },
+            { "label": "🙏 呈上百亿期权古董钻石项链", "outcomeText": "你微笑着送上一条大金链：『曹总消消气。』曹董满脸堆笑接了过去，直夸你懂事，并表示可以放宽几秒！", "timeDelta": -5, "actionId": "soothe_investor", "soundHint": "bling" }
+          ]
+        },
+        {
+          "id": "tycoon_investor_stage2",
+          "text": "曹董指着旁边天台上的智能机械保镖犬：『看到这只太空警卫狗了吗？你敢凶恶地给它屁股来一脚（kick_dog）吗？敢踢它我就把百分之十主权拱手相让！』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "🦵 走上前给机械警卫狗狠狠一脚", "outcomeText": "你一脚飞踹在柴犬狗屁股上！柴犬发生强烈电子剧震，脖子上的高维天线升起并两眼发红，向深空轨道发送最高防卫求救！", "timeDelta": -12, "actionId": "kick_dog", "soundHint": "dog_bark" },
+            { "label": "👋 温柔俯身抚摸柴犬警卫狗头", "outcomeText": "你温柔摸摸狗头。柴犬欢快摇尾巴，并在你裤兜里吐出一颗金黄的备用高能引信螺丝以示谢意！", "timeDelta": -8, "actionId": "pet_dog", "soundHint": "bling" }
+          ]
+        },
+        {
+          "id": "tycoon_investor_stage3",
+          "text": "曹董被警报和烟火吓得乱叫：『疯子！要炸了！那个控制台底座的红色火箭按钮你难道要按下去吗？』",
+          "allowsFreeInput": false,
+          "options": [
+            { "label": "🚀 怒拍按钮启动飞天火箭逃跑", "outcomeText": "你一把推开一切，猛地击爆火箭逃生开关！强劲的火箭推进火焰自你脚下隆隆喷涌！", "timeDelta": -12, "actionId": "press_rocket", "soundHint": "explosion" },
+            { "label": "📝 在股权转让认命书上签字", "outcomeText": "你叹了口气，拿出百亿签字金笔，在投降清盘单上签了字，自甘把首富宝座拱手交割！", "timeDelta": -6, "actionId": "sign_pension", "soundHint": "sigh" }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_chest",
+      "name": "二爷百亿瑞士密码箱",
+      "sprite": "chest",
+      "x": 8,
+      "y": 8,
+      "description": "瑞士银行定制的防爆纯金密码箱，内部藏有二爷的终极瑞士金票，或者是个高能蓄电堆！",
+      "storyline": [
+        {
+          "id": "tycoon_chest_stage1",
+          "text": "密码箱开始发出过热啸鸣。你是狂草签字接下百亿融资框架（sign_deal），还是拿起包金打火机点火烧了旧财报泄愤（ignite_fire）？",
+          "options": [
+            { "label": "✍️ 潇洒挥毫签字接下融资对赌", "outcomeText": "你龙飞凤舞签了字！巨额信贷额度即刻汇入你的瑞士信托，但这箱子一旦爆炸，你也得背负终身债务去挖矿！", "timeDelta": -10, "actionId": "sign_deal", "soundHint": "bling" },
+            { "label": "🔥 丢出打火机点燃旁边所有废纸", "outcomeText": "你丢下打火机将旧废纸全点燃了，火苗伴随着高空气流呼得烧红了半边天！天台上黑烟滚滚！", "timeDelta": -5, "actionId": "ignite_fire", "soundHint": "laser" }
+          ]
+        },
+        {
+          "id": "tycoon_chest_stage2",
+          "text": "大火蔓延！箱子被引燃漏电！你是扳倒电闸总铜闸切断天台电力（pull_lever），还是狠狠给看戏的哈士奇警卫狗一脚（kick_dog）？",
+          "options": [
+            { "label": "🔌 拉下配电安全总闸电源开关", "outcomeText": "你啪的一声推倒电闸！高空天台陷入无尽黑暗！曹董看不见路，一屁股跌坐在香槟盆里！", "timeDelta": -8, "actionId": "pull_lever", "soundHint": "alert" },
+            { "label": "🦵 踹飞那只正在怪笑的间谍柴犬", "outcomeText": "你皮鞋重踹在狗子屁股上！哈士奇汪的一声飞起，眼珠亮起骇人赛博红光，警报直接发往太空管理局！", "timeDelta": -10, "actionId": "kick_dog", "soundHint": "dog_bark" }
+          ]
+        },
+        {
+          "id": "tycoon_chest_stage3",
+          "text": "飞艇的锅炉即将过载。你要拧开天台高空自救喷淋放水，还是拍死红色火箭弹射逃跑？",
+          "options": [
+            { "label": "💦 拧开应急洒水实施天台放水", "outcomeText": "洒水管道被你砸爆！高压冷水柱横扫天台，灭了火，但昂贵地垫泡成稀泥，你成了天台泳池的主角！", "timeDelta": -10, "actionId": "open_sprinkler", "soundHint": "explosion" },
+            { "label": "🚀 猛力击打红色底座火箭按钮", "outcomeText": "你重捶红色推进拉阀！推进器轰鸣在0.01秒内带你破窗直飞天际，留下满地人目瞪口呆！", "timeDelta": -12, "actionId": "press_rocket", "soundHint": "explosion" }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "endingId": "ending_kick_dog_alien",
+      "title": "【被深空防卫队缉拿的无礼首富】",
+      "description": "因为你在危机时刻，狠狠飞踹了天台的机器柴犬警卫一脚（kick_dog）！导致它身上的太空防御坐标直接拉响，向近地轨道的外星警备舰发送了『受到无礼碳基伤害』的呼救。在晚宴倒数前十秒，一道庞大耀眼的幽蓝牵引光束强行穿透高空云层，将你一举抽入飞碟！外星法官判定你极没教养，罚你前往星际最热的太空船坞擦洗钢板500年！",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["kick_dog"] }
+    },
+    {
+      "endingId": "ending_beat_and_ruin",
+      "title": "【空有钻石的牢中光杆前首富】",
+      "description": "你把合伙人曹董揍得门牙横飞（beat_investor），还顺道狠狠踹了机器警卫狗子一重脚（kick_dog），虽然你在天台完成了物理无双，但暴力犯罪已被安全线全程录像！倒计时归零的瞬间，不仅你的帝国协议宣告破产撕毁，直升机护航队当场按倒了你！你喜提亮晶晶的铐子，开始在牢房中跟其他狱友分享世界首富啃窝头的宝贵经验！",
+      "priority": 5,
+      "triggerRules": { "mustInclude": ["beat_investor", "kick_dog"] }
+    },
+    {
+      "endingId": "ending_heroic_firefighter",
+      "title": "【智勇双全的高空救灾大侠】",
+      "description": "何其英勇的传奇首富！你在天台控制箱起火点燃合同（ignite_fire）的致命毁灭点上，毫无惧色，以精确的时间序列切断变电并激活了天台高空防灾洒水大龙头（open_sprinkler）！在水汽与黑烟的混战里，这股暴泉掐灭了锅炉失爆的火源，保住了百亿瑞士金票！你在全球直播的欢呼声中被捧为『救火真英雄首富』，名利双收！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["ignite_fire", "open_sprinkler"], "requiredSequence": ["ignite_fire", "open_sprinkler"] }
+    },
+    {
+      "endingId": "ending_foolish_drowner",
+      "title": "【天台水漫金山的搞笑富翁】",
+      "description": "你的战术只能说是个奇迹。在天台安全无火时你大开自救阀门引水（open_sprinkler），把天台变成了高空蓄水池！在整个天台地垫全部淹没、连酒杯都开始漂流时，你竟然摸出打火机强行在水里试图点火燃纸（ignite_fire）！结果火没点着，漫水导爆了粒子咖啡机的高压漏电！你被电得头发朝天冒白烟，直接成为年度最沙雕的自溺首富！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["open_sprinkler", "ignite_fire"], "requiredSequence": ["open_sprinkler", "ignite_fire"] }
+    },
+    {
+      "endingId": "ending_rocket_man",
+      "title": "【飞向火星的流浪首富狂徒】",
+      "description": "去特么的债务和百亿对赌！你大嚎一声，果断一把锤爆红色起爆脱逃开关（press_rocket）！只在一万分之一秒内，飞椅火箭推进器带你破开高空云层直入苍穹近地轨道！百亿债务被你远远丢在地球，你带着二爷的百亿金票，快快乐乐去火星开启全新的星际淘金人生了！",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["press_rocket"] }
+    }
+  ],
+  "introText": "你本是富可敌国的世界首富大班。然而在今晚的名利场晚宴天台上，距离你的继承对赌期限只剩最后60秒，合伙人曹董正带着百亿欠条逼你签字，而旁边那个鲜艳的红色火箭按钮似乎是你唯一的退路！命运已在空中盘旋，做出你的神豪抉择吧！",
+  "ambientMusic": "yacht-relax"
+}

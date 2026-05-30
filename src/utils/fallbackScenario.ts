@@ -79,6 +79,9 @@ export interface FallbackScenario {
 // ── Internal JSON shape (as stored on disk) ───────────────────────────────────
 
 interface WorldJson {
+  id?: string;
+  icon?: string;
+  difficulty?: number;
   matchKeywords: string[];
   identity: string | { title?: string; description?: string };
   theme: string;
@@ -191,7 +194,12 @@ function loadAllWorlds(): WorldJson[] {
     try {
       const world = worldModules[filePath] as unknown;
       if (isWorldJson(world)) {
-        worlds.push(world);
+        const filename = filePath.split("/").pop() || "";
+        const id = filename.replace(".json", "");
+        worlds.push({
+          ...world,
+          id,
+        });
       } else {
         console.warn(`[Fallback] Skipped non-world JSON file "${filePath}"`);
       }
@@ -242,6 +250,41 @@ function worldJsonToScenario(w: WorldJson): FallbackScenario {
   };
 }
 
+// Helper to resolve Icons based on keywords
+function getIconByIdentity(identity: string): string {
+  const norm = identity.toLowerCase();
+  if (norm.includes("ceo") || norm.includes("首席") || norm.includes("公司") || norm.includes("创始人")) return "💎";
+  if (norm.includes("滑雪") || norm.includes("雪")) return "🏂";
+  if (norm.includes("潜水") || norm.includes("深海") || norm.includes("海底") || norm.includes("潜航")) return "🐙";
+  if (norm.includes("飞机") || norm.includes("航天") || norm.includes("机长") || norm.includes("机舱")) return "✈️";
+  if (norm.includes("厨师") || norm.includes("名厨") || norm.includes("美食") || norm.includes("餐")) return "👨‍🍳";
+  if (norm.includes("太空") || norm.includes("宇宙") || norm.includes("星系") || norm.includes("火星") || norm.includes("月球")) return "🚀";
+  if (norm.includes("首富") || norm.includes("富豪") || norm.includes("大班") || norm.includes("财阀") || norm.includes("大亨")) return "👑";
+  if (norm.includes("裁员") || norm.includes("layoff")) return "📄";
+  if (norm.includes("开会") || norm.includes("会议") || norm.includes("董事")) return "💼";
+  if (norm.includes("厕所") || norm.includes("马桶") || norm.includes("停水")) return "🧻";
+  if (norm.includes("银行")) return "🏦";
+  if (norm.includes("证券") || norm.includes("股票") || norm.includes("交易所") || norm.includes("ipo")) return "📈";
+  if (norm.includes("赌场") || norm.includes("博彩")) return "🎰";
+  if (norm.includes("帝国") || norm.includes("皇帝") || norm.includes("政变") || norm.includes("王室")) return "👑";
+  if (norm.includes("机器人") || norm.includes("ai") || norm.includes("智脑") || norm.includes("神谕")) return "🤖";
+  if (norm.includes("外星") || norm.includes("异形") || norm.includes("星际")) return "👽";
+  if (norm.includes("能源") || norm.includes("反物质") || norm.includes("太阳") || norm.includes("电力")) return "⚡";
+  if (norm.includes("婚礼")) return "💒";
+  if (norm.includes("监狱")) return "⛓️";
+  if (norm.includes("量子")) return "⚛️";
+  return "🗺️";
+}
+
+// Deterministic difficulty rating (2 to 5)
+function getDifficultyByIdentity(identity: string): number {
+  let sum = 0;
+  for (let i = 0; i < identity.length; i++) {
+    sum += identity.charCodeAt(i);
+  }
+  return (sum % 4) + 2;
+}
+
 // ── Public API ────────────────────────────────────────────────────────────────
 
 export function getFallbackScenario(identity: string): FallbackScenario {
@@ -257,14 +300,52 @@ export function getFallbackScenario(identity: string): FallbackScenario {
 
   // 1. Try to match by keyword
   if (norm.length > 0) {
-    for (const world of worlds) {
-      if (world.matchKeywords.some((kw) => norm.includes(String(kw).toLowerCase()))) {
-        return worldJsonToScenario(world);
-      }
+    const matchedWorlds = worlds.filter((world) =>
+      world.matchKeywords.some((kw) => norm.includes(String(kw).toLowerCase()))
+    );
+    if (matchedWorlds.length > 0) {
+      const randomIndex = Math.floor(Math.random() * matchedWorlds.length);
+      return worldJsonToScenario(matchedWorlds[randomIndex]);
     }
   }
 
   // 2. No match → pick a random world
   const randomIndex = Math.floor(Math.random() * worlds.length);
   return worldJsonToScenario(worlds[randomIndex]);
+}
+
+export interface PlayableMapScenario {
+  id: string;
+  identity: string;
+  theme: string;
+  icon: string;
+  difficulty: number;
+  description: string;
+  isFeatured: boolean;
+  scenario: FallbackScenario;
+}
+
+export function getAllAvailableScenarios(): PlayableMapScenario[] {
+  const worlds = getWorlds();
+  const featuredIds = ["ceo", "diver", "layoff", "meeting", "skiing", "space", "toilet", "wangduoyu", "pilot", "chef", "tycoon"];
+
+  return worlds.map((w) => {
+    const scenario = worldJsonToScenario(w);
+    const id = w.id || scenario.identity;
+    const isFeatured = featuredIds.includes(id.toLowerCase());
+
+    const icon = w.icon || getIconByIdentity(scenario.identity);
+    const difficulty = w.difficulty || getDifficultyByIdentity(scenario.identity);
+
+    return {
+      id,
+      identity: scenario.identity,
+      theme: scenario.theme,
+      icon,
+      difficulty,
+      description: scenario.introText,
+      isFeatured,
+      scenario,
+    };
+  });
 }

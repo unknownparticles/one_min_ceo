@@ -32,6 +32,7 @@ import {
   ScanLine,
   CheckCircle2,
   Settings,
+  Search,
   Wifi,
   WifiOff,
   Trophy,
@@ -42,6 +43,7 @@ import { PixelMap } from "./components/PixelMap";
 import { SpriteRenderer } from "./components/SpriteRenderer";
 import { Position, NPC, Item, WorldScenario, InteractionResult, EndingResult, SavedLife, DailyChallenge, BossIdentityType } from "./types";
 import { getDailyChallenge } from "./utils/dailyPresets";
+import { getAllAvailableScenarios } from "./utils/fallbackScenario";
 import { audio } from "./utils/audio";
 import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey, getApiSettings, saveApiSettings, testApiConnection, getRawStoredSettings, hasEnvApiKey, streamBusinessConcept, FLASH_MODEL, DEFAULT_SILICONFLOW_MODEL, getProviderDisplayName, type ApiSettings } from "./utils/siliconFlow";
 import { getResourcePack } from "./utils/resourceKit";
@@ -127,7 +129,10 @@ export default function App() {
   const [gameState, setGameState] = useState<"lobby" | "loading" | "playing" | "ending" | "follow_unlock">("lobby");
   
   // Custom or pre-selected choices
-  const [selectedPreset, setSelectedPreset] = useState<typeof PRESETS[0]>(PRESETS[0]);
+  const [selectedPreset, setSelectedPreset] = useState<any>(PRESETS[0]);
+  const [allMaps, setAllMaps] = useState<any[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [mapCategory, setMapCategory] = useState<"featured" | "custom">("featured");
   const [customIdentityInput, setCustomIdentityInput] = useState<string>("");
   const [hasApiKey, setHasApiKey] = useState<boolean>(true);
   const [showSettingsModal, setShowSettingsModal] = useState<boolean>(false);
@@ -280,6 +285,22 @@ export default function App() {
   // Fetch local collection and config checks
   useEffect(() => {
     setHasApiKey(hasSiliconFlowKey());
+
+    // Initialize playable maps from local JSON files
+    const scenarios = getAllAvailableScenarios().map((s) => ({
+      type: s.id,
+      name: s.identity,
+      icon: s.icon,
+      difficulty: s.difficulty,
+      description: s.description,
+      isFeatured: s.isFeatured,
+      scenario: s.scenario
+    }));
+    setAllMaps(scenarios);
+    const defaultFeatured = scenarios.find(m => m.isFeatured);
+    if (defaultFeatured) {
+      setSelectedPreset(defaultFeatured);
+    }
     
     // Load API settings into local React states (only load raw user overrides to avoid exposing env keys)
     const stored = getRawStoredSettings();
@@ -483,7 +504,7 @@ export default function App() {
       }
       finalPrompt = `你是普通人王多鱼，大发横财需要败光三百万！当前的随机时间瞬间落在：『${randMoment.title}』，你的创业败家商业构思是：${conceptToUse || '把北极融化的冰用游艇运到沙特卖，或者推行减肥放电脂肪险'}`;
     } else {
-      chosenIdentity = dailyType || selectedPreset.type;
+      chosenIdentity = dailyType || (selectedPreset?.type || "CEO");
       finalPrompt = forcedConcept ?? (dailyPrompt || customIdentityInput);
     }
 
@@ -973,7 +994,7 @@ export default function App() {
     try {
       const signal = getAbortSignal();
       const data = await generateEnding({
-        identity: worldScenario?.identity || selectedPreset.name,
+        identity: worldScenario?.identity || (selectedPreset?.name || "科技公司创始人"),
         theme: worldScenario?.theme || "一分钟富豪试炼",
         spentTime: 60 - timer,
         interactionLog: historyLog,
@@ -985,7 +1006,7 @@ export default function App() {
       // Save to Collection in localStorage
       const newSavedEnding: SavedLife = {
         ...data,
-        identityName: worldScenario?.identity || selectedPreset.name,
+        identityName: worldScenario?.identity || (selectedPreset?.name || "科技公司创始人"),
         identityType: (window.localStorage.getItem("currentIdentityType") as BossIdentityType) || "CEO",
         theme: worldScenario?.theme || "纳斯达克终极一分钟",
         timestamp: new Date().toLocaleDateString()
@@ -1018,7 +1039,7 @@ export default function App() {
 
       const cachedEnd: SavedLife = {
         ...fallbackEnd,
-        identityName: worldScenario?.identity || selectedPreset.name,
+        identityName: worldScenario?.identity || (selectedPreset?.name || "科技公司创始人"),
         identityType: (window.localStorage.getItem("currentIdentityType") as BossIdentityType) || "CEO",
         theme: worldScenario?.theme || "一分钟终极回溯",
         timestamp: new Date().toLocaleDateString()
@@ -1114,9 +1135,18 @@ export default function App() {
     }
   };
 
+  const filteredMaps = allMaps.filter((m) => {
+    const matchesCategory = mapCategory === "featured" ? m.isFeatured : !m.isFeatured;
+    const matchesSearch =
+      m.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      m.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      m.type.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
   const previewResourcePack = worldScenario?.resourcePack || getResourcePack(
-    activeTab === "normal" ? "CEO" : selectedPreset.type,
-    worldScenario?.theme || selectedPreset.name
+    activeTab === "normal" ? "CEO" : (selectedPreset?.type || "CEO"),
+    worldScenario?.theme || (selectedPreset?.name || "科技公司创始人")
   );
   const activeApiSettings = getApiSettings();
   const activeProviderDisplayName = getProviderDisplayName(activeApiSettings.provider);
@@ -1455,70 +1485,120 @@ export default function App() {
                         </div>
                       ) : (
                         <>
-                          <label className="block text-xs font-mono font-bold text-slate-350 uppercase tracking-widest">
-                            选择你的天生神豪血脉:
-                          </label>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pb-1">
-                            {PRESETS.map((p) => (
+                          <div className="flex flex-col md:flex-row md:items-center gap-3 justify-between pb-1 pt-1 border-b border-slate-850/60">
+                            {/* Category Filter Tabs */}
+                            <div className="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-850 shrink-0 select-none">
                               <button
-                                key={p.type}
                                 onClick={() => {
-                                  setSelectedPreset(p as any);
+                                  setMapCategory("featured");
                                   audio.playSound("walk");
                                 }}
-                                className={`p-4 rounded-2xl border text-left transition-all duration-300 active:scale-95 cursor-pointer relative overflow-hidden group flex items-start gap-4 ${
-                                  selectedPreset.type === p.type
-                                    ? "bg-slate-800 border-emerald-450 shadow-xl shadow-emerald-955/50 text-emerald-350 scale-[1.02] ring-1 ring-emerald-500/30 neon-glow-emerald"
-                                    : "bg-slate-950/45 border-slate-850 hover:border-slate-700 text-slate-300 hover:bg-slate-850/60"
+                                className={`px-4 py-1.5 font-mono text-[10px] rounded-lg transition-all duration-200 cursor-pointer ${
+                                  mapCategory === "featured"
+                                    ? "bg-slate-850 text-white font-bold shadow-md"
+                                    : "text-slate-500 hover:text-slate-350"
                                 }`}
                               >
-                                {/* Absolute subtle decorative background glow */}
-                                <div className={`absolute top-0 right-0 w-16 h-16 -mr-4 -mt-4 rounded-full blur-xl transition-all duration-300 ${
-                                  selectedPreset.type === p.type ? "bg-emerald-500/15" : "bg-transparent group-hover:bg-slate-700/10"
-                                }`} />
-
-                                {/* Left Side: Pixel Art character slot */}
-                                <div className={`w-11 h-11 rounded-lg flex items-center justify-center shrink-0 border transition-all duration-300 ${
-                                  selectedPreset.type === p.type
-                                    ? "bg-slate-950 border-emerald-450/50 scale-105 shadow-inner"
-                                    : "bg-slate-900 border-slate-850 group-hover:border-slate-700 shadow"
-                                }`}>
-                                  <SpriteRenderer type={p.type.toLowerCase()} size={32} className="group-hover:scale-110 transition-transform duration-200" />
-                                </div>
-
-                                {/* Right Side: metadata & naming */}
-                                <div className="flex-1 min-w-0">
-                                  <div className="flex items-center gap-1.5 justify-between">
-                                    <h4 className="font-mono font-bold text-xs truncate text-white group-hover:text-emerald-350 transition-colors">
-                                      {p.name}
-                                    </h4>
-                                    <span className="text-[8px] bg-slate-955 px-1 border border-slate-850 font-mono text-slate-500 rounded uppercase">
-                                      {p.type}
-                                    </span>
-                                  </div>
-                                  <div className="flex items-center gap-1 mt-0.5">
-                                    <span className="text-[8px] text-amber-400 font-bold font-mono">
-                                      难度: {"⭐".repeat(p.difficulty || 3)}
-                                    </span>
-                                  </div>
-                                  <p className="text-[9px] text-slate-450 mt-1 lines-clamp-2 leading-relaxed">
-                                    {p.description}
-                                  </p>
-                                </div>
+                                🔥 官方推荐
                               </button>
-                            ))}
+                              <button
+                                onClick={() => {
+                                  setMapCategory("custom");
+                                  audio.playSound("walk");
+                                }}
+                                className={`px-4 py-1.5 font-mono text-[10px] rounded-lg transition-all duration-200 cursor-pointer ${
+                                  mapCategory === "custom"
+                                    ? "bg-slate-850 text-white font-bold shadow-md"
+                                    : "text-slate-500 hover:text-slate-350"
+                                }`}
+                              >
+                                🌀 时空裂隙
+                              </button>
+                            </div>
+
+                            {/* Search bar */}
+                            <div className="relative flex-1">
+                              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" size={13} />
+                              <input
+                                type="text"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                placeholder="搜索地图名称、ID或描述..."
+                                className="w-full pl-9 pr-4 py-1.5 bg-slate-955 border border-slate-850 focus:border-emerald-500 text-white font-mono text-[10px] rounded-xl focus:outline-none placeholder-slate-600 transition shadow-inner"
+                              />
+                            </div>
+                          </div>
+
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[360px] overflow-y-auto pr-1.5 scrollbar-thin">
+                            {filteredMaps.length > 0 ? (
+                              filteredMaps.map((p) => (
+                                <button
+                                  key={p.type}
+                                  onClick={() => {
+                                    setSelectedPreset(p as any);
+                                    audio.playSound("walk");
+                                  }}
+                                  className={`p-4 rounded-2xl border text-left transition-all duration-300 active:scale-95 cursor-pointer relative overflow-hidden group flex items-start gap-4 ${
+                                    selectedPreset?.type === p.type
+                                      ? "bg-slate-800 border-emerald-450 shadow-xl shadow-emerald-955/50 text-emerald-350 scale-[1.02] ring-1 ring-emerald-500/30 neon-glow-emerald"
+                                      : "bg-slate-950/45 border-slate-850 hover:border-slate-700 text-slate-300 hover:bg-slate-850/60"
+                                  }`}
+                                >
+                                  {/* Absolute subtle decorative background glow */}
+                                  <div className={`absolute top-0 right-0 w-16 h-16 -mr-4 -mt-4 rounded-full blur-xl transition-all duration-300 ${
+                                    selectedPreset?.type === p.type ? "bg-emerald-500/15" : "bg-transparent group-hover:bg-slate-700/10"
+                                  }`} />
+
+                                  {/* Left Side: Pixel Art character slot */}
+                                  <div className={`w-11 h-11 rounded-lg flex items-center justify-center shrink-0 border transition-all duration-300 ${
+                                    selectedPreset?.type === p.type
+                                      ? "bg-slate-950 border-emerald-450/50 scale-105 shadow-inner"
+                                      : "bg-slate-900 border-slate-850 group-hover:border-slate-700 shadow"
+                                  }`}>
+                                    <SpriteRenderer type={p.type.toLowerCase()} size={32} className="group-hover:scale-110 transition-transform duration-200" />
+                                  </div>
+
+                                  {/* Right Side: metadata & naming */}
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-1.5 justify-between">
+                                      <h4 className="font-mono font-bold text-xs truncate text-white group-hover:text-emerald-350 transition-colors">
+                                        {p.name}
+                                      </h4>
+                                      <span className="text-[8px] bg-slate-955 px-1.5 py-0.5 border border-slate-850 font-mono text-slate-500 rounded uppercase flex items-center gap-1">
+                                        <span>{p.icon}</span>
+                                        <span className="text-[7px]">{p.type.startsWith("fallback_world_") ? p.type.replace("fallback_world_", "#") : p.type}</span>
+                                      </span>
+                                    </div>
+                                    <div className="flex items-center gap-1 mt-0.5">
+                                      <span className="text-[8px] text-amber-400 font-bold font-mono">
+                                        难度: {"⭐".repeat(p.difficulty || 3)}
+                                      </span>
+                                    </div>
+                                    <p className="text-[9px] text-slate-450 mt-1 lines-clamp-2 leading-relaxed">
+                                      {p.description}
+                                    </p>
+                                  </div>
+                                </button>
+                              ))
+                            ) : (
+                              <div className="col-span-1 md:col-span-2 text-center py-12 font-mono text-[10px] text-slate-555">
+                                🔍 未找到任何匹配的地图
+                              </div>
+                            )}
                           </div>
 
                           {/* Beautiful dedicated narrative lore container */}
-                          <div className="mt-4 p-4 bg-gradient-to-r from-slate-955 to-slate-900 rounded-xl border border-slate-850 text-xs text-slate-450 leading-relaxed font-mono relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full filter blur-xl pointer-events-none" />
-                            <span className="text-[10px] bg-emerald-400/10 text-emerald-300 border border-emerald-500/20 px-2 py-0.5 rounded font-bold uppercase tracking-wider block w-fit mb-2">
-                              🔮 极尊特权时空画卷 (Active Identity Lore)
-                            </span>
-                            <p className="text-slate-350">
-                              时空穿梭已锚定扮演：<span className="text-emerald-450 font-extrabold underline decoration-emerald-500/40 underline-offset-4">{selectedPreset.name}</span>。{selectedPreset.description}。AI 时空天线将基于您的多重交互来推演专属的富豪六十秒微缩景观。
-                            </p>
-                          </div>
+                          {selectedPreset && (
+                            <div className="mt-4 p-4 bg-gradient-to-r from-slate-955 to-slate-900 rounded-xl border border-slate-850 text-xs text-slate-450 leading-relaxed font-mono relative overflow-hidden">
+                              <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full filter blur-xl pointer-events-none" />
+                              <span className="text-[10px] bg-emerald-400/10 text-emerald-300 border border-emerald-500/20 px-2 py-0.5 rounded font-bold uppercase tracking-wider block w-fit mb-2">
+                                🔮 极尊特权时空画卷 (Active Identity Lore)
+                              </span>
+                              <p className="text-slate-350">
+                                时空穿梭已锚定扮演：<span className="text-emerald-450 font-extrabold underline decoration-emerald-500/40 underline-offset-4">{selectedPreset?.name || "科技公司创始人"}</span>。{selectedPreset?.description || "IPO上市前60秒，金钱、名誉与外星特工看门狗一网打尽"}。AI 时空天线将基于您的多重交互来推演专属的富豪六十秒微缩景观。
+                              </p>
+                            </div>
+                          )}
 
                           {/* Custom Identity Prompt modifier */}
                           <div className="space-y-2 pt-3">

@@ -1,0 +1,168 @@
+{
+  "matchKeywords": ["pilot", "飞机", "flight", "sky", "aviation", "机长", "私人飞机"],
+  "identity": "私人飞机机长 (Pilot)",
+  "theme": "超音速机舱起降前60秒寻鞋风暴",
+  "icon": "✈️",
+  "difficulty": 3,
+  "mapLayout": {
+    "width": 16,
+    "height": 12,
+    "tileRules": {
+      "wall": "border",
+      "carpet": "row4to8_col4to11",
+      "floor": "default"
+    }
+  },
+  "playerPosition": { "x": 2, "y": 5 },
+  "npcs": [
+    {
+      "id": "npc_secretary",
+      "name": "乘务长 Lisa",
+      "sprite": "secretary",
+      "x": 5,
+      "y": 4,
+      "dialogue": "机长！飞机发动机已经开始轰鸣，起飞只剩60秒了，但头等舱的总统先生发现他左脚的白鞋不见了，大发雷霆！",
+      "storyline": [
+        {
+          "id": "pilot_secretary_stage1",
+          "text": "Lisa焦急地递来一杯冒烟的量子粒子漏电咖啡：『机长，你要喝下咖啡强行打起精神找鞋（drink_coffee），还是大笔一挥签下追加巨额航线险的契约（sign_deal）？』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "☕ 怒干这杯漏电超能咖啡", "outcomeText": "一股强大的蓝白强电瞬间流遍你的全身！你双眼直冒金光，刘海被烫成了风扇形，你觉得你的精神头可以跟雷达并驾齐驱！但咖啡机也开始冒出了熊熊黑烟！", "timeDelta": -5, "actionId": "drink_coffee", "soundHint": "drink" },
+            { "label": "✍️ 签下高额航线意外险对赌", "outcomeText": "你豪迈地在对赌书上签了名，获得了一大笔星际补偿备用金！但如果待会儿飞机坠毁，你的余生都将在半人马座采矿抵债！", "timeDelta": -10, "actionId": "sign_deal", "soundHint": "bling" }
+          ]
+        },
+        {
+          "id": "pilot_secretary_stage2",
+          "text": "机舱尾部冒出了焦糊味！Lisa捂着口鼻尖叫：『天啊！雷达控制台起火了（ignite_fire）！我们是要用打火机索性把多余合同烧了死无对证，还是赶紧拉下备用电源拉杆断电（pull_lever）？』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "🔥 一把火点燃剩余的所有契约", "outcomeText": "你果断掏出纯金火机，一把火点燃了桌上的废旧财报！刹那间烈焰狂卷，刺鼻的钱味在头等舱疯狂蔓延！", "timeDelta": -8, "actionId": "ignite_fire", "soundHint": "laser" },
+            { "label": "🔌 狂暴拉下机舱配电主大闸", "outcomeText": "你顺手推倒大配电拉杆！整架飞机的仪表盘和客舱照明灯瞬间全灭！飞机在昏暗中以滑翔姿态飞行，李董吓得大呼空难！", "timeDelta": -6, "actionId": "pull_lever", "soundHint": "alert" }
+          ]
+        },
+        {
+          "id": "pilot_secretary_stage3",
+          "text": "大楼高度警报开始刺耳地响！Lisa哭着喊道：『副机长昏过去了！我们是立刻激活客舱防灾水喷雾淋全场（open_sprinkler），还是怒捶红色按钮启动弹射火箭舱逃命（press_rocket）？』",
+          "allowsFreeInput": false,
+          "options": [
+            { "label": "💦 拧开消防大阀把机舱浇透", "outcomeText": "你狂砸消防喷水阀！倾盆大水瞬间如瀑布般从舱顶倾泻而下，把所有人淋成落汤鸡，所有的漏电机电设备也随之发生剧烈短路爆鸣！", "timeDelta": -10, "actionId": "open_sprinkler", "soundHint": "explosion" },
+            { "label": "🚀 怒拍红按钮直接进行弹射", "outcomeText": "你一把掀开玻璃罩，一拳砸死那个红色的火箭逃逸键！座椅带你瞬间冲出客舱顶棚！", "timeDelta": -15, "actionId": "press_rocket", "soundHint": "explosion" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_investor",
+      "name": "撤资大佬 钱总",
+      "sprite": "investor",
+      "x": 11,
+      "y": 6,
+      "dialogue": "哼！如果在起飞前找不回那只白鞋，我立刻撤销对你航空公司的百亿投资！还要没收这架波音飞机！",
+      "storyline": [
+        {
+          "id": "pilot_investor_stage1",
+          "text": "钱总高傲地指着他的西装扣子：『要么你当众给我跪下唱征服，要么你就把本少爷暴扁一顿（beat_investor），不然钱你是一分也拿不到！』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "🤜 赏给狂妄的钱总一顿暴揍", "outcomeText": "你毫不客气，一拳揍在钱总的左眼上！钱总发出杀猪般的惨叫，随后疯狂拨打电话试图取消给你的巨款！", "timeDelta": -15, "actionId": "beat_investor", "soundHint": "sigh" },
+            { "label": "🙏 送上百亿雪茄好言安慰之", "outcomeText": "你笑着递上一盒24K镀金古巴雪茄：『钱总消消气。』钱总被你的诚意打动，乐呵呵地坐回座位，表示原谅你的延误！", "timeDelta": -5, "actionId": "soothe_investor", "soundHint": "bling" }
+          ]
+        },
+        {
+          "id": "pilot_investor_stage2",
+          "text": "钱总指着旁边的自动驾驶电子柴犬：『看到这只太空搜寻狗了吗？你敢给它屁股狠狠来一脚（kick_dog），或者用咖啡泼它吗？敢踢它，我把这航线的主权直接送你！』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "🦵 走过去给电子机器狗一重脚", "outcomeText": "你抬腿狠狠飞踢了柴犬屁股！狗子当即发出尖锐的电子啸叫，脊梁上的天线冒起刺眼蓝光，开始往外星大本营发警报！", "timeDelta": -12, "actionId": "kick_dog", "soundHint": "dog_bark" },
+            { "label": "👋 蹲下温柔抚摸机器搜寻狗", "outcomeText": "你轻轻拍拍柴犬。狗子欢快地直摇电子尾巴，并在你袜子里吐出了一包金灿灿的备用螺帽以示友好！", "timeDelta": -8, "actionId": "pet_dog", "soundHint": "bling" }
+          ]
+        },
+        {
+          "id": "pilot_investor_stage3",
+          "text": "钱总被客舱的警报吓得浑身哆嗦：『疯子！飞机失控了！控制台那个火箭红色按钮，难道你是想带所有人同归于尽吗？』",
+          "allowsFreeInput": false,
+          "options": [
+            { "label": "🚀 怒拍红按钮强行启动火箭", "outcomeText": "你用伞尖砸碎保护盖，一掌击中火箭按钮！大火在一瞬间从你脚底喷出！", "timeDelta": -12, "actionId": "press_rocket", "soundHint": "explosion" },
+            { "label": "📝 签下航空帝国主权交割单", "outcomeText": "你叹了口气，拿出黄金签字笔，龙飞凤舞签了一份帝国交接协议，甘愿退休交出航线！", "timeDelta": -6, "actionId": "sign_pension", "soundHint": "sigh" }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_shoe",
+      "name": "总统的纯白左皮鞋",
+      "sprite": "shoe",
+      "x": 8,
+      "y": 3,
+      "description": "一只在沙发底侧闪烁着神圣微光、极品手工雕花的纯白左皮鞋，这是起飞的关键因果物！",
+      "storyline": [
+        {
+          "id": "pilot_shoe_stage1",
+          "text": "白鞋上沾满了灰尘。你是用大笔一挥盖了百亿章签署对赌（sign_deal），还是擦亮火机点燃旁边无用的布料掩人耳目（ignite_fire）？",
+          "options": [
+            { "label": "✍️ 豪迈大笔签字接下百亿合伙", "outcomeText": "你刷刷写下大名！百亿资金池瞬间解冻，但你得确保白鞋物归原主，否则你将成为星际头条笑柄！", "timeDelta": -10, "actionId": "sign_deal", "soundHint": "bling" },
+            { "label": "🔥 擦亮火机点火烧毁备用物资", "outcomeText": "你点燃了沙发底的一堆旧报纸，火苗轰得燃了起来，黑烟顿时开始在狭小的客舱里蔓延！", "timeDelta": -5, "actionId": "ignite_fire", "soundHint": "laser" }
+          ]
+        },
+        {
+          "id": "pilot_shoe_stage2",
+          "text": "浓烟四起，白鞋也掉进了漏电的咖啡机里！你是去拼命拉下电源断电拉闸（pull_lever），还是狠狠给在旁边假叫的机器狗子一脚（kick_dog）？",
+          "options": [
+            { "label": "🔌 拉下变压电力断电主开关", "outcomeText": "你拽下大闸！机舱瞬间陷入纯正的漆黑，只剩下窗外的白云在无声掠过，李董吓得哇哇乱叫！", "timeDelta": -8, "actionId": "pull_lever", "soundHint": "alert" },
+            { "label": "🦵 顺势飞踢在旁边乱叫的柴犬", "outcomeText": "你一脚飞踹在哈士奇狗身上！狗子发生短路，尾巴天线疯狂旋转往深空发送求救电波！", "timeDelta": -10, "actionId": "kick_dog", "soundHint": "dog_bark" }
+          ]
+        },
+        {
+          "id": "pilot_shoe_stage3",
+          "text": "高度仪表急速下降。你要启动大水灭火，还是拍击红色火箭按钮强行出逃？",
+          "options": [
+            { "label": "💦 打开应急消防客舱大洒水", "outcomeText": "暴雨般的水花从天而降！扑灭了所有火源，但整架飞机机舱已水淹及膝，仪表板噼里啪啦报废！", "timeDelta": -10, "actionId": "open_sprinkler", "soundHint": "explosion" },
+            { "label": "🚀 重击逃逸推力座椅大红按钮", "outcomeText": "你猛地捶碎火箭逃生开关！推进火箭啸叫起飞，把你和李总的沙发椅直接送入近地轨道！", "timeDelta": -12, "actionId": "press_rocket", "soundHint": "explosion" }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "endingId": "ending_kick_dog_alien",
+      "title": "【被外星人劫持的超音速机长】",
+      "description": "因为你在危机时刻控制不住脚，狠狠踢了舱里的自动驾驶机器柴犬一脚（kick_dog）！导致它在半空中向星空轨道的外星母舰发出了『受到愚蠢人类暴虐』的高频坐标电波。就在起飞的前十秒，一道宏大无比的牵引光束强行穿透了波音外壳，将你连带行李一并吸上了飞碟！外星议长判定你极度粗鲁，发配你到星际最脏的引擎舱里掏烟灰500年！",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["kick_dog"] }
+    },
+    {
+      "endingId": "ending_beat_and_ruin",
+      "title": "【空难与暴力刑事的双重坠机】",
+      "description": "你不仅把头等舱的撤资代表钱总暴砸了一顿（beat_investor），还狠狠给机器柴犬来了一重脚（kick_dog），虽然狠狠出了恶气，但这架超音速飞机的安全芯片当场锁定判定你为『恐怖劫机犯』！在警报红光里钱总的保镖大军当场将你按倒，就在倒计时归零时，不仅航空公司宣告破产，你还在飞机平稳滑行降落后直接喜提亮晶晶的手铐，开始在号子里研究二爷的空难秘籍！",
+      "priority": 5,
+      "triggerRules": { "mustInclude": ["beat_investor", "kick_dog"] }
+    },
+    {
+      "endingId": "ending_heroic_firefighter",
+      "title": "【惊天动地的灭火英雄机长】",
+      "description": "你是一位极其卓越的危机掌门人！你在发现客舱被点燃（ignite_fire）后沉着应对，在最后一秒拉动按钮启动了应急灭火大喷淋（open_sprinkler）！狂暴的冷水瀑布在一瞬间掐灭了火种，并让飞机气压归于稳定！你的波音客机免于空中解体！降落那一刻，你在全球几百家媒体的快门下以『传奇机长』的姿态赢得了整个航空帝国的至尊欢呼！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["ignite_fire", "open_sprinkler"], "requiredSequence": ["ignite_fire", "open_sprinkler"] }
+    },
+    {
+      "endingId": "ending_foolish_drowner",
+      "title": "【不合时宜的机舱水上漂】",
+      "description": "你这指挥只能说是个奇迹。在客舱安全无烟时你提前大放水，把波音客舱变成了室内游泳池（open_sprinkler）！在整个地毯全部泡汤、皮鞋甚至在水上漂浮时，你居然还不死心，摸出包金火机试图把淋湿的文件强行点燃（ignite_fire）！结果你没能点起火，水流漫入粒子雷达导致了强力高压静电导爆！你浑身冒烟头发焦黑，直接沦为本年度最离奇的搞笑机长！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["open_sprinkler", "ignite_fire"], "requiredSequence": ["open_sprinkler", "ignite_fire"] }
+    },
+    {
+      "endingId": "ending_rocket_man",
+      "title": "【飞向外太空的黄金弹射狂徒】",
+      "description": "任凭Lisa和钱总如何大吵，你绝对不当债务的奴隶！你决然掀开玻璃盖，一巴掌拍在应急火箭逃生弹射按钮上（press_rocket）！咔哒一声，整架客机的尾部舱门和顶棚瞬间抛投撕裂，带有大沙发椅和降落伞的超级火箭弹射装置带你一飞冲天直入宇宙黑天际！李总的百亿追债在地球大气层就被你远远抛在身后，你带着总统的白鞋，快快乐乐去半人马座度假了！",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["press_rocket"] }
+    }
+  ],
+  "introText": "你本是手握千亿航空资产的顶级金牌机长。然而在本次超音速航线起飞前，头等舱大佬钱总因为你搞丢了总统的纯白左皮鞋大发雷霆准备百亿撤资！起落架还有60秒就要收回，客舱内的副驾驶狗、空姐和警报都在注视着你。蝴蝶效应已在你的指尖缠绕，做出你的神豪抉择吧！",
+  "ambientMusic": "corporate-jazz"
+}

@@ -1,0 +1,168 @@
+{
+  "matchKeywords": ["chef", "名厨", "cook", "restaurant", "美食", "厨师", "餐厅"],
+  "identity": "米其林名厨大亨 (Chef)",
+  "theme": "决定米其林三星存亡的60秒鹅肝危机",
+  "icon": "👨‍🍳",
+  "difficulty": 4,
+  "mapLayout": {
+    "width": 16,
+    "height": 12,
+    "tileRules": {
+      "wall": "border",
+      "water": "row4to6_col12to14",
+      "floor": "default"
+    }
+  },
+  "playerPosition": { "x": 2, "y": 5 },
+  "npcs": [
+    {
+      "id": "npc_secretary",
+      "name": "后厨管事 胖虎",
+      "sprite": "assistant",
+      "x": 4,
+      "y": 4,
+      "dialogue": "主厨！金勺评委李董已经在外面桌子旁坐好了，距离第一道鹅肝上菜只剩最后60秒了！可是我们的主灶冒黑烟了！",
+      "storyline": [
+        {
+          "id": "chef_assistant_stage1",
+          "text": "胖虎递给你一碗量子漏电提神汤：『主厨，你要喝下它刺激一下灵感（drink_coffee），还是干脆签署李董的百亿后厨对赌并购书（sign_deal）？』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "☕ 怒喝高能漏电意式提神汤", "outcomeText": "强烈的量子电流激荡全身！你感觉每一根眉毛都在放电，舌头甚至能品尝出水分子里的纳米甜味！不过灶台因短路开始冒起浓烈黑烟！", "timeDelta": -5, "actionId": "drink_coffee", "soundHint": "drink" },
+            { "label": "✍️ 签下三星帝国合并对赌契约", "outcomeText": "你一把签下了合同，拿到了百亿巨额流动资金！但如果在倒计时内餐厅评级滑铁卢，你的主厨围裙和招牌金勺都将归李董所有！", "timeDelta": -10, "actionId": "sign_deal", "soundHint": "bling" }
+          ]
+        },
+        {
+          "id": "chef_assistant_stage2",
+          "text": "烤箱突然爆出火花引燃了周围！胖虎吓得直跳：『失火了！起火了（ignite_fire）！我们是用打火机顺势把机密配方书烧了毁灭证据，还是立刻去拉下后厨电力总拉闸（pull_lever）？』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "🔥 顺带点燃旁边所有垃圾财报", "outcomeText": "你一把火把办公桌下的虚假账本全点了！金钱的余烬和烈火在后厨疯狂起舞，散发出一种挥金如土的焦糊香气！", "timeDelta": -8, "actionId": "ignite_fire", "soundHint": "laser" },
+            { "label": "🔌 狂暴推下拉断配电箱主电闸", "outcomeText": "你啪的一声将电闸彻底合上！整个三星餐厅大堂和后厨瞬间漆黑一团！投资人李董在黑暗中惊恐大叫『是不是外星人打过来了！』", "timeDelta": -6, "actionId": "pull_lever", "soundHint": "alert" }
+          ]
+        },
+        {
+          "id": "chef_assistant_stage3",
+          "text": "烟雾报警器疯叫。胖虎急得带上了钢盔：『要爆炸了！我们是赶紧拉下应急冷水阀把厨房浇透（open_sprinkler），还是怒砸控制台红色火箭弹射纽直接走人（press_rocket）？』",
+          "allowsFreeInput": false,
+          "options": [
+            { "label": "💦 全面放水洗地实施消防降温", "outcomeText": "消防冷水倾盆而下！大水瞬间积满半米深，浇灭了灶火，但也让几十份价值千金的鱼子酱彻底变成了漂流面糊！", "timeDelta": -10, "actionId": "open_sprinkler", "soundHint": "explosion" },
+            { "label": "🚀 猛力直戳红色火箭启动弹射", "outcomeText": "你一锤干碎防爆罩，怒按逃生推进按钮！地盘裂开，火箭强风顶着你直接撞飞窗户射向高空！", "timeDelta": -15, "actionId": "press_rocket", "soundHint": "explosion" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_investor",
+      "name": "金勺评委 李董",
+      "sprite": "investor",
+      "x": 10,
+      "y": 6,
+      "dialogue": "哼！名厨大亨，距离上菜还有最后几十秒。如果这道鹅肝不能让我灵魂颤栗，我不仅撤销所有米其林投资，还要把你送进黑名单！",
+      "storyline": [
+        {
+          "id": "chef_investor_stage1",
+          "text": "李董敲着空盘子满脸冷酷：『你要是跪下叫我一声美食品鉴之神，或者你现在就冲过来狠狠揍我一拳（beat_investor），你会怎么选？』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "🤜 给得瑟的李董来一记黄金重拳", "outcomeText": "你挥舞铁拳，一重击砸在李董的金边眼镜上！他惨叫一声滚下椅子，随后颤抖着拿起手机表示撤资并叫捕快！", "timeDelta": -15, "actionId": "beat_investor", "soundHint": "sigh" },
+            { "label": "🙏 送上百亿主厨特制松露金箔盘", "outcomeText": "你优雅地呈上一盘黄金松露：『李董您先开开胃。』李董贪婪地尝了一口，脸色瞬间放晴，直呼你是个懂事的巨鳄！", "timeDelta": -5, "actionId": "soothe_investor", "soundHint": "bling" }
+          ]
+        },
+        {
+          "id": "chef_investor_stage2",
+          "text": "李董指着厨房旁边那一台智能洗碗机柴犬：『看到那只负责检验星际餐具的看守狗了吗？你敢凶恶地给它屁股来一脚（kick_dog），或者用洗洁精泼它吗？敢踢它我就追加百分之十投资！』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "🦵 走过去给智能洗碗狗一飞脚", "outcomeText": "你一脚飞踹在柴犬狗屁股上！柴犬发出一声高频电子怪鸣，两眼闪红灯，脖子上的量子天线快速定位往外星母舰发信号！", "timeDelta": -12, "actionId": "kick_dog", "soundHint": "dog_bark" },
+            { "label": "👋 蹲下温柔抚摸看守柴犬脑袋", "outcomeText": "你蹲下摸摸狗头。洗碗狗发出愉快的电流呼噜声，并从口中吐出了一包珍贵的半人马座秘制咖喱料包送给你！", "timeDelta": -8, "actionId": "pet_dog", "soundHint": "bling" }
+          ]
+        },
+        {
+          "id": "chef_investor_stage3",
+          "text": "李董被大火和警报吓得钻进了桌子底：『疯了！你的厨房要爆炸了！那个控制台上的红色按钮到底是什么？』",
+          "allowsFreeInput": false,
+          "options": [
+            { "label": "🚀 拍死火箭按钮直接弹射升天", "outcomeText": "你一把推开桌椅，怒击红色起爆开关！强劲的火箭推进器在脚底下啸叫爆鸣！", "timeDelta": -12, "actionId": "press_rocket", "soundHint": "explosion" },
+            { "label": "📝 签署主厨金勺转让投降书", "outcomeText": "你自叹口气，拿起金笔在清算单上签了字，自愿将三星主厨权全盘转让，认命出局！", "timeDelta": -6, "actionId": "sign_pension", "soundHint": "sigh" }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_egg",
+      "name": "高维神秘恐龙蛋",
+      "sprite": "egg",
+      "x": 8,
+      "y": 8,
+      "description": "在北极冰川下发现的闪着粉红荧光的未知异形巨蛋，敲开能做出一碗星际金蛋羹！",
+      "storyline": [
+        {
+          "id": "chef_egg_stage1",
+          "text": "巨蛋开始产生高频颤动。你是豪迈签署百亿合并合同（sign_deal），还是擦亮纯金火机试图点燃桌子发泄（ignite_fire）？",
+          "options": [
+            { "label": "✍️ 刷刷签字接下百亿合伙合同", "outcomeText": "你签字接下了巨额协议！百亿贷款额度即刻汇入主厨信托，不过你得保证今天的金蛋羹不出差错，否则将输掉终身主权！", "timeDelta": -10, "actionId": "sign_deal", "soundHint": "bling" },
+            { "label": "🔥 拿出火机点火烧了旧菜谱", "outcomeText": "你大笑着将打火机扔进旧菜单堆里，火苗腾地一下蹿高两米！烟雾瞬间塞满了整个操作间！", "timeDelta": -5, "actionId": "ignite_fire", "soundHint": "laser" }
+          ]
+        },
+        {
+          "id": "chef_egg_stage2",
+          "text": "黑烟弥漫！蛋掉进了高能咖啡机里！你是去拉下安全电力断电总开关（pull_lever），还是狠狠给乱咬叫的柴犬一记飞踢（kick_dog）？",
+          "options": [
+            { "label": "🔌 扳动总电闸彻底切断厨房电", "outcomeText": "你死力拽下电源闸！全大楼陷入死寂的昏暗！李董在外面被突然的黑暗吓得当场打翻了盘子！", "timeDelta": -8, "actionId": "pull_lever", "soundHint": "alert" },
+            { "label": "🦵 踹飞旁边那只假假叫的机器狗", "outcomeText": "你一脚狠狠把柴犬机器狗踹出几米远！狗子内部警报当场爆红，向外太空母舰大放特快求救蓝光束！", "timeDelta": -10, "actionId": "kick_dog", "soundHint": "dog_bark" }
+          ]
+        },
+        {
+          "id": "chef_egg_stage3",
+          "text": "水压警告，锅炉即将爆缸。你要全面打开消防洒水，还是拍碎火箭按钮开启逃逸？",
+          "options": [
+            { "label": "💦 拧开消防排水龙头降温浇灌", "outcomeText": "高压自救洒水栓被你砸裂！冰凉冷水瀑布式淋下，灭了火，但厨房彻底变成了海洋乐园，你只能踏水求生！", "timeDelta": -10, "actionId": "open_sprinkler", "soundHint": "explosion" },
+            { "label": "🚀 怒拍备用火箭脱逃推进按钮", "outcomeText": "你重重捶在火箭红色电钮上！座椅弹射动力在0.01秒内带你破墙直飞苍天，李董在尘土里目瞪口呆！", "timeDelta": -12, "actionId": "press_rocket", "soundHint": "explosion" }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "endingId": "ending_kick_dog_alien",
+      "title": "【被星际洗碗工绑架的三星主厨】",
+      "description": "因为你在关键时刻，狠狠飞踢了那只智能洗碗机器柴犬一脚（kick_dog）！导致它在过载短路前发出了『受到低级碳基迫害』的最高警告。就在你准备上菜前十秒，一道宏大无比的幽蓝激光光束强行洞穿了米其林屋顶，当场将你连同主菜像吸果冻一样吸上了外星飞船！外星大长老认为你素质低劣，命令你前往外星帝国的太空后厨刷洗巨型黑锅500年！",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["kick_dog"] }
+    },
+    {
+      "endingId": "ending_beat_and_ruin",
+      "title": "【血本无归的美食物理拆台官】",
+      "description": "你不仅把金勺评委李董揍得眼镜开花（beat_investor），还狠狠给看守狗子来了一飞脚（kick_dog），虽然你在厨房完成了物理无双，但警局和退资指令在倒计时归零时瞬间降临！李董的随从在警笛呼啸中破门而入将你当场拿下，你的米其林帝国当场清盘退市，你只能带着大钻戒进入狱中厨房，开始给其他囚犯每天研究黄金大锅炖土豆！",
+      "priority": 5,
+      "triggerRules": { "mustInclude": ["beat_investor", "kick_dog"] }
+    },
+    {
+      "endingId": "ending_heroic_firefighter",
+      "title": "【智勇双全的后厨防爆消防名厨】",
+      "description": "一位极其伟大的危机名厨！你在后厨被火燃起引燃废纸（ignite_fire）后毫不慌乱，以极高水准开启了消防应急洒水降温系统（open_sprinkler）！高压喷淋在一瞬间掐灭了锅炉失控的烈火，并维持了水密气压！你的秘制金蛋配方得以完整保留！三星评级出炉那一刻，你在全球饕客的热烈欢呼中被冠以『后厨救灾第一大侠』的至尊美名！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["ignite_fire", "open_sprinkler"], "requiredSequence": ["ignite_fire", "open_sprinkler"] }
+    },
+    {
+      "endingId": "ending_foolish_drowner",
+      "title": "【自溺厨房的搞笑大杂烩师傅】",
+      "description": "你的战术指挥让大家开眼了。在灶台安全无恙时你提前拧爆阀门大放水，把三星后厨变成了澡堂子（open_sprinkler）！在整个地毯漂浮、调料四海为家时，你竟然摸出打火机企图在水里点火燃纸销毁（ignite_fire）！结果点不着火不说，漫出的水引发了粒子炉的高压漏电，把你电得头发倒竖口吐白烟，直接成为年度最沙雕的米其林自溺名厨！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["open_sprinkler", "ignite_fire"], "requiredSequence": ["open_sprinkler", "ignite_fire"] }
+    },
+    {
+      "endingId": "ending_rocket_man",
+      "title": "【飞向星河的主厨火箭流浪汉】",
+      "description": "去特么的米其林评级和百亿对赌！你大嚎一声，果断一把捶爆红色逃跑火箭纽（press_rocket）！下一秒，后厨地板轰然开裂，定制版主厨火箭弹射器拖着你一飞冲天直插外太空！百亿负债和李董的咆哮全被你甩在了十万光年之外，你带着秘方金蛋在火星轨道开起了全宇宙第一家金箔大排档，快活似神仙！",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["press_rocket"] }
+    }
+  ],
+  "introText": "你本是坐拥百家三星餐厅的黄金勺子继承人。现在距离主菜评级上菜只剩最后60秒，但你的主灶因为短路冒起滚滚黑烟，评委李董扬言做不好就让你彻底破产，你的后厨洗碗机狗还在乱吠！蝴蝶效应已在菜盘中绽放，做出你的神豪抉择！",
+  "ambientMusic": "yacht-relax"
+}
