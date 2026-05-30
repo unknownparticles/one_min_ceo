@@ -59,6 +59,16 @@ const PRESETS = [
   { type: "TYCOON", name: "世界首富大班", icon: "👑", difficulty: 2, description: "名利场晚宴天台上，一枚神秘黑色按钮和虚浮的游艇秘密" }
 ];
 
+const normalizeTimeDelta = (value: unknown): number => {
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed)) return 0;
+  return Math.min(0, Math.trunc(parsed));
+};
+
+const clampTimer = (value: number): number => {
+  return parseFloat(Math.min(60, Math.max(0, value)).toFixed(1));
+};
+
 export default function App() {
   // Game States
   const [gameState, setGameState] = useState<"lobby" | "loading" | "playing" | "ending" | "ad_sim">("lobby");
@@ -401,10 +411,10 @@ export default function App() {
           }
         ]);
 
-        if (data.timeDelta) {
+        const timeDelta = normalizeTimeDelta(data.timeDelta);
+        if (timeDelta) {
           setTimer(t => {
-            const next = Math.max(0, t + data.timeDelta);
-            return parseFloat(next.toFixed(1));
+            return clampTimer(t + timeDelta);
           });
         }
 
@@ -423,7 +433,7 @@ export default function App() {
           ],
           allowsFreeInput: false,
           soundHint: data.soundHint || "bling",
-          timeDelta: data.timeDelta || 0,
+          timeDelta,
           isEarlyEnd: !!data.isEarlyEnd
         });
 
@@ -476,11 +486,10 @@ export default function App() {
           setActionSequence(prev => [...prev, opt.actionId]);
         }
 
-        // Deduct time
-        if (opt.timeDelta) {
+        const timeDelta = normalizeTimeDelta(opt.timeDelta);
+        if (timeDelta) {
           setTimer(t => {
-            const next = Math.max(0, t + opt.timeDelta);
-            return parseFloat(next.toFixed(1));
+            return clampTimer(t + timeDelta);
           });
         }
 
@@ -513,7 +522,7 @@ export default function App() {
           ],
           allowsFreeInput: false,
           soundHint: opt.soundHint || "bling",
-          timeDelta: opt.timeDelta || 0,
+          timeDelta,
           isEarlyEnd: !!opt.isEarlyEnd
         });
 

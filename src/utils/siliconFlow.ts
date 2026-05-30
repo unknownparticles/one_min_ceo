@@ -97,6 +97,7 @@ JSON 必须包含字段：identity, identityType, theme, mapLayout, playerPositi
 mapLayout.width 必须是 16，height 必须是 12，tiles 是 12x16 字符串矩阵，边界用 wall，其余可用 floor/carpet/grass/snow/water/deck/road/metal_plate。
 npcs 生成 4 到 6 个，items 生成 4 到 6 个，坐标不能重叠，x 在 1 到 14，y 在 1 到 10。
 每个 NPC 和 Item 都必须有 storyline，storyline 正好 3 步；每步包含 id, text, allowsFreeInput, options；每个 options 需要 label, outcomeText, timeDelta, actionId, 可选 isEarlyEnd 和 soundHint。
+timeDelta 表示消耗剩余时间，必须是 0 或负整数，绝对不能返回正数。
 fixedEndings 生成 4 到 6 个，每个包含 endingId, title, description, priority, triggerRules；triggerRules 至少包含 mustInclude，可选 forbidInclude 和 requiredSequence。
 resourcePack.palette 必须包含 primary, secondary, accent, surface 四个十六进制色值。
 resourcePack.tileSet/propSet/spriteSet/ambiance 每项至少 4 个元素。
