@@ -15,3 +15,147 @@
 .animate-sweep {
   animation: holographic-sweep 5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
 }
+
+/* Glassmorphism panel styling */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Arcade/Neon floating card styling */
+.neon-glow-emerald {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.15), inset 0 0 10px rgba(16, 185, 129, 0.05);
+}
+
+.neon-glow-amber {
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.15), inset 0 0 10px rgba(245, 158, 11, 0.05);
+}
+
+.neon-glow-rose {
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.2), inset 0 0 10px rgba(244, 63, 94, 0.05);
+}
+
+/* Floating animation */
+@keyframes mini-game-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: mini-game-float 3s ease-in-out infinite;
+}
+
+/* Heartbeat zoom for active elements */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* CRT monitor effects */
+.crt-container::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 10;
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* Scanline flicker */
+@keyframes crt-flicker {
+  0% { opacity: 0.97861; }
+  5% { opacity: 0.94869; }
+  10% { opacity: 0.98501; }
+  15% { opacity: 0.93292; }
+  20% { opacity: 0.98983; }
+  25% { opacity: 0.94047; }
+  30% { opacity: 0.99623; }
+  35% { opacity: 0.95072; }
+  40% { opacity: 0.99285; }
+  45% { opacity: 0.96112; }
+  50% { opacity: 0.98394; }
+  55% { opacity: 0.93559; }
+  60% { opacity: 0.97523; }
+  65% { opacity: 0.9463; }
+  70% { opacity: 0.98197; }
+  75% { opacity: 0.99344; }
+  80% { opacity: 0.94193; }
+  85% { opacity: 0.9724; }
+  90% { opacity: 0.99538; }
+  95% { opacity: 0.96905; }
+  100% { opacity: 0.98663; }
+}
+
+.crt-flicker-overlay {
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: rgba(18, 16, 16, 0.03);
+  opacity: 0.95;
+  z-index: 11;
+  pointer-events: none;
+  animation: crt-flicker 0.15s infinite;
+}
+
+/* Wave animation for water tiles */
+@keyframes water-drift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(1.5px, 1px) scale(1.02);
+  }
+}
+
+.animate-water-drift {
+  animation: water-drift 4s ease-in-out infinite;
+}
+
+/* Shine effect on gold elements */
+@keyframes gold-shine {
+  0% {
+    left: -100%;
+  }
+  20%, 100% {
+    left: 200%;
+  }
+}
+
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  animation: gold-shine 6s infinite;
+}
+

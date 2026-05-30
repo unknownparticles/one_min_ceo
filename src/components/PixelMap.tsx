@@ -124,74 +124,137 @@ export const PixelMap: React.FC<PixelMapProps> = ({
   const getTileStyles = (type: string) => {
     switch (type) {
       case "wall":
-        return "bg-slate-800 border-b-4 border-slate-900 text-slate-550 shadow-inner";
+        return "bg-slate-700 border-b-2 border-slate-900 text-slate-550 shadow-inner";
       case "floor":
-        return "bg-zinc-100 border border-zinc-250";
+        return "bg-zinc-200 border border-zinc-300 relative after:absolute after:inset-0 after:bg-[radial-gradient(#d4d4d8_1px,transparent_1px)] after:bg-[size:4px_4px]";
       case "carpet":
-        return "bg-rose-700 border border-rose-800 relative after:absolute after:inset-1 after:border-dashed after:border-rose-900 after:opacity-40";
+        return "bg-rose-800 border border-rose-900 relative after:absolute after:inset-1 after:border after:border-dashed after:border-yellow-500/30";
       case "grass":
-        return "bg-emerald-600 border border-emerald-750";
+        return "bg-emerald-600 border border-emerald-700";
       case "snow":
-        return "bg-amber-50 border border-stone-200";
+        return "bg-slate-100 border border-slate-200/60";
       case "water":
-        return "bg-sky-500 border border-sky-600 animate-[pulse_3s_infinite]";
+        return "bg-sky-600 border border-sky-700 overflow-hidden";
       case "deck":
-        return "bg-amber-800 border-r border-amber-900";
+        return "bg-amber-700 border-r border-amber-900";
       case "road":
-        return "bg-stone-500 border border-stone-600";
+        return "bg-zinc-700 border border-zinc-800";
       case "metal_plate":
         return "bg-cyan-950 border border-cyan-900 text-cyan-400";
       default:
-        return "bg-stone-200";
+        return "bg-zinc-300";
     }
   };
 
   // Render tile decorations or symbols to look hyper detailed
   const renderTileDecon = (type: string, x: number, y: number) => {
-    if (type === "water") {
-      return (
-        <span className="absolute text-[8px] text-sky-200 opacity-60 font-mono left-1 top-1 leading-none select-none">
-          ~~
-        </span>
-      );
+    switch (type) {
+      case "water":
+        return (
+          <svg className="absolute inset-0 w-full h-full animate-water-drift pointer-events-none select-none opacity-40" viewBox="0 0 32 32">
+            <path d="M 4,12 Q 8,8 12,12 T 20,12 T 28,12" fill="none" stroke="#e0f2fe" strokeWidth="1" />
+            <path d="M 0,24 Q 4,20 8,24 T 16,24 T 24,24 T 32,24" fill="none" stroke="#e0f2fe" strokeWidth="1" />
+          </svg>
+        );
+      case "grass":
+        return (
+          <svg className="absolute inset-0 w-full h-full pointer-events-none select-none opacity-50" viewBox="0 0 32 32">
+            {((x + y) % 3 === 0) && (
+              <>
+                <path d="M 8,24 L 10,16 L 14,24" fill="none" stroke="#065f46" strokeWidth="1.5" />
+                <path d="M 12,24 L 15,14 L 18,24" fill="none" stroke="#047857" strokeWidth="1.5" />
+              </>
+            )}
+            {((x + y) % 3 === 1) && (
+              <path d="M 18,20 L 20,12 L 23,20" fill="none" stroke="#065f46" strokeWidth="1.5" />
+            )}
+          </svg>
+        );
+      case "snow":
+        return (
+          <svg className="absolute inset-0 w-full h-full pointer-events-none select-none opacity-35" viewBox="0 0 32 32">
+            {((x * 2 + y) % 4 === 0) && (
+              <>
+                <line x1="16" y1="10" x2="16" y2="22" stroke="#ffffff" strokeWidth="1" />
+                <line x1="10" y1="16" x2="22" y2="16" stroke="#ffffff" strokeWidth="1" />
+              </>
+            )}
+          </svg>
+        );
+      case "deck":
+        return (
+          <svg className="absolute inset-0 w-full h-full pointer-events-none select-none opacity-30" viewBox="0 0 32 32">
+            <line x1="8" y1="0" x2="8" y2="32" stroke="#451a03" strokeWidth="1" />
+            <line x1="24" y1="0" x2="24" y2="32" stroke="#451a03" strokeWidth="1" />
+          </svg>
+        );
+      case "metal_plate":
+        return (
+          <svg className="absolute inset-0 w-full h-full pointer-events-none select-none opacity-40" viewBox="0 0 32 32">
+            {/* Screws at corners */}
+            <circle cx="4" cy="4" r="1.2" fill="#22d3ee" />
+            <circle cx="28" cy="4" r="1.2" fill="#22d3ee" />
+            <circle cx="4" cy="28" r="1.2" fill="#22d3ee" />
+            <circle cx="28" cy="28" r="1.2" fill="#22d3ee" />
+            {/* Cyber lines */}
+            <path d="M 16,0 L 16,32 M 0,16 L 32,16" fill="none" stroke="#06b6d4" strokeWidth="0.8" />
+          </svg>
+        );
+      case "wall":
+        return (
+          <svg className="absolute inset-0 w-full h-full pointer-events-none select-none opacity-20" viewBox="0 0 32 32">
+            <line x1="0" y1="10" x2="32" y2="10" stroke="#000000" strokeWidth="1.5" />
+            <line x1="0" y1="22" x2="32" y2="22" stroke="#000000" strokeWidth="1.5" />
+            {(y % 2 === 0) ? (
+              <>
+                <line x1="16" y1="0" x2="16" y2="10" stroke="#000000" strokeWidth="1.5" />
+                <line x1="8" y1="10" x2="8" y2="22" stroke="#000000" strokeWidth="1.5" />
+                <line x1="24" y1="10" x2="24" y2="22" stroke="#000000" strokeWidth="1.5" />
+                <line x1="16" y1="22" x2="16" y2="32" stroke="#000000" strokeWidth="1.5" />
+              </>
+            ) : (
+              <>
+                <line x1="8" y1="0" x2="8" y2="10" stroke="#000000" strokeWidth="1.5" />
+                <line x1="24" y1="0" x2="24" y2="10" stroke="#000000" strokeWidth="1.5" />
+                <line x1="16" y1="10" x2="16" y2="22" stroke="#000000" strokeWidth="1.5" />
+                <line x1="8" y1="22" x2="8" y2="32" stroke="#000000" strokeWidth="1.5" />
+                <line x1="24" y1="22" x2="24" y2="32" stroke="#000000" strokeWidth="1.5" />
+              </>
+            )}
+          </svg>
+        );
+      case "road":
+        return (
+          <svg className="absolute inset-0 w-full h-full pointer-events-none select-none opacity-30" viewBox="0 0 32 32">
+            {((x + y) % 2 === 0) && (
+              <line x1="16" y1="2" x2="16" y2="14" stroke="#fbbf24" strokeWidth="2" strokeDasharray="3,3" />
+            )}
+          </svg>
+        );
+      default:
+        return null;
     }
-    if (type === "grass") {
-      return (y % 2 === 0 && x % 3 === 0) ? (
-        <span className="absolute w-1 h-2 bg-emerald-800 rounded-full left-2 top-2 opacity-40 select-none"></span>
-      ) : null;
-    }
-    if (type === "snow") {
-      return (y % 3 === 0 && x % 2 === 0) ? (
-        <span className="absolute text-[6px] text-stone-300 left-3 top-2 select-none">*</span>
-      ) : null;
-    }
-    if (type === "deck") {
-      return <div className="absolute inset-y-0 right-0 w-[2px] bg-amber-950 opacity-10"></div>;
-    }
-    if (type === "metal_plate") {
-      return <div className="absolute inset-2 border border-cyan-800 opacity-20"></div>;
-    }
-    return null;
   };
 
   return (
     <div className="flex flex-col items-center gap-4 w-full">
       {/* Instructions Overlay */}
-      <div className="text-center text-xs text-slate-400 font-mono flex items-center gap-4 max-sm:hidden">
-        <span>移动: <kbd className="px-1.5 py-0.5 bg-slate-800 rounded font-bold text-emerald-400 border border-slate-700">W A S D</kbd> 或 <kbd className="px-1.5 py-0.5 bg-slate-800 rounded font-bold text-emerald-400 border border-slate-700">↑ ↓ ← →</kbd></span>
+      <div className="text-center text-xs text-slate-300 font-mono flex items-center gap-4 max-sm:hidden">
+        <span>控制: <kbd className="px-1.5 py-0.5 bg-slate-800 rounded font-bold text-emerald-400 border border-slate-700">W A S D</kbd> 或 <kbd className="px-1.5 py-0.5 bg-slate-800 rounded font-bold text-emerald-400 border border-slate-700">↑ ↓ ← →</kbd></span>
         <span className="text-slate-600">|</span>
-        <span>走到人物或物品上面即可触发AI随机事件 🚀</span>
+        <span>走到人物或物品上方触发 AI 事件 ✨</span>
       </div>
 
       {/* Main retro CRT screen wrapper */}
-      <div className="relative p-3 bg-slate-950 rounded-2xl border-4 border-slate-850 shadow-2xl overflow-hidden w-full max-w-[680px]">
+      <div className="relative p-4 bg-slate-900 rounded-3xl border-4 border-slate-800 shadow-2xl overflow-hidden w-full max-w-[680px] crt-container neon-glow-emerald">
         {/* Glow effect */}
-        <div className="absolute inset-0 bg-radial-gradient from-transparent to-black pointer-events-none opacity-40 z-10" />
+        <div className="absolute inset-0 bg-radial-gradient from-transparent to-black pointer-events-none opacity-50 z-10" />
+        <div className="crt-flicker-overlay" />
 
         <div
           ref={mapRef}
           tabIndex={0}
-          className="grid gap-0 select-none outline-none relative overflow-hidden"
+          className="grid gap-0 select-none outline-none relative overflow-hidden rounded-xl border border-slate-950/45"
           style={{
             gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
             aspectRatio: "16/12",
@@ -213,10 +276,10 @@ export const PixelMap: React.FC<PixelMapProps> = ({
 
                   {/* Render Item Layer */}
                   {cellItem && !isPlayer && (
-                    <div className="absolute z-20 hover:scale-110 cursor-pointer animate-[wiggle_1.5s_ease-in-out_infinite]">
-                      <SpriteRenderer type={cellItem.sprite} size={28} />
+                    <div className="absolute z-20 hover:scale-120 cursor-pointer animate-float">
+                      <SpriteRenderer type={cellItem.sprite} size={30} />
                       {/* Interactive prompt */}
-                      <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[9px] bg-slate-900 border border-amber-400 text-amber-300 font-bold px-1 rounded uppercase tracking-wider whitespace-nowrap opacity-90 animate-pulse">
+                      <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[9px] bg-slate-950 border border-amber-400 text-amber-300 font-bold px-1.5 py-0.5 rounded shadow-lg uppercase tracking-wider whitespace-nowrap opacity-90 animate-pulse">
                         调查
                       </span>
                     </div>
@@ -224,10 +287,10 @@ export const PixelMap: React.FC<PixelMapProps> = ({
 
                   {/* Render NPC Layer */}
                   {cellNpc && !isPlayer && (
-                    <div className="absolute z-20 hover:scale-115 cursor-pointer">
-                      <SpriteRenderer type={cellNpc.sprite} size={28} />
+                    <div className="absolute z-20 hover:scale-120 cursor-pointer">
+                      <SpriteRenderer type={cellNpc.sprite} size={30} />
                       {/* Name badge */}
-                      <span className="absolute -bottom-3.5 left-1/2 -translate-x-1/2 text-[8px] bg-slate-900 border border-sky-400 text-sky-300 font-semibold px-0.5 rounded whitespace-nowrap opacity-95">
+                      <span className="absolute -bottom-3.5 left-1/2 -translate-x-1/2 text-[8px] bg-slate-950 border border-sky-400 text-sky-300 font-bold px-1 rounded shadow-lg whitespace-nowrap opacity-95">
                         {cellNpc.name}
                       </span>
                     </div>
@@ -235,15 +298,15 @@ export const PixelMap: React.FC<PixelMapProps> = ({
 
                   {/* Render Player Layer */}
                   {isPlayer && (
-                    <div className="absolute z-30 drop-shadow-[0_4px_6px_rgba(0,0,0,0.5)] transition-all duration-75">
+                    <div className="absolute z-30 drop-shadow-[0_6px_8px_rgba(0,0,0,0.6)] transition-all duration-75">
                       <SpriteRenderer
                         type={window.localStorage.getItem("currentIdentityType") || "ceo"}
-                        size={30}
+                        size={32}
                         direction={direction}
                         isMoving={isMoving}
                       />
                       {/* Player crown */}
-                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 font-mono text-[9px] text-green-300 bg-emerald-950/90 border border-green-500/80 px-1 rounded-full whitespace-nowrap font-bold animate-bounce shadow">
+                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 font-mono text-[9px] text-green-300 bg-emerald-950 border border-green-500/80 px-1.5 rounded-full whitespace-nowrap font-bold animate-bounce shadow">
                         老板
                       </div>
                     </div>
@@ -256,35 +319,35 @@ export const PixelMap: React.FC<PixelMapProps> = ({
       </div>
 
       {/* Tactile D-pad Control Panel for Mobile Support */}
-      <div className="flex flex-col items-center gap-1 sm:hidden mt-2 p-3 bg-slate-900/60 rounded-3xl border border-slate-800">
+      <div className="flex flex-col items-center gap-1 sm:hidden mt-2 p-4 bg-slate-900 rounded-3xl border border-slate-800/80 shadow-2xl neon-glow-amber">
         <button
           onClick={() => tryMove(0, -1)}
-          className="w-12 h-12 flex items-center justify-center bg-slate-850 hover:bg-slate-750 text-white rounded-xl active:scale-90 border border-slate-700 font-bold cursor-pointer"
+          className="w-14 h-14 flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white rounded-full active:scale-90 border border-slate-700 shadow-md font-bold cursor-pointer transition"
         >
-          <ArrowUp size={24} />
+          <ArrowUp size={24} className="text-amber-400" />
         </button>
 
-        <div className="flex gap-8">
+        <div className="flex gap-10">
           <button
             onClick={() => tryMove(-1, 0)}
-            className="w-12 h-12 flex items-center justify-center bg-slate-850 hover:bg-slate-750 text-white rounded-xl active:scale-90 border border-slate-700 font-bold cursor-pointer"
+            className="w-14 h-14 flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white rounded-full active:scale-90 border border-slate-700 shadow-md font-bold cursor-pointer transition"
           >
-            <ArrowLeft size={24} />
+            <ArrowLeft size={24} className="text-amber-400" />
           </button>
 
           <button
             onClick={() => tryMove(1, 0)}
-            className="w-12 h-12 flex items-center justify-center bg-slate-850 hover:bg-slate-750 text-white rounded-xl active:scale-90 border border-slate-700 font-bold cursor-pointer"
+            className="w-14 h-14 flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white rounded-full active:scale-90 border border-slate-700 shadow-md font-bold cursor-pointer transition"
           >
-            <ArrowRight size={24} />
+            <ArrowRight size={24} className="text-amber-400" />
           </button>
         </div>
 
         <button
           onClick={() => tryMove(0, 1)}
-          className="w-12 h-12 flex items-center justify-center bg-slate-850 hover:bg-slate-750 text-white rounded-xl active:scale-90 border border-slate-700 font-bold cursor-pointer"
+          className="w-14 h-14 flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white rounded-full active:scale-90 border border-slate-700 shadow-md font-bold cursor-pointer transition"
         >
-          <ArrowDown size={24} />
+          <ArrowDown size={24} className="text-amber-400" />
         </button>
       </div>
     </div>

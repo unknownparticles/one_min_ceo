@@ -49,13 +49,13 @@ const METADATA_TICKERS = [
 ];
 
 const PRESETS = [
-  { type: "CEO", name: "科技公司创始人", icon: "💎", description: "IPO上市前60秒，金钱、名誉与外星特工看门狗一网打尽" },
-  { type: "SKI", name: "滑雪世界冠军", icon: "🏂", description: "雪道入口的最后60秒，面对挑衅和神秘的科幻加速板" },
-  { type: "DIVER", name: "深海潜水探险家", icon: "🐙", description: "在海底神秘氧气舱和变异珊瑚群间耗竭最后一分钟" },
-  { type: "PILOT", name: "私人飞机机长", icon: "✈️", description: "超音速飞机起航前，总统丢了一只白鞋，命运在拉扯" },
-  { type: "CHEF", name: "米其林名厨大亨", icon: "👨‍🍳", description: "距离全球金勺评委吃下致命鹅肝余存60秒" },
-  { type: "SPACE", name: "太空旅行富商", icon: "🚀", description: "休斯敦航天站倒数发射60秒，试图喂饱虚空哈士奇" },
-  { type: "TYCOON", name: "世界首富大班", icon: "👑", description: "名利场晚宴天台上，一枚神秘黑色按钮和虚浮的游艇秘密" }
+  { type: "CEO", name: "科技公司创始人", icon: "💎", difficulty: 2, description: "IPO上市前60秒，金钱、名誉与外星特工看门狗一网打尽" },
+  { type: "SKI", name: "滑雪世界冠军", icon: "🏂", difficulty: 3, description: "雪道入口 the 最后60秒，面对挑衅和神秘的科幻加速板" },
+  { type: "DIVER", name: "深海潜水探险家", icon: "🐙", difficulty: 4, description: "在海底神秘氧气舱和变异珊瑚群间耗竭最后一分钟" },
+  { type: "PILOT", name: "私人飞机机长", icon: "✈️", difficulty: 3, description: "超音速飞机起航前，总统丢了一只白鞋，命运在拉扯" },
+  { type: "CHEF", name: "米其林名厨大亨", icon: "👨‍🍳", difficulty: 4, description: "距离全球金勺评委吃下致命鹅肝余存60秒" },
+  { type: "SPACE", name: "太空旅行富商", icon: "🚀", difficulty: 5, description: "休斯敦航天站倒数发射60秒，试图喂饱虚空哈士奇" },
+  { type: "TYCOON", name: "世界首富大班", icon: "👑", difficulty: 2, description: "名利场晚宴天台上，一枚神秘黑色按钮和虚浮的游艇秘密" }
 ];
 
 export default function App() {
@@ -667,22 +667,22 @@ export default function App() {
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans flex flex-col justify-between overflow-x-hidden relative selection:bg-emerald-500 selection:text-black">
       
       {/* Absolute high-contrast pixelated header and banner */}
-      <header className="bg-slate-900 border-b-2 border-slate-800 py-3 px-4 shadow-md relative z-40">
+      <header className="bg-slate-900/85 backdrop-blur-md border-b border-slate-800 py-3 px-4 shadow-xl sticky top-0 z-40">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3 cursor-pointer" onClick={handleBackToLobby}>
-            <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-green-600 rounded-lg flex items-center justify-center border-2 border-emerald-300 shadow">
+          <div className="flex items-center gap-3 cursor-pointer select-none active:scale-95 transition-all" onClick={handleBackToLobby}>
+            <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-green-600 rounded-xl flex items-center justify-center border border-emerald-300 shadow neon-glow-emerald">
               <span className="font-mono font-bold text-black text-xl">老板</span>
             </div>
             <div>
               <h1 className="font-mono text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
-                一分钟老板 <span className="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-1 rounded font-normal">AI NATIVE</span>
+                一分钟老板 <span className="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-black tracking-widest animate-pulse">AI NATIVE</span>
               </h1>
-              <p className="text-[10px] text-slate-400 font-mono tracking-wider">ONE MINUTE BOSS • PIXEL ADVENTURE</p>
+              <p className="text-[9px] text-slate-450 font-mono tracking-widest">ONE MINUTE BOSS • PIXEL ADVENTURE</p>
             </div>
           </div>
 
           {/* Scrolling Ticker Indicator */}
-          <div className="flex-1 max-w-lg hidden md:block bg-slate-950 border border-slate-800 rounded px-3 py-1 font-mono text-[11px] overflow-hidden whitespace-nowrap text-amber-300 relative after:absolute after:inset-y-0 after:right-0 after:w-12 after:bg-gradient-to-l after:from-slate-950">
+          <div className="flex-1 max-w-lg hidden md:block bg-slate-950 border border-slate-800 rounded-xl px-4 py-1.5 font-mono text-[11px] overflow-hidden whitespace-nowrap text-amber-300 relative after:absolute after:inset-y-0 after:right-0 after:w-16 after:bg-gradient-to-l after:from-slate-950">
             <span className="inline-block animate-[bounce_10s_infinite_margin] text-ellipsis">
               ⚡ 网红简报: {METADATA_TICKERS[tickerIndex]}
             </span>
@@ -692,14 +692,18 @@ export default function App() {
           <div className="flex items-center gap-3">
             <button
               onClick={toggleMute}
-              className="p-2 bg-slate-850 hover:bg-slate-800 text-slate-300 hover:text-emerald-400 rounded-lg border border-slate-700 transition cursor-pointer flex items-center justify-center"
+              className={`p-2 rounded-xl border transition duration-150 active:scale-90 cursor-pointer flex items-center justify-center ${
+                isAudioMuted
+                  ? "bg-slate-850 text-slate-500 border-slate-800"
+                  : "bg-emerald-950/40 text-emerald-400 border-emerald-800/80 neon-glow-emerald"
+              }`}
               title={isAudioMuted ? "播放声音" : "静音"}
             >
-              {isAudioMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+              {isAudioMuted ? <VolumeX size={18} /> : <Volume2 size={18} className="animate-pulse" />}
             </button>
 
             {!hasApiKey && (
-              <span className="text-[10px] bg-rose-500/10 text-rose-400 border border-rose-500/30 px-2 py-1 rounded font-mono animate-pulse">
+              <span className="text-[10px] bg-rose-500/10 text-rose-450 border border-rose-500/20 px-2.5 py-1 rounded font-mono animate-pulse">
                 ⚠️ SECRET KEY 缺失
               </span>
             )}
@@ -730,14 +734,14 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start animate-fade-in">
               
               {/* Left Column: Selector and prompt */}
-              <div className="lg:col-span-7 bg-slate-900 rounded-2xl border border-slate-800/80 p-6 md:p-8 shadow-xl relative overflow-hidden">
+              <div className="lg:col-span-7 bg-slate-900 rounded-3xl border border-slate-800/80 p-6 md:p-8 shadow-2xl relative overflow-hidden neon-glow-emerald glass-panel">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full filter blur-2xl pointer-events-none"></div>
 
                 <div className="mb-6">
-                  <span className="text-[11px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full px-3 py-1 font-mono font-semibold tracking-wider uppercase inline-block">
+                  <span className="text-[11px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full px-3 py-1 font-mono font-bold tracking-wider uppercase inline-block animate-pulse">
                     🎮 2D 顶视高阶像素探索
                   </span>
-                  <h2 className="text-2xl md:text-3xl font-mono font-bold text-white mt-3 leading-tight">
+                  <h2 className="text-2xl md:text-3xl font-mono font-black text-white mt-3 leading-tight">
                     60秒，体验一次你可能根本想象不到的富豪人生
                   </h2>
                   <p className="text-xs text-slate-400 mt-2 font-serif italic">
@@ -746,16 +750,16 @@ export default function App() {
                 </div>
 
                 {/* Tab layout selectors */}
-                <div className="flex border-b border-slate-800 mb-6 font-mono text-xs overflow-x-auto whitespace-nowrap gap-2 scrollbar-none">
+                <div className="flex border-b border-slate-800/60 mb-6 font-mono text-xs overflow-x-auto whitespace-nowrap gap-2 scrollbar-none">
                   <button
                     onClick={() => {
                       setActiveTab("normal");
                       audio.playSound("walk");
                     }}
-                    className={`pb-3 px-2 font-bold transition border-b-2 cursor-pointer flex items-center gap-1.5 ${
+                    className={`pb-3 px-3 font-bold transition-all duration-200 border-b-2 cursor-pointer flex items-center gap-1.5 rounded-t-lg ${
                       activeTab === "normal"
-                        ? "border-emerald-400 text-emerald-400"
-                        : "border-transparent text-slate-400 hover:text-slate-205"
+                        ? "border-emerald-450 text-emerald-450 bg-emerald-500/5"
+                        : "border-transparent text-slate-450 hover:text-slate-200 hover:bg-slate-800/20"
                     }`}
                   >
                     <Compass size={14} /> 普通人随机人生
@@ -765,10 +769,10 @@ export default function App() {
                       setActiveTab("presets");
                       audio.playSound("walk");
                     }}
-                    className={`pb-3 px-2 font-bold transition border-b-2 cursor-pointer flex items-center gap-1.5 ${
+                    className={`pb-3 px-3 font-bold transition-all duration-200 border-b-2 cursor-pointer flex items-center gap-1.5 rounded-t-lg ${
                       activeTab === "presets"
-                        ? "border-emerald-400 text-emerald-400"
-                        : "border-transparent text-slate-400 hover:text-slate-205"
+                        ? "border-emerald-450 text-emerald-450 bg-emerald-500/5"
+                        : "border-transparent text-slate-450 hover:text-slate-200 hover:bg-slate-800/20"
                     }`}
                   >
                     <Crown size={14} /> 世袭尊贵身份 {!isVip && "🔒"}
@@ -778,10 +782,10 @@ export default function App() {
                       setActiveTab("daily");
                       audio.playSound("walk");
                     }}
-                    className={`pb-3 px-2 font-bold transition border-b-2 cursor-pointer flex items-center gap-1.5 ${
+                    className={`pb-3 px-3 font-bold transition-all duration-200 border-b-2 cursor-pointer flex items-center gap-1.5 rounded-t-lg ${
                       activeTab === "daily"
-                        ? "border-emerald-400 text-emerald-400"
-                        : "border-transparent text-slate-400 hover:text-slate-205"
+                        ? "border-emerald-450 text-emerald-450 bg-emerald-500/5"
+                        : "border-transparent text-slate-450 hover:text-slate-200 hover:bg-slate-800/20"
                     }`}
                   >
                     <Clock size={14} /> 每日特色人生 {!isVip && "🔒"}
@@ -791,10 +795,10 @@ export default function App() {
                       setActiveTab("album");
                       audio.playSound("walk");
                     }}
-                    className={`pb-3 px-2 font-bold transition border-b-2 cursor-pointer flex items-center gap-1.5 ${
+                    className={`pb-3 px-3 font-bold transition-all duration-200 border-b-2 cursor-pointer flex items-center gap-1.5 rounded-t-lg ${
                       activeTab === "album"
-                        ? "border-emerald-400 text-emerald-400"
-                        : "border-transparent text-slate-400 hover:text-slate-205"
+                        ? "border-emerald-450 text-emerald-450 bg-emerald-500/5"
+                        : "border-transparent text-slate-450 hover:text-slate-200 hover:bg-slate-800/20"
                     }`}
                   >
                     <BookOpen size={14} /> 人生传承馆 ({savedEndings.length})
@@ -804,10 +808,10 @@ export default function App() {
                       setActiveTab("vip");
                       audio.playSound("walk");
                     }}
-                    className={`pb-3 px-2 font-bold transition border-b-2 cursor-pointer flex items-center gap-1.5 ${
+                    className={`pb-3 px-3 font-bold transition-all duration-200 border-b-2 cursor-pointer flex items-center gap-1.5 rounded-t-lg ${
                       activeTab === "vip"
-                        ? "border-emerald-400 text-emerald-400"
-                        : "border-transparent text-slate-400 hover:text-slate-205"
+                        ? "border-emerald-450 text-emerald-455 bg-emerald-500/5"
+                        : "border-transparent text-slate-450 hover:text-slate-200 hover:bg-slate-800/20"
                     }`}
                   >
                     <Coins size={14} /> 商业权力特许
@@ -824,36 +828,36 @@ export default function App() {
                       exit={{ opacity: 0 }}
                       className="space-y-4"
                     >
-                      <div className="p-4 bg-slate-950/60 border border-slate-800 rounded-xl space-y-4 relative overflow-hidden">
-                        <div className="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-mono font-bold absolute top-3 right-3 uppercase">
+                      <div className="p-5 bg-slate-950/70 border border-slate-800 rounded-2xl space-y-4 relative overflow-hidden shadow-inner">
+                        <div className="text-[10px] bg-emerald-500/10 text-emerald-405 border border-emerald-500/30 px-2 py-0.5 rounded font-mono font-bold absolute top-4 right-4 uppercase">
                           🌱 默认普通通道
                         </div>
-                        <div className="w-11 h-11 rounded-lg flex items-center justify-center border border-emerald-500/25 bg-slate-905 shadow-md">
+                        <div className="w-12 h-12 rounded-xl flex items-center justify-center border border-emerald-500/25 bg-slate-900 shadow-md">
                           <SpriteRenderer type="ceo" size={32} className="animate-[bounce_2s_infinite]" />
                         </div>
-                        <h3 className="font-mono text-xs font-bold text-white uppercase tracking-wider">
+                        <h3 className="font-mono text-sm font-bold text-white uppercase tracking-wider">
                           普通人背景：花光三百万败家对赌
                         </h3>
                         
-                        <p className="text-xs text-slate-300 leading-relaxed font-serif bg-slate-900 border border-slate-850 p-4 rounded-xl shadow-inner">
+                        <p className="text-xs text-slate-300 leading-relaxed font-serif bg-slate-900/60 border border-slate-850 p-4 rounded-xl shadow-inner">
                           你是王多鱼，你的二爷给你留下了巨额遗产，但很不幸，你需要先花光这三百万才能继承，现在，放手一搏吧！
                         </p>
 
                         {/* Interactive custom business input */}
                         <div className="space-y-2 pt-2">
-                          <label className="block text-xs font-mono font-bold text-slate-300 uppercase tracking-widest flex items-center justify-between">
+                          <label className="block text-xs font-mono font-bold text-slate-350 uppercase tracking-widest flex items-center justify-between">
                             <span>开启你的商业构想输入框:</span>
-                            <span className="text-[9px] text-emerald-400 font-semibold uppercase font-mono">写下你的败家构想</span>
+                            <span className="text-[9px] text-emerald-455 font-semibold uppercase font-mono">写下你的败家构想</span>
                           </label>
                           <textarea
                             value={wangDuoyuConcept}
                             onChange={(e) => setWangDuoyuConcept(e.target.value)}
                             placeholder="输入让大聪明和钱总目瞪口呆的项目：如“北极冰川海水航拉至撒哈拉”、“推行全城减肥放电脂肪保险”、“组建首富太空哈士奇间谍队”！"
-                            className="w-full h-24 bg-slate-900 border border-slate-800 rounded-xl p-3 font-mono text-xs text-white focus:outline-none focus:border-emerald-500 placeholder-slate-650 resize-none"
+                            className="w-full h-24 bg-slate-900 border border-slate-800 rounded-xl p-3.5 font-mono text-xs text-white focus:outline-none focus:border-emerald-500 placeholder-slate-600 resize-none transition shadow-inner"
                           />
                         </div>
 
-                        <div className="flex items-center gap-2.5 p-3 bg-slate-900/60 border border-slate-850 rounded-xl text-[10px] text-slate-400 font-mono">
+                        <div className="flex items-center gap-2.5 p-3.5 bg-slate-900/60 border border-slate-850 rounded-xl text-[10px] text-slate-400 font-mono">
                           <Info size={14} className="text-emerald-500 shrink-0" />
                           <span>游戏开始后，你将完全随机零时传送到以下一个精彩瞬间：开会、滑雪、上厕所、给员工发裁员通知！</span>
                         </div>
@@ -871,9 +875,9 @@ export default function App() {
                       className="space-y-4"
                     >
                       {!isVip ? (
-                        <div className="text-center py-8 px-4 bg-slate-950/85 border border-rose-500/20 rounded-xl space-y-4">
-                          <div className="w-12 h-12 bg-rose-500/10 rounded-full flex items-center justify-center border border-rose-500/30 mx-auto animate-pulse">
-                            <Crown size={24} className="text-rose-450" />
+                        <div className="text-center py-10 px-4 bg-slate-955/85 border border-rose-500/20 rounded-2xl space-y-4 shadow-2xl">
+                          <div className="w-14 h-14 bg-rose-500/10 rounded-full flex items-center justify-center border border-rose-500/30 mx-auto animate-pulse">
+                            <Crown size={28} className="text-rose-450" />
                           </div>
                           <div className="space-y-1.5">
                             <h4 className="font-mono text-xs font-bold text-white">🔒 世袭尊贵血脉已锁定</h4>
@@ -887,14 +891,14 @@ export default function App() {
                               audio.playSound("bling");
                               setSystemAlertMessage("📣 恭喜！您已成功假冒并一键激活【永久尊贵VIP特权】！世袭权贵选项已可以自由调遣！");
                             }}
-                            className="px-4 py-2 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-950 font-mono font-bold text-[10px] rounded-xl transition duration-150 active:scale-95 shadow-md shadow-amber-900/40 cursor-pointer inline-block"
+                            className="px-5 py-2.5 bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-350 hover:to-yellow-450 text-slate-955 font-mono font-black text-[10px] rounded-xl transition duration-150 active:scale-95 shadow-md shadow-amber-955/40 cursor-pointer inline-block border-b-2 border-amber-600 animate-pulse"
                           >
                             💳 零元尊享：一键免费升级 VIP
                           </button>
                         </div>
                       ) : (
                         <>
-                          <label className="block text-xs font-mono font-bold text-slate-300 uppercase tracking-widest">
+                          <label className="block text-xs font-mono font-bold text-slate-350 uppercase tracking-widest">
                             选择你的天生神豪血脉:
                           </label>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pb-1">
@@ -902,13 +906,13 @@ export default function App() {
                               <button
                                 key={p.type}
                                 onClick={() => {
-                                  setSelectedPreset(p);
+                                  setSelectedPreset(p as any);
                                   audio.playSound("walk");
                                 }}
-                                className={`p-4 rounded-xl border text-left transition duration-200 active:scale-95 cursor-pointer relative overflow-hidden group flex items-start gap-4 ${
+                                className={`p-4 rounded-2xl border text-left transition-all duration-300 active:scale-95 cursor-pointer relative overflow-hidden group flex items-start gap-4 ${
                                   selectedPreset.type === p.type
-                                    ? "bg-slate-800/90 border-emerald-400 shadow-lg shadow-emerald-900/20 text-emerald-300"
-                                    : "bg-slate-850/40 border-slate-800 hover:border-slate-700 text-slate-300 hover:bg-slate-850"
+                                    ? "bg-slate-800 border-emerald-450 shadow-xl shadow-emerald-955/50 text-emerald-350 scale-[1.02] ring-1 ring-emerald-500/30 neon-glow-emerald"
+                                    : "bg-slate-950/45 border-slate-850 hover:border-slate-700 text-slate-300 hover:bg-slate-850/60"
                                 }`}
                               >
                                 {/* Absolute subtle decorative background glow */}
@@ -920,7 +924,7 @@ export default function App() {
                                 <div className={`w-11 h-11 rounded-lg flex items-center justify-center shrink-0 border transition-all duration-300 ${
                                   selectedPreset.type === p.type
                                     ? "bg-slate-950 border-emerald-450/50 scale-105 shadow-inner"
-                                    : "bg-slate-900 border-slate-800 group-hover:border-slate-600 shadow"
+                                    : "bg-slate-900 border-slate-850 group-hover:border-slate-700 shadow"
                                 }`}>
                                   <SpriteRenderer type={p.type.toLowerCase()} size={32} className="group-hover:scale-110 transition-transform duration-200" />
                                 </div>
@@ -931,8 +935,13 @@ export default function App() {
                                     <h4 className="font-mono font-bold text-xs truncate text-white group-hover:text-emerald-350 transition-colors">
                                       {p.name}
                                     </h4>
-                                    <span className="text-[8px] bg-slate-950 px-1 border border-slate-800 font-mono text-slate-500 rounded uppercase">
+                                    <span className="text-[8px] bg-slate-955 px-1 border border-slate-850 font-mono text-slate-500 rounded uppercase">
                                       {p.type}
+                                    </span>
+                                  </div>
+                                  <div className="flex items-center gap-1 mt-0.5">
+                                    <span className="text-[8px] text-amber-400 font-bold font-mono">
+                                      难度: {"⭐".repeat(p.difficulty || 3)}
                                     </span>
                                   </div>
                                   <p className="text-[9px] text-slate-450 mt-1 lines-clamp-2 leading-relaxed">
@@ -944,27 +953,27 @@ export default function App() {
                           </div>
 
                           {/* Beautiful dedicated narrative lore container */}
-                          <div className="mt-4 p-4 bg-gradient-to-r from-slate-950 to-slate-900 rounded-xl border border-slate-800/90 text-xs text-slate-400 leading-relaxed font-mono relative overflow-hidden">
+                          <div className="mt-4 p-4 bg-gradient-to-r from-slate-955 to-slate-900 rounded-xl border border-slate-850 text-xs text-slate-450 leading-relaxed font-mono relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full filter blur-xl pointer-events-none" />
                             <span className="text-[10px] bg-emerald-400/10 text-emerald-300 border border-emerald-500/20 px-2 py-0.5 rounded font-bold uppercase tracking-wider block w-fit mb-2">
                               🔮 极尊特权时空画卷 (Active Identity Lore)
                             </span>
-                            <p className="text-slate-300">
+                            <p className="text-slate-350">
                               时空穿梭已锚定扮演：<span className="text-emerald-450 font-extrabold underline decoration-emerald-500/40 underline-offset-4">{selectedPreset.name}</span>。{selectedPreset.description}。AI 时空天线将基于您的多重交互来推演专属的富豪六十秒微缩景观。
                             </p>
                           </div>
 
                           {/* Custom Identity Prompt modifier */}
                           <div className="space-y-2 pt-3">
-                            <label className="block text-xs font-mono font-bold text-slate-300 uppercase tracking-widest flex items-center justify-between">
+                            <label className="block text-xs font-mono font-bold text-slate-350 uppercase tracking-widest flex items-center justify-between">
                               <span>自定义神豪特征 (AI专属定制线):</span>
-                              <span className="text-[9px] text-emerald-400">高度自由</span>
+                              <span className="text-[9px] text-emerald-450">高度自由</span>
                             </label>
                             <textarea
                               value={customIdentityInput}
                               onChange={(e) => setCustomIdentityInput(e.target.value)}
                               placeholder="例如: 此时他兜里揣着一颗在月球捡到的巧克力豆、或者这艘游艇其实是他昨天用1美分在垃圾场换的高科技宇宙飞艇..."
-                              className="w-full h-20 bg-slate-950 border border-slate-800 rounded-xl p-3 font-mono text-xs text-white focus:outline-none focus:border-emerald-500 placeholder-slate-650 resize-none"
+                              className="w-full h-20 bg-slate-955 border border-slate-850 rounded-xl p-3.5 font-mono text-xs text-white focus:outline-none focus:border-emerald-500 placeholder-slate-655 resize-none transition shadow-inner"
                             />
                           </div>
                         </>
@@ -982,9 +991,9 @@ export default function App() {
                       className="space-y-4"
                     >
                       {!isVip ? (
-                        <div className="text-center py-8 px-4 bg-slate-950/85 border border-rose-500/20 rounded-xl space-y-4">
+                        <div className="text-center py-10 px-4 bg-slate-955/85 border border-rose-500/20 rounded-2xl space-y-4 shadow-2xl">
                           <div className="w-12 h-12 bg-rose-500/10 rounded-full flex items-center justify-center border border-rose-500/30 mx-auto animate-pulse">
-                            <Clock size={24} className="text-rose-450" />
+                            <Clock size={28} className="text-rose-450" />
                           </div>
                           <div className="space-y-1.5">
                             <h4 className="font-mono text-xs font-bold text-white">🔒 每日特色人生已锁定</h4>
@@ -998,41 +1007,41 @@ export default function App() {
                               audio.playSound("bling");
                               setSystemAlertMessage("📣 恭喜！您已成功开通并在时空法庭冒充【永久尊贵VIP超级勋爵】！每日挑战剧本包已完全解锁！");
                             }}
-                            className="px-4 py-2 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-950 font-mono font-bold text-[10px] rounded-xl transition duration-150 active:scale-95 shadow-md shadow-amber-900/40 cursor-pointer inline-block"
+                            className="px-5 py-2.5 bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-350 hover:to-yellow-450 text-slate-955 font-mono font-black text-[10px] rounded-xl transition duration-150 active:scale-95 shadow-md shadow-amber-955/40 cursor-pointer inline-block border-b-2 border-amber-600 animate-pulse"
                           >
                             💳 零元尊享：一键免费升级 VIP
                           </button>
                         </div>
                       ) : (
                         <>
-                          <div className="p-4 bg-gradient-to-r from-emerald-950/40 to-slate-950 border border-emerald-500/20 rounded-xl">
-                            <span className="text-[9px] bg-emerald-400 text-slate-950 font-bold px-1.5 py-0.5 rounded uppercase font-mono tracking-wider">
+                          <div className="p-5 bg-gradient-to-r from-emerald-955/30 to-slate-950 border border-emerald-500/20 rounded-2xl shadow-inner">
+                            <span className="text-[9px] bg-emerald-400 text-slate-955 font-black px-2 py-0.5 rounded uppercase font-mono tracking-widest shadow">
                               DAILY PRESET
                             </span>
-                            <h3 className="text-lg font-mono font-bold text-white mt-2">
+                            <h3 className="text-lg font-mono font-black text-white mt-3">
                               {getDailyChallenge().title}
                             </h3>
-                            <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                            <p className="text-xs text-slate-400 mt-2 leading-relaxed">
                               {getDailyChallenge().description}
                             </p>
                             
-                            <div className="mt-4 p-3 bg-slate-900 border border-slate-800 rounded-lg">
-                              <span className="text-[10px] text-amber-300 block font-mono">⚡ 推荐AI演进线:</span>
-                              <p className="text-xs font-mono italic text-slate-300 mt-1">
+                            <div className="mt-4 p-3.5 bg-slate-900 border border-slate-850 rounded-xl">
+                              <span className="text-[10px] text-amber-300 block font-mono font-bold">⚡ 推荐AI演进线:</span>
+                              <p className="text-xs font-mono italic text-slate-355 mt-1 leading-relaxed">
                                 &quot;{getDailyChallenge().customPrompt}&quot;
                               </p>
                             </div>
 
                             <button
                               onClick={() => handleStartGame(getDailyChallenge().customPrompt, getDailyChallenge().identityType)}
-                              className="w-full mt-4 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-mono font-bold rounded-lg transition active:scale-95 select-none cursor-pointer flex items-center justify-center gap-1 text-xs"
+                              className="w-full mt-4 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-955 font-mono font-black rounded-xl transition active:scale-95 select-none cursor-pointer flex items-center justify-center gap-1.5 text-xs shadow-md border-b-2 border-emerald-600"
                             >
                               <Play size={14} className="fill-current" /> 接受今日推荐人生挑战
                             </button>
                           </div>
 
-                          <div className="flex items-center gap-2 p-2 bg-slate-950 border border-slate-850 rounded text-[10px] text-slate-400 font-mono">
-                            <Info size={12} className="text-emerald-500" />
+                          <div className="flex items-center gap-2 p-3 bg-slate-955 border border-slate-850 rounded-xl text-[10px] text-slate-455 font-mono">
+                            <Info size={12} className="text-emerald-500 shrink-0" />
                             <span>每日挑战根据真实世界突发事件重组，成功通关可解锁世界树纪念馆卡券。</span>
                           </div>
                         </>
@@ -1050,7 +1059,7 @@ export default function App() {
                       className="space-y-4"
                     >
                       {savedEndings.length === 0 ? (
-                        <div className="text-center py-12 bg-slate-950 border border-slate-850 rounded-xl font-mono text-xs text-slate-500 space-y-2">
+                        <div className="text-center py-12 bg-slate-950/70 border border-slate-850 rounded-2xl font-mono text-xs text-slate-505 space-y-2 shadow-inner">
                           <span>🌌 你的“人生传承馆”目前空空如也呢。</span>
                           <p className="text-[10px] text-slate-600">完成一次一分钟神豪失败或救世探索，即可在此永久收集你的命运纪念卡牌！</p>
                         </div>
@@ -1059,24 +1068,24 @@ export default function App() {
                           {savedEndings.map((save, index) => (
                             <div
                               key={`${save.id}-${index}`}
-                              className="p-3 bg-slate-85 border border-slate-800 rounded-xl relative overflow-hidden group hover:border-emerald-500/50 transition cursor-pointer"
+                              className="p-4 bg-slate-955/70 border border-slate-850 rounded-2xl relative overflow-hidden group hover:border-emerald-500/50 transition cursor-pointer shadow hover:shadow-lg"
                             >
-                              <div className="flex justify-between items-start gap-2">
+                              <div className="flex justify-between items-center gap-2">
                                 <span className="text-[10px] font-mono text-emerald-400 font-bold bg-emerald-500/10 px-1.5 rounded">
                                   {save.id}
                                 </span>
-                                <span className="text-[9px] font-mono text-slate-500">{save.timestamp}</span>
+                                <span className="text-[9px] font-mono text-slate-550">{save.timestamp}</span>
                               </div>
-                              <h4 className="font-mono text-xs font-bold text-white mt-1.5 line-clamp-1">{save.title}</h4>
-                              <p className="text-[9px] font-mono text-amber-300 mt-1 line-clamp-1">身份: {save.identityName}</p>
+                              <h4 className="font-mono text-xs font-bold text-white mt-2 line-clamp-1">{save.title}</h4>
+                              <p className="text-[9px] font-mono text-amber-400 mt-0.5 line-clamp-1">身份: {save.identityName}</p>
                               
-                              <p className="text-[10px] text-slate-400 line-clamp-2 mt-2 leading-tight">
+                              <p className="text-[10px] text-slate-400 line-clamp-2 mt-2 leading-relaxed">
                                 {save.endingText}
                               </p>
 
-                              <div className="mt-2.5 flex items-center justify-between text-[8px] font-mono border-t border-slate-800/80 pt-2">
-                                <span className="text-slate-500">评级: <span className="text-rose-400 font-bold">{save.rank}</span></span>
-                                <span className="text-slate-500">累计挥霍: <span className="text-white">{save.stats.wealthWasted}</span></span>
+                              <div className="mt-2.5 flex items-center justify-between text-[8px] font-mono border-t border-slate-850/80 pt-2.5">
+                                <span className="text-slate-505 font-bold">评级: <span className="text-rose-400 font-extrabold">{save.rank}</span></span>
+                                <span className="text-slate-505 font-bold">累计挥霍: <span className="text-white font-extrabold">{save.stats.wealthWasted}</span></span>
                               </div>
                             </div>
                           ))}
@@ -1094,12 +1103,12 @@ export default function App() {
                       exit={{ opacity: 0 }}
                       className="space-y-4"
                     >
-                      <div className="p-4 bg-slate-950 border border-slate-800 rounded-xl space-y-4">
+                      <div className="p-4 bg-slate-950/70 border border-slate-855 rounded-2xl space-y-4 shadow-inner">
                         <div className="flex items-center justify-between border-b border-slate-900 pb-2.5">
-                          <span className="text-xs font-mono font-bold text-slate-300 uppercase tracking-widest">
+                          <span className="text-xs font-mono font-bold text-slate-350 uppercase tracking-widest">
                             👑 VIP 尊尚特权大厅
                           </span>
-                          <span className={`text-[10px] px-2.5 py-0.5 rounded-full font-mono font-extrabold ${isVip ? "bg-amber-400 text-slate-950 shadow-sm animate-pulse" : "bg-slate-800 text-slate-500"}`}>
+                          <span className={`text-[10px] px-2.5 py-0.5 rounded-full font-mono font-extrabold ${isVip ? "bg-amber-400 text-slate-955 shadow-sm animate-pulse" : "bg-slate-800 text-slate-555"}`}>
                             {isVip ? "★ PREMIUM VIP 尊贵会员" : "普通市民"}
                           </span>
                         </div>
@@ -1107,7 +1116,7 @@ export default function App() {
                         <div className="p-4 bg-gradient-to-r from-amber-500/10 to-yellow-600/5 border border-amber-500/25 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                           <div>
                             <h4 className="text-xs font-mono font-bold text-amber-400">一键升级永久「星际特许 VIP」大王卡</h4>
-                            <p className="text-[10px] text-slate-400 mt-1 leading-relaxed">
+                            <p className="text-[10px] text-slate-450 mt-1 leading-relaxed">
                               彻底解放“世袭尊贵身份”以及“每日定制推荐剧本”，获得无上败家气势，神豪光环普照宇宙！
                             </p>
                           </div>
@@ -1117,10 +1126,10 @@ export default function App() {
                               audio.playSound("bling");
                               setSystemAlertMessage(isVip ? "🔇 已回到质朴可亲的普通人视角。" : "📣 极速尊享！已开启永久高级VIP特许契约！");
                             }}
-                            className={`px-4 py-2 font-mono font-extrabold text-[10px] rounded-xl shrink-0 transition active:scale-95 cursor-pointer ${
+                            className={`px-4 py-2.5 font-mono font-black text-[10px] rounded-xl shrink-0 transition active:scale-95 cursor-pointer border-b-2 ${
                               isVip
                                 ? "bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700"
-                                : "bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 shadow shadow-amber-900/40"
+                                : "bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 shadow-md shadow-amber-900/40 border-amber-600 animate-pulse"
                             }`}
                           >
                             {isVip ? "🔒 注销回到市民身份" : "✨ 一键免费激活永久 VIP"}
@@ -1128,27 +1137,27 @@ export default function App() {
                         </div>
                       </div>
 
-                      <div className="p-4 bg-slate-950 border border-slate-800 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="p-3 bg-slate-900 border border-emerald-500/20 rounded-lg relative overflow-hidden">
-                          <span className="absolute top-1 right-2 font-mono text-[8px] text-emerald-400 animate-pulse bg-emerald-950 px-1 rounded">
+                      <div className="p-4 bg-slate-950 border border-slate-855 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="p-3.5 bg-slate-900 border border-emerald-500/20 rounded-xl relative overflow-hidden">
+                          <span className="absolute top-1 right-2 font-mono text-[8px] text-emerald-450 animate-pulse bg-emerald-950 px-1.5 rounded">
                             HOT 免费开通
                           </span>
                           <h4 className="text-xs font-mono font-bold text-white flex items-center gap-1">
                             <Plus size={14} className="text-emerald-500" /> 时空观察者 (月卡)
                           </h4>
-                          <p className="text-[9px] text-slate-400 mt-1">解锁高维观察日志、无限时光回溯特权以及每日不限次数平行世界探寻。</p>
-                          <span className="text-xs font-mono text-emerald-400 block mt-2 font-bold">¥0.00 / 极乐体验</span>
+                          <p className="text-[9px] text-slate-450 mt-1.5 leading-relaxed">解锁高维观察日志、无限时光回溯特权以及每日不限次数平行世界探寻。</p>
+                          <span className="text-xs font-mono text-emerald-450 block mt-2 font-extrabold">¥0.00 / 极乐体验</span>
                         </div>
 
-                        <div className="p-3 bg-slate-900 border border-amber-500/20 rounded-lg relative overflow-hidden">
-                          <span className="absolute top-1 right-2 font-mono text-[8px] text-amber-400 bg-amber-950 px-1 rounded">
+                        <div className="p-3.5 bg-slate-900 border border-amber-500/20 rounded-xl relative overflow-hidden">
+                          <span className="absolute top-1 right-2 font-mono text-[8px] text-amber-455 bg-amber-955 px-1.5 rounded">
                             UPCOMING
                           </span>
                           <h4 className="text-xs font-mono font-bold text-white flex items-center gap-1">
                             <CompassIcon size={14} className="text-amber-500" /> 诸神黄昏剧本包
                           </h4>
-                          <p className="text-[9px] text-slate-400 mt-1">引入“误伤大统领线”、“时间末日求生线”等荒诞、爆笑无厘头突变剧本组合。</p>
-                          <span className="text-xs font-mono text-amber-400 block mt-2 font-bold">首发特许免费</span>
+                          <p className="text-[9px] text-slate-450 mt-1.5 leading-relaxed">解锁诸神黄昏特殊背景、荒诞神明对话选项及北欧神话隐藏彩蛋物品。</p>
+                          <span className="text-xs font-mono text-amber-455 block mt-2 font-extrabold">开发中·敬请期待</span>
                         </div>
                       </div>
 
@@ -1305,13 +1314,18 @@ export default function App() {
                 <div className="lg:col-span-4 h-full flex flex-col gap-4">
                   
                   {/* Encounter dialogue box */}
-                  <div className="bg-slate-900 rounded-2xl border border-slate-850 p-4 shadow-xl flex-grow flex flex-col justify-between min-h-[280px]">
+                  <div className="bg-slate-955/90 border-2 border-emerald-500/40 shadow-2xl rounded-3xl p-5 flex-grow flex flex-col justify-between min-h-[300px] relative overflow-hidden neon-glow-emerald">
+                    {/* Corner decors */}
+                    <div className="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-emerald-400 opacity-60"></div>
+                    <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-emerald-400 opacity-60"></div>
+                    <div className="absolute bottom-2 left-2 w-2 h-2 border-b-2 border-l-2 border-emerald-400 opacity-60"></div>
+                    <div className="absolute bottom-2 right-2 w-2 h-2 border-b-2 border-r-2 border-emerald-400 opacity-60"></div>
                     
                     {!interactionResult ? (
                       <div className="text-center py-12 px-4 space-y-3 font-mono">
                         <div className="text-2xl animate-pulse">🛰️</div>
                         <h4 className="text-xs font-bold text-slate-300">雷达因果网络</h4>
-                        <p className="text-[10px] text-slate-500 leading-relaxed">
+                        <p className="text-[10px] text-slate-550 leading-relaxed">
                           当前没有进行中的事件。请移动屏幕中的老板角色（金色头饰），走到
                           <span className="text-amber-400 font-bold">【互动物品】</span> 或
                           <span className="text-sky-400 font-bold">【NPC人物】</span> 正上方来引发不可预期的蝴蝶因果吧！
@@ -1329,14 +1343,14 @@ export default function App() {
                             </span>
                           </div>
 
-                          <div className="text-xs font-mono text-slate-200 leading-relaxed bg-slate-950/60 p-3 rounded-xl border border-slate-850 max-h-[140px] overflow-y-auto">
+                          <div className="text-xs font-mono text-slate-200 leading-relaxed bg-slate-950/65 p-3.5 rounded-xl border border-slate-850 max-h-[140px] overflow-y-auto">
                             {/* Simple dynamic typewriter simulation */}
-                            <p className="whitespace-pre-line">{interactionResult.text}</p>
+                            <p className="whitespace-pre-line leading-relaxed">{interactionResult.text}</p>
                           </div>
 
                           {/* Time penalty alert if any */}
                           {interactionResult.timeDelta !== 0 && (
-                            <div className="mt-2 text-[9px] font-mono text-rose-450 bg-rose-950/20 border border-rose-900/30 px-2 py-0.5 rounded flex items-center gap-1">
+                            <div className="mt-2 text-[9px] font-mono text-rose-400 bg-rose-950/20 border border-rose-900/30 px-2 py-0.5 rounded flex items-center gap-1 shadow">
                               <span>⚠️ 此时空决策导致时间损耗: </span>
                               <strong className="font-bold">{interactionResult.timeDelta}秒</strong>
                             </div>
@@ -1348,7 +1362,7 @@ export default function App() {
                           
                           {/* If early end, show caution */}
                           {interactionResult.isEarlyEnd ? (
-                            <div className="p-3 bg-red-950/30 border border-red-500/20 rounded-xl text-center space-y-1">
+                            <div className="p-3 bg-red-950/30 border border-red-500/25 rounded-2xl text-center space-y-1.5">
                               <span className="text-[10px] text-red-400 font-mono font-bold block animate-bounce">
                                 🚨 因果彻底碎裂！
                               </span>
@@ -1368,10 +1382,10 @@ export default function App() {
                                     <button
                                       key={i}
                                       onClick={() => handleResolveAction(opt.label, opt.action)}
-                                      className="w-full text-left p-2.5 bg-slate-850 hover:bg-slate-800 text-xs text-white border border-slate-720 rounded-xl transition hover:border-emerald-500/40 active:scale-98 text-ellipsis overflow-hidden select-none cursor-pointer flex items-center justify-between"
+                                      className="w-full text-left p-3 bg-slate-900 hover:bg-emerald-950/40 text-xs text-white border border-slate-800 hover:border-emerald-500/50 rounded-2xl transition-all duration-200 active:scale-98 shadow flex items-center justify-between group cursor-pointer"
                                     >
-                                      <span>{opt.label}</span>
-                                      <ChevronRight size={14} className="text-slate-500 shrink-0" />
+                                      <span className="group-hover:text-emerald-350 transition-colors">{opt.label}</span>
+                                      <ChevronRight size={14} className="text-slate-500 group-hover:text-emerald-450 group-hover:translate-x-1 transition-all shrink-0" />
                                     </button>
                                   ))}
                                 </div>
@@ -1385,7 +1399,7 @@ export default function App() {
                                     value={customActionValue}
                                     onChange={(e) => setCustomActionValue(e.target.value)}
                                     placeholder="输入自定义荒诞动作..."
-                                    className="flex-1 bg-slate-950 border border-slate-800 rounded-lg px-2 py-1.5 font-mono text-xs text-white focus:outline-none focus:border-emerald-500"
+                                    className="flex-1 bg-slate-950 border border-slate-850 rounded-xl px-3 py-2 font-mono text-xs text-white focus:outline-none focus:border-emerald-500 transition shadow-inner"
                                     onKeyDown={(e) => {
                                       if (e.key === "Enter" && customActionValue.trim()) {
                                         handleResolveAction(customActionValue.trim(), "custom");
@@ -1398,7 +1412,7 @@ export default function App() {
                                         handleResolveAction(customActionValue.trim(), "custom");
                                       }
                                     }}
-                                    className="p-1.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-lg font-mono text-xs font-bold active:scale-95 cursor-pointer flex items-center justify-center shrink-0"
+                                    className="px-3 py-2 bg-emerald-500 hover:bg-emerald-450 text-slate-950 rounded-xl font-mono text-xs font-bold active:scale-95 cursor-pointer flex items-center justify-center shrink-0 shadow-md border-b-2 border-emerald-600"
                                   >
                                     <ArrowRight size={16} />
                                   </button>
@@ -1407,7 +1421,7 @@ export default function App() {
 
                               <button
                                 onClick={handleCloseDialogue}
-                                className="w-full py-2 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-slate-400 rounded-lg text-[10px] font-mono hover:text-white mt-1 cursor-pointer transition select-none"
+                                className="w-full py-2 bg-slate-950 hover:bg-slate-900 border border-slate-850 text-slate-450 rounded-xl text-[10px] font-mono hover:text-white mt-1 cursor-pointer transition select-none"
                               >
                                 回到探索地图
                               </button>
@@ -1494,7 +1508,7 @@ export default function App() {
 
           {/* 5. ENDING ASSESS STATE */}
           {gameState === "ending" && endingResult && (
-            <div className="max-w-2xl mx-auto space-y-6">
+            <div className="max-w-2xl mx-auto space-y-6 animate-fade-in">
               
               {/* Glorious high-contrast pixel collectible trading card */}
               <motion.div
@@ -1511,24 +1525,25 @@ export default function App() {
                   filter: "contrast(100%) sepia(0%) brightness(1) saturate(100%)"
                 }}
                 transition={{ 
-                  duration: 2.2, 
+                  duration: 1.5, 
                   ease: "easeOut" 
                 }}
-                className="bg-slate-900 border-4 border-double border-emerald-500/80 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden"
+                className="bg-slate-900 border-4 border-double border-emerald-450 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden neon-glow-emerald"
               >
                 {/* CRT screen glow overlay */}
-                <div className="absolute inset-0 bg-radial-gradient from-transparent to-black pointer-events-none opacity-30"></div>
+                <div className="absolute inset-0 bg-radial-gradient from-transparent to-black pointer-events-none opacity-40"></div>
+                <div className="crt-flicker-overlay" />
                 
                 {/* Holographic light sweeping effect */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl z-30">
                   <div 
-                    className="absolute -inset-[100%] bg-gradient-to-tr from-transparent via-white/15 to-transparent opacity-75 animate-sweep" 
+                    className="absolute -inset-[100%] bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-60 animate-sweep" 
                     style={{ mixBlendMode: "overlay" }}
                   ></div>
                 </div>
                 
-                <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4 mb-4">
-                  <div className="space-y-0.5">
+                <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800/80 pb-4 mb-4">
+                  <div className="space-y-1">
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="text-[10px] bg-slate-950 border border-emerald-500/30 text-emerald-400 px-2 py-0.5 rounded font-mono font-bold tracking-wider">
                         {endingResult.id}

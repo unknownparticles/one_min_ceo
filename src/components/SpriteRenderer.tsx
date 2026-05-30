@@ -26,100 +26,188 @@ export const SpriteRenderer: React.FC<SpriteRendererProps> = ({
       case "ceo":
         return (
           <>
-            {/* Suit & Hair */}
-            <rect x="6" y="2" width="20" height="6" fill="#1e1e2d" /> {/* Slick Hair */}
-            <rect x="8" y="8" width="16" height="8" fill="#fddcb4" /> {/* Face */}
-            <rect x="6" y="10" width="20" height="4" fill="#000000" /> {/* Sunglasses */}
-            <rect x="6" y="16" width="20" height="12" fill="#111827" /> {/* Tuxedo */}
-            <rect x="12" y="16" width="8" height="6" fill="#ffffff" /> {/* White Shirt */}
-            <rect x="14" y="17" width="4" height="4" fill="#bfdbfe" /> {/* Blue Tie */}
-            <rect x="8" y="28" width="6" height="4" fill="#000000" /> {/* Shoes Left */}
-            <rect x="18" y="28" width="6" height="4" fill="#000000" /> {/* Shoes Right */}
+            {/* Outline */}
+            <rect x="5" y="1" width="22" height="30" fill="none" stroke="#000000" strokeWidth="1" />
+            {/* Slick Hair with highlight */}
+            <rect x="6" y="2" width="20" height="6" fill="#1e1e2d" />
+            <rect x="8" y="3" width="16" height="2" fill="#3f3f5a" /> {/* Hair Highlight */}
+            {/* Face & Neck */}
+            <rect x="8" y="8" width="16" height="8" fill="#fddcb4" />
+            <rect x="10" y="14" width="12" height="2" fill="#e2b485" /> {/* Face Shadow */}
+            {/* Sunglasses with glare */}
+            <rect x="6" y="10" width="20" height="4" fill="#0c0c0f" />
+            <rect x="8" y="10" width="2" height="2" fill="#ffffff" /> {/* Glare 1 */}
+            <rect x="18" y="10" width="2" height="2" fill="#ffffff" /> {/* Glare 2 */}
+            {/* Tuxedo Suite */}
+            <rect x="6" y="16" width="20" height="12" fill="#111827" />
+            <rect x="6" y="16" width="4" height="12" fill="#1f2937" /> {/* Left shoulder highlight */}
+            <rect x="22" y="16" width="4" height="12" fill="#0f172a" /> {/* Right shoulder shadow */}
+            {/* White Shirt & Blue Tie */}
+            <rect x="12" y="16" width="8" height="6" fill="#ffffff" />
+            <rect x="14" y="16" width="4" height="6" fill="#2563eb" /> {/* Royal Blue Tie */}
+            <rect x="14" y="20" width="4" height="3" fill="#1d4ed8" /> {/* Tie Shadow */}
+            {/* Gold Lapel Pin */}
+            <circle cx="9" cy="19" r="1.5" fill="#f59e0b" />
+            {/* Shoes */}
+            <rect x="7" y="28" width="7" height="4" fill="#090d16" />
+            <rect x="8" y="29" width="5" height="1" fill="#475569" /> {/* Shoe Highlight */}
+            <rect x="18" y="28" width="7" height="4" fill="#090d16" />
+            <rect x="19" y="29" width="5" height="1" fill="#475569" />
           </>
         );
       case "ski":
         return (
           <>
-            <rect x="6" y="2" width="20" height="10" fill="#3b82f6" /> {/* Blue Helmet */}
-            <rect x="8" y="6" width="16" height="4" fill="#f43f5e" /> {/* Pink Goggles */}
-            <rect x="8" y="12" width="16" height="6" fill="#f3f4f6" /> {/* Face protector */}
-            <rect x="4" y="18" width="24" height="10" fill="#1d4ed8" /> {/* High-tech ski jacket */}
-            <rect x="2" y="20" width="2" height="12" fill="#eab308" /> {/* Ski Poles */}
-            <rect x="28" y="20" width="2" height="12" fill="#eab308" />
-            <rect x="6" y="28" width="20" height="4" fill="#f43f5e" /> {/* Hot skis */}
+            {/* Helmet & Goggles */}
+            <rect x="6" y="2" width="20" height="10" fill="#2563eb" /> {/* Glossy Blue Helmet */}
+            <rect x="9" y="3" width="14" height="2" fill="#60a5fa" /> {/* Helmet Shine */}
+            <rect x="6" y="5" width="20" height="5" fill="#f43f5e" /> {/* Pink Visor */}
+            <rect x="8" y="5" width="4" height="2" fill="#ffffff" stroke="#fda4af" strokeWidth="0.5" /> {/* Glare */}
+            {/* Face protector / chin */}
+            <rect x="8" y="10" width="16" height="8" fill="#e5e7eb" />
+            <rect x="10" y="13" width="12" height="4" fill="#f97316" stroke="#c2410c" strokeWidth="0.5" /> {/* Warm neck warmer */}
+            {/* High-tech Ski Jacket */}
+            <rect x="4" y="18" width="24" height="10" fill="#1d4ed8" />
+            <rect x="4" y="18" width="2" height="8" fill="#60a5fa" /> {/* Left arm stripe */}
+            <rect x="26" y="18" width="2" height="8" fill="#60a5fa" /> {/* Right arm stripe */}
+            <rect x="13" y="18" width="6" height="10" fill="#f43f5e" /> {/* Center neon pink strip */}
+            {/* Ski Poles (Yellow) */}
+            <rect x="2" y="14" width="2" height="17" fill="#fbbf24" stroke="#d97706" strokeWidth="0.5" />
+            <rect x="1" y="16" width="4" height="2" fill="#475569" /> {/* Pole Grip */}
+            <rect x="28" y="14" width="2" height="17" fill="#fbbf24" stroke="#d97706" strokeWidth="0.5" />
+            <rect x="27" y="16" width="4" height="2" fill="#475569" />
+            {/* Hot Skis underneath */}
+            <rect x="5" y="29" width="22" height="3" fill="#f43f5e" stroke="#9f1239" strokeWidth="0.5" />
+            <rect x="7" y="29" width="18" height="1" fill="#ffe4e6" />
           </>
         );
       case "diver":
         return (
           <>
-            <rect x="6" y="2" width="20" height="20" fill="#b45309" /> {/* Antique copper helmet */}
-            <rect x="10" y="6" width="12" height="10" fill="#38bdf8" /> {/* Glass viewport */}
-            <rect x="12" y="8" width="8" height="4" fill="#e0f2fe" /> {/* Viewport reflection */}
-            <rect x="4" y="22" width="24" height="8" fill="#78350f" /> {/* Heavy diver suit */}
-            <circle cx="16" cy="18" r="1.5" fill="#eab308" /> {/* Valve node */}
-            <rect x="8" y="30" width="16" height="2" fill="#000000" /> {/* Weighted lead boots */}
+            {/* Antique copper helmet */}
+            <rect x="6" y="2" width="20" height="20" fill="#d97706" stroke="#78350f" strokeWidth="1" />
+            <rect x="9" y="3" width="14" height="3" fill="#fbbf24" /> {/* Metallic top shine */}
+            {/* Viewport */}
+            <circle cx="16" cy="11" r="6" fill="#06b6d4" stroke="#78350f" strokeWidth="1.5" />
+            <circle cx="14" cy="9" r="2.5" fill="#e0f2fe" /> {/* Viewport reflection */}
+            {/* Copper bolts and rivets */}
+            <circle cx="9" cy="6" r="1.2" fill="#f59e0b" />
+            <circle cx="23" cy="6" r="1.2" fill="#f59e0b" />
+            <circle cx="9" cy="16" r="1.2" fill="#f59e0b" />
+            <circle cx="23" cy="16" r="1.2" fill="#f59e0b" />
+            {/* Diver Suit */}
+            <rect x="4" y="22" width="24" height="8" fill="#b45309" />
+            <rect x="13" y="22" width="6" height="5" fill="#f59e0b" /> {/* Chest valve base */}
+            <circle cx="16" cy="24.5" r="2" fill="#ef4444" /> {/* Red main valve button */}
+            {/* Heavy boots */}
+            <rect x="7" y="30" width="7" height="2" fill="#1e293b" />
+            <rect x="18" y="30" width="7" height="2" fill="#1e293b" />
           </>
         );
       case "pilot":
         return (
           <>
-            <rect x="6" y="2" width="20" height="8" fill="#78350f" /> {/* Aviator Cap */}
-            <rect x="4" y="6" width="4" height="4" fill="#475569" /> {/* Leather ear flap */}
-            <rect x="24" y="6" width="4" height="4" fill="#475569" />
-            <rect x="8" y="10" width="16" height="6" fill="#fddcb4" /> {/* Face */}
-            <rect x="8" y="12" width="16" height="3" fill="#020617" /> {/* Dark shades */}
-            <rect x="4" y="16" width="24" height="12" fill="#451a03" /> {/* Bomber jacket */}
-            <rect x="14" y="16" width="4" height="12" fill="#ffffff" /> {/* Pilot scarf */}
-            <rect x="8" y="28" width="16" height="4" fill="#1e293b" /> {/* Pants */}
+            {/* Cap and Flaps */}
+            <rect x="6" y="2" width="20" height="8" fill="#451a03" stroke="#1c0a00" strokeWidth="0.5" />
+            <rect x="4" y="6" width="3" height="6" fill="#3b1301" /> {/* Ear flap L */}
+            <rect x="25" y="6" width="3" height="6" fill="#3b1301" /> {/* Ear flap R */}
+            <rect x="8" y="10" width="16" height="7" fill="#fddcb4" /> {/* Face */}
+            {/* Aviator Glasses */}
+            <rect x="7" y="11" width="18" height="4" fill="#0f172a" />
+            <rect x="8" y="12" width="4" height="2" fill="#38bdf8" /> {/* Lens L */}
+            <rect x="16" y="12" width="4" height="2" fill="#38bdf8" /> {/* Lens R */}
+            {/* Scarf & Bomber Jacket */}
+            <rect x="4" y="17" width="24" height="12" fill="#5c1d02" />
+            <rect x="11" y="17" width="10" height="5" fill="#f8fafc" stroke="#cbd5e1" strokeWidth="0.5" /> {/* White pilot scarf */}
+            <rect x="14" y="21" width="4" height="8" fill="#e2e8f0" /> {/* Scarf tail */}
+            {/* Pocket badge */}
+            <rect x="7" y="21" width="3" height="2" fill="#eab308" />
+            <rect x="8" y="28" width="16" height="4" fill="#0f172a" /> {/* Pants */}
           </>
         );
       case "chef":
         return (
           <>
-            <path d="M 10,2 Q 16,0 22,2 T 26,8 L 6,8 Z" fill="#ffffff" /> {/* Tall Chef Hat */}
-            <rect x="8" y="8" width="16" height="8" fill="#ffedd5" /> {/* Face */}
-            <rect x="10" y="11" width="4" height="2" fill="#451a03" /> {/* Mustache */}
-            <rect x="18" y="11" width="4" height="2" fill="#451a03" />
-            <rect x="12" y="13" width="8" height="2" fill="#dc2626" />
-            <rect x="6" y="16" width="20" height="12" fill="#ffffff" /> {/* White Apron */}
-            <rect x="10" y="18" width="12" height="10" fill="#dc2626" /> {/* Red tie */}
-            <rect x="2" y="18" width="4" height="10" fill="#94a3b8" /> {/* Chef's knife */}
+            {/* Chef Hat */}
+            <path d="M 9,10 Q 16,1 23,10 L 23,13 L 9,13 Z" fill="#f1f5f9" stroke="#cbd5e1" strokeWidth="1" />
+            <rect x="11" y="4" width="10" height="6" fill="#ffffff" />
+            <rect x="9" y="12" width="14" height="3" fill="#e2e8f0" /> {/* Hat base strip */}
+            {/* Face */}
+            <rect x="9" y="15" width="14" height="6" fill="#ffedd5" />
+            <rect x="11" y="16.5" width="3" height="1.5" fill="#451a03" /> {/* Mustache L */}
+            <rect x="18" y="16.5" width="3" height="1.5" fill="#451a03" /> {/* Mustache R */}
+            <rect x="13" y="19" width="6" height="1.5" fill="#ef4444" /> {/* Mouth */}
+            {/* Suit & Apron */}
+            <rect x="6" y="21" width="20" height="9" fill="#ffffff" stroke="#cbd5e1" strokeWidth="0.5" />
+            <rect x="12" y="21" width="8" height="9" fill="#dc2626" /> {/* Red center tie/apron band */}
+            <rect x="7" y="23" width="2" height="2" fill="#475569" /> {/* Button L */}
+            <rect x="23" y="23" width="2" height="2" fill="#475569" /> {/* Button R */}
+            {/* Chef's knife */}
+            <rect x="2" y="21" width="3" height="8" fill="#94a3b8" /> {/* Blade */}
+            <rect x="3.5" y="21.5" width="1" height="5" fill="#e2e8f0" /> {/* Shine */}
+            <rect x="2.5" y="29" width="2" height="2" fill="#78350f" /> {/* Handle */}
           </>
         );
       case "explorer":
         return (
           <>
-            <rect x="4" y="4" width="24" height="4" fill="#b45309" /> {/* Fedora Hat Rim */}
-            <rect x="8" y="2" width="16" height="4" fill="#78350f" /> {/* Fedora Crown */}
-            <rect x="8" y="8" width="16" height="8" fill="#fddcb4" /> {/* Face */}
-            <rect x="6" y="16" width="20" height="12" fill="#ca8a04" /> {/* Explorer khakis */}
-            <rect x="4" y="18" width="4" height="8" fill="#78350f" /> {/* Backpack */}
-            <rect x="12" y="16" width="8" height="12" fill="#451a03" /> {/* Utility suspenders */}
+            {/* Fedora Hat */}
+            <rect x="4" y="6" width="24" height="3" fill="#854d0e" stroke="#451a03" strokeWidth="0.5" /> {/* Brim */}
+            <rect x="7" y="2" width="18" height="4" fill="#a16207" /> {/* Hat Crown */}
+            <rect x="7" y="5" width="18" height="1" fill="#b45309" /> {/* Accent band */}
+            {/* Face */}
+            <rect x="8" y="9" width="16" height="7" fill="#fddcb4" />
+            <circle cx="11" cy="11.5" r="1.2" fill="#1e293b" /> {/* Eye L */}
+            <circle cx="21" cy="11.5" r="1.2" fill="#1e293b" /> {/* Eye R */}
+            {/* Explorer Khakis */}
+            <rect x="6" y="16" width="20" height="12" fill="#ca8a04" stroke="#854d0e" strokeWidth="0.5" />
+            <rect x="6" y="16" width="3" height="7" fill="#b45309" /> {/* Shoulder strap L */}
+            <rect x="23" y="16" width="3" height="7" fill="#b45309" /> {/* Shoulder strap R */}
+            {/* Backpack on side */}
+            <rect x="3" y="17" width="3" height="9" fill="#7c2d12" />
+            {/* Pants/Shoes */}
+            <rect x="8" y="28" width="16" height="3" fill="#854d0e" />
           </>
         );
       case "space":
         return (
           <>
-            <circle cx="16" cy="12" r="10" fill="#cccccc" /> {/* Visor frame */}
-            <circle cx="16" cy="12" r="8" fill="#1e1b4b" /> {/* Galaxy reflective helmet */}
-            <circle cx="12" cy="9" r="2" fill="#6366f1" /> {/* Stardust dots */}
-            <circle cx="20" cy="14" r="1.5" fill="#a5f3fc" />
-            <rect x="6" y="22" width="20" height="10" fill="#e2e8f0" /> {/* Astronaut space suit */}
-            <rect x="12" y="24" width="8" height="4" fill="#10b981" /> {/* Cyan interface module */}
+            {/* Visor & Helmet */}
+            <rect x="7" y="2" width="18" height="18" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="1.5" rx="5" />
+            <rect x="9" y="4" width="14" height="10" fill="#0f172a" rx="3" /> {/* Dark Visor */}
+            <rect x="10" y="5" width="8" height="4" fill="#38bdf8" opacity="0.4" /> {/* Visor reflection */}
+            <circle cx="20" cy="11" r="1" fill="#ec4899" /> {/* Module dot */}
+            {/* Suit body */}
+            <rect x="6" y="20" width="20" height="10" fill="#ffffff" stroke="#cbd5e1" strokeWidth="0.5" />
+            <rect x="11" y="22" width="10" height="5" fill="#06b6d4" /> {/* Control pad */}
+            <circle cx="13" cy="24" r="1" fill="#ef4444" />
+            <circle cx="18" cy="24" r="1" fill="#22c55e" />
+            {/* Side booster pack */}
+            <rect x="3" y="20" width="3" height="8" fill="#cbd5e1" />
+            <rect x="26" y="20" width="3" height="8" fill="#cbd5e1" />
           </>
         );
       case "tycoon":
         return (
           <>
-            <rect x="8" y="0" width="16" height="10" fill="#111827" /> {/* Black Top Hat */}
-            <rect x="4" y="8" width="24" height="2" fill="#dc2626" /> {/* Red satin ribbon */}
-            <rect x="2" y="10" width="28" height="2" fill="#111827" /> {/* Rim */}
-            <rect x="8" y="12" width="16" height="6" fill="#fddcb4" /> {/* Face */}
-            <circle cx="12" cy="14" r="2.5" fill="#eab308" /> {/* Gold Monocle */}
-            <path d="M 20,16 L 24,16" stroke="#451a03" strokeWidth="2" /> {/* Cigar */}
-            <circle cx="25" cy="16" r="1" fill="#f43f5e" /> {/* Burning tip */}
-            <rect x="4" y="18" width="24" height="14" fill="#111827" /> {/* Pinstripe jacket */}
-            <rect x="15" y="18" width="2" height="14" fill="#e2e8f0" /> {/* Pinstripe gold chain */}
+            {/* Black Top Hat */}
+            <rect x="8" y="1" width="16" height="10" fill="#0f172a" />
+            <rect x="8" y="10" width="16" height="2" fill="#ef4444" /> {/* Red satin ribbon */}
+            <rect x="4" y="11" width="24" height="2" fill="#0f172a" /> {/* Hat rim */}
+            {/* Face */}
+            <rect x="8" y="13" width="16" height="6" fill="#fddcb4" />
+            <circle cx="12" cy="15" r="2.5" fill="#f59e0b" stroke="#b45309" strokeWidth="0.5" /> {/* Gold Monocle */}
+            <path d="M 21,17.5 L 25,17.5" stroke="#3b1301" strokeWidth="1.5" /> {/* Cigar */}
+            <circle cx="25.5" cy="17.5" r="0.8" fill="#ef4444" className="animate-pulse" /> {/* Burning tip */}
+            {/* Suit */}
+            <rect x="5" y="19" width="22" height="10" fill="#0f172a" />
+            <rect x="11" y="19" width="10" height="5" fill="#ffffff" /> {/* White shirt */}
+            <rect x="14" y="20" width="4" height="2" fill="#dc2626" /> {/* Red bow-tie */}
+            {/* Gold Chain */}
+            <path d="M 12,23 Q 16,27 20,23" fill="none" stroke="#f59e0b" strokeWidth="1" />
+            {/* Shoes */}
+            <rect x="7" y="29" width="7" height="3" fill="#000000" />
+            <rect x="18" y="29" width="7" height="3" fill="#000000" />
           </>
         );
 
@@ -127,78 +215,151 @@ export const SpriteRenderer: React.FC<SpriteRendererProps> = ({
       case "secretary":
         return (
           <>
-            <rect x="10" y="2" width="12" height="8" fill="#7c2d12" /> {/* Hair Bun */}
-            <rect x="8" y="10" width="16" height="8" fill="#fbcfe8" /> {/* Hair & Face */}
-            <rect x="10" y="13" width="4" height="2" stroke="#ec4899" fill="none" /> {/* Glasses */}
-            <rect x="18" y="13" width="4" height="2" stroke="#ec4899" fill="none" />
-            <rect x="6" y="18" width="20" height="10" fill="#4c1d95" /> {/* Purple Skirt Suit */}
-            <rect x="20" y="18" width="6" height="10" fill="#e2e8f0" /> {/* Clipboard */}
+            {/* Hair Bun & Hair */}
+            <circle cx="16" cy="3.5" r="3" fill="#581c87" /> {/* Violet Hair Bun */}
+            <rect x="7" y="6" width="18" height="6" fill="#6b21a8" />
+            {/* Face */}
+            <rect x="9" y="10" width="14" height="7" fill="#fee2e2" />
+            {/* Cute Pink/Magenta Glasses */}
+            <rect x="8" y="11.5" width="16" height="3" fill="none" stroke="#db2777" strokeWidth="1" />
+            <circle cx="11.5" cy="13" r="1.5" fill="#db2777" opacity="0.3" />
+            <circle cx="20.5" cy="13" r="1.5" fill="#db2777" opacity="0.3" />
+            {/* Corporate Skirt Suit */}
+            <rect x="6" y="17" width="20" height="11" fill="#4c1d95" />
+            <rect x="12" y="17" width="8" height="5" fill="#fdf2f8" /> {/* Pink undershirt */}
+            {/* Gold Badge */}
+            <rect x="7" y="19" width="2.5" height="1.5" fill="#eab308" />
+            {/* Clipboard */}
+            <rect x="19" y="19" width="8" height="10.5" fill="#ffffff" stroke="#94a3b8" strokeWidth="0.5" />
+            <rect x="21" y="18" width="4" height="1.5" fill="#475569" /> {/* Clip */}
+            <rect x="21" y="21" width="4" height="1" fill="#3b82f6" /> {/* Text line */}
+            <rect x="21" y="23.5" width="4" height="1" fill="#64748b" />
+            <rect x="21" y="26" width="4" height="1" fill="#22c55e" />
           </>
         );
       case "dog":
         return (
           <>
-            <rect x="12" y="10" width="12" height="8" fill="#d97706" /> {/* Dog Head */}
-            <rect x="22" y="8" width="4" height="6" fill="#92400e" /> {/* Ear */}
-            <rect x="10" y="18" width="16" height="10" fill="#f59e0b" /> {/* Torso */}
-            <rect x="10" y="18" width="16" height="2" fill="#06b6d4" /> {/* SCI-FI collar glowing */}
-            <rect x="8" y="24" width="4" height="6" fill="#d97706" /> {/* Left foot */}
-            <rect x="20" y="24" width="4" height="6" fill="#d97706" /> {/* Right foot */}
-            <circle cx="25" cy="19" r="1.5" fill="#06b6d4" /> {/* Cyber module collar bubble */}
+            {/* Shiba/Husky Head */}
+            <rect x="11" y="8" width="14" height="10" fill="#f59e0b" rx="2" />
+            <rect x="9" y="6" width="4" height="5" fill="#b45309" /> {/* Ear Left */}
+            <rect x="23" y="6" width="4" height="5" fill="#b45309" /> {/* Ear Right */}
+            <rect x="13" y="11" width="10" height="7" fill="#ffffff" /> {/* Muzzle white block */}
+            <circle cx="15" cy="12" r="1" fill="#0f172a" /> {/* Eye L */}
+            <circle cx="21" cy="12" r="1" fill="#0f172a" /> {/* Eye R */}
+            <polygon points="17,14 19,14 18,15.5" fill="#0f172a" /> {/* Cute Nose */}
+            {/* Torso */}
+            <rect x="9" y="18" width="18" height="9" fill="#d97706" rx="2" />
+            {/* Cyber collar with bubble */}
+            <rect x="9" y="17.5" width="18" height="2" fill="#06b6d4" />
+            <circle cx="18" cy="18.5" r="2.5" fill="#22d3ee" className="animate-pulse" /> {/* Collar module */}
+            {/* Dog Feet */}
+            <rect x="10" y="27" width="4" height="4" fill="#f59e0b" />
+            <rect x="22" y="27" width="4" height="4" fill="#f59e0b" />
+            {/* Tail */}
+            <path d="M 27,21 Q 31,18 30,15" fill="none" stroke="#d97706" strokeWidth="2.5" />
           </>
         );
       case "butler":
         return (
           <>
-            <rect x="8" y="2" width="16" height="8" fill="#475569" /> {/* Gray hair */}
-            <rect x="10" y="10" width="12" height="6" fill="#ffedd5" /> {/* Face */}
-            <rect x="6" y="16" width="20" height="14" fill="#0f172a" /> {/* Black tailcoat */}
-            <rect x="14" y="16" width="4" height="6" fill="#ffffff" /> {/* White tux front */}
-            <rect x="15" y="18" width="2" height="2" fill="#dc2626" /> {/* Bow tie */}
-            <rect x="22" y="18" width="8" height="2" fill="#cbd5e1" /> {/* Silver tray */}
-            <rect x="26" y="14" width="2" height="4" fill="#dc2626" /> {/* Wine glass on tray */}
+            {/* Hair */}
+            <rect x="8" y="2" width="16" height="8" fill="#94a3b8" />
+            <rect x="6" y="5" width="20" height="2" fill="#cbd5e1" /> {/* Hair Highlight */}
+            {/* Face */}
+            <rect x="10" y="10" width="12" height="7" fill="#ffedd5" />
+            <circle cx="13" cy="12" r="1" fill="#1e293b" />
+            <circle cx="19" cy="12" r="1" fill="#1e293b" />
+            {/* Tailcoat Suit */}
+            <rect x="5" y="17" width="22" height="12" fill="#0f172a" />
+            <rect x="12" y="17" width="8" height="7" fill="#ffffff" /> {/* White shirt center */}
+            <rect x="13.5" y="19.5" width="5" height="2" fill="#dc2626" /> {/* Bow tie */}
+            <circle cx="16" cy="22" r="1" fill="#0f172a" /> {/* Button */}
+            {/* Silver Tray & Wine glass */}
+            <rect x="21" y="18" width="9" height="1.5" fill="#e2e8f0" /> {/* Silver tray */}
+            <path d="M 23.5,13 L 26.5,13 L 26.5,14 L 25.5,16 L 25.5,17.5 L 23.5,17.5 Z" fill="#ef4444" opacity="0.8" /> {/* Wine glass */}
+            <line x1="25" y1="16" x2="25" y2="18" stroke="#ffffff" strokeWidth="1" /> {/* Stem */}
           </>
         );
       case "investor":
         return (
           <>
-            <rect x="6" y="2" width="20" height="8" fill="#eab308" /> {/* Wild blonde hair */}
-            <rect x="8" y="10" width="16" height="6" fill="#ffedd5" /> {/* Face */}
-            <rect x="4" y="16" width="24" height="12" fill="#dc2626" /> {/* Red panic blazer */}
-            <rect x="8" y="22" width="16" height="6" fill="#22c55e" /> {/* Holds green stacks of cash */}
+            {/* Wild Blonde Hair */}
+            <rect x="6" y="1" width="20" height="9" fill="#fbbf24" stroke="#d97706" strokeWidth="0.5" />
+            <path d="M 6,5 L 3,7 L 6,9" stroke="#d97706" strokeWidth="1" /> {/* Spikes */}
+            <path d="M 26,5 L 29,7 L 26,9" stroke="#d97706" strokeWidth="1" />
+            {/* Face */}
+            <rect x="8" y="10" width="16" height="6" fill="#ffedd5" />
+            <rect x="9" y="11" width="2" height="2" fill="#059669" /> {/* Crazy green eyes */}
+            <rect x="21" y="11" width="2" height="2" fill="#059669" />
+            {/* Red Blazer */}
+            <rect x="4" y="16" width="24" height="12" fill="#dc2626" />
+            <rect x="12" y="16" width="8" height="6" fill="#0f172a" /> {/* Dark tie */}
+            {/* Stacks of Cash */}
+            <rect x="7" y="21" width="18" height="7" fill="#10b981" rx="1.5" stroke="#047857" strokeWidth="0.5" /> {/* Green money piles */}
+            <rect x="13" y="21" width="3" height="7" fill="#ffffff" opacity="0.8" /> {/* Strap L */}
+            <rect x="20" y="21" width="3" height="7" fill="#ffffff" opacity="0.8" /> {/* Strap R */}
           </>
         );
       case "robot":
         return (
           <>
-            <rect x="8" y="4" width="16" height="10" fill="#94a3b8" /> {/* Metallic head */}
-            <rect x="11" y="7" width="2" height="2" fill="#06b6d4" /> {/* Laser eyes */}
-            <rect x="19" y="7" width="2" height="2" fill="#06b6d4" />
-            <rect x="15" y="2" width="2" height="3" fill="#ef4444" /> {/* Antenna */}
-            <rect x="6" y="14" width="20" height="14" fill="#475569" />{/* Steel body */}
-            <rect x="10" y="17" width="12" height="6" fill="#f8fafc" /> {/* Core power grid */}
+            {/* Steel Head */}
+            <rect x="8" y="4" width="16" height="10" fill="#94a3b8" stroke="#475569" strokeWidth="1" rx="2" />
+            <rect x="10" y="5.5" width="12" height="2.5" fill="#1e293b" />
+            <circle cx="12" cy="6.8" r="1.5" fill="#22d3ee" className="animate-pulse" /> {/* Cyber Cyan Eye L */}
+            <circle cx="20" cy="6.8" r="1.5" fill="#22d3ee" className="animate-pulse" /> {/* Eye R */}
+            <rect x="15" y="1" width="2" height="3" fill="#ef4444" /> {/* Antenna */}
+            <circle cx="16" cy="1.2" r="1.5" fill="#fbbf24" className="animate-ping" /> {/* Blinking warning bulb */}
+            {/* Chest & Body */}
+            <rect x="5" y="14" width="22" height="14" fill="#64748b" stroke="#334155" strokeWidth="1" />
+            <rect x="9" y="16.5" width="14" height="7.5" fill="#0f172a" rx="1" /> {/* Core display */}
+            <path d="M 10,20 L 14,18 L 18,21 L 22,17" fill="none" stroke="#22c55e" strokeWidth="1.5" /> {/* Graph line */}
+            {/* Side bolts */}
+            <circle cx="7" cy="25" r="1" fill="#475569" />
+            <circle cx="25" cy="25" r="1" fill="#475569" />
           </>
         );
       case "alien":
         return (
           <>
-            <rect x="8" y="4" width="16" height="12" fill="#22c55e" /> {/* Cyber green gelatinous head */}
-            <circle cx="11" cy="9" r="1.5" fill="#f43f5e" /> {/* Three eyes */}
-            <circle cx="16" cy="7" r="1.5" fill="#f43f5e" />
-            <circle cx="21" cy="9" r="1.5" fill="#f43f5e" />
-            <rect x="8" y="16" width="16" height="12" fill="#15803d" /> {/* Tentacle uniform */}
-            <rect x="4" y="2" width="2" height="6" fill="#eab308" /> {/* Antennas */}
-            <rect x="26" y="2" width="2" height="6" fill="#eab308" />
+            {/* Cyber green gelatinous head */}
+            <rect x="7" y="3" width="18" height="13" fill="#4ade80" stroke="#166534" strokeWidth="1" rx="4" />
+            <rect x="10" y="4" width="12" height="4" fill="#a7f3d0" /> {/* Highlight */}
+            {/* Three eyes */}
+            <circle cx="11" cy="11" r="2" fill="#ffffff" />
+            <circle cx="11" cy="11" r="0.8" fill="#db2777" />
+            <circle cx="16" cy="9" r="2" fill="#ffffff" />
+            <circle cx="16" cy="9" r="0.8" fill="#db2777" />
+            <circle cx="21" cy="11" r="2" fill="#ffffff" />
+            <circle cx="21" cy="11" r="0.8" fill="#db2777" />
+            {/* Antennas */}
+            <line x1="12" y1="3" x2="10" y2="1" stroke="#f59e0b" strokeWidth="1.5" />
+            <circle cx="10" cy="1" r="1.5" fill="#f59e0b" />
+            <line x1="20" y1="3" x2="22" y2="1" stroke="#f59e0b" strokeWidth="1.5" />
+            <circle cx="22" cy="1" r="1.5" fill="#f59e0b" />
+            {/* Space tunic */}
+            <rect x="8" y="16" width="16" height="12" fill="#047857" stroke="#064e3b" strokeWidth="0.5" />
+            <rect x="11" y="18" width="10" height="2" fill="#eab308" /> {/* Gold belt */}
           </>
         );
       case "guard":
         return (
           <>
-            <rect x="6" y="4" width="20" height="6" fill="#020617" /> {/* Crew cut jet black */}
-            <rect x="8" y="10" width="16" height="6" fill="#fbcfe8" /> {/* Face */}
-            <rect x="6" y="11" width="20" height="3" fill="#000000" /> {/* Heavy shades */}
-            <rect x="4" y="16" width="24" height="14" fill="#0f172a" /> {/* Black security tactical vest */}
-            <rect x="22" y="18" width="3" height="10" fill="#334155" /> {/* Baton/flashlight */}
+            {/* Security Cap */}
+            <rect x="6" y="2" width="20" height="5" fill="#0f172a" />
+            <rect x="4" y="5.5" width="24" height="1.5" fill="#1e293b" /> {/* Cap visor edge */}
+            <rect x="15" y="3" width="2" height="2" fill="#f59e0b" /> {/* Security Badge */}
+            {/* Face */}
+            <rect x="8" y="7" width="16" height="8" fill="#ffedd5" />
+            <rect x="6" y="9.5" width="20" height="3" fill="#000000" /> {/* Heavy shades */}
+            {/* Tactical Armor vest */}
+            <rect x="4" y="15" width="24" height="13.5" fill="#1e293b" stroke="#0f172a" strokeWidth="1" />
+            <rect x="7" y="17" width="18" height="6" fill="#0f172a" /> {/* Bulletproof sheet */}
+            <rect x="9" y="19" width="14" height="2" fill="#ffffff" stroke="#e2e8f0" strokeWidth="0.5" /> {/* POLICE/GUARD text */}
+            {/* Baton & flashlight on belt */}
+            <rect x="23" y="22" width="2" height="7" fill="#3b4252" />
+            <rect x="7" y="22" width="3" height="4" fill="#d8dee9" />
           </>
         );
 
@@ -206,84 +367,134 @@ export const SpriteRenderer: React.FC<SpriteRendererProps> = ({
       case "desk":
         return (
           <>
-            <rect x="2" y="8" width="28" height="10" fill="#78350f" /> {/* Desk top */}
-            <rect x="4" y="18" width="4" height="12" fill="#451a03" /> {/* Legs */}
-            <rect x="24" y="18" width="4" height="12" fill="#451a03" />
-            <rect x="10" y="2" width="12" height="6" fill="#e2e8f0" /> {/* High tech monitor */}
-            <rect x="11" y="3" width="10" height="4" fill="#090d16" />
-            <circle cx="16" cy="5" r="1" fill="#10b981" /> {/* Graph glint */}
+            {/* Polished Mahogany Top */}
+            <rect x="1" y="11" width="30" height="7" fill="#7c2d12" stroke="#451a03" strokeWidth="0.5" />
+            <rect x="2" y="11.5" width="28" height="1.5" fill="#b45309" /> {/* Top specular reflection */}
+            {/* Sturdy Desk Legs */}
+            <rect x="3" y="18" width="4" height="11.5" fill="#451a03" />
+            <rect x="25" y="18" width="4" height="11.5" fill="#451a03" />
+            <rect x="3" y="28" width="5" height="1.5" fill="#0f172a" />
+            <rect x="24" y="28" width="5" height="1.5" fill="#0f172a" />
+            {/* High Tech Monitor */}
+            <rect x="9" y="3" width="14" height="7.5" fill="#475569" rx="1" />
+            <rect x="10" y="4" width="12" height="5.5" fill="#0f172a" />
+            {/* Financial Graph details inside screen */}
+            <path d="M 11,8 L 14,6 L 17,7 L 21,5" fill="none" stroke="#10b981" strokeWidth="1.2" /> {/* Trend up */}
+            <circle cx="21" cy="5" r="0.8" fill="#34d399" className="animate-pulse" />
+            {/* Stand */}
+            <rect x="14" y="10.5" width="4" height="1" fill="#475569" />
           </>
         );
       case "pen":
         return (
           <>
-            <line x1="28" y1="4" x2="4" y2="28" stroke="#eab308" strokeWidth="4" /> {/* Gold Pen Body */}
-            <polygon points="4,28 8,24 4,24" fill="#f3f4f6" /> {/* Silver pen nib */}
-            {/* Sparkles */}
-            <circle cx="10" cy="8" r="1.5" fill="#ffffff" />
-            <circle cx="22" cy="22" r="1.5" fill="#38bdf8" />
+            {/* Gold Pen body */}
+            <line x1="26" y1="4" x2="6" y2="24" stroke="#fbbf24" strokeWidth="3" />
+            <line x1="24" y1="6" x2="8" y2="22" stroke="#f59e0b" strokeWidth="1" />
+            {/* Silver pen nib */}
+            <polygon points="6,24 10,22 6,20" fill="#f8fafc" />
+            <polygon points="5,26 6,24 4,24" fill="#cbd5e1" />
+            {/* Star Sparkles around the pen */}
+            <polygon points="12,6 13,8 15,9 13,10 12,12 11,10 9,9 11,8" fill="#ffffff" className="animate-pulse" />
+            <polygon points="22,18 23,19 24,18 23,17" fill="#60a5fa" className="animate-pulse" />
           </>
         );
       case "coffee":
         return (
           <>
-            <rect x="6" y="6" width="20" height="22" fill="#334155" /> {/* Machine Main */}
-            <rect x="10" y="10" width="12" height="6" fill="#020617" /> {/* LED Display */}
-            <rect x="12" y="12" width="8" height="2" fill="#06b6d4" /> {/* Cyan level meter */}
-            <rect x="14" y="20" width="4" height="5" fill="#fcd34d" /> {/* Golden coffee mug */}
-            <rect x="15" y="17" width="2" height="3" fill="#06b6d4" /> {/* Pouring bluish plasma */}
+            {/* Machine Main Body */}
+            <rect x="6" y="5" width="20" height="23" fill="#1e293b" stroke="#0f172a" strokeWidth="1.5" rx="3" />
+            <rect x="7" y="6" width="18" height="6" fill="#334155" /> {/* Top lid */}
+            {/* Display screen */}
+            <rect x="9" y="13" width="14" height="5.5" fill="#020617" />
+            <rect x="11" y="15" width="10" height="1.5" fill="#22d3ee" className="animate-pulse" /> {/* Liquid meter */}
+            {/* Golden Mug */}
+            <rect x="13" y="21.5" width="6" height="5.5" fill="#fbbf24" stroke="#d97706" strokeWidth="0.5" rx="1" />
+            <path d="M 19,22.5 Q 21,23 21,24.5 Q 21,26 19,26.5" fill="none" stroke="#d97706" strokeWidth="1" /> {/* Mug Handle */}
+            {/* Flowing coffee */}
+            <line x1="16" y1="18.5" x2="16" y2="21.5" stroke="#38bdf8" strokeWidth="1.5" className="animate-pulse" />
           </>
         );
       case "chest":
         return (
           <>
-            <rect x="4" y="8" width="24" height="20" fill="#78350f" stroke="#eab308" strokeWidth="2" /> {/* Chest body */}
-            <rect x="4" y="8" width="24" height="6" fill="#b45309" /> {/* LID */}
-            <rect x="14" y="14" width="4" height="4" fill="#eab308" /> {/* Gold Lock plate */}
-            <circle cx="16" cy="16" r="1" fill="#000000" /> {/* Keyhole */}
+            {/* Wooden base */}
+            <rect x="3" y="9" width="26" height="20" fill="#78350f" stroke="#451a03" strokeWidth="1" rx="2" />
+            <rect x="3" y="9" width="26" height="7" fill="#b45309" stroke="#451a03" strokeWidth="0.5" /> {/* Lid */}
+            {/* Metallic Gold bands */}
+            <rect x="7" y="9" width="3" height="20" fill="#f59e0b" />
+            <rect x="22" y="9" width="3" height="20" fill="#f59e0b" />
+            <rect x="3" y="15" width="26" height="2" fill="#d97706" />
+            {/* Golden Key Lock */}
+            <rect x="13.5" y="14.5" width="5" height="5.5" fill="#f59e0b" stroke="#78350f" strokeWidth="0.5" />
+            <circle cx="16" cy="17.2" r="1.2" fill="#000000" />
+            <line x1="16" y1="18.4" x2="16" y2="19.6" stroke="#000000" strokeWidth="1" />
           </>
         );
       case "golf_ball":
         return (
           <>
-            <circle cx="16" cy="18" r="7" fill="#ffffff" /> {/* Golf Ball */}
-            <circle cx="14" cy="15" r="1" fill="#cbd5e1" /> {/* Dimples */}
-            <circle cx="18" cy="16" r="1" fill="#cbd5e1" />
-            <circle cx="15" cy="20" r="1" fill="#cbd5e1" />
-            <rect x="15" y="25" width="2" height="5" fill="#38bdf8" /> {/* Tee stand */}
+            {/* Ball */}
+            <circle cx="16" cy="15" r="8" fill="#ffffff" stroke="#cbd5e1" strokeWidth="0.5" />
+            <circle cx="16" cy="15" r="7.5" fill="#f8fafc" />
+            {/* 3D dimple shading */}
+            <circle cx="13" cy="12" r="0.8" fill="#cbd5e1" />
+            <circle cx="18" cy="13" r="0.8" fill="#cbd5e1" />
+            <circle cx="14" cy="16" r="0.8" fill="#cbd5e1" />
+            <circle cx="17" cy="17" r="0.8" fill="#cbd5e1" />
+            <circle cx="19" cy="15" r="0.8" fill="#cbd5e1" />
+            {/* Tee stand (Blue) */}
+            <polygon points="14,23 18,23 16,30" fill="#38bdf8" />
+            <rect x="15" y="23" width="2" height="7.5" fill="#0284c7" />
           </>
         );
       case "shoe":
         return (
           <>
-            <path d="M 4,24 L 20,12 L 28,12 L 28,26 L 4,26 Z" fill="#ffffff" /> {/* Leather Sneaker */}
-            <path d="M 12,26 L 28,26" stroke="#ef4444" strokeWidth="2" /> {/* Red strip */}
-            <line x1="16" y1="12" x2="16" y2="20" stroke="#cbd5e1" strokeWidth="2" /> {/* Laces */}
-            <line x1="20" y1="14" x2="20" y2="20" stroke="#cbd5e1" strokeWidth="2" />
+            {/* Dynamic Sneaker */}
+            <path d="M 3,25 L 21,11 L 29,11 L 29,27 L 3,27 Z" fill="#ffffff" stroke="#94a3b8" strokeWidth="1" />
+            <path d="M 8,27 L 29,27" stroke="#ef4444" strokeWidth="2.5" /> {/* Red strip */}
+            <line x1="18" y1="11" x2="18" y2="19" stroke="#cbd5e1" strokeWidth="2" /> {/* Laces */}
+            <line x1="22" y1="12" x2="22" y2="19" stroke="#cbd5e1" strokeWidth="2" />
+            <rect x="24" y="11" width="5" height="5" fill="#e2e8f0" /> {/* Back ankle pad */}
           </>
         );
       case "lever":
         return (
           <>
-            <rect x="8" y="22" width="16" height="8" fill="#475569" /> {/* Base housing */}
-            <line x1="16" y1="22" x2="8" y2="6" stroke="#94a3b8" strokeWidth="4" /> {/* Metallic stick */}
-            <circle cx="8" cy="6" r="4.5" fill="#ef4444" /> {/* Red power grip dome */}
+            {/* Metallic Base housing */}
+            <rect x="6" y="21" width="20" height="9.5" fill="#475569" stroke="#1e293b" strokeWidth="1.5" rx="1.5" />
+            <rect x="11" y="23" width="10" height="3" fill="#0f172a" />
+            {/* Lever stick */}
+            <line x1="16" y1="21" x2="9" y2="6.5" stroke="#94a3b8" strokeWidth="4.5" />
+            <line x1="15.5" y1="20" x2="10" y2="7.5" stroke="#cbd5e1" strokeWidth="1.5" />
+            {/* Power dome knob */}
+            <circle cx="9" cy="6.5" r="4.5" fill="#ef4444" stroke="#991b1b" strokeWidth="0.5" />
+            <circle cx="7.8" cy="4.8" r="1.5" fill="#fca5a5" /> {/* Glare */}
           </>
         );
       case "rocket_button":
         return (
           <>
-            <rect x="6" y="18" width="20" height="12" fill="#3b82f6" stroke="#1d4ed8" strokeWidth="2" /> {/* High tech base */}
-            <circle cx="16" cy="14" r="6" fill="#ef4444" /> {/* Giant Red Button */}
-            <circle cx="14" cy="12" r="2.5" fill="#fca5a5" /> {/* Glare */}
+            {/* Tech base */}
+            <rect x="4" y="17" width="24" height="13.5" fill="#2563eb" stroke="#1d4ed8" strokeWidth="1.5" rx="3" />
+            <rect x="6" y="22" width="20" height="2" fill="#1e3a8a" />
+            {/* Giant red button */}
+            <ellipse cx="16" cy="14" rx="8" ry="5.5" fill="#ef4444" stroke="#991b1b" strokeWidth="0.5" />
+            <ellipse cx="16" cy="11.5" rx="8" ry="3" fill="#f87171" />
+            <ellipse cx="14" cy="11" rx="2.5" ry="1" fill="#ffffff" /> {/* Glare */}
           </>
         );
       case "egg":
         return (
           <>
-            <path d="M 16,4 C 8,16 6,28 16,28 C 26,28 24,16 16,4 Z" fill="#fbcfe8" /> {/* Alien glowing egg */}
-            <ellipse cx="14" cy="18" rx="2" ry="4" fill="#ec4899" /> {/* Bio textures */}
-            <ellipse cx="18" cy="15" rx="1.5" ry="3" fill="#fae8ff" />
+            {/* Alien Bio egg */}
+            <path d="M 16,3 C 7.5,15 5.5,28 16,28 C 26.5,28 24.5,15 16,3 Z" fill="#fbcfe8" stroke="#db2777" strokeWidth="1.5" />
+            {/* Bio texture veins */}
+            <ellipse cx="12.5" cy="17" rx="2.5" ry="5" fill="#ec4899" opacity="0.65" />
+            <ellipse cx="19.5" cy="14" rx="2" ry="4" fill="#ec4899" opacity="0.65" />
+            <circle cx="16" cy="23" r="1.5" fill="#fae8ff" />
+            <ellipse cx="14.5" cy="9.5" rx="1.5" ry="3.5" fill="#ffffff" /> {/* Bio highlight */}
           </>
         );
 
@@ -291,10 +502,10 @@ export const SpriteRenderer: React.FC<SpriteRendererProps> = ({
         // Default boxy character
         return (
           <>
-            <rect x="6" y="4" width="20" height="24" fill="#3b82f6" />
-            <rect x="10" y="8" width="4" height="4" fill="#ffffff" />
-            <rect x="18" y="8" width="4" height="4" fill="#ffffff" />
-            <rect x="10" y="16" width="12" height="4" fill="#ffffff" />
+            <rect x="5" y="3" width="22" height="26" fill="#3b82f6" stroke="#1d4ed8" strokeWidth="1.5" rx="2" />
+            <rect x="9" y="8" width="4" height="4" fill="#ffffff" />
+            <rect x="19" y="8" width="4" height="4" fill="#ffffff" />
+            <rect x="9" y="16" width="14" height="4" fill="#ffffff" />
           </>
         );
     }
@@ -324,3 +535,4 @@ export const SpriteRenderer: React.FC<SpriteRendererProps> = ({
     </div>
   );
 };
+
