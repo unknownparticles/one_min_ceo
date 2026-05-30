@@ -1,9 +1,9 @@
 import { EndingResult, FixedEnding, InteractionResult, WorldScenario, BossIdentityType } from "../types";
-import { getFallbackScenario } from "../../serverFallback";
+import { getFallbackScenario } from "./fallbackScenario";
 import { buildResourceGenerationGuide, getResourcePack } from "./resourceKit";
 
 const SILICONFLOW_ENDPOINT = "https://api.siliconflow.cn/v1/chat/completions";
-const DEFAULT_MODEL = "Qwen/Qwen3.5-35B-A3B";
+const DEFAULT_MODEL = "Qwen/Qwen2.5-14B-Instruct";
 
 export type ApiProvider = "siliconflow" | "minimax";
 
@@ -13,9 +13,10 @@ export interface ApiSettings {
   siliconFlowModel: string;
   minimaxApiKey: string;
   minimaxModel: string;
+  enableThinking: boolean;
 }
 
-const DEFAULT_SILICONFLOW_MODEL = "Qwen/Qwen3.5-35B-A3B";
+const DEFAULT_SILICONFLOW_MODEL = "Qwen/Qwen2.5-14B-Instruct";
 const DEFAULT_MINIMAX_MODEL = "MiniMax-M2.5";
 const MINIMAX_ENDPOINT = "https://api.minimax.io/v1/chat/completions";
 
@@ -25,6 +26,7 @@ type RuntimeConfig = {
   minimaxApiKey?: string;
   minimaxModel?: string;
   provider?: ApiProvider;
+  enableThinking?: boolean;
 };
 
 declare global {
@@ -33,16 +35,28 @@ declare global {
   }
 }
 
-export const getApiSettings = (): ApiSettings => {
-  let stored: Partial<ApiSettings> = {};
+export const getRawStoredSettings = (): Partial<ApiSettings> => {
   try {
     const raw = localStorage.getItem("one_min_ceo_api_settings");
     if (raw) {
-      stored = JSON.parse(raw);
+      return JSON.parse(raw);
     }
   } catch (e) {
-    console.error("加载 API 设置失败", e);
+    console.error("加载原始 API 设置失败", e);
   }
+  return {};
+};
+
+export const hasEnvApiKey = (provider: ApiProvider): boolean => {
+  if (provider === "siliconflow") {
+    return !!(window.__ONE_MIN_CEO_CONFIG__?.siliconFlowApiKey || import.meta.env.VITE_SILICONFLOW_API_KEY);
+  } else {
+    return !!(window.__ONE_MIN_CEO_CONFIG__?.minimaxApiKey || import.meta.env.VITE_MINIMAX_API_KEY);
+  }
+};
+
+export const getApiSettings = (): ApiSettings => {
+  const stored = getRawStoredSettings();
 
   const sfKey = stored.siliconFlowApiKey ||
                 window.__ONE_MIN_CEO_CONFIG__?.siliconFlowApiKey ||
@@ -67,6 +81,7 @@ export const getApiSettings = (): ApiSettings => {
     siliconFlowModel: stored.siliconFlowModel || window.__ONE_MIN_CEO_CONFIG__?.siliconFlowModel || import.meta.env.VITE_SILICONFLOW_MODEL || DEFAULT_SILICONFLOW_MODEL,
     minimaxApiKey: mmKey,
     minimaxModel: stored.minimaxModel || window.__ONE_MIN_CEO_CONFIG__?.minimaxModel || import.meta.env.VITE_MINIMAX_MODEL || DEFAULT_MINIMAX_MODEL,
+    enableThinking: stored.enableThinking !== undefined ? stored.enableThinking : false,
   };
 };
 
@@ -81,6 +96,7 @@ export const saveApiSettings = (settings: ApiSettings) => {
     window.__ONE_MIN_CEO_CONFIG__.minimaxApiKey = settings.minimaxApiKey;
     window.__ONE_MIN_CEO_CONFIG__.minimaxModel = settings.minimaxModel;
     window.__ONE_MIN_CEO_CONFIG__.provider = settings.provider;
+    window.__ONE_MIN_CEO_CONFIG__.enableThinking = settings.enableThinking;
   } catch (e) {
     console.error("保存 API 设置失败", e);
   }
@@ -106,31 +122,26 @@ const parseJsonObject = <T>(content: string): T => {
   return JSON.parse(raw) as T;
 };
 
-const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, maxTokens = 4096, timeoutMs = 8000): Promise<T> => {
+const callSiliconFlowJson = async <T>(
+  systemPrompt: string,
+  userPrompt: string,
+  maxTokens = 4096,
+  overrideModel?: string,
+  overrideEnableThinking?: boolean
+): Promise<T> => {
   const settings = getApiSettings();
-  const isMiniMax = settings.provider === "minimax";
+  const isMiniMax = settings.provider === "minimax" && !overrideModel;
   
-  const apiKey = isMiniMax ? settings.minimaxApiKey : settings.siliconFlowApiKey;
-  const model = isMiniMax ? settings.minimaxModel : settings.siliconFlowModel;
-  const endpoint = isMiniMax ? MINIMAX_ENDPOINT : SILICONFLOW_ENDPOINT;
+  const apiKey = overrideModel ? settings.siliconFlowApiKey : (isMiniMax ? settings.minimaxApiKey : settings.siliconFlowApiKey);
+  const model = overrideModel || (isMiniMax ? settings.minimaxModel : settings.siliconFlowModel);
+  const endpoint = overrideModel ? SILICONFLOW_ENDPOINT : (isMiniMax ? MINIMAX_ENDPOINT : SILICONFLOW_ENDPOINT);
 
   if (!apiKey) {
     throw new Error(`未配置 ${isMiniMax ? "MiniMax" : "SiliconFlow"} API Key，请点击右上角 [⚙️ API设置] 进行配置。`);
   }
 
   const startTime = performance.now();
-  
-  // Set up request timeout controller and Promise.race for double-insurance
-  const controller = new AbortController();
-  let timeoutId: any = null;
-  const timeoutPromise = new Promise<never>((_, reject) => {
-    timeoutId = setTimeout(() => {
-      controller.abort(); // Attempt to abort underlying network request
-      reject(new DOMException("The user aborted a request.", "AbortError"));
-    }, timeoutMs);
-  });
 
-  // Initialize timing placeholder in case of early errors
   (callSiliconFlowJson as any).lastTiming = {
     networkDuration: 0,
     parseDuration: 0,
@@ -139,31 +150,32 @@ const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, 
   };
 
   try {
-    const response = await Promise.race([
-      fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify({
-          model: model,
-          messages: [
-            { role: "system", content: systemPrompt },
-            { role: "user", content: userPrompt },
-          ],
-          response_format: { type: "json_object" },
-          temperature: 0.9,
-          max_tokens: maxTokens,
-        }),
-        signal: controller.signal
-      }),
-      timeoutPromise
-    ]);
+    const bodyParams: any = {
+      model: model,
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userPrompt },
+      ],
+      temperature: 0.9,
+      max_tokens: maxTokens,
+    };
 
-    if (timeoutId) {
-      clearTimeout(timeoutId);
+    const finalEnableThinking = overrideEnableThinking !== undefined
+      ? overrideEnableThinking
+      : settings.enableThinking;
+
+    if (model.toLowerCase().includes("deepseek")) {
+      bodyParams.enable_thinking = finalEnableThinking;
     }
+
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify(bodyParams),
+    });
 
     if (!response.ok) {
       const errorText = await response.text().catch(() => "");
@@ -171,9 +183,14 @@ const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, 
     }
 
     const data = await response.json();
-    const content = data?.choices?.[0]?.message?.content;
+    let content = data?.choices?.[0]?.message?.content;
+    const reasoningContent = data?.choices?.[0]?.message?.reasoning_content;
     if (!content || typeof content !== "string") {
-      throw new Error(`${isMiniMax ? "MiniMax" : "SiliconFlow"} 返回内容为空`);
+      if (reasoningContent && typeof reasoningContent === "string") {
+        content = reasoningContent;
+      } else {
+        throw new Error(`${isMiniMax ? "MiniMax" : "SiliconFlow"} 返回内容为空`);
+      }
     }
 
     const networkEndTime = performance.now();
@@ -193,10 +210,6 @@ const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, 
 
     return parsed;
   } catch (error: any) {
-    if (timeoutId) {
-      clearTimeout(timeoutId);
-    }
-    controller.abort();
     const totalDuration = performance.now() - startTime;
     (callSiliconFlowJson as any).lastTiming = {
       networkDuration: totalDuration,
@@ -205,9 +218,6 @@ const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, 
       error: error.message || error.name || "Unknown error"
     };
 
-    if (error.name === "AbortError") {
-      throw new Error(`时空网关连接超时 (API 请求超出 ${timeoutMs / 1000} 秒无响应)，已自动切回离线降级引擎！`);
-    }
     throw error;
   }
 };
@@ -307,50 +317,310 @@ const printPerformanceReport = (actionName: string, customDuration = 0, isFallba
   }
 };
 
-export const generateWorld = async (identity: string, customPrompt: string): Promise<WorldScenario> => {
-  const systemPrompt = `你是像素世界生成器，为游戏《一分钟老板》生成完整可玩的 JSON 场景。只返回 JSON，不要 Markdown。
-JSON 必须包含字段：identity, identityType, theme, mapLayout, playerPosition, npcs, items, introText, ambientMusic, fixedEndings。
-mapLayout.width 必须是 16，height 必须是 12，tiles 是 12x16 字符串矩阵，边界用 wall，其余可用 floor/carpet/grass/snow/water/deck/road/metal_plate。
-npcs 生成 4 到 6 个，items 生成 4 到 6 个，坐标不能重叠，x 在 1 到 14，y 在 1 到 10。
-每个 NPC 必须包含：id, name, sprite, x, y, dialogue（一句极具角色荒诞特色的见面首句台词/问候语）。
-每个 Item 必须包含：id, name, sprite, x, y, description（关于该荒诞道具的一行详细说明文本）。
-NPC 和 Item 均不需要包含任何 storyline 剧情故事线字段，因为剧情交互将由时空引擎后续动态懒加载生成！
-fixedEndings 生成 4 到 6 个，每个包含 endingId, title, description, priority, triggerRules；triggerRules 至少包含 mustInclude，可选 forbidInclude 和 requiredSequence。
-语气要荒诞、中文、节奏快，适合 60 秒倒计时互动。`;
 
-  const userPrompt = `身份类型：${identity || "CEO"}。自定义设定：${customPrompt || "无"}。请生成一个完整场景 JSON。`;
+export interface ConnectionTestResult {
+  success: boolean;
+  message: string;
+  latency?: number;
+}
+
+export const testApiConnection = async (): Promise<ConnectionTestResult> => {
+  const settings = getApiSettings();
+  const isMiniMax = settings.provider === "minimax";
+  
+  const apiKey = isMiniMax ? settings.minimaxApiKey : settings.siliconFlowApiKey;
+  const model = isMiniMax ? settings.minimaxModel : settings.siliconFlowModel;
+  const endpoint = isMiniMax ? MINIMAX_ENDPOINT : SILICONFLOW_ENDPOINT;
+
+  if (!apiKey) {
+    return {
+      success: false,
+      message: `未配置 ${isMiniMax ? "MiniMax" : "SiliconFlow"} API Key，请先配置。`
+    };
+  }
+
+  const startTime = performance.now();
 
   try {
-    const world = await callSiliconFlowJson<WorldScenario>(systemPrompt, userPrompt, 2048, 35000);
-    
-    const startNormalize = performance.now();
-    // Verify and normalize mapLayout structure to avoid empty map or runtime error
-    const normalizedLayout = normalizeMapLayout(world.mapLayout);
-    const normalizeDuration = performance.now() - startNormalize;
-    
-    if (!normalizedLayout) {
-      throw new Error("大模型生成的场景中地图布局 (mapLayout) 无效或缺失");
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: model,
+        messages: [
+          { role: "user", content: "ping" },
+        ],
+        max_tokens: 5,
+        temperature: 0.1,
+      }),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text().catch(() => "");
+      let detail = `HTTP ${response.status}`;
+      if (response.status === 401) {
+        detail = "API Key 校验失败 (401 Unauthorized)，请检查 Key 是否填写正确。";
+      } else if (response.status === 402) {
+        detail = "账户欠费 (402 Payment Required)，请前往服务商官网充值。";
+      } else if (errorText) {
+        detail += `: ${errorText.substring(0, 100)}`;
+      }
+      return {
+        success: false,
+        message: detail
+      };
     }
 
-    // Safety checks for NPCs and Items lists to ensure array format
-    const npcs = Array.isArray(world.npcs) ? world.npcs : [];
-    const items = Array.isArray(world.items) ? world.items : [];
+    const data = await response.json();
+    const content = data?.choices?.[0]?.message?.content;
+    const latency = performance.now() - startTime;
 
-    printPerformanceReport("生成世界地图 (generateWorld)", normalizeDuration);
+    if (!content) {
+      return {
+        success: false,
+        message: "API 响应成功，但返回的 choices 结构为空，可能是模型不兼容或设置有误。",
+        latency
+      };
+    }
 
     return {
-      ...world,
-      mapLayout: normalizedLayout,
-      npcs,
-      items,
-      identityType: (world.identityType || identity || "CEO") as BossIdentityType,
-      resourcePack: world.resourcePack || getResourcePack(world.identityType || identity, world.theme),
+      success: true,
+      message: `连接成功！延迟 ${latency.toFixed(0)} ms`,
+      latency
+    };
+  } catch (error: any) {
+    let msg = error.message || error.name || "连接失败";
+    if (msg.includes("Failed to fetch")) {
+      msg = "网络请求失败，请检查你的网络连接或 API 端点是否可达（可能需要开启 VPN 或检查 DNS 配置）。";
+    }
+    return {
+      success: false,
+      message: msg
+    };
+  }
+};
+
+interface ModelNpc {
+  id: string;
+  name: string;
+  dialogue: string;
+  storyline: Array<{
+    id: string;
+    text: string;
+    options: Array<{
+      label: string;
+      outcomeText: string;
+    }>;
+  }>;
+}
+
+interface ModelItem {
+  id: string;
+  name: string;
+  description: string;
+  storyline: Array<{
+    id: string;
+    text: string;
+    options: Array<{
+      label: string;
+      outcomeText: string;
+    }>;
+  }>;
+}
+
+interface ModelWorldResponse {
+  theme: string;
+  introText: string;
+  npcs: ModelNpc[];
+  items: ModelItem[];
+}
+
+export const generateWorld = async (
+  identity: string,
+  customPrompt: string,
+  overrideModel?: string,
+  overrideEnableThinking?: boolean
+): Promise<WorldScenario> => {
+  const skeleton = getFallbackScenario(identity);
+
+  const systemPrompt = `你是《一分钟老板》的荒诞文案生成器，为身份「${identity || "CEO"}」编写剧情。只返回 JSON，不要 Markdown。
+
+返回格式：
+{
+  "theme": "荒诞时空主题名",
+  "introText": "60秒倒计时开场白",
+  "npcs": [{ "id": "...", "name": "...", "dialogue": "...", "storyline": [{ "id": "...", "text": "...", "options": [{ "label": "...", "outcomeText": "..." }] }] }],
+  "items": [{ "id": "...", "name": "...", "description": "...", "storyline": [{ "id": "...", "text": "...", "options": [{ "label": "...", "outcomeText": "..." }] }] }]
+}
+
+约束：
+1. npcs/items 的 id 和 storyline 中 step 的 id 必须与骨架完全一致，不增不减
+2. 每个 step 的 options 数量必须与骨架一致
+3. 只输出纯文本，不输出 mapLayout/playerPosition/fixedEndings/resourcePack`;
+
+  const skeletonDataForPrompt = {
+    identity: identity || "CEO",
+    npcs: skeleton.npcs.map(n => ({
+      id: n.id,
+      role: n.name,
+      steps: n.storyline.map(s => ({
+        id: s.id,
+        context: s.text,
+        optionCount: s.options.length,
+        optionHints: s.options.map(o => o.label)
+      }))
+    })),
+    items: skeleton.items.map(i => ({
+      id: i.id,
+      type: i.name,
+      steps: i.storyline.map(s => ({
+        id: s.id,
+        context: s.text,
+        optionCount: s.options.length,
+        optionHints: s.options.map(o => o.label)
+      }))
+    }))
+  };
+
+  const userPrompt = `身份：${identity || "CEO"}。${customPrompt ? `关键词：${customPrompt}。` : ""}
+骨架（保留 id 和 option 数量，重写文案）：
+${JSON.stringify(skeletonDataForPrompt, null, 2)}`;
+
+  try {
+    const worldResult = await callSiliconFlowJson<ModelWorldResponse>(
+      systemPrompt,
+      userPrompt,
+      2048,
+      overrideModel,
+      overrideEnableThinking
+    );
+    
+    const startNormalize = performance.now();
+
+    // Defensive Merge NPC storyline and data
+    const mergedNpcs = skeleton.npcs.map(originalNpc => {
+      const modelNpc = Array.isArray(worldResult.npcs) 
+        ? worldResult.npcs.find((n: any) => n && n.id === originalNpc.id)
+        : null;
+
+      if (!modelNpc) {
+        return originalNpc;
+      }
+
+      const mergedStoryline = originalNpc.storyline.map((originalStep, stepIdx) => {
+        const modelStep = Array.isArray(modelNpc.storyline)
+          ? (modelNpc.storyline.find((s: any) => s && s.id === originalStep.id) || modelNpc.storyline[stepIdx])
+          : null;
+
+        if (!modelStep) {
+          return originalStep;
+        }
+
+        const mergedOptions = originalStep.options.map((originalOpt, optIdx) => {
+          const modelOpt = Array.isArray(modelStep.options)
+            ? modelStep.options[optIdx]
+            : null;
+
+          if (!modelOpt) {
+            return originalOpt;
+          }
+
+          return {
+            ...originalOpt,
+            label: modelOpt.label || originalOpt.label,
+            outcomeText: modelOpt.outcomeText || originalOpt.outcomeText,
+          };
+        });
+
+        return {
+          ...originalStep,
+          text: modelStep.text || originalStep.text,
+          options: mergedOptions,
+        };
+      });
+
+      return {
+        ...originalNpc,
+        name: modelNpc.name || originalNpc.name,
+        dialogue: modelNpc.dialogue || originalNpc.dialogue,
+        storyline: mergedStoryline,
+      };
+    });
+
+    // Defensive Merge Item storyline and data
+    const mergedItems = skeleton.items.map(originalItem => {
+      const modelItem = Array.isArray(worldResult.items)
+        ? worldResult.items.find((i: any) => i && i.id === originalItem.id)
+        : null;
+
+      if (!modelItem) {
+        return originalItem;
+      }
+
+      const mergedStoryline = originalItem.storyline.map((originalStep, stepIdx) => {
+        const modelStep = Array.isArray(modelItem.storyline)
+          ? (modelItem.storyline.find((s: any) => s && s.id === originalStep.id) || modelItem.storyline[stepIdx])
+          : null;
+
+        if (!modelStep) {
+          return originalStep;
+        }
+
+        const mergedOptions = originalStep.options.map((originalOpt, optIdx) => {
+          const modelOpt = Array.isArray(modelStep.options)
+            ? modelStep.options[optIdx]
+            : null;
+
+          if (!modelOpt) {
+            return originalOpt;
+          }
+
+          return {
+            ...originalOpt,
+            label: modelOpt.label || originalOpt.label,
+            outcomeText: modelOpt.outcomeText || originalOpt.outcomeText,
+          };
+        });
+
+        return {
+          ...originalStep,
+          text: modelStep.text || originalStep.text,
+          options: mergedOptions,
+        };
+      });
+
+      return {
+        ...originalItem,
+        name: modelItem.name || originalItem.name,
+        description: modelItem.description || originalItem.description,
+        storyline: mergedStoryline,
+      };
+    });
+
+    const normalizeDuration = performance.now() - startNormalize;
+    printPerformanceReport("生成世界地图 (generateWorld)", normalizeDuration);
+
+    const mergedTheme = worldResult.theme || skeleton.theme;
+
+    return {
+      ...skeleton,
+      theme: mergedTheme,
+      introText: worldResult.introText || skeleton.introText,
+      npcs: mergedNpcs,
+      items: mergedItems,
+      identityType: (identity || "CEO") as BossIdentityType,
+      resourcePack: getResourcePack(identity, mergedTheme),
+      isFallback: false,
     };
   } catch (error: any) {
     printPerformanceReport("生成世界地图 (generateWorld)", 0, true, error.message || String(error));
-    return withFallbackIdentity(getFallbackScenario(identity), identity);
+    return withFallbackIdentity(skeleton, identity);
   }
 };
+
 
 export const generateInteraction = async (payload: {
   identity?: string;
@@ -370,7 +640,7 @@ options 是 1 到 3 个选项，每项包含 label 和 action.timeDelta 是 0 �
 玩家动作：${payload.playerAction || "First approach"}`;
 
   try {
-    const result = await callSiliconFlowJson<InteractionResult>(systemPrompt, userPrompt, 2048, 10000);
+    const result = await callSiliconFlowJson<InteractionResult>(systemPrompt, userPrompt, 2048);
     printPerformanceReport("生成场景互动 (generateInteraction)");
     return result;
   } catch (error: any) {
@@ -451,11 +721,125 @@ ${matchedEnding ? `玩家触发固定结局：${matchedEnding.title}。结局描
 互动记录：${JSON.stringify(payload.interactionLog)}`;
 
   try {
-    const result = await callSiliconFlowJson<EndingResult>(systemPrompt, userPrompt, 4096, 15000);
+    const result = await callSiliconFlowJson<EndingResult>(systemPrompt, userPrompt, 4096);
     printPerformanceReport("评估终局清算 (generateEnding)");
     return result;
   } catch (error: any) {
     printPerformanceReport("评估终局清算 (generateEnding)", 0, true, error.message || String(error));
     return offlineEnding(payload);
   }
+};
+
+// Model to use for random concept streaming (non-thinking mode)
+export const FLASH_MODEL = "deepseek-ai/DeepSeek-V4-Flash";
+
+/**
+ * 流式输出一个30字以内的荒诞商业构想。
+ * 使用 deepseek-ai/DeepSeek-V4-Flash 非思考模式（enable_thinking: false），
+ * 通过 SSE 流实时回调每个 token。
+ *
+ * @param onChunk 每次收到新文本片段时的回调
+ * @param onDone  流完成时的回调，返回完整文本
+ * @param onError 错误时的回调
+ * @returns 取消函数
+ */
+export const streamBusinessConcept = (
+  onChunk: (text: string) => void,
+  onDone: (fullText: string) => void,
+  onError: (err: Error) => void
+): (() => void) => {
+  const settings = getApiSettings();
+  const apiKey = settings.siliconFlowApiKey;
+
+  if (!apiKey) {
+    onError(new Error("未配置 SiliconFlow API Key，请点击右上角 [⚙️ API设置] 进行配置。"));
+    return () => {};
+  }
+
+  const controller = new AbortController();
+
+  const run = async () => {
+    try {
+      const response = await fetch(SILICONFLOW_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: FLASH_MODEL,
+          messages: [
+            {
+              role: "system",
+              content: "你是一个天马行空的创业导师。直接输出一个不超过30个汉字的荒诞商业构想，不要解释，不要标点符号之外的格式，只输出构想本身。",
+            },
+            {
+              role: "user",
+              content: "给我一个让所有人都目瞪口呆的奇特创业构想，30字以内。",
+            },
+          ],
+          stream: true,
+          enable_thinking: false,
+          temperature: 1.0,
+          max_tokens: 60,
+        }),
+        signal: controller.signal,
+      });
+
+      if (!response.ok) {
+        const errText = await response.text().catch(() => "");
+        throw new Error(`SiliconFlow 流式请求失败：${response.status} ${errText}`);
+      }
+
+      const reader = response.body?.getReader();
+      if (!reader) throw new Error("无法获取流式响应 Reader");
+
+      const decoder = new TextDecoder("utf-8");
+      let fullText = "";
+      let buffer = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() ?? "";
+
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (!trimmed || trimmed === "data: [DONE]") continue;
+          if (!trimmed.startsWith("data: ")) continue;
+
+          try {
+            const json = JSON.parse(trimmed.slice(6));
+            const delta = json?.choices?.[0]?.delta?.content;
+            if (delta && typeof delta === "string") {
+              // Limit total streamed text to 30 Chinese characters
+              const remaining = 30 - [...fullText].length;
+              if (remaining <= 0) continue;
+              const chunk = [...delta].slice(0, remaining).join("");
+              fullText += chunk;
+              onChunk(chunk);
+              if ([...fullText].length >= 30) {
+                reader.cancel();
+                break;
+              }
+            }
+          } catch {
+            // Skip malformed SSE lines
+          }
+        }
+      }
+
+      onDone(fullText.trim());
+    } catch (err: any) {
+      if (err.name !== "AbortError") {
+        onError(err instanceof Error ? err : new Error(String(err)));
+      }
+    }
+  };
+
+  run();
+  return () => controller.abort();
 };

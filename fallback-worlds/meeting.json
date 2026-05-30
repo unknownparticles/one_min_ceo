@@ -1,0 +1,183 @@
+{
+  "matchKeywords": ["meeting", "会议", "开会", "董事会"],
+  "identity": "王多鱼 (开会瞬间)",
+  "theme": "董事会狂澜与商业构想最后60秒",
+  "mapLayout": {
+    "width": 16,
+    "height": 12,
+    "tileRules": {
+      "wall": "border",
+      "carpet": "row4_col2to13",
+      "floor": "default"
+    }
+  },
+  "playerPosition": { "x": 3, "y": 5 },
+  "npcs": [
+    {
+      "id": "npc_investor_meeting",
+      "name": "刁难董事 钱总",
+      "sprite": "investor",
+      "x": 8,
+      "y": 4,
+      "dialogue": "王多鱼！二爷留下这笔三百万，你居然想投资'给月球西红柿建遮阳伞'这种荒唐构想？签字作废合同吧！",
+      "storyline": [
+        {
+          "id": "meeting_stage1",
+          "text": "钱总把合同拍在红木会议桌上，满脸嘲讽：『你要么乖乖签字（sign_deal）自愿退出，要么你就用你的三百万去买下一块月球地皮！』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "✍️ 冲动买下月球三万亩沙地", "outcomeText": "你狂放签字！将150万资金当场转给地皮买手，获得一张印满外星乱码的电子地券！钱总面色铁青说你疯了！", "timeDelta": -10, "actionId": "buy_moon" },
+            { "label": "🤜 把刁难合同团成球塞进他衣服里", "outcomeText": "你揪住钱总的高级领带，把合同粗暴塞进他的定制衬衫肚皮里，他当场发出尖叫并大声呼唤保安！", "timeDelta": -12, "actionId": "beat_investor" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_secretary_mei",
+      "name": "秘书 小美",
+      "sprite": "secretary",
+      "x": 4,
+      "y": 7,
+      "dialogue": "老板！钱总一直在对财务指手画脚。我已经把大楼断电红闸（pull_lever）和消防放水喷淋（open_sprinkler）都秘密锁定，只要您一声令下，马上物理物理拆台！",
+      "storyline": [
+        {
+          "id": "meeting_sec_stage1",
+          "text": "小美眼里闪着星星：『老板，你是命令我立刻拉下全楼电源总开关（pull_lever）还是打开天花板消防淋浴放水（open_sprinkler）淹洗他们？』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "🔌 怒拉电闸，全场断电昏死！", "outcomeText": "小美一推逆闸！整栋写字楼进入一片黑灯瞎火，钱总正在指手画脚当场一脚踩进垃圾桶！", "timeDelta": -8, "actionId": "pull_lever" },
+            { "label": "💦 启动消防高压喷头大放水！", "outcomeText": "天花板开始洒下滔天豪雨！办公室直接变成狂澜水上乐园，所有百亿融资框架书浸泡成了烂糊糊！", "timeDelta": -10, "actionId": "open_sprinkler" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_sec_dog",
+      "name": "安防哈士奇 狗子",
+      "sprite": "dog",
+      "x": 13,
+      "y": 3,
+      "dialogue": "汪！警备哈士奇已启动，警告！检测到非法资产转移！",
+      "storyline": [
+        {
+          "id": "meeting_dog_stage1",
+          "text": "机器狗尾巴上的坐标指示灯正在过载频闪。你是要对它屁股狠狠来一脚飞踹（kick_dog），还是去喝一杯高能粒子漏电咖啡（drink_coffee）换换心情？",
+          "options": [
+            { "label": "🦵 毫不犹豫给二哈屁股一猛脚", "outcomeText": "你一脚踢了出去！防卫系统短路冒烟！钱总一瞬间吓尿了以为你安装了高能地雷！", "timeDelta": -8, "actionId": "kick_dog" },
+            { "label": "☕ 狂吞漏电咖啡，获得赛博神志", "outcomeText": "你抢过咖啡狂干！超强粒子电流瞬间穿过喉咙，震得你两眼泛极光！", "timeDelta": -6, "actionId": "drink_coffee" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_butler_victor",
+      "name": "忠诚老执事 Victor",
+      "sprite": "butler",
+      "x": 2,
+      "y": 9,
+      "dialogue": "大少爷！我已经为您调遣了秘密弹射气艇。如果这帮无礼董事要强行霸占二爷遗产，随时可以一键弹射升天！",
+      "storyline": [
+        {
+          "id": "meeting_butler_stage1",
+          "text": "Victor偷偷亮出高维推进引爆拉环：『少爷，您是要一屁股坐在弹射椅上极速飞天（press_rocket），还是留下来霸气一笔签下百亿对赌（sign_deal）对钱总啪啪打脸？』",
+          "options": [
+            { "label": "🚀 按破警报拉下飞天弹射火箭", "outcomeText": "你一拳拍死火箭引擎！推背力瞬间撞破大厦的双层落地窗，带着你在漫天浮云里呼啸冲出重力！", "timeDelta": -15, "actionId": "press_rocket" },
+            { "label": "✍️ 豪迈大笔签字接纳巨额债务对赌", "outcomeText": "你顺势签下了一百亿的超巨重工业投资合同！钱总看得瞠目结舌双膝当场下跪！", "timeDelta": -10, "actionId": "sign_deal" }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_coffee_meeting",
+      "name": "百亿高能咖啡杯",
+      "sprite": "coffee",
+      "x": 10,
+      "y": 6,
+      "description": "高管们喝剩下的滚烫浓缩咖啡，蕴藏着一万倍的荒唐元气！",
+      "storyline": [
+        {
+          "id": "coffee_meeting_stage1",
+          "text": "咖啡杯闪着棕色微光。你是顺热泼到满脸不屑的钱总头顶，还是自己一饮而尽？",
+          "options": [
+            { "label": "☕ 愤倒咖啡浇董事一身", "outcomeText": "你抄起杯子将高热浓缩汁优雅而精准地浇在董事新做的地中海发型上，烫得他像只烤鸭般尖叫原地旋转！", "timeDelta": -8, "actionId": "pour_coffee" },
+            { "label": "🤤 自己壮烈干了这两大杯", "outcomeText": "你一饮而尽，心脏像一台V12引擎一样雷鸣巨响！脑海中突然多出十八个无厘头投资草案！", "timeDelta": -5, "actionId": "drink_coffee" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_custom_table",
+      "name": "定制红木判决桌",
+      "sprite": "desk",
+      "x": 6,
+      "y": 3,
+      "description": "一张重达五吨的黄花梨豪华会议桌，上面堆满了数十个虚假或真实的投资空壳对赌合契！",
+      "storyline": [
+        {
+          "id": "meeting_table_stage1",
+          "text": "在巨大的判决桌前，你是砸下巨额资金全款买下钱总的所有融资股份（sign_deal），还是大喝一声猛拉逃脱推进拉拉闸（pull_lever）？",
+          "options": [
+            { "label": "✍️ 签字，把他的股份一键全额收购！", "outcomeText": "大笔狂挥！大聪明商业计划强悍注资，钱总的所有公司瞬间归于你膝下！他当场疯颠直喊爸爸！", "timeDelta": -10, "actionId": "sign_deal" },
+            { "label": "🔌 配合闪电拉闸让会议室切断电源", "outcomeText": "你一脚踢飞插盘，全场突然电闪雷鸣，整个摩天写字楼全段断电没用！", "timeDelta": -8, "actionId": "pull_lever" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_shining_chest",
+      "name": "百亿黑晶密码箱",
+      "sprite": "chest",
+      "x": 12,
+      "y": 9,
+      "description": "钱总裁随身携带的指纹安防手提密码箱，内部散发出万两黄金和机密债券特有的尊贵微光。",
+      "storyline": [
+        {
+          "id": "meeting_chest_stage1",
+          "text": "密码箱正滋滋作响漏电。你是用火焰把其过热引爆（ignite_fire），还是给看保大狼狗一记旋风重脚抢飞它（kick_dog）？",
+          "options": [
+            { "label": "🔥 在接口泼洒咖啡爆燃点起熊熊大火", "outcomeText": "轰！火星星星直冒！密码箱过载爆毁，黑烟混着极品资产败家的气味让钱总目瞪口呆！", "timeDelta": -10, "actionId": "ignite_fire" },
+            { "label": "🦵 给发抖二哈重足重击配合声东击西", "outcomeText": "你一记皮鞋跟踢飞了哈士奇屁股！警报疯狂咆哮，钱总手忙脚乱扔下箱子去抱头！", "timeDelta": -8, "actionId": "kick_dog" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_red_lever",
+      "name": "极速大断电红闸",
+      "sprite": "lever",
+      "x": 1,
+      "y": 1,
+      "description": "会议厅应急变阻电拉闸阀门，强暴力一推可以强制切断整层楼板高压负荷电源线！",
+      "storyline": [
+        {
+          "id": "meeting_lever_stage1",
+          "text": "变阻红闸上面闪现着诡异的橙金微电火。你要拉下它切断全电（pull_lever），还是豪气签字对赌百亿（sign_deal）？",
+          "options": [
+            { "label": "🔌 大哥带头，一扯到底！全场断电！", "outcomeText": "咔嗒！火星崩开，全办公室顿时沦落绝对昏暗，钱总在一秒里发出少女般的杀猪叫！", "timeDelta": -6, "actionId": "pull_lever" },
+            { "label": "✍️ 潇洒回首，狂野签下百亿债务", "outcomeText": "合同全额过关！大门倒塌，巨量败家现金流彻底宣誓着你的终极挥霍！", "timeDelta": -10, "actionId": "sign_deal" }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "endingId": "ending_meeting_beat_ceo",
+      "title": "【董事会格斗赛的总冠军】",
+      "description": "本年度最狂野的董事会决议！你不仅把合同揉成一团妥妥塞进了死板的钱总怀里（beat_investor），更是用高热高能咖啡给他来了一次闪电头顶洗礼（pour_coffee）！保安们进门时都被你的气势震慑住，合伙人惊叹你甚至发明了'咖啡格斗新流派'！二爷的信托不仅未能取消，还被你无序的王霸之气瞬间吓倒，直接宣布你获得了完美的千亿神豪继承冠冕！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["beat_investor", "pour_coffee"] }
+    },
+    {
+      "endingId": "ending_meeting_moon_ceo",
+      "title": "【月球西红柿王国的星际领主】",
+      "description": "你把资产全押在了买地球之外的荒漠地皮（buy_moon）！那些唯利是图的古板董事（beat_investor）骂你是个败家不中用的土狗。可就在倒计时结束前一秒，火星开拓团队宣布在月球你买下的那个废坑挖到了超纯金矿陨石！你瞬间成为人类首个外太空矿山主人！二爷显灵狂喜：'我只是想让你花光，你小子竟然直接通关了宇宙大奖！'",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["buy_moon"] }
+    }
+  ],
+  "introText": "你作为普通人王多鱼，怀揣三百万败家目标，突然被卷入刁难的全球合伙人董事会议室。高管们敲着桌子要你退还第二继承人位置。这绝对是充满压力、狂饮咖啡、砸爆文件并做出最荒谬商业大构想的紧张瞬间！",
+  "ambientMusic": "corporate-jazz"
+}

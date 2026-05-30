@@ -1,9 +1,14 @@
-// /serverFallback.ts
-// Worlds are loaded dynamically from the fallback-worlds/ directory.
-// Each JSON file is one world. Add or remove files to add/remove worlds.
+/**
+ * Browser-compatible fallback scenario loader.
+ * Uses Vite's import.meta.glob to statically bundle the JSON files at build
+ * time, replacing the server-side fs/path implementation in serverFallback.ts.
+ *
+ * All type definitions are duplicated here so this module has zero imports from
+ * the server-only serverFallback.ts, preventing Vite from pulling in Node.js
+ * built-ins (path, fs) into the client bundle.
+ */
 
-import fs from "fs";
-import path from "path";
+// ── Shared type definitions (kept in sync with serverFallback.ts) ─────────────
 
 export interface FallbackOption {
   label: string;
@@ -71,7 +76,7 @@ export interface FallbackScenario {
   ambientMusic: string;
 }
 
-// ── Internal JSON shape (as stored on disk) ──────────────────────────────────
+// ── Internal JSON shape (as stored on disk) ───────────────────────────────────
 
 interface WorldJson {
   matchKeywords: string[];
@@ -90,27 +95,7 @@ interface WorldJson {
   ambientMusic: string;
 }
 
-// ── Tile-map builder ──────────────────────────────────────────────────────────
-// Translates the compact tileRules in each JSON into a full tiles[][] grid so
-// the rest of the game code never needs to change.
-
-function buildTiles(
-  width: number,
-  height: number,
-  tileRules: Record<string, string>
-): string[][] {
-  const tiles: string[][] = [];
-
-  for (let r = 0; r < height; r++) {
-    const row: string[] = [];
-    for (let c = 0; c < width; c++) {
-      row.push(resolveTile(r, c, width, height, tileRules));
-    }
-    tiles.push(row);
-  }
-
-  return tiles;
-}
+// ── Tile-map builder (mirrors the logic in serverFallback.ts) ─────────────────
 
 function resolveTile(
   r: number,
@@ -119,31 +104,17 @@ function resolveTile(
   height: number,
   rules: Record<string, string>
 ): string {
-  // Border → wall
   if (r === 0 || r === height - 1 || c === 0 || c === width - 1) {
     return "wall";
   }
 
   for (const [tileName, rule] of Object.entries(rules)) {
     if (tileName === "wall" || tileName === "default") continue;
-
-    // Supported rule patterns:
-    //   "border"              – already handled above
-    //   "row3_col3to12"       – specific row and column range
-    //   "row4and5"            – two specific rows
-    //   "row4to8_col4to11"    – row range AND column range
-    //   "row6_col2to13"       – specific row and column range
-    //   "row_second_to_last"  – second-to-last row
-    //   "col_mod4"            – every column where c % 4 === 0
-
     if (rule === "border") continue;
-
     if (rule === "row_second_to_last" && r === height - 2) return tileName;
-
     if (rule === "col_mod4" && c % 4 === 0) return tileName;
 
     if (rule.startsWith("row") && rule.includes("and")) {
-      // e.g. "row4and5"
       const nums = rule.replace("row", "").split("and").map(Number);
       if (nums.includes(r)) return tileName;
     }
@@ -164,30 +135,52 @@ function resolveTile(
   return rules["default"] ?? "floor";
 }
 
-// ── World loader ──────────────────────────────────────────────────────────────
+function buildTiles(
+  width: number,
+  height: number,
+  tileRules: Record<string, string>
+): string[][] {
+  const tiles: string[][] = [];
+  for (let r = 0; r < height; r++) {
+    const row: string[] = [];
+    for (let c = 0; c < width; c++) {
+      row.push(resolveTile(r, c, width, height, tileRules));
+    }
+    tiles.push(row);
+  }
+  return tiles;
+}
 
-const WORLDS_DIR = path.join(__dirname, "fallback-worlds");
+// ── Static world loader via Vite glob import ──────────────────────────────────
+// All JSON files under fallback-worlds/ are bundled at build time.
+// The `eager: true` flag means they are loaded synchronously with no fs/path.
+
+const worldModules = import.meta.glob<WorldJson>(
+  "/fallback-worlds/*.json",
+  { eager: true }
+);
 
 function loadAllWorlds(): WorldJson[] {
-  if (!fs.existsSync(WORLDS_DIR)) {
-    console.warn(`[Fallback] fallback-worlds/ directory not found at ${WORLDS_DIR}`);
-    return [];
-  }
-
-  const files = fs.readdirSync(WORLDS_DIR).filter((f) => f.endsWith(".json"));
-
   const worlds: WorldJson[] = [];
-  for (const file of files) {
+  for (const filePath in worldModules) {
     try {
-      const raw = fs.readFileSync(path.join(WORLDS_DIR, file), "utf-8");
-      worlds.push(JSON.parse(raw) as WorldJson);
+      worlds.push(worldModules[filePath] as WorldJson);
     } catch (err) {
-      console.warn(`[Fallback] Failed to load world file "${file}":`, err);
+      console.warn(`[Fallback] Failed to load world file "${filePath}":`, err);
     }
   }
-
   console.log(`[Fallback] Loaded ${worlds.length} world(s) from fallback-worlds/`);
   return worlds;
+}
+
+// Cache so we only process once per page load.
+let _cachedWorlds: WorldJson[] | null = null;
+
+function getWorlds(): WorldJson[] {
+  if (!_cachedWorlds) {
+    _cachedWorlds = loadAllWorlds();
+  }
+  return _cachedWorlds;
 }
 
 function worldJsonToScenario(w: WorldJson): FallbackScenario {
@@ -211,10 +204,12 @@ function worldJsonToScenario(w: WorldJson): FallbackScenario {
 // ── Public API ────────────────────────────────────────────────────────────────
 
 export function getFallbackScenario(identity: string): FallbackScenario {
-  const worlds = loadAllWorlds();
+  const worlds = getWorlds();
 
   if (worlds.length === 0) {
-    throw new Error("No fallback worlds available. Please add JSON files to fallback-worlds/.");
+    throw new Error(
+      "No fallback worlds available. Please add JSON files to fallback-worlds/."
+    );
   }
 
   const norm = (identity || "").toLowerCase();

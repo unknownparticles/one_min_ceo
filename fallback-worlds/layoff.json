@@ -1,0 +1,182 @@
+{
+  "matchKeywords": ["layoff", "裁员", "发裁员", "炒鱿鱼", "开除"],
+  "identity": "王多鱼 (发裁员信中)",
+  "theme": "在给骨干大壮发裁员不给赔偿通知的极限拉扯瞬间",
+  "mapLayout": {
+    "width": 16,
+    "height": 12,
+    "tileRules": {
+      "wall": "border",
+      "deck": "row_second_to_last",
+      "floor": "default"
+    }
+  },
+  "playerPosition": { "x": 5, "y": 5 },
+  "npcs": [
+    {
+      "id": "npc_dev_dazhuang",
+      "name": "首席软件工程师 大壮",
+      "sprite": "robot",
+      "x": 8,
+      "y": 4,
+      "dialogue": "我的代码跑了整个星系！你特么居然在这个最后60秒，要不给一分赔偿开除我？你信不信我直接按下删库大按钮？",
+      "storyline": [
+        {
+          "id": "layoff_stage1",
+          "text": "大壮从背包掏出带一排闪亮警报的机自爆硬盘：『只要我按下去，公司核心数据库立刻物理超度！你是要用三百万投资打通阻隔（sign_deal），还是怒斥他是个刺头？』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "🤝 全款补偿300万！大肆注资买下他的代码库", "outcomeText": "你不仅不逃避，还大喜过望全款豪掷补偿！大壮当场惊呆，痛哭流涕表示要为你死心塌地写满500年汇编指令！", "timeDelta": -10, "actionId": "sign_deal" },
+            { "label": "🐕 一怒之下：大喊『小狗咬他』并驱逐它", "outcomeText": "你暴跳如雷拒绝出钱！顺势一脚飞踹了身旁正在昏睡的宠物保镖'富贵'（kick_dog）！富贵一声厉嚎竟然爆射咬破了大壮的自爆起爆机！", "timeDelta": -12, "actionId": "kick_dog" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_layoff_investor",
+      "name": "死对头精算师 李总",
+      "sprite": "investor",
+      "x": 11,
+      "y": 2,
+      "dialogue": "王总！开除大壮不仅不用赔偿，我还可以帮你把员工股票低价全部回购（buy_savings），立刻为你省下并赚得大笔套现资金！哈哈！",
+      "storyline": [
+        {
+          "id": "layoff_inv_stage1",
+          "text": "李总拿着金算盘不怀好意。你是要一笔买下他的节流增殖信托（buy_savings），还是用咖啡热泼他一脸狗血（pour_coffee）？",
+          "options": [
+            { "label": "💰 签了！一键买下节流定期回购信托", "outcomeText": "噢天哪！你这蠢才，一瞬间公司股份重新增值红利发财，手里败不完的三百外更加沉重，当场倒下！", "timeDelta": -11, "actionId": "buy_savings" },
+            { "label": "☕ 连咖啡带滚烫浓汤一齐泼在他西装上", "outcomeText": "一泼精准！高爆浓咖将他的金丝眼镜和阿玛尼衬衫浇成了泥潭，他当场哭爹喊娘疯狂叫保镖！", "timeDelta": -9, "actionId": "pour_coffee" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_layoff_butler",
+      "name": "忠诚管家 Victor二代",
+      "sprite": "butler",
+      "x": 1,
+      "y": 9,
+      "dialogue": "大少爷！劳委会的特工已经包围了大堂，如果您不想给钱也不想挨骂，这把紧急火箭拉阀（press_rocket）能帮您瞬间逃出生天！",
+      "storyline": [
+        {
+          "id": "layoff_butler_stage1",
+          "text": "Victor亮出了飞天逃脱带。你要拉下火箭飞天（press_rocket），还是留下来与大家全额签字（sign_deal）？",
+          "options": [
+            { "label": "🚀 按爆警告按钮，引爆气垫背带一秒冲天！", "outcomeText": "你一掌拍坏了应急拉手！公司楼顶发生大震裂，火箭推着你像一颗彗星撞向白云深处！", "timeDelta": -14, "actionId": "press_rocket" },
+            { "label": "✍️ 大手一挥，全款注资并签字", "outcomeText": "你签了！大笔资金无条件划款划出，大壮和财务一秒惊呆抱头下跪！", "timeDelta": -10, "actionId": "sign_deal" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_layoff_secretary",
+      "name": "眼红的出纳 小美",
+      "sprite": "secretary",
+      "x": 14,
+      "y": 7,
+      "dialogue": "老板！裁员的散碎赔偿文书和合同都在这边，要不我们索性买下月球三万亩沙漠（buy_moon）来顶大壮的工资折抵？",
+      "storyline": [
+        {
+          "id": "layoff_sec_stage1",
+          "text": "小美俏皮吐舌。你要把资金拿去买月球沙地（buy_moon），还是踢保洁哈士奇屁股（kick_dog）？",
+          "options": [
+            { "label": "✍️ 签！全额把三百万换成月球沙地转让地券", "outcomeText": "你狂放签字！将遗产资金一口气全部砸给地权，直接拿太空地质单塞大壮嘴里！", "timeDelta": -8, "actionId": "buy_moon" },
+            { "label": "🦵 一大腿飞踢，把看家恶犬踢过去咬烂合同", "outcomeText": "你一脚飞踹！恶狗长牙一扯抢过离职合同揉咽了，大壮和外贸特务当场震呆！", "timeDelta": -10, "actionId": "kick_dog" }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_shredder",
+      "name": "绝密粉碎办公碎纸机",
+      "sprite": "chest",
+      "x": 3,
+      "y": 3,
+      "description": "一个疯狂吞噬一切白纸和信件的轰鸣机器！",
+      "storyline": [
+        {
+          "id": "shredder_stage1",
+          "text": "碎纸机在咔嚓鸣叫，你是要把这该死的非法裁员判决合同喂进去（press_rocket），还是引火自焚制造火灾？",
+          "options": [
+            { "label": "📝 优雅塞入并粉碎整个离职合同", "outcomeText": "刺刺咔咔！无理的劳务判定当场化为细白雪花屑，大壮愣在原地，两人的矛盾瞬间变得非常无厘头！", "timeDelta": -8, "actionId": "press_rocket" },
+            { "label": "🔥 塞进电池引燃碎纸机制造火海", "outcomeText": "你大笑着往高密粉碎齿轮里塞了一块干电池，伴随一阵乱响火光闪过，碎纸机轰然爆燃起熊熊烈火！", "timeDelta": -10, "actionId": "ignite_fire" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_layoff_desk",
+      "name": "百亿判决红木桌",
+      "sprite": "desk",
+      "x": 8,
+      "y": 10,
+      "description": "沉重奢华的黄花梨办公大财务台，红光冲天，上面摆满了裁决文契和解约合同。",
+      "storyline": [
+        {
+          "id": "layoff_desk_stage1",
+          "text": "你面对沉重的办公台。是要签字承认债务重组豪掷三百万（sign_deal），还是命令下属直接狂扯写字楼断电拉闸（pull_lever）？",
+          "options": [
+            { "label": "✍️ 签字，全款买单并给予顶格三百万补偿！", "outcomeText": "笔如龙蛇！大壮当场泣不成声说要和公司共度千秋万载！赔偿款瞬间花完！", "timeDelta": -9, "actionId": "sign_deal" },
+            { "label": "🔌 配合拉闸，切断全大楼负荷电路！", "outcomeText": "伴随着电弧闪烁，全办公室瞬间沦为漆黑，算账的精算师李总一脚踩在墨水瓶上长豪！", "timeDelta": -8, "actionId": "pull_lever" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_layoff_coffee",
+      "name": "极速高燃温咖啡",
+      "sprite": "coffee",
+      "x": 2,
+      "y": 2,
+      "description": "桌子最角落放着的大壮刚刚泡好的滚烫浓缩赛博黑咖啡，热量蒸腾出淡淡红光。",
+      "storyline": [
+        {
+          "id": "layoff_coffee_stage1",
+          "text": "浓香的咖啡正冒泡。你是拿去泼精算极流李总一身（pour_coffee），还是一口气干了它换来精神错落（drink_coffee）？",
+          "options": [
+            { "label": "☕ 泼他！让死对头李总尝尝赛博美味", "outcomeText": "高压泼洒！滚烫黑浓黑液体瞬间给他烫出烤肉的味道，会议室极度爆乱！", "timeDelta": -7, "actionId": "pour_coffee" },
+            { "label": "🤤 自己壮烈干了这两大杯", "outcomeText": "你一饮而尽，只觉体内气血冲流上星系，大壮的代码全段逻辑竟然都写进了脑子里！", "timeDelta": -5, "actionId": "drink_coffee" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_layoff_lever",
+      "name": "机组高压断电红拉闸",
+      "sprite": "lever",
+      "x": 12,
+      "y": 8,
+      "description": "大功率边缘网络机柜总拉闸，拉下去可以强制写字楼全体进入断电断网状态！",
+      "storyline": [
+        {
+          "id": "layoff_lever_stage1",
+          "text": "总变压闸正嗡嗡响。是要扯闸断网（pull_lever），还是大肆扫货收购月球沙地（buy_moon）？",
+          "options": [
+            { "label": "🔌 铁血狂拉断网大闸！大字楼彻底停电！", "outcomeText": "啪！红光在插缝迸射，大办公室瞬息一片幽暗，大壮的自爆硬盘当场短路失灵！", "timeDelta": -10, "actionId": "pull_lever" },
+            { "label": "✍️ 疯狂签字收购月球三万亩沙荒地", "outcomeText": "疯狂刷卡！一百五十万划出，大股东们集体晕厥并连喊高明！", "timeDelta": -12, "actionId": "buy_moon" }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "endingId": "ending_layoff_hack",
+      "title": "【重获尊严的代码宇宙保卫元帅】",
+      "description": "你把资金全额拿来做离职包退注资代码库（sign_deal），更粉碎了劳民伤财的不合理契约（press_rocket）！大壮感动得表示虽然这极度混乱，但他要一往无前地为您架构大聪明商业引擎！你完美花光了拖后腿的三百万，还额外白捡了一支顶级极客团队！二爷在梦里直接颁发给你'科技败家王'荣誉！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["sign_deal", "press_rocket"] }
+    },
+    {
+      "endingId": "ending_layoff_war",
+      "title": "【灰飞烟灭的劳动总裁刺头】",
+      "description": "你竟然又放狗咬大壮（kick_dog）又自研干电池引燃碎纸柜（ignite_fire）！大楼里狗在跑、火在烧、数据大坝整体脱焊漏水！你不仅钱一毛没花掉，整个人还被大批赶到的劳纠特工一屁股锁拿到了看守所里吹冷风反省。",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["kick_dog", "ignite_fire"] }
+    }
+  ],
+  "introText": "你突遇无礼合伙人强制指派：在60秒内开退首席大壮。大壮极度愤怒扬言要删库跑路。这是一次充满灰色嘲讽与职场智慧的精彩离索较量！",
+  "ambientMusic": "corporate-jazz"
+}

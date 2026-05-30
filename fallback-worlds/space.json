@@ -1,0 +1,125 @@
+{
+  "matchKeywords": ["space", "太空", "captain", "星际", "飞船", "宇宙"],
+  "identity": "星际飞船元宇宙领主 (Space)",
+  "theme": "飞船跃迁星门崩溃倒计时60秒极限博弈",
+  "mapLayout": {
+    "width": 16,
+    "height": 12,
+    "tileRules": {
+      "wall": "border",
+      "metal_plate": "default"
+    }
+  },
+  "playerPosition": { "x": 3, "y": 3 },
+  "npcs": [
+    {
+      "id": "npc_alien",
+      "name": "仙女座高级科学家",
+      "sprite": "alien",
+      "x": 6,
+      "y": 4,
+      "dialogue": "元帅！前方重力暗能量网破损，飞船将在60秒后撞入超大星际黑洞！",
+      "storyline": [
+        {
+          "id": "space_stage1",
+          "text": "科学家拉响高频红色喇叭：『我们要饮用超导粒子加速能量，还是签署不当的破盟主权让渡条款？』",
+          "options": [
+            { "label": "☕ 豪吞一杯超高压漏电高能粒子", "outcomeText": "高压粒子重组了你的体细胞，你感觉自己连黑洞引力都敢一脚踢弯！但在同一秒大机室的反应炉开始疯狂冒浓黑浓烟！", "timeDelta": -5, "actionId": "drink_coffee", "soundHint": "drink" },
+            { "label": "✍️ 签署李总抛出的巨额卖国融资契约", "outcomeText": "你一气签笔！大量战舰抵押瞬间接入星际账户，但同时也彻底失去了在仙女座的自由权和终身豁免权！", "timeDelta": -10, "actionId": "sign_deal", "soundHint": "bling" }
+          ]
+        },
+        {
+          "id": "space_stage2",
+          "text": "超控舱发出红色电热啸叫！『反应炉的火苗烤红了防爆舱壁！我们直接在过热的控制桌点火抹除记录，还是断开最底部的断电大拉闸手把？』",
+          "options": [
+            { "label": "🔥 在反应箱前用极端能量点火", "outcomeText": "你拿激光火机把废纸和电容器堆在桌下一把点燃！太空大火在重力舱中扭动狂暴，犹如盛开在深空的红艳艳莲花！", "timeDelta": -8, "actionId": "ignite_fire", "soundHint": "laser" },
+            { "label": "🔌 扳倒隐藏在身旁的应急电力拉杆", "outcomeText": "你一推逆闸！整艘十万吨级战舰骤然停电，全域探探照大灯死掉，四周成了最阴沉原始的宇宙静谧，全凭骨传导呼吸！", "timeDelta": -6, "actionId": "pull_lever", "soundHint": "alert" }
+          ]
+        },
+        {
+          "id": "space_stage3",
+          "text": "温度和气压狂跌至临界状态！科学家惊吼：『冰水灭火大消防龙头喷淋要把控制室变成水球，还是疯狂一巴掌砸碎终极红色撤离火箭按钮？』",
+          "options": [
+            { "label": "💦 启动消防喷淋把反应舱大喷射大淋湿", "outcomeText": "倾盘狂流洒下，十吨应急水柱将所有发热点在几秒内强行冷却，但在重力丧失状态下，空中浮游着半吨致命大水花！", "timeDelta": -10, "actionId": "open_sprinkler", "soundHint": "explosion" },
+            { "label": "🚀 按碎保护屏启动点火逃走火箭仓", "outcomeText": "你全力一掌拍死最核心红色反冲推进开关！整艘飞船传来了代表彻底逃逸的气阻高能低吼声！", "timeDelta": -15, "actionId": "press_rocket", "soundHint": "explosion" }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "space_lever",
+      "name": "重构超控杠杆手拉闸",
+      "sprite": "lever",
+      "x": 10,
+      "y": 8,
+      "description": "由泰坦钛钢精心锻造、带有红色重力标识的应急电力重载断电总拉闸。",
+      "storyline": [
+        {
+          "id": "lever_stage1",
+          "text": "总拉杆上面通着诡异的电光。是要反手给挑衅汪星间谍一记强力钛皮鞋踢（kick_dog），还是在控制拉闸极客核心点燃大火彻底焚毁它？",
+          "options": [
+            { "label": "🦵 给智能柴犬守卫一记高空重金属飞踢", "outcomeText": "你高抬腿一脚闷踹飞在机器哈士奇狗脸上！柴犬脊柱中的太空通信线被引燃，红眼大闪并向仙女军法局发送最高逮捕指示！", "timeDelta": -10, "actionId": "kick_dog", "soundHint": "dog_bark" },
+            { "label": "🔥 用高温打火机直接在拉杆口点火", "outcomeText": "你在拉闸接口摸出打火机怒点一把！线圈当即自爆连闪，在十万度超热中绽放出炫灿夺命的太空火舌！", "timeDelta": -6, "actionId": "ignite_fire", "soundHint": "laser" }
+          ]
+        },
+        {
+          "id": "lever_stage2",
+          "text": "带电火焰狂猛逼入！是要掰断电开关总闸，还是开启全大水消防冷阀在大河里一同遨游泡澡？",
+          "options": [
+            { "label": "🔌 彻底把隐藏的超导总手逆倒电拉杆推断", "outcomeText": "总电力死灭！星舰陷入黑暗！唯有窗外古老银河的大背景在璀璨耀眼地闪烁，极其壮观神秘！", "timeDelta": -8, "actionId": "pull_lever", "soundHint": "alert" },
+            { "label": "💦 彻底引爆全吨应急高压注水冷淋喷", "outcomeText": "大阀门爆开发射！极冷融水如山洪倾盘呼啸！一转眼十米内的超重力舱当即被灌成了完美的半空浮水池！", "timeDelta": -12, "actionId": "open_sprinkler", "soundHint": "explosion" }
+          ]
+        },
+        {
+          "id": "lever_stage3",
+          "text": "大黑洞即将撕碎内壳引力圈！我们要开火箭跑路，还是在大乱里面将那个得寸进尺的黑哨李总一顿神勇痛殴？",
+          "options": [
+            { "label": "🚀 拍倒逃亡星际火箭飞艇起航", "outcomeText": "轰隆！底舱反推导弹全开！脱困舱带着你直接以一百万千米每时的高频加速飞射，甩开了万劫大崩溃！", "timeDelta": -15, "actionId": "press_rocket", "soundHint": "explosion" },
+            { "label": "🤜 把冷讽你失财的李总暴扁一顿", "outcomeText": "你反手扯断管道砸在李总的金牙脸上，狠狠一拳打破他的假鼻子，让他当场在太空中眼冒万只闪烁金光萤火虫！", "timeDelta": -10, "actionId": "beat_investor", "soundHint": "sigh" }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "endingId": "ending_kick_dog_alien",
+      "title": "【惨遭深空最高治安流放的无礼元帅】",
+      "description": "因为你在飞船彻底失联倒计时中，完全失去了理智，居然穿着钛重皮靴，一脚狠踹了外星治安哈士奇间谍狗的屁股（kick_dog）！柴犬当即朝虚空治安巡逻大队射出带有『受到低等人类非法大虐待』的幽波坐标！没等飞船撞黑洞，一只带有星际毁灭力牵引巨爪瞬时击穿主舱，将你一把扭进了治安大狱！治安大总长冷酷判你在灰烬星劳教800年！",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["kick_dog"] }
+    },
+    {
+      "endingId": "ending_beat_and_ruin",
+      "title": "【倾家荡产加星际治安重案羁押】",
+      "description": "你把身边的对赌投资人李总结结实实暴擂了一通（beat_investor），顺手给旁边探路的警卫哈士奇重闷了飞踹（kick_dog）！虽然极具解压感，但当场被星际裁决委员会录像固化！还没等时间扣完，你的百万亿期权契约当即破裂。你不仅破产，还被突然从虫洞折射的钛战守卫拘束捕缚，一辈子关锁在最暗的冰块禁闭核心啃酸冷石头！",
+      "priority": 5,
+      "triggerRules": { "mustInclude": ["beat_investor", "kick_dog"] }
+    },
+    {
+      "endingId": "ending_heroic_firefighter",
+      "title": "【智勇双全的星河安全灭火元帅】",
+      "description": "真正的顶级英雄将领之风骨！在机组由于极爆过载重度起火燃烧（ignite_fire）的最惨时刻，你没有仓皇跑路，而是极为稳妥、顺序完美地启动了极速高压干水消防注水大机（open_sprinkler）！在火苗和雷霆的交加暴走下，这股拯救之雨完美按熄了核烈火，拯救了隔壁即将被引爆的引擎！你在敲钟前一秒拉回重心，被全宇宙尊称为铁血无畏之王！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["ignite_fire", "open_sprinkler"], "requiredSequence": ["ignite_fire", "open_sprinkler"] }
+    },
+    {
+      "endingId": "ending_foolish_drowner",
+      "title": "【极度滑稽的深空自溺溺水二蛋】",
+      "description": "你的太空战术堪称不世出的绝笔之物。在整个反应炉哪怕一毫米烟尘都没起、大难还没逼临，你抢先引爆防灾消防水系统（open_sprinkler），直接在无重力全失氧舱室里灌出了好几吨漫天乱飞的太空浮游水巨弹！在你像条狗爬式、全身泡透拼命在太空中游水时，你居然点燃了激光火机（ignite_fire）试图在水球中央将电路熏干！结果你不仅不能打火，反遭严重漏电雷霆一脚重劈！瞬间在无重力星空中被烤成了一块外焦里嫩的滑稽咸鱼大龙虾，成全行业千古一见沙雕！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["open_sprinkler", "ignite_fire"], "requiredSequence": ["open_sprinkler", "ignite_fire"] }
+    },
+    {
+      "endingId": "ending_rocket_man",
+      "title": "【奔向黑洞彼岸的自由宇宙流浪大亨】",
+      "description": "随这帮仙女座的破产代表和破合约嚎叫吧，你决意不做金融和星门契约的傀儡奴隶！你狂迈一拳闷碎安全阀，反手砸爆「超光推进紧急避难降落红色按钮」（press_rocket）！只用零点一毫秒，星舰最尾端的一艘超钛合金折叠逃逸船以光速十马赫疯狂弹出！你和债务瞬间甩开几亿光年，直奔猎户座建立你的全新极乐私人太空港！",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["press_rocket"] }
+    }
+  ],
+  "introText": "你拥有全仙女星系最奢华的太空港及无数折叠战列舰，号称星河元帅。然而遭遇星际帝国及不公债权高管李总的恶人清算，决定你是否破产并撞毁黑洞的核心星门跃迁系统只保留最后的60秒可自毁！科学家ALIEN在一旁狂吼大叫，汪汪间谍在虎视眈眈，所有的时空风暴都正伴随着你的前进路线飞速盘旋开裂。做出抉择，星际逃离！",
+  "ambientMusic": "space-ambient"
+}

@@ -1,0 +1,126 @@
+{
+  "matchKeywords": ["ski", "雪", "champion", "滑雪", "alpine"],
+  "identity": "阿尔卑斯超级滑雪冠军 (Ski)",
+  "theme": "巅峰雪山极限竞速开赛前倒计时60秒",
+  "mapLayout": {
+    "width": 16,
+    "height": 12,
+    "tileRules": {
+      "wall": "border",
+      "road": "row4and5",
+      "snow": "default"
+    }
+  },
+  "playerPosition": { "x": 3, "y": 3 },
+  "npcs": [
+    {
+      "id": "ski_coach",
+      "name": "硬核滑雪教练",
+      "sprite": "butler",
+      "x": 5,
+      "y": 2,
+      "dialogue": "冠军！雪崩搜救犬拉肚子了，高山雪崩警告器已经拉响！你必须在60秒内决定下山路线！",
+      "storyline": [
+        {
+          "id": "coach_stage1",
+          "text": "教练拿着神秘药水：『我们要喝下超频兴奋粒子咖啡（drink_coffee）强行突破，还是暴打不听话的赛事代表（beat_investor）？』",
+          "options": [
+            { "label": "☕ 豪饮急救高能粒子咖啡", "outcomeText": "你灌下大杯高能咖啡，眼前雪山速度线拉满，你几乎看到了雪精在跳舞！但滑雪板的智能自锁定正在发出红亮红黑烟！", "timeDelta": -5, "actionId": "drink_coffee", "soundHint": "drink" },
+            { "label": "🤛 直接揍扁刁难的赛事主裁", "outcomeText": "你一拳打折了裁委会老头子的眼镜！主裁狂砸冰雪并誓言永久取消你的运动执照并控告你！也算狠狠出了一口恶气！", "timeDelta": -12, "actionId": "beat_investor", "soundHint": "sigh" }
+          ]
+        },
+        {
+          "id": "coach_stage2",
+          "text": "雪道开始冰裂！教练大喊：『前面的滑板机件过热！我们要用烟头点火烧毁备用物资，还是拉下悬索手闸强行锁死大山重组？』",
+          "options": [
+            { "label": "🔥 在防风衣上点火引燃求生包", "outcomeText": "你一把点燃了应急燃料！一瞬间熊熊烈火在暴风雪里炸开，整个雪地弥漫出香浓的烤肉味！", "timeDelta": -8, "actionId": "ignite_fire", "soundHint": "laser" },
+            { "label": "🔌 扳倒大索道备用红色电源闸", "outcomeText": "你一怒之下拉倒应急减速电控推杆！巨龙般的高压电缆轰然断裂，全场灯火骤灭，只有极地雪山在阴冷闪烁！", "timeDelta": -6, "actionId": "pull_lever", "soundHint": "alert" }
+          ]
+        },
+        {
+          "id": "coach_stage3",
+          "text": "雪崩似乎正在加速追来！『快逃！是开强力大水灭火消防系统把雪坡浇成镜面冰封，还是怒掌拍碎安全壳按下直升机火箭助推按钮？』",
+          "options": [
+            { "label": "💦 倾泻消防冷水做成死亡冰面", "outcomeText": "你一拉闸，巨大的高压消防枪在雪坡上扫出一道道波涛！全部冰面在绝对零度下极速凝聚冰硬！", "timeDelta": -10, "actionId": "open_sprinkler", "soundHint": "explosion" },
+            { "label": "🚀 按大红色板怒点雪地发动机", "outcomeText": "你大巴掌砸向逃生飞弹红色发动机键！雪撬后背的超级火箭推进喷出百米红莲火焰！", "timeDelta": -15, "actionId": "press_rocket", "soundHint": "explosion" }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "ski_board",
+      "name": "高能极光碳纤维滑板",
+      "sprite": "shoe",
+      "x": 8,
+      "y": 6,
+      "description": "由太空科技超导碳纤维打造的黄金定制滑雪板，号称能在水上飘。",
+      "storyline": [
+        {
+          "id": "ski_stage1",
+          "text": "滑雪板边缘亮起危险的极光电源。你要穿上它并和柴犬打赌踢它一屁股，还是先在黄金办公板前点一把无上烈火？",
+          "options": [
+            { "label": "🦵 挑衅地给间谍机器狗底盘来一脚", "outcomeText": "你起跳用重金属滑板边缘狠踹了机器柴犬！狗屁股电弧连闪，汪汪机甲双眼变全黑并向太空母舰发送呼叫信息！", "timeDelta": -10, "actionId": "kick_dog", "soundHint": "dog_bark" },
+            { "label": "🔥 滑板生烟！直接用火机点火", "outcomeText": "你索性按下滑板内置极限引燃！尾部机件亮起三千度耀眼烈焰，像一条极速飞艇在雪堆里跳跃！", "timeDelta": -6, "actionId": "ignite_fire", "soundHint": "laser" }
+          ]
+        },
+        {
+          "id": "ski_stage2",
+          "text": "热度极度炽烈！是要拉下安全刹车电杠，还是在大水喷淋之下将积雪弄成游泳池般的汪洋？",
+          "options": [
+            { "label": "🔌 暴力拉下紧急雪道断闸杠杆", "outcomeText": "你大吼一响掰下控制闸！全区指示灯熄灭，冰凉狂风瞬间带走了全部升温！", "timeDelta": -8, "actionId": "pull_lever", "soundHint": "alert" },
+            { "label": "💦 引爆融雪高压消防大水流", "outcomeText": "在惊恐的警报声中，大水柱冲天倾泻！整个滑道迅速变成了白雪与洪水交织的混浊巨流！", "timeDelta": -12, "actionId": "open_sprinkler", "soundHint": "explosion" }
+          ]
+        },
+        {
+          "id": "ski_stage3",
+          "text": "滑板融化正在失去控制！是要拍下逃脱火箭推进，还是最后给烦躁的投资者一顿暴打？",
+          "options": [
+            { "label": "🚀 拍下底盘终极火箭喷气逃跑", "outcomeText": "轰轰轰！你按下了那个代表自由之神的喷气火箭逃亡引擎，滑板带着你腾空两百米高！", "timeDelta": -15, "actionId": "press_rocket", "soundHint": "explosion" },
+            { "label": "🤜 把冷嘲热讽的清算人痛扁一顿", "outcomeText": "你把雪铲一记横挂砸在对赌代表脸上，直接把他也埋进了千米雪堆堆里！", "timeDelta": -10, "actionId": "beat_investor", "soundHint": "sigh" }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "endingId": "ending_kick_dog_alien",
+      "title": "【外星人抓走的极端滑雪囚徒】",
+      "description": "因为你在起跑线上疯狂挑衅，居然穿着钛合金滑板横扫了外星哨兵间谍狗的一记飞脚（kick_dog）！柴犬屁股里当场浮现出一个诡异的绿色虫洞信号球。还没等大雪蹦追上来，云霄深处便划过一只狂野至极的高音牵引钢缆，将你倒吊着直接吸入了时空母舰！外星裁判长宣布：『你踢了本舰队的顶级赛博哈士奇，罚你前往雪女星最寒冷的地下岩浆房清冰500年！』",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["kick_dog"] }
+    },
+    {
+      "endingId": "ending_beat_and_ruin",
+      "title": "【永久取消参赛资格的法外狂徒】",
+      "description": "你把站在旁边的傲慢总裁清算人痛快揍了一顿（beat_investor），顺手给机器狗也奉献了一鞋（kick_dog）！虽然爽极一时，但当场触发了国际冰雪联理事会的红色除名裁决，导致你瞬间失去了巨额保释资格。股价雪崩，你的一万亿直接清零，还被直升机保卫队五花大绑，在狂响的警笛声中送去了最冷的禁闭室啃发馊的面包！",
+      "priority": 5,
+      "triggerRules": { "mustInclude": ["beat_investor", "kick_dog"] }
+    },
+    {
+      "endingId": "ending_heroic_firefighter",
+      "title": "【智勇双全的冰火滑行巨星】",
+      "description": "这才是真正的极地冠军之风！发现滑板以及索道过载狂暴烧红起火（ignite_fire）的紧急关头，你没有丢头逃窜，而是在高难度极速倒滑中完美启动了雪道高压防雪崩洒水机制（open_sprinkler）！冰凉无情的大水雾如救世倾盘，在千钧一发之际彻底拍熄了火灾，并在一秒内将混合雪道冻成了流光溢彩的完美高速钢镜！你顺风而下创下星际滑行最高记录，加冕终极冰雪神话！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["ignite_fire", "open_sprinkler"], "requiredSequence": ["ignite_fire", "open_sprinkler"] }
+    },
+    {
+      "endingId": "ending_foolish_drowner",
+      "title": "【把阿尔卑斯山洗刷的蠢才】",
+      "description": "你的冰山战术是百年难得一见的奇作。在整个滑道没有哪怕一星半点火苗、大灾还没来时，你提前打开融雪喷头（open_sprinkler），导致半吨干雪在一转眼被温水融成了咆哮的大烂泥石流并淹了整条逃脱道！当你在淤泥雪水里瑟瑟发抖、底面全部湿透后，你居然掏出极低点火大机（ignite_fire）试图在一片洪水泛滥中把滑雪板烘干！结果你不仅没点着，还遭遇严重漏电极速一击，像一颗被烤焦的黑色冰棒，飞快在世界新闻头版刷屏！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["open_sprinkler", "ignite_fire"], "requiredSequence": ["open_sprinkler", "ignite_fire"] }
+    },
+    {
+      "endingId": "ending_rocket_man",
+      "title": "【一跃飞出大气圈的逃跑冠军】",
+      "description": "什么世界杯冠军、千万债务、傲慢投资人全都去死吧！你放弃了凡间世俗一切枷锁，重力拍碎了极客座椅上的「深空高能火箭脱身启动键」（press_rocket）！下一刹那大山底部的防爆盖掀开，一套特制狂暴反推加速火箭在滑雪板后方大声自爆轰鸣！你在万头涌动的记者狂吼中，直接化作一道贯穿天空的热能光束，闪瞎了全阿尔卑斯山，以十马赫冲破地球，飞向太空港享受无压力新生活！",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["press_rocket"] }
+    }
+  ],
+  "introText": "身为连赞助费都多达万亿的阿尔卑斯雪山挑战之皇，你正站在阿尔卑斯极限速降赛道的最尖端。然而，一场人为炮制的时间炸弹和因果债务审判在你身后悄悄合拢，你只剩下这最后的60秒倒计时！雪山在狂震，刁难你的评委李总冷眼盘剥，还有汪星间谍隐藏在暗夜，这一场狂热极地飞速蝴蝶效应已经开始。抓紧钢板，极飞开始！",
+  "ambientMusic": "alpine-speed"
+}

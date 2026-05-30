@@ -38,7 +38,7 @@ import { SpriteRenderer } from "./components/SpriteRenderer";
 import { Position, NPC, Item, WorldScenario, InteractionResult, EndingResult, SavedLife, DailyChallenge, BossIdentityType } from "./types";
 import { getDailyChallenge } from "./utils/dailyPresets";
 import { audio } from "./utils/audio";
-import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey, getApiSettings, saveApiSettings } from "./utils/siliconFlow";
+import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey, getApiSettings, saveApiSettings, testApiConnection, getRawStoredSettings, hasEnvApiKey, streamBusinessConcept, FLASH_MODEL } from "./utils/siliconFlow";
 import { getResourcePack } from "./utils/resourceKit";
 import logoUrl from "../assets/logo.png";
 import douyinQrUrl from "../assets/douyin.JPG";
@@ -89,6 +89,8 @@ export default function App() {
   const [sfModel, setSfModel] = useState<string>("");
   const [mmApiKey, setMmApiKey] = useState<string>("");
   const [mmModel, setMmModel] = useState<string>("");
+  const [isTesting, setIsTesting] = useState<boolean>(false);
+  const [testResult, setTestResult] = useState<{ success: boolean; message: string } | null>(null);
   
   // Lobby Subtabs
   const [activeTab, setActiveTab] = useState<"normal" | "presets" | "album" | "daily" | "vip">("normal");
@@ -97,6 +99,8 @@ export default function App() {
   const [loadingProgress, setLoadingProgress] = useState<number>(0);
   const [loadingText, setLoadingText] = useState<string>("时空波阵预热中...");
   const [wangDuoyuConcept, setWangDuoyuConcept] = useState<string>("");
+  const [enableThinking, setEnableThinking] = useState<boolean>(false);
+  const [isStreamingConcept, setIsStreamingConcept] = useState<boolean>(false);
 
   // Game Play States
   const [worldScenario, setWorldScenario] = useState<WorldScenario | null>(null);
@@ -151,6 +155,15 @@ export default function App() {
   // Fetch local collection and config checks
   useEffect(() => {
     setHasApiKey(hasSiliconFlowKey());
+    
+    // Load API settings into local React states (only load raw user overrides to avoid exposing env keys)
+    const stored = getRawStoredSettings();
+    setSettingsProvider(stored.provider || "siliconflow");
+    setSfApiKey(stored.siliconFlowApiKey || "");
+    setSfModel(stored.siliconFlowModel || "");
+    setMmApiKey(stored.minimaxApiKey || "");
+    setMmModel(stored.minimaxModel || "");
+    setEnableThinking(stored.enableThinking !== undefined ? stored.enableThinking : false);
 
     // Load saved ending cards
     const cached = localStorage.getItem("boss_minute_endings");
@@ -204,7 +217,45 @@ export default function App() {
   };
 
   // Launch pre-game loading with funny hints
-  const handleStartGame = async (dailyPrompt?: string, dailyType?: BossIdentityType) => {
+  // Handler for the lobby start button – if no input, stream a concept first
+  const handleLobbyStartClick = () => {
+    const isNormalTab = activeTab === "normal";
+    const currentInput = isNormalTab ? wangDuoyuConcept : customIdentityInput;
+    const hasInput = currentInput.trim().length > 0;
+
+    if (hasInput) {
+      handleStartGame();
+      return;
+    }
+
+    // No input – stream a random concept with DeepSeek-V4-Flash non-thinking mode
+    setIsStreamingConcept(true);
+    const setter = isNormalTab ? setWangDuoyuConcept : setCustomIdentityInput;
+    setter("");
+    let accumulated = "";
+
+    const cancel = streamBusinessConcept(
+      (chunk) => {
+        accumulated += chunk;
+        setter(accumulated);
+      },
+      (fullText) => {
+        setter(fullText);
+        setIsStreamingConcept(false);
+        // Auto-enter game with the generated concept, forced model & non-thinking mode
+        handleStartGame(undefined, undefined, fullText, FLASH_MODEL, false);
+      },
+      (err) => {
+        setIsStreamingConcept(false);
+        setSystemAlertMessage(`⚠️ 流式生成失败：${err.message}`);
+      }
+    );
+
+    // Safety: cancel stream if component unmounts
+    return cancel;
+  };
+
+  const handleStartGame = async (dailyPrompt?: string, dailyType?: BossIdentityType, forcedConcept?: string, overrideModel?: string, overrideEnableThinking?: boolean) => {
     // Play entry bling
     audio.playSound("bling");
     setGameState("loading");
@@ -253,16 +304,22 @@ export default function App() {
       ];
       const randMoment = NORMAL_MOMENTS[Math.floor(Math.random() * NORMAL_MOMENTS.length)];
       chosenIdentity = randMoment.id;
-      finalPrompt = `你是普通人王多鱼，大发横财需要败光三百万！当前的随机时间瞬间落在：『${randMoment.title}』，你的创业败家商业构思是：${wangDuoyuConcept.trim() || '把北极融化的冰用游艇运到沙特卖，或者推行减肥放电脂肪险'}`;
+      const conceptToUse = forcedConcept ?? wangDuoyuConcept.trim();
+      finalPrompt = `你是普通人王多鱼，大发横财需要败光三百万！当前的随机时间瞬间落在：『${randMoment.title}』，你的创业败家商业构思是：${conceptToUse || '把北极融化的冰用游艇运到沙特卖，或者推行减肥放电脂肪险'}`;
     } else {
       chosenIdentity = dailyType || selectedPreset.type;
-      finalPrompt = dailyPrompt || customIdentityInput;
+      finalPrompt = forcedConcept ?? (dailyPrompt || customIdentityInput);
     }
 
     window.localStorage.setItem("currentIdentityType", chosenIdentity);
 
     try {
-      const worldData = await generateWorld(chosenIdentity, finalPrompt);
+      const worldData = await generateWorld(
+        chosenIdentity,
+        finalPrompt,
+        overrideModel,
+        overrideEnableThinking
+      );
       
       clearInterval(progressTimer);
       setLoadingProgress(100);
@@ -810,6 +867,45 @@ export default function App() {
     setInteractionResult(null);
   };
 
+  const handleTestConnection = async () => {
+    setIsTesting(true);
+    setTestResult(null);
+    audio.playSound("walk");
+    
+    // Save current modal inputs temporarily so test can pick them up
+    const currentSettings = {
+      provider: settingsProvider,
+      siliconFlowApiKey: sfApiKey.trim(),
+      siliconFlowModel: sfModel.trim() || "deepseek-ai/DeepSeek-V4-Flash",
+      minimaxApiKey: mmApiKey.trim(),
+      minimaxModel: mmModel.trim() || "MiniMax-M2.5",
+      enableThinking,
+    };
+    saveApiSettings(currentSettings);
+    setHasApiKey(hasSiliconFlowKey());
+    
+    try {
+      const res = await testApiConnection();
+      setTestResult({
+        success: res.success,
+        message: res.message
+      });
+      if (res.success) {
+        audio.playSound("bling");
+      } else {
+        audio.playSound("sigh");
+      }
+    } catch (e: any) {
+      setTestResult({
+        success: false,
+        message: e.message || "测试发生未知错误"
+      });
+      audio.playSound("sigh");
+    } finally {
+      setIsTesting(false);
+    }
+  };
+
   const previewResourcePack = worldScenario?.resourcePack || getResourcePack(
     activeTab === "normal" ? "CEO" : selectedPreset.type,
     worldScenario?.theme || selectedPreset.name
@@ -852,6 +948,26 @@ export default function App() {
               title={isAudioMuted ? "播放声音" : "静音"}
             >
               {isAudioMuted ? <VolumeX size={18} /> : <Volume2 size={18} className="animate-pulse" />}
+            </button>
+
+            <button
+              onClick={() => {
+                const stored = getRawStoredSettings();
+                setSettingsProvider(stored.provider || "siliconflow");
+                setSfApiKey(stored.siliconFlowApiKey || "");
+                setSfModel(stored.siliconFlowModel || "");
+                setMmApiKey(stored.minimaxApiKey || "");
+                setMmModel(stored.minimaxModel || "");
+                setEnableThinking(stored.enableThinking !== undefined ? stored.enableThinking : false);
+                setTestResult(null);
+                setIsTesting(false);
+                setShowSettingsModal(true);
+                audio.playSound("walk");
+              }}
+              className="p-2 rounded-xl border bg-slate-800/80 hover:bg-slate-750 text-amber-400 border-slate-700 transition duration-150 active:scale-90 cursor-pointer flex items-center justify-center"
+              title="API设置"
+            >
+              <Settings size={18} />
             </button>
 
             {!hasApiKey && (
@@ -1292,15 +1408,27 @@ export default function App() {
                       </div>
 
                       <div className="p-4 bg-slate-950 border border-slate-855 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="p-3.5 bg-slate-900 border border-emerald-500/20 rounded-xl relative overflow-hidden">
+                        <div 
+                          onClick={() => {
+                            if (!isVip) {
+                              audio.playSound("bling");
+                              setShowFollowModal(true);
+                            }
+                          }}
+                          className={`p-3.5 bg-slate-900 border border-emerald-500/20 rounded-xl relative overflow-hidden transition ${
+                            !isVip ? "cursor-pointer hover:bg-slate-850 hover:border-emerald-500/40" : ""
+                          }`}
+                        >
                           <span className="absolute top-1 right-2 font-mono text-[8px] text-emerald-450 animate-pulse bg-emerald-950 px-1.5 rounded">
-                            HOT 免费开通
+                            {isVip ? "已激活" : "HOT 免费开通"}
                           </span>
                           <h4 className="text-xs font-mono font-bold text-white flex items-center gap-1">
                             <Plus size={14} className="text-emerald-500" /> 时空观察者 (月卡)
                           </h4>
                           <p className="text-[9px] text-slate-450 mt-1.5 leading-relaxed">解锁高维观察日志、无限时光回溯特权以及每日不限次数平行世界探寻。</p>
-                          <span className="text-xs font-mono text-emerald-450 block mt-2 font-extrabold">¥0.00 / 极乐体验</span>
+                          <span className="text-xs font-mono text-emerald-450 block mt-2 font-extrabold">
+                            {isVip ? "已获得尊享特权" : "¥0.00 / 极乐体验"}
+                          </span>
                         </div>
 
                         <div className="p-3.5 bg-slate-900 border border-amber-500/20 rounded-xl relative overflow-hidden">
@@ -1325,13 +1453,32 @@ export default function App() {
 
                 {/* Submitting play */}
                 <div className="pt-6 border-t border-slate-800/60 mt-6">
-                  <button
-                    onClick={() => handleStartGame()}
-                    className="w-full py-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-mono font-bold tracking-widest text-sm rounded-xl transition duration-150 active:scale-98 shadow-md shadow-emerald-900/20 cursor-pointer flex items-center justify-center gap-2 select-none"
-                  >
-                    <Sparkles size={16} className="animate-spin" />
-                    开启你的一分钟富豪命运
-                  </button>
+                  {(() => {
+                    const currentInput = activeTab === "normal" ? wangDuoyuConcept : customIdentityInput;
+                    const hasInput = currentInput.trim().length > 0;
+                    return (
+                      <button
+                        onClick={handleLobbyStartClick}
+                        disabled={isStreamingConcept}
+                        className={`w-full py-4 font-mono font-bold tracking-widest text-sm rounded-xl transition duration-150 shadow-md cursor-pointer flex items-center justify-center gap-2 select-none ${
+                          isStreamingConcept
+                            ? "bg-slate-700 text-slate-400 cursor-not-allowed"
+                            : "bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 active:scale-98 shadow-emerald-900/20"
+                        }`}
+                      >
+                        {isStreamingConcept ? (
+                          <>
+                            <span className="inline-block w-3.5 h-3.5 border-2 border-emerald-400 border-t-transparent rounded-full animate-spin" />
+                            ⚡ 正在构思奇妙创业...
+                          </>
+                        ) : hasInput ? (
+                          <><Sparkles size={16} className="animate-spin" /> 开启你的一分钟富豪命运</>
+                        ) : (
+                          <><Sparkles size={16} className="animate-bounce" /> 随机进入一个世界</>
+                        )}
+                      </button>
+                    );
+                  })()}
                   <p className="text-center font-mono text-[9px] text-slate-500 mt-3">
                     *本产品使用 SiliconFlow 模型在云端运行全量像素世界动态生成，无剧情限制。
                   </p>
@@ -2140,13 +2287,21 @@ export default function App() {
                     <div className="space-y-1">
                       <div className="flex justify-between items-center">
                         <label className="text-[11px] font-black text-[#2D3436]">SiliconFlow API Key</label>
-                        <span className="text-[9px] text-slate-400 font-mono">优先级: 本地配置优先</span>
+                        {hasEnvApiKey("siliconflow") ? (
+                          <span className="text-[9px] text-[#117A65] font-mono font-bold">🟢 已从环境变量安全载入</span>
+                        ) : (
+                          <span className="text-[9px] text-slate-400 font-mono">优先级: 本地配置优先</span>
+                        )}
                       </div>
                       <input
                         type="password"
                         value={sfApiKey}
                         onChange={(e) => setSfApiKey(e.target.value)}
-                        placeholder="sk-..."
+                        placeholder={
+                          hasEnvApiKey("siliconflow")
+                            ? "系统已配环境变量（隐藏保护中），在此输入可覆盖"
+                            : "sk-..."
+                        }
                         className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-white text-[#2D3436]"
                       />
                     </div>
@@ -2160,19 +2315,39 @@ export default function App() {
                         className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-white text-[#2D3436]"
                       />
                     </div>
+                    <label className="flex items-center gap-2.5 p-2.5 bg-slate-50 border border-[#2D3436]/15 rounded-xl cursor-pointer select-none hover:bg-amber-50 transition">
+                      <input
+                        type="checkbox"
+                        checked={enableThinking}
+                        onChange={(e) => setEnableThinking(e.target.checked)}
+                        className="w-3.5 h-3.5 accent-amber-500 cursor-pointer"
+                      />
+                      <span className="text-[11px] font-bold text-[#2D3436] leading-tight">
+                        启用思考模式 (思维链)<br />
+                        <span className="text-[9px] font-normal text-slate-500">仅对 DeepSeek 系列生效。默认关闭以加速响应。</span>
+                      </span>
+                    </label>
                   </div>
                 ) : (
                   <div className="space-y-3">
                     <div className="space-y-1">
                       <div className="flex justify-between items-center">
                         <label className="text-[11px] font-black text-[#2D3436]">MiniMax API Key</label>
-                        <span className="text-[9px] text-slate-400 font-mono">优先级: 本地配置优先</span>
+                        {hasEnvApiKey("minimax") ? (
+                          <span className="text-[9px] text-[#117A65] font-mono font-bold">🟢 已从环境变量安全载入</span>
+                        ) : (
+                          <span className="text-[9px] text-slate-400 font-mono">优先级: 本地配置优先</span>
+                        )}
                       </div>
                       <input
                         type="password"
                         value={mmApiKey}
                         onChange={(e) => setMmApiKey(e.target.value)}
-                        placeholder="输入你的 MiniMax API 秘钥"
+                        placeholder={
+                          hasEnvApiKey("minimax")
+                            ? "系统已配环境变量（隐藏保护中），在此输入可覆盖"
+                            : "输入你的 MiniMax API 秘钥"
+                        }
                         className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-white text-[#2D3436]"
                       />
                     </div>
@@ -2185,6 +2360,44 @@ export default function App() {
                         placeholder="MiniMax-M2.5"
                         className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-white text-[#2D3436]"
                       />
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Connection Test Section */}
+              <div className="space-y-2">
+                <button
+                  type="button"
+                  disabled={isTesting}
+                  onClick={handleTestConnection}
+                  className={`w-full py-2 bg-[#FFD93D] hover:bg-[#F4D03F] text-[#2D3436] text-xs font-black border-2 border-[#2D3436] rounded-xl transition shadow-[2px_2px_0px_#2D3436] active:translate-y-[1px] active:shadow-[1px_1px_0px_#2D3436] flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed`}
+                >
+                  {isTesting ? (
+                    <>⏳ 正在测试网关连通性...</>
+                  ) : (
+                    <>⚡ 一键测试网关连接</>
+                  )}
+                </button>
+
+                {testResult && (
+                  <div
+                    className={`p-3 border-2 border-[#2D3436] rounded-xl text-xs font-bold shadow-[2px_2px_0px_#2D3436] transition-all animate-fade-in ${
+                      testResult.success
+                        ? "bg-[#E8F8F5] text-[#117A65]"
+                        : "bg-[#FDEDEC] text-[#922B21]"
+                    }`}
+                  >
+                    <div className="flex items-start gap-2">
+                      <span className="text-sm shrink-0">{testResult.success ? "✅" : "❌"}</span>
+                      <div className="leading-relaxed">
+                        <p className="font-black text-[11px] uppercase tracking-wider">
+                          {testResult.success ? "时空网关正常" : "时空网关受阻"}
+                        </p>
+                        <p className="text-[10px] font-mono mt-0.5 whitespace-pre-wrap break-all">
+                          {testResult.message}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -2205,6 +2418,7 @@ export default function App() {
                       siliconFlowModel: sfModel.trim() || "deepseek-ai/DeepSeek-V4-Flash",
                       minimaxApiKey: mmApiKey.trim(),
                       minimaxModel: mmModel.trim() || "MiniMax-M2.5",
+                      enableThinking,
                     };
                     saveApiSettings(settingsToSave);
                     setHasApiKey(hasSiliconFlowKey());

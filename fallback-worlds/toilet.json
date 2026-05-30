@@ -1,0 +1,182 @@
+{
+  "matchKeywords": ["toilet", "厕所", "上厕所", "wc", "bathroom"],
+  "identity": "王多鱼 (困于厕所)",
+  "theme": "在全大厦停水加纸巾告零的悲惨瞬间",
+  "mapLayout": {
+    "width": 16,
+    "height": 12,
+    "tileRules": {
+      "wall": "border",
+      "water": "col_mod4",
+      "floor": "default"
+    }
+  },
+  "playerPosition": { "x": 2, "y": 3 },
+  "npcs": [
+    {
+      "id": "npc_shite_neighbor",
+      "name": "神秘邻座老哥",
+      "sprite": "butler",
+      "x": 6,
+      "y": 5,
+      "dialogue": "兄弟，别叹气了……我这也卡在这个死胡同了。我这里只有一份二爷遗留的'保密商业信托备忘录'，纸质粗糙，你要不要拿去凑合？",
+      "storyline": [
+        {
+          "id": "toilet_stage1",
+          "text": "老哥隔着木板缝递过来那页价值千金的粗糙纸卷：『一千万遗产和一包高级柔顺面纸，不可兼得。你究竟是用这份百亿备忘录擦拉（use_sharp_paper），还是决意保留它？』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "🧻 拿二爷的百亿备忘录擦屁股", "outcomeText": "刺啦！你咬紧牙关把那张价值巨额资金的旧文书给霍霍了！你感到无比清爽，但隐隐听到九重天上二爷心痛得直哼哼！", "timeDelta": -12, "actionId": "use_sharp_paper" },
+            { "label": "👔 拒绝老哥，用阿玛尼名牌西装袖口解决", "outcomeText": "真男人就要狠！你手起刀落反手刺拉一声撕扯了自己的高定西服袖子，面不改色完成清洗操作！", "timeDelta": -15, "actionId": "clean_cloth" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_toilet_guard",
+      "name": "保洁大队长 铁柱",
+      "sprite": "guard",
+      "x": 14,
+      "y": 10,
+      "dialogue": "老板！没有纸也没人能在本大队长面前恶意破门！我已经把走廊的黄金密码箱（buy_savings）给锁上了，任何人不准乱动！",
+      "storyline": [
+        {
+          "id": "toilet_guard_stage1",
+          "text": "铁柱横肉直抖拦在大门旁。你是要强行买下他守护的信托理财（buy_savings），还是顺腿给他屁股来一脚（kick_dog）？",
+          "options": [
+            { "label": "💰 签了！一键买下保障大礼和理财", "outcomeText": "糟了！你不仅没把钱花掉，账户瞬间还多出了几万利息，心疼得你直抠脚！", "timeDelta": -10, "actionId": "buy_savings" },
+            { "label": "🦶 飞踢！让他知道阻挠败家的下场", "outcomeText": "你一记扫叶腿震坏了门禁，大叔当场叫保安反抗，全场瞬间陷入极度热闹！", "timeDelta": -12, "actionId": "kick_dog" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_toilet_secretary",
+      "name": "催命秘书 小丽",
+      "sprite": "secretary",
+      "x": 1,
+      "y": 8,
+      "dialogue": "王总！三十多家大投行的老总还在会议室等您签字收购呢！钱都在水洗碎纸机里，您怎么蹲在厕所这么久？",
+      "storyline": [
+        {
+          "id": "toilet_sec_stage1",
+          "text": "小丽在外面疯狂敲击磨砂玻璃。你是要命令她把合同从门缝塞进来给你潇洒签字（sign_deal），还是大喊让她拉闸断电（pull_lever）？",
+          "options": [
+            { "label": "✍️ 在马桶上豪迈手书，全额对赌签字！", "outcomeText": "你隔着门缝把合同刷刷签了！三百万全权流失，把大投行股份统统砸空！", "timeDelta": -10, "actionId": "sign_deal" },
+            { "label": "🔌 让她去找电工立刻拉下全楼电闸", "outcomeText": "狂野！你让她暴力把写字楼总电闸给断了（pull_lever），电灯瞬间熄灭，外面钱总瞬间发出惨叫！", "timeDelta": -8, "actionId": "pull_lever" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_toilet_dog",
+      "name": "偷纸柴犬 旺财",
+      "sprite": "dog",
+      "x": 12,
+      "y": 2,
+      "dialogue": "汪汪！本旺抢到了一整包超高水分纸巾！不给你！除非你给我吃金条！",
+      "storyline": [
+        {
+          "id": "toilet_dog_stage1",
+          "text": "柴犬叼着最后一包湿厕纸在马桶边跑跳。你是踢它一脚（kick_dog）强夺，还是将口袋里的高能粒子老温水泼洗它（pour_coffee）？",
+          "options": [
+            { "label": "🦵 一猛脚朝柴犬屁股踢去爆夺纸巾", "outcomeText": "你一脚飞踹！旺财嗷呜一声撒了口中水巾，但警报声雷鸣巨响！", "timeDelta": -10, "actionId": "kick_dog" },
+            { "label": "☕ 连咖啡带温浓汁一齐泼在狗头顶", "outcomeText": "你将热咖啡泼了出去！小狗惨叫着放开面巾并把水闸全拉短路了！", "timeDelta": -8, "actionId": "pour_coffee" }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_lever_toilet",
+      "name": "应急全大厦消防喷淋总闸",
+      "sprite": "lever",
+      "x": 10,
+      "y": 4,
+      "description": "锈迹斑斑的一个超巨拉闸，千万别在拉完前按它，会爆发出雷霆万钧之水！",
+      "storyline": [
+        {
+          "id": "lever_toilet_stage1",
+          "text": "总闸发出不祥的红光，拉动它能洗去耻辱吗？",
+          "options": [
+            { "label": "🚨 狠拉消防总闸！给整层楼下一场极乐暴雨", "outcomeText": "你不管不顾用吃奶的劲狠拽拉闸！轰！全楼300个干眼消防喷嘴齐刷刷高密度喷淋，大水铺天盖地而来！", "timeDelta": -15, "actionId": "open_sprinkler" },
+            { "label": "👟 奋起怒踹这个垃圾消防闸机", "outcomeText": "你大长腿反手一记旋风一脚！把闸机外壳爆拆，发出一顿火花和警笛啸叫！", "timeDelta": -10, "actionId": "kick_dog" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_toilet_roll",
+      "name": "黄金千亿旧文卷",
+      "sprite": "pen",
+      "x": 8,
+      "y": 2,
+      "description": "一整卷散落的金箔信托法文合同，上面印满了复杂的利息条款，被随手丢在洗脸盆旁。",
+      "storyline": [
+        {
+          "id": "toilet_roll_stage1",
+          "text": "你在文卷边颤抖。是要在上面大笔一挥买下月球地皮（buy_moon），还是拿它当面纸用来疯狂擦拭（use_sharp_paper）？",
+          "options": [
+            { "label": "✍️ 豪气签字，把二爷的黄金地券权当废纸", "outcomeText": "大笔一勾！你把月球三万亩沙漠地权彻底买单！钱瞬间划扣，大聪明激动狂呼！", "timeDelta": -8, "actionId": "buy_moon" },
+            { "label": "🧻 别管了，一扯当成普通面纸狠狠擦拭", "outcomeText": "刺啦！你用来擦了屁屁！结果昂贵合书瞬间作废掉进污水池，前途茫茫！", "timeDelta": -10, "actionId": "use_sharp_paper" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_toilet_chest",
+      "name": "防水百亿信托箱",
+      "sprite": "chest",
+      "x": 4,
+      "y": 9,
+      "description": "散着金光的信托财产保护箱，可以全天候自动增殖利息！",
+      "storyline": [
+        {
+          "id": "toilet_chest_stage1",
+          "text": "财产保护箱正静静吃复利。是要一拧手心把它买成理财（buy_savings），还是引爆燃油大火把它熔毁（ignite_fire）？",
+          "options": [
+            { "label": "💰 签！买成五年期超高额稳健信托理财", "outcomeText": "太糟糕了！你一揽子买断了理财合同，余额不仅没花出去，还暴增一笔庞大利息差额！", "timeDelta": -12, "actionId": "buy_savings" },
+            { "label": "🔥 扔进打火机和防蚊喷雾爆燃了它！", "outcomeText": "轰隆！防爆门内火光熊熊，资产箱在烈焰中物理超度，你发出反败为胜的狂笑！", "timeDelta": -10, "actionId": "ignite_fire" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_toilet_button",
+      "name": "爆水超能气动阀",
+      "sprite": "rocket_button",
+      "x": 13,
+      "y": 7,
+      "description": "高压真空冲水红色按钮，按下可以瞬间引发九天惊雷一般的巨量水力。",
+      "storyline": [
+        {
+          "id": "toilet_btn_stage1",
+          "text": "气动按钮滋滋响。你要一掌拍死这个红色按钮弹射冲水（press_rocket），还是狂拉消防断水闸（open_sprinkler）？",
+          "options": [
+            { "label": "🚀 掌拍红色极速核子火箭冲水按钮！", "outcomeText": "轰！伴随着强力真空大吸力，全区地漏开始反向冲涌！钱像海水一样被气旋抽走！", "timeDelta": -12, "actionId": "press_rocket" },
+            { "label": "💦 狂拉消防喷淋，淹没整排便池！", "outcomeText": "高位水阀全部爆开！全间厕所瞬间一片惊涛骇浪，你在水花中大笑乘风破浪！", "timeDelta": -14, "actionId": "open_sprinkler" }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "endingId": "ending_toilet_drown",
+      "title": "【海王附体之厕所怒涛救世主】",
+      "description": "你真是一个不按套路出牌的奇客！在纸巾和水源双重枯竭时，你撕扯下了自己最昂贵的名牌西服袖衣（clean_cloth），更在一烈怒之下拉开并爆裂了应急消防总水闸（open_sprinkler）！整个大厦的干旱管道瞬时引爆，三百万大水冲流，你顺路洗去满面污垢并让大厦全体职员享受了一把漂流皮划艇之乐！二爷叹赏不已，封你为极速清洁千亿之主！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["clean_cloth", "open_sprinkler"] }
+    },
+    {
+      "endingId": "ending_paper_ruined",
+      "title": "【失去高纯股份的优雅赤贫汉】",
+      "description": "你选择了用二爷留下的原始高保全备忘录完成最终揉擦手续（use_sharp_paper）。结果那张合同纸里由于含油墨高纯金元素导致屁股沾了金。更糟糕的是，你签署股权信托的唯一防伪页就这样在马桶流走，大好前程一落千丈，你只能作为最贵的废纸擦拭达人退役归乡！",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["use_sharp_paper"] }
+    }
+  ],
+  "introText": "人在江湖飘，哪有不挨刀。王多鱼突然在败家大业紧要关头遭遇了终极困境：人在豪华写字楼三十层的厕所最深处，屁股尚未处理完，而此时大楼广播宣布由于供水管网维修，全楼断水且保洁阿姨忘带卫生纸！你手心里汗珠滚滚，倒计时60秒，做出艰难决断吧！",
+  "ambientMusic": "corporate-jazz"
+}

@@ -1,0 +1,126 @@
+{
+  "matchKeywords": ["diver", "潜水", "sea", "深海", "dive"],
+  "identity": "深海探险极限潜水领主 (Diver)",
+  "theme": "万米深海马里亚纳海沟潜航1分钟绝境抉择",
+  "mapLayout": {
+    "width": 16,
+    "height": 12,
+    "tileRules": {
+      "wall": "border",
+      "water": "row4to8_col4to11",
+      "deck": "default"
+    }
+  },
+  "playerPosition": { "x": 2, "y": 2 },
+  "npcs": [
+    {
+      "id": "sea_scientist",
+      "name": "潜水大连络员",
+      "sprite": "assistant",
+      "x": 4,
+      "y": 2,
+      "dialogue": "领主！海底万米火山即将爆发，我们潜水钟的气压阀只剩60秒氧气寿命了！",
+      "storyline": [
+        {
+          "id": "diver_stage1",
+          "text": "大连络员捧着高能深潜呼吸气：『我们要多吞几口高能气流提速（drink_coffee），还是顺手签署李总的海底石油霸道对赌单（sign_deal）？』",
+          "options": [
+            { "label": "☕ 狂吸一口漏电粒子高压氧", "outcomeText": "高压粒子氧气过载，你全身红细胞发出幽蓝量子微光，你可以在大水里连续憋气九十天！但隔壁的密封核心开始剧烈冒黑烟！", "timeDelta": -5, "actionId": "drink_coffee", "soundHint": "drink" },
+            { "label": "✍️ 签下巨额海底主权让渡契约", "outcomeText": "你颤抖着大名一签！在深海得到一笔黄金输血，不过要是不能活着上浮，你的遗体也将成为跨国集团的海底挖宝苦役！", "timeDelta": -10, "actionId": "sign_deal", "soundHint": "bling" }
+          ]
+        },
+        {
+          "id": "diver_stage2",
+          "text": "深水舱水汽升温！『过热火星引燃了应急舱室！我们是要在高温发热电热舱点燃第二把烈烟将残留抹除，还是直接一耳光拍死电力总总拉闸？』",
+          "options": [
+            { "label": "🔥 在易燃防水板上直接点火引爆", "outcomeText": "你在幽闭的水密舱一把点着应急氧气瓶，高浓度火焰骤火蹿红，场面犹如万米水下最靓的小太阳！", "timeDelta": -8, "actionId": "ignite_fire", "soundHint": "laser" },
+            { "label": "🔌 扳倒海流变压红色手开关拉杆", "outcomeText": "你一怒拽下切断电闸！探探照灯和重力系统瞬间死灭，舱室陷入马里亚纳海沟绝对恐怖的极地冰黑中，全凭直觉！", "timeDelta": -6, "actionId": "pull_lever", "soundHint": "alert" }
+          ]
+        },
+        {
+          "id": "diver_stage3",
+          "text": "内压剧降！『太惨了！压力水警报开启！我们要打开强力消防排水喷淋喷洒冷水，还是疯狂一拍那个海底逃生火箭仓红色启动钮？』",
+          "options": [
+            { "label": "💦 启动消防狂澜大冷水高喷头", "outcomeText": "高位水循环开启，万吨冰凉的大水柱如惊涛骇浪直接灌满全密封舱，你瞬间在封闭的大罐子里变成了潜游大咸鱼！", "timeDelta": -10, "actionId": "open_sprinkler", "soundHint": "explosion" },
+            { "label": "🚀 按破透明防爆盖启动点火逃亡火箭", "outcomeText": "你一巴掌在终极红色气动推进按钮上印下掌纹，高能海底推进火箭立刻开始进入火山倒计时！", "timeDelta": -15, "actionId": "press_rocket", "soundHint": "explosion" }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "sea_egg",
+      "name": "马里亚纳发光异形金蛋",
+      "sprite": "egg",
+      "x": 10,
+      "y": 8,
+      "description": "在火山边缘发现的温热奇异生命蛋，闪烁着宇宙频段光波。",
+      "storyline": [
+        {
+          "id": "egg_stage1",
+          "text": "异形发光蛋发出诱惑。是无情给门口的机器狗来一脚飞踹以宣誓主权，还是在蛋壳表面拿火机直接擦出一场无情点火？",
+          "options": [
+            { "label": "🦵 给星际间谍柴犬一记大力海底踹", "outcomeText": "在沉重的水下你大胯一迈飞踢了机器狗屁股！汪汪星人眼睛电光雷霆劈啪，当即便往遥远太空港报告抓捕危险碳基！", "timeDelta": -10, "actionId": "kick_dog", "soundHint": "dog_bark" },
+            { "label": "🔥 用打火机把蛋壳表皮点燃引爆", "outcomeText": "你打着了打火机，微火照耀蛋壳，异形金蛋因剧烈升热瞬间折射出十万道致命深海极光，连大乌贼都吓跑了！", "timeDelta": -6, "actionId": "ignite_fire", "soundHint": "laser" }
+          ]
+        },
+        {
+          "id": "egg_stage2",
+          "text": "极地大水由于短路开始发高烧！是要把电弧切断的总拉杆扳倒，还是打开消防冷水和冰暴进行全面的冰镇泡大澡？",
+          "options": [
+            { "label": "🔌 怒拉隐藏防短路水压电开关", "outcomeText": "你死力一把推断安全电闸！舱内大黑一亮，只有金蛋在咕噜咕噜发着原生态的翡翠神光，氛围十分恐怖迷离！", "timeDelta": -8, "actionId": "pull_lever", "soundHint": "alert" },
+            { "label": "💦 启用千磅消防洒水防爆高喷流", "outcomeText": "阀门断裂！极寒的高压消防喷射水流狂暴注入，一刹那冰凉冷水把水舱内几乎积成了深海大温泉！", "timeDelta": -12, "actionId": "open_sprinkler", "soundHint": "explosion" }
+          ]
+        },
+        {
+          "id": "egg_stage3",
+          "text": "海底外壳即将因为火山引爆压塌！我们要启动海底脱离火箭，还是转头把那个一直对你叽叽歪歪的清盘代表暴扁一顿？",
+          "options": [
+            { "label": "🚀 拍下大推力气爆逃亡火箭钥匙", "outcomeText": "轰的一声怒吼！火箭喷气在深海撕开了一万米高的白色大真空带，拉着你像鱼雷一样极速上蹿！", "timeDelta": -15, "actionId": "press_rocket", "soundHint": "explosion" },
+            { "label": "🤜 把冷笑的投资清盘李总锤个满脸花", "outcomeText": "你在水里艰难转头，一拳头将头盔狠狠闷在李总的大脸上，直接把他砸进了深海大喷泉污泥堆里！", "timeDelta": -10, "actionId": "beat_investor", "soundHint": "sigh" }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "endingId": "ending_kick_dog_alien",
+      "title": "【被马里亚纳深渊引渡的落水狗】",
+      "description": "因为你在起航前居然在水下，狠狠踹了间谍机器哈士奇一脚（kick_dog）！导致柴犬脊梁上的高维量子信号球在万米水下疯狂鸣响。还没等你拉闸上浮，冰海裂层便狂飙下一场绿荧宇宙光缆，将你连人连空气钢罐像拽乌贼一样一把握入外星飞艇！外星总长裁判官怒放狂言：『你踹了星际第一特工旺，罚你给飞船的超负荷发动机扫灰500年！』",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["kick_dog"] }
+    },
+    {
+      "endingId": "ending_beat_and_ruin",
+      "title": "【海底主权剥夺的被囚罪犯】",
+      "description": "你把狂横的海底主权代表抢先一顿猛砸（beat_investor），顺足重踢了水下看门电子狗子（kick_dog），虽然狠狠出了一顿冤屈气，但你的罪恶记录在最后一刻被星际网络当场定罪！你的终身海底巨鳄所有权在一万分之一秒跌至尘土，并遭遇高空重装护保队海底包抄，一网将你套入重重铁链之中，直接在阴暗的死囚冷水仓啃烂鱼头！",
+      "priority": 5,
+      "triggerRules": { "mustInclude": ["beat_investor", "kick_dog"] }
+    },
+    {
+      "endingId": "ending_heroic_firefighter",
+      "title": "【智勇双全的海底救灾总指挥】",
+      "description": "何其卓越的世界领主！你在深潜密封舱由于极客漏电导致烈燃大火（ignite_fire）的致命毁灭点，没有心慌，而是以完美的时间序列切断并激活了海底消防高压大水注喷雾（open_sprinkler）！在滚烟、雷击与万吨水流的撕咬里，这股暴雨浇灭了烈火，并恰好维持了深潜钟的可怕气压守恒！你成拯救了百亿奇珍，作为深潜奇侠，被载入全人类终极史册！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["ignite_fire", "open_sprinkler"], "requiredSequence": ["ignite_fire", "open_sprinkler"] }
+    },
+    {
+      "endingId": "ending_foolish_drowner",
+      "title": "【自溺到无药可救的海中二蛋】",
+      "description": "你真是一个让人顶礼膜拜的自杀学者。在水密机舱里一块电路都没有发红发热时，你抢先引爆大水喷，让冷水直接灌满了全潜水钟（open_sprinkler）！当你全身湿透、抱着海底蛋在大水里直吹泡泡几乎溺死时，你居然哆哆嗦嗦擦燃了打火机，想把被水淹没的警控电脑强行烧红加热（ignite_fire）！结果你不仅不能打着火，高电压水流瞬时导爆了全身超极电流！你两眼冒白光头发卷成焦炭，成全宇宙深潜滑稽第一人！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["open_sprinkler", "ignite_fire"], "requiredSequence": ["open_sprinkler", "ignite_fire"] }
+    },
+    {
+      "endingId": "ending_rocket_man",
+      "title": "【直插空域的海底火箭狂徒】",
+      "description": "去特么的海底破产和火山大对赌！你大嚎一声，果断彻底掰断了求生控制盒，一拳锤烂红色火箭逃逸按钮（press_rocket）！下一帧，潜水钟外壳自爆成两瓣，定制款固态推进动力椅将你绑紧瞬间在马里亚纳深海中带出一蓬直达九霄云外的万米大水柱！地球的人肉纠葛瞬间甩开十光年，你像一只飞天金色大龙虾一样，带着火山神气直接飞到了外太空建立极乐殖民！",
+      "priority": 3,
+      "triggerRules": { "mustInclude": ["press_rocket"] }
+    }
+  ],
+  "introText": "你在万米马里亚纳海沟中，正驾驶着唯一的百亿级核力潜水钟。不料背后的火山即将在一分钟内大连环大自爆，而无聊的石油大鳄李总还要你签署财产破产合同，你的机密警灯正在闪红，氧气阀在无情漏气！海压在大轰，死神敲门，这场幽闭海底的蝴蝶风暴已然在水底狂哮。屏住呼吸，决定你的出逃之路！",
+  "ambientMusic": "yacht-relax"
+}

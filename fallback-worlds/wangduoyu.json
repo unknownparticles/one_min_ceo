@@ -1,0 +1,99 @@
+{
+  "matchKeywords": ["duoyu", "王多鱼", "normal", "random", "败家", "random"],
+  "identity": "王多鱼 (败家挑战)",
+  "theme": "限时花光三百万巨额遗产的生死较量",
+  "mapLayout": {
+    "width": 16,
+    "height": 12,
+    "tileRules": {
+      "wall": "border",
+      "carpet": "row6_col2to13",
+      "floor": "default"
+    }
+  },
+  "playerPosition": { "x": 3, "y": 4 },
+  "npcs": [
+    {
+      "id": "npc_advisor_daming",
+      "name": "超脑总顾问 大聪明",
+      "sprite": "butler",
+      "x": 6,
+      "y": 3,
+      "dialogue": "老板！我刚刚领悟了无厘头败家商业的真谛：发明'北极融化的冰全款运往赤道撒哈拉降温计划'！预算只要150万！要立刻开工投产吗？",
+      "storyline": [
+        {
+          "id": "advisor_daming_stage1",
+          "text": "大聪明甩了甩他浓密的刘海：『只要您同意签署这项荒诞投资协议，我们立刻组织全球海运游艇拉冷开水，绝对能让您的资产在一分钟内产生惊天动地的巨额折损亏空！』",
+          "allowsFreeInput": true,
+          "options": [
+            { "label": "🤝 豪掷150万！开辟撒哈拉运冰冷饮冷航线", "outcomeText": "你狂放挥笔全签了！大聪明热泪盈眶大吼：'人类商业史上最具毁灭性亏蚀之大手笔诞生了！' 150万元瞬间从你的理财锁中划拨流去！", "timeDelta": -10, "actionId": "invest_desert_ice" },
+            { "label": "🧐 拒斥大聪明，我要搞更败家的'全民减肥脂肪险'", "outcomeText": "你高瞻远瞩，提出让市民全民减肥越减越送黄金的极品亏空保险协议，大聪明震怒佩服：『妙啊！老板的败家造诣居然远胜我千倍！』 再次把150万成功败走！", "timeDelta": -10, "actionId": "invest_fat_insurance" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_trap_investor",
+      "name": "死对头保险理财师 李总",
+      "sprite": "investor",
+      "x": 10,
+      "y": 5,
+      "dialogue": "王多鱼！二爷的巨额财产应该安全吃复利生息！我这里有一份稳赚不亏的年化15%保本理财，一键签署，让你直接多赚30万收益！哈哈哈哈！",
+      "storyline": [
+        {
+          "id": "trap_investor_stage1",
+          "text": "李总提着密码箱，不怀好意地拦在通往资本出逃拉闸旁：『你若是不买定期寿险（buy_savings），那就是在跟钱过不去，我会向二爷信托委员会举报你违规恶意弃款！』",
+          "options": [
+            { "label": "💰 签了！一键买下保障大礼和定期生息理财", "outcomeText": "坏了！你随手签了定期高额理财合同，看着账户余额瞬间不仅没有砸光，反而额外多出好多万利息红利，你直接哭出了声音！", "timeDelta": -15, "actionId": "buy_savings" },
+            { "label": "🤜 狠狠反手暴扁这个不怀好意让你赚利息的李总", "outcomeText": "打得好！你一拳直勾勾暴打破他的势利鼻扣，金条撒了一地。打完虽爽，但耽搁了十几秒败家大好时光！", "timeDelta": -10, "actionId": "beat_investor" }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_rocket_burner",
+      "name": "三级高能高空烟火发射拉杆",
+      "sprite": "lever",
+      "x": 12,
+      "y": 4,
+      "description": "一次可以烧掉二十五万吨高端镁合金燃油燃料的不祥红色闸阀！",
+      "storyline": [
+        {
+          "id": "rocket_burner_stage1",
+          "text": "发射阀正在空转轰鸣。你是要大力拉满一键往大气层燃放两百万空空烟花（open_sprinkler），还是把路过巡视的资产守卫狗踢一顿？",
+          "options": [
+            { "label": "🔥 狂拉点火闸！制造全城两百万黄金融资礼花大秀", "outcomeText": "轰隆隆！五彩的高纯金属合金礼炮从三十层天台怒冲向夜空，全城天空都在为你挥金泼银，大批网友高呼'王总真乃夜空中最亮的星！'", "timeDelta": -15, "actionId": "open_sprinkler" },
+            { "label": "🐕 顺脚一踹资产狗撕碎整个安全总线", "outcomeText": "你一脚把一旁阻水吊起的看家哈士奇踢了屁股（kick_dog）！小狗一口咬烂了防灾总线，全区电力发生奇妙大停摆！", "timeDelta": -10, "actionId": "kick_dog" }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "endingId": "ending_trap_saving_fail",
+      "title": "【因发财太快被取消资格的悲情普通人】",
+      "description": "二爷显灵，震怒咆哮！由于你在关键时候轻信了老奸巨猾的理财师李总，竟然购买了年化15%的保本理财信托（buy_savings）！在清算瞬间你的资本多出整整几万利息红利！本应该继承的千亿万亿遗产当场扣免，你被迫在大气层跑路流离！",
+      "priority": 5,
+      "triggerRules": { "mustInclude": ["buy_savings"] }
+    },
+    {
+      "endingId": "ending_duoyu_great_success",
+      "title": "【横跨星际时代的终极败家财阀主宰】",
+      "description": "真正的败家魔术师！千秋万代第一天才！你用完了全部遗产注入神荒的商业大谋划中（invest_desert_ice / invest_fat_insurance），更燃放了两百万的璀璨干雨礼花炮（open_sprinkler），把钱花得精光！二爷托梦老泪众横狂点五个赞！你当场继承王氏千亿联合财阀！",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["invest_desert_ice", "open_sprinkler"] }
+    },
+    {
+      "endingId": "ending_layoff_beaten",
+      "title": "【无缘遗产并背负因果案底的狂放人】",
+      "description": "你的动作确实非常狂野，你一拳擂烂了送财李总的牙齿（beat_investor），更踢了大闸口的看家哈士奇（kick_dog）！你不仅钱一毛没花掉，整个人还被带到了太空收留所反省错失千亿大奖的悔泪滋味。",
+      "priority": 4,
+      "triggerRules": { "mustInclude": ["beat_investor", "kick_dog"] }
+    }
+  ],
+  "introText": "你是普通人王多鱼！天降惊雷，你的二爷给你留下了巨额资产，但根据协议，你需要先在一分钟里面把这手头的三百万砸得干干净净才能合法拥有金山，去挥金泼银败光一切吧！",
+  "ambientMusic": "corporate-jazz"
+}
