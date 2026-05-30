@@ -36,6 +36,7 @@ import { Position, NPC, Item, WorldScenario, InteractionResult, EndingResult, Sa
 import { getDailyChallenge } from "./utils/dailyPresets";
 import { audio } from "./utils/audio";
 import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey } from "./utils/siliconFlow";
+import { getResourcePack } from "./utils/resourceKit";
 
 // Ticker lines for the header to increase high-contrast satire & immersive feeling
 const METADATA_TICKERS = [
@@ -663,6 +664,11 @@ export default function App() {
     setInteractionResult(null);
   };
 
+  const previewResourcePack = worldScenario?.resourcePack || getResourcePack(
+    activeTab === "normal" ? "CEO" : selectedPreset.type,
+    worldScenario?.theme || selectedPreset.name
+  );
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans flex flex-col justify-between overflow-x-hidden relative selection:bg-emerald-500 selection:text-black">
       
@@ -670,8 +676,8 @@ export default function App() {
       <header className="bg-slate-900/85 backdrop-blur-md border-b border-slate-800 py-3 px-4 shadow-xl sticky top-0 z-40">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3 cursor-pointer select-none active:scale-95 transition-all" onClick={handleBackToLobby}>
-            <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-green-600 rounded-xl flex items-center justify-center border border-emerald-300 shadow neon-glow-emerald">
-              <span className="font-mono font-bold text-black text-xl">老板</span>
+            <div className="w-11 h-11 rounded-xl flex items-center justify-center border border-emerald-300/70 bg-slate-950 shadow neon-glow-emerald overflow-hidden">
+              <img src="/logo.svg" alt="一分钟老板 Logo" className="w-full h-full object-cover" />
             </div>
             <div>
               <h1 className="font-mono text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
@@ -1179,7 +1185,7 @@ export default function App() {
                     开启你的一分钟富豪命运
                   </button>
                   <p className="text-center font-mono text-[9px] text-slate-500 mt-3">
-                    *本产品使用 Gemini-3.5-Flash 在云端运行全量像素世界动态生成，无剧情限制。
+                    *本产品使用 SiliconFlow 模型在云端运行全量像素世界动态生成，无剧情限制。
                   </p>
                 </div>
 
@@ -1193,30 +1199,57 @@ export default function App() {
                     <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> 实时就绪</span>
                   </div>
 
-                  <div className="aspect-[4/3] bg-slate-950 border-2 border-slate-850 rounded-xl relative overflow-hidden flex items-center justify-center group">
-                    {/* Retro Grid background */}
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:16px_16px]"></div>
-                    
-                    <div className="text-center p-4 relative z-10 space-y-2">
-                      <span className="text-3xl animate-bounce inline-block">👑</span>
-                      <h3 className="font-mono text-sm font-bold text-slate-350">《一分钟老板》项目提案图谱</h3>
-                      <p className="text-[10px] text-slate-450 leading-relaxed max-w-xs mx-auto">
-                        采用星露谷顶视角探索，不确定性与蝴蝶效应交织。打出去的高尔夫球可能是一颗外星通讯蛋，踩到狗可能触发时间流浪战争！
-                      </p>
+                  <div className="bg-slate-950 border-2 border-slate-850 rounded-xl relative overflow-hidden p-4 group">
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.04)_1px,transparent_1px)] bg-[size:16px_16px]"></div>
+                    <div className="relative z-10 flex items-start gap-4">
+                      <img src="/logo.svg" alt="一分钟老板资源标识" className="w-20 h-20 rounded-2xl border border-emerald-500/40 shadow-lg shadow-emerald-950/60 shrink-0" />
+                      <div className="min-w-0">
+                        <span className="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded uppercase">
+                          RESOURCE KIT
+                        </span>
+                        <h3 className="font-mono text-sm font-bold text-white mt-2 leading-tight">
+                          {previewResourcePack.posterTitle}
+                        </h3>
+                        <p className="text-[10px] text-slate-400 leading-relaxed mt-1">
+                          {previewResourcePack.posterSubtitle}
+                        </p>
+                      </div>
                     </div>
 
-                    <div className="absolute bottom-2 right-2 text-[9px] font-mono text-slate-600">
-                      V1.0 HACKATHON
+                    <div className="relative z-10 grid grid-cols-4 gap-2 mt-4">
+                      {Object.entries(previewResourcePack.palette).map(([name, color]) => (
+                        <div key={name} className="h-10 rounded-lg border border-slate-800 shadow-inner" style={{ backgroundColor: color }} title={`${name}: ${color}`}>
+                          <span className="sr-only">{name}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="relative z-10 mt-4 grid grid-cols-3 gap-2">
+                      {previewResourcePack.spriteSet.slice(0, 6).map(sprite => (
+                        <div key={sprite} className="h-16 bg-slate-900/85 border border-slate-800 rounded-lg flex flex-col items-center justify-center gap-1">
+                          <SpriteRenderer type={sprite} size={28} />
+                          <span className="text-[8px] font-mono text-slate-500 uppercase">{sprite}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <h4 className="font-mono text-[11px] font-bold text-slate-300 uppercase tracking-wider block">项目亮点摘要:</h4>
-                    <ul className="text-[10px] font-mono text-slate-450 space-y-1 pl-4 list-disc">
-                      <li><strong className="text-emerald-450">AI Native:</strong> 整个世界（地形、交互、结局）实时拼装，绝非僵硬写死的分支。</li>
-                      <li><strong className="text-emerald-450">高传播性:</strong> 每次游玩均生成独一无二的编号结局与画幅卡。</li>
-                      <li><strong className="text-emerald-450">游戏高留存:</strong> 提供“每日精选挑战”与“时空法则收藏册”。</li>
-                    </ul>
+                    <h4 className="font-mono text-[11px] font-bold text-slate-300 uppercase tracking-wider block">生成资源规格:</h4>
+                    <div className="grid grid-cols-1 gap-2 text-[10px] font-mono">
+                      <div className="p-2.5 bg-slate-950 border border-slate-850 rounded-lg">
+                        <span className="text-emerald-400 font-bold block">地块</span>
+                        <p className="text-slate-450 mt-1">{previewResourcePack.tileSet.join(" / ")}</p>
+                      </div>
+                      <div className="p-2.5 bg-slate-950 border border-slate-850 rounded-lg">
+                        <span className="text-amber-400 font-bold block">物件</span>
+                        <p className="text-slate-450 mt-1">{previewResourcePack.propSet.slice(0, 8).join(" / ")}</p>
+                      </div>
+                      <div className="p-2.5 bg-slate-950 border border-slate-850 rounded-lg">
+                        <span className="text-sky-400 font-bold block">氛围</span>
+                        <p className="text-slate-450 mt-1">{previewResourcePack.ambiance.slice(0, 3).join(" / ")}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -1236,10 +1269,10 @@ export default function App() {
             <div className="bg-slate-900 border border-slate-800 rounded-3xl p-12 shadow-2xl text-center max-w-md mx-auto space-y-8 animate-pulse">
               <div className="relative inline-block">
                 <div className="w-16 h-16 rounded-full border-4 border-slate-850 border-t-emerald-500 animate-spin"></div>
-                <span className="absolute inset-0 flex items-center justify-center text-xl">⏳</span>
+                <img src="/logo.svg" alt="一分钟老板 Logo" className="absolute inset-2 rounded-full" />
               </div>
               <div className="space-y-3">
-                <h3 className="font-mono text-lg font-bold text-white">时空信托资产正在链上组装...</h3>
+                <h3 className="font-mono text-lg font-bold text-white">时空资源包正在链上组装...</h3>
                 <p className="text-xs text-emerald-400 font-mono">
                   [
                   {["正在贿赂纳斯达克签约代表...", 
@@ -1288,7 +1321,7 @@ export default function App() {
                 <div className="bg-amber-500/10 border-2 border-dashed border-amber-500/30 text-amber-300 rounded-xl p-3 md:px-4 font-mono text-xs flex items-center gap-3 animate-pulse">
                   <div className="w-2 h-2 rounded-full bg-amber-500 animate-ping shrink-0"></div>
                   <div className="flex-1">
-                    <span className="font-bold">⚠️ 【因果天线阻塞 (Gemini 429)】</span>
+                    <span className="font-bold">⚠️ 【因果天线阻塞】</span>
                     已启动离线高维沙盒模拟引擎（Offline High-Fidelity Engine）维持时空运转！部分幽默剧情已预先合成完毕。
                   </div>
                 </div>
@@ -1655,7 +1688,7 @@ export default function App() {
           <p>© 2026 《一分钟老板》AI探索实验室. 有钱人的快乐往往比你想象得更无厘头。</p>
           <div className="flex justify-center items-center gap-3">
             <span className="text-[10px] bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Coded in Cloud Run</span>
-            <span className="text-[10px] bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Gemini Pro Unified</span>
+            <span className="text-[10px] bg-slate-950 px-2 py-0.5 rounded border border-slate-800">SiliconFlow Dynamic World</span>
           </div>
         </div>
       </footer>

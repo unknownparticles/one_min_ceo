@@ -69,6 +69,22 @@ export interface MapLayout {
   tiles: string[][];
 }
 
+export interface ResourcePack {
+  logoMark: string;
+  palette: {
+    primary: string;
+    secondary: string;
+    accent: string;
+    surface: string;
+  };
+  tileSet: string[];
+  propSet: string[];
+  spriteSet: string[];
+  ambiance: string[];
+  posterTitle: string;
+  posterSubtitle: string;
+}
+
 export interface WorldScenario {
   identity: string;
   identityType: BossIdentityType;
@@ -80,6 +96,7 @@ export interface WorldScenario {
   introText: string;
   ambientMusic: string;
   fixedEndings?: FixedEnding[];
+  resourcePack?: ResourcePack;
   isFallback?: boolean;
 }
 
