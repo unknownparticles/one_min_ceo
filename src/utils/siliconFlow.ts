@@ -5,9 +5,26 @@ import { buildResourceGenerationGuide, getResourcePack } from "./resourceKit";
 const SILICONFLOW_ENDPOINT = "https://api.siliconflow.cn/v1/chat/completions";
 const DEFAULT_MODEL = "deepseek-ai/DeepSeek-V4-Flash";
 
+export type ApiProvider = "siliconflow" | "minimax";
+
+export interface ApiSettings {
+  provider: ApiProvider;
+  siliconFlowApiKey: string;
+  siliconFlowModel: string;
+  minimaxApiKey: string;
+  minimaxModel: string;
+}
+
+const DEFAULT_SILICONFLOW_MODEL = "deepseek-ai/DeepSeek-V4-Flash";
+const DEFAULT_MINIMAX_MODEL = "MiniMax-M2.5";
+const MINIMAX_ENDPOINT = "https://api.minimax.io/v1/chat/completions";
+
 type RuntimeConfig = {
   siliconFlowApiKey?: string;
   siliconFlowModel?: string;
+  minimaxApiKey?: string;
+  minimaxModel?: string;
+  provider?: ApiProvider;
 };
 
 declare global {
@@ -16,20 +33,65 @@ declare global {
   }
 }
 
-const getRuntimeConfig = (): RuntimeConfig => {
+export const getApiSettings = (): ApiSettings => {
+  let stored: Partial<ApiSettings> = {};
+  try {
+    const raw = localStorage.getItem("one_min_ceo_api_settings");
+    if (raw) {
+      stored = JSON.parse(raw);
+    }
+  } catch (e) {
+    console.error("加载 API 设置失败", e);
+  }
+
+  const sfKey = stored.siliconFlowApiKey ||
+                window.__ONE_MIN_CEO_CONFIG__?.siliconFlowApiKey ||
+                import.meta.env.VITE_SILICONFLOW_API_KEY ||
+                "";
+
+  const mmKey = stored.minimaxApiKey ||
+                window.__ONE_MIN_CEO_CONFIG__?.minimaxApiKey ||
+                import.meta.env.VITE_MINIMAX_API_KEY ||
+                "";
+
+  let defaultProvider: ApiProvider = "siliconflow";
+  if (stored.provider) {
+    defaultProvider = stored.provider;
+  } else if (mmKey && !sfKey) {
+    defaultProvider = "minimax";
+  }
+
   return {
-    siliconFlowApiKey:
-      window.__ONE_MIN_CEO_CONFIG__?.siliconFlowApiKey ||
-      import.meta.env.VITE_SILICONFLOW_API_KEY,
-    siliconFlowModel:
-      window.__ONE_MIN_CEO_CONFIG__?.siliconFlowModel ||
-      import.meta.env.VITE_SILICONFLOW_MODEL ||
-      DEFAULT_MODEL,
+    provider: defaultProvider,
+    siliconFlowApiKey: sfKey,
+    siliconFlowModel: stored.siliconFlowModel || window.__ONE_MIN_CEO_CONFIG__?.siliconFlowModel || import.meta.env.VITE_SILICONFLOW_MODEL || DEFAULT_SILICONFLOW_MODEL,
+    minimaxApiKey: mmKey,
+    minimaxModel: stored.minimaxModel || window.__ONE_MIN_CEO_CONFIG__?.minimaxModel || import.meta.env.VITE_MINIMAX_MODEL || DEFAULT_MINIMAX_MODEL,
   };
 };
 
+export const saveApiSettings = (settings: ApiSettings) => {
+  try {
+    localStorage.setItem("one_min_ceo_api_settings", JSON.stringify(settings));
+    if (!window.__ONE_MIN_CEO_CONFIG__) {
+      window.__ONE_MIN_CEO_CONFIG__ = {};
+    }
+    window.__ONE_MIN_CEO_CONFIG__.siliconFlowApiKey = settings.siliconFlowApiKey;
+    window.__ONE_MIN_CEO_CONFIG__.siliconFlowModel = settings.siliconFlowModel;
+    window.__ONE_MIN_CEO_CONFIG__.minimaxApiKey = settings.minimaxApiKey;
+    window.__ONE_MIN_CEO_CONFIG__.minimaxModel = settings.minimaxModel;
+    window.__ONE_MIN_CEO_CONFIG__.provider = settings.provider;
+  } catch (e) {
+    console.error("保存 API 设置失败", e);
+  }
+};
+
 export const hasSiliconFlowKey = (): boolean => {
-  return !!getRuntimeConfig().siliconFlowApiKey;
+  const settings = getApiSettings();
+  if (settings.provider === "minimax") {
+    return !!settings.minimaxApiKey;
+  }
+  return !!settings.siliconFlowApiKey;
 };
 
 const parseJsonObject = <T>(content: string): T => {
@@ -45,9 +107,15 @@ const parseJsonObject = <T>(content: string): T => {
 };
 
 const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, maxTokens = 4096): Promise<T> => {
-  const config = getRuntimeConfig();
-  if (!config.siliconFlowApiKey) {
-    throw new Error("未配置 SiliconFlow API Key");
+  const settings = getApiSettings();
+  const isMiniMax = settings.provider === "minimax";
+  
+  const apiKey = isMiniMax ? settings.minimaxApiKey : settings.siliconFlowApiKey;
+  const model = isMiniMax ? settings.minimaxModel : settings.siliconFlowModel;
+  const endpoint = isMiniMax ? MINIMAX_ENDPOINT : SILICONFLOW_ENDPOINT;
+
+  if (!apiKey) {
+    throw new Error(`未配置 ${isMiniMax ? "MiniMax" : "SiliconFlow"} API Key，请点击右上角 [⚙️ API设置] 进行配置。`);
   }
 
   const startTime = performance.now();
@@ -65,14 +133,14 @@ const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, 
   };
 
   try {
-    const response = await fetch(SILICONFLOW_ENDPOINT, {
+    const response = await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${config.siliconFlowApiKey}`,
+        Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: config.siliconFlowModel || DEFAULT_MODEL,
+        model: model,
         messages: [
           { role: "system", content: systemPrompt },
           { role: "user", content: userPrompt },
@@ -88,13 +156,13 @@ const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, 
 
     if (!response.ok) {
       const errorText = await response.text().catch(() => "");
-      throw new Error(errorText || `SiliconFlow 请求失败：${response.status}`);
+      throw new Error(errorText || `${isMiniMax ? "MiniMax" : "SiliconFlow"} 请求失败：${response.status}`);
     }
 
     const data = await response.json();
     const content = data?.choices?.[0]?.message?.content;
     if (!content || typeof content !== "string") {
-      throw new Error("SiliconFlow 返回内容为空");
+      throw new Error(`${isMiniMax ? "MiniMax" : "SiliconFlow"} 返回内容为空`);
     }
 
     const networkEndTime = performance.now();
@@ -124,7 +192,7 @@ const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, 
     };
 
     if (error.name === "AbortError") {
-      throw new Error("时空网关连接超时 (API 请求超出 5 秒无响应)，已自动切回离线降级引擎！");
+      throw new Error(`时空网关连接超时 (API 请求超出 5 秒无响应)，已自动切回离线降级引擎！`);
     }
     throw error;
   }
@@ -178,6 +246,9 @@ const printPerformanceReport = (actionName: string, customDuration = 0, isFallba
   const timing = (callSiliconFlowJson as any).lastTiming;
   if (!timing) return;
   
+  const settings = getApiSettings();
+  const providerLabel = settings.provider === "minimax" ? "MiniMax (海螺AI)" : "SiliconFlow (硅基流动)";
+  
   const labelStyle = "color: #FF9F1C; font-weight: bold;";
   const valueStyle = "color: #6BCB77; font-weight: bold;";
   const warningStyle = "color: #FF6B6B; font-weight: bold; background: #FFF3BF; padding: 2px 4px; border-radius: 4px;";
@@ -186,12 +257,14 @@ const printPerformanceReport = (actionName: string, customDuration = 0, isFallba
     const errMsg = errorMsg || timing.error || "未知网络异常";
     console.warn(
       `%c================ [ONE MIN CEO 性能分析 - 离线降级降临] ================\n` +
+      `%c- 提供商: %c${providerLabel}\n` +
       `%c- 动作: %c${actionName}\n` +
       `%c- 网络尝试耗时: %c${timing.networkDuration.toFixed(1)} ms\n` +
       `%c- 降级原因: %c${errMsg}\n` +
       `%c- 状态: %c已切回本地离线引擎，游戏可正常畅玩！\n` +
       `%c========================================================================`,
       "color: #FF6B6B; font-weight: bold;",
+      "color: #2D3436;", labelStyle,
       "color: #2D3436;", labelStyle + "color: #FF6B6B; background: #FFD93D; padding: 1.5px 4px; border-radius: 4px;",
       "color: #2D3436;", valueStyle,
       "color: #2D3436;", warningStyle,
@@ -201,6 +274,7 @@ const printPerformanceReport = (actionName: string, customDuration = 0, isFallba
   } else {
     console.log(
       `%c================ [ONE MIN CEO 性能分析 - AI 完美生成] ================\n` +
+      `%c- 提供商: %c${providerLabel}\n` +
       `%c- 动作: %c${actionName}\n` +
       `%c- 网络请求耗时: %c${timing.networkDuration.toFixed(1)} ms\n` +
       `%c- 数据结构解析: %c${timing.parseDuration.toFixed(1)} ms\n` +
@@ -208,6 +282,7 @@ const printPerformanceReport = (actionName: string, customDuration = 0, isFallba
       `%c- 总体计算耗时: %c${(timing.totalDuration + customDuration).toFixed(1)} ms\n` +
       `%c========================================================================`,
       "color: #22c55e; font-weight: bold;",
+      "color: #2D3436;", labelStyle,
       "color: #2D3436;", labelStyle + "color: #FFD93D; background: #2D3436; padding: 1.5px 4px; border-radius: 4px;",
       "color: #2D3436;", valueStyle,
       "color: #2D3436;", valueStyle,

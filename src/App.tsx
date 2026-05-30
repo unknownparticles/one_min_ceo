@@ -30,14 +30,15 @@ import {
   ArrowRight,
   Github,
   ScanLine,
-  CheckCircle2
+  CheckCircle2,
+  Settings
 } from "lucide-react";
 import { PixelMap } from "./components/PixelMap";
 import { SpriteRenderer } from "./components/SpriteRenderer";
 import { Position, NPC, Item, WorldScenario, InteractionResult, EndingResult, SavedLife, DailyChallenge, BossIdentityType } from "./types";
 import { getDailyChallenge } from "./utils/dailyPresets";
 import { audio } from "./utils/audio";
-import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey } from "./utils/siliconFlow";
+import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey, getApiSettings, saveApiSettings } from "./utils/siliconFlow";
 import { getResourcePack } from "./utils/resourceKit";
 import logoUrl from "../assets/logo.png";
 import douyinQrUrl from "../assets/douyin.JPG";
@@ -80,8 +81,13 @@ export default function App() {
   
   // Custom or pre-selected choices
   const [selectedPreset, setSelectedPreset] = useState<typeof PRESETS[0]>(PRESETS[0]);
-  const [customIdentityInput, setCustomIdentityInput] = useState<string>("");
   const [hasApiKey, setHasApiKey] = useState<boolean>(true);
+  const [showSettingsModal, setShowSettingsModal] = useState<boolean>(false);
+  const [settingsProvider, setSettingsProvider] = useState<"siliconflow" | "minimax">("siliconflow");
+  const [sfApiKey, setSfApiKey] = useState<string>("");
+  const [sfModel, setSfModel] = useState<string>("");
+  const [mmApiKey, setMmApiKey] = useState<string>("");
+  const [mmModel, setMmModel] = useState<string>("");
   
   // Lobby Subtabs
   const [activeTab, setActiveTab] = useState<"normal" | "presets" | "album" | "daily" | "vip">("normal");
@@ -1936,6 +1942,173 @@ export default function App() {
                   className="w-full py-2 bg-white hover:bg-slate-50 text-[#2D3436] border-2 border-[#2D3436] rounded-xl text-[10px] font-mono font-black shadow-[2px_2px_0px_#2D3436] cursor-pointer transition"
                 >
                   我再看看，回到普通人败家人生
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* 5. 大模型 API 配置设置面板 */}
+      <AnimatePresence>
+        {showSettingsModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-md bg-black/60"
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.9, y: 20, opacity: 0 }}
+              className="w-full max-w-lg border-3 border-[#2D3436] shadow-[6px_6px_0px_#2D3436] rounded-3xl p-6 bg-[#EAF6FF] relative overflow-hidden flex flex-col gap-4 text-[#2D3436]"
+            >
+              {/* Corner decors */}
+              <div className="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-[#2D3436] opacity-30"></div>
+              <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-[#2D3436] opacity-30"></div>
+              <div className="absolute bottom-2 left-2 w-2 h-2 border-b-2 border-l-2 border-[#2D3436] opacity-30"></div>
+              <div className="absolute bottom-2 right-2 w-2 h-2 border-b-2 border-r-2 border-[#2D3436] opacity-30"></div>
+
+              <div className="flex items-center justify-between border-b-2 border-[#2D3436]/15 pb-2">
+                <span className="text-xs font-mono bg-[#FF9F1C] text-white px-2.5 py-0.5 rounded-full font-black uppercase tracking-wider">
+                  ⚙️ 大模型时空网关配置
+                </span>
+                <button 
+                  onClick={() => {
+                    setShowSettingsModal(false);
+                    audio.playSound("walk");
+                  }}
+                  className="text-xs font-black text-slate-500 hover:text-slate-800"
+                >
+                  [关闭]
+                </button>
+              </div>
+
+              {/* Provider Selection */}
+              <div className="space-y-2">
+                <label className="text-xs font-black text-[#2D3436] block">时空网关提供商：</label>
+                <div className="grid grid-cols-2 gap-3">
+                  <button
+                    onClick={() => {
+                      setSettingsProvider("siliconflow");
+                      audio.playSound("walk");
+                    }}
+                    className={`py-2 px-3 border-2 border-[#2D3436] rounded-xl font-bold text-xs transition duration-150 active:scale-95 shadow-[2px_2px_0px_#2D3436] cursor-pointer text-center ${
+                      settingsProvider === "siliconflow"
+                        ? "bg-[#FFD93D] text-[#2D3436]"
+                        : "bg-white text-slate-650 hover:bg-slate-50"
+                    }`}
+                  >
+                    ⚡ SiliconFlow (硅基流动)
+                  </button>
+                  <button
+                    onClick={() => {
+                      setSettingsProvider("minimax");
+                      audio.playSound("walk");
+                    }}
+                    className={`py-2 px-3 border-2 border-[#2D3436] rounded-xl font-bold text-xs transition duration-150 active:scale-95 shadow-[2px_2px_0px_#2D3436] cursor-pointer text-center ${
+                      settingsProvider === "minimax"
+                        ? "bg-[#FFD93D] text-[#2D3436]"
+                        : "bg-white text-slate-650 hover:bg-slate-50"
+                    }`}
+                  >
+                    🚀 MiniMax (海螺AI)
+                  </button>
+                </div>
+              </div>
+
+              {/* Conditional Inputs */}
+              <div className="bg-white/50 border border-[#2D3436]/10 p-4 rounded-2xl space-y-3 shadow-inner">
+                {settingsProvider === "siliconflow" ? (
+                  <div className="space-y-3">
+                    <div className="space-y-1">
+                      <div className="flex justify-between items-center">
+                        <label className="text-[11px] font-black text-[#2D3436]">SiliconFlow API Key</label>
+                        <span className="text-[9px] text-slate-400 font-mono">优先级: 本地配置优先</span>
+                      </div>
+                      <input
+                        type="password"
+                        value={sfApiKey}
+                        onChange={(e) => setSfApiKey(e.target.value)}
+                        placeholder="sk-..."
+                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-white text-[#2D3436]"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-[11px] font-black text-[#2D3436] block">SiliconFlow Model</label>
+                      <input
+                        type="text"
+                        value={sfModel}
+                        onChange={(e) => setSfModel(e.target.value)}
+                        placeholder="deepseek-ai/DeepSeek-V4-Flash"
+                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-white text-[#2D3436]"
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    <div className="space-y-1">
+                      <div className="flex justify-between items-center">
+                        <label className="text-[11px] font-black text-[#2D3436]">MiniMax API Key</label>
+                        <span className="text-[9px] text-slate-400 font-mono">优先级: 本地配置优先</span>
+                      </div>
+                      <input
+                        type="password"
+                        value={mmApiKey}
+                        onChange={(e) => setMmApiKey(e.target.value)}
+                        placeholder="输入你的 MiniMax API 秘钥"
+                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-white text-[#2D3436]"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-[11px] font-black text-[#2D3436] block">MiniMax Model</label>
+                      <input
+                        type="text"
+                        value={mmModel}
+                        onChange={(e) => setMmModel(e.target.value)}
+                        placeholder="MiniMax-M2.5"
+                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-white text-[#2D3436]"
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Tips */}
+              <div className="text-[10px] text-slate-500 font-bold leading-relaxed bg-[#EAF6FF] p-2 border border-[#2D3436]/10 rounded-xl">
+                💡 <b>提示:</b> 密钥将安全地保存在你本地浏览器的 LocalStorage 中，不会泄露。若不配置，将默认读取环境变量中系统分配的公共 Key (如存在的话)。
+              </div>
+
+              {/* Actions */}
+              <div className="space-y-2 pt-2">
+                <button
+                  onClick={() => {
+                    const settingsToSave = {
+                      provider: settingsProvider,
+                      siliconFlowApiKey: sfApiKey.trim(),
+                      siliconFlowModel: sfModel.trim() || "deepseek-ai/DeepSeek-V4-Flash",
+                      minimaxApiKey: mmApiKey.trim(),
+                      minimaxModel: mmModel.trim() || "MiniMax-M2.5",
+                    };
+                    saveApiSettings(settingsToSave);
+                    setHasApiKey(hasSiliconFlowKey());
+                    setShowSettingsModal(false);
+                    audio.playSound("bling");
+                    setSystemAlertMessage(`🎉 网关配置更新成功！当前已切换至：${settingsProvider === "minimax" ? "MiniMax (海螺AI)" : "SiliconFlow (硅基流动)"}。`);
+                  }}
+                  className="w-full py-3 bg-[#6BCB77] hover:bg-[#52a35e] text-white text-xs font-black border-2 border-[#2D3436] rounded-xl transition shadow-[3px_3px_0px_#2D3436] active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  <CheckCircle2 size={14} /> 保存时空网关配置
+                </button>
+                <button
+                  onClick={() => {
+                    setShowSettingsModal(false);
+                    audio.playSound("walk");
+                  }}
+                  className="w-full py-2 bg-white hover:bg-slate-50 text-[#2D3436] border-2 border-[#2D3436] rounded-xl text-[10px] font-mono font-black shadow-[2px_2px_0px_#2D3436] cursor-pointer transition"
+                >
+                  取消，保持原有配置
                 </button>
               </div>
             </motion.div>
