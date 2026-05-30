@@ -94,8 +94,14 @@ export const getApiSettings = (): ApiSettings => {
                 import.meta.env.VITE_DEEPSEEK_API_KEY ||
                 "";
 
+  const providerHasKey = (provider: ApiProvider): boolean => {
+    if (provider === "minimax") return !!mmKey;
+    if (provider === "deepseek") return !!dsKey;
+    return !!sfKey;
+  };
+
   let defaultProvider: ApiProvider = "siliconflow";
-  if (stored.provider) {
+  if (stored.provider && providerHasKey(stored.provider)) {
     defaultProvider = stored.provider;
   } else if (mmKey && !sfKey && !dsKey) {
     defaultProvider = "minimax";
