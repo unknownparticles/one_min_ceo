@@ -120,9 +120,9 @@ const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, 
 
   const startTime = performance.now();
   
-  // Set up 5-second request timeout controller for faster fallback experience
+  // Set up 30-second request timeout controller
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 5000);
+  const timeoutId = setTimeout(() => controller.abort(), 30000);
 
   // Initialize timing placeholder in case of early errors
   (callSiliconFlowJson as any).lastTiming = {
