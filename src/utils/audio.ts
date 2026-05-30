@@ -8,6 +8,7 @@ class AudioEngine {
     gain: GainNode;
     intervalId: any;
   } | null = null;
+  private bgmElement: HTMLAudioElement | null = null;
   public isMuted: boolean = false;
 
   private initCtx() {
@@ -20,6 +21,26 @@ class AudioEngine {
   }
 
   playBGM(style: string) {
+    if (this.isMuted) return;
+    this.stopBGM();
+
+    const bgm = new Audio(`${import.meta.env.BASE_URL}audio/laiqvdagong.mp3`);
+    bgm.loop = true;
+    bgm.volume = 0.36;
+    bgm.preload = "auto";
+    this.bgmElement = bgm;
+
+    bgm.play().catch(() => {
+      if (this.bgmElement === bgm) {
+        this.bgmElement = null;
+      }
+      if (!this.isMuted) {
+        this.playSynthBGM(style);
+      }
+    });
+  }
+
+  private playSynthBGM(style: string) {
     if (this.isMuted) return;
     this.stopBGM();
     this.initCtx();
@@ -101,6 +122,12 @@ class AudioEngine {
   }
 
   stopBGM() {
+    if (this.bgmElement) {
+      this.bgmElement.pause();
+      this.bgmElement.currentTime = 0;
+      this.bgmElement = null;
+    }
+
     if (this.bgmNodes) {
       try {
         clearInterval(this.bgmNodes.intervalId);
