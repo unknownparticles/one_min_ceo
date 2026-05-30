@@ -81,6 +81,7 @@ export default function App() {
   
   // Custom or pre-selected choices
   const [selectedPreset, setSelectedPreset] = useState<typeof PRESETS[0]>(PRESETS[0]);
+  const [customIdentityInput, setCustomIdentityInput] = useState<string>("");
   const [hasApiKey, setHasApiKey] = useState<boolean>(true);
   const [showSettingsModal, setShowSettingsModal] = useState<boolean>(false);
   const [settingsProvider, setSettingsProvider] = useState<"siliconflow" | "minimax">("siliconflow");
