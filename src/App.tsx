@@ -86,6 +86,9 @@ export default function App() {
   // Lobby Subtabs
   const [activeTab, setActiveTab] = useState<"normal" | "presets" | "album" | "daily" | "vip">("normal");
   const [isVip, setIsVip] = useState<boolean>(false);
+  const [showFollowModal, setShowFollowModal] = useState<boolean>(false);
+  const [loadingProgress, setLoadingProgress] = useState<number>(0);
+  const [loadingText, setLoadingText] = useState<string>("时空波阵预热中...");
   const [wangDuoyuConcept, setWangDuoyuConcept] = useState<string>("");
 
   // Game Play States
@@ -198,6 +201,8 @@ export default function App() {
     // Play entry bling
     audio.playSound("bling");
     setGameState("loading");
+    setLoadingProgress(0);
+    setLoadingText("🌌 [对流层] 正在定位高维时空坐标网络...");
     setTimer(60.0);
     setHistoryLog([]);
     setCurrentDialogueHistory([]);
@@ -205,6 +210,27 @@ export default function App() {
     setInteractionResult(null);
     setEntityStageMap({});
     setActionSequence([]);
+
+    const LOADING_HINTS = [
+      { p: 0, text: "🌌 [对流层] 正在定位高维时空坐标网络..." },
+      { p: 15, text: "🐕 [特工狗] 正在唤醒外星特工狗，调试赛博哈士奇声波天线..." },
+      { p: 35, text: "☕ [漏电咖啡] 正在给黄金粒子办公咖啡机上水充电..." },
+      { p: 55, text: "💸 [神豪印钞] 正在搬运北极冰川和百亿对赌资金打包装箱..." },
+      { p: 75, text: "⏳ [时空天线] 正在向平行时空管理局索要特许败家令，折叠维度中..." },
+      { p: 90, text: "🚀 [量子跳跃] 宇宙线起航！时空对流风暴已稳定，即将跳入目标世界..." }
+    ];
+
+    let currentProg = 0;
+    const progressTimer = setInterval(() => {
+      currentProg += (99 - currentProg) * 0.05;
+      const rounded = Math.min(99, Math.trunc(currentProg));
+      setLoadingProgress(rounded);
+      
+      const matched = [...LOADING_HINTS].reverse().find(h => rounded >= h.p);
+      if (matched) {
+        setLoadingText(matched.text);
+      }
+    }, 150);
 
     const isNormal = activeTab === "normal" && !dailyType;
     let chosenIdentity = "";
@@ -230,13 +256,20 @@ export default function App() {
 
     try {
       const worldData = await generateWorld(chosenIdentity, finalPrompt);
-      setWorldScenario(worldData);
-      setPlayerPos(worldData.playerPosition);
-      setGameState("playing");
+      
+      clearInterval(progressTimer);
+      setLoadingProgress(100);
+      setLoadingText("✨ [大功告成] 维度构建圆满咬合！神豪身份已降维着陆！");
 
-      // Play thematic BGM synthesiser
-      audio.playBGM(worldData.ambientMusic || "corporate-jazz");
+      setTimeout(() => {
+        setWorldScenario(worldData);
+        setPlayerPos(worldData.playerPosition);
+        setGameState("playing");
+        // Play thematic BGM synthesiser
+        audio.playBGM(worldData.ambientMusic || "corporate-jazz");
+      }, 400);
     } catch (error: any) {
+      clearInterval(progressTimer);
       setGameState("lobby");
       setSystemAlertMessage(error.message || "SiliconFlow 服务暂时不可用，请检查 GitHub Actions Secret 或本地 VITE_SILICONFLOW_API_KEY。");
       audio.playSound("error");
@@ -885,9 +918,8 @@ export default function App() {
                           </div>
                           <button
                             onClick={() => {
-                              setIsVip(true);
                               audio.playSound("bling");
-                              setSystemAlertMessage("📣 恭喜！您已成功假冒并一键激活【永久尊贵VIP特权】！世袭权贵选项已可以自由调遣！");
+                              setShowFollowModal(true);
                             }}
                             className="px-5 py-2.5 bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-350 hover:to-yellow-450 text-slate-955 font-mono font-black text-[10px] rounded-xl transition duration-150 active:scale-95 shadow-md shadow-amber-955/40 cursor-pointer inline-block border-b-2 border-amber-600 animate-pulse"
                           >
@@ -1001,9 +1033,8 @@ export default function App() {
                           </div>
                           <button
                             onClick={() => {
-                              setIsVip(true);
                               audio.playSound("bling");
-                              setSystemAlertMessage("📣 恭喜！您已成功开通并在时空法庭冒充【永久尊贵VIP超级勋爵】！每日挑战剧本包已完全解锁！");
+                              setShowFollowModal(true);
                             }}
                             className="px-5 py-2.5 bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-350 hover:to-yellow-450 text-slate-955 font-mono font-black text-[10px] rounded-xl transition duration-150 active:scale-95 shadow-md shadow-amber-955/40 cursor-pointer inline-block border-b-2 border-amber-600 animate-pulse"
                           >
@@ -1120,9 +1151,13 @@ export default function App() {
                           </div>
                           <button
                             onClick={() => {
-                              setIsVip(!isVip);
                               audio.playSound("bling");
-                              setSystemAlertMessage(isVip ? "🔇 已回到质朴可亲的普通人视角。" : "📣 极速尊享！已开启永久高级VIP特许契约！");
+                              if (isVip) {
+                                setIsVip(false);
+                                setSystemAlertMessage("🔇 已回到质朴可亲的普通人视角。");
+                              } else {
+                                setShowFollowModal(true);
+                              }
                             }}
                             className={`px-4 py-2.5 font-mono font-black text-[10px] rounded-xl shrink-0 transition active:scale-95 cursor-pointer border-b-2 ${
                               isVip
@@ -1258,23 +1293,38 @@ export default function App() {
 
           {/* 2. LOADING STATE */}
           {gameState === "loading" && (
-            <div className="border border-slate-655 rounded-3xl p-12 shadow-2xl text-center max-w-md mx-auto space-y-8 animate-pulse glass-panel">
-              <div className="relative inline-block">
-                <div className="w-16 h-16 rounded-full border-4 border-slate-850 border-t-emerald-500 animate-spin"></div>
-                <img src={logoUrl} alt="一分钟老板 Logo" className="absolute inset-2 rounded-full object-cover" />
+            <div className="border-3 border-[#2D3436] rounded-3xl p-10 shadow-[6px_6px_0px_#2D3436] text-center max-w-md mx-auto space-y-6 bg-[#EAF6FF] text-[#2D3436]">
+              <div className="relative inline-block hover:scale-105 transition-transform duration-200">
+                <div className="w-20 h-20 rounded-full border-4 border-[#2D3436] border-t-[#FFD93D] animate-spin"></div>
+                <img src={logoUrl} alt="一分钟老板 Logo" className="absolute inset-2 w-16 h-16 rounded-full object-cover border-2 border-[#2D3436]" />
               </div>
-              <div className="space-y-3">
-                <h3 className="font-mono text-lg font-bold text-white">时空资源包正在链上组装...</h3>
-                <p className="text-xs text-emerald-400 font-mono">
-                  [
-                  {["正在贿赂纳斯达克签约代表...", 
-                    "正在测试皇家游艇紧急呼叫浮油瓶...", 
-                    "正在给外星特工狗喂养高级罐头...", 
-                    "正在微调阿尔卑斯雪道的重力透镜...", 
-                    "正在将所有美元转换成原子能燃料..."][Math.floor(Date.now() / 2000) % 5]}
-                  ]
-                </p>
-                <p className="text-[10px] text-slate-450 leading-relaxed font-mono pt-4">
+              
+              <div className="space-y-4">
+                <h3 className="font-mono text-base font-black uppercase tracking-wider text-[#2D3436]">
+                  时空因果链对流装载中...
+                </h3>
+
+                {/* 卡通立体进度条组件 */}
+                <div className="space-y-2">
+                  <div className="w-full h-6 bg-white border-3 border-[#2D3436] rounded-full overflow-hidden shadow-inner relative flex items-center">
+                    {/* 进度条填充 */}
+                    <div 
+                      className="h-full bg-gradient-to-r from-[#FFD93D] to-[#FF9F1C] border-r-3 border-[#2D3436] transition-all duration-150 ease-out"
+                      style={{ width: `${loadingProgress}%` }}
+                    />
+                    {/* 进度百分比文字 */}
+                    <span className="absolute inset-0 flex items-center justify-center font-mono font-black text-xs text-[#2D3436]">
+                      {loadingProgress}%
+                    </span>
+                  </div>
+                  
+                  {/* 幽默搞笑文案 */}
+                  <p className="text-[10px] text-[#FF9F1C] bg-[#FFF8E7] border-2 border-[#2D3436] py-2 px-3 rounded-xl font-bold min-h-[40px] flex items-center justify-center shadow-[2.5px_2.5px_0px_#2D3436]">
+                    {loadingText}
+                  </p>
+                </div>
+
+                <p className="text-[9px] text-slate-500 leading-relaxed font-bold font-mono pt-2">
                   “一分钟不长，但足够你在量子荒野里来回挥霍几十个来回。”
                 </p>
               </div>
@@ -1337,153 +1387,239 @@ export default function App() {
 
                 {/* Right gameplay list or active encounters panel */}
                 <div className="lg:col-span-4 h-full flex flex-col gap-4">
-                  
-                  {/* Encounter dialogue box */}
-                  <div className="border-2 border-emerald-500/40 shadow-2xl rounded-3xl p-5 flex-grow flex flex-col justify-between min-h-[300px] relative overflow-hidden neon-glow-emerald glass-panel">
-                    {/* Corner decors */}
-                    <div className="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-emerald-400 opacity-60"></div>
-                    <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-emerald-400 opacity-60"></div>
-                    <div className="absolute bottom-2 left-2 w-2 h-2 border-b-2 border-l-2 border-emerald-400 opacity-60"></div>
-                    <div className="absolute bottom-2 right-2 w-2 h-2 border-b-2 border-r-2 border-emerald-400 opacity-60"></div>
-                    
-                    {!interactionResult ? (
-                      <div className="text-center py-12 px-4 space-y-3 font-mono">
-                        <div className="text-2xl animate-pulse">🛰️</div>
-                        <h4 className="text-xs font-bold text-slate-300">雷达因果网络</h4>
-                        <p className="text-[10px] text-slate-550 leading-relaxed">
-                          当前没有进行中的事件。请移动屏幕中的老板角色（金色头饰），走到
-                          <span className="text-amber-400 font-bold">【互动物品】</span> 或
-                          <span className="text-sky-400 font-bold">【NPC人物】</span> 正上方来引发不可预期的蝴蝶因果吧！
-                        </p>
-                      </div>
-                    ) : (
-                      <div className="flex flex-col justify-between h-full space-y-4">
-                        <div>
-                          <div className="flex items-center justify-between border-b border-slate-850 pb-2 mb-3">
-                            <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider font-bold">
-                              {lastInteractedEntity?.type === "NPC" ? "👥 面对面因果" : "🔍 物品机密"}
-                            </span>
-                            <span className="text-[10px] text-slate-450 font-mono">
-                              {lastInteractedEntity?.name}
-                            </span>
-                          </div>
-
-                          <div className="text-xs font-mono text-slate-200 leading-relaxed bg-slate-950/65 p-3.5 rounded-xl border border-slate-850 max-h-[140px] overflow-y-auto">
-                            {/* Simple dynamic typewriter simulation */}
-                            <p className="whitespace-pre-line leading-relaxed">{interactionResult.text}</p>
-                          </div>
-
-                          {/* Time penalty alert if any */}
-                          {interactionResult.timeDelta !== 0 && (
-                            <div className="mt-2 text-[9px] font-mono text-rose-400 bg-rose-950/20 border border-rose-900/30 px-2 py-0.5 rounded flex items-center gap-1 shadow">
-                              <span>⚠️ 此时空决策导致时间损耗: </span>
-                              <strong className="font-bold">{interactionResult.timeDelta}秒</strong>
+                  {/* NPC and Items anchors status list */}
+                  <div className="rounded-2xl p-4 shadow-xl border-2 border-[#2D3436] bg-[#EAF6FF] flex-grow flex flex-col min-h-[220px] max-h-[300px] overflow-hidden">
+                    <div className="border-b border-[#2D3436]/15 pb-1.5 mb-2 flex items-center justify-between text-[11px] font-mono text-[#2D3436] font-black uppercase">
+                      <span>📍 时空因果节点进度</span>
+                      <span className="text-[9px] bg-[#FF9F1C] text-white px-1.5 py-0.5 rounded-full">探索中</span>
+                    </div>
+                    <div className="space-y-2 overflow-y-auto pr-1 flex-grow scrollbar-thin">
+                      {worldScenario.npcs.map(npc => {
+                        const stage = entityStageMap[npc.id] || 0;
+                        const total = npc.storyline?.length || 3;
+                        return (
+                          <div key={npc.id} className="flex items-center justify-between p-2 bg-[#FFF8E7] rounded-xl border-2 border-[#2D3436] shadow-[2px_2px_0px_#2D3436] text-xs">
+                            <div className="flex items-center gap-2">
+                              <span className="text-base">👥</span>
+                              <div className="font-bold text-[#2D3436]">
+                                {npc.name}
+                                <span className="text-[8px] font-normal text-slate-505 block">特征: {npc.sprite}</span>
+                              </div>
                             </div>
-                          )}
-                        </div>
-
-                        {/* Interactive Branches options */}
-                        <div className="space-y-3">
-                          
-                          {/* If early end, show caution */}
-                          {interactionResult.isEarlyEnd ? (
-                            <div className="p-3 bg-red-950/30 border border-red-500/25 rounded-2xl text-center space-y-1.5">
-                              <span className="text-[10px] text-red-400 font-mono font-bold block animate-bounce">
-                                🚨 因果彻底碎裂！
+                            <div className="flex items-center gap-1.5">
+                              <span className="font-mono font-black text-[10px] text-[#FF9F1C]">
+                                {stage >= total ? "✅ 固化" : `${stage}/${total}`}
                               </span>
-                              <p className="text-[9px] font-mono text-slate-400">
-                                这个举动太荒谬了，导致资产在时空奇点中提前蒸发！正在结算传奇终章卡片...
-                              </p>
-                            </div>
-                          ) : (
-                            <>
-                              {isAiLoading ? (
-                                <div className="text-center py-4 font-mono text-[10px] text-emerald-400 tracking-wider">
-                                  <span>🚀 时空对流计算中，请端庄呼吸...</span>
-                                </div>
-                              ) : (
-                                <div className="space-y-2">
-                                  {interactionResult.options.map((opt, i) => (
-                                    <button
-                                      key={i}
-                                      onClick={() => handleResolveAction(opt.label, opt.action)}
-                                      className="w-full text-left p-3 bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#2D3436] text-xs font-bold border-2 border-[#2D3436] rounded-xl transition-all duration-200 shadow-[3px_3px_0px_#2A2A2A] active:scale-95 flex items-center justify-between group cursor-pointer"
-                                    >
-                                      <span className="group-hover:translate-x-1 transition-all">{opt.label}</span>
-                                      <ChevronRight size={14} />
-                                    </button>
-                                  ))}
-                                </div>
-                              )}
-
-                              {/* Free text prompt input */}
-                              {interactionResult.allowsFreeInput && !isAiLoading && (
-                                <div className="flex gap-2 pt-2 border-t border-slate-850/60">
-                                  <input
-                                    type="text"
-                                    value={customActionValue}
-                                    onChange={(e) => setCustomActionValue(e.target.value)}
-                                    placeholder="输入自定义荒诞动作..."
-                                    className="flex-1 bg-slate-950 border border-slate-850 rounded-xl px-3 py-2 font-mono text-xs text-white focus:outline-none focus:border-emerald-500 transition shadow-inner"
-                                    onKeyDown={(e) => {
-                                      if (e.key === "Enter" && customActionValue.trim()) {
-                                        handleResolveAction(customActionValue.trim(), "custom");
-                                      }
-                                    }}
+                              <div className="flex gap-0.5">
+                                {[...Array(total)].map((_, i) => (
+                                  <div
+                                    key={i}
+                                    className={`w-2 h-2 rounded-full border border-[#2D3436] ${
+                                      i < stage ? "bg-[#6BCB77]" : "bg-white"
+                                    }`}
                                   />
-                                  <button
-                                    onClick={() => {
-                                      if (customActionValue.trim()) {
-                                        handleResolveAction(customActionValue.trim(), "custom");
-                                      }
-                                    }}
-                                    className="px-3 py-2 bg-emerald-500 hover:bg-emerald-450 text-slate-950 rounded-xl font-mono text-xs font-bold active:scale-95 cursor-pointer flex items-center justify-center shrink-0 shadow-md border-b-2 border-emerald-600"
-                                  >
-                                    <ArrowRight size={16} />
-                                  </button>
-                                </div>
-                              )}
-
-                              <button
-                                onClick={handleCloseDialogue}
-                                className="w-full py-2 bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#2D3436] border-2 border-[#2D3436] rounded-xl text-[10px] font-mono font-black shadow-[2px_2px_0px_#2A2A2A] mt-1 cursor-pointer transition select-none"
-                              >
-                                回到探索地图
-                              </button>
-                            </>
-                          )}
-
-                        </div>
-
-                      </div>
-                    )}
-
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                      {worldScenario.items.map(item => {
+                        const stage = entityStageMap[item.id] || 0;
+                        const total = item.storyline?.length || 3;
+                        return (
+                          <div key={item.id} className="flex items-center justify-between p-2 bg-[#EAF6FF] rounded-xl border-2 border-[#2D3436] shadow-[2px_2px_0px_#2D3436] text-xs">
+                            <div className="flex items-center gap-2">
+                              <span className="text-base">🔍</span>
+                              <div className="font-bold text-[#2D3436]">
+                                {item.name}
+                                <span className="text-[8px] font-normal text-slate-505 block">特征: {item.sprite}</span>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-1.5">
+                              <span className="font-mono font-black text-[10px] text-[#4D96FF]">
+                                {stage >= total ? "✅ 固化" : `${stage}/${total}`}
+                              </span>
+                              <div className="flex gap-0.5">
+                                {[...Array(total)].map((_, i) => (
+                                  <div
+                                    key={i}
+                                    className={`w-2 h-2 rounded-full border border-[#2D3436] ${
+                                      i < stage ? "bg-[#6BCB77]" : "bg-white"
+                                    }`}
+                                  />
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
 
                   {/* Active inventory traces logs */}
-                  <div className="rounded-2xl p-4 shadow-xl flex flex-col justify-between max-h-[220px] glass-panel">
-                    <div className="border-b border-slate-850 pb-1.5 mb-2 flex items-center justify-between text-[10px] font-mono text-slate-450 uppercase">
+                  <div className="rounded-2xl p-4 shadow-xl border-2 border-[#2D3436] bg-[#FFF8E7] flex flex-col justify-between min-h-[160px] max-h-[220px]">
+                    <div className="border-b border-[#2D3436]/15 pb-1.5 mb-2 flex items-center justify-between text-[11px] font-mono text-[#2D3436] font-black uppercase">
                       <span>📜 老板因果印记</span>
                       <span>已记录 {historyLog.length} 条</span>
                     </div>
 
-                    <div className="space-y-2 overflow-y-auto max-h-[160px] pr-1 scrollbar-none font-mono text-[10px] text-slate-400 leading-snug">
+                    <div className="space-y-2 overflow-y-auto max-h-[150px] pr-1 scrollbar-thin font-mono text-[10px] text-[#2D3436] leading-snug">
                       {historyLog.length === 0 ? (
-                        <p className="text-slate-600 text-center py-4">您的这一分钟尚未产生深层的时空刻痕。</p>
+                        <div className="text-center py-6 text-slate-400 italic">
+                          暂无时空印记。走去和人搭话吧！
+                        </div>
                       ) : (
-                        historyLog.map((log, index) => (
-                          <div key={index} className="p-1.5 bg-slate-950/40 rounded border border-slate-850">
-                            <span className="text-emerald-400">❖ {log.entity}</span>
-                            <p className="text-slate-300 italic pl-2">你选择做: &quot;{log.action}&quot;</p>
+                        historyLog.map((log, i) => (
+                          <div key={i} className="p-2 bg-white rounded-xl border border-[#2D3436]/30 shadow-[1px_1px_0px_#2D3436]/30 animate-fade-in">
+                            <div className="font-black text-[#FF9F1C] flex justify-between">
+                              <span>🎯 {log.entity}</span>
+                              <span className="text-[8px] text-slate-400 font-normal">#{i + 1}</span>
+                            </div>
+                            <p className="mt-1 font-bold text-slate-755">抉择: {log.action}</p>
+                            <p className="mt-0.5 text-slate-500">{log.outcome}</p>
                           </div>
                         ))
                       )}
                     </div>
                   </div>
-
                 </div>
 
               </div>
+
+              {/* Encounter Dialogue Modal Dialog (Overlay Popup) */}
+              <AnimatePresence>
+                {interactionResult && lastInteractedEntity && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-md bg-black/60"
+                  >
+                    <motion.div
+                      initial={{ scale: 0.9, y: 20, opacity: 0 }}
+                      animate={{ scale: 1, y: 0, opacity: 1 }}
+                      exit={{ scale: 0.9, y: 20, opacity: 0 }}
+                      className="w-full max-w-lg border-3 border-[#2D3436] shadow-[6px_6px_0px_#2D3436] rounded-3xl p-6 bg-[#EAF6FF] relative overflow-hidden flex flex-col gap-4 text-[#2D3436]"
+                    >
+                      {/* Corner decors */}
+                      <div className="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-[#2D3436] opacity-30"></div>
+                      <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-[#2D3436] opacity-30"></div>
+                      <div className="absolute bottom-2 left-2 w-2 h-2 border-b-2 border-l-2 border-[#2D3436] opacity-30"></div>
+                      <div className="absolute bottom-2 right-2 w-2 h-2 border-b-2 border-r-2 border-[#2D3436] opacity-30"></div>
+
+                      <div className="flex items-center justify-between border-b-2 border-[#2D3436]/15 pb-2">
+                        <span className="text-[10px] font-mono bg-[#4D96FF] text-white px-2 py-0.5 rounded-full font-black uppercase tracking-wider">
+                          {lastInteractedEntity.type === "NPC" ? "👥 面对面因果" : "🔍 物品机密"}
+                        </span>
+                        <span className="text-xs font-black text-[#2D3436]/80">
+                          {lastInteractedEntity.name}
+                        </span>
+                      </div>
+
+                      <div className="text-sm font-bold leading-relaxed bg-[#FFF8E7] p-4 rounded-2xl border-2 border-[#2D3436] shadow-[2px_2px_0px_#2D3436] max-h-[160px] overflow-y-auto scrollbar-thin">
+                        <p className="whitespace-pre-line leading-relaxed">{interactionResult.text}</p>
+                      </div>
+
+                      {/* Time penalty alert if any */}
+                      {interactionResult.timeDelta !== 0 && (
+                        <div className="text-[10px] font-bold text-rose-500 bg-rose-500/10 border border-rose-500/30 px-3 py-1 rounded-full flex items-center gap-1.5 w-fit">
+                          <span>⚠️ 此时空决策导致时间损耗: </span>
+                          <strong className="font-mono font-black">{interactionResult.timeDelta}秒</strong>
+                        </div>
+                      )}
+
+                      {/* Interactive Branches options */}
+                      <div className="space-y-3">
+                        {interactionResult.isEarlyEnd ? (
+                          <div className="p-4 bg-rose-500/15 border-2 border-rose-500/40 rounded-2xl text-center space-y-3">
+                            <span className="text-sm text-rose-500 font-black block animate-bounce">
+                              🚨 【时空坍缩警告】因果线彻底碎裂！
+                            </span>
+                            <p className="text-[11px] font-bold text-slate-600 leading-relaxed">
+                              老板！这个行为太荒谬了，时空奇点正疯狂吞噬您的百亿资产与公司未来！您必须立刻抉择：
+                            </p>
+                            <div className="space-y-2 pt-2">
+                              <button
+                                onClick={() => handleResolveAction("钞能力救赎", "bailout")}
+                                className="w-full text-left p-3.5 bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#2D3436] text-xs font-black border-2 border-[#2D3436] rounded-xl transition shadow-[3px_3px_0px_#2D3436] active:scale-95 flex items-center justify-between cursor-pointer"
+                              >
+                                <span>💸 豪掷千金：支付时空过路费强行续命</span>
+                                <span className="text-[9px] bg-slate-900 text-amber-300 px-1.5 py-0.5 rounded font-mono">
+                                  -{(Math.max(15, timer * 0.5)).toFixed(1)}s
+                                </span>
+                              </button>
+                              <button
+                                onClick={() => handleResolveAction("顺应天意", "trigger_ending_via_early_end")}
+                                className="w-full text-left p-3 bg-white hover:bg-slate-50 text-[#2D3436] text-xs font-bold border-2 border-[#2D3436] rounded-xl transition shadow-[3px_3px_0px_#2D3436] active:scale-95 flex items-center justify-between cursor-pointer"
+                              >
+                                <span>👑 顺应天意：结算我的神豪财富终局</span>
+                                <ChevronRight size={14} />
+                              </button>
+                            </div>
+                          </div>
+                        ) : (
+                          <>
+                            {isAiLoading ? (
+                              <div className="text-center py-4 font-mono text-xs text-[#FF9F1C] font-black tracking-wider animate-pulse">
+                                <span>🚀 时空对流计算中，请端庄呼吸...</span>
+                              </div>
+                            ) : (
+                              <div className="space-y-2">
+                                {interactionResult.options.map((opt, i) => (
+                                  <button
+                                    key={i}
+                                    onClick={() => handleResolveAction(opt.label, opt.action)}
+                                    className="w-full text-left p-3 bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#2D3436] text-xs font-bold border-2 border-[#2D3436] rounded-xl transition-all duration-200 shadow-[3px_3px_0px_#2D3436] active:scale-95 flex items-center justify-between group cursor-pointer"
+                                  >
+                                    <span className="group-hover:translate-x-1 transition-all">{opt.label}</span>
+                                    <ChevronRight size={14} />
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+
+                            {/* Free text prompt input */}
+                            {interactionResult.allowsFreeInput && !isAiLoading && (
+                              <div className="flex gap-2 pt-2 border-t-2 border-[#2D3436]/10">
+                                <input
+                                  type="text"
+                                  value={customActionValue}
+                                  onChange={(e) => setCustomActionValue(e.target.value)}
+                                  placeholder="输入自定义荒诞动作..."
+                                  className="flex-1 bg-white border-2 border-[#2D3436] rounded-xl px-3 py-2 font-mono text-xs text-[#2D3436] focus:outline-none focus:border-[#4D96FF] transition shadow-inner font-bold"
+                                  onKeyDown={(e) => {
+                                    if (e.key === "Enter" && customActionValue.trim()) {
+                                      handleResolveAction(customActionValue.trim(), "custom");
+                                    }
+                                  }}
+                                />
+                                <button
+                                  onClick={() => {
+                                    if (customActionValue.trim()) {
+                                      handleResolveAction(customActionValue.trim(), "custom");
+                                    }
+                                  }}
+                                  className="px-4 py-2 bg-[#6BCB77] hover:bg-[#52a35e] text-white rounded-xl font-mono text-xs font-bold active:scale-95 cursor-pointer flex items-center justify-center shrink-0 shadow-[2px_2px_0px_#2D3436] border-2 border-[#2D3436]"
+                                >
+                                  <ArrowRight size={16} />
+                                </button>
+                              </div>
+                            )}
+
+                            <button
+                              onClick={handleCloseDialogue}
+                              className="w-full py-2 bg-white hover:bg-slate-50 text-[#2D3436] border-2 border-[#2D3436] rounded-xl text-[10px] font-mono font-black shadow-[2px_2px_0px_#2D3436] mt-1 cursor-pointer transition select-none"
+                            >
+                              回到探索地图
+                            </button>
+                          </>
+                        )}
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Forced manual settle button if player is bored */}
               <div className="text-center pt-2">
@@ -1707,6 +1843,105 @@ export default function App() {
 
         </div>
       </main>
+
+      {/* 4. VIP FOLLOW TO UNLOCK MODAL */}
+      <AnimatePresence>
+        {showFollowModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-md bg-black/60"
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.9, y: 20, opacity: 0 }}
+              className="w-full max-w-lg border-3 border-[#2D3436] shadow-[6px_6px_0px_#2D3436] rounded-3xl p-6 bg-[#EAF6FF] relative overflow-hidden flex flex-col gap-4 text-[#2D3436]"
+            >
+              {/* Corner decors */}
+              <div className="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-[#2D3436] opacity-30"></div>
+              <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-[#2D3436] opacity-30"></div>
+              <div className="absolute bottom-2 left-2 w-2 h-2 border-b-2 border-l-2 border-[#2D3436] opacity-30"></div>
+              <div className="absolute bottom-2 right-2 w-2 h-2 border-b-2 border-r-2 border-[#2D3436] opacity-30"></div>
+
+              <div className="flex items-center justify-between border-b-2 border-[#2D3436]/15 pb-2">
+                <span className="text-[10px] font-mono bg-[#FF9F1C] text-white px-2.5 py-0.5 rounded-full font-black uppercase tracking-wider">
+                  👑 VIP 特许开通契约
+                </span>
+                <button 
+                  onClick={() => setShowFollowModal(false)}
+                  className="text-xs font-black text-slate-500 hover:text-slate-800"
+                >
+                  [关闭]
+                </button>
+              </div>
+
+              <div className="text-center space-y-2">
+                <h3 className="text-sm font-black text-[#2D3436]">
+                  扫码关注阿伦的自媒体账号，一键免费激活永久 VIP 特权！
+                </h3>
+                <p className="text-[10px] text-slate-500 leading-relaxed font-bold">
+                  神豪血脉、每日挑战等全部高级玩法已打包封存。扫码支持作者，即可当场继承无上财富血脉！
+                </p>
+              </div>
+
+              {/* 二维码展示区 */}
+              <div className="grid grid-cols-2 gap-4 my-2">
+                {/* 抖音 */}
+                <div className="p-3 bg-white border-2 border-[#2D3436] rounded-2xl shadow-[3px_3px_0px_#2D3436] text-center flex flex-col items-center gap-2">
+                  <span className="text-[9px] bg-slate-900 text-white px-2 py-0.5 rounded-full font-black font-mono">
+                    🎵 抖音扫码
+                  </span>
+                  <img 
+                    src={douyinQrUrl} 
+                    alt="抖音二维码" 
+                    className="w-28 h-28 object-cover border border-[#2D3436]/30 rounded-lg shadow-inner" 
+                  />
+                  <span className="text-[8px] text-slate-500 font-bold font-mono">
+                    抖音号: 阿伦的开发室
+                  </span>
+                </div>
+
+                {/* 小红书 */}
+                <div className="p-3 bg-white border-2 border-[#2D3436] rounded-2xl shadow-[3px_3px_0px_#2D3436] text-center flex flex-col items-center gap-2">
+                  <span className="text-[9px] bg-rose-500 text-white px-2 py-0.5 rounded-full font-black font-mono">
+                    📕 小红书扫码
+                  </span>
+                  <img 
+                    src={xiaohongshuQrUrl} 
+                    alt="小红书二维码" 
+                    className="w-28 h-28 object-cover border border-[#2D3436]/30 rounded-lg shadow-inner" 
+                  />
+                  <span className="text-[8px] text-slate-500 font-bold font-mono">
+                    小红书: 阿伦AI实验室
+                  </span>
+                </div>
+              </div>
+
+              <div className="space-y-2 pt-2">
+                <button
+                  onClick={() => {
+                    setIsVip(true);
+                    setShowFollowModal(false);
+                    audio.playSound("bling");
+                    setSystemAlertMessage("👑 激活成功！永久星际尊享 VIP 特权包已装载！您可以任意解锁神豪角色与每日剧本！");
+                  }}
+                  className="w-full py-3 bg-[#6BCB77] hover:bg-[#52a35e] text-white text-xs font-black border-2 border-[#2D3436] rounded-xl transition shadow-[3px_3px_0px_#2D3436] active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  <CheckCircle2 size={14} /> 我已关注，一键极速激活永久 VIP
+                </button>
+                <button
+                  onClick={() => setShowFollowModal(false)}
+                  className="w-full py-2 bg-white hover:bg-slate-50 text-[#2D3436] border-2 border-[#2D3436] rounded-xl text-[10px] font-mono font-black shadow-[2px_2px_0px_#2D3436] cursor-pointer transition"
+                >
+                  我再看看，回到普通人败家人生
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Footer */}
       <footer className="bg-slate-900 border-t-2 border-slate-800 py-4 px-4 text-center text-xs text-slate-500 font-mono relative z-40">

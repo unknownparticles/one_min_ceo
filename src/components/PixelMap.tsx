@@ -49,24 +49,9 @@ export const PixelMap: React.FC<PixelMapProps> = ({
       return;
     }
 
-    // Check Wall collision
-    const tileType = tiles[targetY][targetX];
-    if (tileType === "wall") {
-      audio.playSound("bump");
-      return;
-    }
-
     // Set face direction
     if (dx < 0) setDirection("left");
     if (dx > 0) setDirection("right");
-
-    setIsMoving(true);
-    setTimeout(() => setIsMoving(false), 150);
-
-    // Audio sound
-    audio.playSound("walk");
-
-    const nextPos = { x: targetX, y: targetY };
 
     // Check direct collision with NPC
     const collidingNpc = npcs.find((n) => n.x === targetX && n.y === targetY);
@@ -82,6 +67,20 @@ export const PixelMap: React.FC<PixelMapProps> = ({
       return; // Stop on encounter
     }
 
+    // Check Wall collision
+    const tileType = tiles[targetY][targetX];
+    if (tileType === "wall") {
+      audio.playSound("bump");
+      return;
+    }
+
+    setIsMoving(true);
+    setTimeout(() => setIsMoving(false), 150);
+
+    // Audio sound
+    audio.playSound("walk");
+
+    const nextPos = { x: targetX, y: targetY };
     onMove(nextPos);
   };
 

@@ -50,36 +50,84 @@ const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, 
     throw new Error("未配置 SiliconFlow API Key");
   }
 
-  const response = await fetch(SILICONFLOW_ENDPOINT, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${config.siliconFlowApiKey}`,
-    },
-    body: JSON.stringify({
-      model: config.siliconFlowModel || DEFAULT_MODEL,
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userPrompt },
-      ],
-      response_format: { type: "json_object" },
-      temperature: 0.9,
-      max_tokens: maxTokens,
-    }),
-  });
+  const startTime = performance.now();
+  
+  // Set up 5-second request timeout controller for faster fallback experience
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 5000);
 
-  if (!response.ok) {
-    const errorText = await response.text().catch(() => "");
-    throw new Error(errorText || `SiliconFlow 请求失败：${response.status}`);
+  // Initialize timing placeholder in case of early errors
+  (callSiliconFlowJson as any).lastTiming = {
+    networkDuration: 0,
+    parseDuration: 0,
+    totalDuration: 0,
+    error: null
+  };
+
+  try {
+    const response = await fetch(SILICONFLOW_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${config.siliconFlowApiKey}`,
+      },
+      body: JSON.stringify({
+        model: config.siliconFlowModel || DEFAULT_MODEL,
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userPrompt },
+        ],
+        response_format: { type: "json_object" },
+        temperature: 0.9,
+        max_tokens: maxTokens,
+      }),
+      signal: controller.signal
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      const errorText = await response.text().catch(() => "");
+      throw new Error(errorText || `SiliconFlow 请求失败：${response.status}`);
+    }
+
+    const data = await response.json();
+    const content = data?.choices?.[0]?.message?.content;
+    if (!content || typeof content !== "string") {
+      throw new Error("SiliconFlow 返回内容为空");
+    }
+
+    const networkEndTime = performance.now();
+    const networkDuration = networkEndTime - startTime;
+
+    const parseStartTime = performance.now();
+    const parsed = parseJsonObject<T>(content);
+    const parseEndTime = performance.now();
+    const parseDuration = parseEndTime - parseStartTime;
+
+    (callSiliconFlowJson as any).lastTiming = {
+      networkDuration,
+      parseDuration,
+      totalDuration: performance.now() - startTime,
+      error: null
+    };
+
+    return parsed;
+  } catch (error: any) {
+    clearTimeout(timeoutId);
+    const totalDuration = performance.now() - startTime;
+    (callSiliconFlowJson as any).lastTiming = {
+      networkDuration: totalDuration,
+      parseDuration: 0,
+      totalDuration,
+      error: error.message || error.name || "Unknown error"
+    };
+
+    if (error.name === "AbortError") {
+      throw new Error("时空网关连接超时 (API 请求超出 5 秒无响应)，已自动切回离线降级引擎！");
+    }
+    throw error;
   }
-
-  const data = await response.json();
-  const content = data?.choices?.[0]?.message?.content;
-  if (!content || typeof content !== "string") {
-    throw new Error("SiliconFlow 返回内容为空");
-  }
-
-  return parseJsonObject<T>(content);
 };
 
 const withFallbackIdentity = (scenario: ReturnType<typeof getFallbackScenario>, identityType: string): WorldScenario => {
@@ -91,12 +139,91 @@ const withFallbackIdentity = (scenario: ReturnType<typeof getFallbackScenario>, 
   };
 };
 
+const normalizeMapLayout = (mapLayout: any): any => {
+  if (!mapLayout) return null;
+  let tiles = mapLayout.tiles;
+  if (!Array.isArray(tiles)) return null;
+
+  // 1. Handle case where it is an array of CSV strings (common LLM behavior)
+  // e.g. ["wall,wall,wall", "floor,floor,floor"]
+  if (tiles.length > 0 && typeof tiles[0] === "string" && tiles[0].includes(",")) {
+    tiles = tiles.map((row: string) => row.split(",").map(t => t.trim()));
+  }
+
+  // 2. Handle case where it is a flat 1D array of 192 (12 * 16) elements
+  if (tiles.length === 192 && typeof tiles[0] === "string") {
+    const newTiles: string[][] = [];
+    for (let i = 0; i < 12; i++) {
+      newTiles.push(tiles.slice(i * 16, (i + 1) * 16));
+    }
+    tiles = newTiles;
+  }
+
+  // 3. Verify it is a valid 12x16 2D array
+  if (tiles.length !== 12) return null;
+  for (let r = 0; r < 12; r++) {
+    if (!Array.isArray(tiles[r]) || tiles[r].length !== 16) {
+      return null;
+    }
+  }
+
+  return {
+    width: 16,
+    height: 12,
+    tiles: tiles
+  };
+};
+
+const printPerformanceReport = (actionName: string, customDuration = 0, isFallback = false, errorMsg?: string) => {
+  const timing = (callSiliconFlowJson as any).lastTiming;
+  if (!timing) return;
+  
+  const labelStyle = "color: #FF9F1C; font-weight: bold;";
+  const valueStyle = "color: #6BCB77; font-weight: bold;";
+  const warningStyle = "color: #FF6B6B; font-weight: bold; background: #FFF3BF; padding: 2px 4px; border-radius: 4px;";
+  
+  if (isFallback || timing.error || errorMsg) {
+    const errMsg = errorMsg || timing.error || "未知网络异常";
+    console.warn(
+      `%c================ [ONE MIN CEO 性能分析 - 离线降级降临] ================\n` +
+      `%c- 动作: %c${actionName}\n` +
+      `%c- 网络尝试耗时: %c${timing.networkDuration.toFixed(1)} ms\n` +
+      `%c- 降级原因: %c${errMsg}\n` +
+      `%c- 状态: %c已切回本地离线引擎，游戏可正常畅玩！\n` +
+      `%c========================================================================`,
+      "color: #FF6B6B; font-weight: bold;",
+      "color: #2D3436;", labelStyle + "color: #FF6B6B; background: #FFD93D; padding: 1.5px 4px; border-radius: 4px;",
+      "color: #2D3436;", valueStyle,
+      "color: #2D3436;", warningStyle,
+      "color: #2D3436;", "color: #FF6B6B; font-weight: bold;",
+      "color: #FF6B6B; font-weight: bold;"
+    );
+  } else {
+    console.log(
+      `%c================ [ONE MIN CEO 性能分析 - AI 完美生成] ================\n` +
+      `%c- 动作: %c${actionName}\n` +
+      `%c- 网络请求耗时: %c${timing.networkDuration.toFixed(1)} ms\n` +
+      `%c- 数据结构解析: %c${timing.parseDuration.toFixed(1)} ms\n` +
+      (customDuration > 0 ? `%c- 地图规范校验: %c${customDuration.toFixed(1)} ms\n` : "") +
+      `%c- 总体计算耗时: %c${(timing.totalDuration + customDuration).toFixed(1)} ms\n` +
+      `%c========================================================================`,
+      "color: #22c55e; font-weight: bold;",
+      "color: #2D3436;", labelStyle + "color: #FFD93D; background: #2D3436; padding: 1.5px 4px; border-radius: 4px;",
+      "color: #2D3436;", valueStyle,
+      "color: #2D3436;", valueStyle,
+      ...(customDuration > 0 ? ["color: #2D3436;", valueStyle] : []),
+      "color: #2D3436;", "color: #A66CFF; font-weight: black;",
+      "color: #22c55e; font-weight: bold;"
+    );
+  }
+};
+
 export const generateWorld = async (identity: string, customPrompt: string): Promise<WorldScenario> => {
   const systemPrompt = `你是像素世界生成器，为游戏《一分钟老板》生成完整可玩的 JSON 场景。只返回 JSON，不要 Markdown。
 JSON 必须包含字段：identity, identityType, theme, mapLayout, playerPosition, npcs, items, introText, ambientMusic, fixedEndings, resourcePack。
 mapLayout.width 必须是 16，height 必须是 12，tiles 是 12x16 字符串矩阵，边界用 wall，其余可用 floor/carpet/grass/snow/water/deck/road/metal_plate。
 npcs 生成 4 到 6 个，items 生成 4 到 6 个，坐标不能重叠，x 在 1 到 14，y 在 1 到 10。
-每个 NPC 和 Item 都必须有 storyline，storyline 正好 3 步；每步包含 id, text, allowsFreeInput, options；每个 options 需要 label, outcomeText, timeDelta, actionId, 可选 isEarlyEnd 和 soundHint。
+每个 NPC 和 Item 都必须有 storyline，storyline 正好 3 步；每步包含 id, text, allowsFreeInput, options；每个 options 需要 label, outcomeText, timeDelta, actionId, 可选 isEarlyEnd 和 soundHint。注意，前两步 storyline 的 options 绝对不能设置 isEarlyEnd: true，只有在第三步也就是终结选择时才可以有条件地启用。
 timeDelta 表示消耗剩余时间，必须是 0 或负整数，绝对不能返回正数。
 fixedEndings 生成 4 到 6 个，每个包含 endingId, title, description, priority, triggerRules；triggerRules 至少包含 mustInclude，可选 forbidInclude 和 requiredSequence。
 resourcePack.palette 必须包含 primary, secondary, accent, surface 四个十六进制色值。
@@ -108,13 +235,32 @@ ${buildResourceGenerationGuide(identity)}
 
   try {
     const world = await callSiliconFlowJson<WorldScenario>(systemPrompt, userPrompt, 8192);
+    
+    const startNormalize = performance.now();
+    // Verify and normalize mapLayout structure to avoid empty map or runtime error
+    const normalizedLayout = normalizeMapLayout(world.mapLayout);
+    const normalizeDuration = performance.now() - startNormalize;
+    
+    if (!normalizedLayout) {
+      throw new Error("大模型生成的场景中地图布局 (mapLayout) 无效或缺失");
+    }
+
+    // Safety checks for NPCs and Items lists to ensure array format
+    const npcs = Array.isArray(world.npcs) ? world.npcs : [];
+    const items = Array.isArray(world.items) ? world.items : [];
+
+    printPerformanceReport("生成世界地图 (generateWorld)", normalizeDuration);
+
     return {
       ...world,
+      mapLayout: normalizedLayout,
+      npcs,
+      items,
       identityType: (world.identityType || identity || "CEO") as BossIdentityType,
       resourcePack: world.resourcePack || getResourcePack(world.identityType || identity, world.theme),
     };
-  } catch (error) {
-    console.warn("[SiliconFlow fallback] generateWorld", error);
+  } catch (error: any) {
+    printPerformanceReport("生成世界地图 (generateWorld)", 0, true, error.message || String(error));
     return withFallbackIdentity(getFallbackScenario(identity), identity);
   }
 };
@@ -130,13 +276,20 @@ export const generateInteraction = async (payload: {
 }): Promise<InteractionResult> => {
   const systemPrompt = `你是《一分钟老板》的荒诞互动导演。只返回 JSON，不要 Markdown。
 JSON 必须包含：text, options, allowsFreeInput, soundHint, timeDelta, isEarlyEnd。
-options 是 1 到 3 个选项，每项包含 label 和 action。timeDelta 是 0 或负整数。`;
+options 是 1 到 3 个选项，每项包含 label 和 action.timeDelta 是 0 或负整数。请尽量避免返回 isEarlyEnd: true，除非玩家做出了极其自毁或彻底毁灭整个时空线的不合理动作。`;
   const userPrompt = `身份：${payload.identity}。主题：${payload.theme}。
 交互对象类型：${payload.targetType}。对象名：${payload.targetName}。对象 ID：${payload.targetId}。
 对话历史：${JSON.stringify(payload.dialogueHistory || [])}
 玩家动作：${payload.playerAction || "First approach"}`;
 
-  return callSiliconFlowJson<InteractionResult>(systemPrompt, userPrompt, 2048);
+  try {
+    const result = await callSiliconFlowJson<InteractionResult>(systemPrompt, userPrompt, 2048);
+    printPerformanceReport("生成场景互动 (generateInteraction)");
+    return result;
+  } catch (error: any) {
+    printPerformanceReport("生成场景互动 (generateInteraction)", 0, true, error.message || String(error));
+    throw error;
+  }
 };
 
 const findMatchedEnding = (fixedEndings: FixedEnding[] = [], actionSequence: string[] = []): FixedEnding | null => {
@@ -211,9 +364,11 @@ ${matchedEnding ? `玩家触发固定结局：${matchedEnding.title}。结局描
 互动记录：${JSON.stringify(payload.interactionLog)}`;
 
   try {
-    return await callSiliconFlowJson<EndingResult>(systemPrompt, userPrompt, 4096);
-  } catch (error) {
-    console.warn("[SiliconFlow fallback] generateEnding", error);
+    const result = await callSiliconFlowJson<EndingResult>(systemPrompt, userPrompt, 4096);
+    printPerformanceReport("评估终局清算 (generateEnding)");
+    return result;
+  } catch (error: any) {
+    printPerformanceReport("评估终局清算 (generateEnding)", 0, true, error.message || String(error));
     return offlineEnding(payload);
   }
 };
