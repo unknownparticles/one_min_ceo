@@ -33,7 +33,10 @@ import {
   CheckCircle2,
   Settings,
   Wifi,
-  WifiOff
+  WifiOff,
+  Trophy,
+  Gift,
+  PartyPopper
 } from "lucide-react";
 import { PixelMap } from "./components/PixelMap";
 import { SpriteRenderer } from "./components/SpriteRenderer";
@@ -69,6 +72,46 @@ const PRESETS = [
 
 const DEFAULT_RANDOM_CONCEPT = "把北极融化的冰用游艇运到沙特卖，顺便推行减肥放电脂肪险";
 
+const ACHIEVEMENT_DEFS = [
+  { id: "first_world", name: "第一桶时空金", description: "进入任意一分钟老板世界。", icon: "🏁" },
+  { id: "first_mark", name: "因果留痕", description: "记录第一条老板因果印记。", icon: "📜" },
+  { id: "three_marks", name: "三连败家", description: "单局记录至少 3 条因果印记。", icon: "💸" },
+  { id: "custom_action", name: "不走寻常路", description: "提交一次自定义荒诞动作。", icon: "🧠" },
+  { id: "all_nodes", name: "量子清洁工", description: "把当前世界的所有因果节点探索完毕。", icon: "🧹" },
+  { id: "early_end", name: "提前看透浮名", description: "主动或因时空坍缩提前结算此生。", icon: "⏱️" },
+  { id: "last_second", name: "压哨董事长", description: "在剩余 10 秒以内结算。", icon: "🔥" },
+  { id: "first_ending", name: "人生传承开馆", description: "收集第一张结局卡。", icon: "🏛️" },
+  { id: "vip_unlock", name: "零元尊享大王", description: "激活永久 VIP 特许。", icon: "👑" },
+  { id: "rewind", name: "时间河流偷渡者", description: "关注后开启一次时光机回溯。", icon: "🌀" }
+] as const;
+
+const EASTER_EGG_DEFS = [
+  { id: "logo_combo", name: "老板暗门", description: "连续点击顶部 Logo 5 次。", icon: "🕹️" },
+  { id: "wang_duoyu_money", name: "西虹市隐藏合同", description: "商业构想命中王多鱼式离谱关键词。", icon: "🥒" },
+  { id: "lucky_timer", name: "6.6 秒玄学", description: "倒计时滑入 6.6 秒以内。", icon: "🎲" },
+  { id: "dog_or_button", name: "不要惹按钮和狗", description: "触发狗、按钮或咖啡等危险因果锚点。", icon: "🚨" },
+  { id: "archive_hoarder", name: "命运卡牌囤积癖", description: "人生传承馆累计收集 3 张结局卡。", icon: "🃏" }
+] as const;
+
+type AchievementId = typeof ACHIEVEMENT_DEFS[number]["id"];
+type EasterEggId = typeof EASTER_EGG_DEFS[number]["id"];
+type UnlockToast = {
+  kind: "achievement" | "easter";
+  icon: string;
+  name: string;
+  description: string;
+};
+
+const readStoredIds = (key: string): string[] => {
+  try {
+    const raw = window.localStorage.getItem(key);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed.filter((value): value is string => typeof value === "string") : [];
+  } catch {
+    return [];
+  }
+};
+
 const normalizeTimeDelta = (value: unknown): number => {
   const parsed = Number(value);
   if (!Number.isFinite(parsed)) return 0;
@@ -99,7 +142,7 @@ export default function App() {
   const [testResult, setTestResult] = useState<{ success: boolean; message: string } | null>(null);
   
   // Lobby Subtabs
-  const [activeTab, setActiveTab] = useState<"normal" | "presets" | "album" | "daily" | "vip">("normal");
+  const [activeTab, setActiveTab] = useState<"normal" | "presets" | "album" | "daily" | "vip" | "achievements">("normal");
   const [isVip, setIsVip] = useState<boolean>(false);
   const [showFollowModal, setShowFollowModal] = useState<boolean>(false);
   const [loadingProgress, setLoadingProgress] = useState<number>(0);
@@ -129,6 +172,9 @@ export default function App() {
 
   // Stored endings in localStorage
   const [savedEndings, setSavedEndings] = useState<SavedLife[]>([]);
+  const [unlockedAchievementIds, setUnlockedAchievementIds] = useState<string[]>([]);
+  const [unlockedEasterEggIds, setUnlockedEasterEggIds] = useState<string[]>([]);
+  const [unlockToast, setUnlockToast] = useState<UnlockToast | null>(null);
   
   // UI audio state
   const [isAudioMuted, setIsAudioMuted] = useState<boolean>(false);
@@ -137,12 +183,76 @@ export default function App() {
   // Ticker text cycles
   const [tickerIndex, setTickerIndex] = useState<number>(0);
   const abortControllerRef = useRef<AbortController | null>(null);
+  const logoClickCountRef = useRef<number>(0);
+  const logoClickTimerRef = useRef<number | null>(null);
 
   const getAbortSignal = (): AbortSignal => {
     abortControllerRef.current?.abort();
     const controller = new AbortController();
     abortControllerRef.current = controller;
     return controller.signal;
+  };
+
+  const showUnlockToast = (toast: UnlockToast) => {
+    setUnlockToast(toast);
+    window.setTimeout(() => {
+      setUnlockToast(current => (current?.name === toast.name ? null : current));
+    }, 4200);
+  };
+
+  const unlockAchievement = (id: AchievementId) => {
+    const def = ACHIEVEMENT_DEFS.find(item => item.id === id);
+    if (!def) return;
+    setUnlockedAchievementIds(prev => {
+      if (prev.includes(id)) return prev;
+      const next = [...prev, id];
+      window.localStorage.setItem("boss_minute_achievements", JSON.stringify(next));
+      showUnlockToast({ kind: "achievement", icon: def.icon, name: def.name, description: def.description });
+      audio.playSound("bling");
+      return next;
+    });
+  };
+
+  const unlockEasterEgg = (id: EasterEggId) => {
+    const def = EASTER_EGG_DEFS.find(item => item.id === id);
+    if (!def) return;
+    setUnlockedEasterEggIds(prev => {
+      if (prev.includes(id)) return prev;
+      const next = [...prev, id];
+      window.localStorage.setItem("boss_minute_easter_eggs", JSON.stringify(next));
+      showUnlockToast({ kind: "easter", icon: def.icon, name: def.name, description: def.description });
+      audio.playSound("bling");
+      return next;
+    });
+  };
+
+  const appendHistoryLog = (entry: { entity: string, action: string, outcome: string }) => {
+    setHistoryLog(prev => {
+      const next = [...prev, entry];
+      unlockAchievement("first_mark");
+      if (next.length >= 3) {
+        unlockAchievement("three_marks");
+      }
+      return next;
+    });
+  };
+
+  const handleLogoClick = () => {
+    handleBackToLobby();
+    logoClickCountRef.current += 1;
+
+    if (logoClickTimerRef.current) {
+      window.clearTimeout(logoClickTimerRef.current);
+    }
+    logoClickTimerRef.current = window.setTimeout(() => {
+      logoClickCountRef.current = 0;
+    }, 1800);
+
+    if (logoClickCountRef.current >= 5) {
+      logoClickCountRef.current = 0;
+      unlockEasterEgg("logo_combo");
+      setSystemAlertMessage("🕹️ 老板暗门已开启：顶部 Logo 里确实藏着一个偷偷摸摸的像素开关。");
+    }
   };
   
   // Check if all storyline stages for all NPCs and Items have been completed
@@ -192,6 +302,8 @@ export default function App() {
         setSavedEndings([]);
       }
     }
+    setUnlockedAchievementIds(readStoredIds("boss_minute_achievements"));
+    setUnlockedEasterEggIds(readStoredIds("boss_minute_easter_eggs"));
 
     // Ticker timer interval
     const tInterval = setInterval(() => {
@@ -200,6 +312,9 @@ export default function App() {
 
     return () => {
       clearInterval(tInterval);
+      if (logoClickTimerRef.current) {
+        window.clearTimeout(logoClickTimerRef.current);
+      }
       abortControllerRef.current?.abort();
     };
   }, []);
@@ -221,6 +336,12 @@ export default function App() {
 
     return () => clearInterval(timerInterval);
   }, [gameState, interactionResult]);
+
+  useEffect(() => {
+    if (gameState === "playing" && timer > 0 && timer <= 6.6) {
+      unlockEasterEgg("lucky_timer");
+    }
+  }, [gameState, timer]);
 
   // Handle Mute Toggle
   const toggleMute = () => {
@@ -319,6 +440,7 @@ export default function App() {
     setInteractionResult(null);
     setEntityStageMap({});
     setActionSequence([]);
+    unlockAchievement("first_world");
 
     const LOADING_HINTS = [
       { p: 0, text: "🌌 [对流层] 正在定位高维时空坐标网络..." },
@@ -356,6 +478,9 @@ export default function App() {
       const randMoment = NORMAL_MOMENTS[Math.floor(Math.random() * NORMAL_MOMENTS.length)];
       chosenIdentity = randMoment.id;
       const conceptToUse = forcedConcept ?? wangDuoyuConcept.trim();
+      if (/(北极|沙特|减肥|放电|三百万|王多鱼|西虹市)/.test(conceptToUse)) {
+        unlockEasterEgg("wang_duoyu_money");
+      }
       finalPrompt = `你是普通人王多鱼，大发横财需要败光三百万！当前的随机时间瞬间落在：『${randMoment.title}』，你的创业败家商业构思是：${conceptToUse || '把北极融化的冰用游艇运到沙特卖，或者推行减肥放电脂肪险'}`;
     } else {
       chosenIdentity = dailyType || selectedPreset.type;
@@ -412,6 +537,9 @@ export default function App() {
     audio.playSound(cue);
 
     setLastInteractedEntity({ type, id, name });
+    if (/(dog|button|coffee|犬|狗|按钮|咖啡)/i.test(`${id} ${name}`)) {
+      unlockEasterEgg("dog_or_button");
+    }
 
     try {
       // Find local pre-generated storyline
@@ -577,7 +705,30 @@ export default function App() {
       setInteractionResult(null);
       setLastInteractedEntity(null);
       setIsAiLoading(false);
+      unlockAchievement("all_nodes");
       handleTriggerEnding();
+      return;
+    }
+
+    if (actionKey === "trigger_ending_via_early_end") {
+      setInteractionResult(null);
+      setLastInteractedEntity(null);
+      setIsAiLoading(false);
+      unlockAchievement("early_end");
+      handleTriggerEnding();
+      return;
+    }
+
+    if (actionKey === "bailout") {
+      setTimer(t => clampTimer(t - Math.max(15, t * 0.5)));
+      appendHistoryLog({
+        entity: lastInteractedEntity.name,
+        action: "钞能力救赎",
+        outcome: "你用一笔看不清位数的时空过路费买下了继续探索的资格，但倒计时被狠狠切走一大截。"
+      });
+      setInteractionResult(null);
+      setLastInteractedEntity(null);
+      setIsAiLoading(false);
       return;
     }
 
@@ -595,15 +746,12 @@ export default function App() {
           playerAction: currentText
         }, signal);
 
-        // Log custom reaction
-        setHistoryLog(prev => [
-          ...prev,
-          {
-            entity: lastInteractedEntity.name,
-            action: currentText,
-            outcome: data.text
-          }
-        ]);
+        unlockAchievement("custom_action");
+        appendHistoryLog({
+          entity: lastInteractedEntity.name,
+          action: currentText,
+          outcome: data.text
+        });
 
         const timeDelta = normalizeTimeDelta(data.timeDelta);
         if (timeDelta) {
@@ -645,14 +793,11 @@ export default function App() {
           }, 3500);
         }
       } catch (e) {
-        setHistoryLog(prev => [
-          ...prev,
-          {
-            entity: lastInteractedEntity.name,
-            action: currentText,
-            outcome: "由于时空扭曲风暴过强，该条因果线在一阵奢华金光中自我重组归于平静。"
-          }
-        ]);
+        appendHistoryLog({
+          entity: lastInteractedEntity.name,
+          action: currentText,
+          outcome: "由于时空扭曲风暴过强，该条因果线在一阵奢华金光中自我重组归于平静。"
+        });
         setInteractionResult(null);
         setLastInteractedEntity(null);
       } finally {
@@ -691,15 +836,11 @@ export default function App() {
           audio.playSound(opt.soundHint);
         }
 
-        // Log choice
-        setHistoryLog(prev => [
-          ...prev,
-          {
-            entity: lastInteractedEntity.name,
-            action: opt.label,
-            outcome: opt.outcomeText
-          }
-        ]);
+        appendHistoryLog({
+          entity: lastInteractedEntity.name,
+          action: opt.label,
+          outcome: opt.outcomeText
+        });
 
         const nextStageMap = {
           ...entityStageMap,
@@ -754,15 +895,11 @@ export default function App() {
           });
         }
 
-        // Log choice
-        setHistoryLog(prev => [
-          ...prev,
-          {
-            entity: lastInteractedEntity.name,
-            action: currentText,
-            outcome: data.text
-          }
-        ]);
+        appendHistoryLog({
+          entity: lastInteractedEntity.name,
+          action: currentText,
+          outcome: data.text
+        });
 
         const nextStageMap = {
           ...entityStageMap,
@@ -798,14 +935,11 @@ export default function App() {
         }
       } else {
         // Fallback action handle
-        setHistoryLog(prev => [
-          ...prev,
-          {
-            entity: lastInteractedEntity.name,
-            action: currentText,
-            outcome: "时空节点已归顺，继续去探索其他锚点吧！"
-          }
-        ]);
+        appendHistoryLog({
+          entity: lastInteractedEntity.name,
+          action: currentText,
+          outcome: "时空节点已归顺，继续去探索其他锚点吧！"
+        });
         setInteractionResult(null);
         setLastInteractedEntity(null);
       }
@@ -829,6 +963,9 @@ export default function App() {
 
   // Render Ending Assessment Screen
   const handleTriggerEnding = async () => {
+    if (timer <= 10) {
+      unlockAchievement("last_second");
+    }
     setGameState("loading");
     audio.stopBGM();
     audio.playSound("explosion");
@@ -857,6 +994,10 @@ export default function App() {
       const updatedCollection = [newSavedEnding, ...savedEndings].slice(0, 15); // preserve top 15 records
       setSavedEndings(updatedCollection);
       localStorage.setItem("boss_minute_endings", JSON.stringify(updatedCollection));
+      unlockAchievement("first_ending");
+      if (updatedCollection.length >= 3) {
+        unlockEasterEgg("archive_hoarder");
+      }
 
       setGameState("ending");
     } catch (e) {
@@ -885,6 +1026,10 @@ export default function App() {
       const updated = [cachedEnd, ...savedEndings];
       setSavedEndings(updated);
       localStorage.setItem("boss_minute_endings", JSON.stringify(updated));
+      unlockAchievement("first_ending");
+      if (updated.length >= 3) {
+        unlockEasterEgg("archive_hoarder");
+      }
 
       setGameState("ending");
     }
@@ -898,6 +1043,7 @@ export default function App() {
   const handleConfirmFollowToRewind = () => {
     setTimer(35.0);
     setGameState("playing");
+    unlockAchievement("rewind");
     if (worldScenario) {
       audio.playBGM(worldScenario.ambientMusic);
     }
@@ -980,6 +1126,8 @@ export default function App() {
   const activeWorldEngineLabel = activeApiSettings.localMode
     ? "Local Offline Dynamic World"
     : `${activeProviderDisplayName} Dynamic World`;
+  const unlockedAchievementCount = ACHIEVEMENT_DEFS.filter(item => unlockedAchievementIds.includes(item.id)).length;
+  const unlockedEasterEggCount = EASTER_EGG_DEFS.filter(item => unlockedEasterEggIds.includes(item.id)).length;
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans flex flex-col justify-between overflow-x-hidden relative selection:bg-emerald-500 selection:text-black">
@@ -987,7 +1135,7 @@ export default function App() {
       {/* Absolute high-contrast pixelated header and banner */}
       <header className="bg-slate-900/85 backdrop-blur-md border-b border-slate-800 py-3 px-4 shadow-xl sticky top-0 z-40">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3 cursor-pointer select-none active:scale-95 transition-all" onClick={handleBackToLobby}>
+          <div className="flex items-center gap-3 cursor-pointer select-none active:scale-95 transition-all" onClick={handleLogoClick}>
             <div className="w-11 h-11 rounded-2xl flex items-center justify-center border-3 border-[#2D3436] bg-[#FFD93D] shadow-[2.5px_2.5px_0px_#2A2A2A] overflow-hidden shrink-0">
               <img src={logoUrl} alt="一分钟老板 Logo" className="w-full h-full object-cover" />
             </div>
@@ -1099,6 +1247,33 @@ export default function App() {
             </div>
           )}
 
+          <AnimatePresence>
+            {unlockToast && (
+              <motion.div
+                initial={{ opacity: 0, y: -16, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -16, scale: 0.96 }}
+                className={`fixed top-24 right-4 z-[60] w-[min(360px,calc(100vw-32px))] border-3 border-[#2D3436] rounded-2xl p-4 shadow-[5px_5px_0px_#2D3436] ${
+                  unlockToast.kind === "achievement" ? "bg-[#E8F8F5]" : "bg-[#FFF3BF]"
+                }`}
+              >
+                <div className="flex items-start gap-3">
+                  <div className="w-11 h-11 rounded-xl bg-white border-2 border-[#2D3436] flex items-center justify-center text-xl shrink-0 shadow-[2px_2px_0px_#2D3436]">
+                    {unlockToast.icon}
+                  </div>
+                  <div className="min-w-0">
+                    <span className="text-[9px] font-mono font-black uppercase tracking-widest text-[#4D96FF] flex items-center gap-1">
+                      {unlockToast.kind === "achievement" ? <Trophy size={12} /> : <PartyPopper size={12} />}
+                      {unlockToast.kind === "achievement" ? "成就解锁" : "彩蛋触发"}
+                    </span>
+                    <h4 className="text-sm font-black text-[#2D3436] mt-1">{unlockToast.name}</h4>
+                    <p className="text-[10px] text-slate-600 font-bold leading-relaxed mt-1">{unlockToast.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           {/* 1. LOBBY STATE */}
           {gameState === "lobby" && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start animate-fade-in">
@@ -1172,6 +1347,19 @@ export default function App() {
                     }`}
                   >
                     <BookOpen size={14} /> 人生传承馆 ({savedEndings.length})
+                  </button>
+                  <button
+                    onClick={() => {
+                      setActiveTab("achievements");
+                      audio.playSound("walk");
+                    }}
+                    className={`pb-3 px-3 font-bold transition-all duration-200 border-b-2 cursor-pointer flex items-center gap-1.5 rounded-t-lg ${
+                      activeTab === "achievements"
+                        ? "border-emerald-450 text-emerald-450 bg-emerald-500/5"
+                        : "border-transparent text-slate-450 hover:text-slate-200 hover:bg-slate-800/20"
+                    }`}
+                  >
+                    <Trophy size={14} /> 成就彩蛋 ({unlockedAchievementCount + unlockedEasterEggCount})
                   </button>
                   <button
                     onClick={() => {
@@ -1459,6 +1647,106 @@ export default function App() {
                           ))}
                         </div>
                       )}
+                    </motion.div>
+                  )}
+
+                  {/* TAB 4: ACHIEVEMENTS AND EASTER EGGS */}
+                  {activeTab === "achievements" && (
+                    <motion.div
+                      key="achievements"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      className="space-y-4"
+                    >
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="p-4 bg-slate-950/70 border border-emerald-500/25 rounded-2xl shadow-inner">
+                          <span className="text-[9px] text-emerald-400 font-mono font-black uppercase">Achievements</span>
+                          <strong className="block text-2xl font-mono text-white mt-1">
+                            {unlockedAchievementCount}/{ACHIEVEMENT_DEFS.length}
+                          </strong>
+                          <p className="text-[10px] text-slate-450 mt-1">老板行为档案解锁进度</p>
+                        </div>
+                        <div className="p-4 bg-slate-950/70 border border-amber-500/25 rounded-2xl shadow-inner">
+                          <span className="text-[9px] text-amber-400 font-mono font-black uppercase">Easter Eggs</span>
+                          <strong className="block text-2xl font-mono text-white mt-1">
+                            {unlockedEasterEggCount}/{EASTER_EGG_DEFS.length}
+                          </strong>
+                          <p className="text-[10px] text-slate-450 mt-1">隐藏荒诞触发点进度</p>
+                        </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <h4 className="text-xs font-mono font-black text-white flex items-center gap-1.5">
+                            <Trophy size={14} className="text-emerald-400" /> 因果成就
+                          </h4>
+                          <span className="text-[9px] text-slate-500 font-mono">特定玩法行为触发</span>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[190px] overflow-y-auto pr-1">
+                          {ACHIEVEMENT_DEFS.map(item => {
+                            const unlocked = unlockedAchievementIds.includes(item.id);
+                            return (
+                              <div
+                                key={item.id}
+                                className={`p-3 rounded-2xl border shadow-sm transition ${
+                                  unlocked
+                                    ? "bg-emerald-500/10 border-emerald-500/35"
+                                    : "bg-slate-950/50 border-slate-850 opacity-65"
+                                }`}
+                              >
+                                <div className="flex items-center gap-2">
+                                  <span className="text-lg">{unlocked ? item.icon : "🔒"}</span>
+                                  <div className="min-w-0">
+                                    <h5 className={`text-[11px] font-mono font-black truncate ${unlocked ? "text-emerald-400" : "text-slate-500"}`}>
+                                      {unlocked ? item.name : "未解锁成就"}
+                                    </h5>
+                                    <p className="text-[9px] text-slate-450 leading-relaxed mt-0.5">
+                                      {item.description}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <h4 className="text-xs font-mono font-black text-white flex items-center gap-1.5">
+                            <Gift size={14} className="text-amber-400" /> 隐藏彩蛋
+                          </h4>
+                          <span className="text-[9px] text-slate-500 font-mono">用离谱条件触发</span>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[150px] overflow-y-auto pr-1">
+                          {EASTER_EGG_DEFS.map(item => {
+                            const unlocked = unlockedEasterEggIds.includes(item.id);
+                            return (
+                              <div
+                                key={item.id}
+                                className={`p-3 rounded-2xl border shadow-sm transition ${
+                                  unlocked
+                                    ? "bg-amber-500/10 border-amber-500/35"
+                                    : "bg-slate-950/50 border-slate-850 opacity-65"
+                                }`}
+                              >
+                                <div className="flex items-center gap-2">
+                                  <span className="text-lg">{unlocked ? item.icon : "❔"}</span>
+                                  <div className="min-w-0">
+                                    <h5 className={`text-[11px] font-mono font-black truncate ${unlocked ? "text-amber-400" : "text-slate-500"}`}>
+                                      {unlocked ? item.name : "隐藏彩蛋"}
+                                    </h5>
+                                    <p className="text-[9px] text-slate-450 leading-relaxed mt-0.5">
+                                      {unlocked ? item.description : "条件未知，继续乱点和乱玩。"}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
                     </motion.div>
                   )}
 
@@ -1994,7 +2282,10 @@ export default function App() {
               {/* Forced manual settle button if player is bored */}
               <div className="text-center pt-2">
                 <button
-                  onClick={handleTriggerEnding}
+                  onClick={() => {
+                    unlockAchievement("early_end");
+                    handleTriggerEnding();
+                  }}
                   className="font-mono text-xs text-slate-500 hover:text-rose-400 hover:underline cursor-pointer flex items-center justify-center gap-1 mx-auto"
                 >
                   <RotateCcw size={12} /> 提前中断并结算此生 (看透浮名)
@@ -2294,6 +2585,7 @@ export default function App() {
                   onClick={() => {
                     setIsVip(true);
                     setShowFollowModal(false);
+                    unlockAchievement("vip_unlock");
                     audio.playSound("bling");
                     setSystemAlertMessage("👑 激活成功！永久星际尊享 VIP 特权包已装载！您可以任意解锁神豪角色与每日剧本！");
                   }}
