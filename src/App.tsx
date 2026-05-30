@@ -40,7 +40,7 @@ import { SpriteRenderer } from "./components/SpriteRenderer";
 import { Position, NPC, Item, WorldScenario, InteractionResult, EndingResult, SavedLife, DailyChallenge, BossIdentityType } from "./types";
 import { getDailyChallenge } from "./utils/dailyPresets";
 import { audio } from "./utils/audio";
-import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey, getApiSettings, saveApiSettings, testApiConnection, getRawStoredSettings, hasEnvApiKey, streamBusinessConcept, FLASH_MODEL, type ApiSettings } from "./utils/siliconFlow";
+import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey, getApiSettings, saveApiSettings, testApiConnection, getRawStoredSettings, hasEnvApiKey, streamBusinessConcept, FLASH_MODEL, DEFAULT_SILICONFLOW_MODEL, type ApiSettings } from "./utils/siliconFlow";
 import { getResourcePack } from "./utils/resourceKit";
 import logoUrl from "../assets/logo.png";
 import douyinQrUrl from "../assets/douyin.JPG";
@@ -247,7 +247,7 @@ export default function App() {
       return;
     }
 
-    // No input – stream a random concept with DeepSeek-V4-Flash non-thinking mode
+    // No input: stream a short random concept before entering the game.
     setIsStreamingConcept(true);
     const setter = isNormalTab ? setWangDuoyuConcept : setCustomIdentityInput;
     setter("");
@@ -905,7 +905,7 @@ export default function App() {
     const currentSettings: ApiSettings = {
       provider: settingsProvider,
       siliconFlowApiKey: sfApiKey.trim(),
-      siliconFlowModel: sfModel.trim() || "deepseek-ai/DeepSeek-V4-Flash",
+      siliconFlowModel: sfModel.trim() || DEFAULT_SILICONFLOW_MODEL,
       minimaxApiKey: mmApiKey.trim(),
       minimaxModel: mmModel.trim() || "MiniMax-M2.5",
       deepseekApiKey: dsApiKey.trim(),
@@ -2386,7 +2386,7 @@ export default function App() {
                         type="text"
                         value={sfModel}
                         onChange={(e) => setSfModel(e.target.value)}
-                        placeholder="deepseek-ai/DeepSeek-V4-Flash"
+                        placeholder={DEFAULT_SILICONFLOW_MODEL}
                         className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-[#ffffff] text-[#2D3436]"
                       />
                     </div>
@@ -2540,7 +2540,7 @@ export default function App() {
                     const settingsToSave = {
                       provider: settingsProvider,
                       siliconFlowApiKey: sfApiKey.trim(),
-                      siliconFlowModel: sfModel.trim() || "deepseek-ai/DeepSeek-V4-Flash",
+                      siliconFlowModel: sfModel.trim() || DEFAULT_SILICONFLOW_MODEL,
                       minimaxApiKey: mmApiKey.trim(),
                       minimaxModel: mmModel.trim() || "MiniMax-M2.5",
                       deepseekApiKey: dsApiKey.trim(),

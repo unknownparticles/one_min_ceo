@@ -6,7 +6,7 @@
 
 一分钟老板是一个 60 秒像素人生互动游戏。玩家会被随机投放到富豪、CEO、冠军、太空旅客等荒诞身份里，通过选择和自由输入触发蝴蝶效应结局。
 
-项目已经改造成可直接部署到 GitHub Pages 的静态 Vite 应用。AI 生成能力通过 SiliconFlow OpenAI-compatible Chat Completions API 提供，默认模型为 `deepseek-ai/DeepSeek-V4-Flash`。
+项目已经改造成可直接部署到 GitHub Pages 的静态 Vite 应用。AI 生成能力通过 SiliconFlow OpenAI-compatible Chat Completions API 提供，默认模型为 `Qwen/Qwen2.5-14B-Instruct`。
 
 ## 本地运行
 
@@ -22,7 +22,7 @@
 
    ```bash
    VITE_SILICONFLOW_API_KEY="你的 SiliconFlow API Key"
-    VITE_SILICONFLOW_MODEL="Qwen/Qwen3.5-35B-A3B"
+   VITE_SILICONFLOW_MODEL="Qwen/Qwen2.5-14B-Instruct"
    ```
 
 3. 启动开发服务器：
@@ -68,6 +68,6 @@ GitHub Actions 会在构建时把 `SILICONFLOW_API_KEY` 写入 `public/runtime-c
 
 ```text
 Endpoint: https://api.siliconflow.cn/v1/chat/completions
-Model: deepseek-ai/DeepSeek-V4-Flash
+Model: Qwen/Qwen2.5-14B-Instruct
 Authorization: Bearer <SILICONFLOW_API_KEY>
 ```

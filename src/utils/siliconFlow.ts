@@ -3,7 +3,6 @@ import { getFallbackScenario } from "./fallbackScenario";
 import { buildResourceGenerationGuide, getResourcePack } from "./resourceKit";
 
 const SILICONFLOW_ENDPOINT = "https://api.siliconflow.cn/v1/chat/completions";
-const DEFAULT_MODEL = "deepseek-ai/DeepSeek-V4-Flash";
 const DEEPSEEK_ENDPOINT = "https://api.deepseek.com/v1/chat/completions";
 
 export type ApiProvider = "siliconflow" | "minimax" | "deepseek";
@@ -20,10 +19,13 @@ export interface ApiSettings {
   localMode: boolean;
 }
 
-const DEFAULT_SILICONFLOW_MODEL = "deepseek-ai/DeepSeek-V4-Flash";
+export const DEFAULT_SILICONFLOW_MODEL = "Qwen/Qwen2.5-14B-Instruct";
 const DEFAULT_MINIMAX_MODEL = "MiniMax-M2.5";
 const DEFAULT_DEEPSEEK_MODEL = "deepseek-chat";
 const MINIMAX_ENDPOINT = "https://api.minimax.io/v1/chat/completions";
+const WORLD_GENERATION_MAX_TOKENS = 1000;
+const INTERACTION_MAX_TOKENS = 900;
+const ENDING_MAX_TOKENS = 1400;
 
 type RuntimeConfig = {
   siliconFlowApiKey?: string;
@@ -142,10 +144,63 @@ const parseJsonObject = <T>(content: string): T => {
   const raw = fenced ? fenced[1].trim() : trimmed;
   const start = raw.indexOf("{");
   const end = raw.lastIndexOf("}");
+  const parseJson = (value: string): T => {
+    try {
+      return JSON.parse(value) as T;
+    } catch (error) {
+      return JSON.parse(escapeJsonStringControlChars(value)) as T;
+    }
+  };
+
   if (start >= 0 && end > start) {
-    return JSON.parse(raw.slice(start, end + 1)) as T;
+    return parseJson(raw.slice(start, end + 1));
   }
-  return JSON.parse(raw) as T;
+  return parseJson(raw);
+};
+
+const escapeJsonStringControlChars = (jsonText: string): string => {
+  let result = "";
+  let inString = false;
+  let escaped = false;
+
+  for (const char of jsonText) {
+    if (escaped) {
+      result += char;
+      escaped = false;
+      continue;
+    }
+
+    if (char === "\\") {
+      result += char;
+      escaped = true;
+      continue;
+    }
+
+    if (char === "\"") {
+      inString = !inString;
+      result += char;
+      continue;
+    }
+
+    if (inString) {
+      if (char === "\n") {
+        result += "\\n";
+        continue;
+      }
+      if (char === "\r") {
+        result += "\\r";
+        continue;
+      }
+      if (char === "\t") {
+        result += "\\t";
+        continue;
+      }
+    }
+
+    result += char;
+  }
+
+  return result;
 };
 
 const callSiliconFlowJson = async <T>(
@@ -486,7 +541,7 @@ interface ModelNpc {
   id: string;
   name: string;
   dialogue: string;
-  storyline: Array<{
+  storyline?: Array<{
     id: string;
     text: string;
     options: Array<{
@@ -500,7 +555,7 @@ interface ModelItem {
   id: string;
   name: string;
   description: string;
-  storyline: Array<{
+  storyline?: Array<{
     id: string;
     text: string;
     options: Array<{
@@ -537,48 +592,39 @@ export const generateWorld = async (
 {
   "theme": "荒诞时空主题名",
   "introText": "60秒倒计时开场白",
-  "npcs": [{ "id": "...", "name": "...", "dialogue": "...", "storyline": [{ "id": "...", "text": "...", "options": [{ "label": "...", "outcomeText": "..." }] }] }],
-  "items": [{ "id": "...", "name": "...", "description": "...", "storyline": [{ "id": "...", "text": "...", "options": [{ "label": "...", "outcomeText": "..." }] }] }]
+  "npcs": [{ "id": "...", "name": "...", "dialogue": "..." }],
+  "items": [{ "id": "...", "name": "...", "description": "..." }]
 }
 
 约束：
-1. npcs/items 的 id 和 storyline 中 step 的 id 必须与骨架完全一致，不增不减
-2. 每个 step 的 options 数量必须与骨架一致
-3. 只输出纯文本，不输出 mapLayout/playerPosition/fixedEndings/resourcePack`;
+1. npcs/items 的 id 必须与骨架完全一致，不增不减
+2. 不要输出 storyline/options/mapLayout/playerPosition/fixedEndings/resourcePack
+3. 只输出纯文本，不要解释
+4. 为保证 60 秒小游戏加载速度，theme 不超过 16 字，introText 不超过 44 字
+5. name 不超过 8 字，dialogue/description 不超过 34 字
+6. 所有字符串必须是单行文本，字符串内部不要换行`;
 
   const skeletonDataForPrompt = {
     identity: identity || "CEO",
     npcs: skeleton.npcs.map(n => ({
       id: n.id,
-      role: n.name,
-      steps: n.storyline.map(s => ({
-        id: s.id,
-        context: s.text,
-        optionCount: s.options.length,
-        optionHints: s.options.map(o => o.label)
-      }))
+      role: n.name
     })),
     items: skeleton.items.map(i => ({
       id: i.id,
-      type: i.name,
-      steps: i.storyline.map(s => ({
-        id: s.id,
-        context: s.text,
-        optionCount: s.options.length,
-        optionHints: s.options.map(o => o.label)
-      }))
+      type: i.name
     }))
   };
 
   const userPrompt = `身份：${identity || "CEO"}。${customPrompt ? `关键词：${customPrompt}。` : ""}
-骨架（保留 id 和 option 数量，重写文案）：
+骨架（保留 id，重写名称和入口文案）：
 ${JSON.stringify(skeletonDataForPrompt, null, 2)}`;
 
   try {
     const worldResult = await callSiliconFlowJson<ModelWorldResponse>(
       systemPrompt,
       userPrompt,
-      4096,
+      WORLD_GENERATION_MAX_TOKENS,
       overrideModel,
       overrideEnableThinking,
       signal
@@ -738,14 +784,15 @@ export const generateInteraction = async (payload: {
 
   const systemPrompt = `你是《一分钟老板》的荒诞互动导演。只返回 JSON，不要 Markdown。
 JSON 必须包含：text, options, allowsFreeInput, soundHint, timeDelta, isEarlyEnd。
-options 是 1 到 3 个选项，每项包含 label 和 action.timeDelta 是 0 或负整数。请尽量避免返回 isEarlyEnd: true，除非玩家做出了极其自毁或彻底毁灭整个时空线的不合理动作。`;
+text 不超过 80 字，options 是 1 到 3 个选项，每项 label 不超过 10 字。
+action.timeDelta 是 0 或负整数。请尽量避免返回 isEarlyEnd: true，除非玩家做出了极其自毁或彻底毁灭整个时空线的不合理动作。`;
   const userPrompt = `身份：${payload.identity}。主题：${payload.theme}。
 交互对象类型：${payload.targetType}。对象名：${payload.targetName}。对象 ID：${payload.targetId}。
 对话历史：${JSON.stringify(payload.dialogueHistory || [])}
 玩家动作：${payload.playerAction || "First approach"}`;
 
   try {
-    const result = await callSiliconFlowJson<InteractionResult>(systemPrompt, userPrompt, 2048, undefined, undefined, signal);
+    const result = await callSiliconFlowJson<InteractionResult>(systemPrompt, userPrompt, INTERACTION_MAX_TOKENS, undefined, undefined, signal);
     printPerformanceReport("生成场景互动 (generateInteraction)");
     return result;
   } catch (error: any) {
@@ -823,6 +870,7 @@ export const generateEnding = async (payload: {
   const systemPrompt = `你是《一分钟老板》的终局评估官。只返回 JSON，不要 Markdown。
 JSON 必须包含：id, title, rank, endingText, achievements, stats。
 stats 必须包含 wealthWasted, butterflyEffectIndex, insanityLevel。
+title 不超过 16 字，rank 不超过 12 字，endingText 不超过 120 字，achievements 输出 2 到 3 个短语，每个短语不超过 10 字。
 ${matchedEnding ? `玩家触发固定结局：${matchedEnding.title}。结局描述：${matchedEnding.description}。必须围绕这个固定结局扩写。` : "没有固定结局命中，请基于行动记录生成荒诞总结。"}`;
   const userPrompt = `身份：${payload.identity}
 主题：${payload.theme}
@@ -831,7 +879,7 @@ ${matchedEnding ? `玩家触发固定结局：${matchedEnding.title}。结局描
 互动记录：${JSON.stringify(payload.interactionLog)}`;
 
   try {
-    const result = await callSiliconFlowJson<EndingResult>(systemPrompt, userPrompt, 4096, undefined, undefined, signal);
+    const result = await callSiliconFlowJson<EndingResult>(systemPrompt, userPrompt, ENDING_MAX_TOKENS, undefined, undefined, signal);
     printPerformanceReport("评估终局清算 (generateEnding)");
     return result;
   } catch (error: any) {
