@@ -27,8 +27,10 @@ import {
   Info,
   Clock,
   Coins,
-  Tv,
-  ArrowRight
+  ArrowRight,
+  Github,
+  ScanLine,
+  CheckCircle2
 } from "lucide-react";
 import { PixelMap } from "./components/PixelMap";
 import { SpriteRenderer } from "./components/SpriteRenderer";
@@ -38,6 +40,8 @@ import { audio } from "./utils/audio";
 import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey } from "./utils/siliconFlow";
 import { getResourcePack } from "./utils/resourceKit";
 import logoUrl from "../assets/logo.png";
+import douyinQrUrl from "../assets/douyin.JPG";
+import xiaohongshuQrUrl from "../assets/xiaohongshu.JPG";
 
 // Ticker lines for the header to increase high-contrast satire & immersive feeling
 const METADATA_TICKERS = [
@@ -72,7 +76,7 @@ const clampTimer = (value: number): number => {
 
 export default function App() {
   // Game States
-  const [gameState, setGameState] = useState<"lobby" | "loading" | "playing" | "ending" | "ad_sim">("lobby");
+  const [gameState, setGameState] = useState<"lobby" | "loading" | "playing" | "ending" | "follow_unlock">("lobby");
   
   // Custom or pre-selected choices
   const [selectedPreset, setSelectedPreset] = useState<typeof PRESETS[0]>(PRESETS[0]);
@@ -112,17 +116,6 @@ export default function App() {
   // Ticker text cycles
   const [tickerIndex, setTickerIndex] = useState<number>(0);
   
-  // Simulated Time Machine Bribes / Ads state
-  const [simulatedAdCountdown, setSimulatedAdCountdown] = useState<number>(5);
-  const [simulatedAdText, setSimulatedAdText] = useState<string>("");
-
-  const AD_PITCHES = [
-    "🚀 【马斯克星际植发诊所】: 只要两微克小行星尘埃，让您的秀发在真空宇宙里依然飘逸！首单买一送一，带上你的私人保镖更有8折折扣！",
-    "🧀 【梵蒂冈至臻奶酪集团】: 选用世界首富自家养殖的快乐阿尔卑斯彩虹牛，配以红衣主教颂唱。一口，升华你的名流味蕾！",
-    "💼 【开曼群岛保密信托：后悔良药版】: 只要看5秒广告，您的资产就能在宇宙大爆炸中完美转移，不可追溯！",
-    "🛸 【天星观察狗狗零食商】: 为隐藏在地球各个角落的智能外星特工狗制造的奢华零食。喂它一颗，拯救地球的一分钟！"
-  ];
-
   // Check if all storyline stages for all NPCs and Items have been completed
   const checkIfAllExhausted = (currentStageMap: Record<string, number>): boolean => {
     if (!worldScenario) return false;
@@ -627,31 +620,20 @@ export default function App() {
     }
   };
 
-  // Time Machine Simulated Bribe Ad Watch
-  const handleWatchAdToRewind = () => {
+  const handleOpenFollowToRewind = () => {
     audio.playSound("warn");
-    setGameState("ad_sim");
-    setSimulatedAdCountdown(5);
-    // Draw a random funny ad pitch
-    const pitch = AD_PITCHES[Math.floor(Math.random() * AD_PITCHES.length)];
-    setSimulatedAdText(pitch);
+    setGameState("follow_unlock");
+  };
 
-    const timer = setInterval(() => {
-      setSimulatedAdCountdown(prev => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          // Rewind game to 35 seconds remainder on map!
-          setTimer(35.0);
-          setGameState("playing");
-          if (worldScenario) {
-            audio.playBGM(worldScenario.ambientMusic);
-          }
-          audio.playSound("bling");
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
+  const handleConfirmFollowToRewind = () => {
+    setTimer(35.0);
+    setGameState("playing");
+    if (worldScenario) {
+      audio.playBGM(worldScenario.ambientMusic);
+    }
+    audio.playSound("bling");
+    setSystemAlertMessage("时光机已开启：感谢关注阿伦，小老板已带着现有因果钥匙回到 35 秒。");
+    setTimeout(() => setSystemAlertMessage(null), 4500);
   };
 
   // Clean social sharing summary generator
@@ -1516,36 +1498,70 @@ export default function App() {
             </div>
           )}
 
-          {/* 4. ADVERTISING TIME MACHINE SIMULATION */}
-          {gameState === "ad_sim" && (
-            <div className="max-w-md mx-auto bg-slate-900 border-4 border-amber-500 rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
+          {/* 4. FOLLOW TO UNLOCK TIME MACHINE */}
+          {gameState === "follow_unlock" && (
+            <div className="max-w-3xl mx-auto bg-slate-900 border-4 border-amber-500 rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
               <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                 <span className="text-xs bg-amber-500 text-slate-950 font-bold px-2 rounded font-mono tracking-widest flex items-center gap-1">
-                  <Tv size={12} /> 时空宽带广告特许
+                  <ScanLine size={12} /> 关注阿伦开启时光机
                 </span>
-                <div className="font-mono text-xs text-amber-500 font-bold animate-pulse">
-                  广告倒计时: {simulatedAdCountdown} 秒
+                <span className="font-mono text-xs text-amber-500 font-bold animate-pulse">FOLLOW TO REWIND</span>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-slate-950 border border-slate-800 p-4 rounded-2xl space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-black text-white">小红书</span>
+                    <span className="text-[10px] bg-rose-500 text-white px-2 py-0.5 rounded-full font-bold">可能是阿伦</span>
+                  </div>
+                  <img
+                    src={xiaohongshuQrUrl}
+                    alt="阿伦小红书二维码"
+                    className="w-full rounded-xl border border-slate-800 bg-white object-contain max-h-[360px]"
+                  />
+                </div>
+
+                <div className="bg-slate-950 border border-slate-800 p-4 rounded-2xl space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-black text-white">抖音</span>
+                    <span className="text-[10px] bg-slate-800 text-slate-200 px-2 py-0.5 rounded-full font-bold">可能是阿伦</span>
+                  </div>
+                  <img
+                    src={douyinQrUrl}
+                    alt="阿伦抖音二维码"
+                    className="w-full rounded-xl border border-slate-800 bg-slate-950 object-contain max-h-[360px]"
+                  />
                 </div>
               </div>
 
-              <div className="bg-slate-950 border border-slate-800 p-5 rounded-2xl relative overflow-hidden space-y-3">
-                <span className="text-2xl block animate-bounce">📺</span>
-                <p className="text-xs font-mono font-bold text-white tracking-tight">今日富豪后悔特供赞助:</p>
-                <p className="text-xs font-mono text-slate-300 leading-relaxed italic bg-slate-900 p-3 rounded border border-slate-850">
-                  {simulatedAdText}
-                </p>
+              <div className="bg-slate-950 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                <div>
+                  <span className="text-[10px] font-mono text-emerald-400 font-bold block">GitHub</span>
+                  <p className="text-xs font-mono text-slate-300 mt-1">关注 unknownparticles，开启这台不太讲道理的时光机。</p>
+                </div>
+                <a
+                  href="https://github.com/unknownparticles"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-4 py-3 bg-slate-100 hover:bg-white text-slate-950 rounded-xl font-mono text-xs font-black active:scale-95 transition flex items-center justify-center gap-2"
+                >
+                  <Github size={16} /> 打开 GitHub
+                </a>
               </div>
 
-              <div className="bg-emerald-950/20 border border-emerald-500/20 p-3 rounded-xl text-center">
-                <span className="text-[10px] font-mono text-emerald-400 font-bold block animate-bounce">⏳ 广告结束后自动回溯:</span>
-                <p className="text-[9px] font-mono text-slate-450 mt-1">
-                  你将重回人生中段！携带已有的蝴蝶钥匙，回到最后 30.0 秒 重新来过！
-                </p>
-              </div>
+              <button
+                onClick={handleConfirmFollowToRewind}
+                className="w-full py-4 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-950 font-mono font-black text-sm rounded-xl transition active:scale-95 cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-amber-950/40"
+              >
+                <CheckCircle2 size={18} /> 我已关注，开启时光机回到 35 秒
+              </button>
 
-              <span className="text-[9px] font-mono text-slate-600 block text-center">
-                *这只是纯本土单机广告讽刺模拟，无真实广告弹出。
-              </span>
+              <button
+                onClick={() => setGameState("ending")}
+                className="w-full py-2 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-slate-450 rounded-xl text-[10px] font-mono hover:text-white cursor-pointer transition"
+              >
+                暂不回溯，返回结局卡
+              </button>
             </div>
           )}
 
@@ -1669,13 +1685,13 @@ export default function App() {
                   <Share2 size={14} /> 展示富豪人生结局卡
                 </button>
 
-                {/* Rewind ad trigger */}
+                {/* Follow gate rewind trigger */}
                 <button
-                  onClick={handleWatchAdToRewind}
+                  onClick={handleOpenFollowToRewind}
                   className="p-3 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-950 font-mono font-bold text-xs rounded-xl transition active:scale-95 cursor-pointer flex items-center justify-center gap-1.5"
-                  title="模拟看广告重来"
+                  title="关注阿伦开启时光机"
                 >
-                  <Tv size={14} /> 后悔良药 (时光机重来)
+                  <ScanLine size={14} /> 关注阿伦开启时光机
                 </button>
 
                 <button
