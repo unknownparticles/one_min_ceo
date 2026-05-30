@@ -3,7 +3,7 @@ import { getFallbackScenario } from "../../serverFallback";
 import { buildResourceGenerationGuide, getResourcePack } from "./resourceKit";
 
 const SILICONFLOW_ENDPOINT = "https://api.siliconflow.cn/v1/chat/completions";
-const DEFAULT_MODEL = "deepseek-ai/DeepSeek-V4-Flash";
+const DEFAULT_MODEL = "Qwen/Qwen3.5-35B-A3B";
 
 export type ApiProvider = "siliconflow" | "minimax";
 
@@ -15,7 +15,7 @@ export interface ApiSettings {
   minimaxModel: string;
 }
 
-const DEFAULT_SILICONFLOW_MODEL = "deepseek-ai/DeepSeek-V4-Flash";
+const DEFAULT_SILICONFLOW_MODEL = "Qwen/Qwen3.5-35B-A3B";
 const DEFAULT_MINIMAX_MODEL = "MiniMax-M2.5";
 const MINIMAX_ENDPOINT = "https://api.minimax.io/v1/chat/completions";
 

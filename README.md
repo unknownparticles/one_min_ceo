@@ -22,7 +22,7 @@
 
    ```bash
    VITE_SILICONFLOW_API_KEY="你的 SiliconFlow API Key"
-   VITE_SILICONFLOW_MODEL="deepseek-ai/DeepSeek-V4-Flash"
+    VITE_SILICONFLOW_MODEL="Qwen/Qwen3.5-35B-A3B"
    ```
 
 3. 启动开发服务器：
