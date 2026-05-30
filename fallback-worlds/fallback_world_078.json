@@ -1,0 +1,1209 @@
+{
+  "matchKeywords": [
+    "火星银行",
+    "金库",
+    "失窃",
+    "60秒"
+  ],
+  "identity": "火星银行总裁",
+  "theme": "火星银行金库失窃前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "crystal",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "server",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "保安主管",
+      "dialogue": "总裁，金库有异常！",
+      "position": [
+        1,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "保安主管慌张地跑来。",
+          "options": [
+            {
+              "text": "冷静，说清楚。",
+              "nextStage": 1
+            },
+            {
+              "text": "立刻封锁金库！",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "他说：有神秘人潜入，可能是内鬼。",
+          "options": [
+            {
+              "text": "查监控！",
+              "nextStage": 3
+            },
+            {
+              "text": "召集所有保安！",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他犹豫：但是您还在里面…",
+          "options": [
+            {
+              "text": "别管我，照做！",
+              "nextStage": 3
+            },
+            {
+              "text": "那先撤出所有人。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他执行命令，但暗示自己可能是内鬼。",
+          "options": [
+            {
+              "text": "抓住他！",
+              "nextStage": 4
+            },
+            {
+              "text": "假装相信他。",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "他露出马脚，原来他已经被收买。",
+          "options": [
+            {
+              "text": "逮捕他！",
+              "nextStage": 5
+            },
+            {
+              "text": "将计就计。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局：保安主管被制服，但金库已失窃。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "首席技术官",
+      "position": [
+        2,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "CTO在服务器旁。",
+          "options": [
+            {
+              "text": "有什么发现？",
+              "nextStage": 1
+            },
+            {
+              "text": "你看起来可疑。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "他说监控被黑客入侵。",
+          "options": [
+            {
+              "text": "修复它！",
+              "nextStage": 3
+            },
+            {
+              "text": "你负责安全，怎么搞的？",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他紧张地否认。",
+          "options": [
+            {
+              "text": "我要查你的记录。",
+              "nextStage": 3
+            },
+            {
+              "text": "暂时相信你。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他承认自己可能泄露了密码。",
+          "options": [
+            {
+              "text": "你被解雇了！",
+              "nextStage": 4
+            },
+            {
+              "text": "将功补过。",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "他提供线索，但已经晚了。",
+          "options": [
+            {
+              "text": "追查！",
+              "nextStage": 5
+            },
+            {
+              "text": "放弃。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局：CTO被带走，金库失窃。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "保洁阿姨",
+      "position": [
+        3,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "阿姨在拖地。",
+          "options": [
+            {
+              "text": "看到可疑的人吗？",
+              "nextStage": 1
+            },
+            {
+              "text": "这里不需要打扫。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "她说有个穿黑衣服的人进去了。",
+          "options": [
+            {
+              "text": "详细描述！",
+              "nextStage": 3
+            },
+            {
+              "text": "你确定？",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "她坚持要打扫。",
+          "options": [
+            {
+              "text": "让她走。",
+              "nextStage": 3
+            },
+            {
+              "text": "留下她。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "她突然想起那人是内部人员。",
+          "options": [
+            {
+              "text": "是谁？",
+              "nextStage": 4
+            },
+            {
+              "text": "别乱说。",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "她说那人是保安主管。",
+          "options": [
+            {
+              "text": "快去告发！",
+              "nextStage": 5
+            },
+            {
+              "text": "先稳住她。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局：阿姨提供关键线索但已来不及。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "神秘黑客",
+      "position": [
+        5,
+        11
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "黑客在操作终端。",
+          "options": [
+            {
+              "text": "住手！",
+              "nextStage": 1
+            },
+            {
+              "text": "你是什么人？",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "他冷笑：你阻止不了我。",
+          "options": [
+            {
+              "text": "叫保安！",
+              "nextStage": 2
+            },
+            {
+              "text": "你想怎样？",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他提出条件：给我一亿。",
+          "options": [
+            {
+              "text": "答应他。",
+              "nextStage": 3
+            },
+            {
+              "text": "拖延时间。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他识破了你的计策。",
+          "options": [
+            {
+              "text": "强行阻止。",
+              "nextStage": 4
+            },
+            {
+              "text": "妥协。",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "金库门已经打开。",
+          "options": [
+            {
+              "text": "冲进去！",
+              "nextStage": 5
+            },
+            {
+              "text": "报警。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局：黑客逃走，金库被劫。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "神秘女子",
+      "position": [
+        9,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "她站在金库前。",
+          "options": [
+            {
+              "text": "你是谁？",
+              "nextStage": 1
+            },
+            {
+              "text": "离开这里！",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "她说她是来讨债的。",
+          "options": [
+            {
+              "text": "什么债？",
+              "nextStage": 2
+            },
+            {
+              "text": "叫保安！",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "她拿出一张欠条。",
+          "options": [
+            {
+              "text": "这是假的。",
+              "nextStage": 3
+            },
+            {
+              "text": "我看看。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "她威胁要引爆炸弹。",
+          "options": [
+            {
+              "text": "冷静，谈谈。",
+              "nextStage": 4
+            },
+            {
+              "text": "你不敢！",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "她按下了引爆器。",
+          "options": [
+            {
+              "text": "快逃！",
+              "nextStage": 5
+            },
+            {
+              "text": "保护金库！",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局：金库爆炸，一切化为灰烬。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc6",
+      "name": "机器人管家",
+      "position": [
+        7,
+        12
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "管家在巡逻。",
+          "options": [
+            {
+              "text": "有什么异常？",
+              "nextStage": 1
+            },
+            {
+              "text": "去金库看看。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "他说检测到入侵者。",
+          "options": [
+            {
+              "text": "带路！",
+              "nextStage": 2
+            },
+            {
+              "text": "启动防御。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他系统被黑了。",
+          "options": [
+            {
+              "text": "重启系统。",
+              "nextStage": 3
+            },
+            {
+              "text": "手动操作。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他恢复正常。",
+          "options": [
+            {
+              "text": "继续巡逻。",
+              "nextStage": 4
+            },
+            {
+              "text": "跟我走。",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "他指认了黑客。",
+          "options": [
+            {
+              "text": "抓起来！",
+              "nextStage": 5
+            },
+            {
+              "text": "证据不足。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局：管家被黑客控制，金库失窃。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "金库钥匙",
+      "position": [
+        1,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一把金色的钥匙。",
+          "options": [
+            {
+              "text": "捡起来",
+              "nextStage": 1
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你得到了钥匙。",
+          "options": [
+            {
+              "text": "用它开金库",
+              "nextStage": 3
+            },
+            {
+              "text": "先留着",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你走开了。",
+          "options": [
+            {
+              "text": "回来拿",
+              "nextStage": 1
+            },
+            {
+              "text": "算了",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "金库门打开了，但警报响起。",
+          "options": [
+            {
+              "text": "快进去",
+              "nextStage": 5
+            },
+            {
+              "text": "关警报",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "钥匙被偷了。",
+          "options": [
+            {
+              "text": "追！",
+              "nextStage": 5
+            },
+            {
+              "text": "放弃",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局取决于你的选择。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "监控U盘",
+      "position": [
+        2,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一个U盘。",
+          "options": [
+            {
+              "text": "插入电脑",
+              "nextStage": 1
+            },
+            {
+              "text": "扔掉",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "显示黑客的影像。",
+          "options": [
+            {
+              "text": "保存证据",
+              "nextStage": 3
+            },
+            {
+              "text": "删除",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你错过了证据。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 5
+            },
+            {
+              "text": "无所谓",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "证据被送到警察局。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": 5
+            },
+            {
+              "text": "好",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "证据被销毁。",
+          "options": [
+            {
+              "text": "糟糕",
+              "nextStage": 5
+            },
+            {
+              "text": "糟糕",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "神秘纸条",
+      "position": [
+        4,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一张纸条。",
+          "options": [
+            {
+              "text": "阅读",
+              "nextStage": 1
+            },
+            {
+              "text": "忽视",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "写着：内鬼是保安主管。",
+          "options": [
+            {
+              "text": "去对峙",
+              "nextStage": 3
+            },
+            {
+              "text": "报告",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你错过了信息。",
+          "options": [
+            {
+              "text": "回头找",
+              "nextStage": 1
+            },
+            {
+              "text": "算了",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "保安主管逃跑。",
+          "options": [
+            {
+              "text": "追",
+              "nextStage": 5
+            },
+            {
+              "text": "追",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你报告给了CTO。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": 5
+            },
+            {
+              "text": "好",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "黑客手机",
+      "position": [
+        5,
+        10
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一部手机。",
+          "options": [
+            {
+              "text": "查看",
+              "nextStage": 1
+            },
+            {
+              "text": "销毁",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "里面有转账记录。",
+          "options": [
+            {
+              "text": "报警",
+              "nextStage": 3
+            },
+            {
+              "text": "保留",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "证据没了。",
+          "options": [
+            {
+              "text": "可惜",
+              "nextStage": 5
+            },
+            {
+              "text": "可惜",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "警方介入。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": 5
+            },
+            {
+              "text": "好",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你用它威胁黑客。",
+          "options": [
+            {
+              "text": "交易",
+              "nextStage": 5
+            },
+            {
+              "text": "交易",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "炸弹遥控器",
+      "position": [
+        10,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一个遥控器。",
+          "options": [
+            {
+              "text": "按下去",
+              "nextStage": 1
+            },
+            {
+              "text": "丢掉",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "炸弹爆炸了！",
+          "options": [
+            {
+              "text": "逃",
+              "nextStage": 5
+            },
+            {
+              "text": "逃",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你避免了爆炸。",
+          "options": [
+            {
+              "text": "检查",
+              "nextStage": 3
+            },
+            {
+              "text": "检查",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "发现是假炸弹。",
+          "options": [
+            {
+              "text": "虚惊一场",
+              "nextStage": 4
+            },
+            {
+              "text": "虚惊一场",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "但金库已经被偷。",
+          "options": [
+            {
+              "text": "唉",
+              "nextStage": 5
+            },
+            {
+              "text": "唉",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "description": "你成功阻止了盗窃，抓住了所有罪犯。"
+    },
+    {
+      "id": "ending2",
+      "description": "金库被洗劫一空，你被董事会开除。"
+    },
+    {
+      "id": "ending3",
+      "description": "你与黑客达成交易，保住了位置但丢了尊严。"
+    },
+    {
+      "id": "ending4",
+      "description": "炸弹爆炸，你葬身火海。"
+    },
+    {
+      "id": "ending5",
+      "description": "内鬼得逞，你成为替罪羊。"
+    },
+    {
+      "id": "ending6",
+      "description": "你及时报警，追回了部分财物。"
+    },
+    {
+      "id": "ending7",
+      "description": "你被神秘女子劫持，金库完好但她逃走了。"
+    },
+    {
+      "id": "ending8",
+      "description": "所有线索指向你，你被自己人逮捕。"
+    }
+  ],
+  "introText": "你是火星银行总裁。距离金库失窃还有60秒。你必须找出真凶，阻止灾难。",
+  "ambientMusic": "紧张电子音乐",
+  "id": "fallback_world_078"
+}

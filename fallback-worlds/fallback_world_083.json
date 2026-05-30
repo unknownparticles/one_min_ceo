@@ -1,0 +1,891 @@
+{
+  "matchKeywords": [
+    "外星科技",
+    "博览会",
+    "CEO",
+    "60秒"
+  ],
+  "identity": "外星科技集团CEO",
+  "theme": "外星科技博览会前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "water",
+      "floor",
+      "floor",
+      "fire",
+      "fire",
+      "floor",
+      "floor",
+      "lava",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "neon_floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 6
+  },
+  "npcs": [
+    {
+      "id": "n1",
+      "name": "外星公关",
+      "x": 3,
+      "y": 2,
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "CEO！媒体团已经到齐，但有一位记者坚持要采访您关于量子宠物的事。",
+          "options": [
+            {
+              "text": "说我在准备划时代的产品",
+              "nextStage": 1
+            },
+            {
+              "text": "把她请到VIP区，我亲自应付",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "好的，我再去确认一下展示流程。注意，第7号展台有奇怪的声音。",
+          "options": [
+            {
+              "text": "我去看看",
+              "nextStage": -1
+            },
+            {
+              "text": "让它响着，增加神秘感",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "那位记者其实是我们竞争对手派来的卧底，我已经安排了安保。",
+          "options": [
+            {
+              "text": "干得好，你升职了",
+              "nextStage": -1
+            },
+            {
+              "text": "先别打草惊蛇，我要亲自会会她",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "n2",
+      "name": "首席科学家",
+      "x": 10,
+      "y": 2,
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "CEO！我们的核心展品——反重力浴缸刚刚出现故障，所有泡泡都变成了黄金。",
+          "options": [
+            {
+              "text": "那更好，说明我们的技术可以点石成金",
+              "nextStage": 1
+            },
+            {
+              "text": "立刻修复，今天是展示抛光功能",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "但黄金太重了，浴缸底座快裂了！我需要您的授权使用临时加固剂。",
+          "options": [
+            {
+              "text": "用我的私人信用额度买最好的加固材料",
+              "nextStage": -1
+            },
+            {
+              "text": "把黄金刮下来，当赠品送出去",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "修复需要10分钟，但博览会60秒后就开始。我建议我们直接展示黄金版本。",
+          "options": [
+            {
+              "text": "同意，黄金版更吸引眼球",
+              "nextStage": -1
+            },
+            {
+              "text": "不行，我们的品牌承诺是反重力，必须修复",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "n3",
+      "name": "安保主管",
+      "x": 5,
+      "y": 8,
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "CEO，我们在展馆内发现一个可疑的传送装置，可能是商业间谍的。",
+          "options": [
+            {
+              "text": "启动它，看看传送到哪",
+              "nextStage": 1
+            },
+            {
+              "text": "反传送干扰器打开，并加强巡逻",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "传送器连接到了竞争对手的保险库！我们可以盗取他们的机密。",
+          "options": [
+            {
+              "text": "干得漂亮，下载所有数据",
+              "nextStage": -1
+            },
+            {
+              "text": "别碰，会引发星际外交事件",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "干扰器已启动，但我们的系统检测到有东西正在强行传送进来。",
+          "options": [
+            {
+              "text": "准备迎战",
+              "nextStage": -1
+            },
+            {
+              "text": "打开所有屏障，把它困住",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "n4",
+      "name": "市场总监",
+      "x": 14,
+      "y": 4,
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "CEO！我们的直播信号被外星网络霸屏了，所有观众只看到我们竞争对手的广告。",
+          "options": [
+            {
+              "text": "黑回去，播放我们的宣传片",
+              "nextStage": 1
+            },
+            {
+              "text": "将计就计，用我们的产品覆盖他们的信号",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "黑了他们，但他们的系统有反制措施，我们的展台现在冒烟了。",
+          "options": [
+            {
+              "text": "启动灭火系统，继续直播",
+              "nextStage": -1
+            },
+            {
+              "text": "停止直播，改为线下体验",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "产品覆盖成功！现在所有屏幕都在播放我们的产品，但是……那是我们的过期产品。",
+          "options": [
+            {
+              "text": "没关系，观众看不出来",
+              "nextStage": -1
+            },
+            {
+              "text": "立刻切换成最新产品",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "n5",
+      "name": "外星实习生",
+      "x": 8,
+      "y": 10,
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "CEO！我不小心把展馆的引力调成了月球模式，现在所有东西都飘起来了！",
+          "options": [
+            {
+              "text": "好！这样我们的反重力产品更有说服力",
+              "nextStage": 1
+            },
+            {
+              "text": "快调回来，博览会还有30秒开始",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "但是我的咖啡也飘了，泼到了主控台上，现在展馆门都锁死了。",
+          "options": [
+            {
+              "text": "用激光切割机开门",
+              "nextStage": -1
+            },
+            {
+              "text": "让嘉宾们体验零重力入场",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "调回来了，但所有展品的位置都乱了，我们需要重新布置。",
+          "options": [
+            {
+              "text": "让大家都来帮忙",
+              "nextStage": -1
+            },
+            {
+              "text": "随便放，反正观众不懂",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "n6",
+      "name": "神秘黑衣人",
+      "x": 1,
+      "y": 7,
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "CEO，我是星际联盟调查员。我们接到举报，你的公司涉嫌非法逆向工程。",
+          "options": [
+            {
+              "text": "出示搜查令",
+              "nextStage": 1
+            },
+            {
+              "text": "我们正大光明，欢迎检查",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "这是搜查令。不过如果你让我参观一下，我可以考虑睁一只眼闭一只眼。",
+          "options": [
+            {
+              "text": "请跟我来，我亲自带你参观",
+              "nextStage": -1
+            },
+            {
+              "text": "我的律师会处理",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "很好，我注意到你的反重力技术和我们联盟的机密文件有99%相似度。",
+          "options": [
+            {
+              "text": "这是巧合，我们是独立研发",
+              "nextStage": -1
+            },
+            {
+              "text": "好吧，我们买了你们的一个废弃专利",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "name": "量子宠物蛋",
+      "x": 13,
+      "y": 7,
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一个发光的蛋，据说能孵化出量子态宠物。",
+          "options": [
+            {
+              "text": "拿走",
+              "nextStage": 1
+            },
+            {
+              "text": "检查",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "蛋里孵出了一只透明猫，它正在穿墙。",
+          "options": [
+            {
+              "text": "把它作为展品",
+              "nextStage": -1
+            },
+            {
+              "text": "藏起来，太惊世骇俗了",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "蛋上刻着：'献给最伟大的CEO'，署名是竞争对手。",
+          "options": [
+            {
+              "text": "扔掉，可能有诈",
+              "nextStage": -1
+            },
+            {
+              "text": "收下，明天回礼",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "i2",
+      "name": "全息投影遥控器",
+      "x": 3,
+      "y": 5,
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "可以控制展馆所有全息投影。",
+          "options": [
+            {
+              "text": "按下按钮",
+              "nextStage": 1
+            },
+            {
+              "text": "研究一下",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "所有投影变成了你的巨大头像，正在眨眼。",
+          "options": [
+            {
+              "text": "很好，增加个人魅力",
+              "nextStage": -1
+            },
+            {
+              "text": "太自恋了，换掉",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "遥控器背面有红色按钮，写着'紧急自毁'。",
+          "options": [
+            {
+              "text": "按下红色按钮",
+              "nextStage": -1
+            },
+            {
+              "text": "放回去，别碰",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "i3",
+      "name": "外星能量饮料",
+      "x": 8,
+      "y": 4,
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一罐发光的饮料，标签是'无限精力'。",
+          "options": [
+            {
+              "text": "喝掉",
+              "nextStage": 1
+            },
+            {
+              "text": "拿去化验",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "你感觉充满力量，但开始漂浮，你的声音变成了外星语。",
+          "options": [
+            {
+              "text": "享受飞行",
+              "nextStage": -1
+            },
+            {
+              "text": "找解药",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "化验结果显示这是高浓度咖啡因加微量反物质。",
+          "options": [
+            {
+              "text": "稀释后给员工喝",
+              "nextStage": -1
+            },
+            {
+              "text": "销毁，太危险",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "i4",
+      "name": "星际电话亭",
+      "x": 10,
+      "y": 9,
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一个老式电话亭，但内部是星际通讯设备。",
+          "options": [
+            {
+              "text": "进入电话亭",
+              "nextStage": 1
+            },
+            {
+              "text": "绕道走",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "电话响起，是未来打来的，提醒你博览会会出大乱子。",
+          "options": [
+            {
+              "text": "听从警告，改变计划",
+              "nextStage": -1
+            },
+            {
+              "text": "挂断，我不信命运",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你错过了重要电话，未来一片模糊。",
+          "options": [
+            {
+              "text": "回去接电话",
+              "nextStage": -1
+            },
+            {
+              "text": "无所谓",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "i5",
+      "name": "便携式黑洞",
+      "x": 6,
+      "y": 1,
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一个小盒子，写着'内含黑洞，请勿打开'。",
+          "options": [
+            {
+              "text": "打开盒子",
+              "nextStage": 1
+            },
+            {
+              "text": "交给安保",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "黑洞开始吸收周围物体，包括你的鞋子。",
+          "options": [
+            {
+              "text": "关闭盒子",
+              "nextStage": -1
+            },
+            {
+              "text": "让它吸，制造奇观",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "安保人员说这是竞争对手的恶作剧，里面其实是个投影仪。",
+          "options": [
+            {
+              "text": "用投影仪播放我们产品",
+              "nextStage": -1
+            },
+            {
+              "text": "以牙还牙，放到对手展区",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "i6",
+      "name": "记忆橡皮擦",
+      "x": 12,
+      "y": 6,
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一个外星装置，可以擦除特定记忆。",
+          "options": [
+            {
+              "text": "使用在自己身上",
+              "nextStage": 1
+            },
+            {
+              "text": "用在别人身上",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "你忘记了为什么站在这里，但感觉很高兴。",
+          "options": [
+            {
+              "text": "随便走走",
+              "nextStage": -1
+            },
+            {
+              "text": "努力回忆",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你擦除了竞争对手的记忆，他忘了所有研发成果。",
+          "options": [
+            {
+              "text": "太棒了，我们赢了",
+              "nextStage": -1
+            },
+            {
+              "text": "内疚，帮他恢复",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "e1",
+      "condition": "所有展品正常展示，没有意外",
+      "description": "博览会圆满成功，你成为星际年度CEO。"
+    },
+    {
+      "id": "e2",
+      "condition": "使用黑洞吸收竞争对手展台",
+      "description": "竞争对手消失，但你被星际法庭起诉。"
+    },
+    {
+      "id": "e3",
+      "condition": "喝下能量饮料并开始漂浮",
+      "description": "你飘出展馆，成为UFO热点，公司股价暴涨。"
+    },
+    {
+      "id": "e4",
+      "condition": "按下全息遥控器自毁按钮",
+      "description": "展馆爆炸，但所有人都安全撤离，你成为悲剧英雄。"
+    },
+    {
+      "id": "e5",
+      "condition": "接受星际联盟调查员的贿赂",
+      "description": "你被录下证据，公司破产，你锒铛入狱。"
+    },
+    {
+      "id": "e6",
+      "condition": "将引力模式调为月球并保持",
+      "description": "所有嘉宾体验了零重力，博览会变成蹦迪现场，大获成功。"
+    },
+    {
+      "id": "e7",
+      "condition": "打开传送门并进入",
+      "description": "你传送到竞争对手的保险库，被抓现行，身败名裂。"
+    },
+    {
+      "id": "e8",
+      "condition": "使用记忆橡皮擦擦除自己的记忆",
+      "description": "你忘记了自己是CEO，开始在展馆卖气球。"
+    },
+    {
+      "id": "e9",
+      "condition": "听未来的电话并改变计划",
+      "description": "你避免了灾难，但未来改变了，你的公司因此倒闭。"
+    },
+    {
+      "id": "e10",
+      "condition": "将所有展品随意放置",
+      "description": "观众混乱中误触展品，引发连锁反应，你被解雇。"
+    }
+  ],
+  "introText": "欢迎，CEO！你站在外星科技博览会的主展馆中央，距离大门开启只剩60秒。你的每一个决定都将决定公司的命运。记住：荒诞即力量，华丽即正义。开始你的60秒危机管理吧！",
+  "ambientMusic": "cosmic_electronic.wav",
+  "id": "fallback_world_083"
+}

@@ -1,0 +1,929 @@
+{
+  "matchKeywords": [
+    "深空",
+    "殖民",
+    "舰长",
+    "启航",
+    "60秒"
+  ],
+  "identity": "深空殖民舰舰长",
+  "theme": "深空殖民舰启航前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "window",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_chief_engineer",
+      "name": "总工程师",
+      "position": [
+        2,
+        2
+      ],
+      "dialogue": "引擎预热完毕，但有异常振动。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "引擎预热完毕，但有异常振动。",
+          "options": [
+            {
+              "text": "检查引擎数据",
+              "nextStage": 1,
+              "effect": {
+                "flag": "engine_checked",
+                "change": true
+              }
+            },
+            {
+              "text": "忽略它，继续发射",
+              "nextStage": 2,
+              "effect": {
+                "flag": "engine_ignored",
+                "change": true
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "数据显示冷却系统故障。",
+          "options": [
+            {
+              "text": "手动修复",
+              "nextStage": 3,
+              "effect": {
+                "flag": "manual_fix",
+                "change": true
+              }
+            },
+            {
+              "text": "安排机器人修理",
+              "nextStage": 4,
+              "effect": {
+                "flag": "robot_fix",
+                "change": true
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你忽略了问题，引擎在发射中爆炸！",
+          "options": [],
+          "effect": {
+            "ending": "engine_explosion"
+          }
+        },
+        {
+          "stage": 3,
+          "text": "你修复了引擎，但延误了30秒。",
+          "options": [],
+          "effect": {
+            "flag": "engine_fixed_manual",
+            "change": true,
+            "time": -30
+          }
+        },
+        {
+          "stage": 4,
+          "text": "机器人修复成功，时间正常。",
+          "options": [],
+          "effect": {
+            "flag": "engine_fixed_robot",
+            "change": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "npc_navigator",
+      "name": "领航员",
+      "position": [
+        3,
+        3
+      ],
+      "dialogue": "航线有未知引力干扰。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "航线有未知引力干扰。",
+          "options": [
+            {
+              "text": "重新计算航线",
+              "nextStage": 1,
+              "effect": {
+                "flag": "recalc",
+                "change": true
+              }
+            },
+            {
+              "text": "按原计划飞行",
+              "nextStage": 2,
+              "effect": {
+                "flag": "ignore_nav",
+                "change": true
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "新航线避开干扰，增加10秒燃料消耗。",
+          "options": [
+            {
+              "text": "接受新航线",
+              "nextStage": 3,
+              "effect": {
+                "flag": "new_course",
+                "change": true,
+                "time": -10
+              }
+            },
+            {
+              "text": "坚持原计划",
+              "nextStage": 2,
+              "effect": {
+                "flag": "ignore_nav",
+                "change": true
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "飞船进入引力漩涡，严重损坏！",
+          "options": [],
+          "effect": {
+            "ending": "gravity_trap"
+          }
+        },
+        {
+          "stage": 3,
+          "text": "新航线设定完毕。",
+          "options": [],
+          "effect": {
+            "flag": "course_set",
+            "change": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "npc_medic",
+      "name": "医疗官",
+      "position": [
+        4,
+        4
+      ],
+      "dialogue": "冷冻舱出现泄漏，部分船员急需解冻。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "冷冻舱出现泄漏，部分船员急需解冻。",
+          "options": [
+            {
+              "text": "立即解冻船员",
+              "nextStage": 1,
+              "effect": {
+                "flag": "thaw",
+                "change": true,
+                "time": -15
+              }
+            },
+            {
+              "text": "先修补泄漏",
+              "nextStage": 2,
+              "effect": {
+                "flag": "repair_leak",
+                "change": true,
+                "time": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "船员解冻成功，但消耗了额外时间。",
+          "options": [],
+          "effect": {
+            "flag": "crew_saved",
+            "change": true
+          }
+        },
+        {
+          "stage": 2,
+          "text": "修补泄漏后，冷冻系统稳定。",
+          "options": [],
+          "effect": {
+            "flag": "leak_fixed",
+            "change": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "npc_scientist",
+      "name": "首席科学家",
+      "position": [
+        5,
+        5
+      ],
+      "dialogue": "发现了外星信号，是否回应？",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "发现了外星信号，是否回应？",
+          "options": [
+            {
+              "text": "回应信号",
+              "nextStage": 1,
+              "effect": {
+                "flag": "respond",
+                "change": true
+              }
+            },
+            {
+              "text": "忽略信号",
+              "nextStage": 2,
+              "effect": {
+                "flag": "ignore_signal",
+                "change": true
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "信号回应后，外星舰队警告我们离开。",
+          "options": [
+            {
+              "text": "撤退",
+              "nextStage": 3,
+              "effect": {
+                "flag": "retreat",
+                "change": true,
+                "ending": "retreat"
+              }
+            },
+            {
+              "text": "继续前进",
+              "nextStage": 4,
+              "effect": {
+                "flag": "advance",
+                "change": true,
+                "ending": "alien_attack"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "信号被忽略，航行正常。",
+          "options": [],
+          "effect": {
+            "flag": "signal_ignored",
+            "change": true
+          }
+        },
+        {
+          "stage": 3,
+          "text": "你下令撤退，任务失败。",
+          "options": [],
+          "effect": {
+            "ending": "retreat"
+          }
+        },
+        {
+          "stage": 4,
+          "text": "外星舰队攻击，飞船被毁。",
+          "options": [],
+          "effect": {
+            "ending": "alien_attack"
+          }
+        }
+      ]
+    },
+    {
+      "id": "npc_security",
+      "name": "安保官",
+      "position": [
+        6,
+        6
+      ],
+      "dialogue": "有乘客在通道内制造骚乱。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "有乘客在通道内制造骚乱。",
+          "options": [
+            {
+              "text": "派警卫镇压",
+              "nextStage": 1,
+              "effect": {
+                "flag": "suppress",
+                "change": true
+              }
+            },
+            {
+              "text": "亲自交涉",
+              "nextStage": 2,
+              "effect": {
+                "flag": "negotiate",
+                "change": true,
+                "time": -20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "骚乱迅速平息，但造成轻微损坏。",
+          "options": [],
+          "effect": {
+            "flag": "riot_ended",
+            "change": true
+          }
+        },
+        {
+          "stage": 2,
+          "text": "交涉成功，但花费了时间。",
+          "options": [],
+          "effect": {
+            "flag": "negotiated",
+            "change": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "npc_stowaway",
+      "name": "偷渡者",
+      "position": [
+        7,
+        7
+      ],
+      "dialogue": "求求你，别赶我下去！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "求求你，别赶我下去！",
+          "options": [
+            {
+              "text": "收留他",
+              "nextStage": 1,
+              "effect": {
+                "flag": "stowaway_keep",
+                "change": true
+              }
+            },
+            {
+              "text": "赶他走",
+              "nextStage": 2,
+              "effect": {
+                "flag": "stowaway_kick",
+                "change": true
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "偷渡者成为你的忠诚船员。",
+          "options": [],
+          "effect": {
+            "flag": "stowaway_kept",
+            "change": true
+          }
+        },
+        {
+          "stage": 2,
+          "text": "偷渡者被赶出，但举报了飞船违规。",
+          "options": [],
+          "effect": {
+            "flag": "stowaway_reported",
+            "change": true,
+            "ending": "inspector"
+          }
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_antimatter",
+      "name": "反物质燃料棒",
+      "position": [
+        2,
+        3
+      ],
+      "description": "高能燃料，可加速发射。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你发现一根反物质燃料棒。",
+          "options": [
+            {
+              "text": "安装到引擎",
+              "nextStage": 1,
+              "effect": {
+                "flag": "antimatter_used",
+                "change": true,
+                "time": 10
+              }
+            },
+            {
+              "text": "保存备用",
+              "nextStage": 2,
+              "effect": {
+                "flag": "antimatter_saved",
+                "change": true
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "引擎得到强化，发射加速。",
+          "options": [],
+          "effect": {
+            "flag": "engine_boosted",
+            "change": true
+          }
+        },
+        {
+          "stage": 2,
+          "text": "燃料棒安全存放。",
+          "options": [],
+          "effect": {
+            "flag": "antimatter_saved",
+            "change": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "item_repair_kit",
+      "name": "维修套件",
+      "position": [
+        3,
+        4
+      ],
+      "description": "可修复小型故障。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你捡起维修套件。",
+          "options": [
+            {
+              "text": "随身携带",
+              "nextStage": 1,
+              "effect": {
+                "flag": "has_repair_kit",
+                "change": true
+              }
+            },
+            {
+              "text": "放在原地",
+              "nextStage": 2,
+              "effect": {
+                "flag": "repair_kit_ignored",
+                "change": true
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "维修套件已装备。",
+          "options": [],
+          "effect": {}
+        },
+        {
+          "stage": 2,
+          "text": "你忽略了维修套件。",
+          "options": [],
+          "effect": {}
+        }
+      ]
+    },
+    {
+      "id": "item_security_codes",
+      "name": "安全代码",
+      "position": [
+        4,
+        5
+      ],
+      "description": "可访问舰上所有安全系统。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你发现了安全代码。",
+          "options": [
+            {
+              "text": "使用代码锁定通道",
+              "nextStage": 1,
+              "effect": {
+                "flag": "security_locked",
+                "change": true
+              }
+            },
+            {
+              "text": "交给安保官",
+              "nextStage": 2,
+              "effect": {
+                "flag": "codes_given",
+                "change": true
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "通道已锁定，防止骚乱。",
+          "options": [],
+          "effect": {}
+        },
+        {
+          "stage": 2,
+          "text": "安保官获得了代码。",
+          "options": [],
+          "effect": {}
+        }
+      ]
+    },
+    {
+      "id": "item_alien_artifact",
+      "name": "外星神器",
+      "position": [
+        5,
+        6
+      ],
+      "description": "散发着奇特能量。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你拾起外星神器。",
+          "options": [
+            {
+              "text": "研究它",
+              "nextStage": 1,
+              "effect": {
+                "flag": "artifact_studied",
+                "change": true,
+                "time": -10
+              }
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 2,
+              "effect": {
+                "flag": "artifact_discarded",
+                "change": true
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "神器释放能量，损坏了部分系统。",
+          "options": [],
+          "effect": {
+            "flag": "artifact_damage",
+            "change": true
+          }
+        },
+        {
+          "stage": 2,
+          "text": "神器被安全处理。",
+          "options": [],
+          "effect": {}
+        }
+      ]
+    },
+    {
+      "id": "item_energy_drink",
+      "name": "能量饮料",
+      "position": [
+        6,
+        7
+      ],
+      "description": "让你保持清醒。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你找到一罐能量饮料。",
+          "options": [
+            {
+              "text": "喝掉",
+              "nextStage": 1,
+              "effect": {
+                "flag": "drank",
+                "change": true,
+                "time": 5
+              }
+            },
+            {
+              "text": "留着",
+              "nextStage": 2,
+              "effect": {
+                "flag": "kept_drink",
+                "change": true
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你精力充沛，决策更快。",
+          "options": [],
+          "effect": {}
+        },
+        {
+          "stage": 2,
+          "text": "饮料留在口袋里。",
+          "options": [],
+          "effect": {}
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "engine_explosion",
+      "text": "引擎爆炸，任务失败。",
+      "condition": {
+        "flag": "engine_ignored"
+      }
+    },
+    {
+      "id": "gravity_trap",
+      "text": "飞船被引力漩涡吞噬。",
+      "condition": {
+        "flag": "ignore_nav"
+      }
+    },
+    {
+      "id": "retreat",
+      "text": "你下令撤退，殖民计划取消。",
+      "condition": {
+        "flag": "retreat"
+      }
+    },
+    {
+      "id": "alien_attack",
+      "text": "外星舰队攻击，飞船被毁。",
+      "condition": {
+        "flag": "advance"
+      }
+    },
+    {
+      "id": "inspector",
+      "text": "偷渡者举报，飞船被扣押。",
+      "condition": {
+        "flag": "stowaway_reported"
+      }
+    },
+    {
+      "id": "success_manual",
+      "text": "手动修复引擎，成功发射但延误。",
+      "condition": {
+        "flag": "engine_fixed_manual"
+      }
+    },
+    {
+      "id": "success_robot",
+      "text": "机器人修复引擎，准时发射。",
+      "condition": {
+        "flag": "engine_fixed_robot"
+      }
+    },
+    {
+      "id": "success_course",
+      "text": "新航线设定，成功启航。",
+      "condition": {
+        "flag": "course_set"
+      }
+    }
+  ],
+  "introText": "你站在深空殖民舰的舰桥上，发射倒计时60秒。船员们紧张地报告各种问题。你必须在这60秒内做出关键决策，确保飞船成功启航。时间在流逝……",
+  "ambientMusic": "紧急警报与引擎轰鸣的混合音",
+  "id": "fallback_world_088"
+}

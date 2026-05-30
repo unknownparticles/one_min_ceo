@@ -1,0 +1,866 @@
+{
+  "matchKeywords": [
+    "太空基建大王",
+    "太空电梯",
+    "坠毁",
+    "60秒"
+  ],
+  "identity": "太空基建大王",
+  "theme": "太空电梯坠毁前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "gold_floor",
+      "throne",
+      "gold_floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "stage",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "fire",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "floor",
+      "floor",
+      "crystal",
+      "crystal",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_engineer",
+      "name": "总工程师老王",
+      "dialogStyle": "焦虑",
+      "position": [
+        1,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "dialog": "坍塌速度超出预期！我们需要手动启动紧急制动！",
+          "options": [
+            {
+              "text": "让我来操作",
+              "nextStage": 1,
+              "effect": "完成1"
+            },
+            {
+              "text": "你疯了？我们应该逃！",
+              "nextStage": 2,
+              "effect": "逃"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialog": "好，这里有红色按钮和绿色按钮…",
+          "options": [
+            {
+              "text": "按红色",
+              "nextStage": "ending_success",
+              "effect": "成功制动"
+            },
+            {
+              "text": "按绿色",
+              "nextStage": "ending_fail",
+              "effect": "加速坠落"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "逃？电梯正在下坠，逃不掉了！",
+          "options": [
+            {
+              "text": "我有个计划",
+              "nextStage": 1,
+              "effect": "回头"
+            },
+            {
+              "text": "那就一起等死吧",
+              "nextStage": "ending_death",
+              "effect": "放弃"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_manager",
+      "name": "市场总监李姐",
+      "dialogStyle": "愤怒",
+      "position": [
+        3,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "dialog": "电梯股价暴跌！都是你搞的基建！",
+          "options": [
+            {
+              "text": "我会挽救局面",
+              "nextStage": 1,
+              "effect": "安抚"
+            },
+            {
+              "text": "少废话，保命要紧",
+              "nextStage": 2,
+              "effect": "冲突"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialog": "怎么挽救？我们马上就要完蛋了！",
+          "options": [
+            {
+              "text": "看我的操作",
+              "nextStage": "ending_success",
+              "effect": "展示"
+            },
+            {
+              "text": "我不知道",
+              "nextStage": 2,
+              "effect": "诚实"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "我就知道你不靠谱！",
+          "options": [
+            {
+              "text": "闭嘴！",
+              "nextStage": "ending_conflict",
+              "effect": "争吵"
+            },
+            {
+              "text": "求你帮我",
+              "nextStage": 1,
+              "effect": "求助"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_cleaner",
+      "name": "清洁工小张",
+      "dialogStyle": "冷静",
+      "position": [
+        7,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "dialog": "我每天都打扫这里，知道一个秘密通道。",
+          "options": [
+            {
+              "text": "带路",
+              "nextStage": 1,
+              "effect": "跟随"
+            },
+            {
+              "text": "我不信",
+              "nextStage": 2,
+              "effect": "怀疑"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialog": "跟我来，但是要小心。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": "ending_escape",
+              "effect": "逃生"
+            },
+            {
+              "text": "等等，先处理控制台",
+              "nextStage": 0,
+              "effect": "回头"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "那你就等死吧。",
+          "options": [
+            {
+              "text": "对不起，我信你",
+              "nextStage": 1,
+              "effect": "道歉"
+            },
+            {
+              "text": "我自己找路",
+              "nextStage": 3,
+              "effect": "独立"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_security",
+      "name": "保安队长赵哥",
+      "dialogStyle": "严肃",
+      "position": [
+        9,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "dialog": "电梯失控，我已经封锁了所有出口。",
+          "options": [
+            {
+              "text": "打开出口",
+              "nextStage": 1,
+              "effect": "命令"
+            },
+            {
+              "text": "你疯了吗？快打开！",
+              "nextStage": 2,
+              "effect": "愤怒"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialog": "不行，这是程序规定。",
+          "options": [
+            {
+              "text": "我是CEO，我命令你",
+              "nextStage": "ending_success",
+              "effect": "服从"
+            },
+            {
+              "text": "那我们怎么办",
+              "nextStage": 2,
+              "effect": "无助"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "要么一起死，要么想办法。",
+          "options": [
+            {
+              "text": "去控制室",
+              "nextStage": 0,
+              "effect": "合作"
+            },
+            {
+              "text": "你真是个混蛋",
+              "nextStage": "ending_conflict",
+              "effect": "冲突"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_ai",
+      "name": "AI助手小E",
+      "dialogStyle": "机械",
+      "position": [
+        5,
+        9
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "dialog": "检测到灾难性故障，建议立即撤离。",
+          "options": [
+            {
+              "text": "分析故障",
+              "nextStage": 1,
+              "effect": "分析"
+            },
+            {
+              "text": "怎么撤离？",
+              "nextStage": 2,
+              "effect": "询问"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialog": "故障原因为主缆断裂，剩余时间42秒。",
+          "options": [
+            {
+              "text": "启动备用缆",
+              "nextStage": "ending_success",
+              "effect": "启动"
+            },
+            {
+              "text": "计算逃生概率",
+              "nextStage": 2,
+              "effect": "计算"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "逃生概率仅为0.3%，建议手动干预。",
+          "options": [
+            {
+              "text": "如何干预？",
+              "nextStage": 1,
+              "effect": "追问"
+            },
+            {
+              "text": "听天由命",
+              "nextStage": "ending_death",
+              "effect": "放弃"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_blueprint",
+      "name": "电梯蓝图",
+      "position": [
+        2,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一张详细的电梯结构图，标有紧急制动系统。",
+          "options": [
+            {
+              "text": "仔细研究",
+              "nextStage": 1,
+              "effect": "获得知识"
+            },
+            {
+              "text": "扔掉",
+              "nextStage": 2,
+              "effect": "忽略"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "你发现了一个隐藏的制动拉杆位置。",
+          "options": [
+            {
+              "text": "去拉杆处",
+              "nextStage": "ending_success",
+              "effect": "成功"
+            },
+            {
+              "text": "回去告诉工程师",
+              "nextStage": 0,
+              "effect": "共享"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你错过了重要信息。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 0,
+              "effect": "拾回"
+            },
+            {
+              "text": "无所谓",
+              "nextStage": "ending_death",
+              "effect": "放弃"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_toolbox",
+      "name": "工具箱",
+      "position": [
+        3,
+        9
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一个装满工具的铁箱，看起来很有用。",
+          "options": [
+            {
+              "text": "打开",
+              "nextStage": 1,
+              "effect": "获得工具"
+            },
+            {
+              "text": "踢开",
+              "nextStage": 2,
+              "effect": "破坏"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "里面有扳手和螺丝刀，可以用来维修控制台。",
+          "options": [
+            {
+              "text": "拿去维修",
+              "nextStage": "ending_success",
+              "effect": "修复"
+            },
+            {
+              "text": "作为武器",
+              "nextStage": 2,
+              "effect": "防身"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你踢到了箱子，脚很痛。",
+          "options": [
+            {
+              "text": "捡起来",
+              "nextStage": 1,
+              "effect": "拾取"
+            },
+            {
+              "text": "继续走",
+              "nextStage": 0,
+              "effect": "离开"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_keycard",
+      "name": "高级门禁卡",
+      "position": [
+        6,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一张金色的门禁卡，可以打开所有安全门。",
+          "options": [
+            {
+              "text": "捡起",
+              "nextStage": 1,
+              "effect": "获得"
+            },
+            {
+              "text": "无视",
+              "nextStage": 2,
+              "effect": "错过"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "你可以用它通过封锁区域。",
+          "options": [
+            {
+              "text": "去安全出口",
+              "nextStage": "ending_escape",
+              "effect": "逃生"
+            },
+            {
+              "text": "去控制室",
+              "nextStage": "ending_success",
+              "effect": "控制"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你错过了钥匙。",
+          "options": [
+            {
+              "text": "回头找",
+              "nextStage": 0,
+              "effect": "折返"
+            },
+            {
+              "text": "算了",
+              "nextStage": "ending_death",
+              "effect": "放弃"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_energy",
+      "name": "能量饮料",
+      "position": [
+        8,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一罐能量饮料，标签写着“超能”。",
+          "options": [
+            {
+              "text": "喝掉",
+              "nextStage": 1,
+              "effect": "获得能量"
+            },
+            {
+              "text": "扔掉",
+              "nextStage": 2,
+              "effect": "浪费"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "你感到充满力量，反应速度提升。",
+          "options": [
+            {
+              "text": "冲向控制台",
+              "nextStage": "ending_success",
+              "effect": "加速"
+            },
+            {
+              "text": "去救别人",
+              "nextStage": "ending_hero",
+              "effect": "英雄"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你失去了一个机会。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 0,
+              "effect": "捡回"
+            },
+            {
+              "text": "无所谓",
+              "nextStage": "ending_death",
+              "effect": "放弃"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_radio",
+      "name": "应急对讲机",
+      "position": [
+        10,
+        6
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一部对讲机，可以联系地面。",
+          "options": [
+            {
+              "text": "呼叫地面",
+              "nextStage": 1,
+              "effect": "求救"
+            },
+            {
+              "text": "调频",
+              "nextStage": 2,
+              "effect": "干扰"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "地面回应：会派人支援，但需要时间。",
+          "options": [
+            {
+              "text": "等待救援",
+              "nextStage": "ending_escape",
+              "effect": "获救"
+            },
+            {
+              "text": "自己动手",
+              "nextStage": "ending_success",
+              "effect": "自救"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你调到了音乐频道。",
+          "options": [
+            {
+              "text": "享受音乐",
+              "nextStage": "ending_death",
+              "effect": "安乐死"
+            },
+            {
+              "text": "换回",
+              "nextStage": 1,
+              "effect": "求救"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_success",
+      "condition": "成功制动电梯，避免坠毁",
+      "description": "你成功启动了紧急制动系统，电梯在最后一刻停稳，全员获救。你成为英雄，股价大涨。"
+    },
+    {
+      "id": "ending_fail",
+      "condition": "错误操作导致加速坠落",
+      "description": "你按错了按钮，电梯加速下坠，最后撞毁在地面。无人生还。"
+    },
+    {
+      "id": "ending_death",
+      "condition": "放弃行动，等待死亡",
+      "description": "你放弃了所有努力，电梯坠毁，你与电梯一同毁灭。"
+    },
+    {
+      "id": "ending_escape",
+      "condition": "通过秘密通道或门禁卡逃生",
+      "description": "你成功逃出电梯，但电梯坠毁造成巨大损失，你被问责。"
+    },
+    {
+      "id": "ending_conflict",
+      "condition": "与NPC发生冲突，导致混乱",
+      "description": "你的争吵浪费了宝贵时间，电梯失控坠毁，全员遇难。"
+    },
+    {
+      "id": "ending_hero",
+      "condition": "救出其他人，但自己牺牲",
+      "description": "你救了其他人，但自己没能逃出，成为烈士。"
+    },
+    {
+      "id": "ending_ai",
+      "condition": "AI助手成功控制电梯",
+      "description": "AI助手接管了控制权，成功稳定电梯，但你失去了指挥权。"
+    },
+    {
+      "id": "ending_unknown",
+      "condition": "探索隐藏区域发现外星科技",
+      "description": "你发现了一个隐藏的外星传送门，瞬间转移到了另一个星球，但地球的电梯坠毁了。"
+    }
+  ],
+  "introText": "你，太空基建大王，正站在你引以为傲的太空电梯中。突然，一阵剧烈的震动，警报响起：电梯将在60秒后坠毁！你必须在这60秒内找到办法拯救所有人，或者至少拯救你自己。时间紧迫，行动起来！",
+  "ambientMusic": "紧急警报声，夹杂着机械故障的轰鸣",
+  "id": "fallback_world_023"
+}

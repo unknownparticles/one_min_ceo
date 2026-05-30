@@ -1,0 +1,1208 @@
+{
+  "matchKeywords": [
+    "反重力",
+    "汽车",
+    "发布",
+    "60秒",
+    "CEO",
+    "工业巨头"
+  ],
+  "identity": "反重力工业巨头",
+  "theme": "反重力汽车发布前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    6,
+    8
+  ],
+  "npcs": [
+    {
+      "id": 1,
+      "name": "首席工程师",
+      "position": [
+        2,
+        4
+      ],
+      "dialogue": "反重力引擎已经预热！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "引擎已经预热，但陀螺仪有点小问题。",
+          "options": [
+            {
+              "text": "重启陀螺仪",
+              "action": "restart_gyro",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略问题",
+              "action": "ignore_gyro",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "陀螺仪重启成功，一切正常。",
+          "options": [
+            {
+              "text": "继续发布",
+              "action": "proceed_launch",
+              "nextStage": 3
+            },
+            {
+              "text": "检查其他系统",
+              "action": "check_others",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "发布准备就绪，等待您的指令。",
+          "options": [
+            {
+              "text": "发布",
+              "action": "launch",
+              "nextStage": 4
+            },
+            {
+              "text": "延迟",
+              "action": "delay",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "指令已执行。",
+          "options": [
+            {
+              "text": "确认",
+              "action": "confirm",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "市场总监",
+      "position": [
+        8,
+        3
+      ],
+      "dialogue": "媒体已经就位！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "媒体想知道反重力汽车的安全性。",
+          "options": [
+            {
+              "text": "保证安全",
+              "action": "assure_safety",
+              "nextStage": 2
+            },
+            {
+              "text": "转移话题",
+              "action": "change_subject",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "媒体满意了，但要求试驾。",
+          "options": [
+            {
+              "text": "安排试驾",
+              "action": "arrange_test",
+              "nextStage": 3
+            },
+            {
+              "text": "拒绝试驾",
+              "action": "refuse_test",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "媒体情绪稳定，发布会可以开始。",
+          "options": [
+            {
+              "text": "开始发布会",
+              "action": "start_press",
+              "nextStage": 4
+            },
+            {
+              "text": "再等一等",
+              "action": "wait",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "发布会进行中。",
+          "options": [
+            {
+              "text": "继续",
+              "action": "continue",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "保安主管",
+      "position": [
+        3,
+        9
+      ],
+      "dialogue": "有可疑人物接近。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个可疑人物在停车场徘徊。",
+          "options": [
+            {
+              "text": "派人调查",
+              "action": "investigate",
+              "nextStage": 2
+            },
+            {
+              "text": "无视",
+              "action": "ignore",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "调查发现是记者偷拍。",
+          "options": [
+            {
+              "text": "驱逐记者",
+              "action": "expel",
+              "nextStage": 3
+            },
+            {
+              "text": "没收相机",
+              "action": "confiscate",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "安全问题已解决。",
+          "options": [
+            {
+              "text": "加强安保",
+              "action": "strengthen",
+              "nextStage": 4
+            },
+            {
+              "text": "放松",
+              "action": "relax",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "安保升级完成。",
+          "options": [
+            {
+              "text": "确认",
+              "action": "confirm",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "财务顾问",
+      "position": [
+        10,
+        5
+      ],
+      "dialogue": "股价正在波动！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "股价因为反重力技术的不确定性下跌。",
+          "options": [
+            {
+              "text": "发布利好消息",
+              "action": "positive_news",
+              "nextStage": 2
+            },
+            {
+              "text": "回购股票",
+              "action": "buyback",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "市场反应积极。",
+          "options": [
+            {
+              "text": "继续发布",
+              "action": "continue_news",
+              "nextStage": 3
+            },
+            {
+              "text": "静观其变",
+              "action": "wait",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "股价稳定，但需要更多信心。",
+          "options": [
+            {
+              "text": "展示技术",
+              "action": "demo_tech",
+              "nextStage": 4
+            },
+            {
+              "text": "承诺分红",
+              "action": "promise_dividend",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "投资者信心恢复。",
+          "options": [
+            {
+              "text": "确认",
+              "action": "confirm",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "首席设计师",
+      "position": [
+        4,
+        11
+      ],
+      "dialogue": "车漆颜色还没确定！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "设计师提供了三种颜色：流光银、星空蓝、烈焰红。",
+          "options": [
+            {
+              "text": "选择流光银",
+              "action": "silver",
+              "nextStage": 2
+            },
+            {
+              "text": "选择星空蓝",
+              "action": "blue",
+              "nextStage": 2
+            },
+            {
+              "text": "选择烈焰红",
+              "action": "red",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "颜色已选定，但需要搭配内饰。",
+          "options": [
+            {
+              "text": "黑色内饰",
+              "action": "black_interior",
+              "nextStage": 3
+            },
+            {
+              "text": "白色内饰",
+              "action": "white_interior",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "内饰搭配完成，可以投入生产。",
+          "options": [
+            {
+              "text": "开始生产",
+              "action": "produce",
+              "nextStage": 4
+            },
+            {
+              "text": "重新考虑",
+              "action": "reconsider",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "生产指令已下达。",
+          "options": [
+            {
+              "text": "确认",
+              "action": "confirm",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "IT主管",
+      "position": [
+        7,
+        10
+      ],
+      "dialogue": "系统可能被黑客攻击。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "检测到异常流量，可能是黑客。",
+          "options": [
+            {
+              "text": "启动防火墙",
+              "action": "firewall",
+              "nextStage": 2
+            },
+            {
+              "text": "追踪攻击源",
+              "action": "trace",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "防火墙阻挡了大部分攻击。",
+          "options": [
+            {
+              "text": "扫描系统",
+              "action": "scan",
+              "nextStage": 3
+            },
+            {
+              "text": "忽略",
+              "action": "ignore",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "系统安全，但需要更新补丁。",
+          "options": [
+            {
+              "text": "立即更新",
+              "action": "update",
+              "nextStage": 4
+            },
+            {
+              "text": "延迟更新",
+              "action": "delay",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "更新完成，系统安全。",
+          "options": [
+            {
+              "text": "确认",
+              "action": "confirm",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "公关经理",
+      "position": [
+        1,
+        7
+      ],
+      "dialogue": "社交媒体上出现了负面评论。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "有用户在社交媒体上质疑反重力技术。",
+          "options": [
+            {
+              "text": "发表公开声明",
+              "action": "statement",
+              "nextStage": 2
+            },
+            {
+              "text": "无视",
+              "action": "ignore",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "声明发布后，舆论好转。",
+          "options": [
+            {
+              "text": "继续监控",
+              "action": "monitor",
+              "nextStage": 3
+            },
+            {
+              "text": "庆祝",
+              "action": "celebrate",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "舆论基本可控。",
+          "options": [
+            {
+              "text": "加强宣传",
+              "action": "promote",
+              "nextStage": 4
+            },
+            {
+              "text": "保持低调",
+              "action": "low_profile",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "公关危机解除。",
+          "options": [
+            {
+              "text": "确认",
+              "action": "confirm",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "反重力引擎蓝图",
+      "position": [
+        5,
+        6
+      ],
+      "description": "记录了核心技术的蓝图。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你拿到了蓝图，可以改进引擎。",
+          "options": [
+            {
+              "text": "修改引擎",
+              "action": "modify_engine",
+              "nextStage": 2
+            },
+            {
+              "text": "保存蓝图",
+              "action": "save",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "引擎性能提升10%。",
+          "options": [
+            {
+              "text": "安装新引擎",
+              "action": "install",
+              "nextStage": 3
+            },
+            {
+              "text": "继续研究",
+              "action": "research",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "引擎准备就绪。",
+          "options": [
+            {
+              "text": "使用",
+              "action": "use",
+              "nextStage": 4
+            },
+            {
+              "text": "放弃",
+              "action": "discard",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "引擎已应用。",
+          "options": [
+            {
+              "text": "确认",
+              "action": "confirm",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "VIP邀请函",
+      "position": [
+        9,
+        4
+      ],
+      "description": "可以邀请重要人物参加发布会。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "邀请函可以邀请一位VIP。",
+          "options": [
+            {
+              "text": "邀请马斯克",
+              "action": "invite_musk",
+              "nextStage": 2
+            },
+            {
+              "text": "邀请贝索斯",
+              "action": "invite_bezos",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "VIP接受了邀请。",
+          "options": [
+            {
+              "text": "安排座位",
+              "action": "seat",
+              "nextStage": 3
+            },
+            {
+              "text": "提供礼品",
+              "action": "gift",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "VIP满意，可能会投资。",
+          "options": [
+            {
+              "text": "寻求投资",
+              "action": "seek_investment",
+              "nextStage": 4
+            },
+            {
+              "text": "保持联系",
+              "action": "keep_contact",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "获得了潜在投资机会。",
+          "options": [
+            {
+              "text": "确认",
+              "action": "confirm",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "咖啡杯",
+      "position": [
+        2,
+        8
+      ],
+      "description": "一杯提神咖啡，但可能溅到西装上。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "咖啡很烫，但你需要提神。",
+          "options": [
+            {
+              "text": "喝掉",
+              "action": "drink",
+              "nextStage": 2
+            },
+            {
+              "text": "放下",
+              "action": "put_down",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你精神焕发，但咖啡溅到了文件上。",
+          "options": [
+            {
+              "text": "擦干文件",
+              "action": "wipe",
+              "nextStage": 3
+            },
+            {
+              "text": "重新打印",
+              "action": "reprint",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "文件处理完毕。",
+          "options": [
+            {
+              "text": "继续",
+              "action": "continue",
+              "nextStage": 4
+            },
+            {
+              "text": "休息",
+              "action": "rest",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "状态良好。",
+          "options": [
+            {
+              "text": "确认",
+              "action": "confirm",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "遥控钥匙",
+      "position": [
+        8,
+        8
+      ],
+      "description": "可以启动反重力汽车。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "钥匙可以启动汽车，但需要授权。",
+          "options": [
+            {
+              "text": "启动汽车",
+              "action": "start_car",
+              "nextStage": 2
+            },
+            {
+              "text": "检查钥匙",
+              "action": "check_key",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "汽车发动，但系统提示更新。",
+          "options": [
+            {
+              "text": "更新系统",
+              "action": "update",
+              "nextStage": 3
+            },
+            {
+              "text": "忽略",
+              "action": "ignore",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "汽车准备就绪。",
+          "options": [
+            {
+              "text": "试驾",
+              "action": "test_drive",
+              "nextStage": 4
+            },
+            {
+              "text": "展示",
+              "action": "show",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "汽车完美运行。",
+          "options": [
+            {
+              "text": "确认",
+              "action": "confirm",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "演讲稿",
+      "position": [
+        4,
+        2
+      ],
+      "description": "发布会的演讲稿，但内容可能过时。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "演讲稿需要修改以反映最新技术。",
+          "options": [
+            {
+              "text": "修改内容",
+              "action": "edit",
+              "nextStage": 2
+            },
+            {
+              "text": "原稿照读",
+              "action": "read_original",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "修改后的演讲稿更全面。",
+          "options": [
+            {
+              "text": "背诵",
+              "action": "memorize",
+              "nextStage": 3
+            },
+            {
+              "text": "打印",
+              "action": "print",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "演讲稿准备完毕。",
+          "options": [
+            {
+              "text": "使用",
+              "action": "use",
+              "nextStage": 4
+            },
+            {
+              "text": "再改",
+              "action": "re_edit",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "演讲稿就绪。",
+          "options": [
+            {
+              "text": "确认",
+              "action": "confirm",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "香槟",
+      "position": [
+        9,
+        2
+      ],
+      "description": "庆祝用香槟，但容易洒出。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你拿到了香槟，可以庆祝。",
+          "options": [
+            {
+              "text": "打开",
+              "action": "open",
+              "nextStage": 2
+            },
+            {
+              "text": "存放",
+              "action": "store",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "香槟喷出，弄湿了地毯。",
+          "options": [
+            {
+              "text": "清理",
+              "action": "clean",
+              "nextStage": 3
+            },
+            {
+              "text": "不管",
+              "action": "ignore",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "地毯湿了，但气氛很好。",
+          "options": [
+            {
+              "text": "继续庆祝",
+              "action": "celebrate",
+              "nextStage": 4
+            },
+            {
+              "text": "换地毯",
+              "action": "replace",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "庆祝活动继续。",
+          "options": [
+            {
+              "text": "确认",
+              "action": "confirm",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": 1,
+      "condition": "timeout",
+      "text": "时间到了，发布会失败。公司股价暴跌。"
+    },
+    {
+      "id": 2,
+      "condition": "launch_success",
+      "text": "反重力汽车成功发布，成为全球头条。"
+    },
+    {
+      "id": 3,
+      "condition": "security_breach",
+      "text": "黑客入侵导致系统瘫痪，发布会取消。"
+    },
+    {
+      "id": 4,
+      "condition": "financial_crisis",
+      "text": "资金链断裂，公司破产。"
+    },
+    {
+      "id": 5,
+      "condition": "media_scandal",
+      "text": "负面新闻曝光，你被迫辞职。"
+    },
+    {
+      "id": 6,
+      "condition": "technical_failure",
+      "text": "反重力引擎故障，汽车坠毁。"
+    },
+    {
+      "id": 7,
+      "condition": "vip_deal",
+      "text": "获得VIP投资，公司市值翻倍。"
+    },
+    {
+      "id": 8,
+      "condition": "perfect_launch",
+      "text": "完美发布，你成为商业传奇。"
+    },
+    {
+      "id": 9,
+      "condition": "sabotage",
+      "text": "竞争对手破坏，发布会变成灾难。"
+    },
+    {
+      "id": 10,
+      "condition": "employee_revolt",
+      "text": "员工不满待遇，集体罢工。"
+    }
+  ],
+  "introText": "你是一家反重力汽车公司的CEO。距离发布会还有60秒。你必须处理各种突发事件，确保发布会成功。你的每一个决定都将影响结果。请开始你的表演！",
+  "ambientMusic": "紧张而激昂的交响乐，背景有机械运转声和人群嘈杂声",
+  "id": "fallback_world_045"
+}

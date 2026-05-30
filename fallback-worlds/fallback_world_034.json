@@ -1,0 +1,807 @@
+{
+  "matchKeywords": [
+    "银河能源",
+    "垄断",
+    "CEO",
+    "危机",
+    "60秒"
+  ],
+  "identity": "银河能源联盟长",
+  "theme": "银河能源垄断案曝光前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "carpet",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    7
+  ],
+  "npcs": [
+    {
+      "id": "npc_whistleblower",
+      "name": "告密者",
+      "dialogColor": "#FF4500",
+      "position": [
+        2,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "联盟长！机密文件显示您操控能源价格，证据已交给记者！",
+          "options": [
+            {
+              "text": "收买他",
+              "action": "bribe"
+            },
+            {
+              "text": "威胁他",
+              "action": "threaten"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "别以为能收买我！我背后有星际反腐组织！",
+          "options": [
+            {
+              "text": "假装合作",
+              "action": "pretend"
+            },
+            {
+              "text": "消灭证据",
+              "action": "erase"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "时间不多了，记者已经出发了！",
+          "options": [
+            {
+              "text": "启动紧急预案",
+              "action": "emergency"
+            },
+            {
+              "text": "亲自拦截记者",
+              "action": "intercept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_ceo",
+      "name": "能源CEO",
+      "dialogColor": "#FFD700",
+      "position": [
+        4,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "联盟长！股价暴跌，董事会要求您立刻辞职！",
+          "options": [
+            {
+              "text": "承诺改革",
+              "action": "promise"
+            },
+            {
+              "text": "强行镇压",
+              "action": "suppress"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "改革？您已经骗了我们三次了！",
+          "options": [
+            {
+              "text": "透露假消息",
+              "action": "mislead"
+            },
+            {
+              "text": "转移资产",
+              "action": "transfer"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "记者已到大厅，您还有30秒！",
+          "options": [
+            {
+              "text": "从后门逃走",
+              "action": "escape"
+            },
+            {
+              "text": "公开道歉",
+              "action": "apologize"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_journalist",
+      "name": "调查记者",
+      "dialogColor": "#00BFFF",
+      "position": [
+        8,
+        10
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "联盟长，我拿到了所有证据，准备直播！",
+          "options": [
+            {
+              "text": "祈求宽限",
+              "action": "beg"
+            },
+            {
+              "text": "断电阻止",
+              "action": "poweroff"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "断电没用，我有备用电源！",
+          "options": [
+            {
+              "text": "提供独家内幕",
+              "action": "leak"
+            },
+            {
+              "text": "贿赂记者",
+              "action": "bribe2"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "内幕？你只会骗人！直播开始！",
+          "options": [
+            {
+              "text": "强行关闭直播",
+              "action": "force"
+            },
+            {
+              "text": "自首",
+              "action": "surrender"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_guard",
+      "name": "安保队长",
+      "dialogColor": "#808080",
+      "position": [
+        9,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "联盟长，有可疑人物潜入，是否封锁大楼？",
+          "options": [
+            {
+              "text": "封锁所有出口",
+              "action": "lockdown"
+            },
+            {
+              "text": "放他们进来",
+              "action": "letin"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "封锁令已生效，但记者已经混进来了。",
+          "options": [
+            {
+              "text": "搜索记者",
+              "action": "search"
+            },
+            {
+              "text": "销毁服务器",
+              "action": "destroy"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "服务器已被突袭，证据泄露！",
+          "options": [
+            {
+              "text": "嫁祸他人",
+              "action": "frame"
+            },
+            {
+              "text": "逃跑",
+              "action": "flee"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_lawyer",
+      "name": "公司律师",
+      "dialogColor": "#8A2BE2",
+      "position": [
+        6,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "联盟长，法律上我们占优，但舆论不利。",
+          "options": [
+            {
+              "text": "发律师函威胁",
+              "action": "legal"
+            },
+            {
+              "text": "雇佣水军",
+              "action": "astroturf"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "律师函无效，水军被识破了。",
+          "options": [
+            {
+              "text": "找替罪羊",
+              "action": "scapegoat"
+            },
+            {
+              "text": "申请破产保护",
+              "action": "bankruptcy"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "替罪羊已被记者锁定！",
+          "options": [
+            {
+              "text": "出国避难",
+              "action": "exile"
+            },
+            {
+              "text": "认罪协商",
+              "action": "plea"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "documents",
+      "name": "机密文件",
+      "position": [
+        3,
+        11
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "内部审计报告，记载了价格操纵细节。",
+          "options": [
+            {
+              "text": "烧毁",
+              "action": "burn"
+            },
+            {
+              "text": "藏起来",
+              "action": "hide"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "烧毁会触发烟雾报警，藏起来可能被找到。",
+          "options": [
+            {
+              "text": "放入碎纸机",
+              "action": "shred"
+            },
+            {
+              "text": "吞下肚子",
+              "action": "swallow"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "碎纸机坏了，吞下肚子不消化。",
+          "options": [
+            {
+              "text": "用酸溶解",
+              "action": "acid"
+            },
+            {
+              "text": "埋入盆栽",
+              "action": "plant"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flashdrive",
+      "name": "加密U盘",
+      "position": [
+        5,
+        9
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "U盘里有往来账目，需要密码。",
+          "options": [
+            {
+              "text": "暴力破解",
+              "action": "brute"
+            },
+            {
+              "text": "找黑客",
+              "action": "hacker"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "暴力破解需要时间，黑客要价太高。",
+          "options": [
+            {
+              "text": "格式化U盘",
+              "action": "format"
+            },
+            {
+              "text": "交给IT部门",
+              "action": "it"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "格式化后数据恢复，IT部门不可靠。",
+          "options": [
+            {
+              "text": "物理销毁",
+              "action": "destroy"
+            },
+            {
+              "text": "沉入水底",
+              "action": "drown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phone",
+      "name": "联盟长手机",
+      "position": [
+        1,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "手机里有通话记录和短信。",
+          "options": [
+            {
+              "text": "删除记录",
+              "action": "delete"
+            },
+            {
+              "text": "关机",
+              "action": "off"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "删除记录有备份，关机依然能定位。",
+          "options": [
+            {
+              "text": "扔进熔炉",
+              "action": "furnace"
+            },
+            {
+              "text": "砸碎SIM卡",
+              "action": "smash"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "熔炉太显眼，砸碎SIM卡但手机还在。",
+          "options": [
+            {
+              "text": "埋入水泥",
+              "action": "cement"
+            },
+            {
+              "text": "寄往太空",
+              "action": "space"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "keycard",
+      "name": "高级门禁卡",
+      "position": [
+        10,
+        6
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "可以打开所有机密房间。",
+          "options": [
+            {
+              "text": "自己使用",
+              "action": "use"
+            },
+            {
+              "text": "交给同伙",
+              "action": "give"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "使用会留下记录，同伙不可靠。",
+          "options": [
+            {
+              "text": "复制一张",
+              "action": "copy"
+            },
+            {
+              "text": "注销权限",
+              "action": "revoke"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "复制卡被识破，注销权限需要IT。",
+          "options": [
+            {
+              "text": "藏在通风口",
+              "action": "vent"
+            },
+            {
+              "text": "丢入下水道",
+              "action": "sewer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "whiskey",
+      "name": "威士忌",
+      "position": [
+        7,
+        1
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一杯烈酒，或许能壮胆。",
+          "options": [
+            {
+              "text": "喝掉",
+              "action": "drink"
+            },
+            {
+              "text": "倒掉",
+              "action": "dump"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "喝掉后神志不清，倒掉浪费。",
+          "options": [
+            {
+              "text": "加入安眠药",
+              "action": "drug"
+            },
+            {
+              "text": "用作武器",
+              "action": "weapon"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "安眠药被发现，武器不实用。",
+          "options": [
+            {
+              "text": "洒在证据上",
+              "action": "soak"
+            },
+            {
+              "text": "敬酒给记者",
+              "action": "toast"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end_arrested",
+      "condition": "player_action == 'surrender'",
+      "text": "你选择自首，被星际警察带走，银河能源垄断案告破。"
+    },
+    {
+      "id": "end_escaped",
+      "condition": "player_action == 'escape' || player_action == 'exile'",
+      "text": "你成功逃脱，但成为星际通缉犯，一生逃亡。"
+    },
+    {
+      "id": "end_coverage",
+      "condition": "player_action == 'intercept'",
+      "text": "你亲自拦截记者，却被现场直播，丑闻曝光。"
+    },
+    {
+      "id": "end_emergency",
+      "condition": "player_action == 'emergency'",
+      "text": "你启动紧急预案，但系统被黑客入侵，一切失控。"
+    },
+    {
+      "id": "end_locked",
+      "condition": "player_action == 'lockdown'",
+      "text": "你封锁大楼，但记者已经将证据上传云端。"
+    },
+    {
+      "id": "end_bankruptcy",
+      "condition": "player_action == 'bankruptcy'",
+      "text": "你申请破产保护，但审计发现更大问题，面临终身监禁。"
+    },
+    {
+      "id": "end_frame",
+      "condition": "player_action == 'frame'",
+      "text": "你嫁祸他人，但被识破，身败名裂。"
+    },
+    {
+      "id": "end_plea",
+      "condition": "player_action == 'plea'",
+      "text": "你认罪协商，提供关键证据，获得减刑但失去一切。"
+    }
+  ],
+  "introText": "你，银河能源联盟长，手握宇宙能源命脉。但今天，垄断案证据即将曝光，记者已到门口。倒计时60秒，你将如何抉择？",
+  "ambientMusic": "tense_electronic_loop",
+  "id": "fallback_world_034"
+}

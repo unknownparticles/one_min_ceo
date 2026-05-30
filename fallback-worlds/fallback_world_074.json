@@ -1,0 +1,702 @@
+{
+  "matchKeywords": [
+    "机械",
+    "皇帝",
+    "加冕",
+    "60秒",
+    "帝国"
+  ],
+  "identity": "机械帝国皇帝",
+  "theme": "机械皇帝加冕前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "server",
+      "floor",
+      "crystal",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "server",
+      "floor",
+      "crystal",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "server",
+      "floor",
+      "crystal",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "server",
+      "floor",
+      "crystal",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "server",
+      "floor",
+      "crystal",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    6,
+    8
+  ],
+  "npcs": [
+    {
+      "id": "advisor",
+      "name": "机械顾问",
+      "position": [
+        3,
+        4
+      ],
+      "dialogue": "皇帝，加冕仪式需警惕叛变。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我检测到帝国核心有异常信号。",
+          "options": [
+            "调查核心",
+            "忽略它"
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "叛军可能已经潜入。",
+          "options": [
+            "加强安保",
+            "亲自巡视"
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "还有30秒，请决定加冕口令。",
+          "options": [
+            "'钢铁意志'",
+            "'永恒统治'"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "name": "铁血将军",
+      "position": [
+        8,
+        3
+      ],
+      "dialogue": "陛下，军队已列阵等候。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "加冕台已准备就绪。",
+          "options": [
+            "检查台子",
+            "直接上台"
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "有士兵报告发现可疑包裹。",
+          "options": [
+            "疏散人群",
+            "派机器人拆除"
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "我愿以性命担保您的安全。",
+          "options": [
+            "接受誓言",
+            "质疑忠诚"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "technician",
+      "name": "首席技师",
+      "position": [
+        5,
+        6
+      ],
+      "dialogue": "皇冠的能量核心需要校准。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "皇冠的芯片有一处错误。",
+          "options": [
+            "手动修复",
+            "自动修复"
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "修复可能需要10秒。",
+          "options": [
+            "等待修复",
+            "使用备用皇冠"
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "备用皇冠功率不足。",
+          "options": [
+            "冒险使用",
+            "坚持修复"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spy",
+      "name": "伪装者",
+      "position": [
+        7,
+        9
+      ],
+      "dialogue": "陛下，小心身边的叛徒。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我掌握叛军名单。",
+          "options": [
+            "索要名单",
+            "怀疑他是间谍"
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "名单藏在王座下。",
+          "options": [
+            "去取名单",
+            "命令机器人去取"
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "来不及了，他们就要动手！",
+          "options": [
+            "相信他",
+            "逮捕他"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rebel",
+      "name": "叛军首领",
+      "position": [
+        9,
+        12
+      ],
+      "dialogue": "你的统治结束了！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我在此恭候多时。",
+          "options": [
+            "召唤卫兵",
+            "亲自应战"
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "我的炸弹已遍布宫殿。",
+          "options": [
+            "启动反爆系统",
+            "谈判"
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "还有10秒，同归于尽吧！",
+          "options": [
+            "按下紧急停机",
+            "逃离现场"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "priest",
+      "name": "机械祭司",
+      "position": [
+        4,
+        7
+      ],
+      "dialogue": "愿机械之神保佑您。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "加冕仪式需要神圣代码。",
+          "options": [
+            "输入代码",
+            "拒绝迷信"
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "代码错误会导致系统崩溃。",
+          "options": [
+            "小心输入",
+            "让祭司代劳"
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "神灵赐福，帝国永存。",
+          "options": [
+            "接受赐福",
+            "嗤之以鼻"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guard",
+      "name": "皇家守卫",
+      "position": [
+        2,
+        2
+      ],
+      "dialogue": "陛下，外围安全。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "发现可疑信号。",
+          "options": [
+            "加强警戒",
+            "无视"
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "信号来自内部。",
+          "options": [
+            "排查内部",
+            "封锁出口"
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "已锁定叛徒位置。",
+          "options": [
+            "立即抓捕",
+            "放长线"
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "crown",
+      "name": "机械皇冠",
+      "position": [
+        6,
+        8
+      ],
+      "usage": "戴上它完成加冕",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "皇冠闪烁着诡异的光。",
+          "options": [
+            "检查皇冠",
+            "直接戴"
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "发现皇冠内藏有微型炸弹。",
+          "options": [
+            "拆除炸弹",
+            "戴上有炸弹的皇冠"
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "炸弹已拆除，但时间流逝。",
+          "options": [
+            "赶紧戴上",
+            "先做其他事"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sword",
+      "name": "权杖剑",
+      "position": [
+        3,
+        9
+      ],
+      "usage": "象征权力的武器",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "剑刃上刻着古老文字。",
+          "options": [
+            "解读文字",
+            "擦拭剑刃"
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "文字预言了今日的危机。",
+          "options": [
+            "重视预言",
+            "嗤笑"
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "预言显示叛徒是顾问。",
+          "options": [
+            "质问顾问",
+            "秘密切磋"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "map",
+      "name": "宫殿蓝图",
+      "position": [
+        5,
+        11
+      ],
+      "usage": "显示隐藏通道",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "蓝图标注了密道。",
+          "options": [
+            "记住密道",
+            "销毁蓝图"
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "密道通向叛军基地。",
+          "options": [
+            "偷袭基地",
+            "派兵围剿"
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "基地空无一人。",
+          "options": [
+            "搜查基地",
+            "设置陷阱"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bomb",
+      "name": "定时炸弹",
+      "position": [
+        7,
+        4
+      ],
+      "usage": "拆除或引爆",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "炸弹倒计时30秒。",
+          "options": [
+            "尝试拆除",
+            "扔出窗外"
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "拆弹需要密码。",
+          "options": [
+            "猜密码",
+            "找拆弹专家"
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "密码是'皇帝万岁'。",
+          "options": [
+            "输入密码",
+            "放弃拆除"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scroll",
+      "name": "密旨",
+      "position": [
+        8,
+        6
+      ],
+      "usage": "揭示真相",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "密旨是前任皇帝所留。",
+          "options": [
+            "打开密旨",
+            "封存"
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "密旨指出帝国最大威胁。",
+          "options": [
+            "公开威胁",
+            "暗中处理"
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "威胁正是您自己。",
+          "options": [
+            "自省",
+            "撕毁密旨"
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "crowned",
+      "condition": "成功戴上皇冠并完成加冕",
+      "description": "你成为机械帝国的合法皇帝，但危机四伏。"
+    },
+    {
+      "id": "betrayed",
+      "condition": "被顾问背叛",
+      "description": "顾问发动政变，你被囚禁。"
+    },
+    {
+      "id": "exploded",
+      "condition": "炸弹爆炸",
+      "description": "宫殿被炸毁，帝国陷入混乱。"
+    },
+    {
+      "id": "rebel_win",
+      "condition": "叛军成功刺杀",
+      "description": "你被叛军杀死，帝国覆灭。"
+    },
+    {
+      "id": "escape",
+      "condition": "逃离宫殿",
+      "description": "你放弃皇位，流亡他乡。"
+    },
+    {
+      "id": "priest_fail",
+      "condition": "神圣代码输入错误",
+      "description": "系统崩溃，帝国数据丢失。"
+    },
+    {
+      "id": "general_mutiny",
+      "condition": "将军叛变",
+      "description": "军队倒戈，你被俘。"
+    },
+    {
+      "id": "time_up",
+      "condition": "60秒结束未加冕",
+      "description": "加冕失败，帝国无主。"
+    }
+  ],
+  "introText": "你是机械帝国的皇帝，加冕仪式还有60秒开始。然而，叛军、炸弹、阴谋……你的帝国摇摇欲坠。每一步决策都将决定命运。",
+  "ambientMusic": "epic_industrial_beat",
+  "id": "fallback_world_074"
+}

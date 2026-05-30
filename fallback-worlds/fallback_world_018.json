@@ -1,0 +1,1465 @@
+{
+  "matchKeywords": [
+    "机械神教",
+    "教宗",
+    "收购",
+    "60秒"
+  ],
+  "identity": "机械神教教宗",
+  "theme": "机械神教收购集团前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    5,
+    7
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "智械秘书",
+      "position": [
+        2,
+        3
+      ],
+      "dialogue": "教宗大人，还有60秒，收购协议就要生效了！",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "秘书紧张地报告进度。",
+          "options": [
+            {
+              "text": "检查协议条款",
+              "nextStage": 1,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "安抚秘书情绪",
+              "nextStage": 2,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "你仔细检查条款，发现一个隐藏的漏洞。",
+          "options": [
+            {
+              "text": "利用漏洞",
+              "nextStage": 3,
+              "effect": {
+                "addition": 20
+              }
+            },
+            {
+              "text": "忽略它",
+              "nextStage": 4,
+              "effect": {
+                "addition": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "秘书冷静下来，开始高效工作。",
+          "options": [
+            {
+              "text": "让她准备最新数据",
+              "nextStage": 3,
+              "effect": {
+                "addition": 15
+              }
+            },
+            {
+              "text": "亲自查阅报告",
+              "nextStage": 4,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "你已经占得先机。",
+          "options": [
+            {
+              "text": "继续推进",
+              "nextStage": 5,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "等待时机",
+              "nextStage": 5,
+              "effect": {
+                "addition": 0
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "description": "你错失了一些机会。",
+          "options": [
+            {
+              "text": "努力挽回",
+              "nextStage": 5,
+              "effect": {
+                "addition": -5
+              }
+            },
+            {
+              "text": "放弃",
+              "nextStage": 5,
+              "effect": {
+                "addition": -20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "description": "终局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "财务主管",
+      "position": [
+        3,
+        10
+      ],
+      "dialogue": "资金链即将断裂，需要紧急注资！",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "主管面色凝重。",
+          "options": [
+            {
+              "text": "批准贷款",
+              "nextStage": 1,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "削减开支",
+              "nextStage": 2,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "贷款虽然解决燃眉之急但利息高。",
+          "options": [
+            {
+              "text": "接受高利率",
+              "nextStage": 3,
+              "effect": {
+                "addition": 5
+              }
+            },
+            {
+              "text": "寻找其他投资",
+              "nextStage": 4,
+              "effect": {
+                "addition": 15
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "削减开支导致部分项目停滞。",
+          "options": [
+            {
+              "text": "安抚项目团队",
+              "nextStage": 3,
+              "effect": {
+                "addition": 5
+              }
+            },
+            {
+              "text": "强制推进",
+              "nextStage": 4,
+              "effect": {
+                "addition": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "财务暂时稳定。",
+          "options": [
+            {
+              "text": "开始收购谈判",
+              "nextStage": 5,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "继续观望",
+              "nextStage": 5,
+              "effect": {
+                "addition": 0
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "description": "找到了一个金主。",
+          "options": [
+            {
+              "text": "接受投资",
+              "nextStage": 5,
+              "effect": {
+                "addition": 20
+              }
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 5,
+              "effect": {
+                "addition": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "description": "终局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "市场总监",
+      "position": [
+        8,
+        5
+      ],
+      "dialogue": "我们的股票正在被恶意收购！",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "总监慌张地汇报。",
+          "options": [
+            {
+              "text": "启动反收购措施",
+              "nextStage": 1,
+              "effect": {
+                "addition": 15
+              }
+            },
+            {
+              "text": "坐视不理",
+              "nextStage": 2,
+              "effect": {
+                "addition": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "反收购措施生效，股价回升。",
+          "options": [
+            {
+              "text": "趁机抛售",
+              "nextStage": 3,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "增持股份",
+              "nextStage": 4,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "股价暴跌。",
+          "options": [
+            {
+              "text": "紧急救市",
+              "nextStage": 3,
+              "effect": {
+                "addition": -5
+              }
+            },
+            {
+              "text": "宣布破产",
+              "nextStage": 4,
+              "effect": {
+                "addition": -20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "市场暂时平稳。",
+          "options": [
+            {
+              "text": "继续收购",
+              "nextStage": 5,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "转向其他领域",
+              "nextStage": 5,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "description": "你得到了更多控制权。",
+          "options": [
+            {
+              "text": "整合资源",
+              "nextStage": 5,
+              "effect": {
+                "addition": 15
+              }
+            },
+            {
+              "text": "维持现状",
+              "nextStage": 5,
+              "effect": {
+                "addition": 0
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "description": "终局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "技术顾问",
+      "position": [
+        9,
+        12
+      ],
+      "dialogue": "敌人正在利用AI攻击我们的服务器！",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "顾问紧张地敲击键盘。",
+          "options": [
+            {
+              "text": "启动防火墙",
+              "nextStage": 1,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "关闭所有端口",
+              "nextStage": 2,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "防火墙暂时抵挡了攻击。",
+          "options": [
+            {
+              "text": "追踪攻击源",
+              "nextStage": 3,
+              "effect": {
+                "addition": 15
+              }
+            },
+            {
+              "text": "加强防御",
+              "nextStage": 4,
+              "effect": {
+                "addition": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "端口关闭导致内部通信中断。",
+          "options": [
+            {
+              "text": "恢复部分端口",
+              "nextStage": 3,
+              "effect": {
+                "addition": 5
+              }
+            },
+            {
+              "text": "保持关闭",
+              "nextStage": 4,
+              "effect": {
+                "addition": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "系统安全得到保障。",
+          "options": [
+            {
+              "text": "发动反攻",
+              "nextStage": 5,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "保持防御姿态",
+              "nextStage": 5,
+              "effect": {
+                "addition": 0
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "description": "网络更加安全。",
+          "options": [
+            {
+              "text": "部署AI助手",
+              "nextStage": 5,
+              "effect": {
+                "addition": 15
+              }
+            },
+            {
+              "text": "人工监控",
+              "nextStage": 5,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "description": "终局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "董事会代表",
+      "position": [
+        1,
+        14
+      ],
+      "dialogue": "教宗，董事会要求立即召开紧急会议！",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "代表语气强硬。",
+          "options": [
+            {
+              "text": "同意开会",
+              "nextStage": 1,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "拖延时间",
+              "nextStage": 2,
+              "effect": {
+                "addition": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "会议中，董事会支持你的收购计划。",
+          "options": [
+            {
+              "text": "加快收购进程",
+              "nextStage": 3,
+              "effect": {
+                "addition": 15
+              }
+            },
+            {
+              "text": "详细阐述计划",
+              "nextStage": 4,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "董事会对你产生怀疑。",
+          "options": [
+            {
+              "text": "诚恳解释",
+              "nextStage": 3,
+              "effect": {
+                "addition": 5
+              }
+            },
+            {
+              "text": "强硬压制",
+              "nextStage": 4,
+              "effect": {
+                "addition": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "董事会全力支持。",
+          "options": [
+            {
+              "text": "立即签约",
+              "nextStage": 5,
+              "effect": {
+                "addition": 20
+              }
+            },
+            {
+              "text": "再考虑一下",
+              "nextStage": 5,
+              "effect": {
+                "addition": 0
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "description": "董事会勉强同意。",
+          "options": [
+            {
+              "text": "执行计划",
+              "nextStage": 5,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "修改计划",
+              "nextStage": 5,
+              "effect": {
+                "addition": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "description": "终局。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "机密文件",
+      "position": [
+        4,
+        6
+      ],
+      "description": "一份关于收购目标的机密报告。",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "你发现了机密文件。",
+          "options": [
+            {
+              "text": "仔细阅读",
+              "nextStage": 1,
+              "effect": {
+                "addition": 15
+              }
+            },
+            {
+              "text": "交给秘书",
+              "nextStage": 2,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "你掌握了关键信息。",
+          "options": [
+            {
+              "text": "利用信息进行谈判",
+              "nextStage": 3,
+              "effect": {
+                "addition": 20
+              }
+            },
+            {
+              "text": "销毁文件",
+              "nextStage": 4,
+              "effect": {
+                "addition": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "秘书将信息录入系统。",
+          "options": [
+            {
+              "text": "要求加密",
+              "nextStage": 3,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "公开信息",
+              "nextStage": 4,
+              "effect": {
+                "addition": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "信息已安全。",
+          "options": [
+            {
+              "text": "用于收购",
+              "nextStage": 5,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "保存备用",
+              "nextStage": 5,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "description": "信息丢失。",
+          "options": [
+            {
+              "text": "尝试回忆",
+              "nextStage": 5,
+              "effect": {
+                "addition": -5
+              }
+            },
+            {
+              "text": "放弃",
+              "nextStage": 5,
+              "effect": {
+                "addition": -15
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "description": "终局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "能量核心",
+      "position": [
+        7,
+        4
+      ],
+      "description": "一个强大的能量源，能为机械神教提供动力。",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "你找到了能量核心。",
+          "options": [
+            {
+              "text": "安装到主机",
+              "nextStage": 1,
+              "effect": {
+                "addition": 20
+              }
+            },
+            {
+              "text": "研究它",
+              "nextStage": 2,
+              "effect": {
+                "addition": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "主机超频运转。",
+          "options": [
+            {
+              "text": "加速收购流程",
+              "nextStage": 3,
+              "effect": {
+                "addition": 15
+              }
+            },
+            {
+              "text": "保持稳定",
+              "nextStage": 4,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你发现了能量核心的奥秘。",
+          "options": [
+            {
+              "text": "复制技术",
+              "nextStage": 3,
+              "effect": {
+                "addition": 20
+              }
+            },
+            {
+              "text": "保密",
+              "nextStage": 4,
+              "effect": {
+                "addition": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "能量核心发挥巨大作用。",
+          "options": [
+            {
+              "text": "用于谈判",
+              "nextStage": 5,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "储备能量",
+              "nextStage": 5,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "description": "能量核心稳定供应。",
+          "options": [
+            {
+              "text": "继续收购",
+              "nextStage": 5,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "放慢节奏",
+              "nextStage": 5,
+              "effect": {
+                "addition": 0
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "description": "终局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "黑客工具",
+      "position": [
+        10,
+        2
+      ],
+      "description": "一套先进的网络攻击工具。",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "你获得了黑客工具。",
+          "options": [
+            {
+              "text": "入侵对手系统",
+              "nextStage": 1,
+              "effect": {
+                "addition": 25
+              }
+            },
+            {
+              "text": "分析工具",
+              "nextStage": 2,
+              "effect": {
+                "addition": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "成功入侵，获取情报。",
+          "options": [
+            {
+              "text": "公开情报",
+              "nextStage": 3,
+              "effect": {
+                "addition": 15
+              }
+            },
+            {
+              "text": "私下利用",
+              "nextStage": 4,
+              "effect": {
+                "addition": 20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你学会了工具的原理。",
+          "options": [
+            {
+              "text": "开发防御系统",
+              "nextStage": 3,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "出售工具",
+              "nextStage": 4,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "工具带来优势。",
+          "options": [
+            {
+              "text": "用于收购",
+              "nextStage": 5,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "保留作为后手",
+              "nextStage": 5,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "description": "工具被用于其他目的。",
+          "options": [
+            {
+              "text": "继续监控",
+              "nextStage": 5,
+              "effect": {
+                "addition": 5
+              }
+            },
+            {
+              "text": "停止使用",
+              "nextStage": 5,
+              "effect": {
+                "addition": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "description": "终局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "黄金圣杯",
+      "position": [
+        6,
+        13
+      ],
+      "description": "传说中的圣物，象征着领导权。",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "你发现了黄金圣杯。",
+          "options": [
+            {
+              "text": "展示给董事会",
+              "nextStage": 1,
+              "effect": {
+                "addition": 20
+              }
+            },
+            {
+              "text": "收藏起来",
+              "nextStage": 2,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "董事会对你更加信服。",
+          "options": [
+            {
+              "text": "要求更多权力",
+              "nextStage": 3,
+              "effect": {
+                "addition": 15
+              }
+            },
+            {
+              "text": "保持谦逊",
+              "nextStage": 4,
+              "effect": {
+                "addition": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "圣杯在你手中。",
+          "options": [
+            {
+              "text": "研究它的力量",
+              "nextStage": 3,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "当作装饰",
+              "nextStage": 4,
+              "effect": {
+                "addition": 0
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "威望大增。",
+          "options": [
+            {
+              "text": "推动收购",
+              "nextStage": 5,
+              "effect": {
+                "addition": 15
+              }
+            },
+            {
+              "text": "巩固地位",
+              "nextStage": 5,
+              "effect": {
+                "addition": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "description": "圣杯没有特别用处。",
+          "options": [
+            {
+              "text": "继续其他任务",
+              "nextStage": 5,
+              "effect": {
+                "addition": 5
+              }
+            },
+            {
+              "text": "卖掉它",
+              "nextStage": 5,
+              "effect": {
+                "addition": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "description": "终局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "时间沙漏",
+      "position": [
+        11,
+        8
+      ],
+      "description": "一个可以暂时冻结时间的装置。",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "你找到了时间沙漏。",
+          "options": [
+            {
+              "text": "使用它",
+              "nextStage": 1,
+              "effect": {
+                "addition": 30
+              }
+            },
+            {
+              "text": "研究原理",
+              "nextStage": 2,
+              "effect": {
+                "addition": 15
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "时间暂停，你有更多时间决策。",
+          "options": [
+            {
+              "text": "完成收购文件",
+              "nextStage": 3,
+              "effect": {
+                "addition": 20
+              }
+            },
+            {
+              "text": "休息一下",
+              "nextStage": 4,
+              "effect": {
+                "addition": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你理解了时间控制的原理但无法复制。",
+          "options": [
+            {
+              "text": "有限使用",
+              "nextStage": 3,
+              "effect": {
+                "addition": 10
+              }
+            },
+            {
+              "text": "收藏",
+              "nextStage": 4,
+              "effect": {
+                "addition": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "你赢得了宝贵时间。",
+          "options": [
+            {
+              "text": "立即签约",
+              "nextStage": 5,
+              "effect": {
+                "addition": 25
+              }
+            },
+            {
+              "text": "准备下一步",
+              "nextStage": 5,
+              "effect": {
+                "addition": 15
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "description": "沙漏能量耗尽。",
+          "options": [
+            {
+              "text": "寻找充能方法",
+              "nextStage": 5,
+              "effect": {
+                "addition": -5
+              }
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 5,
+              "effect": {
+                "addition": -15
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "description": "终局。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": {
+        "state": "success",
+        "score": 100
+      },
+      "description": "成功收购，机械神教势力扩张。"
+    },
+    {
+      "id": "ending2",
+      "condition": {
+        "state": "failure",
+        "score": 0
+      },
+      "description": "收购失败，教派陷入危机。"
+    },
+    {
+      "id": "ending3",
+      "condition": {
+        "state": "neutral",
+        "score": 50
+      },
+      "description": "收购被推迟，双方僵持。"
+    },
+    {
+      "id": "ending4",
+      "condition": {
+        "state": "critical",
+        "score": 80
+      },
+      "description": "收购成功但内部斗争激烈。"
+    },
+    {
+      "id": "ending5",
+      "condition": {
+        "state": "disaster",
+        "score": 20
+      },
+      "description": "收购引发战争，教派损失惨重。"
+    },
+    {
+      "id": "ending6",
+      "condition": {
+        "state": "secret",
+        "score": 90
+      },
+      "description": "你发现了隐藏的真相，成为真正的主宰。"
+    },
+    {
+      "id": "ending7",
+      "condition": {
+        "state": "rebellion",
+        "score": 30
+      },
+      "description": "董事会反叛，你被流放。"
+    },
+    {
+      "id": "ending8",
+      "condition": {
+        "state": "divine",
+        "score": 70
+      },
+      "description": "你被视为神，教派统一全球。"
+    }
+  ],
+  "introText": "欢迎，机械神教教宗！距离收购集团只剩60秒。你的每一个决定都将改变教派的未来。",
+  "ambientMusic": "industrial_ambient",
+  "id": "fallback_world_018"
+}

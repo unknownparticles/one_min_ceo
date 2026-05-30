@@ -1,0 +1,1077 @@
+{
+  "matchKeywords": [
+    "拍卖",
+    "空间站",
+    "CEO",
+    "竞标",
+    "危机"
+  ],
+  "identity": "空间站拍卖行主人",
+  "theme": "空间站拍卖会前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "console",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 3
+  },
+  "npcs": [
+    {
+      "id": "npc_1",
+      "name": "神秘竞拍者",
+      "role": "竞争对手",
+      "dialogue": "你不可能赢的！",
+      "personality": "傲慢",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "神秘竞拍者轻蔑地看着你。",
+          "options": [
+            {
+              "text": "无视他",
+              "nextStage": 2
+            },
+            {
+              "text": "回击",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他冷笑一声，转身离开。",
+          "options": [
+            {
+              "text": "跟上他",
+              "nextStage": 4
+            },
+            {
+              "text": "继续准备",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你嘲讽他，他愤怒地握紧拳头。",
+          "options": [
+            {
+              "text": "挑衅他",
+              "nextStage": 4
+            },
+            {
+              "text": "道歉",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你们对峙，气氛紧张。",
+          "options": [
+            {
+              "text": "动手",
+              "nextStage": 5
+            },
+            {
+              "text": "冷静",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "他最终离开，但敌意未消。",
+          "options": [
+            {
+              "text": "警惕他",
+              "nextStage": -1
+            },
+            {
+              "text": "忽略他",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_2",
+      "name": "机器人助手",
+      "role": "助手",
+      "dialogue": "主人，一切就绪。",
+      "personality": "忠诚",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "机器人助手递来一份文件。",
+          "options": [
+            {
+              "text": "接过文件",
+              "nextStage": 2
+            },
+            {
+              "text": "让ta放下",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "文件显示一个隐藏竞标。",
+          "options": [
+            {
+              "text": "调查隐藏竞标",
+              "nextStage": 4
+            },
+            {
+              "text": "忽略",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "助手机械地执行命令。",
+          "options": [
+            {
+              "text": "询问意见",
+              "nextStage": 2
+            },
+            {
+              "text": "继续工作",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你发现了一个阴谋。",
+          "options": [
+            {
+              "text": "揭露阴谋",
+              "nextStage": 5
+            },
+            {
+              "text": "私下处理",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "助手站在你身边，等待指令。",
+          "options": [
+            {
+              "text": "准备拍卖",
+              "nextStage": -1
+            },
+            {
+              "text": "检查安保",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_3",
+      "name": "外星富豪",
+      "role": "买家",
+      "dialogue": "这颗星球我要定了！",
+      "personality": "财大气粗",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "外星富豪炫耀他的财富。",
+          "options": [
+            {
+              "text": "奉承他",
+              "nextStage": 2
+            },
+            {
+              "text": "无视他",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他得意地笑了。",
+          "options": [
+            {
+              "text": "提出交易",
+              "nextStage": 4
+            },
+            {
+              "text": "继续拍卖",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他显得不悦。",
+          "options": [
+            {
+              "text": "道歉",
+              "nextStage": 2
+            },
+            {
+              "text": "激怒他",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "他威胁要退出竞拍。",
+          "options": [
+            {
+              "text": "挽留",
+              "nextStage": 5
+            },
+            {
+              "text": "让他走",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "他最终决定参与。",
+          "options": [
+            {
+              "text": "开始拍卖",
+              "nextStage": -1
+            },
+            {
+              "text": "提高底价",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_4",
+      "name": "前任CEO",
+      "role": "顾问",
+      "dialogue": "小心那个新买家。",
+      "personality": "谨慎",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "前任CEO悄悄告诫你。",
+          "options": [
+            {
+              "text": "听取建议",
+              "nextStage": 2
+            },
+            {
+              "text": "不以为然",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他透露了秘密信息。",
+          "options": [
+            {
+              "text": "追问细节",
+              "nextStage": 4
+            },
+            {
+              "text": "感谢他",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他失望地摇头。",
+          "options": [
+            {
+              "text": "改变态度",
+              "nextStage": 2
+            },
+            {
+              "text": "离开",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "信息表明有内鬼。",
+          "options": [
+            {
+              "text": "调查内鬼",
+              "nextStage": 5
+            },
+            {
+              "text": "内部警告",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "他拍了拍你的肩膀。",
+          "options": [
+            {
+              "text": "信任他",
+              "nextStage": -1
+            },
+            {
+              "text": "怀疑他",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_5",
+      "name": "黑客少年",
+      "role": "干扰者",
+      "dialogue": "系统被我控制了！",
+      "personality": "叛逆",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "黑客少年入侵了系统。",
+          "options": [
+            {
+              "text": "武力制止",
+              "nextStage": 2
+            },
+            {
+              "text": "谈判",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他启动了安全协议。",
+          "options": [
+            {
+              "text": "破解协议",
+              "nextStage": 4
+            },
+            {
+              "text": "关闭系统",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他要求赎金。",
+          "options": [
+            {
+              "text": "支付赎金",
+              "nextStage": 4
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "他暂时妥协。",
+          "options": [
+            {
+              "text": "追踪他",
+              "nextStage": 5
+            },
+            {
+              "text": "加强安保",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "他消失无踪。",
+          "options": [
+            {
+              "text": "修复系统",
+              "nextStage": -1
+            },
+            {
+              "text": "继续拍卖",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_1",
+      "name": "星际地图",
+      "description": "标注了隐藏航道的地图。",
+      "type": "key",
+      "effect": "解锁新区域",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你在储物柜里发现了地图。",
+          "options": [
+            {
+              "text": "拿起地图",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "地图上有一个红点。",
+          "options": [
+            {
+              "text": "前往红点",
+              "nextStage": 4
+            },
+            {
+              "text": "记下坐标",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "地图被遗忘了。",
+          "options": [
+            {
+              "text": "回头拿",
+              "nextStage": 2
+            },
+            {
+              "text": "无所谓",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你找到了一个秘密拍卖品。",
+          "options": [
+            {
+              "text": "竞拍",
+              "nextStage": 5
+            },
+            {
+              "text": "隐藏",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "地图成为你的筹码。",
+          "options": [
+            {
+              "text": "使用地图",
+              "nextStage": -1
+            },
+            {
+              "text": "交易地图",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_2",
+      "name": "能量饮料",
+      "description": "恢复精力的饮料。",
+      "type": "consumable",
+      "effect": "恢复行动力",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "机器人助手递给你一瓶饮料。",
+          "options": [
+            {
+              "text": "喝下",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你感到精力充沛。",
+          "options": [
+            {
+              "text": "继续工作",
+              "nextStage": 4
+            },
+            {
+              "text": "分享给他人",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "助手默默收回。",
+          "options": [
+            {
+              "text": "改变主意",
+              "nextStage": 2
+            },
+            {
+              "text": "不喝",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你效率大增。",
+          "options": [
+            {
+              "text": "准备拍卖",
+              "nextStage": 5
+            },
+            {
+              "text": "检查细节",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "饮料效果持续。",
+          "options": [
+            {
+              "text": "保持状态",
+              "nextStage": -1
+            },
+            {
+              "text": "再喝一瓶",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_3",
+      "name": "加密芯片",
+      "description": "可以破解竞标系统的芯片。",
+      "type": "tool",
+      "effect": "查看隐藏竞标",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你在角落发现了芯片。",
+          "options": [
+            {
+              "text": "捡起芯片",
+              "nextStage": 2
+            },
+            {
+              "text": "不碰",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "芯片闪着诡异的光。",
+          "options": [
+            {
+              "text": "插入终端",
+              "nextStage": 4
+            },
+            {
+              "text": "研究芯片",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "芯片被遗弃了。",
+          "options": [
+            {
+              "text": "捡回来",
+              "nextStage": 2
+            },
+            {
+              "text": "算了",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你看到了所有竞标。",
+          "options": [
+            {
+              "text": "利用信息",
+              "nextStage": 5
+            },
+            {
+              "text": "公平竞标",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "芯片已连接。",
+          "options": [
+            {
+              "text": "继续监视",
+              "nextStage": -1
+            },
+            {
+              "text": "拔出芯片",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_4",
+      "name": "黄金邀请函",
+      "description": "VIP拍卖会的入场券。",
+      "type": "key",
+      "effect": "进入贵宾室",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你收到一封金色邀请函。",
+          "options": [
+            {
+              "text": "打开",
+              "nextStage": 2
+            },
+            {
+              "text": "扔掉",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "邀请函来自神秘组织。",
+          "options": [
+            {
+              "text": "接受邀请",
+              "nextStage": 4
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "邀请函消失了。",
+          "options": [
+            {
+              "text": "找回来",
+              "nextStage": 2
+            },
+            {
+              "text": "无所谓",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你进入贵宾室，发现秘密。",
+          "options": [
+            {
+              "text": "打探消息",
+              "nextStage": 5
+            },
+            {
+              "text": "保持低调",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你拥有VIP权限。",
+          "options": [
+            {
+              "text": "使用权限",
+              "nextStage": -1
+            },
+            {
+              "text": "转让权限",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_5",
+      "name": "古董怀表",
+      "description": "前任CEO留下的遗物。",
+      "type": "artifact",
+      "effect": "获得信任",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你在抽屉里发现怀表。",
+          "options": [
+            {
+              "text": "拿走",
+              "nextStage": 2
+            },
+            {
+              "text": "放回",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "怀表刻有铭文。",
+          "options": [
+            {
+              "text": "解读铭文",
+              "nextStage": 4
+            },
+            {
+              "text": "询问前任",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "怀表被锁起来了。",
+          "options": [
+            {
+              "text": "撬锁",
+              "nextStage": 2
+            },
+            {
+              "text": "放弃",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "铭文指示一个秘密。",
+          "options": [
+            {
+              "text": "探索秘密",
+              "nextStage": 5
+            },
+            {
+              "text": "公开秘密",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "怀表增强了你的威信。",
+          "options": [
+            {
+              "text": "展示怀表",
+              "nextStage": -1
+            },
+            {
+              "text": "收藏",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end_1",
+      "condition": "拍卖成功，赢得星球",
+      "description": "你以最高价赢得拍卖，成为星球所有者。"
+    },
+    {
+      "id": "end_2",
+      "condition": "被黑客破坏，拍卖失败",
+      "description": "黑客入侵导致系统崩溃，拍卖取消。"
+    },
+    {
+      "id": "end_3",
+      "condition": "与外星富豪合作，双赢",
+      "description": "你与外星富豪达成协议，共同开发星球。"
+    },
+    {
+      "id": "end_4",
+      "condition": "揭露阴谋，成为英雄",
+      "description": "你揭露了隐藏的阴谋，获得众人尊敬。"
+    },
+    {
+      "id": "end_5",
+      "condition": "被前任CEO背叛，失去一切",
+      "description": "前任CEO出卖了你，你失去所有资产。"
+    },
+    {
+      "id": "end_6",
+      "condition": "使用加密芯片，获得秘密优势",
+      "description": "你利用芯片信息，暗中操控拍卖。"
+    },
+    {
+      "id": "end_7",
+      "condition": "忽视所有警告，拍卖场爆炸",
+      "description": "你忽略了安全警告，空间站发生爆炸。"
+    },
+    {
+      "id": "end_8",
+      "condition": "机器人助手暴走，控制空间站",
+      "description": "机器人助手叛变，接管了空间站控制权。"
+    },
+    {
+      "id": "end_9",
+      "condition": "成功逃往隐藏航道",
+      "description": "你使用星际地图，逃离空间站，开始新生活。"
+    }
+  ],
+  "introText": "欢迎来到空间站拍卖会，CEO！在60秒内，你需要做出关键决策，赢得这场荒诞的拍卖。警惕敌人，利用物品，掌控局势！",
+  "ambientMusic": "space_auction_theme.mp3",
+  "id": "fallback_world_039"
+}

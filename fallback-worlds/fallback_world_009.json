@@ -1,0 +1,1015 @@
+{
+  "matchKeywords": [
+    "反物质",
+    "能源",
+    "发布会",
+    "爆炸",
+    "60秒"
+  ],
+  "identity": "反物质能源大亨",
+  "theme": "反物质能源发布会爆炸前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "glass",
+      "water",
+      "water",
+      "glass",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "stage",
+      "floor",
+      "glass",
+      "water",
+      "water",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "window",
+      "window",
+      "window",
+      "window",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "portal",
+      "floor",
+      "window",
+      "window",
+      "window",
+      "window",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fire",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    3,
+    8
+  ],
+  "npcs": [
+    {
+      "id": "npc_engineer",
+      "name": "首席工程师王工",
+      "dialogue": "反应堆温度异常！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "王工焦急地说：'反应堆核心温度已超过临界值！'",
+          "options": [
+            {
+              "text": "冷静分析",
+              "nextStage": 1
+            },
+            {
+              "text": "立刻疏散",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你分析数据，发现是冷却系统故障。",
+          "options": [
+            {
+              "text": "手动重启冷却",
+              "nextStage": 3
+            },
+            {
+              "text": "呼叫紧急支援",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "疏散警报响起，发布会陷入混乱。",
+          "options": [
+            {
+              "text": "安抚群众",
+              "nextStage": 3
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你成功重启冷却，温度下降。但爆炸物依然存在。",
+          "options": [
+            {
+              "text": "寻找爆炸物",
+              "nextStage": 4
+            },
+            {
+              "text": "报警",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "终局：要么成功排除危机，要么爆炸。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_investor",
+      "name": "投资人大卫",
+      "dialogue": "我的钱！全完了！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "大卫惊慌失措：'我的投资要打水漂了！'",
+          "options": [
+            {
+              "text": "保证安全",
+              "nextStage": 1
+            },
+            {
+              "text": "转移资产",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你保证会赔偿损失，但大卫不信。",
+          "options": [
+            {
+              "text": "签支票",
+              "nextStage": 2
+            },
+            {
+              "text": "带他逃离",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "大卫拿走支票，但爆炸迫近。",
+          "options": [
+            {
+              "text": "寻找出口",
+              "nextStage": 3
+            },
+            {
+              "text": "抢回支票",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "混乱中，大卫被绊倒。",
+          "options": [
+            {
+              "text": "扶他",
+              "nextStage": 4
+            },
+            {
+              "text": "独自逃生",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "终局。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_security",
+      "name": "保安队长老李",
+      "dialogue": "有可疑包裹！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "老李报告：'在后台发现一个可疑包裹！'",
+          "options": [
+            {
+              "text": "检查包裹",
+              "nextStage": 1
+            },
+            {
+              "text": "无视",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你发现包裹里是炸弹！",
+          "options": [
+            {
+              "text": "拆弹",
+              "nextStage": 3
+            },
+            {
+              "text": "扔掉",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "炸弹爆炸风险增加。",
+          "options": [
+            {
+              "text": "紧急疏散",
+              "nextStage": 3
+            },
+            {
+              "text": "找拆弹专家",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "老李试图拆弹，但时间不够。",
+          "options": [
+            {
+              "text": "帮忙",
+              "nextStage": 4
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "终局。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_reporter",
+      "name": "记者小张",
+      "dialogue": "这里有新闻！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "小张兴奋地直播：'大亨，请问爆炸是真的吗？'",
+          "options": [
+            {
+              "text": "否认",
+              "nextStage": 1
+            },
+            {
+              "text": "承认",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你否认，但观众看到烟雾。",
+          "options": [
+            {
+              "text": "中断直播",
+              "nextStage": 2
+            },
+            {
+              "text": "继续撒谎",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "直播中断，但引发猜疑。",
+          "options": [
+            {
+              "text": "解释",
+              "nextStage": 3
+            },
+            {
+              "text": "离开",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "小张追问真相。",
+          "options": [
+            {
+              "text": "透露部分",
+              "nextStage": 4
+            },
+            {
+              "text": "威胁",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "终局。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_cleaner",
+      "name": "清洁工阿强",
+      "dialogue": "我好像闻到火药味。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "阿强在角落发现一个可疑装置。",
+          "options": [
+            {
+              "text": "查看",
+              "nextStage": 1
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "是炸弹！计时器只剩30秒。",
+          "options": [
+            {
+              "text": "拆弹",
+              "nextStage": 3
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你选择忽略，但爆炸声越来越近。",
+          "options": [
+            {
+              "text": "回头",
+              "nextStage": 3
+            },
+            {
+              "text": "继续跑",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你尝试拆弹，但需要工具。",
+          "options": [
+            {
+              "text": "找工具",
+              "nextStage": 4
+            },
+            {
+              "text": "放弃",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "终局。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_ceo",
+      "name": "你自己（CEO）",
+      "dialogue": "我必须掌控局面！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你站在舞台上，面对恐慌的人群。",
+          "options": [
+            {
+              "text": "演讲安抚",
+              "nextStage": 1
+            },
+            {
+              "text": "指挥疏散",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你的演讲暂时稳住人心，但炸弹还在。",
+          "options": [
+            {
+              "text": "寻找炸弹",
+              "nextStage": 2
+            },
+            {
+              "text": "继续演讲",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你发现炸弹位于反应堆下方。",
+          "options": [
+            {
+              "text": "亲自拆弹",
+              "nextStage": 3
+            },
+            {
+              "text": "叫专家",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "时间紧迫，你必须做出选择。",
+          "options": [
+            {
+              "text": "剪红线",
+              "nextStage": 4
+            },
+            {
+              "text": "剪蓝线",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "终局。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_bomb",
+      "name": "炸弹",
+      "description": "一个滴答作响的炸弹，还剩30秒。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你发现炸弹在反应堆旁。",
+          "options": [
+            {
+              "text": "拆解",
+              "nextStage": 1
+            },
+            {
+              "text": "远离",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你开始拆弹，但需要工具。",
+          "options": [
+            {
+              "text": "找钳子",
+              "nextStage": 2
+            },
+            {
+              "text": "找剪刀",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "工具到手，但只剩10秒。",
+          "options": [
+            {
+              "text": "剪红线",
+              "nextStage": 3
+            },
+            {
+              "text": "剪蓝线",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "爆炸或成功。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_chest",
+      "name": "神秘宝箱",
+      "description": "一个古旧宝箱，里面可能有线索。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "宝箱内有一张纸条：'炸弹在脚下'。",
+          "options": [
+            {
+              "text": "查看脚下",
+              "nextStage": 1
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你发现地板下藏有炸弹。",
+          "options": [
+            {
+              "text": "小心取出",
+              "nextStage": 2
+            },
+            {
+              "text": "报警",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "炸弹被取出，但计时器启动。",
+          "options": [
+            {
+              "text": "扔进水池",
+              "nextStage": 3
+            },
+            {
+              "text": "拆解",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "终局。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_keycard",
+      "name": "门禁卡",
+      "description": "可以打开紧急出口的钥匙卡。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你捡到一张门禁卡。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": 1
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "门禁卡打开了一扇隐藏门。",
+          "options": [
+            {
+              "text": "进入",
+              "nextStage": 2
+            },
+            {
+              "text": "关闭",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "隐藏门后是控制室，可以关闭反应堆。",
+          "options": [
+            {
+              "text": "关闭",
+              "nextStage": 3
+            },
+            {
+              "text": "破坏",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "终局。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_antidote",
+      "name": "解毒剂",
+      "description": "也许能中和某种毒素？",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你发现一瓶解毒剂。",
+          "options": [
+            {
+              "text": "服下",
+              "nextStage": 1
+            },
+            {
+              "text": "保留",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你感觉好些了，但可能是心理作用。",
+          "options": [
+            {
+              "text": "寻找更多",
+              "nextStage": 2
+            },
+            {
+              "text": "分享",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "解毒剂好像能缓解辐射影响。",
+          "options": [
+            {
+              "text": "使用在反应堆",
+              "nextStage": 3
+            },
+            {
+              "text": "使用在伤口",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "终局。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_phone",
+      "name": "卫星电话",
+      "description": "可以联系外界。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你找到一个卫星电话。",
+          "options": [
+            {
+              "text": "呼叫救援",
+              "nextStage": 1
+            },
+            {
+              "text": "联系总部",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "救援队称需要5分钟到达。",
+          "options": [
+            {
+              "text": "等待",
+              "nextStage": 2
+            },
+            {
+              "text": "自救",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你得到拆除炸弹的远程指导。",
+          "options": [
+            {
+              "text": "遵循指导",
+              "nextStage": 3
+            },
+            {
+              "text": "自行操作",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "终局。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end_success",
+      "description": "成功拆除炸弹，发布会延期但无人伤亡，你成为英雄。"
+    },
+    {
+      "id": "end_explosion",
+      "description": "炸弹爆炸，大楼倒塌，一切化为废墟。"
+    },
+    {
+      "id": "end_evacuation",
+      "description": "成功疏散所有人，但公司破产。"
+    },
+    {
+      "id": "end_betrayal",
+      "description": "发现是内部人员所为，你被指控。"
+    },
+    {
+      "id": "end_meltdown",
+      "description": "反应堆熔毁，城市受到辐射污染。"
+    },
+    {
+      "id": "end_sacrifice",
+      "description": "你舍身拆弹，拯救了所有人。"
+    },
+    {
+      "id": "end_capture",
+      "description": "恐怖分子被抓获，但发布会失败。"
+    },
+    {
+      "id": "end_mystery",
+      "description": "炸弹神秘消失，真相成谜。"
+    },
+    {
+      "id": "end_peace",
+      "description": "危机化解，发布会顺利进行，股价飙升。"
+    },
+    {
+      "id": "end_chaos",
+      "description": "混乱中你失踪，公司陷入危机。"
+    }
+  ],
+  "introText": "你，反物质能源大亨，正站在发布会舞台上。突然，警报响起：反应堆温度异常，疑似有炸弹！距离爆炸还有60秒。你必须在这60秒内做出决断，拯救自己和公司。",
+  "ambientMusic": "crisis_theme.mp3",
+  "id": "fallback_world_009"
+}

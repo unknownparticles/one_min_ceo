@@ -1,0 +1,684 @@
+{
+  "matchKeywords": [
+    "赛博赌场",
+    "赌场",
+    "豪赌",
+    "筹码",
+    "庄家"
+  ],
+  "identity": "赛博赌场庄家",
+  "theme": "赛博赌场世纪豪赌前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "console",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "neon_floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "neon_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "neon_floor",
+      "carpet",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "neon_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "neon_floor",
+      "carpet",
+      "gold_floor",
+      "statue",
+      "vault",
+      "vault",
+      "vault",
+      "vault",
+      "vault",
+      "vault",
+      "vault",
+      "gold_floor",
+      "carpet",
+      "neon_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "neon_floor",
+      "carpet",
+      "gold_floor",
+      "vault",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "neon_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "neon_floor",
+      "carpet",
+      "gold_floor",
+      "vault",
+      "gold_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "neon_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "neon_floor",
+      "carpet",
+      "gold_floor",
+      "vault",
+      "gold_floor",
+      "neon_floor",
+      "glass",
+      "glass",
+      "glass",
+      "neon_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "neon_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "neon_floor",
+      "carpet",
+      "gold_floor",
+      "vault",
+      "gold_floor",
+      "neon_floor",
+      "glass",
+      "throne",
+      "glass",
+      "neon_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "neon_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "neon_floor",
+      "carpet",
+      "gold_floor",
+      "vault",
+      "gold_floor",
+      "neon_floor",
+      "glass",
+      "glass",
+      "glass",
+      "neon_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "neon_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "neon_floor",
+      "carpet",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "neon_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    5,
+    4
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "筹码兑换员",
+      "tile": "console",
+      "position": [
+        1,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "欢迎来到赛博赌场！需要兑换筹码吗？",
+          "options": [
+            {
+              "text": "兑换100万筹码",
+              "effect": "gain_money",
+              "value": 1000000
+            },
+            {
+              "text": "兑换10万筹码",
+              "effect": "gain_money",
+              "value": 100000
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "您的筹码已经兑换，祝您好运！",
+          "options": [
+            {
+              "text": "谢谢",
+              "effect": "none"
+            },
+            {
+              "text": "再兑换一些",
+              "effect": "loop",
+              "target_stage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "豪华赌神",
+      "tile": "statue",
+      "position": [
+        4,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "小子，敢不敢和我赌一把？",
+          "options": [
+            {
+              "text": "接受挑战",
+              "effect": "trigger_event",
+              "event": "gamble"
+            },
+            {
+              "text": "拒绝",
+              "effect": "end_conversation"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "好胆量！我们赌骰子，点数大者胜。",
+          "options": [
+            {
+              "text": "我押全部筹码",
+              "effect": "all_in"
+            },
+            {
+              "text": "我押一半",
+              "effect": "half_bet"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "赛博荷官",
+      "tile": "console",
+      "position": [
+        7,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "欢迎来到VIP区，需要什么服务？",
+          "options": [
+            {
+              "text": "查询账户余额",
+              "effect": "show_balance"
+            },
+            {
+              "text": "申请信用额度",
+              "effect": "apply_credit"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "您的信用额度已提升至500万。",
+          "options": [
+            {
+              "text": "很好",
+              "effect": "none"
+            },
+            {
+              "text": "我需要更多",
+              "effect": "increase_credit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "神秘富豪",
+      "tile": "throne",
+      "position": [
+        8,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "这赌场是我的，你的一举一动都在我眼中。",
+          "options": [
+            {
+              "text": "你是谁？",
+              "effect": "ask_identity"
+            },
+            {
+              "text": "你想怎样？",
+              "effect": "ask_intent"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "我是这里的主人。如果你能赢走一亿，我就把赌场送给你。",
+          "options": [
+            {
+              "text": "接受挑战",
+              "effect": "trigger_event",
+              "event": "big_gamble"
+            },
+            {
+              "text": "我不信",
+              "effect": "end_conversation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "醉汉赌徒",
+      "tile": "floor",
+      "position": [
+        2,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "嗝…我输光了，你能借我点钱吗？",
+          "options": [
+            {
+              "text": "借你10万",
+              "effect": "lend_money",
+              "value": 100000
+            },
+            {
+              "text": "滚开",
+              "effect": "end_conversation"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "谢谢！我告诉你一个秘密：13号赌桌有机关。",
+          "options": [
+            {
+              "text": "什么机关？",
+              "effect": "ask_secret"
+            },
+            {
+              "text": "我不感兴趣",
+              "effect": "end_conversation"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "金筹码",
+      "tile": "gold_floor",
+      "position": [
+        3,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个闪闪发光的金筹码。",
+          "options": [
+            {
+              "text": "捡起",
+              "effect": "add_item",
+              "value": "gold_chip"
+            },
+            {
+              "text": "无视",
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "金筹码入手，感觉很有分量。",
+          "options": [
+            {
+              "text": "查看",
+              "effect": "inspect"
+            },
+            {
+              "text": "使用",
+              "effect": "use_item"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "作弊芯片",
+      "tile": "console",
+      "position": [
+        8,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个微小的芯片，似乎可以干扰赌桌系统。",
+          "options": [
+            {
+              "text": "捡起",
+              "effect": "add_item",
+              "value": "cheat_chip"
+            },
+            {
+              "text": "不碰",
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "使用它可能会被发现。",
+          "options": [
+            {
+              "text": "安装到1号赌桌",
+              "effect": "install_cheat"
+            },
+            {
+              "text": "安装到13号赌桌",
+              "effect": "install_cheat_13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "威士忌",
+      "tile": "carpet",
+      "position": [
+        4,
+        6
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一杯琥珀色的威士忌。",
+          "options": [
+            {
+              "text": "喝掉",
+              "effect": "drink"
+            },
+            {
+              "text": "拿走",
+              "effect": "add_item",
+              "value": "whisky"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "喝下后感觉胆子变大了。",
+          "options": [
+            {
+              "text": "再喝一杯",
+              "effect": "drink_more"
+            },
+            {
+              "text": "保持清醒",
+              "effect": "none"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "密码纸条",
+      "tile": "floor",
+      "position": [
+        9,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一张写有数字的纸条：0721。",
+          "options": [
+            {
+              "text": "捡起",
+              "effect": "add_item",
+              "value": "password_note"
+            },
+            {
+              "text": "忽略",
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "这可能是某个保险箱的密码。",
+          "options": [
+            {
+              "text": "记下",
+              "effect": "remember"
+            },
+            {
+              "text": "扔掉",
+              "effect": "remove_item"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "面具",
+      "tile": "statue",
+      "position": [
+        6,
+        10
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个华丽的赛博面具。",
+          "options": [
+            {
+              "text": "戴上",
+              "effect": "wear_mask"
+            },
+            {
+              "text": "拿走",
+              "effect": "add_item",
+              "value": "mask"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "戴上后别人认不出你。",
+          "options": [
+            {
+              "text": "去赌桌试试",
+              "effect": "trigger_event",
+              "event": "mask_gamble"
+            },
+            {
+              "text": "摘下来",
+              "effect": "remove_item"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": "player_money >= 100000000",
+      "text": "你赢得了1亿筹码，神秘富豪兑现承诺，将赌场送给了你。你成为了赛博赌场的新主人。"
+    },
+    {
+      "id": "ending2",
+      "condition": "player_money <= 0",
+      "text": "你输光了所有筹码，被保安扔出了赌场。"
+    },
+    {
+      "id": "ending3",
+      "condition": "installed_cheat && caught",
+      "text": "你安装作弊芯片被当场抓获，被永久禁止进入赌场。"
+    },
+    {
+      "id": "ending4",
+      "condition": "time == 60",
+      "text": "60秒到了，豪赌结束。你带着现有的筹码离开。"
+    },
+    {
+      "id": "ending5",
+      "condition": "all_in && win_gamble",
+      "text": "你在与豪华赌神的赌局中全押并获胜，赢得了双倍筹码。"
+    },
+    {
+      "id": "ending6",
+      "condition": "all_in && lose_gamble",
+      "text": "你在与豪华赌神的赌局中全押并输光。"
+    },
+    {
+      "id": "ending7",
+      "condition": "drink >= 3",
+      "text": "你喝得酩酊大醉，在赌场闹事被赶了出去。"
+    },
+    {
+      "id": "ending8",
+      "condition": "mask && gamble_with_mask",
+      "text": "你戴着面具赢了一大笔钱，神秘富豪未能认出你，你成功脱身。"
+    }
+  ],
+  "introText": "欢迎来到赛博赌场！这里是财富与毁灭的旋转门。你有60秒的时间，去创造属于你的世纪豪赌。祝你好运！",
+  "ambientMusic": "neon_jazz_loop.mp3",
+  "id": "fallback_world_081"
+}

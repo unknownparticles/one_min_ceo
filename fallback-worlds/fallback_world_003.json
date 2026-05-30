@@ -1,0 +1,903 @@
+{
+  "matchKeywords": [
+    "火星",
+    "地产",
+    "泡沫",
+    "CEO"
+  ],
+  "identity": "火星地产大亨",
+  "theme": "火星地产泡沫爆炸前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "water",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "water",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "火星银行家",
+      "x": 1,
+      "y": 1,
+      "dialogue": "时间就是金钱！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "火星银行家惊慌失措：'泡沫要爆了！快抛售所有火星地产！'",
+          "options": [
+            {
+              "text": "立即抛售",
+              "nextStage": 1,
+              "effect": {
+                "money": 1000
+              }
+            },
+            {
+              "text": "再等一等",
+              "nextStage": 2,
+              "effect": {
+                "money": -500
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你抛售了所有地产，获得一笔现金，但错过了更大的利润。",
+          "options": [
+            {
+              "text": "购买地球债券",
+              "nextStage": 2,
+              "effect": {
+                "money": 500
+              }
+            },
+            {
+              "text": "继续观望",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "泡沫果然爆炸了，你的决策让你勉强存活。",
+          "options": [
+            {
+              "text": "重建帝国",
+              "nextStage": 3,
+              "effect": {
+                "money": 200
+              }
+            },
+            {
+              "text": "放弃一切",
+              "nextStage": 3,
+              "effect": {
+                "money": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "火星矿工",
+      "x": 3,
+      "y": 3,
+      "dialogue": "火星矿石才是硬通货！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "矿工兴奋地展示一袋火星矿石：'这些宝贝能救你！'",
+          "options": [
+            {
+              "text": "购买矿石",
+              "nextStage": 1,
+              "effect": {
+                "money": -100,
+                "items": [
+                  "火星矿石"
+                ]
+              }
+            },
+            {
+              "text": "拒绝购买",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你获得了火星矿石，在后期危机中价值飙升。",
+          "options": [
+            {
+              "text": "转售矿石",
+              "nextStage": 2,
+              "effect": {
+                "money": 500
+              }
+            },
+            {
+              "text": "保留矿石",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "矿工叹了口气：'机会难得啊。'",
+          "options": [
+            {
+              "text": "离开",
+              "nextStage": 3,
+              "effect": {}
+            },
+            {
+              "text": "再次交谈",
+              "nextStage": 0,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "火星记者",
+      "x": 5,
+      "y": 5,
+      "dialogue": "独家新闻！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "记者神秘地说：'我有个内幕消息，但需要一点好处费。'",
+          "options": [
+            {
+              "text": "支付好处费",
+              "nextStage": 1,
+              "effect": {
+                "money": -200
+              }
+            },
+            {
+              "text": "威胁记者",
+              "nextStage": 2,
+              "effect": {
+                "reputation": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "记者透露：'政府即将出台救市计划！'",
+          "options": [
+            {
+              "text": "买入地产",
+              "nextStage": 2,
+              "effect": {
+                "money": -300
+              }
+            },
+            {
+              "text": "卖空市场",
+              "nextStage": 2,
+              "effect": {
+                "money": 200
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "消息真假难辨，市场剧烈波动。",
+          "options": [
+            {
+              "text": "相信记者",
+              "nextStage": 3,
+              "effect": {
+                "money": -100
+              }
+            },
+            {
+              "text": "忽略消息",
+              "nextStage": 3,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "火星政客",
+      "x": 9,
+      "y": 9,
+      "dialogue": "投票给我，一切好说。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "政客低声说：'我能帮你获得紧急贷款，但你要支持我的竞选。'",
+          "options": [
+            {
+              "text": "同意合作",
+              "nextStage": 1,
+              "effect": {
+                "money": 500,
+                "reputation": -10
+              }
+            },
+            {
+              "text": "拒绝合作",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你获得了贷款，但声誉受损。",
+          "options": [
+            {
+              "text": "用贷款投资",
+              "nextStage": 2,
+              "effect": {
+                "money": 1000
+              }
+            },
+            {
+              "text": "偿还贷款",
+              "nextStage": 2,
+              "effect": {
+                "money": -500
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "政客微笑着离开，留下你独自面对市场。",
+          "options": [
+            {
+              "text": "寻找新盟友",
+              "nextStage": 3,
+              "effect": {}
+            },
+            {
+              "text": "独自奋斗",
+              "nextStage": 3,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "火星AI",
+      "x": 12,
+      "y": 12,
+      "dialogue": "数据分析显示，泡沫即将破裂。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "AI冷静地说：'根据模型，60秒后泡沫破裂。你需要紧急操作。'",
+          "options": [
+            {
+              "text": "请求详细数据",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "无视AI",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "AI给出建议：'卖出所有火星资产，买入地球科技股。'",
+          "options": [
+            {
+              "text": "执行建议",
+              "nextStage": 2,
+              "effect": {
+                "money": 1000
+              }
+            },
+            {
+              "text": "反向操作",
+              "nextStage": 2,
+              "effect": {
+                "money": -2000
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "AI叹息：'人类总是重复错误。'",
+          "options": [
+            {
+              "text": "重新考虑",
+              "nextStage": 3,
+              "effect": {}
+            },
+            {
+              "text": "固执己见",
+              "nextStage": 3,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "火星地产契约",
+      "x": 2,
+      "y": 2,
+      "description": "一份火星地产的契约，现在价值连城，但随时可能变成废纸。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你捡到了地产契约。",
+          "options": [
+            {
+              "text": "查看详情",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "契约显示你拥有火星上最贵的地块。",
+          "options": [
+            {
+              "text": "高价卖出",
+              "nextStage": 2,
+              "effect": {
+                "money": 2000
+              }
+            },
+            {
+              "text": "保留等待升值",
+              "nextStage": 2,
+              "effect": {
+                "money": -1000
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "契约化为灰烬。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "火星矿石",
+      "x": 4,
+      "y": 4,
+      "description": "一块闪闪发光的火星矿石，据说含有稀有元素。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你获得了火星矿石。",
+          "options": [
+            {
+              "text": "鉴定价值",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "直接出售",
+              "nextStage": 2,
+              "effect": {
+                "money": 300
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "鉴定师说：'这是高品质矿石，价值连城。'",
+          "options": [
+            {
+              "text": "拍卖",
+              "nextStage": 2,
+              "effect": {
+                "money": 1000
+              }
+            },
+            {
+              "text": "制作饰品",
+              "nextStage": 2,
+              "effect": {
+                "reputation": 20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "矿石已使用。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "时空沙漏",
+      "x": 6,
+      "y": 6,
+      "description": "一个古老的沙漏，据说可以暂停时间。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你发现了时空沙漏。",
+          "options": [
+            {
+              "text": "启动沙漏",
+              "nextStage": 1,
+              "effect": {
+                "time": 10
+              }
+            },
+            {
+              "text": "研究沙漏",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "时间暂停了10秒，你得以做出更冷静的决策。",
+          "options": [
+            {
+              "text": "调整资产",
+              "nextStage": 2,
+              "effect": {
+                "money": 500
+              }
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "沙漏碎裂，时间恢复正常。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "神秘U盘",
+      "x": 8,
+      "y": 8,
+      "description": "一个U盘，里面似乎有重要数据。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你捡起了U盘。",
+          "options": [
+            {
+              "text": "插入电脑",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "U盘里有火星政府的秘密经济数据。",
+          "options": [
+            {
+              "text": "公开数据",
+              "nextStage": 2,
+              "effect": {
+                "reputation": 50
+              }
+            },
+            {
+              "text": "利用数据交易",
+              "nextStage": 2,
+              "effect": {
+                "money": 1500
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "U盘自毁。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "黄金保险箱",
+      "x": 10,
+      "y": 10,
+      "description": "一个沉重的黄金保险箱，需要密码。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你找到了保险箱。",
+          "options": [
+            {
+              "text": "尝试破解密码",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "强行打开",
+              "nextStage": 2,
+              "effect": {
+                "money": -100
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "密码是'火星2024'，保险箱打开了，里面全是金币！",
+          "options": [
+            {
+              "text": "拿走金币",
+              "nextStage": 2,
+              "effect": {
+                "money": 2000
+              }
+            },
+            {
+              "text": "留下字条",
+              "nextStage": 2,
+              "effect": {
+                "reputation": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "保险箱空了。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "name": "破产结局",
+      "condition": {
+        "money": {
+          "$lt": 0
+        }
+      },
+      "text": "火星地产泡沫爆炸，你负债累累，被赶出火星。"
+    },
+    {
+      "id": "ending2",
+      "name": "暴富结局",
+      "condition": {
+        "money": {
+          "$gt": 5000
+        }
+      },
+      "text": "你成功在泡沫中做空，成为火星首富。"
+    },
+    {
+      "id": "ending3",
+      "name": "政客结局",
+      "condition": {
+        "reputation": {
+          "$gt": 100
+        }
+      },
+      "text": "凭借良好声誉，你当选火星总督，开启新纪元。"
+    },
+    {
+      "id": "ending4",
+      "name": "逃亡结局",
+      "condition": {
+        "time": {
+          "$lt": 0
+        }
+      },
+      "text": "时间耗尽，你乘坐最后一班飞船逃离火星。"
+    },
+    {
+      "id": "ending5",
+      "name": "矿工结局",
+      "condition": {
+        "items": {
+          "$contains": "火星矿石"
+        }
+      },
+      "text": "你带着火星矿石回到地球，成为矿业大亨。"
+    },
+    {
+      "id": "ending6",
+      "name": "AI统治结局",
+      "condition": {
+        "reputation": {
+          "$lt": -100
+        }
+      },
+      "text": "因名声扫地，你被AI控制，成为傀儡CEO。"
+    },
+    {
+      "id": "ending7",
+      "name": "银行家结局",
+      "condition": {
+        "money": {
+          "$gte": 0,
+          "$lte": 5000
+        },
+        "reputation": {
+          "$gte": -50,
+          "$lte": 50
+        }
+      },
+      "text": "你勉强保住银行家职位，但再无往日辉煌。"
+    },
+    {
+      "id": "ending8",
+      "name": "记者结局",
+      "condition": {
+        "items": {
+          "$contains": "神秘U盘"
+        }
+      },
+      "text": "你公开U盘数据，成为火星最受尊敬的记者。"
+    }
+  ],
+  "introText": "欢迎来到火星！你是火星地产大亨，但地产泡沫即将在60秒内爆炸。你必须在这60秒内做出关键决策，否则将一无所有。祝你好运！",
+  "ambientMusic": "紧张的电子音乐，带有警报声和心跳声",
+  "id": "fallback_world_003"
+}

@@ -1,0 +1,863 @@
+{
+  "matchKeywords": [
+    "银河",
+    "霸主",
+    "交接",
+    "继承",
+    "60秒"
+  ],
+  "identity": "银河霸主继承人",
+  "theme": "银河霸主交接仪式前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 5
+  },
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "老霸主之魂",
+      "position": {
+        "x": 2,
+        "y": 2
+      },
+      "dialogue": "孩子，你准备好了吗？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我是上代霸主，现在只有60秒了。",
+          "options": [
+            {
+              "text": "我准备好了，请传位给我。",
+              "nextStage": 2
+            },
+            {
+              "text": "我有点紧张。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "好，但需要先完成三个任务。",
+          "options": [
+            {
+              "text": "什么任务？",
+              "nextStage": 4
+            },
+            {
+              "text": "我赶时间！",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "紧张是正常的，当年我也这样。",
+          "options": [
+            {
+              "text": "那我该怎么做？",
+              "nextStage": 2
+            },
+            {
+              "text": "时间不多了！",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "第一，找到银河之钥；第二，击败叛军首领；第三，在宝座上坐稳。",
+          "options": [
+            {
+              "text": "我这就去！",
+              "nextStage": null
+            },
+            {
+              "text": "太麻烦了，有没有捷径？",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "没有捷径！要么完成，要么毁灭。",
+          "options": [
+            {
+              "text": "好吧，我接受。",
+              "nextStage": 4
+            },
+            {
+              "text": "我选择放弃。",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "叛军首领",
+      "position": {
+        "x": 5,
+        "y": 2
+      },
+      "dialogue": "你的末日到了！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我是叛军首领，我要夺取霸主之位！",
+          "options": [
+            {
+              "text": "你休想！",
+              "nextStage": 2
+            },
+            {
+              "text": "我们可以谈谈。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "那就决斗吧！",
+          "options": [
+            {
+              "text": "来啊！",
+              "nextStage": null
+            },
+            {
+              "text": "我选择用智慧。",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "谈谈？除非你让位。",
+          "options": [
+            {
+              "text": "不可能！",
+              "nextStage": 2
+            },
+            {
+              "text": "我们可以合作。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "智慧？你玩什么把戏？",
+          "options": [
+            {
+              "text": "我们来解谜。",
+              "nextStage": null
+            },
+            {
+              "text": "我们来谈判。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "合作？有意思，但我要一半银河。",
+          "options": [
+            {
+              "text": "可以，但你要效忠。",
+              "nextStage": null
+            },
+            {
+              "text": "做梦！",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "银河议会代表",
+      "position": {
+        "x": 8,
+        "y": 2
+      },
+      "dialogue": "请快速决策。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我是议会代表，时间紧迫。",
+          "options": [
+            {
+              "text": "我需要你的支持。",
+              "nextStage": 2
+            },
+            {
+              "text": "你有什么建议？",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "支持可以，但你要承诺改革。",
+          "options": [
+            {
+              "text": "我承诺！",
+              "nextStage": null
+            },
+            {
+              "text": "我考虑一下。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "建议你尽快完成交接。",
+          "options": [
+            {
+              "text": "好，我马上去。",
+              "nextStage": null
+            },
+            {
+              "text": "还有别的吗？",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "小心叛军。",
+          "options": [
+            {
+              "text": "我知道了。",
+              "nextStage": null
+            },
+            {
+              "text": "谢谢提醒。",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "神秘商人",
+      "position": {
+        "x": 3,
+        "y": 5
+      },
+      "dialogue": "想买点好东西吗？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我有银河之钥，但需要代价。",
+          "options": [
+            {
+              "text": "多少钱？",
+              "nextStage": 2
+            },
+            {
+              "text": "我可以用权力换。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "不要钱，要你的记忆。",
+          "options": [
+            {
+              "text": "成交！",
+              "nextStage": null
+            },
+            {
+              "text": "太贵了。",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "权力？我要你一半的星域。",
+          "options": [
+            {
+              "text": "可以。",
+              "nextStage": null
+            },
+            {
+              "text": "不行。",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "那就算了，你自己找吧。",
+          "options": [
+            {
+              "text": "等等，我答应。",
+              "nextStage": 2
+            },
+            {
+              "text": "好吧。",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "时间守护者",
+      "position": {
+        "x": 10,
+        "y": 8
+      },
+      "dialogue": "你只有60秒！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我是时间守护者，时间在流逝。",
+          "options": [
+            {
+              "text": "能暂停时间吗？",
+              "nextStage": 2
+            },
+            {
+              "text": "我知道，让我过去。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "不能，但可以告诉你叛军弱点。",
+          "options": [
+            {
+              "text": "快说！",
+              "nextStage": 4
+            },
+            {
+              "text": "我不需要。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "那就快去做正事。",
+          "options": [
+            {
+              "text": "好的。",
+              "nextStage": null
+            },
+            {
+              "text": "谢谢你。",
+              "nextStage": null
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "叛军首领怕光。",
+          "options": [
+            {
+              "text": "明白了！",
+              "nextStage": null
+            },
+            {
+              "text": "还有别的吗？",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "银河之钥",
+      "position": {
+        "x": 4,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一把发光的钥匙。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": null
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "钥匙打开了宝座的控制台。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": null
+            },
+            {
+              "text": "保留",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "霸主皇冠",
+      "position": {
+        "x": 12,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "华丽的皇冠，但似乎有陷阱。",
+          "options": [
+            {
+              "text": "戴上",
+              "nextStage": 2
+            },
+            {
+              "text": "检查",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "皇冠释放了能量，你获得了力量。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": null
+            },
+            {
+              "text": "摘下",
+              "nextStage": null
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "发现皇冠上有毒针。",
+          "options": [
+            {
+              "text": "小心取下",
+              "nextStage": 2
+            },
+            {
+              "text": "放弃",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "星际地图",
+      "position": {
+        "x": 6,
+        "y": 7
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一张古老的星图。",
+          "options": [
+            {
+              "text": "阅读",
+              "nextStage": 2
+            },
+            {
+              "text": "丢弃",
+              "nextStage": null
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "地图显示了一条秘密通道。",
+          "options": [
+            {
+              "text": "跟随",
+              "nextStage": null
+            },
+            {
+              "text": "记住",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "能量水晶",
+      "position": {
+        "x": 9,
+        "y": 6
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一块纯净的能量水晶。",
+          "options": [
+            {
+              "text": "吸收",
+              "nextStage": 2
+            },
+            {
+              "text": "保存",
+              "nextStage": null
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "水晶增强了你的能力。",
+          "options": [
+            {
+              "text": "使用技能",
+              "nextStage": null
+            },
+            {
+              "text": "留着以后",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "通讯器",
+      "position": {
+        "x": 11,
+        "y": 9
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个古老的通讯器。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": 2
+            },
+            {
+              "text": "修理",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "通讯器联系了盟友。",
+          "options": [
+            {
+              "text": "请求支援",
+              "nextStage": null
+            },
+            {
+              "text": "获取情报",
+              "nextStage": null
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你修好了通讯器。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": 2
+            },
+            {
+              "text": "测试",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "获得银河之钥并击败叛军首领",
+      "text": "你成功完成交接，成为新任银河霸主！"
+    },
+    {
+      "id": "end2",
+      "condition": "与叛军首领合作",
+      "text": "你与叛军分享权力，银河陷入分裂。"
+    },
+    {
+      "id": "end3",
+      "condition": "向神秘商人交出记忆",
+      "text": "你失去所有记忆，成为傀儡霸主。"
+    },
+    {
+      "id": "end4",
+      "condition": "时间耗尽",
+      "text": "60秒到，交接失败，银河陷入混乱。"
+    },
+    {
+      "id": "end5",
+      "condition": "放弃继承",
+      "text": "你放弃霸主之位，银河议会接管。"
+    },
+    {
+      "id": "end6",
+      "condition": "戴上毒皇冠",
+      "text": "你中毒身亡，继承失败。"
+    },
+    {
+      "id": "end7",
+      "condition": "得到议会支持并完成改革承诺",
+      "text": "你成为改革派霸主，银河迎来新时代。"
+    },
+    {
+      "id": "end8",
+      "condition": "使用星际地图找到秘密通道",
+      "text": "你通过秘密通道直接到达宝座，成功继承！"
+    }
+  ],
+  "introText": "你，银河霸主继承人，站在辉煌的大厅中。老霸主之魂在60秒后即将消散，你必须在这60秒内完成交接仪式，否则银河将陷入混乱。时间紧迫，行动吧！",
+  "ambientMusic": "epic_orbital",
+  "id": "fallback_world_090"
+}

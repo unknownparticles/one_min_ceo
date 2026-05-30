@@ -1,0 +1,887 @@
+{
+  "matchKeywords": [
+    "外星移民",
+    "登陆",
+    "60秒",
+    "局长",
+    "审批"
+  ],
+  "identity": "外星移民局局长",
+  "theme": "外星移民登陆前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "glass",
+      "water",
+      "glass",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "throne",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_zorg",
+      "name": "佐格大使",
+      "type": "友好外星人",
+      "position": [
+        7,
+        3
+      ],
+      "dialog": "欢迎，局长！我们的飞船将在60秒后登陆。",
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "初次见面",
+          "text": "我是佐格，代表泽塔星。我们期待和平移民。",
+          "options": [
+            {
+              "text": "要求查看移民签证",
+              "nextStage": 1,
+              "effect": "获得签证信息"
+            },
+            {
+              "text": "直接批准登陆",
+              "nextStage": 2,
+              "effect": "风险增加"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "查看签证后",
+          "text": "签证齐全，但我们携带了特殊矿石。",
+          "options": [
+            {
+              "text": "要求申报矿石",
+              "nextStage": 2,
+              "effect": "获得矿石信息"
+            },
+            {
+              "text": "无视矿石",
+              "nextStage": 2,
+              "effect": "环境风险"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "最后警告",
+          "text": "时间不多了，请决定是否允许我们登陆。",
+          "options": [
+            {
+              "text": "允许登陆",
+              "nextStage": 3,
+              "effect": "移民成功"
+            },
+            {
+              "text": "拒绝登陆",
+              "nextStage": 3,
+              "effect": "外交危机"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "结局",
+          "text": "无论结果如何，历史将铭记这一刻。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_glorp",
+      "name": "格洛普",
+      "type": "商人",
+      "position": [
+        3,
+        5
+      ],
+      "dialog": "局长，要买外星纪念品吗？",
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "开始对话",
+          "text": "我有来自五个星系的珍宝！",
+          "options": [
+            {
+              "text": "购买能量宝石",
+              "nextStage": 1,
+              "effect": "获得宝石"
+            },
+            {
+              "text": "询问情报",
+              "nextStage": 2,
+              "effect": "获得情报"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "购买后",
+          "text": "好眼力！这颗宝石能提升你的决策力。",
+          "options": [
+            {
+              "text": "感谢",
+              "nextStage": 2,
+              "effect": "无"
+            },
+            {
+              "text": "再买一个",
+              "nextStage": 2,
+              "effect": "花费金钱"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "情报",
+          "text": "小心！移民船里有间谍！",
+          "options": [
+            {
+              "text": "展开调查",
+              "nextStage": 3,
+              "effect": "获得线索"
+            },
+            {
+              "text": "忽略",
+              "nextStage": 3,
+              "effect": "潜在危险"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "结束",
+          "text": "祝你好运，局长。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_xenon",
+      "name": "塞农指挥官",
+      "type": "军事官员",
+      "position": [
+        1,
+        10
+      ],
+      "dialog": "局长，防御系统已启动。",
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "见面",
+          "text": "我是塞农，负责登陆安全。",
+          "options": [
+            {
+              "text": "报告安全状况",
+              "nextStage": 1,
+              "effect": "获得安全报告"
+            },
+            {
+              "text": "命令开火",
+              "nextStage": 2,
+              "effect": "引发战争"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "报告",
+          "text": "一切正常，但检测到异常信号。",
+          "options": [
+            {
+              "text": "加强警戒",
+              "nextStage": 2,
+              "effect": "安全提升"
+            },
+            {
+              "text": "忽略信号",
+              "nextStage": 2,
+              "effect": "风险"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "决定",
+          "text": "请指示下一步行动。",
+          "options": [
+            {
+              "text": "保持警戒",
+              "nextStage": 3,
+              "effect": "安全登陆"
+            },
+            {
+              "text": "解除警戒",
+              "nextStage": 3,
+              "effect": "放松"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "结束",
+          "text": "明白，局长。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_quark",
+      "name": "夸克博士",
+      "type": "科学家",
+      "position": [
+        4,
+        12
+      ],
+      "dialog": "局长，这些移民携带了未知科技！",
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "研究",
+          "text": "他们的飞船技术远超我们。",
+          "options": [
+            {
+              "text": "要求共享科技",
+              "nextStage": 1,
+              "effect": "获得科技"
+            },
+            {
+              "text": "禁止科技入境",
+              "nextStage": 2,
+              "effect": "科技封锁"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "共享",
+          "text": "他们同意分享部分技术。",
+          "options": [
+            {
+              "text": "接受技术",
+              "nextStage": 2,
+              "effect": "科技进步"
+            },
+            {
+              "text": "怀疑有诈",
+              "nextStage": 2,
+              "effect": "丧失机会"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "结论",
+          "text": "时间紧迫，请决定科技政策。",
+          "options": [
+            {
+              "text": "全面合作",
+              "nextStage": 3,
+              "effect": "科技飞跃"
+            },
+            {
+              "text": "保持距离",
+              "nextStage": 3,
+              "effect": "安全第一"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "结束",
+          "text": "希望你的选择是正确的。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_empress",
+      "name": "女皇莉莉丝",
+      "type": "统治者",
+      "position": [
+        8,
+        7
+      ],
+      "dialog": "局长，我代表我的子民请求庇护。",
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "觐见",
+          "text": "我们的星球正在毁灭，请收留我们。",
+          "options": [
+            {
+              "text": "同意庇护",
+              "nextStage": 1,
+              "effect": "人道主义"
+            },
+            {
+              "text": "要求条件",
+              "nextStage": 2,
+              "effect": "利益交换"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "同意",
+          "text": "感谢！我们将遵守地球法律。",
+          "options": [
+            {
+              "text": "欢迎",
+              "nextStage": 2,
+              "effect": "友好"
+            },
+            {
+              "text": "进行审查",
+              "nextStage": 2,
+              "effect": "安全"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "条件",
+          "text": "我们愿意提供科技和资源。",
+          "options": [
+            {
+              "text": "接受条件",
+              "nextStage": 3,
+              "effect": "双赢"
+            },
+            {
+              "text": "拒绝并驱逐",
+              "nextStage": 3,
+              "effect": "冲突"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "结局",
+          "text": "命运由你决定。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_gem",
+      "name": "能量宝石",
+      "type": "工具",
+      "position": [
+        5,
+        9
+      ],
+      "effect": "提升决策速度",
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "发现",
+          "text": "一颗闪烁的宝石，蕴藏能量。",
+          "options": [
+            {
+              "text": "捡起宝石",
+              "nextStage": 1,
+              "effect": "获得宝石"
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2,
+              "effect": "失去机会"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "使用",
+          "text": "宝石散发出温暖的光。",
+          "options": [
+            {
+              "text": "佩戴",
+              "nextStage": 2,
+              "effect": "速度+1"
+            },
+            {
+              "text": "研究",
+              "nextStage": 2,
+              "effect": "知识"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "完成",
+          "text": "宝石已融入你的装备。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item_scanner",
+      "name": "外星扫描仪",
+      "type": "科技",
+      "position": [
+        6,
+        2
+      ],
+      "effect": "识别外星生物特征",
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "获取",
+          "text": "一个精巧的扫描仪。",
+          "options": [
+            {
+              "text": "拿起扫描仪",
+              "nextStage": 1,
+              "effect": "获得扫描仪"
+            },
+            {
+              "text": "交给科学家",
+              "nextStage": 2,
+              "effect": "协作"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "使用",
+          "text": "扫描仪显示附近有未知生命体。",
+          "options": [
+            {
+              "text": "继续扫描",
+              "nextStage": 2,
+              "effect": "情报"
+            },
+            {
+              "text": "关闭扫描仪",
+              "nextStage": 2,
+              "effect": "未知"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "结束",
+          "text": "扫描仪记录完毕。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item_diplomatic_pact",
+      "name": "外交条约",
+      "type": "文件",
+      "position": [
+        9,
+        6
+      ],
+      "effect": "签订条约，影响外交关系",
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "发现",
+          "text": "一份未签署的外交条约。",
+          "options": [
+            {
+              "text": "签署条约",
+              "nextStage": 1,
+              "effect": "外交关系提升"
+            },
+            {
+              "text": "撕毁条约",
+              "nextStage": 2,
+              "effect": "关系恶化"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "签署后",
+          "text": "条约生效，双方合作。",
+          "options": [
+            {
+              "text": "公布消息",
+              "nextStage": 2,
+              "effect": "民心提升"
+            },
+            {
+              "text": "保密",
+              "nextStage": 2,
+              "effect": "谨慎"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "完成",
+          "text": "条约已存档。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item_emergency_button",
+      "name": "紧急按钮",
+      "type": "工具",
+      "position": [
+        2,
+        3
+      ],
+      "effect": "启动紧急程序",
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "看到按钮",
+          "text": "一个红色紧急按钮，上面写着'仅限危机'。",
+          "options": [
+            {
+              "text": "按下按钮",
+              "nextStage": 1,
+              "effect": "启动紧急程序"
+            },
+            {
+              "text": "离开",
+              "nextStage": 2,
+              "effect": "无"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "按下后",
+          "text": "警报响起，所有系统进入警戒。",
+          "options": [
+            {
+              "text": "宣布演习",
+              "nextStage": 2,
+              "effect": "减少恐慌"
+            },
+            {
+              "text": "保持严肃",
+              "nextStage": 2,
+              "effect": "紧张局势"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "结束",
+          "text": "紧急状态解除。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item_alien_fruit",
+      "name": "外星水果",
+      "type": "食物",
+      "position": [
+        3,
+        14
+      ],
+      "effect": "恢复精力",
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "发现",
+          "text": "一串发光的水果，香气诱人。",
+          "options": [
+            {
+              "text": "吃掉水果",
+              "nextStage": 1,
+              "effect": "恢复体力"
+            },
+            {
+              "text": "检测水果",
+              "nextStage": 2,
+              "effect": "了解属性"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "吃掉后",
+          "text": "水果美味，你感觉充满能量。",
+          "options": [
+            {
+              "text": "再吃一个",
+              "nextStage": 2,
+              "effect": "过度"
+            },
+            {
+              "text": "分享给他人",
+              "nextStage": 2,
+              "effect": "好感"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "结束",
+          "text": "水果已被享用。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_peace",
+      "condition": "成功通过所有外交检查，友好接纳移民",
+      "description": "移民顺利登陆，地球与外星文明建立和平关系。"
+    },
+    {
+      "id": "ending_war",
+      "condition": "拒绝移民或触发军事冲突",
+      "description": "外星舰队发动攻击，地球陷入星际战争。"
+    },
+    {
+      "id": "ending_plague",
+      "condition": "忽略矿石风险，导致外星病原体扩散",
+      "description": "未知病毒爆发，全球陷入恐慌。"
+    },
+    {
+      "id": "ending_tech",
+      "condition": "成功获取外星科技并合作",
+      "description": "地球科技飞跃，进入新纪元。"
+    },
+    {
+      "id": "ending_betrayal",
+      "condition": "被间谍欺骗，导致移民内部叛乱",
+      "description": "外星移民爆发内乱，城市陷入混乱。"
+    },
+    {
+      "id": "ending_escape",
+      "condition": "按下紧急按钮并选择撤离",
+      "description": "你逃离了现场，移民计划推迟。"
+    },
+    {
+      "id": "ending_tyranny",
+      "condition": "利用女皇的条件，建立独裁统治",
+      "description": "你成为星际独裁者，但民心尽失。"
+    },
+    {
+      "id": "ending_timeout",
+      "condition": "60秒内未做出关键决定",
+      "description": "时间耗尽，移民船自行登陆，未知后果。"
+    }
+  ],
+  "introText": "你，外星移民局局长，面对即将登陆的外星飞船。还有60秒！做出决定，迎接未知的命运。",
+  "ambientMusic": "紧张而宏大的交响乐，伴有神秘的电子音效",
+  "id": "fallback_world_058"
+}

@@ -1,0 +1,1320 @@
+{
+  "matchKeywords": [
+    "热寂",
+    "宇宙",
+    "倒计时",
+    "熵增",
+    "终点"
+  ],
+  "identity": "热寂应对委员会主席",
+  "theme": "宇宙热寂倒计时前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "row": 1,
+    "col": 1
+  },
+  "npcs": [
+    {
+      "id": "npc_entropy_watcher",
+      "name": "熵之观察者",
+      "position": {
+        "row": 2,
+        "col": 3
+      },
+      "dialogue": "我是熵的化身，你还有60秒。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "宇宙的熵正在无情增加，你打算怎么办？",
+          "options": [
+            {
+              "id": "opt1",
+              "text": "尝试逆转熵增",
+              "next": "stage2a"
+            },
+            {
+              "id": "opt2",
+              "text": "接受命运",
+              "next": "stage2b"
+            }
+          ]
+        },
+        {
+          "stage": "stage2a",
+          "text": "你妄想对抗热寂？这需要巨大的能量。",
+          "options": [
+            {
+              "id": "opt3",
+              "text": "使用所有剩余能源",
+              "next": "stage3a"
+            },
+            {
+              "id": "opt4",
+              "text": "寻找其他方法",
+              "next": "stage3b"
+            }
+          ]
+        },
+        {
+          "stage": "stage2b",
+          "text": "你选择放弃，但也许还有一线生机。",
+          "options": [
+            {
+              "id": "opt5",
+              "text": "寻求帮助",
+              "next": "stage3c"
+            },
+            {
+              "id": "opt6",
+              "text": "独自沉思",
+              "next": "stage3d"
+            }
+          ]
+        },
+        {
+          "stage": "stage3a",
+          "text": "能源耗尽，宇宙加速冷却。",
+          "options": [
+            {
+              "id": "opt7",
+              "text": "绝望地祈祷",
+              "next": "end1"
+            },
+            {
+              "id": "opt8",
+              "text": "记录最后的观察",
+              "next": "end2"
+            }
+          ]
+        },
+        {
+          "stage": "stage3b",
+          "text": "你发现了一个奇点，或许可以利用。",
+          "options": [
+            {
+              "id": "opt9",
+              "text": "跳入奇点",
+              "next": "end3"
+            },
+            {
+              "id": "opt10",
+              "text": "研究奇点",
+              "next": "end4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_last_photon",
+      "name": "最后一束光子",
+      "position": {
+        "row": 4,
+        "col": 5
+      },
+      "dialogue": "我是宇宙中最后一束光，即将熄灭。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你看见我，就像看见时间的尽头。",
+          "options": [
+            {
+              "id": "opt11",
+              "text": "拥抱光子",
+              "next": "stage2c"
+            },
+            {
+              "id": "opt12",
+              "text": "让它继续传播",
+              "next": "stage2d"
+            }
+          ]
+        },
+        {
+          "stage": "stage2c",
+          "text": "光子融入你的身体，你感到温暖。",
+          "options": [
+            {
+              "id": "opt13",
+              "text": "保存这份温暖",
+              "next": "stage3e"
+            },
+            {
+              "id": "opt14",
+              "text": "传播温暖",
+              "next": "stage3f"
+            }
+          ]
+        },
+        {
+          "stage": "stage2d",
+          "text": "光子继续旅行，但终点仍是虚无。",
+          "options": [
+            {
+              "id": "opt15",
+              "text": "跟随光子",
+              "next": "end5"
+            },
+            {
+              "id": "opt16",
+              "text": "转身离开",
+              "next": "end6"
+            }
+          ]
+        },
+        {
+          "stage": "stage3e",
+          "text": "你成为宇宙最后的恒星。",
+          "options": [
+            {
+              "id": "opt17",
+              "text": "燃烧殆尽",
+              "next": "end7"
+            },
+            {
+              "id": "opt18",
+              "text": "变成黑洞",
+              "next": "end8"
+            }
+          ]
+        },
+        {
+          "stage": "stage3f",
+          "text": "温暖扩散，但熵增更快。",
+          "options": [
+            {
+              "id": "opt19",
+              "text": "加速扩散",
+              "next": "end9"
+            },
+            {
+              "id": "opt20",
+              "text": "回收温暖",
+              "next": "end10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_quantum_ghost",
+      "name": "量子幽灵",
+      "position": {
+        "row": 6,
+        "col": 8
+      },
+      "dialogue": "我存在于概率云中，热寂也无法消灭我。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你无法确定我是否真实，就像你无法确定未来。",
+          "options": [
+            {
+              "id": "opt21",
+              "text": "观测幽灵",
+              "next": "stage2e"
+            },
+            {
+              "id": "opt22",
+              "text": "忽视它",
+              "next": "stage2f"
+            }
+          ]
+        },
+        {
+          "stage": "stage2e",
+          "text": "观测导致波函数坍缩，幽灵变成了一个粒子。",
+          "options": [
+            {
+              "id": "opt23",
+              "text": "捕获粒子",
+              "next": "stage3g"
+            },
+            {
+              "id": "opt24",
+              "text": "释放粒子",
+              "next": "stage3h"
+            }
+          ]
+        },
+        {
+          "stage": "stage2f",
+          "text": "幽灵在概率中游荡，或许会影响结果。",
+          "options": [
+            {
+              "id": "opt25",
+              "text": "祈求好运",
+              "next": "stage3i"
+            },
+            {
+              "id": "opt26",
+              "text": "计算概率",
+              "next": "stage3j"
+            }
+          ]
+        },
+        {
+          "stage": "stage3g",
+          "text": "粒子具有巨大的能量，但极不稳定。",
+          "options": [
+            {
+              "id": "opt27",
+              "text": "用于对抗热寂",
+              "next": "end11"
+            },
+            {
+              "id": "opt28",
+              "text": "储存起来",
+              "next": "end12"
+            }
+          ]
+        },
+        {
+          "stage": "stage3h",
+          "text": "粒子消失，宇宙损失了一份能量。",
+          "options": [
+            {
+              "id": "opt29",
+              "text": "感到后悔",
+              "next": "end13"
+            },
+            {
+              "id": "opt30",
+              "text": "无所谓",
+              "next": "end14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_time_weaver",
+      "name": "时间织者",
+      "position": {
+        "row": 8,
+        "col": 12
+      },
+      "dialogue": "时间是我的织物，但热寂会扯断所有的线。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你还有不到60秒，我可以帮你编织新的时间线。",
+          "options": [
+            {
+              "id": "opt31",
+              "text": "请求编织",
+              "next": "stage2g"
+            },
+            {
+              "id": "opt32",
+              "text": "拒绝帮助",
+              "next": "stage2h"
+            }
+          ]
+        },
+        {
+          "stage": "stage2g",
+          "text": "时间线开始分支，但每条都指向热寂。",
+          "options": [
+            {
+              "id": "opt33",
+              "text": "选择一条分支",
+              "next": "stage3k"
+            },
+            {
+              "id": "opt34",
+              "text": "创造新分支",
+              "next": "stage3l"
+            }
+          ]
+        },
+        {
+          "stage": "stage2h",
+          "text": "你独自面对时间，它变得黏稠。",
+          "options": [
+            {
+              "id": "opt35",
+              "text": "加速时间",
+              "next": "stage3m"
+            },
+            {
+              "id": "opt36",
+              "text": "减速时间",
+              "next": "stage3n"
+            }
+          ]
+        },
+        {
+          "stage": "stage3k",
+          "text": "分支时间线中，热寂似乎没那么快。",
+          "options": [
+            {
+              "id": "opt37",
+              "text": "停留在这个分支",
+              "next": "end15"
+            },
+            {
+              "id": "opt38",
+              "text": "回到主干",
+              "next": "end16"
+            }
+          ]
+        },
+        {
+          "stage": "stage3l",
+          "text": "新分支脆弱，随时会崩溃。",
+          "options": [
+            {
+              "id": "opt39",
+              "text": "加固分支",
+              "next": "end17"
+            },
+            {
+              "id": "opt40",
+              "text": "放弃分支",
+              "next": "end18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_void_whisperer",
+      "name": "虚空低语者",
+      "position": {
+        "row": 10,
+        "col": 7
+      },
+      "dialogue": "我是来自热寂之后的声音，你听到的是虚无。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "热寂不是终点，而是起点，你愿意听吗？",
+          "options": [
+            {
+              "id": "opt41",
+              "text": "倾听低语",
+              "next": "stage2i"
+            },
+            {
+              "id": "opt42",
+              "text": "捂住耳朵",
+              "next": "stage2j"
+            }
+          ]
+        },
+        {
+          "stage": "stage2i",
+          "text": "低语告诉你宇宙循环的秘密。",
+          "options": [
+            {
+              "id": "opt43",
+              "text": "相信低语",
+              "next": "stage3o"
+            },
+            {
+              "id": "opt44",
+              "text": "怀疑低语",
+              "next": "stage3p"
+            }
+          ]
+        },
+        {
+          "stage": "stage2j",
+          "text": "你拒绝聆听，但低语渗入你的意识。",
+          "options": [
+            {
+              "id": "opt45",
+              "text": "尝试清除低语",
+              "next": "stage3q"
+            },
+            {
+              "id": "opt46",
+              "text": "接受低语",
+              "next": "stage3r"
+            }
+          ]
+        },
+        {
+          "stage": "stage3o",
+          "text": "你掌握了重启宇宙的方法。",
+          "options": [
+            {
+              "id": "opt47",
+              "text": "重启宇宙",
+              "next": "end19"
+            },
+            {
+              "id": "opt48",
+              "text": "传播方法",
+              "next": "end20"
+            }
+          ]
+        },
+        {
+          "stage": "stage3p",
+          "text": "低语消失，你错过了最后的机会。",
+          "options": [
+            {
+              "id": "opt49",
+              "text": "后悔",
+              "next": "end21"
+            },
+            {
+              "id": "opt50",
+              "text": "继续前行",
+              "next": "end22"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_entropy_cube",
+      "name": "熵立方",
+      "position": {
+        "row": 3,
+        "col": 5
+      },
+      "effect": "减少周围环境的熵",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个闪烁着微光的立方体，似乎能吸收混沌。",
+          "options": [
+            {
+              "id": "opt51",
+              "text": "拿起它",
+              "next": "stage2k"
+            },
+            {
+              "id": "opt52",
+              "text": "研究它",
+              "next": "stage2l"
+            }
+          ]
+        },
+        {
+          "stage": "stage2k",
+          "text": "立方体在你手中冷却，周围变得有序。",
+          "options": [
+            {
+              "id": "opt53",
+              "text": "用它对抗热寂",
+              "next": "stage3s"
+            },
+            {
+              "id": "opt54",
+              "text": "保存它",
+              "next": "stage3t"
+            }
+          ]
+        },
+        {
+          "stage": "stage2l",
+          "text": "你发现立方体有反熵特性。",
+          "options": [
+            {
+              "id": "opt55",
+              "text": "复制它",
+              "next": "stage3u"
+            },
+            {
+              "id": "opt56",
+              "text": "破坏它",
+              "next": "stage3v"
+            }
+          ]
+        },
+        {
+          "stage": "stage3s",
+          "text": "立方体吸收了大量熵，但开始不稳定。",
+          "options": [
+            {
+              "id": "opt57",
+              "text": "释放能量",
+              "next": "end23"
+            },
+            {
+              "id": "opt58",
+              "text": "继续吸收",
+              "next": "end24"
+            }
+          ]
+        },
+        {
+          "stage": "stage3t",
+          "text": "立方体安静下来，成为一件纪念品。",
+          "options": [
+            {
+              "id": "opt59",
+              "text": "展示它",
+              "next": "end25"
+            },
+            {
+              "id": "opt60",
+              "text": "隐藏它",
+              "next": "end26"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_time_fragment",
+      "name": "时间碎片",
+      "position": {
+        "row": 5,
+        "col": 9
+      },
+      "effect": "减缓时间流逝",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一块破碎的钟表，指针仍在移动。",
+          "options": [
+            {
+              "id": "opt61",
+              "text": "拾取碎片",
+              "next": "stage2m"
+            },
+            {
+              "id": "opt62",
+              "text": "修复它",
+              "next": "stage2n"
+            }
+          ]
+        },
+        {
+          "stage": "stage2m",
+          "text": "碎片融入你的体内，你感觉时间变慢。",
+          "options": [
+            {
+              "id": "opt63",
+              "text": "利用慢时间思考",
+              "next": "stage3w"
+            },
+            {
+              "id": "opt64",
+              "text": "加速行动",
+              "next": "stage3x"
+            }
+          ]
+        },
+        {
+          "stage": "stage2n",
+          "text": "你尝试修复，但碎片太小。",
+          "options": [
+            {
+              "id": "opt65",
+              "text": "寻找其他碎片",
+              "next": "stage3y"
+            },
+            {
+              "id": "opt66",
+              "text": "放弃修复",
+              "next": "stage3z"
+            }
+          ]
+        },
+        {
+          "stage": "stage3w",
+          "text": "你有更多时间，但热寂仍然逼近。",
+          "options": [
+            {
+              "id": "opt67",
+              "text": "准备最终计划",
+              "next": "end27"
+            },
+            {
+              "id": "opt68",
+              "text": "享受余暇",
+              "next": "end28"
+            }
+          ]
+        },
+        {
+          "stage": "stage3x",
+          "text": "你快速行动，但可能犯错。",
+          "options": [
+            {
+              "id": "opt69",
+              "text": "谨慎行事",
+              "next": "end29"
+            },
+            {
+              "id": "opt70",
+              "text": "孤注一掷",
+              "next": "end30"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_quantum_key",
+      "name": "量子钥匙",
+      "position": {
+        "row": 7,
+        "col": 4
+      },
+      "effect": "打开概率锁",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一把由概率构成的钥匙，忽隐忽现。",
+          "options": [
+            {
+              "id": "opt71",
+              "text": "抓住钥匙",
+              "next": "stage2o"
+            },
+            {
+              "id": "opt72",
+              "text": "观察它",
+              "next": "stage2p"
+            }
+          ]
+        },
+        {
+          "stage": "stage2o",
+          "text": "钥匙实体化，你感到它连接着无数可能性。",
+          "options": [
+            {
+              "id": "opt73",
+              "text": "打开概率门",
+              "next": "stage3aa"
+            },
+            {
+              "id": "opt74",
+              "text": "关闭概率门",
+              "next": "stage3ab"
+            }
+          ]
+        },
+        {
+          "stage": "stage2p",
+          "text": "钥匙闪烁，似乎在选择自己的状态。",
+          "options": [
+            {
+              "id": "opt75",
+              "text": "干涉它",
+              "next": "stage3ac"
+            },
+            {
+              "id": "opt76",
+              "text": "不干涉",
+              "next": "stage3ad"
+            }
+          ]
+        },
+        {
+          "stage": "stage3aa",
+          "text": "门后是一个低熵宇宙，你可以进去。",
+          "options": [
+            {
+              "id": "opt77",
+              "text": "进入新宇宙",
+              "next": "end31"
+            },
+            {
+              "id": "opt78",
+              "text": "关闭门",
+              "next": "end32"
+            }
+          ]
+        },
+        {
+          "stage": "stage3ab",
+          "text": "你锁上了所有可能性，只剩下一条路。",
+          "options": [
+            {
+              "id": "opt79",
+              "text": "走那条路",
+              "next": "end33"
+            },
+            {
+              "id": "opt80",
+              "text": "打破锁",
+              "next": "end34"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_void_essence",
+      "name": "虚空精华",
+      "position": {
+        "row": 9,
+        "col": 14
+      },
+      "effect": "创造虚无空间",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一团黑色的液体，散发着虚无的气息。",
+          "options": [
+            {
+              "id": "opt81",
+              "text": "触碰它",
+              "next": "stage2q"
+            },
+            {
+              "id": "opt82",
+              "text": "回避它",
+              "next": "stage2r"
+            }
+          ]
+        },
+        {
+          "stage": "stage2q",
+          "text": "液体包裹你的手，你感到虚空的力量。",
+          "options": [
+            {
+              "id": "opt83",
+              "text": "吸收它",
+              "next": "stage3ae"
+            },
+            {
+              "id": "opt84",
+              "text": "用它创造屏障",
+              "next": "stage3af"
+            }
+          ]
+        },
+        {
+          "stage": "stage2r",
+          "text": "液体自行扩散，形成一个空洞。",
+          "options": [
+            {
+              "id": "opt85",
+              "text": "跳入空洞",
+              "next": "stage3ag"
+            },
+            {
+              "id": "opt86",
+              "text": "填补空洞",
+              "next": "stage3ah"
+            }
+          ]
+        },
+        {
+          "stage": "stage3ae",
+          "text": "你体内充满虚空，你成为了虚空的一部分。",
+          "options": [
+            {
+              "id": "opt87",
+              "text": "拥抱虚无",
+              "next": "end35"
+            },
+            {
+              "id": "opt88",
+              "text": "抵抗虚无",
+              "next": "end36"
+            }
+          ]
+        },
+        {
+          "stage": "stage3af",
+          "text": "屏障暂时阻挡了热寂，但会消耗能量。",
+          "options": [
+            {
+              "id": "opt89",
+              "text": "维持屏障",
+              "next": "end37"
+            },
+            {
+              "id": "opt90",
+              "text": "扩大屏障",
+              "next": "end38"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_cosmic_seed",
+      "name": "宇宙种子",
+      "position": {
+        "row": 11,
+        "col": 2
+      },
+      "effect": "重生宇宙",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一粒微小的种子，包含了宇宙的全部信息。",
+          "options": [
+            {
+              "id": "opt91",
+              "text": "种下它",
+              "next": "stage2s"
+            },
+            {
+              "id": "opt92",
+              "text": "解析它",
+              "next": "stage2t"
+            }
+          ]
+        },
+        {
+          "stage": "stage2s",
+          "text": "种子迅速生长，一个新的宇宙正在形成。",
+          "options": [
+            {
+              "id": "opt93",
+              "text": "进入新宇宙",
+              "next": "stage3ai"
+            },
+            {
+              "id": "opt94",
+              "text": "留在旧宇宙",
+              "next": "stage3aj"
+            }
+          ]
+        },
+        {
+          "stage": "stage2t",
+          "text": "你了解到宇宙的循环本质，种子是希望。",
+          "options": [
+            {
+              "id": "opt95",
+              "text": "复制种子",
+              "next": "stage3ak"
+            },
+            {
+              "id": "opt96",
+              "text": "传播种子",
+              "next": "stage3al"
+            }
+          ]
+        },
+        {
+          "stage": "stage3ai",
+          "text": "新宇宙充满生机，热寂被逆转。",
+          "options": [
+            {
+              "id": "opt97",
+              "text": "成为新宇宙的神",
+              "next": "end39"
+            },
+            {
+              "id": "opt98",
+              "text": "成为新宇宙的观察者",
+              "next": "end40"
+            }
+          ]
+        },
+        {
+          "stage": "stage3aj",
+          "text": "你选择与旧宇宙共存亡。",
+          "options": [
+            {
+              "id": "opt99",
+              "text": "庄严等待",
+              "next": "end41"
+            },
+            {
+              "id": "opt100",
+              "text": "疯狂庆祝",
+              "next": "end42"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "text": "你绝望地祈祷，但宇宙冷漠依旧，热寂降临，一切归于虚无。"
+    },
+    {
+      "id": "end2",
+      "text": "你记录了最后的观察，成为宇宙的史官，但记录也随着热寂消失。"
+    },
+    {
+      "id": "end3",
+      "text": "你跳入奇点，发现那是通往另一个宇宙的通道，你得以幸存。"
+    },
+    {
+      "id": "end4",
+      "text": "你研究奇点，但时间耗尽，奇点爆炸，你被吞噬。"
+    },
+    {
+      "id": "end5",
+      "text": "你跟随光子，最终融入黑暗，成为宇宙背景辐射的一部分。"
+    },
+    {
+      "id": "end6",
+      "text": "你转身离开，却在黑暗中迷失，孤独地等待终结。"
+    },
+    {
+      "id": "end7",
+      "text": "你燃烧殆尽，发出最后的光芒，照亮了虚无的一瞬。"
+    },
+    {
+      "id": "end8",
+      "text": "你变成黑洞，吞噬周围的一切，但黑洞也会蒸发，最终消失。"
+    },
+    {
+      "id": "end9",
+      "text": "你加速扩散，但熵增更快，你加速了热寂的到来。"
+    },
+    {
+      "id": "end10",
+      "text": "你回收温暖，但能量守恒，你无法阻止熵增。"
+    },
+    {
+      "id": "end11",
+      "text": "你用粒子对抗热寂，但粒子不稳定，引发大爆炸，宇宙重启。"
+    },
+    {
+      "id": "end12",
+      "text": "你把粒子储存起来，但热寂后，粒子也无用。"
+    },
+    {
+      "id": "end13",
+      "text": "你感到后悔，但无法挽回，你只能在悔恨中等待结束。"
+    },
+    {
+      "id": "end14",
+      "text": "你无所谓，热寂对你而言只是另一个状态。"
+    },
+    {
+      "id": "end15",
+      "text": "你停留在分支时间线，但分支也逐渐走向热寂。"
+    },
+    {
+      "id": "end16",
+      "text": "你回到主干，时间已所剩无几，你无法改变。"
+    },
+    {
+      "id": "end17",
+      "text": "你加固分支，但消耗了大量能量，加速了主宇宙的热寂。"
+    },
+    {
+      "id": "end18",
+      "text": "你放弃分支，所有时间线合并，热寂同时降临。"
+    },
+    {
+      "id": "end19",
+      "text": "你重启宇宙，一切从头开始，但循环可能再次发生。"
+    },
+    {
+      "id": "end20",
+      "text": "你传播方法，但无人相信，你被视为疯子。"
+    },
+    {
+      "id": "end21",
+      "text": "你后悔没有相信低语，但为时已晚。"
+    },
+    {
+      "id": "end22",
+      "text": "你继续前行，但前方只有虚无。"
+    },
+    {
+      "id": "end23",
+      "text": "你释放能量，形成新的恒星，但很快耗尽。"
+    },
+    {
+      "id": "end24",
+      "text": "你继续吸收，但立方体饱和，爆炸形成黑洞。"
+    },
+    {
+      "id": "end25",
+      "text": "你展示它，人们惊叹，但无法改变结局。"
+    },
+    {
+      "id": "end26",
+      "text": "你隐藏它，它成为你的秘密，随你一起消亡。"
+    },
+    {
+      "id": "end27",
+      "text": "你准备了最终计划，但计划失败，一切照旧。"
+    },
+    {
+      "id": "end28",
+      "text": "你享受余暇，在最后时刻感受到平静。"
+    },
+    {
+      "id": "end29",
+      "text": "你谨慎行事，但错过了机会。"
+    },
+    {
+      "id": "end30",
+      "text": "你孤注一掷，可能成功也可能失败，但至少尝试过。"
+    },
+    {
+      "id": "end31",
+      "text": "你进入新宇宙，那里没有热寂，你获得了新生。"
+    },
+    {
+      "id": "end32",
+      "text": "你关闭门，留在旧宇宙，与它一同结束。"
+    },
+    {
+      "id": "end33",
+      "text": "你走那条路，发现是通往新宇宙的捷径。"
+    },
+    {
+      "id": "end34",
+      "text": "你打破锁，释放了所有可能性，但混乱中热寂降临。"
+    },
+    {
+      "id": "end35",
+      "text": "你拥抱虚无，成为虚空的一部分，永恒安息。"
+    },
+    {
+      "id": "end36",
+      "text": "你抵抗虚无，但最终被虚无吞噬。"
+    },
+    {
+      "id": "end37",
+      "text": "你维持屏障，但能量耗尽，屏障破裂。"
+    },
+    {
+      "id": "end38",
+      "text": "你扩大屏障，但需要更多能量，你牺牲自己。"
+    },
+    {
+      "id": "end39",
+      "text": "你成为新宇宙的神，但孤独永恒。"
+    },
+    {
+      "id": "end40",
+      "text": "你成为新宇宙的观察者，但无法干预。"
+    },
+    {
+      "id": "end41",
+      "text": "你庄严等待，在寂静中迎接终结。"
+    },
+    {
+      "id": "end42",
+      "text": "你疯狂庆祝，在狂欢中迎来热寂。"
+    }
+  ],
+  "introText": "60秒后，宇宙将迎来热寂。作为热寂应对委员会主席，你肩负着最后的希望。在这个荒诞的倒计时中，每一个选择都可能改变宇宙的终点。你准备好了吗？",
+  "ambientMusic": "ambient_void.mp3",
+  "id": "fallback_world_095"
+}

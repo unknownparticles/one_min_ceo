@@ -1,0 +1,1252 @@
+{
+  "matchKeywords": [
+    "太空",
+    "游乐园",
+    "事故",
+    "60秒",
+    "园长"
+  ],
+  "identity": "太空游乐园园长",
+  "theme": "太空游乐园事故前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "neon_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "server",
+      "server",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "fire",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "water",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "小丑机器人",
+      "position": [
+        3,
+        5
+      ],
+      "dialogue": "欢迎园长！但旋转星球即将脱落！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "小丑机器人疯狂挥舞手臂。",
+          "options": [
+            {
+              "text": "安抚它",
+              "nextStage": 1,
+              "effect": "calm"
+            },
+            {
+              "text": "询问详情",
+              "nextStage": 2,
+              "effect": "info"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "它稍微平静，但警告说时间不多了。",
+          "options": [
+            {
+              "text": "让它带路",
+              "nextStage": 3,
+              "effect": "lead"
+            },
+            {
+              "text": "自己处理",
+              "nextStage": 4,
+              "effect": "solo"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "它说旋转星球的引擎过热，需要冷却。",
+          "options": [
+            {
+              "text": "去冷却系统",
+              "nextStage": 3,
+              "effect": "cool"
+            },
+            {
+              "text": "先疏散游客",
+              "nextStage": 4,
+              "effect": "evac"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "小丑带路，但路上有障碍。",
+          "options": [
+            {
+              "text": "清除障碍",
+              "nextStage": 4,
+              "effect": "clear"
+            },
+            {
+              "text": "绕路",
+              "nextStage": 4,
+              "effect": "detour"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "时间所剩无几，最终结局。",
+          "options": [
+            {
+              "text": "冲向控制台",
+              "nextStage": 5,
+              "effect": "rush"
+            },
+            {
+              "text": "启动紧急制动",
+              "nextStage": 5,
+              "effect": "brake"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局已定。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "外星游客",
+      "position": [
+        5,
+        8
+      ],
+      "dialogue": "我的孩子还在旋转星球上！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "外星游客焦急地拉住你。",
+          "options": [
+            {
+              "text": "安慰他",
+              "nextStage": 1,
+              "effect": "comfort"
+            },
+            {
+              "text": "派机器人去救",
+              "nextStage": 2,
+              "effect": "robot"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "他稍微冷静，但坚持要一起去。",
+          "options": [
+            {
+              "text": "同意带路",
+              "nextStage": 3,
+              "effect": "accompany"
+            },
+            {
+              "text": "拒绝并命令他留下",
+              "nextStage": 4,
+              "effect": "refuse"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "机器人出发，但信号中断。",
+          "options": [
+            {
+              "text": "亲自查看",
+              "nextStage": 3,
+              "effect": "check"
+            },
+            {
+              "text": "继续冷却任务",
+              "nextStage": 4,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你们来到旋转星球底部。",
+          "options": [
+            {
+              "text": "爬上去",
+              "nextStage": 4,
+              "effect": "climb"
+            },
+            {
+              "text": "使用传送器",
+              "nextStage": 4,
+              "effect": "teleport"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "时间紧迫，做出选择。",
+          "options": [
+            {
+              "text": "强行停机",
+              "nextStage": 5,
+              "effect": "stop"
+            },
+            {
+              "text": "启动安全气囊",
+              "nextStage": 5,
+              "effect": "airbag"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "维修主管",
+      "position": [
+        7,
+        4
+      ],
+      "dialogue": "冷却系统故障！需要立即处理！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "维修主管满头大汗。",
+          "options": [
+            {
+              "text": "问他解决方案",
+              "nextStage": 1,
+              "effect": "solution"
+            },
+            {
+              "text": "亲自去查看",
+              "nextStage": 2,
+              "effect": "inspect"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "他说需要去冷却塔手动重启。",
+          "options": [
+            {
+              "text": "立刻前往",
+              "nextStage": 3,
+              "effect": "go"
+            },
+            {
+              "text": "先备份数据",
+              "nextStage": 4,
+              "effect": "backup"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你发现冷却管爆裂。",
+          "options": [
+            {
+              "text": "尝试修补",
+              "nextStage": 3,
+              "effect": "repair"
+            },
+            {
+              "text": "关闭主阀门",
+              "nextStage": 4,
+              "effect": "valve"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "情况危急，压力飙升。",
+          "options": [
+            {
+              "text": "紧急泄压",
+              "nextStage": 4,
+              "effect": "depress"
+            },
+            {
+              "text": "加固管道",
+              "nextStage": 4,
+              "effect": "reinforce"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "系统即将崩溃。",
+          "options": [
+            {
+              "text": "启动备用冷却",
+              "nextStage": 5,
+              "effect": "backup_cool"
+            },
+            {
+              "text": "全员撤离",
+              "nextStage": 5,
+              "effect": "evacuate"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "神秘商人",
+      "position": [
+        8,
+        10
+      ],
+      "dialogue": "买下这个防护罩，或许能救你一命。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "商人神秘地笑着。",
+          "options": [
+            {
+              "text": "购买防护罩",
+              "nextStage": 1,
+              "effect": "buy"
+            },
+            {
+              "text": "拒绝并离开",
+              "nextStage": 2,
+              "effect": "decline"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "他给了你一个能量护盾。",
+          "options": [
+            {
+              "text": "立即使用",
+              "nextStage": 3,
+              "effect": "use"
+            },
+            {
+              "text": "先收着",
+              "nextStage": 4,
+              "effect": "keep"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他耸耸肩，消失在人海中。",
+          "options": [
+            {
+              "text": "追上去",
+              "nextStage": 3,
+              "effect": "chase"
+            },
+            {
+              "text": "不管他",
+              "nextStage": 4,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你获得了一个有用的道具。",
+          "options": [
+            {
+              "text": "去控制室",
+              "nextStage": 4,
+              "effect": "control"
+            },
+            {
+              "text": "去救游客",
+              "nextStage": 4,
+              "effect": "rescue"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "最终抉择。",
+          "options": [
+            {
+              "text": "牺牲自己保护他人",
+              "nextStage": 5,
+              "effect": "sacrifice"
+            },
+            {
+              "text": "独自逃生",
+              "nextStage": 5,
+              "effect": "escape"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "AI导游",
+      "position": [
+        2,
+        12
+      ],
+      "dialogue": "检测到致命错误，请立即撤离。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "AI导游的声音冰冷。",
+          "options": [
+            {
+              "text": "询问错误详情",
+              "nextStage": 1,
+              "effect": "details"
+            },
+            {
+              "text": "忽略警告",
+              "nextStage": 2,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "它说主反应堆即将熔毁。",
+          "options": [
+            {
+              "text": "前往反应堆",
+              "nextStage": 3,
+              "effect": "reactor"
+            },
+            {
+              "text": "启动自动灭火",
+              "nextStage": 4,
+              "effect": "fire"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "警告持续响起。",
+          "options": [
+            {
+              "text": "关闭AI",
+              "nextStage": 3,
+              "effect": "shutdown"
+            },
+            {
+              "text": "听从建议",
+              "nextStage": 4,
+              "effect": "obey"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "反应堆温度急剧上升。",
+          "options": [
+            {
+              "text": "手动降温",
+              "nextStage": 4,
+              "effect": "cool_manual"
+            },
+            {
+              "text": "紧急泄放",
+              "nextStage": 4,
+              "effect": "vent"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "系统濒临崩溃。",
+          "options": [
+            {
+              "text": "强制停机",
+              "nextStage": 5,
+              "effect": "force_stop"
+            },
+            {
+              "text": "启动逃生舱",
+              "nextStage": 5,
+              "effect": "escape_pod"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "冷却液罐",
+      "position": [
+        4,
+        3
+      ],
+      "description": "用于冷却过热引擎。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你发现一个冷却液罐。",
+          "options": [
+            {
+              "text": "带上它",
+              "nextStage": 1,
+              "effect": "take"
+            },
+            {
+              "text": "留下",
+              "nextStage": 2,
+              "effect": "leave"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "罐子很重，但或许有用。",
+          "options": [
+            {
+              "text": "去引擎室",
+              "nextStage": 2,
+              "effect": "engine"
+            },
+            {
+              "text": "去控制室",
+              "nextStage": 2,
+              "effect": "control"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "使用冷却液罐，你会获得额外时间。",
+          "options": [
+            {
+              "text": "倒入冷却系统",
+              "nextStage": 3,
+              "effect": "pour"
+            },
+            {
+              "text": "用它砸破玻璃",
+              "nextStage": 3,
+              "effect": "break"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "效果显著。",
+          "options": [
+            {
+              "text": "继续任务",
+              "nextStage": 4,
+              "effect": "continue"
+            },
+            {
+              "text": "检查其他问题",
+              "nextStage": 4,
+              "effect": "check"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "时间所剩无几。",
+          "options": [
+            {
+              "text": "紧急停机",
+              "nextStage": 5,
+              "effect": "stop"
+            },
+            {
+              "text": "疏散",
+              "nextStage": 5,
+              "effect": "evac"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "万能钥匙卡",
+      "position": [
+        6,
+        7
+      ],
+      "description": "可以打开任何一扇门。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一张闪闪发光的钥匙卡。",
+          "options": [
+            {
+              "text": "捡起它",
+              "nextStage": 1,
+              "effect": "pick"
+            },
+            {
+              "text": "无视",
+              "nextStage": 2,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "钥匙卡似乎有很高权限。",
+          "options": [
+            {
+              "text": "去机密室",
+              "nextStage": 2,
+              "effect": "secret"
+            },
+            {
+              "text": "去主控室",
+              "nextStage": 2,
+              "effect": "main"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "使用钥匙卡进入重要区域。",
+          "options": [
+            {
+              "text": "打开紧急通道",
+              "nextStage": 3,
+              "effect": "emergency"
+            },
+            {
+              "text": "关闭安全系统",
+              "nextStage": 3,
+              "effect": "disable"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "获得了关键访问权限。",
+          "options": [
+            {
+              "text": "启动自毁程序",
+              "nextStage": 4,
+              "effect": "selfdestruct"
+            },
+            {
+              "text": "激活救援信号",
+              "nextStage": 4,
+              "effect": "signal"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "最终决定。",
+          "options": [
+            {
+              "text": "牺牲自己",
+              "nextStage": 5,
+              "effect": "sacrifice"
+            },
+            {
+              "text": "逃离",
+              "nextStage": 5,
+              "effect": "escape"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "紧急医疗包",
+      "position": [
+        9,
+        6
+      ],
+      "description": "可以治疗受伤的游客。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一个红色医疗包。",
+          "options": [
+            {
+              "text": "带上",
+              "nextStage": 1,
+              "effect": "take"
+            },
+            {
+              "text": "不拿",
+              "nextStage": 2,
+              "effect": "leave"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "医疗包里有急救用品。",
+          "options": [
+            {
+              "text": "寻找伤员",
+              "nextStage": 2,
+              "effect": "wounded"
+            },
+            {
+              "text": "自己备用",
+              "nextStage": 2,
+              "effect": "keep"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你遇到一名受伤的游客。",
+          "options": [
+            {
+              "text": "使用医疗包",
+              "nextStage": 3,
+              "effect": "heal"
+            },
+            {
+              "text": "继续前进",
+              "nextStage": 3,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "游客得救，但时间流失。",
+          "options": [
+            {
+              "text": "加速处理引擎",
+              "nextStage": 4,
+              "effect": "engine"
+            },
+            {
+              "text": "组织疏散",
+              "nextStage": 4,
+              "effect": "evac"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "时间不多了。",
+          "options": [
+            {
+              "text": "牺牲自己保护游客",
+              "nextStage": 5,
+              "effect": "sacrifice"
+            },
+            {
+              "text": "独自逃生",
+              "nextStage": 5,
+              "effect": "escape"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "密码笔记本",
+      "position": [
+        4,
+        10
+      ],
+      "description": "记录着各种系统密码。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一本破旧的笔记本。",
+          "options": [
+            {
+              "text": "翻阅",
+              "nextStage": 1,
+              "effect": "read"
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 2,
+              "effect": "discard"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "里面有控制台的密码。",
+          "options": [
+            {
+              "text": "去控制台",
+              "nextStage": 2,
+              "effect": "console"
+            },
+            {
+              "text": "去服务器室",
+              "nextStage": 2,
+              "effect": "server"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "输入密码，系统解锁。",
+          "options": [
+            {
+              "text": "启动修复程序",
+              "nextStage": 3,
+              "effect": "repair"
+            },
+            {
+              "text": "查看故障原因",
+              "nextStage": 3,
+              "effect": "cause"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "发现是人为破坏。",
+          "options": [
+            {
+              "text": "追捕破坏者",
+              "nextStage": 4,
+              "effect": "chase"
+            },
+            {
+              "text": "优先修复系统",
+              "nextStage": 4,
+              "effect": "fix"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "最终抉择。",
+          "options": [
+            {
+              "text": "将破坏者绳之以法",
+              "nextStage": 5,
+              "effect": "justice"
+            },
+            {
+              "text": "原谅并合作",
+              "nextStage": 5,
+              "effect": "forgive"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "超能电池",
+      "position": [
+        10,
+        8
+      ],
+      "description": "可以为任何设备提供紧急电力。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一块闪烁的电池。",
+          "options": [
+            {
+              "text": "拿上",
+              "nextStage": 1,
+              "effect": "take"
+            },
+            {
+              "text": "不碰",
+              "nextStage": 2,
+              "effect": "leave"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "电池能量充足。",
+          "options": [
+            {
+              "text": "给引擎供电",
+              "nextStage": 2,
+              "effect": "engine_power"
+            },
+            {
+              "text": "给护盾供电",
+              "nextStage": 2,
+              "effect": "shield"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "设备启动，暂时稳定。",
+          "options": [
+            {
+              "text": "趁机修复其他系统",
+              "nextStage": 3,
+              "effect": "repair"
+            },
+            {
+              "text": "趁机疏散游客",
+              "nextStage": 3,
+              "effect": "evac"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "新的危机出现。",
+          "options": [
+            {
+              "text": "使用电池重启核心",
+              "nextStage": 4,
+              "effect": "restart"
+            },
+            {
+              "text": "电池用于逃生舱",
+              "nextStage": 4,
+              "effect": "escape"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "最终选择。",
+          "options": [
+            {
+              "text": "拯救游乐园",
+              "nextStage": 5,
+              "effect": "save_park"
+            },
+            {
+              "text": "拯救游客",
+              "nextStage": 5,
+              "effect": "save_people"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": "成功冷却引擎并疏散所有人",
+      "text": "你成为英雄，游乐园重新开放。"
+    },
+    {
+      "id": "ending2",
+      "condition": "未能及时冷却引擎",
+      "text": "游乐园爆炸，无一幸免。"
+    },
+    {
+      "id": "ending3",
+      "condition": "使用万能钥匙卡启动自毁程序",
+      "text": "你与游乐园同归于尽。"
+    },
+    {
+      "id": "ending4",
+      "condition": "牺牲自己保护游客",
+      "text": "你成为烈士，游客获救。"
+    },
+    {
+      "id": "ending5",
+      "condition": "独自逃生",
+      "text": "你活了下来，但永远背负罪名。"
+    },
+    {
+      "id": "ending6",
+      "condition": "抓到破坏者并修复系统",
+      "text": "破坏者被绳之以法，游乐园得救。"
+    },
+    {
+      "id": "ending7",
+      "condition": "使用冷却液罐成功",
+      "text": "引擎冷却，避免灾难。"
+    },
+    {
+      "id": "ending8",
+      "condition": "使用超能电池拯救游乐园",
+      "text": "游乐园获得新能量，变得更加辉煌。"
+    },
+    {
+      "id": "ending9",
+      "condition": "未能做出任何有效行动",
+      "text": "时间耗尽，一切化为乌有。"
+    },
+    {
+      "id": "ending10",
+      "condition": "通过密码笔记本发现阴谋并阻止",
+      "text": "你揭露了幕后黑手，成为传奇。"
+    }
+  ],
+  "introText": "你是太空游乐园的园长。警报响起：60秒后，旋转星球将脱离轨道，整个游乐园面临毁灭。你必须在这60秒内做出决策，拯救一切！",
+  "ambientMusic": "急促的警报声混合着电子节拍",
+  "id": "fallback_world_062"
+}

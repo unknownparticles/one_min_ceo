@@ -1,0 +1,836 @@
+{
+  "matchKeywords": [
+    "航母",
+    "起飞",
+    "舰长",
+    "60秒",
+    "甲板"
+  ],
+  "identity": "超级航母舰长",
+  "theme": "超级航母起飞前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 1,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "副舰长",
+      "position": {
+        "x": 3,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "舰长，所有系统检测完毕，等待您的命令。",
+          "options": [
+            {
+              "text": "检查引擎",
+              "nextStage": 1
+            },
+            {
+              "text": "检查武器",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "引擎正常，推力100%。",
+          "options": [
+            {
+              "text": "好，继续准备",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "武器系统全部就绪，弹药充足。",
+          "options": [
+            {
+              "text": "收到",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "所有准备工作完成，等待起飞指令。",
+          "options": [
+            {
+              "text": "下令起飞",
+              "nextStage": 4
+            },
+            {
+              "text": "再检查一遍",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "遵命！全体注意，起飞！",
+          "options": [
+            {
+              "text": "执行",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "轮机长",
+      "position": {
+        "x": 5,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "舰长，引擎需要最后调整。",
+          "options": [
+            {
+              "text": "调整参数",
+              "nextStage": 1
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "参数已优化，性能提升5%。",
+          "options": [
+            {
+              "text": "很好",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "风险很高，但您说了算。",
+          "options": [
+            {
+              "text": "坚持忽略",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "引擎状态稳定。",
+          "options": [
+            {
+              "text": "确认",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "飞行甲板指挥官",
+      "position": {
+        "x": 7,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "甲板清空，所有战机就位。",
+          "options": [
+            {
+              "text": "确认起飞顺序",
+              "nextStage": 1
+            },
+            {
+              "text": "稍等",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "第一波编队已指定。",
+          "options": [
+            {
+              "text": "批准",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "需要多少时间？",
+          "options": [
+            {
+              "text": "30秒",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "随时可以起飞。",
+          "options": [
+            {
+              "text": "开始",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "情报官",
+      "position": {
+        "x": 9,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "检测到不明信号，可能来自敌方。",
+          "options": [
+            {
+              "text": "分析信号",
+              "nextStage": 1
+            },
+            {
+              "text": "无视",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "是诱饵，旨在拖延我们。",
+          "options": [
+            {
+              "text": "继续起飞",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "但信号越来越强。",
+          "options": [
+            {
+              "text": "再分析",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "建议加速起飞程序。",
+          "options": [
+            {
+              "text": "同意",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "医疗官",
+      "position": {
+        "x": 11,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "有士兵因紧张晕倒，需要处理。",
+          "options": [
+            {
+              "text": "派人照顾",
+              "nextStage": 1
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "已妥善安置。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "可能会影响士气。",
+          "options": [
+            {
+              "text": "还是照顾他",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "全体人员状态良好。",
+          "options": [
+            {
+              "text": "谢谢",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "启动钥匙",
+      "position": {
+        "x": 2,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一把金色的钥匙，插在控制台上。",
+          "options": [
+            {
+              "text": "转动钥匙",
+              "nextStage": 1
+            },
+            {
+              "text": "不碰",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "引擎轰鸣作响。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "钥匙静静待着。",
+          "options": [
+            {
+              "text": "还是转吧",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "航母进入待飞状态。",
+          "options": [
+            {
+              "text": "确认",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "作战计划",
+      "position": {
+        "x": 4,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一份详细的作战计划。",
+          "options": [
+            {
+              "text": "阅读",
+              "nextStage": 1
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "计划显示最佳航线。",
+          "options": [
+            {
+              "text": "采用",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "可能错过重要信息。",
+          "options": [
+            {
+              "text": "还是读一下",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "已更新航线。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "通讯器",
+      "position": {
+        "x": 6,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一个通讯器，闪烁着红灯。",
+          "options": [
+            {
+              "text": "接听",
+              "nextStage": 1
+            },
+            {
+              "text": "挂断",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "总部要求立即起飞。",
+          "options": [
+            {
+              "text": "遵命",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "可能会错过命令。",
+          "options": [
+            {
+              "text": "还是接吧",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "命令已确认。",
+          "options": [
+            {
+              "text": "执行",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "应急手册",
+      "position": {
+        "x": 8,
+        "y": 7
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一本应急手册，封面破损。",
+          "options": [
+            {
+              "text": "翻阅",
+              "nextStage": 1
+            },
+            {
+              "text": "放回",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "找到了紧急弹射程序。",
+          "options": [
+            {
+              "text": "记住",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "可能有用。",
+          "options": [
+            {
+              "text": "还是看看",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "已掌握关键步骤。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "咖啡杯",
+      "position": {
+        "x": 10,
+        "y": 9
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "一杯冒着热气的咖啡。",
+          "options": [
+            {
+              "text": "喝一口",
+              "nextStage": 1
+            },
+            {
+              "text": "不喝",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "精神为之一振。",
+          "options": [
+            {
+              "text": "继续工作",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "有点紧张。",
+          "options": [
+            {
+              "text": "还是喝吧",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "感觉好多了。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": "player_position_x>=12",
+      "description": "你走到了甲板边缘，掉进了海里。"
+    },
+    {
+      "id": "ending2",
+      "condition": "npc1_stage==4 && npc2_stage==3 && npc3_stage==3",
+      "description": "所有指挥官准备就绪，航母成功起飞。"
+    },
+    {
+      "id": "ending3",
+      "condition": "item1_stage==3 && time>50",
+      "description": "启动钥匙已用，但时间不够，起飞失败。"
+    },
+    {
+      "id": "ending4",
+      "condition": "npc4_stage==3 && item2_stage==3",
+      "description": "情报和计划结合，成功规避敌方攻击。"
+    },
+    {
+      "id": "ending5",
+      "condition": "player_y==0",
+      "description": "你试图逃离航母，但被警卫抓住。"
+    },
+    {
+      "id": "ending6",
+      "condition": "npc5_stage==3 && item5_stage==3",
+      "description": "医疗官和咖啡让你保持最佳状态。"
+    },
+    {
+      "id": "ending7",
+      "condition": "item3_stage==3 && time<30",
+      "description": "通讯器命令紧急起飞，你成功在30秒内起飞。"
+    },
+    {
+      "id": "ending8",
+      "condition": "item4_stage==3 && player_health<50",
+      "description": "应急手册教你弹射逃生，你安全离舰。"
+    }
+  ],
+  "introText": "你是超级航母的舰长，距离起飞还有60秒。你必须做出关键决策，确保航母顺利起飞。时间紧迫，行动吧！",
+  "ambientMusic": "紧张的交响乐",
+  "id": "fallback_world_066"
+}

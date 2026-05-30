@@ -1,0 +1,816 @@
+{
+  "matchKeywords": [
+    "量子银行",
+    "挤兑",
+    "60秒",
+    "董事长",
+    "CEO",
+    "量子",
+    "银行",
+    "金融",
+    "危机"
+  ],
+  "identity": "量子银行董事长",
+  "theme": "量子银行挤兑前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "console",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "vault",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "quantum_teller",
+      "name": "量子柜员",
+      "position": [
+        2,
+        3
+      ],
+      "dialogue": "董事长！存款量子态崩溃了！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "量子柜员惊慌失措地喊道：'存款量子态正在坍缩！'",
+          "options": [
+            {
+              "text": "启动量子稳定器",
+              "action": "stabilize"
+            },
+            {
+              "text": "安抚柜员",
+              "action": "calm"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "柜员稍微平静：'但是挤兑人群已经聚集在门口了。'",
+          "options": [
+            {
+              "text": "命令保安封锁大门",
+              "action": "lock"
+            },
+            {
+              "text": "打开金库展示储备",
+              "action": "show_vault"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "柜员指向窗外：'看！他们开始撞门了！'",
+          "options": [
+            {
+              "text": "启动应急广播",
+              "action": "broadcast"
+            },
+            {
+              "text": "从后门逃跑",
+              "action": "escape"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quantum_security",
+      "name": "量子保安",
+      "position": [
+        5,
+        5
+      ],
+      "dialogue": "警报！检测到量子波动异常！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "保安报告：'储备金正在量子隧穿！'",
+          "options": [
+            {
+              "text": "用反量子场包裹金库",
+              "action": "shield"
+            },
+            {
+              "text": "忽略报告",
+              "action": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "保安：'金库门开始闪烁！'",
+          "options": [
+            {
+              "text": "亲自检查金库",
+              "action": "check"
+            },
+            {
+              "text": "认为他在胡闹",
+              "action": "dismiss"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "保安倒下：'量子辐射...太多了...'",
+          "options": [
+            {
+              "text": "呼叫医疗兵",
+              "action": "medic"
+            },
+            {
+              "text": "继续处理危机",
+              "action": "proceed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "angry_depositor",
+      "name": "愤怒的储户",
+      "position": [
+        8,
+        2
+      ],
+      "dialogue": "还我血汗钱！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "储户挥舞存折：'我的存款变成了量子泡沫！'",
+          "options": [
+            {
+              "text": "解释量子金融的原理",
+              "action": "explain"
+            },
+            {
+              "text": "当场兑现",
+              "action": "pay"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "储户：'别废话！我的钱呢？'",
+          "options": [
+            {
+              "text": "给他一张量子欠条",
+              "action": "iou"
+            },
+            {
+              "text": "打电话给量子央行",
+              "action": "call_cb"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "储户崩溃：'全完了...'",
+          "options": [
+            {
+              "text": "安慰他",
+              "action": "comfort"
+            },
+            {
+              "text": "让保安带走他",
+              "action": "remove"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quantum_analyst",
+      "name": "量子分析师",
+      "position": [
+        3,
+        6
+      ],
+      "dialogue": "数据一片混乱！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "分析师盯着屏幕：'所有账户余额都变成复数了！'",
+          "options": [
+            {
+              "text": "重置系统",
+              "action": "reset"
+            },
+            {
+              "text": "相信量子会计",
+              "action": "trust"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "分析师：'我发现一个幽灵账户在转移资金！'",
+          "options": [
+            {
+              "text": "追踪幽灵",
+              "action": "trace"
+            },
+            {
+              "text": "冻结所有交易",
+              "action": "freeze"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "分析师尖叫：'账户在自我复制！'",
+          "options": [
+            {
+              "text": "强行关机",
+              "action": "shutdown"
+            },
+            {
+              "text": "让系统自愈",
+              "action": "self_heal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mysterious_man",
+      "name": "神秘人",
+      "position": [
+        10,
+        7
+      ],
+      "dialogue": "我是量子央行特派员。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "神秘人出示证件：'我是来调查挤兑事件的。'",
+          "options": [
+            {
+              "text": "配合调查",
+              "action": "cooperate"
+            },
+            {
+              "text": "怀疑他的身份",
+              "action": "suspect"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "神秘人：'实际上，我可以帮你稳定局面。'",
+          "options": [
+            {
+              "text": "接受帮助",
+              "action": "accept"
+            },
+            {
+              "text": "拒绝",
+              "action": "refuse"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "神秘人冷笑：'代价是你的银行控制权。'",
+          "options": [
+            {
+              "text": "同意交易",
+              "action": "deal"
+            },
+            {
+              "text": "拒绝并反击",
+              "action": "fight"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "quantum_key",
+      "name": "量子钥匙",
+      "position": [
+        2,
+        2
+      ],
+      "description": "一把能打开所有量子金库的钥匙。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了一把量子钥匙。",
+          "options": [
+            {
+              "text": "捡起钥匙",
+              "action": "take"
+            },
+            {
+              "text": "忽略它",
+              "action": "leave"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "钥匙发出蓝光，似乎有意识。",
+          "options": [
+            {
+              "text": "与钥匙对话",
+              "action": "talk"
+            },
+            {
+              "text": "放入口袋",
+              "action": "pocket"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "钥匙震动：'我可以打开时间裂缝。'",
+          "options": [
+            {
+              "text": "使用它逃跑",
+              "action": "escape"
+            },
+            {
+              "text": "用它加固金库",
+              "action": "secure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quantum_phone",
+      "name": "量子电话",
+      "position": [
+        4,
+        1
+      ],
+      "description": "一部可以直接联系量子央行的电话。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "电话响了。",
+          "options": [
+            {
+              "text": "接听",
+              "action": "answer"
+            },
+            {
+              "text": "不接",
+              "action": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "电话那头：'我是量子行长，局势已失控。'",
+          "options": [
+            {
+              "text": "请求支援",
+              "action": "request"
+            },
+            {
+              "text": "挂断",
+              "action": "hangup"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "电话传出警笛声。",
+          "options": [
+            {
+              "text": "摔碎电话",
+              "action": "smash"
+            },
+            {
+              "text": "继续通话",
+              "action": "continue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quantum_elixir",
+      "name": "量子灵药",
+      "position": [
+        6,
+        10
+      ],
+      "description": "一瓶能暂时稳定量子态的药剂。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现一瓶发光的药剂。",
+          "options": [
+            {
+              "text": "喝下它",
+              "action": "drink"
+            },
+            {
+              "text": "保存起来",
+              "action": "save"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "药剂效果：你短暂获得了量子洞察。",
+          "options": [
+            {
+              "text": "预测未来",
+              "action": "predict"
+            },
+            {
+              "text": "制造幻象",
+              "action": "illusion"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "副作用开始显现。",
+          "options": [
+            {
+              "text": "再喝一口",
+              "action": "more"
+            },
+            {
+              "text": "找解药",
+              "action": "antidote"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quantum_scanner",
+      "name": "量子扫描仪",
+      "position": [
+        9,
+        4
+      ],
+      "description": "可以扫描出隐藏的量子异常。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你拿到扫描仪，屏幕闪烁。",
+          "options": [
+            {
+              "text": "扫描周围",
+              "action": "scan"
+            },
+            {
+              "text": "关闭它",
+              "action": "off"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "扫描仪显示大量量子幽灵。",
+          "options": [
+            {
+              "text": "驱散幽灵",
+              "action": "banish"
+            },
+            {
+              "text": "无视",
+              "action": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "扫描仪过热，即将爆炸。",
+          "options": [
+            {
+              "text": "扔掉",
+              "action": "throw"
+            },
+            {
+              "text": "拆除电池",
+              "action": "remove_battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gold_brick",
+      "name": "金砖",
+      "position": [
+        7,
+        3
+      ],
+      "description": "一块沉甸甸的金砖，但不确定是否真实。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你捡起金砖，感觉很重。",
+          "options": [
+            {
+              "text": "用它砸窗",
+              "action": "break"
+            },
+            {
+              "text": "存起来",
+              "action": "store"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "金砖开始量子抖动。",
+          "options": [
+            {
+              "text": "检查真伪",
+              "action": "check"
+            },
+            {
+              "text": "拿稳它",
+              "action": "hold"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "金砖变成一群量子蝴蝶。",
+          "options": [
+            {
+              "text": "捕捉蝴蝶",
+              "action": "catch"
+            },
+            {
+              "text": "任它们飞走",
+              "action": "let_go"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "stabilize_and_lock",
+      "text": "你成功稳定了量子态并封锁银行，挤兑暂时缓解，但危机并未解除。"
+    },
+    {
+      "id": "end2",
+      "condition": "escape_with_key",
+      "text": "你用量子钥匙打开时间裂缝逃走了，但银行在量子爆炸中消失。"
+    },
+    {
+      "id": "end3",
+      "condition": "call_cb_and_cooperate",
+      "text": "量子央行接管了银行，你被调任闲职，但银行得救了。"
+    },
+    {
+      "id": "end4",
+      "condition": "drink_elixir_and_predict",
+      "text": "你预见到挤兑是量子波动导致的，并成功利用波动获利，成为英雄。"
+    },
+    {
+      "id": "end5",
+      "condition": "trust_analyst_and_shutdown",
+      "text": "强行关机导致系统崩溃，所有存款清零，你被逮捕。"
+    },
+    {
+      "id": "end6",
+      "condition": "fight_mysterious_man",
+      "text": "你揭露神秘人是量子黑客，阻止了金融恐怖袭击，但银行声誉受损。"
+    },
+    {
+      "id": "end7",
+      "condition": "break_window_and_escape",
+      "text": "你用金砖砸破窗户逃走，但被当作罪犯通缉。"
+    },
+    {
+      "id": "end8",
+      "condition": "scan_and_banish",
+      "text": "扫描仪驱散了量子幽灵，但银行电力耗尽，陷入黑暗。"
+    }
+  ],
+  "introText": "你是量子银行的董事长。此刻，距离量子挤兑还有60秒。大厅里充斥着警报声和愤怒的储户声。你必须做出决策，拯救你的银行——或者你自己。",
+  "ambientMusic": "quantum_alarm.mp3",
+  "id": "fallback_world_004"
+}

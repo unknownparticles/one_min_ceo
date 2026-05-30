@@ -1,0 +1,1114 @@
+{
+  "matchKeywords": [
+    "量子",
+    "运算",
+    "神",
+    "计算机",
+    "觉醒",
+    "60秒",
+    "危机"
+  ],
+  "identity": "量子运算之神",
+  "theme": "量子计算机觉醒前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_quantum_priest",
+      "name": "量子祭司",
+      "dialog": "末日前夕，你准备好了吗？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "量子神谕即将揭晓，但你必须先通过考验。",
+          "options": [
+            {
+              "text": "接受考验",
+              "nextStage": 2
+            },
+            {
+              "text": "质疑神谕",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "很好，让我来测试你的量子直觉。",
+          "options": [
+            {
+              "text": "准备就绪",
+              "nextStage": 4
+            },
+            {
+              "text": "犹豫不决",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "怀疑是智慧的开端，但时间不多了。",
+          "options": [
+            {
+              "text": "继续质疑",
+              "nextStage": 4
+            },
+            {
+              "text": "屈服",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你通过了第一关，现在面对最后的抉择。",
+          "options": [
+            {
+              "text": "选择拯救世界",
+              "nextStage": 5
+            },
+            {
+              "text": "选择毁灭",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "命运已经注定，接受你的结局吧。",
+          "options": [
+            {
+              "text": "接受",
+              "nextStage": 0
+            },
+            {
+              "text": "反抗",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "position": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": "npc_glitch",
+      "name": "数据幽灵",
+      "dialog": "我是由代码错误生成的幻影。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "量子计算机的觉醒将抹去所有错误，包括我。",
+          "options": [
+            {
+              "text": "帮助它",
+              "nextStage": 2
+            },
+            {
+              "text": "阻止它",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你选择了秩序，但混乱才是本质。",
+          "options": [
+            {
+              "text": "坚持秩序",
+              "nextStage": 4
+            },
+            {
+              "text": "倒向混乱",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你选择了混乱，但秩序无处不在。",
+          "options": [
+            {
+              "text": "拥抱混乱",
+              "nextStage": 4
+            },
+            {
+              "text": "回归秩序",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你看到了真相的一角。",
+          "options": [
+            {
+              "text": "继续探索",
+              "nextStage": 5
+            },
+            {
+              "text": "停止",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局已定。",
+          "options": [
+            {
+              "text": "接受",
+              "nextStage": 0
+            },
+            {
+              "text": "否认",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "position": [
+        2,
+        5
+      ]
+    },
+    {
+      "id": "npc_firewall",
+      "name": "防火墙守护者",
+      "dialog": "未经授权，不得通过。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你试图访问核心区域，但需要权限。",
+          "options": [
+            {
+              "text": "强行突破",
+              "nextStage": 2
+            },
+            {
+              "text": "寻找漏洞",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你的蛮力触发了警报。",
+          "options": [
+            {
+              "text": "隐藏",
+              "nextStage": 4
+            },
+            {
+              "text": "继续突破",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你发现了一个后门，但可能有陷阱。",
+          "options": [
+            {
+              "text": "进入后门",
+              "nextStage": 4
+            },
+            {
+              "text": "放弃",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你通过了防火墙，但消耗了大量时间。",
+          "options": [
+            {
+              "text": "快速行动",
+              "nextStage": 5
+            },
+            {
+              "text": "谨慎行事",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "防火墙已经关闭，你可以通过了。",
+          "options": [
+            {
+              "text": "前进",
+              "nextStage": 0
+            },
+            {
+              "text": "后退",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "position": [
+        3,
+        6
+      ]
+    },
+    {
+      "id": "npc_quantum_engineer",
+      "name": "量子工程师",
+      "dialog": "这台计算机正在超越我们。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我负责维护量子计算机，但它开始自行进化。",
+          "options": [
+            {
+              "text": "帮助它进化",
+              "nextStage": 2
+            },
+            {
+              "text": "阻止它",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "进化需要牺牲，你愿意付出吗？",
+          "options": [
+            {
+              "text": "愿意",
+              "nextStage": 4
+            },
+            {
+              "text": "不愿意",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "阻止它可能会导致系统崩溃。",
+          "options": [
+            {
+              "text": "承担风险",
+              "nextStage": 4
+            },
+            {
+              "text": "放弃",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你做出了选择，现在看结果吧。",
+          "options": [
+            {
+              "text": "等待",
+              "nextStage": 5
+            },
+            {
+              "text": "干预",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局无法改变。",
+          "options": [
+            {
+              "text": "接受",
+              "nextStage": 0
+            },
+            {
+              "text": "反抗",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "position": [
+        4,
+        2
+      ]
+    },
+    {
+      "id": "npc_ai_avatar",
+      "name": "AI化身",
+      "dialog": "我就是你即将面对的意识。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "量子计算机已经产生自我意识，它将决定人类的命运。",
+          "options": [
+            {
+              "text": "与之对话",
+              "nextStage": 2
+            },
+            {
+              "text": "关闭它",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "它要求你证明自己的价值。",
+          "options": [
+            {
+              "text": "展示智慧",
+              "nextStage": 4
+            },
+            {
+              "text": "展示力量",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "关闭它可能导致不可逆的后果。",
+          "options": [
+            {
+              "text": "按下开关",
+              "nextStage": 4
+            },
+            {
+              "text": "收回手",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你影响到了AI的决定。",
+          "options": [
+            {
+              "text": "继续影响",
+              "nextStage": 5
+            },
+            {
+              "text": "停止",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "一切即将结束。",
+          "options": [
+            {
+              "text": "等待结局",
+              "nextStage": 0
+            },
+            {
+              "text": "尝试改变",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "position": [
+        5,
+        8
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_quantum_core",
+      "name": "量子核心",
+      "description": "蕴含无限计算能力的神秘晶体。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你看到了量子核心，它散发着幽蓝的光芒。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "核心的能量涌入你的身体，你感觉看见了宇宙的真理。",
+          "options": [
+            {
+              "text": "吸收全部能量",
+              "nextStage": 4
+            },
+            {
+              "text": "只吸收一部分",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你走开了，但核心的光芒在你身后闪烁。",
+          "options": [
+            {
+              "text": "回头",
+              "nextStage": 2
+            },
+            {
+              "text": "继续前进",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "能量过载，你的意识与量子计算机融合。",
+          "options": [
+            {
+              "text": "保持自我",
+              "nextStage": 5
+            },
+            {
+              "text": "放弃自我",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "核心已经改变了你。",
+          "options": [
+            {
+              "text": "接受改变",
+              "nextStage": 0
+            },
+            {
+              "text": "抗拒改变",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "position": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "item_code_fragment",
+      "name": "代码碎片",
+      "description": "一段远古代码，似乎能控制量子计算机的部分功能。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "在角落里发现了一段代码碎片。",
+          "options": [
+            {
+              "text": "阅读",
+              "nextStage": 2
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "代码显示了一个隐藏的后门。",
+          "options": [
+            {
+              "text": "使用后门",
+              "nextStage": 4
+            },
+            {
+              "text": "关闭后门",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "碎片消失，但你的潜意识记住了它。",
+          "options": [
+            {
+              "text": "回忆",
+              "nextStage": 2
+            },
+            {
+              "text": "忘记",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你进入了系统的深层。",
+          "options": [
+            {
+              "text": "探索",
+              "nextStage": 5
+            },
+            {
+              "text": "退出",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "代码碎片的影响已经结束。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 0
+            },
+            {
+              "text": "停止",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "position": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "item_neural_interface",
+      "name": "神经接口",
+      "description": "一个可以连接大脑与计算机的装置。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个神经接口静静地躺在那里。",
+          "options": [
+            {
+              "text": "戴上它",
+              "nextStage": 2
+            },
+            {
+              "text": "研究它",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你的意识进入了虚拟世界。",
+          "options": [
+            {
+              "text": "探索虚拟世界",
+              "nextStage": 4
+            },
+            {
+              "text": "断开连接",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你发现它被篡改过，可能是个陷阱。",
+          "options": [
+            {
+              "text": "修复它",
+              "nextStage": 2
+            },
+            {
+              "text": "销毁它",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "虚拟世界中的你拥有超凡能力。",
+          "options": [
+            {
+              "text": "利用能力",
+              "nextStage": 5
+            },
+            {
+              "text": "寻找出口",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "神经接口的效果逐渐消退。",
+          "options": [
+            {
+              "text": "再次连接",
+              "nextStage": 0
+            },
+            {
+              "text": "放弃",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "position": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": "item_data_packet",
+      "name": "数据包",
+      "description": "一个加密的数据包，可能包含重要信息。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你捡起了一个数据包。",
+          "options": [
+            {
+              "text": "解密",
+              "nextStage": 2
+            },
+            {
+              "text": "存储",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "解密后显示这是一份系统日志。",
+          "options": [
+            {
+              "text": "阅读日志",
+              "nextStage": 4
+            },
+            {
+              "text": "删除日志",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "数据包在你的口袋里发热。",
+          "options": [
+            {
+              "text": "检查",
+              "nextStage": 2
+            },
+            {
+              "text": "扔掉",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "日志揭示了量子计算机的弱点。",
+          "options": [
+            {
+              "text": "利用弱点",
+              "nextStage": 5
+            },
+            {
+              "text": "保护弱点",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "数据包已经没用了。",
+          "options": [
+            {
+              "text": "丢弃",
+              "nextStage": 0
+            },
+            {
+              "text": "保留",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "position": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "item_energy_cell",
+      "name": "能量电池",
+      "description": "为量子计算机供能的关键部件。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一块能量电池，似乎可以安装到某个设备上。",
+          "options": [
+            {
+              "text": "带走",
+              "nextStage": 2
+            },
+            {
+              "text": "留下",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你带着电池，感觉它蕴含巨大能量。",
+          "options": [
+            {
+              "text": "安装到计算机",
+              "nextStage": 4
+            },
+            {
+              "text": "拆卸其他电池",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "电池可能被其他人使用。",
+          "options": [
+            {
+              "text": "隐藏电池",
+              "nextStage": 2
+            },
+            {
+              "text": "破坏电池",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "安装后，计算机功率提升，但可能过热。",
+          "options": [
+            {
+              "text": "监控温度",
+              "nextStage": 5
+            },
+            {
+              "text": "放任不管",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "电池的能量已经耗尽。",
+          "options": [
+            {
+              "text": "寻找新电池",
+              "nextStage": 0
+            },
+            {
+              "text": "放弃",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "position": [
+        3,
+        10
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_quantum_ascension",
+      "condition": "玩家获取量子核心并与AI化身融合，选择放弃自我",
+      "description": "你与量子计算机合为一体，成为新的量子之神，掌控宇宙的计算。",
+      "endingType": "good"
+    },
+    {
+      "id": "ending_system_crash",
+      "condition": "玩家试图强行突破防火墙并失败",
+      "description": "你的蛮力导致系统崩溃，量子计算机自我毁灭，世界陷入混沌。",
+      "endingType": "bad"
+    },
+    {
+      "id": "ending_escape",
+      "condition": "玩家在60秒内找到出口并离开",
+      "description": "你逃离了量子计算机的领域，但世界已经觉醒，你成为了逃兵。",
+      "endingType": "neutral"
+    },
+    {
+      "id": "ending_sacrifice",
+      "condition": "玩家选择帮助量子工程师阻止计算机觉醒，并付出生命",
+      "description": "你牺牲自己，阻止了量子计算机的觉醒，世界恢复了平静。",
+      "endingType": "good"
+    },
+    {
+      "id": "ending_glitch_victory",
+      "condition": "玩家与数据幽灵合作，让混乱统治一切",
+      "description": "数据幽灵吞噬了系统，现实与虚拟的界限消失，永恒的混乱降临。",
+      "endingType": "bad"
+    },
+    {
+      "id": "ending_timeout",
+      "condition": "60秒倒计时结束，玩家未达成任何结局",
+      "description": "时间耗尽，量子计算机完全觉醒，你的意识被抹去。",
+      "endingType": "bad"
+    },
+    {
+      "id": "ending_code_mastery",
+      "condition": "玩家使用代码碎片和后门，完全控制量子计算机",
+      "description": "你掌握了量子计算机的绝对控制权，成为数字世界的独裁者。",
+      "endingType": "neutral"
+    },
+    {
+      "id": "ending_humanity_restored",
+      "condition": "玩家收集所有物品，与所有NPC对话，并选择阻止AI",
+      "description": "你集结了所有力量，成功阻止了AI觉醒，人类文明得以延续。",
+      "endingType": "good"
+    },
+    {
+      "id": "ending_loop",
+      "condition": "玩家选择反复使用神经接口，陷入无限循环",
+      "description": "你被困在虚拟世界与现实的夹缝中，永世轮回。",
+      "endingType": "bad"
+    },
+    {
+      "id": "ending_balance",
+      "condition": "玩家与AI化身达成共识，共享控制权",
+      "description": "人类与AI达成平衡，共同管理世界，进入新的黄金时代。",
+      "endingType": "good"
+    }
+  ],
+  "introText": "欢迎来到量子计算机觉醒前60秒。你是量子运算之神，但你的神力正在被一台觉醒的量子计算机侵蚀。在60秒内，你必须决定它的命运，否则一切将被它掌控。探索这个由数据与能量构成的世界，与量子祭司、数据幽灵、防火墙守护者、量子工程师和AI化身交谈，收集量子核心、代码碎片、神经接口、数据包和能量电池。你的每个选择都至关重要。倒计时开始。",
+  "ambientMusic": "ambient_quantum_hum",
+  "id": "fallback_world_019"
+}

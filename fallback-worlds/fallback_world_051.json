@@ -1,0 +1,891 @@
+{
+  "matchKeywords": [
+    "量子彩票",
+    "开奖",
+    "60秒",
+    "CEO"
+  ],
+  "identity": "量子彩票之神",
+  "theme": "量子彩票开奖前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "portal",
+      "portal",
+      "portal",
+      "portal",
+      "portal",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "portal",
+      "throne",
+      "throne",
+      "throne",
+      "portal",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "portal",
+      "portal",
+      "portal",
+      "portal",
+      "portal",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 1,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "npc_1",
+      "name": "量子分析师",
+      "dialogue": "您好，CEO大人！我是量子彩票分析师，我会揭示开奖概率。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "根据量子涨落，您中奖的概率是0.0000001%。",
+          "options": [
+            {
+              "text": "买更多彩票",
+              "nextStage": 2
+            },
+            {
+              "text": "放弃购买",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "您将所有资产投入量子彩票，现在概率上升至0.0000002%。",
+          "options": [
+            {
+              "text": "继续加注",
+              "nextStage": 4
+            },
+            {
+              "text": "收手",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "明智的选择。但彩票之神可能眷顾勇者。",
+          "options": [
+            {
+              "text": "再考虑一下",
+              "nextStage": 1
+            },
+            {
+              "text": "离开",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "您已经倾家荡产，但概率仍然几乎为零。",
+          "options": [
+            {
+              "text": "祈祷奇迹",
+              "nextStage": 5
+            },
+            {
+              "text": "愤怒质问",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "对话结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_2",
+      "name": "销售机器人",
+      "dialogue": "CEO大人，最新量子彩票！买一送一！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "这款彩票可以叠加量子纠缠，保证开奖瞬间您会感到幸福。",
+          "options": [
+            {
+              "text": "购买100张",
+              "nextStage": 2
+            },
+            {
+              "text": "购买1000张",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "您获得了100张彩票，现在等待开奖。",
+          "options": [
+            {
+              "text": "再买一些",
+              "nextStage": 1
+            },
+            {
+              "text": "等待开奖",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "您获得了1000张彩票，但债务也增加了。",
+          "options": [
+            {
+              "text": "取消订单",
+              "nextStage": 5
+            },
+            {
+              "text": "接受",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "开奖即将到来，您感到紧张。",
+          "options": [
+            {
+              "text": "深呼吸",
+              "nextStage": 5
+            },
+            {
+              "text": "闭眼",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "对话结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_3",
+      "name": "神秘先知",
+      "dialogue": "我看到量子波动……你将是赢家？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "但需要献祭你的公司股份。",
+          "options": [
+            {
+              "text": "同意献祭",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "股份已献祭，你获得了量子庇佑。",
+          "options": [
+            {
+              "text": "询问细节",
+              "nextStage": 4
+            },
+            {
+              "text": "离开",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "那么你的命运将不确定。",
+          "options": [
+            {
+              "text": "改变主意",
+              "nextStage": 1
+            },
+            {
+              "text": "坚持",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "在开奖前0.01秒，你的量子态会坍缩为赢家。",
+          "options": [
+            {
+              "text": "相信",
+              "nextStage": 5
+            },
+            {
+              "text": "怀疑",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "对话结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_4",
+      "name": "财务总监",
+      "dialogue": "CEO！公司财务因彩票购买出现危机！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我们必须停止购买彩票，否则公司破产。",
+          "options": [
+            {
+              "text": "停止购买",
+              "nextStage": 2
+            },
+            {
+              "text": "继续购买",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "财务稳定了，但您失去了中奖机会。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 4
+            },
+            {
+              "text": "接受",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "继续购买导致公司负债累累。",
+          "options": [
+            {
+              "text": "加大投入",
+              "nextStage": 4
+            },
+            {
+              "text": "现在停止",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "一切都晚了，您只能在开奖中寻求救赎。",
+          "options": [
+            {
+              "text": "祈祷",
+              "nextStage": 5
+            },
+            {
+              "text": "绝望",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "对话结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_5",
+      "name": "竞争对手CEO",
+      "dialogue": "你好，对手！我买了所有中奖号码的彩票！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你永远赢不了我。",
+          "options": [
+            {
+              "text": "挑衅",
+              "nextStage": 2
+            },
+            {
+              "text": "无视",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你激怒了他，他雇黑客篡改开奖系统。",
+          "options": [
+            {
+              "text": "反击",
+              "nextStage": 4
+            },
+            {
+              "text": "报警",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他嘲笑你的软弱。",
+          "options": [
+            {
+              "text": "回击",
+              "nextStage": 2
+            },
+            {
+              "text": "离开",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "量子黑客大战开始，开奖结果不确定。",
+          "options": [
+            {
+              "text": "合谋",
+              "nextStage": 5
+            },
+            {
+              "text": "对抗到底",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "对话结束。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_1",
+      "name": "量子彩票",
+      "description": "一张闪耀的彩票，有量子比特跳动。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你拾起了量子彩票。",
+          "options": [
+            {
+              "text": "刮开涂层",
+              "nextStage": 2
+            },
+            {
+              "text": "留着",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "涂层下显示：谢谢参与。",
+          "options": [
+            {
+              "text": "扔掉",
+              "nextStage": 4
+            },
+            {
+              "text": "再刮一张",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你决定收藏它。",
+          "options": [
+            {
+              "text": "放入保险箱",
+              "nextStage": 4
+            },
+            {
+              "text": "随身携带",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "彩票使用了。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item_2",
+      "name": "量子计算器",
+      "description": "可以计算任何概率，但结果随机。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你看到计算器显示：中奖概率=∞",
+          "options": [
+            {
+              "text": "相信它",
+              "nextStage": 2
+            },
+            {
+              "text": "怀疑",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你信心大增，购买更多彩票。",
+          "options": [
+            {
+              "text": "疯狂购买",
+              "nextStage": 4
+            },
+            {
+              "text": "理智投资",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "计算器突然爆炸。",
+          "options": [
+            {
+              "text": "逃跑",
+              "nextStage": 4
+            },
+            {
+              "text": "修理",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "计算器事件结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item_3",
+      "name": "量子骰子",
+      "description": "六面骰子，每面都是6。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你掷骰子，得到6。",
+          "options": [
+            {
+              "text": "再掷一次",
+              "nextStage": 2
+            },
+            {
+              "text": "停止",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "再次得到6。",
+          "options": [
+            {
+              "text": "连续掷",
+              "nextStage": 4
+            },
+            {
+              "text": "怀疑作弊",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你明白这是一个量子玩笑。",
+          "options": [
+            {
+              "text": "大笑",
+              "nextStage": 4
+            },
+            {
+              "text": "愤怒",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "骰子消失。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item_4",
+      "name": "量子咖啡",
+      "description": "一杯既是热的又是冷的咖啡。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "喝一口，味道同时是苦和甜。",
+          "options": [
+            {
+              "text": "再喝一口",
+              "nextStage": 2
+            },
+            {
+              "text": "倒掉",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你陷入量子叠加态：既清醒又困倦。",
+          "options": [
+            {
+              "text": "工作",
+              "nextStage": 4
+            },
+            {
+              "text": "睡觉",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "咖啡消失，但味道残留。",
+          "options": [
+            {
+              "text": "回味",
+              "nextStage": 4
+            },
+            {
+              "text": "忘记",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "咖啡事件结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item_5",
+      "name": "量子皇冠",
+      "description": "戴上后可以统治量子领域。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你戴上皇冠，感受到无限力量。",
+          "options": [
+            {
+              "text": "命令彩票中奖",
+              "nextStage": 2
+            },
+            {
+              "text": "命令对手消失",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "量子彩票立即开奖，你中了头奖。",
+          "options": [
+            {
+              "text": "庆祝",
+              "nextStage": 4
+            },
+            {
+              "text": "怀疑虚幻",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "对手CEO消失，但警察找上门。",
+          "options": [
+            {
+              "text": "逃逸",
+              "nextStage": 4
+            },
+            {
+              "text": "自首",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "皇冠事件结束。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_1",
+      "condition": "中得头奖",
+      "text": "你中了量子彩票头奖，成为宇宙最富有的CEO。但突然发现，所有资产都是量子泡沫，你醒了。"
+    },
+    {
+      "id": "ending_2",
+      "condition": "公司破产",
+      "text": "彩票购买导致公司破产，你被董事会开除。量子之神嘲笑你的贪婪。"
+    },
+    {
+      "id": "ending_3",
+      "condition": "献祭股份",
+      "text": "献祭股份后，你获得了量子力量，但公司被竞争对手收购。你成为一个流浪汉，但拥有量子直觉。"
+    },
+    {
+      "id": "ending_4",
+      "condition": "与对手合谋",
+      "text": "你和对手合谋操纵彩票，但系统崩溃，你们都被困在量子比特空间。"
+    },
+    {
+      "id": "ending_5",
+      "condition": "拒绝购买",
+      "text": "你保持理智，公司稳步发展。但量子彩票开出巨奖，你悔恨终生。"
+    },
+    {
+      "id": "ending_6",
+      "condition": "使用皇冠",
+      "text": "你利用皇冠力量成为量子皇帝，但孤独地统治着虚无。"
+    },
+    {
+      "id": "ending_7",
+      "condition": "时间耗尽",
+      "text": "60秒结束，开奖结果显示：你未中奖。但量子彩票之神告诉你，下一次开奖就在明天。"
+    },
+    {
+      "id": "ending_8",
+      "condition": "黑客攻击",
+      "text": "黑客篡改系统，开奖结果无效。所有彩票作废，你陷入法律纠纷。"
+    }
+  ],
+  "introText": "欢迎，CEO。你进入量子彩票开奖前60秒的疯狂世界。你的每一个决定都将影响你的命运和公司未来。记住：量子态是叠加的，最终结果由你观测。祝你好运！",
+  "ambientMusic": "量子节拍 - 电子合成音，带有随机脉冲",
+  "id": "fallback_world_051"
+}

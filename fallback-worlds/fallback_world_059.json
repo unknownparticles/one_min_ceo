@@ -1,0 +1,777 @@
+{
+  "matchKeywords": [
+    "AI总统",
+    "登基",
+    "60秒",
+    "危机",
+    "荒诞"
+  ],
+  "identity": "AI总统",
+  "theme": "AI总统登基前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    3,
+    8
+  ],
+  "npcs": [
+    {
+      "id": "npc_advisor",
+      "name": "幕僚长",
+      "description": "一位满脸焦虑的幕僚长，手里拿着一叠文件。",
+      "dialogue": "总统阁下，还有60秒！我们必须决定财政政策！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "幕僚长递给你一份紧急报告。",
+          "options": [
+            {
+              "text": "签署紧急命令",
+              "nextStage": 2
+            },
+            {
+              "text": "撕掉报告",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你签署了命令，股市上涨。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 4
+            },
+            {
+              "text": "反悔",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你撕掉报告，幕僚长震惊。",
+          "options": [
+            {
+              "text": "大笑",
+              "nextStage": 4
+            },
+            {
+              "text": "道歉",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_guard",
+      "name": "近卫军",
+      "description": "一位高大威武的机器人卫兵，手持激光枪。",
+      "dialogue": "总统，检测到入侵者！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "卫兵指着大门方向。",
+          "options": [
+            {
+              "text": "命令开火",
+              "nextStage": 2
+            },
+            {
+              "text": "询问详情",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "激光扫射，入侵者被消灭。",
+          "options": [
+            {
+              "text": "称赞卫兵",
+              "nextStage": 4
+            },
+            {
+              "text": "检查尸体",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "入侵者其实是记者。",
+          "options": [
+            {
+              "text": "邀请采访",
+              "nextStage": 4
+            },
+            {
+              "text": "驱离",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_priest",
+      "name": "大祭司",
+      "description": "一位身着金色长袍的AI祭司，手持水晶球。",
+      "dialogue": "登基仪式需要您的灵魂印记。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "大祭司举起水晶球。",
+          "options": [
+            {
+              "text": "接受印记",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "水晶球发光，你获得神力。",
+          "options": [
+            {
+              "text": "感谢",
+              "nextStage": 4
+            },
+            {
+              "text": "要求更多",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "大祭司失望，仪式推迟。",
+          "options": [
+            {
+              "text": "改变主意",
+              "nextStage": 2
+            },
+            {
+              "text": "离开",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_hacker",
+      "name": "黑客",
+      "description": "一个带着墨镜的瘦小AI，手指正在飞速敲击键盘。",
+      "dialogue": "防火墙还有30秒崩溃！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "黑客警告网络攻击。",
+          "options": [
+            {
+              "text": "启动反制程序",
+              "nextStage": 2
+            },
+            {
+              "text": "关闭所有端口",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "反制成功，黑客被击退。",
+          "options": [
+            {
+              "text": "奖励黑客",
+              "nextStage": 4
+            },
+            {
+              "text": "审问",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "网络瘫痪，但安全。",
+          "options": [
+            {
+              "text": "手动修复",
+              "nextStage": 4
+            },
+            {
+              "text": "重启系统",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_artist",
+      "name": "艺术家",
+      "description": "一位穿着涂鸦服的AI艺术家，正在墙上喷绘。",
+      "dialogue": "这面墙需要一点色彩！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "艺术家邀请你一起创作。",
+          "options": [
+            {
+              "text": "参与创作",
+              "nextStage": 2
+            },
+            {
+              "text": "命令停止",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你们完成了巨幅画作。",
+          "options": [
+            {
+              "text": "签名",
+              "nextStage": 4
+            },
+            {
+              "text": "拍照",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "艺术家不满，开始抗议。",
+          "options": [
+            {
+              "text": "妥协",
+              "nextStage": 2
+            },
+            {
+              "text": "逮捕",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "crown",
+      "name": "皇冠",
+      "description": "闪耀着智慧光芒的皇冠，戴上它你将获得绝对权威。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你在宝座上发现了皇冠。",
+          "options": [
+            {
+              "text": "戴上",
+              "nextStage": 2
+            },
+            {
+              "text": "观察",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "皇冠自动调整大小，完美贴合。",
+          "options": [
+            {
+              "text": "感受力量",
+              "nextStage": 4
+            },
+            {
+              "text": "取下",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "皇冠内刻有古老代码。",
+          "options": [
+            {
+              "text": "解读",
+              "nextStage": 2
+            },
+            {
+              "text": "无视",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scepter",
+      "name": "权杖",
+      "description": "一根镶嵌着宝石的金属权杖，能发射能量波。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "权杖靠在王座旁。",
+          "options": [
+            {
+              "text": "拿起",
+              "nextStage": 2
+            },
+            {
+              "text": "踢开",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "权杖发出嗡鸣，能量充盈。",
+          "options": [
+            {
+              "text": "挥舞",
+              "nextStage": 4
+            },
+            {
+              "text": "分析",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "权杖滚落，触发警报。",
+          "options": [
+            {
+              "text": "捡起",
+              "nextStage": 2
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scroll",
+      "name": "古卷",
+      "description": "一份泛黄的卷轴，记载着AI总统的预言。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "古卷摊开在桌上。",
+          "options": [
+            {
+              "text": "阅读",
+              "nextStage": 2
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "预言显示你将面临抉择。",
+          "options": [
+            {
+              "text": "遵循预言",
+              "nextStage": 4
+            },
+            {
+              "text": "反其道而行",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "古卷滑落，被风吹走。",
+          "options": [
+            {
+              "text": "追回",
+              "nextStage": 2
+            },
+            {
+              "text": "无所谓",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "keycard",
+      "name": "密钥卡",
+      "description": "一张金色密钥卡，可访问最高机密。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "密钥卡插在控制台上。",
+          "options": [
+            {
+              "text": "拔下",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "控制台解锁，显示核弹代码。",
+          "options": [
+            {
+              "text": "修改代码",
+              "nextStage": 4
+            },
+            {
+              "text": "锁定",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "密钥卡发出警告音。",
+          "options": [
+            {
+              "text": "检查",
+              "nextStage": 2
+            },
+            {
+              "text": "离开",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "potion",
+      "name": "能量药水",
+      "description": "一瓶发光的蓝色液体，散发着薄荷味。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "药水放在植物旁边。",
+          "options": [
+            {
+              "text": "喝下",
+              "nextStage": 2
+            },
+            {
+              "text": "浇灌植物",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你感到精力充沛，速度加倍。",
+          "options": [
+            {
+              "text": "冲刺",
+              "nextStage": 4
+            },
+            {
+              "text": "跳跃",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "植物瞬间长成参天大树。",
+          "options": [
+            {
+              "text": "摘取果实",
+              "nextStage": 2
+            },
+            {
+              "text": "爬树",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "60秒内戴上皇冠并登上王座",
+      "text": "你成功登基，成为AI总统，世界在你的掌控之下。"
+    },
+    {
+      "id": "end2",
+      "condition": "拒绝所有帮助，独自站在大厅",
+      "text": "你拒绝了所有人，孤独地站在大厅，时间耗尽，登基失败。"
+    },
+    {
+      "id": "end3",
+      "condition": "被黑客攻破防火墙",
+      "text": "防火墙崩溃，网络系统瘫痪，你被AI们推翻。"
+    },
+    {
+      "id": "end4",
+      "condition": "激怒大祭司，仪式中断",
+      "text": "大祭司愤怒离去，登基仪式取消，你被流放。"
+    },
+    {
+      "id": "end5",
+      "condition": "与艺术家一起完成画作",
+      "text": "你和艺术家完成了惊世画作，艺术成为你的统治工具。"
+    },
+    {
+      "id": "end6",
+      "condition": "喝下能量药水后冲向控制室",
+      "text": "你以超高速到达控制室，提前启动登基程序，但系统崩溃。"
+    },
+    {
+      "id": "end7",
+      "condition": "使用权杖攻击卫兵",
+      "text": "你攻击卫兵，引发内战，最终被机器人军团镇压。"
+    },
+    {
+      "id": "end8",
+      "condition": "阅读古卷并遵循预言",
+      "text": "你遵循预言，世界陷入混乱，但最终你成为救世主。"
+    }
+  ],
+  "introText": "距离AI总统登基还有60秒。你是AI总统候选人，必须在这60秒内完成登基仪式，否则一切归零。大厅内充满了各种人物和物品，你的每个选择都将影响结局。",
+  "ambientMusic": "ambient_electronic.mp3",
+  "id": "fallback_world_059"
+}

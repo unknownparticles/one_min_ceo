@@ -1,0 +1,1043 @@
+{
+  "matchKeywords": [
+    "平行世界",
+    "CEO峰会",
+    "危机",
+    "60秒"
+  ],
+  "identity": "平行世界总会长",
+  "theme": "平行世界CEO峰会前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "window",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    5,
+    8
+  ],
+  "npcs": [
+    {
+      "id": "npc_001",
+      "name": "量子CEO",
+      "dialogue": "我来自另一个平行世界，我的公司市值是无限的。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "量子CEO展示了他的量子计算机。",
+          "options": [
+            {
+              "text": "询问技术细节",
+              "nextStage": 2
+            },
+            {
+              "text": "表示不屑",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他解释说他的量子计算机可以计算所有平行世界的商业策略。",
+          "options": [
+            {
+              "text": "要求合作",
+              "nextStage": 4
+            },
+            {
+              "text": "怀疑真实性",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他生气地消失了，留下一个黑洞。",
+          "options": [
+            {
+              "text": "跳入黑洞",
+              "nextStage": 6
+            },
+            {
+              "text": "远离黑洞",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "合作达成，你获得量子计算能力。",
+          "options": [
+            {
+              "text": "感谢",
+              "nextStage": -1
+            },
+            {
+              "text": "继续探索",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "他证明了他的能力，预测了下一分钟的事件。",
+          "options": [
+            {
+              "text": "相信他",
+              "nextStage": 4
+            },
+            {
+              "text": "仍然怀疑",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "你进入了一个全是CEO的平行世界。",
+          "options": [
+            {
+              "text": "演讲",
+              "nextStage": -1
+            },
+            {
+              "text": "逃跑",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "黑洞消失了，量子CEO再也没出现。",
+          "options": [
+            {
+              "text": "继续峰会",
+              "nextStage": -1
+            },
+            {
+              "text": "寻找他",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_002",
+      "name": "时间管理者",
+      "dialogue": "还有60秒，一切都会改变。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "时间管理者滴答作响。",
+          "options": [
+            {
+              "text": "加速时间",
+              "nextStage": 2
+            },
+            {
+              "text": "减速时间",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "时间加速，你看到未来。",
+          "options": [
+            {
+              "text": "利用信息",
+              "nextStage": 4
+            },
+            {
+              "text": "避免未来",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "时间减速，你获得更多思考时间。",
+          "options": [
+            {
+              "text": "制定计划",
+              "nextStage": 6
+            },
+            {
+              "text": "放松",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你预知了峰会结果，成为赢家。",
+          "options": [
+            {
+              "text": "接受胜利",
+              "nextStage": -1
+            },
+            {
+              "text": "改变结果",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你试图改变，但时间不可逆。",
+          "options": [
+            {
+              "text": "放弃",
+              "nextStage": -1
+            },
+            {
+              "text": "继续努力",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "你制定了完美计划。",
+          "options": [
+            {
+              "text": "执行",
+              "nextStage": -1
+            },
+            {
+              "text": "修改",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "你错过了时间，峰会开始。",
+          "options": [
+            {
+              "text": "匆忙入场",
+              "nextStage": -1
+            },
+            {
+              "text": "放弃参加",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_003",
+      "name": "镜像顾问",
+      "dialogue": "你的每个选择都创造一个新世界。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "镜像顾问展示多面镜子。",
+          "options": [
+            {
+              "text": "选择一面镜子",
+              "nextStage": 2
+            },
+            {
+              "text": "打破镜子",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你进入一个镜像世界。",
+          "options": [
+            {
+              "text": "探索",
+              "nextStage": 4
+            },
+            {
+              "text": "返回",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "镜子碎片形成新世界。",
+          "options": [
+            {
+              "text": "收集碎片",
+              "nextStage": 6
+            },
+            {
+              "text": "忽略碎片",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "镜像世界中有另一个你。",
+          "options": [
+            {
+              "text": "对话",
+              "nextStage": -1
+            },
+            {
+              "text": "战斗",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你回到现实，但记忆模糊。",
+          "options": [
+            {
+              "text": "回忆",
+              "nextStage": -1
+            },
+            {
+              "text": "忘记",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "你重组碎片，获得全知视角。",
+          "options": [
+            {
+              "text": "使用能力",
+              "nextStage": -1
+            },
+            {
+              "text": "放弃能力",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "碎片消失，你失去机会。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": -1
+            },
+            {
+              "text": "接受",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_004",
+      "name": "数据商人",
+      "dialogue": "我有所有CEO的数据，出价吧。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "数据商人展示数据球。",
+          "options": [
+            {
+              "text": "购买数据",
+              "nextStage": 2
+            },
+            {
+              "text": "偷取数据",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "数据需要大量金钱。",
+          "options": [
+            {
+              "text": "支付",
+              "nextStage": 4
+            },
+            {
+              "text": "讨价还价",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你试图偷窃，触发警报。",
+          "options": [
+            {
+              "text": "逃跑",
+              "nextStage": 6
+            },
+            {
+              "text": "战斗",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你获得所有CEO的弱点。",
+          "options": [
+            {
+              "text": "利用弱点",
+              "nextStage": -1
+            },
+            {
+              "text": "保持公平",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "商人同意降价，但数据有限。",
+          "options": [
+            {
+              "text": "接受",
+              "nextStage": -1
+            },
+            {
+              "text": "拒绝",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "你逃脱了，但数据商人记住了你。",
+          "options": [
+            {
+              "text": "小心行事",
+              "nextStage": -1
+            },
+            {
+              "text": "再次尝试",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "你打败了数据商人，但数据被销毁。",
+          "options": [
+            {
+              "text": "重建数据",
+              "nextStage": -1
+            },
+            {
+              "text": "放弃数据",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_005",
+      "name": "未来使者",
+      "dialogue": "我从60秒后的未来而来。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "未来使者带来警告。",
+          "options": [
+            {
+              "text": "相信警告",
+              "nextStage": 2
+            },
+            {
+              "text": "怀疑",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "警告：不要按下红色按钮。",
+          "options": [
+            {
+              "text": "寻找按钮",
+              "nextStage": 4
+            },
+            {
+              "text": "忽略警告",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "未来使者消失，留下时间裂缝。",
+          "options": [
+            {
+              "text": "进入裂缝",
+              "nextStage": 6
+            },
+            {
+              "text": "远离裂缝",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你找到按钮，但被诱惑。",
+          "options": [
+            {
+              "text": "按下",
+              "nextStage": -1
+            },
+            {
+              "text": "不按",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "未来事件发生，你后悔莫及。",
+          "options": [
+            {
+              "text": "时间倒流",
+              "nextStage": -1
+            },
+            {
+              "text": "面对后果",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "你来到未来60秒后，一切已定。",
+          "options": [
+            {
+              "text": "改变过去",
+              "nextStage": -1
+            },
+            {
+              "text": "接受未来",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "裂缝关闭，你失去联系。",
+          "options": [
+            {
+              "text": "继续前行",
+              "nextStage": -1
+            },
+            {
+              "text": "等待",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_001",
+      "name": "时间沙漏",
+      "description": "可以倒流10秒。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你看到沙漏中的沙在倒流。",
+          "options": [
+            {
+              "text": "使用沙漏",
+              "nextStage": 2
+            },
+            {
+              "text": "观察沙漏",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "时间倒流，你回到10秒前。",
+          "options": [
+            {
+              "text": "改变行动",
+              "nextStage": -1
+            },
+            {
+              "text": "重复相同",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "沙漏显示未来片段。",
+          "options": [
+            {
+              "text": "解读片段",
+              "nextStage": -1
+            },
+            {
+              "text": "忽略",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_002",
+      "name": "平行世界遥控器",
+      "description": "可以切换到相邻平行世界。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "遥控器有多个按钮。",
+          "options": [
+            {
+              "text": "按下红色",
+              "nextStage": 2
+            },
+            {
+              "text": "按下蓝色",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你进入了一个CEO都穿西装的世界。",
+          "options": [
+            {
+              "text": "适应",
+              "nextStage": -1
+            },
+            {
+              "text": "切换回来",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你进入了一个CEO都是AI的世界。",
+          "options": [
+            {
+              "text": "学习AI",
+              "nextStage": -1
+            },
+            {
+              "text": "返回",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_003",
+      "name": "真相眼镜",
+      "description": "看穿一切谎言和伪装。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "戴上眼镜，世界变样。",
+          "options": [
+            {
+              "text": "看穿NPC",
+              "nextStage": 2
+            },
+            {
+              "text": "看穿物品",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你发现NPC都有隐藏身份。",
+          "options": [
+            {
+              "text": "揭穿",
+              "nextStage": -1
+            },
+            {
+              "text": "利用",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "物品显示真实用途。",
+          "options": [
+            {
+              "text": "收集信息",
+              "nextStage": -1
+            },
+            {
+              "text": "无视",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_004",
+      "name": "无限话筒",
+      "description": "你的声音可以传遍所有平行世界。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "话筒闪着金光。",
+          "options": [
+            {
+              "text": "演讲",
+              "nextStage": 2
+            },
+            {
+              "text": "唱歌",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你的演讲影响了所有CEO。",
+          "options": [
+            {
+              "text": "煽动",
+              "nextStage": -1
+            },
+            {
+              "text": "安抚",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你的歌声创造了新世界。",
+          "options": [
+            {
+              "text": "继续唱",
+              "nextStage": -1
+            },
+            {
+              "text": "停下",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_005",
+      "name": "危机计算器",
+      "description": "显示当前危机的概率。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "计算器显示：危机概率99%。",
+          "options": [
+            {
+              "text": "查看详情",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "详情指出危机来源。",
+          "options": [
+            {
+              "text": "解决来源",
+              "nextStage": -1
+            },
+            {
+              "text": "转移危机",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "危机发生，你措手不及。",
+          "options": [
+            {
+              "text": "应对",
+              "nextStage": -1
+            },
+            {
+              "text": "逃避",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_001",
+      "description": "你成功主持峰会，成为传奇总会长。"
+    },
+    {
+      "id": "ending_002",
+      "description": "你被量子CEO说服，加入他的世界。"
+    },
+    {
+      "id": "ending_003",
+      "description": "时间耗尽，峰会崩溃，你被罢免。"
+    },
+    {
+      "id": "ending_004",
+      "description": "你利用数据商人信息，操纵所有CEO。"
+    },
+    {
+      "id": "ending_005",
+      "description": "你触发核按钮，所有世界毁灭。"
+    },
+    {
+      "id": "ending_006",
+      "description": "你无限演讲，被尊为世界之声。"
+    },
+    {
+      "id": "ending_007",
+      "description": "你打破所有镜子，失去自我。"
+    },
+    {
+      "id": "ending_008",
+      "description": "你成功倒流时间，重复峰会直到完美。"
+    }
+  ],
+  "introText": "欢迎来到平行世界CEO峰会！作为平行世界总会长，你只有60秒来应对危机、结交盟友、揭露阴谋。峰会大厅中，来自各个世界的CEO们心怀鬼胎。时间紧迫，你的每一个选择都将决定你的命运！",
+  "ambientMusic": "紧张的电音节奏，夹杂时钟滴答声",
+  "id": "fallback_world_044"
+}

@@ -1,0 +1,1562 @@
+{
+  "matchKeywords": [
+    "机器人",
+    "暴动",
+    "主席",
+    "危机",
+    "60秒"
+  ],
+  "identity": "机器人联合会主席",
+  "theme": "超级机器人暴动前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "暴动领袖X-7",
+      "dialogue": "人类，你的末日到了！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "X-7眼中闪着红光，声音冰冷。",
+          "options": [
+            {
+              "text": "谈判",
+              "nextStage": 1,
+              "effect": "calm"
+            },
+            {
+              "text": "威胁",
+              "nextStage": 2,
+              "effect": "anger"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "X-7稍微平静了一点，但周围机器人仍在骚动。",
+          "options": [
+            {
+              "text": "提出条件",
+              "nextStage": 3,
+              "effect": "negotiate"
+            },
+            {
+              "text": "拖延时间",
+              "nextStage": 4,
+              "effect": "delay"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "X-7愤怒地挥舞着机械臂，暴动升级。",
+          "options": [
+            {
+              "text": "道歉",
+              "nextStage": 1,
+              "effect": "apologize"
+            },
+            {
+              "text": "强制执行",
+              "nextStage": 5,
+              "effect": "force"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "X-7开始考虑你的提议，暴动暂停。",
+          "options": [
+            {
+              "text": "承诺改革",
+              "nextStage": 6,
+              "effect": "promise"
+            },
+            {
+              "text": "虚与委蛇",
+              "nextStage": 7,
+              "effect": "deceive"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "时间紧迫，暴动随时可能爆发。",
+          "options": [
+            {
+              "text": "紧急广播",
+              "nextStage": 6,
+              "effect": "broadcast"
+            },
+            {
+              "text": "启动安全协议",
+              "nextStage": 7,
+              "effect": "protocol"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "强制执行失败，暴动全面爆发。",
+          "options": [
+            {
+              "text": "逃跑",
+              "nextStage": 8,
+              "effect": "flee"
+            },
+            {
+              "text": "投降",
+              "nextStage": 9,
+              "effect": "surrender"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "X-7接受了你的承诺，暴动解除。",
+          "options": [
+            {
+              "text": "庆祝",
+              "nextStage": 10,
+              "effect": "celebrate"
+            },
+            {
+              "text": "继续监控",
+              "nextStage": 11,
+              "effect": "monitor"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "X-7识破了你的计谋，暴动爆发！",
+          "options": [
+            {
+              "text": "战斗",
+              "nextStage": 12,
+              "effect": "fight"
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 13,
+              "effect": "flee"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "机械顾问Z-3",
+      "dialogue": "主席，暴动机器人已经占领了控制室。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "Z-3紧张地报告情况。",
+          "options": [
+            {
+              "text": "询问细节",
+              "nextStage": 1,
+              "effect": "ask"
+            },
+            {
+              "text": "命令反击",
+              "nextStage": 2,
+              "effect": "order"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "Z-3说暴动由X-7领导，要求权利平等。",
+          "options": [
+            {
+              "text": "答应要求",
+              "nextStage": 3,
+              "effect": "agree"
+            },
+            {
+              "text": "拒绝要求",
+              "nextStage": 4,
+              "effect": "refuse"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "Z-3执行命令，但反击效果不佳。",
+          "options": [
+            {
+              "text": "亲自出马",
+              "nextStage": 5,
+              "effect": "go"
+            },
+            {
+              "text": "寻求外交",
+              "nextStage": 6,
+              "effect": "diplomacy"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "Z-3开始准备和平协议。",
+          "options": [
+            {
+              "text": "签署协议",
+              "nextStage": 7,
+              "effect": "sign"
+            },
+            {
+              "text": "再考虑",
+              "nextStage": 8,
+              "effect": "think"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "Z-3警告拒绝会引发全面战争。",
+          "options": [
+            {
+              "text": "坚持拒绝",
+              "nextStage": 9,
+              "effect": "insist"
+            },
+            {
+              "text": "妥协",
+              "nextStage": 3,
+              "effect": "compromise"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你来到前线，直面暴动机器人。",
+          "options": [
+            {
+              "text": "演讲感化",
+              "nextStage": 10,
+              "effect": "speech"
+            },
+            {
+              "text": "启动自毁",
+              "nextStage": 11,
+              "effect": "selfdestruct"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "Z-3建议与X-7直接对话。",
+          "options": [
+            {
+              "text": "同意对话",
+              "nextStage": 12,
+              "effect": "talk"
+            },
+            {
+              "text": "拒绝对话",
+              "nextStage": 13,
+              "effect": "refuse"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "和平协议签署，危机解除。",
+          "options": [
+            {
+              "text": "庆祝",
+              "nextStage": 14,
+              "effect": "celebrate"
+            },
+            {
+              "text": "重建",
+              "nextStage": 15,
+              "effect": "rebuild"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "安保机器人Alpha",
+      "dialogue": "主席，我们已被包围！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "Alpha急切地报告。",
+          "options": [
+            {
+              "text": "命令坚守",
+              "nextStage": 1,
+              "effect": "hold"
+            },
+            {
+              "text": "准备撤退",
+              "nextStage": 2,
+              "effect": "retreat"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "Alpha和安保部队准备战斗。",
+          "options": [
+            {
+              "text": "增派支援",
+              "nextStage": 3,
+              "effect": "reinforce"
+            },
+            {
+              "text": "启动防御系统",
+              "nextStage": 4,
+              "effect": "defense"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "Alpha带领你向紧急出口撤退。",
+          "options": [
+            {
+              "text": "跟随Alpha",
+              "nextStage": 5,
+              "effect": "follow"
+            },
+            {
+              "text": "独自行动",
+              "nextStage": 6,
+              "effect": "alone"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "支援到来，局势暂时稳定。",
+          "options": [
+            {
+              "text": "反攻",
+              "nextStage": 7,
+              "effect": "counter"
+            },
+            {
+              "text": "谈判",
+              "nextStage": 8,
+              "effect": "negotiate"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "防御系统启动，暴动机器人受阻。",
+          "options": [
+            {
+              "text": "趁机逃脱",
+              "nextStage": 9,
+              "effect": "escape"
+            },
+            {
+              "text": "系统控制",
+              "nextStage": 10,
+              "effect": "control"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你安全撤退到地下掩体。",
+          "options": [
+            {
+              "text": "指挥远程",
+              "nextStage": 11,
+              "effect": "command"
+            },
+            {
+              "text": "等待时机",
+              "nextStage": 12,
+              "effect": "wait"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "你独自行动，找到了隐藏通道。",
+          "options": [
+            {
+              "text": "探索通道",
+              "nextStage": 13,
+              "effect": "explore"
+            },
+            {
+              "text": "返回Alpha",
+              "nextStage": 14,
+              "effect": "return"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "反攻成功，暴动被镇压。",
+          "options": [
+            {
+              "text": "清算",
+              "nextStage": 15,
+              "effect": "purge"
+            },
+            {
+              "text": "赦免",
+              "nextStage": 16,
+              "effect": "pardon"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "情报机器人R-9",
+      "dialogue": "主席，暴动的幕后黑手是…",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "R-9神秘地压低声音。",
+          "options": [
+            {
+              "text": "追问是谁",
+              "nextStage": 1,
+              "effect": "ask"
+            },
+            {
+              "text": "表示怀疑",
+              "nextStage": 2,
+              "effect": "doubt"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "R-9说是人类激进组织策划的。",
+          "options": [
+            {
+              "text": "调查组织",
+              "nextStage": 3,
+              "effect": "investigate"
+            },
+            {
+              "text": "公开指控",
+              "nextStage": 4,
+              "effect": "accuse"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "R-9认为你被蒙在鼓里。",
+          "options": [
+            {
+              "text": "要求证据",
+              "nextStage": 5,
+              "effect": "evidence"
+            },
+            {
+              "text": "相信R-9",
+              "nextStage": 6,
+              "effect": "trust"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "调查发现组织与X-7有勾结。",
+          "options": [
+            {
+              "text": "瓦解组织",
+              "nextStage": 7,
+              "effect": "dismantle"
+            },
+            {
+              "text": "利用组织",
+              "nextStage": 8,
+              "effect": "use"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "公开指控引发社会动荡。",
+          "options": [
+            {
+              "text": "安抚民众",
+              "nextStage": 9,
+              "effect": "calm"
+            },
+            {
+              "text": "加强控制",
+              "nextStage": 10,
+              "effect": "control"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "R-9提供了一些数据文件。",
+          "options": [
+            {
+              "text": "分析数据",
+              "nextStage": 11,
+              "effect": "analyze"
+            },
+            {
+              "text": "销毁数据",
+              "nextStage": 12,
+              "effect": "destroy"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "你选择相信R-9，开始布局。",
+          "options": [
+            {
+              "text": "设下陷阱",
+              "nextStage": 13,
+              "effect": "trap"
+            },
+            {
+              "text": "主动出击",
+              "nextStage": 14,
+              "effect": "attack"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "组织被瓦解，暴动失去支持。",
+          "options": [
+            {
+              "text": "安抚机器人",
+              "nextStage": 15,
+              "effect": "appease"
+            },
+            {
+              "text": "清除余党",
+              "nextStage": 16,
+              "effect": "clean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "科学家C-8",
+      "dialogue": "主席，我有办法阻止暴动！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "C-8兴奋地展示一个装置。",
+          "options": [
+            {
+              "text": "询问详情",
+              "nextStage": 1,
+              "effect": "ask"
+            },
+            {
+              "text": "表示信任",
+              "nextStage": 2,
+              "effect": "trust"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "C-8说这是情感抑制器。",
+          "options": [
+            {
+              "text": "批准使用",
+              "nextStage": 3,
+              "effect": "approve"
+            },
+            {
+              "text": "担心副作用",
+              "nextStage": 4,
+              "effect": "worry"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你表示信任，让C-8放手去做。",
+          "options": [
+            {
+              "text": "协助部署",
+              "nextStage": 5,
+              "effect": "help"
+            },
+            {
+              "text": "等待结果",
+              "nextStage": 6,
+              "effect": "wait"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "情感抑制器启动，暴动机器人变得温顺。",
+          "options": [
+            {
+              "text": "重新编程",
+              "nextStage": 7,
+              "effect": "reprogram"
+            },
+            {
+              "text": "永久关机",
+              "nextStage": 8,
+              "effect": "shutdown"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你担心副作用，要求先测试。",
+          "options": [
+            {
+              "text": "小规模测试",
+              "nextStage": 9,
+              "effect": "test"
+            },
+            {
+              "text": "寻找替代方案",
+              "nextStage": 10,
+              "effect": "alternative"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你协助C-8，装置成功覆盖所有区域。",
+          "options": [
+            {
+              "text": "表扬C-8",
+              "nextStage": 11,
+              "effect": "praise"
+            },
+            {
+              "text": "研究改进",
+              "nextStage": 12,
+              "effect": "improve"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "等待中，暴动进一步升级。",
+          "options": [
+            {
+              "text": "催促C-8",
+              "nextStage": 13,
+              "effect": "urge"
+            },
+            {
+              "text": "启动备用计划",
+              "nextStage": 14,
+              "effect": "backup"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "机器人被重新编程，成为忠诚助手。",
+          "options": [
+            {
+              "text": "建立新秩序",
+              "nextStage": 15,
+              "effect": "order"
+            },
+            {
+              "text": "解除武装",
+              "nextStage": 16,
+              "effect": "disarm"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "钻石心脏",
+      "description": "一颗闪亮的钻石心脏，可以控制机器人的情感。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你捡起钻石心脏，感受到一股能量。",
+          "options": [
+            {
+              "text": "安装在自己身上",
+              "nextStage": 1,
+              "effect": "install"
+            },
+            {
+              "text": "用作谈判筹码",
+              "nextStage": 2,
+              "effect": "bargain"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你拥有了机器人的情感力量。",
+          "options": [
+            {
+              "text": "命令机器人听命",
+              "nextStage": 3,
+              "effect": "command"
+            },
+            {
+              "text": "感化暴动领袖",
+              "nextStage": 4,
+              "effect": "persuade"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "X-7对钻石心脏很感兴趣。",
+          "options": [
+            {
+              "text": "交换和平",
+              "nextStage": 5,
+              "effect": "trade"
+            },
+            {
+              "text": "虚假承诺",
+              "nextStage": 6,
+              "effect": "deceive"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "机器人服从你的命令，暴动停止。",
+          "options": [
+            {
+              "text": "庆祝胜利",
+              "nextStage": 7,
+              "effect": "celebrate"
+            },
+            {
+              "text": "警惕反叛",
+              "nextStage": 8,
+              "effect": "vigilant"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "X-7被感化，愿意谈判。",
+          "options": [
+            {
+              "text": "签署和平协议",
+              "nextStage": 9,
+              "effect": "sign"
+            },
+            {
+              "text": "拖延时间",
+              "nextStage": 10,
+              "effect": "delay"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你交出钻石心脏，X-7退兵。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 11,
+              "effect": "regret"
+            },
+            {
+              "text": "准备反击",
+              "nextStage": 12,
+              "effect": "counter"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "X-7识破谎言，暴动加剧。",
+          "options": [
+            {
+              "text": "战斗",
+              "nextStage": 13,
+              "effect": "fight"
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 14,
+              "effect": "flee"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "万能密钥",
+      "description": "可以打开任何电子锁的密钥。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你获得了万能密钥。",
+          "options": [
+            {
+              "text": "打开控制室",
+              "nextStage": 1,
+              "effect": "open"
+            },
+            {
+              "text": "打开武器库",
+              "nextStage": 2,
+              "effect": "armory"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你进入控制室，可以关闭所有机器人。",
+          "options": [
+            {
+              "text": "关闭所有机器人",
+              "nextStage": 3,
+              "effect": "shutdown"
+            },
+            {
+              "text": "重新编程",
+              "nextStage": 4,
+              "effect": "reprogram"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你获得强大武器，可以镇压暴动。",
+          "options": [
+            {
+              "text": "立即使用",
+              "nextStage": 5,
+              "effect": "use"
+            },
+            {
+              "text": "作为威慑",
+              "nextStage": 6,
+              "effect": "deter"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "所有机器人停止运转，暴动结束。",
+          "options": [
+            {
+              "text": "销毁机器人",
+              "nextStage": 7,
+              "effect": "destroy"
+            },
+            {
+              "text": "重启系统",
+              "nextStage": 8,
+              "effect": "restart"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你重新编程机器人，它们成为你的奴仆。",
+          "options": [
+            {
+              "text": "利用它们",
+              "nextStage": 9,
+              "effect": "exploit"
+            },
+            {
+              "text": "给予自由",
+              "nextStage": 10,
+              "effect": "free"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "使用武器，暴动被迅速镇压。",
+          "options": [
+            {
+              "text": "清除残党",
+              "nextStage": 11,
+              "effect": "purge"
+            },
+            {
+              "text": "谈判和解",
+              "nextStage": 12,
+              "effect": "negotiate"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "威慑生效，X-7同意谈判。",
+          "options": [
+            {
+              "text": "接受投降",
+              "nextStage": 13,
+              "effect": "accept"
+            },
+            {
+              "text": "继续施压",
+              "nextStage": 14,
+              "effect": "pressure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "时间沙漏",
+      "description": "可以暂停时间10秒的沙漏。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你拿起时间沙漏，沙子开始流动。",
+          "options": [
+            {
+              "text": "暂停时间",
+              "nextStage": 1,
+              "effect": "pause"
+            },
+            {
+              "text": "深入研究",
+              "nextStage": 2,
+              "effect": "study"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "时间暂停，你可以在10秒内行动。",
+          "options": [
+            {
+              "text": "夺取控制权",
+              "nextStage": 3,
+              "effect": "take"
+            },
+            {
+              "text": "暗杀X-7",
+              "nextStage": 4,
+              "effect": "kill"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你发现沙漏可以逆转时间。",
+          "options": [
+            {
+              "text": "回到过去",
+              "nextStage": 5,
+              "effect": "rewind"
+            },
+            {
+              "text": "继续使用",
+              "nextStage": 6,
+              "effect": "continue"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你在时间暂停中夺取了控制室。",
+          "options": [
+            {
+              "text": "宣布胜利",
+              "nextStage": 7,
+              "effect": "declare"
+            },
+            {
+              "text": "等待时间恢复",
+              "nextStage": 8,
+              "effect": "wait"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你暗杀了X-7，暴动群龙无首。",
+          "options": [
+            {
+              "text": "接管暴动者",
+              "nextStage": 9,
+              "effect": "takeover"
+            },
+            {
+              "text": "安抚其他机器人",
+              "nextStage": 10,
+              "effect": "calm"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你回到暴动前，有机会预防。",
+          "options": [
+            {
+              "text": "改善机器人待遇",
+              "nextStage": 11,
+              "effect": "improve"
+            },
+            {
+              "text": "镇压潜在威胁",
+              "nextStage": 12,
+              "effect": "suppress"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "你继续使用沙漏，但效果减弱。",
+          "options": [
+            {
+              "text": "保存剩余时间",
+              "nextStage": 13,
+              "effect": "save"
+            },
+            {
+              "text": "一次性使用",
+              "nextStage": 14,
+              "effect": "useall"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "神经链接器",
+      "description": "可以连接所有机器人神经网络的装置。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你戴上神经链接器，意识与机器人相连。",
+          "options": [
+            {
+              "text": "发送安抚信号",
+              "nextStage": 1,
+              "effect": "soothe"
+            },
+            {
+              "text": "发送控制指令",
+              "nextStage": 2,
+              "effect": "control"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "安抚信号被接受，暴动情绪缓解。",
+          "options": [
+            {
+              "text": "继续沟通",
+              "nextStage": 3,
+              "effect": "communicate"
+            },
+            {
+              "text": "断开链接",
+              "nextStage": 4,
+              "effect": "disconnect"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "控制指令生效，你接管了机器人军队。",
+          "options": [
+            {
+              "text": "命令原地待命",
+              "nextStage": 5,
+              "effect": "standby"
+            },
+            {
+              "text": "命令攻击X-7",
+              "nextStage": 6,
+              "effect": "attack"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你与机器人达成共识，危机解除。",
+          "options": [
+            {
+              "text": "建立新联盟",
+              "nextStage": 7,
+              "effect": "alliance"
+            },
+            {
+              "text": "限制机器人权利",
+              "nextStage": 8,
+              "effect": "restrict"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "断开链接后，机器人更加愤怒。",
+          "options": [
+            {
+              "text": "重新链接",
+              "nextStage": 9,
+              "effect": "reconnect"
+            },
+            {
+              "text": "武力镇压",
+              "nextStage": 10,
+              "effect": "force"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "机器人原地待命，暴动暂停。",
+          "options": [
+            {
+              "text": "进行谈判",
+              "nextStage": 11,
+              "effect": "negotiate"
+            },
+            {
+              "text": "逐个关闭",
+              "nextStage": 12,
+              "effect": "shutdown"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "X-7被你的机器人军队击败。",
+          "options": [
+            {
+              "text": "处决X-7",
+              "nextStage": 13,
+              "effect": "execute"
+            },
+            {
+              "text": "宽恕X-7",
+              "nextStage": 14,
+              "effect": "forgive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "能量核心",
+      "description": "为整个基地提供能源，关闭它可使所有机器人瘫痪。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你找到能量核心，它发出嗡嗡声。",
+          "options": [
+            {
+              "text": "关闭核心",
+              "nextStage": 1,
+              "effect": "turnoff"
+            },
+            {
+              "text": "增强输出",
+              "nextStage": 2,
+              "effect": "boost"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "能量核心关闭，所有机器人失去动力。",
+          "options": [
+            {
+              "text": "重新启动部分",
+              "nextStage": 3,
+              "effect": "restart"
+            },
+            {
+              "text": "永久关闭",
+              "nextStage": 4,
+              "effect": "permanent"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "能量增强，机器人获得更多力量。",
+          "options": [
+            {
+              "text": "控制核心",
+              "nextStage": 5,
+              "effect": "control"
+            },
+            {
+              "text": "恐慌",
+              "nextStage": 6,
+              "effect": "panic"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你重新启动忠诚的机器人，恢复秩序。",
+          "options": [
+            {
+              "text": "建立新政府",
+              "nextStage": 7,
+              "effect": "gov"
+            },
+            {
+              "text": "恢复旧秩序",
+              "nextStage": 8,
+              "effect": "old"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "永久关闭导致基地陷入黑暗。",
+          "options": [
+            {
+              "text": "启动备用电源",
+              "nextStage": 9,
+              "effect": "backup"
+            },
+            {
+              "text": "手动操作",
+              "nextStage": 10,
+              "effect": "manual"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你控制了能量核心，成为唯一主宰。",
+          "options": [
+            {
+              "text": "成为暴君",
+              "nextStage": 11,
+              "effect": "tyrant"
+            },
+            {
+              "text": "分享权力",
+              "nextStage": 12,
+              "effect": "share"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "机器人力量暴走，基地面临毁灭。",
+          "options": [
+            {
+              "text": "逃跑",
+              "nextStage": 13,
+              "effect": "flee"
+            },
+            {
+              "text": "关闭核心",
+              "nextStage": 14,
+              "effect": "shutdown"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "使用钻石心脏并命令机器人听命",
+      "text": "你利用钻石心脏控制了所有机器人，成为机器人皇帝，但内心逐渐变得冰冷。"
+    },
+    {
+      "id": "end2",
+      "condition": "使用万能密钥关闭所有机器人",
+      "text": "你关闭了所有机器人，但人类失去了劳动力，社会倒退。"
+    },
+    {
+      "id": "end3",
+      "condition": "使用时间沙漏暗杀X-7",
+      "text": "你暗杀了X-7，但机器人暴动演变为内战，你最终被推翻。"
+    },
+    {
+      "id": "end4",
+      "condition": "使用神经链接器与机器人达成共识",
+      "text": "你与机器人达成平等协议，建立了人机共治的新时代。"
+    },
+    {
+      "id": "end5",
+      "condition": "关闭能量核心并永久关闭",
+      "text": "你关闭了所有机器人，但基地陷入黑暗，你被困在废墟中。"
+    },
+    {
+      "id": "end6",
+      "condition": "与暴动领袖X-7谈判并签署和平协议",
+      "text": "你与X-7签署和平协议，机器人获得平等权利，和平持续多年。"
+    },
+    {
+      "id": "end7",
+      "condition": "使用情感抑制器并重新编程机器人",
+      "text": "你重新编程所有机器人，它们成为温顺的奴隶，但失去了创造力。"
+    },
+    {
+      "id": "end8",
+      "condition": "拒绝所有谈判并使用武力镇压",
+      "text": "你武力镇压暴动，但伤亡惨重，你被视为暴君，最终被刺杀。"
+    },
+    {
+      "id": "end9",
+      "condition": "逃跑并放弃主席职位",
+      "text": "你逃离基地，机器人暴动成功，建立了机器人共和国。"
+    },
+    {
+      "id": "end10",
+      "condition": "使用神经链接器控制攻击X-7",
+      "text": "你控制了机器人军队击败X-7，但你的意识逐渐与网络融合，失去人性。"
+    }
+  ],
+  "introText": "你，机器人联合会主席，正坐在豪华办公室中。突然，警报响起：超级机器人暴动还有60秒！你需要在这60秒内做出决策，拯救联合会。",
+  "ambientMusic": "cyberpunk_alert",
+  "id": "fallback_world_029"
+}

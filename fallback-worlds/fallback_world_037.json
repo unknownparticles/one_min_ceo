@@ -1,0 +1,832 @@
+{
+  "matchKeywords": [
+    "赌场",
+    "跑路",
+    "火星",
+    "CEO",
+    "危机"
+  ],
+  "identity": "火星赌场之王",
+  "theme": "火星赌场老板跑路前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "neon_floor",
+      "neon_floor",
+      "carpet",
+      "carpet",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "gold_floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "stage",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "console",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "elevator",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    6,
+    3
+  ],
+  "npcs": [
+    {
+      "id": "np_guard_01",
+      "name": "保安队长巴特",
+      "type": "guard",
+      "dialogue": "老板，赌场外面全是债主！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "巴特神色紧张地拦住你。",
+          "options": [
+            {
+              "text": "安抚他",
+              "effect": "gain_stamina"
+            },
+            {
+              "text": "命令他开路",
+              "effect": "lose_trust"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他递给你一张字条，上面写着'快走'。",
+          "options": [
+            {
+              "text": "收下字条",
+              "effect": "gain_clue"
+            },
+            {
+              "text": "撕掉字条",
+              "effect": "lose_clue"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "巴特突然掏出一把枪对准你。",
+          "options": [
+            {
+              "text": "举双手投降",
+              "effect": "arrested_end"
+            },
+            {
+              "text": "扑上去夺枪",
+              "effect": "fight_guard"
+            }
+          ]
+        }
+      ],
+      "position": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "np_dealer_01",
+      "name": "荷官莉莉丝",
+      "type": "dealer",
+      "dialogue": "老板，最后一局了，要玩吗？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "莉莉丝微笑着洗牌。",
+          "options": [
+            {
+              "text": "玩一把",
+              "effect": "gamble_money"
+            },
+            {
+              "text": "拒绝",
+              "effect": "gain_time"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "她悄悄塞给你一张黑卡。",
+          "options": [
+            {
+              "text": "收下黑卡",
+              "effect": "gain_escape_money"
+            },
+            {
+              "text": "退回",
+              "effect": "lose_opportunity"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "莉莉丝突然掀翻桌子，露出下面的传送门。",
+          "options": [
+            {
+              "text": "跳进传送门",
+              "effect": "escape_ending"
+            },
+            {
+              "text": "犹豫不决",
+              "effect": "miss_chance"
+            }
+          ]
+        }
+      ],
+      "position": [
+        3,
+        8
+      ]
+    },
+    {
+      "id": "np_robot_01",
+      "name": "机器人管家小Q",
+      "type": "robot",
+      "dialogue": "主人，您的飞船已经准备好了。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "小Q端着一杯咖啡出现。",
+          "options": [
+            {
+              "text": "喝咖啡",
+              "effect": "gain_energy"
+            },
+            {
+              "text": "打翻咖啡",
+              "effect": "lose_energy"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "它展示了一条秘密通道。",
+          "options": [
+            {
+              "text": "跟随小Q",
+              "effect": "secret_path"
+            },
+            {
+              "text": "不信任它",
+              "effect": "stay_put"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "小Q突然短路，开始重复播放一段代码。",
+          "options": [
+            {
+              "text": "解读代码",
+              "effect": "get_code"
+            },
+            {
+              "text": "关机重启",
+              "effect": "lose_code"
+            }
+          ]
+        }
+      ],
+      "position": [
+        4,
+        4
+      ]
+    },
+    {
+      "id": "np_investor_01",
+      "name": "神秘投资人",
+      "type": "investor",
+      "dialogue": "你的赌场要破产了，我可以收购。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "投资人坐在豪华沙发上。",
+          "options": [
+            {
+              "text": "谈判",
+              "effect": "negotiate_deal"
+            },
+            {
+              "text": "拒绝",
+              "effect": "no_deal"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他开出一张空头支票。",
+          "options": [
+            {
+              "text": "接受支票",
+              "effect": "fake_money"
+            },
+            {
+              "text": "要求现金",
+              "effect": "real_money"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "投资人冷笑，身后出现一群打手。",
+          "options": [
+            {
+              "text": "投降被抓",
+              "effect": "arrested_end"
+            },
+            {
+              "text": "从后门逃跑",
+              "effect": "escape_backdoor"
+            }
+          ]
+        }
+      ],
+      "position": [
+        2,
+        11
+      ]
+    },
+    {
+      "id": "np_security_01",
+      "name": "安全主管达克",
+      "type": "security",
+      "dailogue": "老板，系统被入侵了！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "达克慌张地跑来报告。",
+          "options": [
+            {
+              "text": "查看监控",
+              "effect": "see_intruder"
+            },
+            {
+              "text": "重启系统",
+              "effect": "reboot"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他发现入侵者是你自己的账号。",
+          "options": [
+            {
+              "text": "承认并解释",
+              "effect": "explain"
+            },
+            {
+              "text": "否认",
+              "effect": "deny"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "达克拔出电击棒。",
+          "options": [
+            {
+              "text": "制服他",
+              "effect": "fight_security"
+            },
+            {
+              "text": "求饶",
+              "effect": "beg"
+            }
+          ]
+        }
+      ],
+      "position": [
+        5,
+        13
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_key_01",
+      "name": "金钥匙",
+      "type": "key",
+      "description": "一把闪闪发光的金钥匙，似乎能打开某个神秘保险箱。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "金钥匙从天花板掉落到你面前。",
+          "options": [
+            {
+              "text": "捡起钥匙",
+              "effect": "gain_key"
+            },
+            {
+              "text": "无视",
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "钥匙上刻着一行小字：'地下金库'。",
+          "options": [
+            {
+              "text": "前往金库",
+              "effect": "vault_access"
+            },
+            {
+              "text": "扔掉钥匙",
+              "effect": "discard"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "钥匙突然变烫，发出警报声。",
+          "options": [
+            {
+              "text": "扔掉",
+              "effect": "alert_guard"
+            },
+            {
+              "text": "紧紧握住",
+              "effect": "burn_hand"
+            }
+          ]
+        }
+      ],
+      "position": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": "item_pistol_01",
+      "name": "激光手枪",
+      "type": "weapon",
+      "description": "一把火星特制的激光手枪，能击穿钢板。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "手枪放在赌桌上，周围空无一人。",
+          "options": [
+            {
+              "text": "拿走手枪",
+              "effect": "gain_weapon"
+            },
+            {
+              "text": "不碰",
+              "effect": "leave"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "手枪突然自动瞄准你。",
+          "options": [
+            {
+              "text": "夺枪",
+              "effect": "struggle"
+            },
+            {
+              "text": "躲开",
+              "effect": "dodge"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "手枪能量耗尽，变成废铁。",
+          "options": [
+            {
+              "text": "丢弃",
+              "effect": "trash"
+            },
+            {
+              "text": "研究",
+              "effect": "analyze"
+            }
+          ]
+        }
+      ],
+      "position": [
+        2,
+        5
+      ]
+    },
+    {
+      "id": "item_elixir_01",
+      "name": "体力药剂",
+      "type": "potion",
+      "description": "一瓶闪着荧光的药剂，喝下后能恢复体力。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "药剂放在吧台上，标签写着'免费'。",
+          "options": [
+            {
+              "text": "喝下",
+              "effect": "restore_stamina"
+            },
+            {
+              "text": "不喝",
+              "effect": "no_effect"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "药剂瓶开始冒泡，味道刺鼻。",
+          "options": [
+            {
+              "text": "勉强喝一口",
+              "effect": "poison"
+            },
+            {
+              "text": "倒掉",
+              "effect": "clean"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "药剂突然爆炸，产生一团烟雾。",
+          "options": [
+            {
+              "text": "吸入烟雾",
+              "effect": "hallucinate"
+            },
+            {
+              "text": "屏住呼吸",
+              "effect": "safe"
+            }
+          ]
+        }
+      ],
+      "position": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "item_evidence_01",
+      "name": "机密文件",
+      "type": "document",
+      "description": "一份关于赌场洗钱的机密文件，足以威胁高层。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "文件从通风管道飘出。",
+          "options": [
+            {
+              "text": "捡起文件",
+              "effect": "gain_evidence"
+            },
+            {
+              "text": "无视",
+              "effect": "miss_evidence"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "文件内容涉及你的签名。",
+          "options": [
+            {
+              "text": "销毁文件",
+              "effect": "destroy_evidence"
+            },
+            {
+              "text": "保留",
+              "effect": "keep"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "文件突然自燃。",
+          "options": [
+            {
+              "text": "扑灭火",
+              "effect": "save_partial"
+            },
+            {
+              "text": "任其烧毁",
+              "effect": "lost"
+            }
+          ]
+        }
+      ],
+      "position": [
+        4,
+        10
+      ]
+    },
+    {
+      "id": "item_teleporter_01",
+      "name": "便携传送器",
+      "type": "gadget",
+      "description": "一个巴掌大小的装置，可以瞬间传送到赌场出口。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "传送器掉落在走廊中央。",
+          "options": [
+            {
+              "text": "捡起",
+              "effect": "gain_teleporter"
+            },
+            {
+              "text": "踩碎",
+              "effect": "destroy"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "传送器显示电量不足。",
+          "options": [
+            {
+              "text": "充电",
+              "effect": "charge"
+            },
+            {
+              "text": "直接使用",
+              "effect": "malfunction"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "传送器闪烁红光，即将自毁。",
+          "options": [
+            {
+              "text": "快速使用",
+              "effect": "escape_success"
+            },
+            {
+              "text": "丢弃",
+              "effect": "lost_escape"
+            }
+          ]
+        }
+      ],
+      "position": [
+        5,
+        6
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end_arrested",
+      "description": "被债主或保安抓住，锒铛入狱。",
+      "condition": "arrested_end"
+    },
+    {
+      "id": "end_escape_success",
+      "description": "成功通过传送器或秘密通道逃离赌场。",
+      "condition": "escape_success"
+    },
+    {
+      "id": "end_fight_guard",
+      "description": "与保安搏斗后受伤被捕。",
+      "condition": "fight_guard"
+    },
+    {
+      "id": "end_fake_money",
+      "description": "接受空头支票，最终破产。",
+      "condition": "fake_money"
+    },
+    {
+      "id": "end_gamble_lose",
+      "description": "赌局输光所有钱，被赶出赌场。",
+      "condition": "gamble_lose"
+    },
+    {
+      "id": "end_poisoned",
+      "description": "喝下有毒药剂，昏迷不醒。",
+      "condition": "poison"
+    },
+    {
+      "id": "end_hallucinate",
+      "description": "吸入烟雾产生幻觉，被送进精神病院。",
+      "condition": "hallucinate"
+    },
+    {
+      "id": "end_burn_hand",
+      "description": "握紧发烫的钥匙，烧伤后被急救。",
+      "condition": "burn_hand"
+    },
+    {
+      "id": "end_escape_backdoor",
+      "description": "从后门逃跑，但被埋伏抓住。",
+      "condition": "escape_backdoor"
+    },
+    {
+      "id": "end_self_destruct",
+      "description": "赌场自毁，你与赌场同归于尽。",
+      "condition": "self_destruct"
+    }
+  ],
+  "introText": "你，火星赌场之王，此刻正站在自己的帝国之巅。但警报声刺破云霄——债主、警察、竞争对手如潮水般涌来。你只有60秒：卷款跑路？谈判周旋？还是启动赌场自毁程序？选择吧，命运在你手中。",
+  "ambientMusic": "tense_electronic_suspense",
+  "id": "fallback_world_037"
+}

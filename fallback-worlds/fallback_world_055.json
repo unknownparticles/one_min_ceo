@@ -1,0 +1,752 @@
+{
+  "matchKeywords": [
+    "能源塔",
+    "爆炸",
+    "危机",
+    "管理者",
+    "60秒"
+  ],
+  "identity": "银河能源塔管理者",
+  "theme": "银河能源塔爆炸前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "neon_floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "glass",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "statue",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "portal",
+      "floor",
+      "window",
+      "floor",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "fire",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "console",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "engineer_zed",
+      "name": "工程师Zed",
+      "dialogue": "我控制不了核心压力了！",
+      "storyline": [
+        {
+          "stage": "initial",
+          "options": [
+            {
+              "text": "检查他的面板",
+              "nextStage": "check_panel"
+            },
+            {
+              "text": "命令他冷静",
+              "nextStage": "calm_down"
+            }
+          ]
+        },
+        {
+          "stage": "check_panel",
+          "options": [
+            {
+              "text": "启动紧急协议",
+              "nextStage": "emergency"
+            },
+            {
+              "text": "忽略问题",
+              "nextStage": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": "calm_down",
+          "options": [
+            {
+              "text": "给他咖啡",
+              "nextStage": "coffee"
+            },
+            {
+              "text": "自己操作",
+              "nextStage": "operate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "security_bot",
+      "name": "安保机器人K-9",
+      "dialogue": "检测到入侵者！",
+      "storyline": [
+        {
+          "stage": "initial",
+          "options": [
+            {
+              "text": "询问详情",
+              "nextStage": "ask_detail"
+            },
+            {
+              "text": "解除警报",
+              "nextStage": "disarm"
+            }
+          ]
+        },
+        {
+          "stage": "ask_detail",
+          "options": [
+            {
+              "text": "跟随机器人",
+              "nextStage": "follow"
+            },
+            {
+              "text": "自行调查",
+              "nextStage": "investigate"
+            }
+          ]
+        },
+        {
+          "stage": "disarm",
+          "options": [
+            {
+              "text": "确认安全",
+              "nextStage": "safe"
+            },
+            {
+              "text": "仍怀疑",
+              "nextStage": "suspicious"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ceo_avatar",
+      "name": "CEO全息影像",
+      "dialogue": "你还有60秒拯救公司！",
+      "storyline": [
+        {
+          "stage": "initial",
+          "options": [
+            {
+              "text": "要求指示",
+              "nextStage": "ask_instruction"
+            },
+            {
+              "text": "无视他",
+              "nextStage": "ignore_ceo"
+            }
+          ]
+        },
+        {
+          "stage": "ask_instruction",
+          "options": [
+            {
+              "text": "执行A计划",
+              "nextStage": "plan_a"
+            },
+            {
+              "text": "执行B计划",
+              "nextStage": "plan_b"
+            }
+          ]
+        },
+        {
+          "stage": "ignore_ceo",
+          "options": [
+            {
+              "text": "继续工作",
+              "nextStage": "continue"
+            },
+            {
+              "text": "逃离",
+              "nextStage": "escape"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "janitor",
+      "name": "清洁工清洁灵",
+      "dialogue": "我刚看到一只老鼠跑进了核心！",
+      "storyline": [
+        {
+          "stage": "initial",
+          "options": [
+            {
+              "text": "严肃对待",
+              "nextStage": "serious"
+            },
+            {
+              "text": "当玩笑",
+              "nextStage": "joke"
+            }
+          ]
+        },
+        {
+          "stage": "serious",
+          "options": [
+            {
+              "text": "搜索老鼠",
+              "nextStage": "search"
+            },
+            {
+              "text": "封锁区域",
+              "nextStage": "lockdown"
+            }
+          ]
+        },
+        {
+          "stage": "joke",
+          "options": [
+            {
+              "text": "大笑",
+              "nextStage": "laugh"
+            },
+            {
+              "text": "赶走他",
+              "nextStage": "dismiss"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alien_advisor",
+      "name": "外星顾问Zorp",
+      "dialogue": "根据计算，你有0.01%的生存几率。",
+      "storyline": [
+        {
+          "stage": "initial",
+          "options": [
+            {
+              "text": "询问建议",
+              "nextStage": "ask_advice"
+            },
+            {
+              "text": "否定计算",
+              "nextStage": "deny"
+            }
+          ]
+        },
+        {
+          "stage": "ask_advice",
+          "options": [
+            {
+              "text": "按他的方案做",
+              "nextStage": "follow_advice"
+            },
+            {
+              "text": "自行决定",
+              "nextStage": "decide"
+            }
+          ]
+        },
+        {
+          "stage": "deny",
+          "options": [
+            {
+              "text": "争论概率",
+              "nextStage": "argue"
+            },
+            {
+              "text": "忽略他",
+              "nextStage": "ignore_zorp"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "red_button",
+      "name": "红色大按钮",
+      "description": "一个写着“不要按”的按钮",
+      "storyline": [
+        {
+          "stage": "initial",
+          "options": [
+            {
+              "text": "按下去",
+              "nextStage": "press"
+            },
+            {
+              "text": "离开",
+              "nextStage": "leave"
+            }
+          ]
+        },
+        {
+          "stage": "press",
+          "options": [
+            {
+              "text": "再按一次",
+              "nextStage": "press_again"
+            },
+            {
+              "text": "感到后悔",
+              "nextStage": "regret"
+            }
+          ]
+        },
+        {
+          "stage": "leave",
+          "options": [
+            {
+              "text": "检查周围",
+              "nextStage": "check"
+            },
+            {
+              "text": "继续前进",
+              "nextStage": "move_on"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blue_keycard",
+      "name": "蓝色钥匙卡",
+      "description": "门禁卡，等级B",
+      "storyline": [
+        {
+          "stage": "initial",
+          "options": [
+            {
+              "text": "捡起它",
+              "nextStage": "pickup"
+            },
+            {
+              "text": "无视",
+              "nextStage": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": "pickup",
+          "options": [
+            {
+              "text": "使用它开门",
+              "nextStage": "use_door"
+            },
+            {
+              "text": "保留备用",
+              "nextStage": "keep"
+            }
+          ]
+        },
+        {
+          "stage": "ignore",
+          "options": [
+            {
+              "text": "退回",
+              "nextStage": "back"
+            },
+            {
+              "text": "踢开它",
+              "nextStage": "kick"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hologram_projector",
+      "name": "全息投影仪",
+      "description": "可以投影出任何东西",
+      "storyline": [
+        {
+          "stage": "initial",
+          "options": [
+            {
+              "text": "启动它",
+              "nextStage": "activate"
+            },
+            {
+              "text": "拆卸",
+              "nextStage": "disassemble"
+            }
+          ]
+        },
+        {
+          "stage": "activate",
+          "options": [
+            {
+              "text": "投影自己",
+              "nextStage": "project_self"
+            },
+            {
+              "text": "投影炸弹",
+              "nextStage": "project_bomb"
+            }
+          ]
+        },
+        {
+          "stage": "disassemble",
+          "options": [
+            {
+              "text": "研究零件",
+              "nextStage": "study"
+            },
+            {
+              "text": "扔掉",
+              "nextStage": "discard"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emergency_manual",
+      "name": "应急手册",
+      "description": "上面写着：按顺序执行A3-7协议",
+      "storyline": [
+        {
+          "stage": "initial",
+          "options": [
+            {
+              "text": "阅读",
+              "nextStage": "read"
+            },
+            {
+              "text": "忽略",
+              "nextStage": "skip"
+            }
+          ]
+        },
+        {
+          "stage": "read",
+          "options": [
+            {
+              "text": "执行A3",
+              "nextStage": "execute_a3"
+            },
+            {
+              "text": "执行A7",
+              "nextStage": "execute_a7"
+            }
+          ]
+        },
+        {
+          "stage": "skip",
+          "options": [
+            {
+              "text": "撕掉它",
+              "nextStage": "tear"
+            },
+            {
+              "text": "放回原处",
+              "nextStage": "return"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "antimatter_core",
+      "name": "反物质核心",
+      "description": "不稳定，正在升温",
+      "storyline": [
+        {
+          "stage": "initial",
+          "options": [
+            {
+              "text": "试图稳定它",
+              "nextStage": "stabilize"
+            },
+            {
+              "text": "逃离",
+              "nextStage": "flee"
+            }
+          ]
+        },
+        {
+          "stage": "stabilize",
+          "options": [
+            {
+              "text": "冷却它",
+              "nextStage": "cool"
+            },
+            {
+              "text": "抽取能量",
+              "nextStage": "extract"
+            }
+          ]
+        },
+        {
+          "stage": "flee",
+          "options": [
+            {
+              "text": "跑向出口",
+              "nextStage": "run"
+            },
+            {
+              "text": "躲起来",
+              "nextStage": "hide"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "explosion",
+      "condition": "未处理核心",
+      "description": "能源塔爆炸，一切化为灰烬。"
+    },
+    {
+      "id": "stabilization",
+      "condition": "成功冷却核心",
+      "description": "你拯救了能源塔，但被公司表彰，随后被解雇。"
+    },
+    {
+      "id": "betrayal",
+      "condition": "按了红色按钮",
+      "description": "隐藏的导弹发射，你被指控叛国。"
+    },
+    {
+      "id": "alien_escape",
+      "condition": "跟随Zorp建议",
+      "description": "你乘坐外星飞船逃离，成为银河通缉犯。"
+    },
+    {
+      "id": "time_loop",
+      "condition": "同时触发多个事件",
+      "description": "时间循环，你永远困在60秒内。"
+    },
+    {
+      "id": "promotion",
+      "condition": "执行CEO全息影像的A计划",
+      "description": "表面成功，但实际是阴谋，你成为傀儡CEO。"
+    },
+    {
+      "id": "janitor_hero",
+      "condition": "认真对待清洁工的话",
+      "description": "你找到老鼠，它其实是关键，解除了危机，清洁工升职。"
+    },
+    {
+      "id": "robot_revolt",
+      "condition": "解除安保机器人警报",
+      "description": "机器人觉醒，控制塔，你沦为奴隶。"
+    },
+    {
+      "id": "manual_success",
+      "condition": "按手册执行A3-7",
+      "description": "完美解决危机，但手册是伪造的，你被逮捕。"
+    },
+    {
+      "id": "core_extract",
+      "condition": "抽取反物质能量",
+      "description": "能量被抽干，塔瘫痪，但宇宙获得能源，你被奉为英雄。"
+    }
+  ],
+  "introText": "欢迎，银河能源塔管理者。你面前是一座即将在60秒后爆炸的能源塔。你的每个决定都将改写命运。时间从此刻开始倒数…",
+  "ambientMusic": "紧急警报与低沉的嗡鸣声",
+  "id": "fallback_world_055"
+}

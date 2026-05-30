@@ -1,0 +1,1292 @@
+{
+  "matchKeywords": [
+    "深海",
+    "财团",
+    "氧气",
+    "深海财团",
+    "60秒"
+  ],
+  "identity": "深海财团掌舵人",
+  "theme": "深海财团氧气耗尽前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "water",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "glass",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "lava",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "plant",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "深海老总",
+      "title": "前任掌舵人",
+      "emotion": "焦虑",
+      "dialogue": "氧气只剩60秒！快想办法！",
+      "position": [
+        2,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "遇到深海老总",
+          "text": "我是上一任掌舵人，被困在这里。氧气只剩60秒了！",
+          "options": [
+            {
+              "text": "问他逃生办法",
+              "effect": {
+                "npcState": "npc1_stage1"
+              }
+            },
+            {
+              "text": "忽视他，继续寻找",
+              "effect": {
+                "npcState": "npc1_stage2"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "询问逃生办法",
+          "text": "在 throne room 有一个隐藏阀门，可以释放备用氧气。",
+          "options": [
+            {
+              "text": "前往 throne room",
+              "effect": {
+                "npcState": "npc1_stage3"
+              }
+            },
+            {
+              "text": "怀疑他，自己找路",
+              "effect": {
+                "npcState": "npc1_stage2"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "忽视或怀疑",
+          "text": "你错过了关键信息！时间不多了！",
+          "options": [
+            {
+              "text": "后悔，再问一次",
+              "effect": {
+                "npcState": "npc1_stage1"
+              }
+            },
+            {
+              "text": "继续独自行动",
+              "effect": {
+                "npcState": "npc1_end"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "前往 throne room",
+          "text": "阀门就在王座后面，快去！",
+          "options": [
+            {
+              "text": "跑向王座",
+              "effect": {
+                "playerPosition": [
+                  4,
+                  6
+                ]
+              }
+            },
+            {
+              "text": "先检查周围",
+              "effect": {
+                "npcState": "npc1_stage4"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "trigger": "检查周围",
+          "text": "你发现一个暗格，里面有氧气面罩。",
+          "options": [
+            {
+              "text": "戴上氧气面罩",
+              "effect": {
+                "itemAdd": "oxygen_mask"
+              }
+            },
+            {
+              "text": "不戴，直接去阀门",
+              "effect": {
+                "npcState": "npc1_stage5"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "trigger": "阀门操作",
+          "text": "阀门需要密码。密码是 '60SEC'。",
+          "options": [
+            {
+              "text": "输入密码",
+              "effect": {
+                "ending": "oxygen_saved"
+              }
+            },
+            {
+              "text": "暴力破解",
+              "effect": {
+                "ending": "explosion"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "财务总监",
+      "title": "深海财团财务官",
+      "emotion": "恐慌",
+      "dialogue": "预算不够买氧气了！",
+      "position": [
+        3,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "遇到财务总监",
+          "text": "我们破产了！连氧气都买不起！",
+          "options": [
+            {
+              "text": "询问剩余预算",
+              "effect": {
+                "npcState": "npc2_stage1"
+              }
+            },
+            {
+              "text": "让他闭嘴",
+              "effect": {
+                "npcState": "npc2_stage2"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "询问预算",
+          "text": "只剩100万，但一个氧气罐要200万。",
+          "options": [
+            {
+              "text": "去金库取钱",
+              "effect": {
+                "npcState": "npc2_stage3"
+              }
+            },
+            {
+              "text": "找投资",
+              "effect": {
+                "npcState": "npc2_stage4"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "让他闭嘴",
+          "text": "你失去了财务信息。",
+          "options": [
+            {
+              "text": "道歉，再问",
+              "effect": {
+                "npcState": "npc2_stage1"
+              }
+            },
+            {
+              "text": "离开",
+              "effect": {
+                "npcState": "npc2_end"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "去金库",
+          "text": "金库需要虹膜识别。",
+          "options": [
+            {
+              "text": "用你的眼睛",
+              "effect": {
+                "itemAdd": "gold_bars"
+              }
+            },
+            {
+              "text": "找黑客",
+              "effect": {
+                "npcState": "npc2_stage5"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "trigger": "找投资",
+          "text": "有个神秘投资者愿意投资1000万，但需要你签署合同。",
+          "options": [
+            {
+              "text": "签署合同",
+              "effect": {
+                "ending": "investor_trap"
+              }
+            },
+            {
+              "text": "拒绝",
+              "effect": {
+                "npcState": "npc2_stage3"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "trigger": "找黑客",
+          "text": "黑客在 server room，他需要你帮他偷取密码。",
+          "options": [
+            {
+              "text": "帮助黑客",
+              "effect": {
+                "ending": "hack_success"
+              }
+            },
+            {
+              "text": "拒绝",
+              "effect": {
+                "npcState": "npc2_stage3"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "神秘黑客",
+      "title": "网络幽灵",
+      "emotion": "狡黠",
+      "dialogue": "想活命？交换条件。",
+      "position": [
+        8,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "遇到黑客",
+          "text": "我黑进了氧气系统，但需要你帮我拿到CEO的密码。",
+          "options": [
+            {
+              "text": "答应合作",
+              "effect": {
+                "npcState": "npc3_stage1"
+              }
+            },
+            {
+              "text": "拒绝",
+              "effect": {
+                "npcState": "npc3_stage2"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "答应合作",
+          "text": "去CEO办公室拿密码，它藏在书架后面。",
+          "options": [
+            {
+              "text": "去CEO办公室",
+              "effect": {
+                "playerPosition": [
+                  1,
+                  4
+                ]
+              }
+            },
+            {
+              "text": "让黑客自己去",
+              "effect": {
+                "npcState": "npc3_stage3"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "拒绝",
+          "text": "那你等死吧。",
+          "options": [
+            {
+              "text": "改变主意",
+              "effect": {
+                "npcState": "npc3_stage1"
+              }
+            },
+            {
+              "text": "坚持拒绝",
+              "effect": {
+                "npcState": "npc3_end"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "让黑客自己去",
+          "text": "我无法离开这个房间，这里有我的服务器。",
+          "options": [
+            {
+              "text": "无奈自己去",
+              "effect": {
+                "npcState": "npc3_stage1"
+              }
+            },
+            {
+              "text": "威胁他",
+              "effect": {
+                "npcState": "npc3_stage4"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "trigger": "威胁",
+          "text": "你威胁要报警，黑客妥协，直接帮你解锁氧气系统。",
+          "options": [
+            {
+              "text": "接受帮助",
+              "effect": {
+                "ending": "hack_oxygen"
+              }
+            },
+            {
+              "text": "仍拒绝",
+              "effect": {
+                "npcState": "npc3_end"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "保安队长",
+      "title": "深海安保负责人",
+      "emotion": "警惕",
+      "dialogue": "站住！没有授权不得进入！",
+      "position": [
+        10,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "遇到保安",
+          "text": "这里是禁区，除非你有CEO的许可。",
+          "options": [
+            {
+              "text": "出示CEO许可",
+              "effect": {
+                "npcState": "npc4_stage1"
+              }
+            },
+            {
+              "text": "强行闯入",
+              "effect": {
+                "npcState": "npc4_stage2"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "出示许可",
+          "text": "许可无效，你的证件是假的。",
+          "options": [
+            {
+              "text": "贿赂他",
+              "effect": {
+                "npcState": "npc4_stage3"
+              }
+            },
+            {
+              "text": "逃跑",
+              "effect": {
+                "npcState": "npc4_end"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "强行闯入",
+          "text": "保安拉响警报，全船警戒！",
+          "options": [
+            {
+              "text": "躲进通风管道",
+              "effect": {
+                "playerPosition": [
+                  5,
+                  5
+                ]
+              }
+            },
+            {
+              "text": "制服保安",
+              "effect": {
+                "npcState": "npc4_stage4"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "贿赂",
+          "text": "我要100万才放行。",
+          "options": [
+            {
+              "text": "支付100万",
+              "effect": {
+                "itemRemove": "gold_bars",
+                "npcState": "npc4_pass"
+              }
+            },
+            {
+              "text": "讨价还价",
+              "effect": {
+                "npcState": "npc4_stage5"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "trigger": "制服保安",
+          "text": "你获得了保安的钥匙卡。",
+          "options": [
+            {
+              "text": "使用钥匙卡",
+              "effect": {
+                "itemAdd": "keycard",
+                "npcState": "npc4_pass"
+              }
+            },
+            {
+              "text": "扔下钥匙卡",
+              "effect": {
+                "npcState": "npc4_end"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "trigger": "讨价还价",
+          "text": "保安拒绝降价，并叫来增援。",
+          "options": [
+            {
+              "text": "支付原价",
+              "effect": {
+                "itemRemove": "gold_bars",
+                "npcState": "npc4_pass"
+              }
+            },
+            {
+              "text": "逃跑",
+              "effect": {
+                "npcState": "npc4_end"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "科学家",
+      "title": "氧气系统工程师",
+      "emotion": "冷静",
+      "dialogue": "氧气系统故障，需要重启。",
+      "position": [
+        7,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "遇到科学家",
+          "text": "氧气系统核心过热，需要冷却液。",
+          "options": [
+            {
+              "text": "寻找冷却液",
+              "effect": {
+                "npcState": "npc5_stage1"
+              }
+            },
+            {
+              "text": "让他自己解决",
+              "effect": {
+                "npcState": "npc5_stage2"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "寻找冷却液",
+          "text": "冷却液在仓库，但需要密码。",
+          "options": [
+            {
+              "text": "问密码",
+              "effect": {
+                "npcState": "npc5_stage3"
+              }
+            },
+            {
+              "text": "暴力打开",
+              "effect": {
+                "npcState": "npc5_stage4"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "让他自己解决",
+          "text": "科学家生气了，不再帮你。",
+          "options": [
+            {
+              "text": "道歉",
+              "effect": {
+                "npcState": "npc5_stage1"
+              }
+            },
+            {
+              "text": "离开",
+              "effect": {
+                "npcState": "npc5_end"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "问密码",
+          "text": "密码是 'coolant'。",
+          "options": [
+            {
+              "text": "去仓库输入密码",
+              "effect": {
+                "itemAdd": "coolant"
+              }
+            },
+            {
+              "text": "怀疑密码",
+              "effect": {
+                "npcState": "npc5_stage4"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "trigger": "暴力打开",
+          "text": "仓库门被破坏，触发火灾。",
+          "options": [
+            {
+              "text": "灭火",
+              "effect": {
+                "npcState": "npc5_stage5"
+              }
+            },
+            {
+              "text": "逃跑",
+              "effect": {
+                "npcState": "npc5_end"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "trigger": "灭火",
+          "text": "你成功灭火，但冷却液受损。只剩一半。",
+          "options": [
+            {
+              "text": "使用冷却液",
+              "effect": {
+                "ending": "oxygen_stabilized"
+              }
+            },
+            {
+              "text": "寻找更多",
+              "effect": {
+                "npcState": "npc5_stage6"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "trigger": "寻找更多",
+          "text": "时间不够了！",
+          "options": [
+            {
+              "text": "立即使用",
+              "effect": {
+                "ending": "oxygen_stabilized"
+              }
+            },
+            {
+              "text": "放弃",
+              "effect": {
+                "ending": "asphyxiation"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "氧气面罩",
+      "description": "可以暂时提供氧气。",
+      "position": [
+        1,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "发现氧气面罩",
+          "text": "一个破旧的氧气面罩，似乎还能用。",
+          "options": [
+            {
+              "text": "戴上",
+              "effect": {
+                "playerState": "oxygenated"
+              }
+            },
+            {
+              "text": "不戴",
+              "effect": {
+                "playerState": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "使用面罩",
+          "text": "面罩提供30秒氧气。",
+          "options": [
+            {
+              "text": "继续使用",
+              "effect": {
+                "playerState": "oxygenated"
+              }
+            },
+            {
+              "text": "取下",
+              "effect": {
+                "playerState": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "面罩耗尽",
+          "text": "面罩氧气用尽。",
+          "options": [
+            {
+              "text": "寻找新面罩",
+              "effect": {
+                "npcState": "search"
+              }
+            },
+            {
+              "text": "放弃",
+              "effect": {
+                "ending": "asphyxiation"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "金条",
+      "description": "纯金，价值不菲。",
+      "position": [
+        1,
+        12
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "发现金条",
+          "text": "一箱金条，可以用来贿赂或购买氧气。",
+          "options": [
+            {
+              "text": "拿起金条",
+              "effect": {
+                "itemAdd": "gold_bars"
+              }
+            },
+            {
+              "text": "不拿",
+              "effect": {
+                "itemState": "unchanged"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "使用金条",
+          "text": "用金条贿赂保安或购买氧气。",
+          "options": [
+            {
+              "text": "贿赂保安",
+              "effect": {
+                "npcState": "npc4_stage3"
+              }
+            },
+            {
+              "text": "购买氧气",
+              "effect": {
+                "ending": "buy_oxygen"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "金条用完",
+          "text": "金条用完了。",
+          "options": [
+            {
+              "text": "寻找更多",
+              "effect": {
+                "npcState": "search"
+              }
+            },
+            {
+              "text": "放弃",
+              "effect": {
+                "playerState": "normal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "钥匙卡",
+      "description": "保安队长的钥匙卡，可以打开多数门。",
+      "position": [
+        10,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "获得钥匙卡",
+          "text": "一张蓝色的钥匙卡。",
+          "options": [
+            {
+              "text": "保留",
+              "effect": {
+                "itemAdd": "keycard"
+              }
+            },
+            {
+              "text": "丢弃",
+              "effect": {
+                "itemState": "unchanged"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "使用钥匙卡",
+          "text": "打开了一扇门。",
+          "options": [
+            {
+              "text": "进入",
+              "effect": {
+                "playerPosition": [
+                  5,
+                  10
+                ]
+              }
+            },
+            {
+              "text": "不进入",
+              "effect": {
+                "playerState": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "钥匙卡丢失",
+          "text": "钥匙卡被偷了。",
+          "options": [
+            {
+              "text": "寻找",
+              "effect": {
+                "npcState": "search"
+              }
+            },
+            {
+              "text": "放弃",
+              "effect": {
+                "playerState": "normal"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "冷却液",
+      "description": "用于冷却氧气系统核心。",
+      "position": [
+        9,
+        12
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "发现冷却液",
+          "text": "一桶冷却液，正好需要。",
+          "options": [
+            {
+              "text": "拿走",
+              "effect": {
+                "itemAdd": "coolant"
+              }
+            },
+            {
+              "text": "不拿",
+              "effect": {
+                "itemState": "unchanged"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "使用冷却液",
+          "text": "将冷却液注入系统。",
+          "options": [
+            {
+              "text": "注入",
+              "effect": {
+                "ending": "oxygen_stabilized"
+              }
+            },
+            {
+              "text": "保留",
+              "effect": {
+                "playerState": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "冷却液用完",
+          "text": "冷却液用完了。",
+          "options": [
+            {
+              "text": "寻找更多",
+              "effect": {
+                "npcState": "search"
+              }
+            },
+            {
+              "text": "放弃",
+              "effect": {
+                "ending": "asphyxiation"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "CEO密码",
+      "description": "一张纸条，写有CEO的密码。",
+      "position": [
+        1,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "trigger": "发现密码",
+          "text": "在书架后找到CEO的密码。",
+          "options": [
+            {
+              "text": "记住密码",
+              "effect": {
+                "itemAdd": "ceo_password"
+              }
+            },
+            {
+              "text": "忽略",
+              "effect": {
+                "itemState": "unchanged"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "trigger": "使用密码",
+          "text": "用密码打开CEO的电脑或金库。",
+          "options": [
+            {
+              "text": "打开电脑",
+              "effect": {
+                "ending": "access_computer"
+              }
+            },
+            {
+              "text": "打开金库",
+              "effect": {
+                "ending": "vault_open"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "密码失效",
+          "text": "密码被修改了。",
+          "options": [
+            {
+              "text": "寻找新密码",
+              "effect": {
+                "npcState": "search"
+              }
+            },
+            {
+              "text": "放弃",
+              "effect": {
+                "playerState": "normal"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "oxygen_saved",
+      "condition": "输入正确密码，释放备用氧气",
+      "description": "备用氧气释放，所有人得救。",
+      "effect": "成功"
+    },
+    {
+      "id": "explosion",
+      "condition": "暴力破解阀门",
+      "description": "阀门爆炸，船体破裂。",
+      "effect": "死亡"
+    },
+    {
+      "id": "investor_trap",
+      "condition": "签署神秘合同",
+      "description": "投资者其实是竞争对手，你被解雇。",
+      "effect": "游戏结束"
+    },
+    {
+      "id": "hack_success",
+      "condition": "帮助黑客",
+      "description": "黑客控制氧气系统，但要求你交出财团。",
+      "effect": "被篡位"
+    },
+    {
+      "id": "hack_oxygen",
+      "condition": "威胁黑客",
+      "description": "黑客不情愿地解锁氧气。",
+      "effect": "成功但树敌"
+    },
+    {
+      "id": "oxygen_stabilized",
+      "condition": "注入冷却液",
+      "description": "氧气系统稳定，危机解除。",
+      "effect": "成功"
+    },
+    {
+      "id": "asphyxiation",
+      "condition": "氧气耗尽",
+      "description": "所有人在缺氧中昏迷。",
+      "effect": "游戏结束"
+    },
+    {
+      "id": "buy_oxygen",
+      "condition": "用金条购买氧气",
+      "description": "你买到氧气，但财团破产。",
+      "effect": "成功但破产"
+    },
+    {
+      "id": "access_computer",
+      "condition": "使用CEO密码打开电脑",
+      "description": "你获得财团控制权，但氧气已经耗尽。",
+      "effect": "游戏结束"
+    },
+    {
+      "id": "vault_open",
+      "condition": "打开金库",
+      "description": "金库里有大量氧气罐，所有人得救。",
+      "effect": "成功"
+    }
+  ],
+  "introText": "你，深海财团掌舵人，发现财团总部氧气系统即将耗尽！只剩60秒！你必须找到办法拯救所有人。开始行动！",
+  "ambientMusic": "深海危机配乐",
+  "id": "fallback_world_008"
+}

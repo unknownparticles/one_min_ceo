@@ -1,0 +1,868 @@
+{
+  "matchKeywords": [
+    "火星",
+    "矿业",
+    "暴雷",
+    "CEO",
+    "60秒"
+  ],
+  "identity": "火星矿业寡头",
+  "theme": "火星矿业巨头暴雷前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "server",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fire",
+      "fire",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "火星矿工代表",
+      "dialogue": "我们被欠薪三个月了！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "矿工代表愤怒地指责你拖欠工资。",
+          "options": [
+            {
+              "text": "安抚并承诺发薪",
+              "nextStage": 2
+            },
+            {
+              "text": "威胁开除",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "矿工暂时平静，但要求立即支付。",
+          "options": [
+            {
+              "text": "开支票",
+              "nextStage": "ending1"
+            },
+            {
+              "text": "拖延时间",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "矿工们开始暴动。",
+          "options": [
+            {
+              "text": "叫保安",
+              "nextStage": "ending2"
+            },
+            {
+              "text": "逃往避难所",
+              "nextStage": "ending3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "董事会秘书",
+      "dialogue": "股东们要求紧急会议！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "秘书惊慌失措地通知你股东要求立即开会。",
+          "options": [
+            {
+              "text": "参加电话会议",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝并关机",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "股东们质询财务造假。",
+          "options": [
+            {
+              "text": "承认并辞职",
+              "nextStage": "ending4"
+            },
+            {
+              "text": "狡辩并推卸责任",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "股东会通过罢免提案。",
+          "options": [
+            {
+              "text": "强行解散会议",
+              "nextStage": "ending5"
+            },
+            {
+              "text": "接受罢免",
+              "nextStage": "ending6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "财务总监",
+      "dialogue": "账目漏洞已无法掩盖！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "财务总监告诉你审计发现巨大黑洞。",
+          "options": [
+            {
+              "text": "销毁证据",
+              "nextStage": 2
+            },
+            {
+              "text": "坦白自首",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你试图销毁文件，但被监控拍下。",
+          "options": [
+            {
+              "text": "贿赂保安",
+              "nextStage": "ending7"
+            },
+            {
+              "text": "自首",
+              "nextStage": "ending8"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你决定自首，但律师劝阻。",
+          "options": [
+            {
+              "text": "坚持自首",
+              "nextStage": "ending9"
+            },
+            {
+              "text": "听律师的",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "火星总督",
+      "dialogue": "你的采矿许可证将被吊销！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "总督通知你因环境破坏将被吊销执照。",
+          "options": [
+            {
+              "text": "行贿总督",
+              "nextStage": 2
+            },
+            {
+              "text": "公开道歉并承诺整改",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "总督接受了贿赂，但被记者拍到。",
+          "options": [
+            {
+              "text": "威胁记者",
+              "nextStage": "ending10"
+            },
+            {
+              "text": "逃跑",
+              "nextStage": "ending11"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "道歉后公众并不买账。",
+          "options": [
+            {
+              "text": "加大环保投入",
+              "nextStage": "ending12"
+            },
+            {
+              "text": "破产清算",
+              "nextStage": "ending13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "竞争对手CEO",
+      "dialogue": "我们来收购你的公司。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "对手提出低价收购。",
+          "options": [
+            {
+              "text": "同意收购",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝并嘲讽",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "收购条款极其苛刻。",
+          "options": [
+            {
+              "text": "接受条款",
+              "nextStage": "ending14"
+            },
+            {
+              "text": "反悔",
+              "nextStage": "ending15"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你拒绝了收购，对手开始恶意做空。",
+          "options": [
+            {
+              "text": "反击做空",
+              "nextStage": "ending16"
+            },
+            {
+              "text": "寻求政府救助",
+              "nextStage": "ending17"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "黑匣子",
+      "description": "里面装着财务造假的证据。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了黑匣子。",
+          "options": [
+            {
+              "text": "打开查看",
+              "nextStage": 2
+            },
+            {
+              "text": "扔掉",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "里面是详细的造假记录。",
+          "options": [
+            {
+              "text": "销毁",
+              "nextStage": "ending18"
+            },
+            {
+              "text": "交给律师",
+              "nextStage": "ending19"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你扔掉了黑匣子，但被清洁工捡到。",
+          "options": [
+            {
+              "text": "花钱封口",
+              "nextStage": "ending20"
+            },
+            {
+              "text": "威胁清洁工",
+              "nextStage": "ending21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "火星股票期权",
+      "description": "一份即将到期的虚值期权。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现期权即将过期。",
+          "options": [
+            {
+              "text": "行权",
+              "nextStage": 2
+            },
+            {
+              "text": "作废",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "行权需要大量现金。",
+          "options": [
+            {
+              "text": "挪用公司资金",
+              "nextStage": "ending22"
+            },
+            {
+              "text": "放弃行权",
+              "nextStage": "ending23"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你放弃了期权，但懊悔不已。",
+          "options": [
+            {
+              "text": "试图重新买入",
+              "nextStage": 2
+            },
+            {
+              "text": "接受损失",
+              "nextStage": "ending24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "加密通讯器",
+      "description": "可以匿名联系媒体。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你找到了一个加密通讯器。",
+          "options": [
+            {
+              "text": "联系记者",
+              "nextStage": 2
+            },
+            {
+              "text": "毁掉它",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "记者愿意报道内幕。",
+          "options": [
+            {
+              "text": "提供证据",
+              "nextStage": "ending25"
+            },
+            {
+              "text": "取消合作",
+              "nextStage": "ending26"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你毁掉了通讯器，但后悔了。",
+          "options": [
+            {
+              "text": "寻找替代品",
+              "nextStage": 2
+            },
+            {
+              "text": "放弃",
+              "nextStage": "ending27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "火星矿石样本",
+      "description": "含有稀有元素，但开采违法。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你获得了违法矿石样本。",
+          "options": [
+            {
+              "text": "偷偷出售",
+              "nextStage": 2
+            },
+            {
+              "text": "上交政府",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "黑市买家出价很高。",
+          "options": [
+            {
+              "text": "成交",
+              "nextStage": "ending28"
+            },
+            {
+              "text": "举报买家",
+              "nextStage": "ending29"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你交给政府，但被怀疑参与非法开采。",
+          "options": [
+            {
+              "text": "证明清白",
+              "nextStage": "ending30"
+            },
+            {
+              "text": "认罪",
+              "nextStage": "ending31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "时光机钥匙",
+      "description": "据说可以回到过去60秒。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你得到了时光机钥匙。",
+          "options": [
+            {
+              "text": "使用它",
+              "nextStage": 2
+            },
+            {
+              "text": "怀疑其真实性",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "时光机启动，你回到起点。",
+          "options": [
+            {
+              "text": "重新选择",
+              "nextStage": "restart"
+            },
+            {
+              "text": "放弃使用",
+              "nextStage": "ending32"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你发现钥匙是假的。",
+          "options": [
+            {
+              "text": "愤怒砸碎",
+              "nextStage": "ending33"
+            },
+            {
+              "text": "收藏",
+              "nextStage": "ending34"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "description": "你开支票安抚矿工，但公司账户余额不足，支票跳票，矿工暴动，你被绑架。"
+    },
+    {
+      "id": "ending2",
+      "description": "保安镇压矿工，造成流血事件，你被国际通缉。"
+    },
+    {
+      "id": "ending3",
+      "description": "你逃往避难所，但避难所已被占领，你被捕。"
+    },
+    {
+      "id": "ending4",
+      "description": "你承认财务造假并辞职，但面临刑事指控。"
+    },
+    {
+      "id": "ending5",
+      "description": "你强行解散会议，股东报警，你被逮捕。"
+    },
+    {
+      "id": "ending6",
+      "description": "你接受罢免，失去一切，沦为流浪汉。"
+    },
+    {
+      "id": "ending7",
+      "description": "你贿赂保安，但保安反水，证据被公开。"
+    },
+    {
+      "id": "ending8",
+      "description": "你自首，从轻处罚，公司破产。"
+    },
+    {
+      "id": "ending9",
+      "description": "你坚持自首，成为模范囚犯。"
+    },
+    {
+      "id": "ending10",
+      "description": "你威胁记者，记者曝光，你身败名裂。"
+    },
+    {
+      "id": "ending11",
+      "description": "你逃跑，但在火星荒漠中迷路，最终遇难。"
+    },
+    {
+      "id": "ending12",
+      "description": "你加大环保投入，公司转型成功。"
+    },
+    {
+      "id": "ending13",
+      "description": "你宣布破产清算，资产被拍卖。"
+    },
+    {
+      "id": "ending14",
+      "description": "你接受苛刻收购，失去控制权。"
+    },
+    {
+      "id": "ending15",
+      "description": "你反悔，对手起诉你违约，赔偿巨额。"
+    },
+    {
+      "id": "ending16",
+      "description": "你反击做空成功，但因操纵市场被调查。"
+    },
+    {
+      "id": "ending17",
+      "description": "你寻求政府救助，但被国有化。"
+    },
+    {
+      "id": "ending18",
+      "description": "你销毁证据，但被内部人员举报。"
+    },
+    {
+      "id": "ending19",
+      "description": "你交给律师，律师出卖你，证据被公开。"
+    },
+    {
+      "id": "ending20",
+      "description": "你花钱封口，但清洁工贪得无厌。"
+    },
+    {
+      "id": "ending21",
+      "description": "你威胁清洁工，清洁工报警，你被捕。"
+    },
+    {
+      "id": "ending22",
+      "description": "你挪用资金行权，被审计发现，锒铛入狱。"
+    },
+    {
+      "id": "ending23",
+      "description": "你放弃行权，期权作废，损失惨重。"
+    },
+    {
+      "id": "ending24",
+      "description": "你接受损失，但内心不甘。"
+    },
+    {
+      "id": "ending25",
+      "description": "你提供证据，记者曝光，公司股价暴跌。"
+    },
+    {
+      "id": "ending26",
+      "description": "你取消合作，记者将你列入黑名单。"
+    },
+    {
+      "id": "ending27",
+      "description": "你放弃寻找替代品，错失机会。"
+    },
+    {
+      "id": "ending28",
+      "description": "你出售矿石，赚了一笔，但被警方盯上。"
+    },
+    {
+      "id": "ending29",
+      "description": "你举报买家，但自己也涉案，一同被捕。"
+    },
+    {
+      "id": "ending30",
+      "description": "你证明清白，但公司声誉受损。"
+    },
+    {
+      "id": "ending31",
+      "description": "你认罪，被判刑。"
+    },
+    {
+      "id": "ending32",
+      "description": "你放弃使用时光机，接受现实。"
+    },
+    {
+      "id": "ending33",
+      "description": "你砸碎假钥匙，手受伤。"
+    },
+    {
+      "id": "ending34",
+      "description": "你收藏假钥匙，作为纪念。"
+    }
+  ],
+  "introText": "你，火星矿业寡头，正面临公司史上最大危机：财务造假曝光、矿工暴动、股东逼宫。只剩60秒，你必须做出抉择！",
+  "ambientMusic": "urgent_industrial_loop.mp3",
+  "id": "fallback_world_068"
+}

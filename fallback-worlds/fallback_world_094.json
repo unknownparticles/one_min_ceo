@@ -1,0 +1,730 @@
+{
+  "matchKeywords": [
+    "ceo",
+    "sale",
+    "earth",
+    "60",
+    "seconds",
+    "sell",
+    "humanity"
+  ],
+  "identity": "地球出售公司CEO",
+  "theme": "人类文明出售地球前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    5,
+    8
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "助理小美",
+      "emoji": "👩‍💼",
+      "dialogue": "老板，外星买家已连线，您有60秒决定售价！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "小美紧张地看着全息屏幕：'老板，买家出价5万亿星际币，但是要求立刻成交。'"
+        },
+        {
+          "stage": 2,
+          "text": "小美：'时间只剩30秒！买家追加了条件：必须附带月球！'"
+        },
+        {
+          "stage": 3,
+          "text": "小美：'最后警告！买家说如果10秒内不确认，交易取消！'"
+        }
+      ],
+      "options": [
+        {
+          "text": "提高价格至10万亿",
+          "target_stage": 2,
+          "effect": {
+            "type": "modify_stat",
+            "stat": "price",
+            "value": 10
+          }
+        },
+        {
+          "text": "接受5万亿",
+          "target_stage": 3,
+          "effect": {
+            "type": "set_flag",
+            "flag": "accepted_initial_offer"
+          }
+        }
+      ],
+      "position": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "首席科学家老王",
+      "emoji": "👨‍🔬",
+      "dialogue": "地球核心温度异常，我们可能等不到60秒！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "老王：'老板，地球核心温度上升了0.1度，如果继续，地球会爆炸！'"
+        },
+        {
+          "stage": 2,
+          "text": "老王：'我发现了一个秘密：外星买家其实是来拯救我们的！'"
+        },
+        {
+          "stage": 3,
+          "text": "老王：'时间不多了！要么卖，要么毁灭！'"
+        }
+      ],
+      "options": [
+        {
+          "text": "相信他，加速交易",
+          "target_stage": 2,
+          "effect": {
+            "type": "set_flag",
+            "flag": "trust_scientist"
+          }
+        },
+        {
+          "text": "让他闭嘴，继续谈判",
+          "target_stage": 3,
+          "effect": {
+            "type": "set_flag",
+            "flag": "ignore_scientist"
+          }
+        }
+      ],
+      "position": [
+        8,
+        4
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "神秘外星使者",
+      "emoji": "👽",
+      "dialogue": "地球的价值在于它的历史，而非资源。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "外星使者发出嗡嗡声：'我们愿意支付比出价更高的价格，但有两个条件。'"
+        },
+        {
+          "stage": 2,
+          "text": "外星使者：'第一，保留所有人类文化遗产；第二，让部分人类继续居住。'"
+        },
+        {
+          "stage": 3,
+          "text": "外星使者：'如果同意，价格翻倍；否则，我们离开。'"
+        }
+      ],
+      "options": [
+        {
+          "text": "接受条件",
+          "target_stage": 2,
+          "effect": {
+            "type": "set_flag",
+            "flag": "accept_conditions"
+          }
+        },
+        {
+          "text": "拒绝，坚持原价",
+          "target_stage": 3,
+          "effect": {
+            "type": "set_flag",
+            "flag": "reject_conditions"
+          }
+        }
+      ],
+      "position": [
+        6,
+        10
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "财务总监阿强",
+      "emoji": "💼",
+      "dialogue": "老板，股价已经跌停了！我们必须立即成交！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "阿强：'公司股价暴跌！如果不在45秒内成交，我们将破产！'"
+        },
+        {
+          "stage": 2,
+          "text": "阿强：'好消息！有另一家外星公司竞价，出价8万亿！'"
+        },
+        {
+          "stage": 3,
+          "text": "阿强：'竞价方要求独家谈判权！我们必须抉择！'"
+        }
+      ],
+      "options": [
+        {
+          "text": "接受竞价",
+          "target_stage": 2,
+          "effect": {
+            "type": "set_flag",
+            "flag": "accept_bid"
+          }
+        },
+        {
+          "text": "维持原交易",
+          "target_stage": 3,
+          "effect": {
+            "type": "set_flag",
+            "flag": "keep_original"
+          }
+        }
+      ],
+      "position": [
+        2,
+        12
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "环保活动家小绿",
+      "emoji": "🌍",
+      "dialogue": "你们不能卖掉我们的家！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "小绿冲进办公室：'我代表全体地球生命抗议！出售地球是犯罪！'"
+        },
+        {
+          "stage": 2,
+          "text": "小绿：'如果我们阻止交易，人类还有机会修复地球！'"
+        },
+        {
+          "stage": 3,
+          "text": "小绿：'我带来了末日病毒，如果你签约，我就释放病毒毁灭一切！'"
+        }
+      ],
+      "options": [
+        {
+          "text": "安抚他，承诺环保条款",
+          "target_stage": 2,
+          "effect": {
+            "type": "set_flag",
+            "flag": "promise_eco"
+          }
+        },
+        {
+          "text": "叫保安把他赶走",
+          "target_stage": 3,
+          "effect": {
+            "type": "set_flag",
+            "flag": "remove_activist"
+          }
+        }
+      ],
+      "position": [
+        9,
+        6
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "地球产权证",
+      "emoji": "📜",
+      "description": "一张泛黄的纸质产权证，上面写着：地球，全人类所有。",
+      "position": [
+        7,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "产权证被锁在玻璃柜里，需要密码才能取出。"
+        },
+        {
+          "stage": 2,
+          "text": "密码是：24601（提示：你最喜欢的数字）。"
+        },
+        {
+          "stage": 3,
+          "text": "取出产权证后，你可以选择撕毁它或用来交易。"
+        }
+      ],
+      "options": [
+        {
+          "text": "输入密码24601",
+          "target_stage": 2,
+          "effect": {
+            "type": "set_flag",
+            "flag": "got_deed"
+          }
+        },
+        {
+          "text": "尝试其他密码",
+          "target_stage": 1,
+          "effect": {
+            "type": "set_flag",
+            "flag": "wrong_password"
+          }
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "黑市通讯器",
+      "emoji": "📡",
+      "description": "一部能联系到宇宙黑市的通讯器。",
+      "position": [
+        4,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "通讯器显示有一条未读消息：'地球黑市价仅4万亿，需速售。'"
+        },
+        {
+          "stage": 2,
+          "text": "你可以回复消息，与黑市交易，但可能有风险。"
+        },
+        {
+          "stage": 3,
+          "text": "黑市大佬：'如果你选择我们，我们保证交易秘密进行。'"
+        }
+      ],
+      "options": [
+        {
+          "text": "回复：同意黑市交易",
+          "target_stage": 2,
+          "effect": {
+            "type": "set_flag",
+            "flag": "black_market_deal"
+          }
+        },
+        {
+          "text": "忽略黑市消息",
+          "target_stage": 1,
+          "effect": {
+            "type": "set_flag",
+            "flag": "ignore_black_market"
+          }
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "时间加速器",
+      "emoji": "⏩",
+      "description": "一个红色按钮，按下后时间流逝加快，但你会获得额外决策时间。",
+      "position": [
+        5,
+        11
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "按钮上写着：'按我，时间变慢10秒，但外界会加速。'"
+        },
+        {
+          "stage": 2,
+          "text": "按下后，你感觉周围变慢，但手表显示只剩20秒。"
+        },
+        {
+          "stage": 3,
+          "text": "你获得了宝贵的思考时间，但代价是让人感到焦虑。"
+        }
+      ],
+      "options": [
+        {
+          "text": "按下按钮",
+          "target_stage": 2,
+          "effect": {
+            "type": "modify_stat",
+            "stat": "time",
+            "value": 10
+          }
+        },
+        {
+          "text": "不按",
+          "target_stage": 1,
+          "effect": {
+            "type": "set_flag",
+            "flag": "no_time_warp"
+          }
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "外星翻译器",
+      "emoji": "🔊",
+      "description": "一个能实时翻译外星语言的设备。",
+      "position": [
+        9,
+        9
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "翻译器显示外星使者的话中有隐藏威胁：'如果不卖，我们将武力夺取。'"
+        },
+        {
+          "stage": 2,
+          "text": "你可以用翻译器与外星人直接沟通，了解更多内幕。"
+        },
+        {
+          "stage": 3,
+          "text": "翻译器提示：外星人其实内部有分歧，可以分化他们。"
+        }
+      ],
+      "options": [
+        {
+          "text": "使用翻译器质问外星人",
+          "target_stage": 2,
+          "effect": {
+            "type": "set_flag",
+            "flag": "use_translator"
+          }
+        },
+        {
+          "text": "无视翻译器",
+          "target_stage": 1,
+          "effect": {
+            "type": "set_flag",
+            "flag": "ignore_translator"
+          }
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "末日病毒抗体",
+      "emoji": "💊",
+      "description": "一小瓶蓝色液体，据说是环保活动家制造的病毒的抗体。",
+      "position": [
+        10,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "瓶子上贴着标签：'解药——仅剩一瓶。'"
+        },
+        {
+          "stage": 2,
+          "text": "你可以选择销毁它，或者用它来要挟活动家。"
+        },
+        {
+          "stage": 3,
+          "text": "活动家看到抗体后，可能会改变态度。"
+        }
+      ],
+      "options": [
+        {
+          "text": "销毁抗体",
+          "target_stage": 2,
+          "effect": {
+            "type": "set_flag",
+            "flag": "destroy_antidote"
+          }
+        },
+        {
+          "text": "展示抗体给活动家",
+          "target_stage": 3,
+          "effect": {
+            "type": "set_flag",
+            "flag": "show_antidote"
+          }
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": {
+        "flag": "accepted_initial_offer",
+        "time": 0
+      },
+      "text": "你接受了5万亿的报价，地球被卖给外星人，人类被迁移到火星。你获得了一笔佣金，但内心不安。"
+    },
+    {
+      "id": "ending2",
+      "condition": {
+        "flag": "accept_bid",
+        "time": 0
+      },
+      "text": "你接受了8万亿的竞价，但新买家是星际强盗，他们掠夺地球资源后离开，人类陷入黑暗时代。"
+    },
+    {
+      "id": "ending3",
+      "condition": {
+        "flag": "accept_conditions",
+        "time": 0
+      },
+      "text": "你接受了外星使者的条件，地球成为外星保护区，人类文化得以保存，但外星人秘密控制着一切。"
+    },
+    {
+      "id": "ending4",
+      "condition": {
+        "flag": "remove_activist",
+        "time": 0
+      },
+      "text": "你赶走了活动家，但他在离开前释放了病毒，地球陷入混乱，交易被迫取消。"
+    },
+    {
+      "id": "ending5",
+      "condition": {
+        "flag": "trust_scientist",
+        "time": 0
+      },
+      "text": "你相信科学家，暂停交易，发现外星人其实是来帮助修复地球的，最终人类与外星人合作，地球重生。"
+    },
+    {
+      "id": "ending6",
+      "condition": {
+        "flag": "black_market_deal",
+        "time": 0
+      },
+      "text": "你通过黑市交易，但被星际警察抓获，地球被没收，你被判处流放。"
+    },
+    {
+      "id": "ending7",
+      "condition": {
+        "flag": "no_time_warp",
+        "time": 0
+      },
+      "text": "你未使用时间加速器，时间耗尽，交易失败，地球被外星舰队摧毁。"
+    },
+    {
+      "id": "ending8",
+      "condition": {
+        "flag": "show_antidote",
+        "time": 0
+      },
+      "text": "你展示抗体给活动家，他感动并放弃了威胁，你成功出售地球，但附带环保条款，人类获得新家园。"
+    }
+  ],
+  "introText": "你，地球出售公司的CEO，站在豪华办公室的落地窗前，俯瞰着即将被出售的地球。全息屏幕上显示着倒计时：60秒。外星买家在线等待，你的每一个决定都将影响人类的未来。时间紧迫，开始吧！",
+  "ambientMusic": "紧张而富有节奏感的电子音乐，夹杂着倒计时的滴答声和远处的警报声。",
+  "id": "fallback_world_094"
+}

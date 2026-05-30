@@ -1,0 +1,1062 @@
+{
+  "matchKeywords": [
+    "深空",
+    "考古",
+    "神明",
+    "遗迹",
+    "60秒"
+  ],
+  "identity": "深空考古基金会长",
+  "theme": "深空考古发现神明遗迹前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    5,
+    8
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "遗迹守护者",
+      "dialogue": "凡人，你为何打扰神明长眠？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "守护者双眼放光，声音如雷鸣。",
+          "options": [
+            {
+              "text": "我是来考古的，并无恶意。",
+              "nextStage": 2
+            },
+            {
+              "text": "神明已死，我来接管遗产。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "守护者稍微缓和，但依然警惕。",
+          "options": [
+            {
+              "text": "告诉我神明的秘密。",
+              "nextStage": 4
+            },
+            {
+              "text": "我要怎么离开这里？",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "守护者愤怒，周围开始震动。",
+          "options": [
+            {
+              "text": "我道歉，请息怒。",
+              "nextStage": 2
+            },
+            {
+              "text": "战斗吧！",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "守护者低语，透露了神明的弱点。",
+          "options": [
+            {
+              "text": "谢谢，我会小心使用。",
+              "nextStage": 5
+            },
+            {
+              "text": "太好了，我要征服这里。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "对话结束，守护者消失。",
+          "options": [
+            {
+              "text": "继续探索。",
+              "nextStage": -1
+            },
+            {
+              "text": "返回营地。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "考古队员小红",
+      "dialogue": "会长！这里有奇怪的符号！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "小红指着墙上的发光符号。",
+          "options": [
+            {
+              "text": "让我看看。",
+              "nextStage": 2
+            },
+            {
+              "text": "别碰，可能有危险。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "符号突然激活，投射出全息影像。",
+          "options": [
+            {
+              "text": "记录影像。",
+              "nextStage": 4
+            },
+            {
+              "text": "关闭它！",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "符号熄灭，但地面开始震动。",
+          "options": [
+            {
+              "text": "撤离！",
+              "nextStage": 5
+            },
+            {
+              "text": "继续调查。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "影像显示神明创造宇宙的片段。",
+          "options": [
+            {
+              "text": "太震撼了，继续播放。",
+              "nextStage": 5
+            },
+            {
+              "text": "保存并分享给团队。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "影像结束，小红获得新线索。",
+          "options": [
+            {
+              "text": "去下一个地点。",
+              "nextStage": -1
+            },
+            {
+              "text": "研究符号含义。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "神秘商人",
+      "dialogue": "我有你需要的道具，但代价是什么？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个黑影在角落招手。",
+          "options": [
+            {
+              "text": "你有什么？",
+              "nextStage": 2
+            },
+            {
+              "text": "我不信任你。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "商人展示古老护符。",
+          "options": [
+            {
+              "text": "怎么换？",
+              "nextStage": 4
+            },
+            {
+              "text": "太贵了，不要。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "商人冷笑，消失在黑暗中。",
+          "options": [
+            {
+              "text": "后悔，追上去。",
+              "nextStage": 2
+            },
+            {
+              "text": "算了，继续前进。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "商人要你的一半考古成果。",
+          "options": [
+            {
+              "text": "成交。",
+              "nextStage": 5
+            },
+            {
+              "text": "不行，这是我的使命。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "交易完成，获得护符。",
+          "options": [
+            {
+              "text": "装备护符。",
+              "nextStage": -1
+            },
+            {
+              "text": "继续探索。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "神明的回音",
+      "dialogue": "宇宙的真相，你承受得起吗？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个虚无的声音在脑海中响起。",
+          "options": [
+            {
+              "text": "告诉我。",
+              "nextStage": 2
+            },
+            {
+              "text": "我不想听。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "声音揭示宇宙起源的真相。",
+          "options": [
+            {
+              "text": "这太疯狂了。",
+              "nextStage": 4
+            },
+            {
+              "text": "我来此就是为了这个。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "声音消失，但留下诅咒。",
+          "options": [
+            {
+              "text": "解除诅咒。",
+              "nextStage": 4
+            },
+            {
+              "text": "无视它。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "真相让玩家疯狂。",
+          "options": [
+            {
+              "text": "保持冷静。",
+              "nextStage": 5
+            },
+            {
+              "text": "接受疯狂获得力量。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "回音消散，玩家获得新能力。",
+          "options": [
+            {
+              "text": "使用能力。",
+              "nextStage": -1
+            },
+            {
+              "text": "继续探索。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "时间旅行者",
+      "dialogue": "60秒后遗迹将坍塌！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个穿着未来服装的人冲过来。",
+          "options": [
+            {
+              "text": "什么？怎么办？",
+              "nextStage": 2
+            },
+            {
+              "text": "你是真的吗？",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "旅行者给你一个传送装置。",
+          "options": [
+            {
+              "text": "谢谢！如何使用？",
+              "nextStage": 4
+            },
+            {
+              "text": "我不信，这是陷阱。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "旅行者消失，但留下警告。",
+          "options": [
+            {
+              "text": "相信他，准备撤离。",
+              "nextStage": 4
+            },
+            {
+              "text": "继续探索，忽略警告。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "传送装置启动，可以瞬间移动。",
+          "options": [
+            {
+              "text": "传送到安全区。",
+              "nextStage": 5
+            },
+            {
+              "text": "传送到宝藏室。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "时间旅行者完成任务，消失。",
+          "options": [
+            {
+              "text": "感谢他。",
+              "nextStage": -1
+            },
+            {
+              "text": "继续考古。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "神明护符",
+      "description": "散发微弱光芒，可抵挡一次致命伤害。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "在祭坛上发现护符。",
+          "options": [
+            {
+              "text": "捡起它。",
+              "nextStage": 2
+            },
+            {
+              "text": "不敢碰，可能有诅咒。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "护符认主，绑定玩家。",
+          "options": [
+            {
+              "text": "装备护符。",
+              "nextStage": 4
+            },
+            {
+              "text": "放入背包。",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "护符消失，留下痛苦。",
+          "options": [
+            {
+              "text": "后悔，寻找替代品。",
+              "nextStage": 4
+            },
+            {
+              "text": "算了，继续。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "护符激活，保护玩家。",
+          "options": [
+            {
+              "text": "继续探索。",
+              "nextStage": 5
+            },
+            {
+              "text": "返回营地。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "护符故事结束。",
+          "options": [
+            {
+              "text": "继续旅程。",
+              "nextStage": -1
+            },
+            {
+              "text": "研究护符。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "古卷碎片",
+      "description": "记载神明语言的片段。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "在石缝中找到碎片。",
+          "options": [
+            {
+              "text": "仔细阅读。",
+              "nextStage": 2
+            },
+            {
+              "text": "可能是假货。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "碎片发光，显示部分内容。",
+          "options": [
+            {
+              "text": "尝试翻译。",
+              "nextStage": 4
+            },
+            {
+              "text": "寻找其他碎片。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "碎片化为灰烬。",
+          "options": [
+            {
+              "text": "遗憾，离开。",
+              "nextStage": 5
+            },
+            {
+              "text": "检查是否是陷阱。",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "翻译成功，获得重要信息。",
+          "options": [
+            {
+              "text": "记录信息。",
+              "nextStage": 5
+            },
+            {
+              "text": "分享给团队。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "碎片故事结束。",
+          "options": [
+            {
+              "text": "继续探索。",
+              "nextStage": -1
+            },
+            {
+              "text": "使用信息。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "能量核心",
+      "description": "提供无限能源，但会吸引守护者。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "核心在密室中旋转。",
+          "options": [
+            {
+              "text": "取下核心。",
+              "nextStage": 2
+            },
+            {
+              "text": "太危险，不碰。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "核心脉冲，守护者出现。",
+          "options": [
+            {
+              "text": "战斗或逃跑。",
+              "nextStage": 4
+            },
+            {
+              "text": "试图安抚。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "核心爆炸，密室崩塌。",
+          "options": [
+            {
+              "text": "逃跑！",
+              "nextStage": 4
+            },
+            {
+              "text": "尝试修复。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "成功获得核心或逃脱。",
+          "options": [
+            {
+              "text": "使用核心。",
+              "nextStage": 5
+            },
+            {
+              "text": "保存核心。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "核心故事结束。",
+          "options": [
+            {
+              "text": "继续旅程。",
+              "nextStage": -1
+            },
+            {
+              "text": "研究核心。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "星图仪",
+      "description": "显示神明故乡的路径。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "在星图室发现仪器。",
+          "options": [
+            {
+              "text": "启动星图仪。",
+              "nextStage": 2
+            },
+            {
+              "text": "记录坐标。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "星图投影出神秘星系。",
+          "options": [
+            {
+              "text": "放大查看。",
+              "nextStage": 4
+            },
+            {
+              "text": "保存投影。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "坐标错误，仪器损坏。",
+          "options": [
+            {
+              "text": "尝试修复。",
+              "nextStage": 4
+            },
+            {
+              "text": "放弃。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "获得准确星图。",
+          "options": [
+            {
+              "text": "前往神明故乡。",
+              "nextStage": 5
+            },
+            {
+              "text": "继续考古。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "星图仪故事结束。",
+          "options": [
+            {
+              "text": "使用星图。",
+              "nextStage": -1
+            },
+            {
+              "text": "分享发现。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "时间沙漏",
+      "description": "倒数60秒，重置时间。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "沙漏嵌在墙上，正在流动。",
+          "options": [
+            {
+              "text": "翻转沙漏。",
+              "nextStage": 2
+            },
+            {
+              "text": "不敢动。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "时间重置，回到起点。",
+          "options": [
+            {
+              "text": "再次探索。",
+              "nextStage": 4
+            },
+            {
+              "text": "利用重置获取信息。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "沙漏碎裂，时间加速。",
+          "options": [
+            {
+              "text": "快速行动。",
+              "nextStage": 4
+            },
+            {
+              "text": "等死。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "沙漏失效或成功使用。",
+          "options": [
+            {
+              "text": "继续旅程。",
+              "nextStage": 5
+            },
+            {
+              "text": "再次尝试。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "沙漏故事结束。",
+          "options": [
+            {
+              "text": "携带沙漏。",
+              "nextStage": -1
+            },
+            {
+              "text": "研究时间。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "在60秒内逃离遗迹",
+      "description": "你成功逃出，但遗迹消失，考古成果有限。"
+    },
+    {
+      "id": "end2",
+      "condition": "获得神明力量并统治",
+      "description": "你成为新神，但孤独永世。"
+    },
+    {
+      "id": "end3",
+      "condition": "与守护者达成和解",
+      "description": "守护者赠你知识，你成为宇宙智者。"
+    },
+    {
+      "id": "end4",
+      "condition": "触发时间循环",
+      "description": "你被囚禁在时间循环中，永无止境。"
+    },
+    {
+      "id": "end5",
+      "condition": "收集所有古卷碎片",
+      "description": "你解读了神明语言，开启了星际之门。"
+    },
+    {
+      "id": "end6",
+      "condition": "保护团队全员幸存",
+      "description": "你成为英雄，考古基金会壮大。"
+    },
+    {
+      "id": "end7",
+      "condition": "被神秘商人欺骗",
+      "description": "你失去一切，被遗弃在遗迹深处。"
+    },
+    {
+      "id": "end8",
+      "condition": "使用时间沙漏重置超过3次",
+      "description": "沙漏破碎，时间塌缩，你消失在时空裂缝中。"
+    },
+    {
+      "id": "end9",
+      "condition": "击败神明回音",
+      "description": "你证明了人类的意志，获得宇宙尊重。"
+    },
+    {
+      "id": "end10",
+      "condition": "放弃考古离开",
+      "description": "你苟且偷生，但内心永远遗憾。"
+    }
+  ],
+  "introText": "你是深空考古基金会的会长，刚刚发现了一处神明遗迹。然而，遗迹内的时间流速异常，你只有60秒！探索、收集、抉择，你必须在60秒内做出决定。",
+  "ambientMusic": "ambient_space_drone.mp3",
+  "id": "fallback_world_032"
+}

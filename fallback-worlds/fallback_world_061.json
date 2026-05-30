@@ -1,0 +1,740 @@
+{
+  "matchKeywords": [
+    "赛博财神",
+    "降临",
+    "60秒"
+  ],
+  "identity": "赛博财神",
+  "theme": "赛博财神降临前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "statue",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    6,
+    8
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "数据占卜师",
+      "description": "一个全身由流动数据构成的预言者，眼睛闪烁着红色代码。",
+      "position": [
+        3,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "啊，你来了。我看到了你的命运——赛博财神将在60秒后降临，但你的财富指数正在下跌。",
+          "options": [
+            {
+              "text": "请告诉我如何提升财富指数？",
+              "nextStage": 2
+            },
+            {
+              "text": "我不信命运，我自己会赚钱。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "你需要收集三个金元宝，并避开负面情绪陷阱。时间不多了。",
+          "options": [
+            {
+              "text": "金元宝在哪里？",
+              "nextStage": 3
+            },
+            {
+              "text": "负面情绪陷阱是什么？",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "金元宝在宝库中，但宝库需要密码。密码是'666'。快去吧！",
+          "options": [
+            {
+              "text": "谢谢，我这就去。",
+              "nextStage": 3
+            },
+            {
+              "text": "等等，你还没说陷阱。",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "情绪黑客",
+      "description": "一个戴着VR头盔的年轻人，周围漂浮着各种颜色的情绪符号。",
+      "position": [
+        5,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "哈！你看起来压力很大。我可以帮你调节情绪，但需要收费。",
+          "options": [
+            {
+              "text": "收费多少？",
+              "nextStage": 2
+            },
+            {
+              "text": "我不需要，我自己能调节。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "不贵，只需一个金元宝。我可以让你保持积极状态，提升财富指数。",
+          "options": [
+            {
+              "text": "成交！",
+              "nextStage": 3
+            },
+            {
+              "text": "太贵了，我拒绝。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "交易完成！你现在获得了'乐观光环'，接下来30秒内财富指数提升20%。",
+          "options": [
+            {
+              "text": "太好了！",
+              "nextStage": 3
+            },
+            {
+              "text": "感觉不错。",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "财神秘书",
+      "description": "一位穿着旗袍的虚拟秘书，手持发光平板电脑。",
+      "position": [
+        8,
+        10
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "您好，我是赛博财神的秘书。财神正在切换通道，请稍候。",
+          "options": [
+            {
+              "text": "财神什么时候到？",
+              "nextStage": 2
+            },
+            {
+              "text": "我需要准备什么？",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "还有40秒。您需要保持财富指数在80以上，否则财神可能会跳过您。",
+          "options": [
+            {
+              "text": "我的指数现在是多少？",
+              "nextStage": 3
+            },
+            {
+              "text": "如何快速提升指数？",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "您的当前指数为65。建议您尽快收集金元宝或完成交易。",
+          "options": [
+            {
+              "text": "明白！",
+              "nextStage": 3
+            },
+            {
+              "text": "谢谢你。",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "比特币矿工",
+      "description": "一个浑身是汗的壮汉，背后是一台巨大的矿机。",
+      "position": [
+        9,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "嘿！你看起来需要一些加密货币。我这里有最新挖出的比特币。",
+          "options": [
+            {
+              "text": "怎么交易？",
+              "nextStage": 2
+            },
+            {
+              "text": "我不玩虚拟币。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "用你的一个金元宝换一个比特币。比特币可以瞬间提升财富指数。",
+          "options": [
+            {
+              "text": "成交！",
+              "nextStage": 3
+            },
+            {
+              "text": "让我想想。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "交易成功！你获得了比特币，财富指数+30。",
+          "options": [
+            {
+              "text": "赚到了！",
+              "nextStage": 3
+            },
+            {
+              "text": "不错。",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "危机顾问",
+      "description": "一个戴着金丝眼镜的中年男人，表情严肃。",
+      "position": [
+        4,
+        11
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "我是危机顾问。据我分析，赛博财神降临后，您的公司可能面临收购风险。",
+          "options": [
+            {
+              "text": "如何规避？",
+              "nextStage": 2
+            },
+            {
+              "text": "我不怕收购。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "您需要签署一份反收购协议，但需要两个金元宝作为担保。",
+          "options": [
+            {
+              "text": "我同意。",
+              "nextStage": 3
+            },
+            {
+              "text": "我没那么多金元宝。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "协议已生效。您现在安全了，财富指数额外+10。",
+          "options": [
+            {
+              "text": "太好了。",
+              "nextStage": 3
+            },
+            {
+              "text": "谢谢。",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "金元宝",
+      "description": "一个闪闪发光的金元宝，是赛博财神的最爱。",
+      "position": [
+        2,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "你发现了一个金元宝！财富指数+10。",
+          "options": [
+            {
+              "text": "捡起来",
+              "nextStage": 2
+            },
+            {
+              "text": "先观察一下",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "金元宝已收入囊中。继续寻找更多吧！",
+          "options": [
+            {
+              "text": "继续探索",
+              "nextStage": 2
+            },
+            {
+              "text": "查看背包",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "金元宝",
+      "description": "另一个金元宝，藏在花盆后面。",
+      "position": [
+        7,
+        13
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "你发现了一个金元宝！财富指数+10。",
+          "options": [
+            {
+              "text": "捡起来",
+              "nextStage": 2
+            },
+            {
+              "text": "先观察一下",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "金元宝已收入囊中。继续寻找更多吧！",
+          "options": [
+            {
+              "text": "继续探索",
+              "nextStage": 2
+            },
+            {
+              "text": "查看背包",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "金元宝",
+      "description": "放在宝库里的金元宝，需要密码才能开启。",
+      "position": [
+        2,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "宝库门锁着，需要输入密码。",
+          "options": [
+            {
+              "text": "输入666",
+              "nextStage": 2
+            },
+            {
+              "text": "输入其他数字",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "密码正确！你获得了金元宝，财富指数+10。",
+          "options": [
+            {
+              "text": "太好了",
+              "nextStage": 2
+            },
+            {
+              "text": "继续探索",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "比特币",
+      "description": "一串数字代码，代表虚拟财富。",
+      "position": [
+        8,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "你发现了一个比特币！财富指数+30。",
+          "options": [
+            {
+              "text": "接收",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "比特币已存入你的数字钱包。",
+          "options": [
+            {
+              "text": "查看余额",
+              "nextStage": 2
+            },
+            {
+              "text": "继续",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "反收购协议",
+      "description": "一份法律文件，保护你的公司。",
+      "position": [
+        5,
+        6
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "你拿到了反收购协议，需要签字生效。",
+          "options": [
+            {
+              "text": "签字",
+              "nextStage": 2
+            },
+            {
+              "text": "不签",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "协议生效，你的公司安全了。财富指数+10。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 2
+            },
+            {
+              "text": "查看效果",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "财富指数>=100且时间耗尽",
+      "description": "赛博财神降临，你的财富指数爆表，他赐予你无限财富。你成为了赛博世界的首富。"
+    },
+    {
+      "id": "end2",
+      "condition": "财富指数<30且时间耗尽",
+      "description": "赛博财神降临，看到你的贫穷，他失望地离开了。你被公司开除，流落街头。"
+    },
+    {
+      "id": "end3",
+      "condition": "财富指数在30-79之间且时间耗尽",
+      "description": "赛博财神降临，他给了你一笔小财富，但警告你要更努力。你勉强维持了CEO职位。"
+    },
+    {
+      "id": "end4",
+      "condition": "财富指数在80-99之间且时间耗尽",
+      "description": "赛博财神降临，他认可你的努力，给了你一大笔投资。公司上市，你成为传奇。"
+    },
+    {
+      "id": "end5",
+      "condition": "收集了全部3个金元宝且时间耗尽",
+      "description": "赛博财神降临，你献上金元宝，他非常高兴，直接让你成为他的合伙人。"
+    },
+    {
+      "id": "end6",
+      "condition": "与情绪黑客交易且时间耗尽",
+      "description": "赛博财神降临，你拥有乐观光环，他欣赏你的心态，邀请你参加他的派对。"
+    },
+    {
+      "id": "end7",
+      "condition": "与比特币矿工交易且时间耗尽",
+      "description": "赛博财神降临，你展示了比特币，他喜欢创新，奖励你一个元宇宙岛屿。"
+    },
+    {
+      "id": "end8",
+      "condition": "签署反收购协议且时间耗尽",
+      "description": "赛博财神降临，他看到你的谨慎，认为你有远见，任命你为他的财务顾问。"
+    }
+  ],
+  "introText": "你是一家科技公司的CEO，突然收到消息：赛博财神将在60秒后降临！你需要在这60秒内收集财富、做出决策，以迎接财神的到来。你的财富指数初始为50，时间正在一秒一秒地流逝...",
+  "ambientMusic": "cyberpunk_ambient.mp3",
+  "id": "fallback_world_061"
+}

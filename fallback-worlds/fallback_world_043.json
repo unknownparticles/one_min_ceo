@@ -1,0 +1,854 @@
+{
+  "matchKeywords": [
+    "拍卖会",
+    "主席",
+    "银河",
+    "压轴",
+    "成交"
+  ],
+  "identity": "银河拍卖会主席",
+  "theme": "银河拍卖会压轴成交前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "console",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "星际富豪",
+      "position": [
+        7,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "这最后一颗星球，我要定了！",
+          "options": [
+            {
+              "text": "加价10亿",
+              "nextStage": 2
+            },
+            {
+              "text": "让给他",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "哼，你以为我会放弃？",
+          "options": [
+            {
+              "text": "继续挑衅",
+              "nextStage": 3
+            },
+            {
+              "text": "安抚他",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "成交，但我不会善罢甘休。",
+          "options": [
+            {
+              "text": "结束对话",
+              "nextStage": -1
+            },
+            {
+              "text": "警告他",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "拍卖师",
+      "position": [
+        3,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "各位，最后60秒！",
+          "options": [
+            {
+              "text": "询问规则",
+              "nextStage": 2
+            },
+            {
+              "text": "直接出价",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "每次加价不得低于1亿。",
+          "options": [
+            {
+              "text": "出价",
+              "nextStage": 3
+            },
+            {
+              "text": "观望",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "时间到！成交！",
+          "options": [
+            {
+              "text": "庆祝",
+              "nextStage": -1
+            },
+            {
+              "text": "质疑",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "神秘买家",
+      "position": [
+        10,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "这星球藏着秘密...",
+          "options": [
+            {
+              "text": "问什么秘密",
+              "nextStage": 2
+            },
+            {
+              "text": "不感兴趣",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "我不能说，但值得。",
+          "options": [
+            {
+              "text": "相信他",
+              "nextStage": 3
+            },
+            {
+              "text": "怀疑",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "祝你好运。",
+          "options": [
+            {
+              "text": "谢谢",
+              "nextStage": -1
+            },
+            {
+              "text": "保持警惕",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "机器人侍者",
+      "position": [
+        5,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "需要香槟吗，主席？",
+          "options": [
+            {
+              "text": "来一杯",
+              "nextStage": 2
+            },
+            {
+              "text": "不用",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "这是银河最贵的酒。",
+          "options": [
+            {
+              "text": "品尝",
+              "nextStage": 3
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "味道如何？",
+          "options": [
+            {
+              "text": "很棒",
+              "nextStage": -1
+            },
+            {
+              "text": "一般",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "保安队长",
+      "position": [
+        2,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "主席，一切安全。",
+          "options": [
+            {
+              "text": "表扬",
+              "nextStage": 2
+            },
+            {
+              "text": "加强警戒",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "收到，我会注意。",
+          "options": [
+            {
+              "text": "很好",
+              "nextStage": 3
+            },
+            {
+              "text": "再检查一遍",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "没问题。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": -1
+            },
+            {
+              "text": "继续巡逻",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc6",
+      "name": "外星记者",
+      "position": [
+        8,
+        9
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "主席，对这次拍卖有何感想？",
+          "options": [
+            {
+              "text": "很成功",
+              "nextStage": 2
+            },
+            {
+              "text": "压力很大",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "能透露成交价吗？",
+          "options": [
+            {
+              "text": "保密",
+              "nextStage": 3
+            },
+            {
+              "text": "透露一些",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "谢谢采访。",
+          "options": [
+            {
+              "text": "不客气",
+              "nextStage": -1
+            },
+            {
+              "text": "离开",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "星球权杖",
+      "position": [
+        4,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "一根镶满宝石的权杖，象征星球所有权。",
+          "options": [
+            {
+              "text": "拿起权杖",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "权杖发出微弱光芒。",
+          "options": [
+            {
+              "text": "仔细端详",
+              "nextStage": 3
+            },
+            {
+              "text": "放下",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "你感到一股力量。",
+          "options": [
+            {
+              "text": "使用权杖",
+              "nextStage": -1
+            },
+            {
+              "text": "收起来",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "星际支票簿",
+      "position": [
+        6,
+        6
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "一本无限额支票簿？",
+          "options": [
+            {
+              "text": "翻开支票簿",
+              "nextStage": 2
+            },
+            {
+              "text": "不碰",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "上面写着'银河银行'。",
+          "options": [
+            {
+              "text": "写一张支票",
+              "nextStage": 3
+            },
+            {
+              "text": "合上",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "支票生效！",
+          "options": [
+            {
+              "text": "用于支付",
+              "nextStage": -1
+            },
+            {
+              "text": "销毁",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "加密通讯器",
+      "position": [
+        9,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "一个神秘的通讯器。",
+          "options": [
+            {
+              "text": "接听",
+              "nextStage": 2
+            },
+            {
+              "text": "挂断",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "传来低语：'小心拍卖师'。",
+          "options": [
+            {
+              "text": "追问",
+              "nextStage": 3
+            },
+            {
+              "text": "关闭",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "通讯中断。",
+          "options": [
+            {
+              "text": "调查拍卖师",
+              "nextStage": -1
+            },
+            {
+              "text": "忽略",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "反重力座椅",
+      "position": [
+        1,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "一把悬浮座椅。",
+          "options": [
+            {
+              "text": "坐下",
+              "nextStage": 2
+            },
+            {
+              "text": "站着",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "座椅升高，视野开阔。",
+          "options": [
+            {
+              "text": "享受视野",
+              "nextStage": 3
+            },
+            {
+              "text": "下来",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "你成了焦点。",
+          "options": [
+            {
+              "text": "发表演讲",
+              "nextStage": -1
+            },
+            {
+              "text": "低调",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "陨石碎片",
+      "position": [
+        11,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "一块发光的陨石。",
+          "options": [
+            {
+              "text": "触摸",
+              "nextStage": 2
+            },
+            {
+              "text": "远离",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "它在你手中震动。",
+          "options": [
+            {
+              "text": "握紧",
+              "nextStage": 3
+            },
+            {
+              "text": "放下",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "陨石融入你的身体。",
+          "options": [
+            {
+              "text": "接受力量",
+              "nextStage": -1
+            },
+            {
+              "text": "抗拒",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "成功拍得星球",
+      "description": "你赢得了星球，但负债累累。"
+    },
+    {
+      "id": "end2",
+      "condition": "拍卖被破坏",
+      "description": "神秘买家引爆了炸弹，一切化为灰烬。"
+    },
+    {
+      "id": "end3",
+      "condition": "揭露阴谋",
+      "description": "你发现拍卖师是骗子，将他绳之以法。"
+    },
+    {
+      "id": "end4",
+      "condition": "放弃竞拍",
+      "description": "你空手而归，但保全了财富。"
+    },
+    {
+      "id": "end5",
+      "condition": "与外星势力合作",
+      "description": "你与外星买家联手，统治了银河系。"
+    },
+    {
+      "id": "end6",
+      "condition": "被暗杀",
+      "description": "你拒绝了贿赂，被杀手灭口。"
+    },
+    {
+      "id": "end7",
+      "condition": "成为星际乞丐",
+      "description": "你挥霍无度，最终流落街头。"
+    },
+    {
+      "id": "end8",
+      "condition": "时间耗尽",
+      "description": "60秒到了，你未能做出决定，拍卖取消。"
+    }
+  ],
+  "introText": "欢迎来到银河拍卖会！您是主席，最后60秒，压轴星球即将成交。做出您的选择，影响整个银河的命运。",
+  "ambientMusic": "auction_theme.mp3",
+  "id": "fallback_world_043"
+}

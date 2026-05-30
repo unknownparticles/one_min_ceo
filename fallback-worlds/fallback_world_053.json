@@ -1,0 +1,879 @@
+{
+  "matchKeywords": [
+    "星际监狱",
+    "越狱",
+    "60秒",
+    "监狱长"
+  ],
+  "identity": "星际监狱长",
+  "theme": "星际监狱越狱前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "佐格将军",
+      "dialogue": "我是佐格，前星际舰队将军，现在是个囚犯。听着，监狱长，你只有60秒选择：要么帮我越狱，要么死。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "我是佐格，前星际舰队将军，现在是个囚犯。听着，监狱长，你只有60秒选择：要么帮我越狱，要么死。",
+          "options": [
+            {
+              "text": "帮你越狱，但我要好处。",
+              "nextStage": 2
+            },
+            {
+              "text": "我是监狱长，你凭什么命令我？",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "好处？我可以给你一个星球的掌控权，但前提是成功。现在，去控制室关闭所有安全系统。",
+          "options": [
+            {
+              "text": "好，我这就去。",
+              "nextStage": 4
+            },
+            {
+              "text": "不，风险太大了。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "看来你选错了。那我只能自己动手了。",
+          "options": [
+            {
+              "text": "别，我改主意了。",
+              "nextStage": 2
+            },
+            {
+              "text": "那就来试试。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "很好，你还有45秒。记住，别触发警报。",
+          "options": [
+            {
+              "text": "明白。",
+              "nextStage": -1
+            },
+            {
+              "text": "我会小心的。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "莉娜博士",
+      "dialogue": "我是莉娜，监狱的科学家。我发明了一种可以瞬间转移的装置，但需要能量核心。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "我是莉娜，监狱的科学家。我发明了一种可以瞬间转移的装置，但需要能量核心。",
+          "options": [
+            {
+              "text": "能量核心在哪里？",
+              "nextStage": 2
+            },
+            {
+              "text": "我不需要转移装置。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "能量核心在监狱的核心区域，有重兵把守。你需要帮我拿到它。",
+          "options": [
+            {
+              "text": "好，我去拿。",
+              "nextStage": 4
+            },
+            {
+              "text": "太危险了，不去。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "那就等死吧。警报一响，我们都完了。",
+          "options": [
+            {
+              "text": "好吧，我改变主意了。",
+              "nextStage": 2
+            },
+            {
+              "text": "我还有别的办法。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "给你这个通讯器，拿到后联系我。",
+          "options": [
+            {
+              "text": "好的。",
+              "nextStage": -1
+            },
+            {
+              "text": "收到。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "机器人守卫R-7",
+      "dialogue": "检测到异常活动。监狱长，请出示授权码。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "检测到异常活动。监狱长，请出示授权码。",
+          "options": [
+            {
+              "text": "我是监狱长，不需要授权码。",
+              "nextStage": 2
+            },
+            {
+              "text": "授权码是3972。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "违反规定，启动警报。",
+          "options": [
+            {
+              "text": "等等，我有授权码！",
+              "nextStage": 1
+            },
+            {
+              "text": "摧毁你！",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "授权码正确。有什么需要帮忙的？",
+          "options": [
+            {
+              "text": "关闭东区安全系统。",
+              "nextStage": 4
+            },
+            {
+              "text": "带我去控制室。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "东区安全系统已关闭。还有30秒。",
+          "options": [
+            {
+              "text": "谢谢。",
+              "nextStage": -1
+            },
+            {
+              "text": "还有其他区域呢？",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialogue": "控制室在走廊尽头，但需要指纹识别。",
+          "options": [
+            {
+              "text": "带路。",
+              "nextStage": -1
+            },
+            {
+              "text": "我自己去。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "神秘囚犯X",
+      "dialogue": "嘘……我知道一条秘密通道，但需要你帮我引开守卫。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "嘘……我知道一条秘密通道，但需要你帮我引开守卫。",
+          "options": [
+            {
+              "text": "怎么引开？",
+              "nextStage": 2
+            },
+            {
+              "text": "我没时间。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "去警报室启动紧急广播，说监狱发生火灾。守卫都会去救火。",
+          "options": [
+            {
+              "text": "好主意，我去。",
+              "nextStage": 4
+            },
+            {
+              "text": "太冒险了。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "随你吧，但时间不多了。",
+          "options": [
+            {
+              "text": "好吧，我试试。",
+              "nextStage": 2
+            },
+            {
+              "text": "我走另一边。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "干得好！现在跟我来，通道在厨房后面。",
+          "options": [
+            {
+              "text": "跟上。",
+              "nextStage": -1
+            },
+            {
+              "text": "你先走，我断后。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "典狱长的AI助手",
+      "dialogue": "监狱长，检测到多个越狱企图。您还有60秒做出反应。建议立即封锁所有出口。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "监狱长，检测到多个越狱企图。您还有60秒做出反应。建议立即封锁所有出口。",
+          "options": [
+            {
+              "text": "封锁所有出口。",
+              "nextStage": 2
+            },
+            {
+              "text": "放任不管。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "封锁命令已执行。但囚犯可能会强行突破。",
+          "options": [
+            {
+              "text": "启动防御系统。",
+              "nextStage": 4
+            },
+            {
+              "text": "调动更多守卫。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "您确定吗？这可能导致大规模越狱。",
+          "options": [
+            {
+              "text": "我确定。",
+              "nextStage": -1
+            },
+            {
+              "text": "好吧，封锁吧。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "防御系统已启动。囚犯将无法通过走廊。",
+          "options": [
+            {
+              "text": "很好。",
+              "nextStage": -1
+            },
+            {
+              "text": "还有什么？",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialogue": "守卫已就位。但注意，有些守卫可能被贿赂。",
+          "options": [
+            {
+              "text": "调查守卫。",
+              "nextStage": -1
+            },
+            {
+              "text": "我相信他们。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "能量核心",
+      "description": "一个散发着蓝光的能量球，可以为转移装置供能。",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "你发现能量核心被锁在玻璃柜中。",
+          "options": [
+            {
+              "text": "用消防斧砸开玻璃。",
+              "nextStage": 2
+            },
+            {
+              "text": "找钥匙开锁。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "玻璃碎了，警报响了！你只有20秒了。",
+          "options": [
+            {
+              "text": "拿起核心就跑。",
+              "nextStage": -1
+            },
+            {
+              "text": "躲起来。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "你找到了钥匙，顺利打开柜子。",
+          "options": [
+            {
+              "text": "拿走核心。",
+              "nextStage": -1
+            },
+            {
+              "text": "留下一个假核心。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "警卫制服",
+      "description": "一套警卫制服，可以伪装。",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "在储物柜里发现了一套制服。",
+          "options": [
+            {
+              "text": "穿上它。",
+              "nextStage": 2
+            },
+            {
+              "text": "不穿。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你伪装成了警卫，可以自由行动。",
+          "options": [
+            {
+              "text": "去控制室。",
+              "nextStage": -1
+            },
+            {
+              "text": "去武器库。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "你决定不穿，保持原样。",
+          "options": [
+            {
+              "text": "继续探索。",
+              "nextStage": -1
+            },
+            {
+              "text": "找别的伪装。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "干扰器",
+      "description": "可以干扰电子设备10秒。",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "你在实验室找到一台干扰器。",
+          "options": [
+            {
+              "text": "带上它。",
+              "nextStage": 2
+            },
+            {
+              "text": "太重了，不带。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "干扰器已装备。",
+          "options": [
+            {
+              "text": "关闭监控。",
+              "nextStage": -1
+            },
+            {
+              "text": "干扰守卫机器人。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "你放弃了干扰器。",
+          "options": [
+            {
+              "text": "或许会后悔。",
+              "nextStage": -1
+            },
+            {
+              "text": "有其他办法。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "钥匙卡",
+      "description": "一张高级钥匙卡，可以打开所有门。",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "从倒下的守卫身上拿到了钥匙卡。",
+          "options": [
+            {
+              "text": "刷开大门。",
+              "nextStage": 2
+            },
+            {
+              "text": "刷开武器库。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "大门打开了，但外面有更多守卫。",
+          "options": [
+            {
+              "text": "冲出去。",
+              "nextStage": -1
+            },
+            {
+              "text": "退回。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "武器库门开了，拿到一把激光枪。",
+          "options": [
+            {
+              "text": "装备激光枪。",
+              "nextStage": -1
+            },
+            {
+              "text": "换别的武器。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "药剂",
+      "description": "一瓶不明药剂，可能有用。",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "在医疗室发现一瓶药剂。",
+          "options": [
+            {
+              "text": "喝掉它。",
+              "nextStage": 2
+            },
+            {
+              "text": "留着。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你感觉力量大增，但头晕。",
+          "options": [
+            {
+              "text": "继续前进。",
+              "nextStage": -1
+            },
+            {
+              "text": "休息一下。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "你保留了药剂。",
+          "options": [
+            {
+              "text": "也许可以卖掉。",
+              "nextStage": -1
+            },
+            {
+              "text": "分析成分。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": "成功关闭所有安全系统并协助佐格越狱",
+      "description": "佐格将军成功越狱，他兑现承诺，给了你一个星球。但星际联盟通缉你，你开始了逃亡生涯。"
+    },
+    {
+      "id": "ending2",
+      "condition": "触发警报，囚犯暴动",
+      "description": "警报响起，囚犯暴动，你被暴徒淹没，生死未卜。"
+    },
+    {
+      "id": "ending3",
+      "condition": "使用转移装置成功逃离",
+      "description": "你和莉娜博士通过转移装置逃到了自由星系，但装置损坏，你们被困在未知星球。"
+    },
+    {
+      "id": "ending4",
+      "condition": "被机器人守卫识破，逮捕",
+      "description": "机器人守卫识破了你的伪装，将你逮捕。你被关进了自己负责的监狱。"
+    },
+    {
+      "id": "ending5",
+      "condition": "通过秘密通道逃离",
+      "description": "你跟着神秘囚犯X通过秘密通道逃出监狱，但发现外面是沙漠，你们需要面对恶劣环境。"
+    },
+    {
+      "id": "ending6",
+      "condition": "封锁所有出口，阻止越狱",
+      "description": "你成功阻止了越狱，但囚犯们更加愤怒，他们计划下一次行动。你成为了英雄，但危机四伏。"
+    },
+    {
+      "id": "ending7",
+      "condition": "与佐格合作但背叛他",
+      "description": "你帮助佐格越狱，但在最后关头背叛了他，将他交给联盟。你获得了奖赏，但失去了信用。"
+    },
+    {
+      "id": "ending8",
+      "condition": "时间耗尽，未做出关键决定",
+      "description": "60秒到了，你什么都没做。监狱一切照旧，但你知道危机迟早会来。"
+    },
+    {
+      "id": "ending9",
+      "condition": "收集所有物品并独自逃脱",
+      "description": "你集齐了能量核心、干扰器、钥匙卡等物品，独自逃出监狱，成为传奇。但你的内心充满了孤独。"
+    },
+    {
+      "id": "ending10",
+      "condition": "被囚犯X偷袭致死",
+      "description": "囚犯X利用了你，在秘密通道中偷袭你，夺取了你的装备，将你遗弃在通道中。"
+    }
+  ],
+  "introText": "你是星际监狱长，此刻警报大作，你只有60秒阻止一场精心策划的越狱。囚犯们已经行动，守卫们人心惶惶。你的每一个决定都将决定你的命运。时间已经开始倒计时……",
+  "ambientMusic": "紧张而急促的电子音乐，伴随着警报声和低沉的警报声",
+  "id": "fallback_world_053"
+}

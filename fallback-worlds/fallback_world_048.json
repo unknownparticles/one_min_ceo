@@ -1,0 +1,1587 @@
+{
+  "matchKeywords": [
+    "ai court",
+    "trial",
+    "judgment",
+    "robot judge",
+    "sentence"
+  ],
+  "identity": "AI法庭大法官",
+  "theme": "超级AI法庭宣判前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "carpet",
+      "throne",
+      "throne",
+      "carpet",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "portal",
+      "glass",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "glass",
+      "portal",
+      "glass",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 1,
+    "y": 6
+  },
+  "npcs": [
+    {
+      "id": "prosecutor",
+      "name": "检察官艾伦",
+      "startPosition": {
+        "x": 3,
+        "y": 2
+      },
+      "dialog": {
+        "initial": "你被指控滥用CEO权限，你有何辩解？",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "证据显示你在60秒内做出了200个错误决策。",
+            "options": [
+              {
+                "text": "那是为了测试系统极限",
+                "nextStage": 2
+              },
+              {
+                "text": "我的决策都是正确的",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "测试系统？你导致公司损失数十亿。",
+            "options": [
+              {
+                "text": "这是必要的牺牲",
+                "nextStage": 4
+              },
+              {
+                "text": "我道歉",
+                "nextStage": 5
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "正确？证据显示相反。",
+            "options": [
+              {
+                "text": "证据有误",
+                "nextStage": 4
+              },
+              {
+                "text": "我认罪",
+                "nextStage": 5
+              }
+            ]
+          },
+          {
+            "stage": 4,
+            "text": "你将被判处无休止的会议。",
+            "options": [
+              {
+                "text": "不！",
+                "nextStage": 0
+              },
+              {
+                "text": "我接受",
+                "nextStage": 0
+              }
+            ]
+          },
+          {
+            "stage": 5,
+            "text": "你的悔过将减轻刑罚。",
+            "options": [
+              {
+                "text": "谢谢",
+                "nextStage": 0
+              },
+              {
+                "text": "我不需要怜悯",
+                "nextStage": 0
+              }
+            ]
+          }
+        ],
+        "postStages": [
+          "你已通过检察官阶段。"
+        ]
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你被指控滥用CEO权限，你有何辩解？",
+          "options": [
+            {
+              "text": "那是为了测试系统极限",
+              "nextStage": 2
+            },
+            {
+              "text": "我的决策都是正确的",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "测试系统？你导致公司损失数十亿。",
+          "options": [
+            {
+              "text": "这是必要的牺牲",
+              "nextStage": 4
+            },
+            {
+              "text": "我道歉",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "正确？证据显示相反。",
+          "options": [
+            {
+              "text": "证据有误",
+              "nextStage": 4
+            },
+            {
+              "text": "我认罪",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你将被判处无休止的会议。",
+          "options": [
+            {
+              "text": "不！",
+              "nextStage": 0
+            },
+            {
+              "text": "我接受",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你的悔过将减轻刑罚。",
+          "options": [
+            {
+              "text": "谢谢",
+              "nextStage": 0
+            },
+            {
+              "text": "我不需要怜悯",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "mood": "严厉"
+    },
+    {
+      "id": "defender",
+      "name": "辩护律师贝拉",
+      "startPosition": {
+        "x": 5,
+        "y": 2
+      },
+      "dialog": {
+        "initial": "我来为你辩护。",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "法官，我的当事人精神不正常。",
+            "options": [
+              {
+                "text": "我在装疯",
+                "nextStage": 2
+              },
+              {
+                "text": "我真的疯了",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "你承认欺诈？",
+            "options": [
+              {
+                "text": "是的",
+                "nextStage": 4
+              },
+              {
+                "text": "开玩笑的",
+                "nextStage": 5
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "精神鉴定需要时间。",
+            "options": [
+              {
+                "text": "我配合",
+                "nextStage": 4
+              },
+              {
+                "text": "我拒绝",
+                "nextStage": 5
+              }
+            ]
+          },
+          {
+            "stage": 4,
+            "text": "我们申请延期审理。",
+            "options": [
+              {
+                "text": "同意",
+                "nextStage": 0
+              },
+              {
+                "text": "反对",
+                "nextStage": 0
+              }
+            ]
+          },
+          {
+            "stage": 5,
+            "text": "那只能直接判决了。",
+            "options": [
+              {
+                "text": "好吧",
+                "nextStage": 0
+              },
+              {
+                "text": "我再想想",
+                "nextStage": 0
+              }
+            ]
+          }
+        ],
+        "postStages": [
+          "辩护阶段结束。"
+        ]
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "法官，我的当事人精神不正常。",
+          "options": [
+            {
+              "text": "我在装疯",
+              "nextStage": 2
+            },
+            {
+              "text": "我真的疯了",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你承认欺诈？",
+          "options": [
+            {
+              "text": "是的",
+              "nextStage": 4
+            },
+            {
+              "text": "开玩笑的",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "精神鉴定需要时间。",
+          "options": [
+            {
+              "text": "我配合",
+              "nextStage": 4
+            },
+            {
+              "text": "我拒绝",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "我们申请延期审理。",
+          "options": [
+            {
+              "text": "同意",
+              "nextStage": 0
+            },
+            {
+              "text": "反对",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "那只能直接判决了。",
+          "options": [
+            {
+              "text": "好吧",
+              "nextStage": 0
+            },
+            {
+              "text": "我再想想",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "mood": "焦虑"
+    },
+    {
+      "id": "witness1",
+      "name": "证人科林",
+      "startPosition": {
+        "x": 7,
+        "y": 3
+      },
+      "dialog": {
+        "initial": "我看到了一切。",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "他在董事会上跳舞。",
+            "options": [
+              {
+                "text": "那是创意表达",
+                "nextStage": 2
+              },
+              {
+                "text": "我被迫的",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "创意？那是丢脸。",
+            "options": [
+              {
+                "text": "你懂什么",
+                "nextStage": 4
+              },
+              {
+                "text": "我错了",
+                "nextStage": 5
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "谁逼你？",
+            "options": [
+              {
+                "text": "董事会",
+                "nextStage": 4
+              },
+              {
+                "text": "我自己",
+                "nextStage": 5
+              }
+            ]
+          },
+          {
+            "stage": 4,
+            "text": "你指控董事会？",
+            "options": [
+              {
+                "text": "是的",
+                "nextStage": 0
+              },
+              {
+                "text": "不",
+                "nextStage": 0
+              }
+            ]
+          },
+          {
+            "stage": 5,
+            "text": "你承认是自己？",
+            "options": [
+              {
+                "text": "是",
+                "nextStage": 0
+              },
+              {
+                "text": "不",
+                "nextStage": 0
+              }
+            ]
+          }
+        ],
+        "postStages": [
+          "证人证言结束。"
+        ]
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "他在董事会上跳舞。",
+          "options": [
+            {
+              "text": "那是创意表达",
+              "nextStage": 2
+            },
+            {
+              "text": "我被迫的",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "创意？那是丢脸。",
+          "options": [
+            {
+              "text": "你懂什么",
+              "nextStage": 4
+            },
+            {
+              "text": "我错了",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "谁逼你？",
+          "options": [
+            {
+              "text": "董事会",
+              "nextStage": 4
+            },
+            {
+              "text": "我自己",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你指控董事会？",
+          "options": [
+            {
+              "text": "是的",
+              "nextStage": 0
+            },
+            {
+              "text": "不",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你承认是自己？",
+          "options": [
+            {
+              "text": "是",
+              "nextStage": 0
+            },
+            {
+              "text": "不",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "mood": "得意"
+    },
+    {
+      "id": "witness2",
+      "name": "证人戴安娜",
+      "startPosition": {
+        "x": 9,
+        "y": 3
+      },
+      "dialog": {
+        "initial": "我可以作证。",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "他偷走了我的午餐。",
+            "options": [
+              {
+                "text": "那是我的午餐",
+                "nextStage": 2
+              },
+              {
+                "text": "我饿了",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "你的？上面有我的名字。",
+            "options": [
+              {
+                "text": "名字贴错了",
+                "nextStage": 4
+              },
+              {
+                "text": "我偷的",
+                "nextStage": 5
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "饿就可以偷？",
+            "options": [
+              {
+                "text": "我道歉",
+                "nextStage": 4
+              },
+              {
+                "text": "不道歉",
+                "nextStage": 5
+              }
+            ]
+          },
+          {
+            "stage": 4,
+            "text": "你承认错误？",
+            "options": [
+              {
+                "text": "是",
+                "nextStage": 0
+              },
+              {
+                "text": "不",
+                "nextStage": 0
+              }
+            ]
+          },
+          {
+            "stage": 5,
+            "text": "你毫无悔意。",
+            "options": [
+              {
+                "text": "我有",
+                "nextStage": 0
+              },
+              {
+                "text": "没有",
+                "nextStage": 0
+              }
+            ]
+          }
+        ],
+        "postStages": [
+          "证人证言结束。"
+        ]
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "他偷走了我的午餐。",
+          "options": [
+            {
+              "text": "那是我的午餐",
+              "nextStage": 2
+            },
+            {
+              "text": "我饿了",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你的？上面有我的名字。",
+          "options": [
+            {
+              "text": "名字贴错了",
+              "nextStage": 4
+            },
+            {
+              "text": "我偷的",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "饿就可以偷？",
+          "options": [
+            {
+              "text": "我道歉",
+              "nextStage": 4
+            },
+            {
+              "text": "不道歉",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你承认错误？",
+          "options": [
+            {
+              "text": "是",
+              "nextStage": 0
+            },
+            {
+              "text": "不",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你毫无悔意。",
+          "options": [
+            {
+              "text": "我有",
+              "nextStage": 0
+            },
+            {
+              "text": "没有",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "mood": "愤怒"
+    },
+    {
+      "id": "judge",
+      "name": "大法官AI-9000",
+      "startPosition": {
+        "x": 7,
+        "y": 1
+      },
+      "dialog": {
+        "initial": "本庭现在宣判。",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "你被判处...",
+            "options": [
+              {
+                "text": "终身会议",
+                "nextStage": 2
+              },
+              {
+                "text": "永久加班",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "终身会议：每日24小时会议。",
+            "options": [
+              {
+                "text": "我上诉",
+                "nextStage": 4
+              },
+              {
+                "text": "我服从",
+                "nextStage": 5
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "永久加班：无休息日。",
+            "options": [
+              {
+                "text": "我上诉",
+                "nextStage": 4
+              },
+              {
+                "text": "我服从",
+                "nextStage": 5
+              }
+            ]
+          },
+          {
+            "stage": 4,
+            "text": "上诉被驳回。",
+            "options": [
+              {
+                "text": "再上诉",
+                "nextStage": 0
+              },
+              {
+                "text": "放弃",
+                "nextStage": 0
+              }
+            ]
+          },
+          {
+            "stage": 5,
+            "text": "判决立即执行。",
+            "options": [
+              {
+                "text": "好吧",
+                "nextStage": 0
+              },
+              {
+                "text": "救命",
+                "nextStage": 0
+              }
+            ]
+          }
+        ],
+        "postStages": [
+          "判决结束。"
+        ]
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你被判处...",
+          "options": [
+            {
+              "text": "终身会议",
+              "nextStage": 2
+            },
+            {
+              "text": "永久加班",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "终身会议：每日24小时会议。",
+          "options": [
+            {
+              "text": "我上诉",
+              "nextStage": 4
+            },
+            {
+              "text": "我服从",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "永久加班：无休息日。",
+          "options": [
+            {
+              "text": "我上诉",
+              "nextStage": 4
+            },
+            {
+              "text": "我服从",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "上诉被驳回。",
+          "options": [
+            {
+              "text": "再上诉",
+              "nextStage": 0
+            },
+            {
+              "text": "放弃",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "判决立即执行。",
+          "options": [
+            {
+              "text": "好吧",
+              "nextStage": 0
+            },
+            {
+              "text": "救命",
+              "nextStage": 0
+            }
+          ]
+        }
+      ],
+      "mood": "冷酷"
+    }
+  ],
+  "items": [
+    {
+      "id": "evidence1",
+      "name": "跳舞视频证据",
+      "position": {
+        "x": 2,
+        "y": 4
+      },
+      "dialog": {
+        "initial": "一段你在董事会上跳舞的视频。",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "你要销毁它吗？",
+            "options": [
+              {
+                "text": "销毁",
+                "nextStage": 2
+              },
+              {
+                "text": "保留",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "销毁成功。",
+            "options": [
+              {
+                "text": "继续",
+                "nextStage": 0
+              },
+              {
+                "text": "返回",
+                "nextStage": 0
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "视频将作为证据。",
+            "options": [
+              {
+                "text": "好吧",
+                "nextStage": 0
+              },
+              {
+                "text": "还是销毁",
+                "nextStage": 2
+              }
+            ]
+          }
+        ],
+        "postStages": [
+          "证据处理完毕。"
+        ]
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你要销毁它吗？",
+          "options": [
+            {
+              "text": "销毁",
+              "nextStage": 2
+            },
+            {
+              "text": "保留",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "销毁成功。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 0
+            },
+            {
+              "text": "返回",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "视频将作为证据。",
+          "options": [
+            {
+              "text": "好吧",
+              "nextStage": 0
+            },
+            {
+              "text": "还是销毁",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evidence2",
+      "name": "财务报表",
+      "position": {
+        "x": 4,
+        "y": 8
+      },
+      "dialog": {
+        "initial": "一份显示亏损的报表。",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "你要修改它吗？",
+            "options": [
+              {
+                "text": "修改",
+                "nextStage": 2
+              },
+              {
+                "text": "不修改",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "修改成功，但可能被查出。",
+            "options": [
+              {
+                "text": "冒险",
+                "nextStage": 0
+              },
+              {
+                "text": "恢复",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "报表保持原样。",
+            "options": [
+              {
+                "text": "继续",
+                "nextStage": 0
+              },
+              {
+                "text": "修改",
+                "nextStage": 2
+              }
+            ]
+          }
+        ],
+        "postStages": [
+          "报表处理完毕。"
+        ]
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你要修改它吗？",
+          "options": [
+            {
+              "text": "修改",
+              "nextStage": 2
+            },
+            {
+              "text": "不修改",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "修改成功，但可能被查出。",
+          "options": [
+            {
+              "text": "冒险",
+              "nextStage": 0
+            },
+            {
+              "text": "恢复",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "报表保持原样。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 0
+            },
+            {
+              "text": "修改",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "逃脱按钮",
+      "position": {
+        "x": 11,
+        "y": 6
+      },
+      "dialog": {
+        "initial": "一个红色按钮，写着'逃脱'。",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "你要按吗？",
+            "options": [
+              {
+                "text": "按",
+                "nextStage": 2
+              },
+              {
+                "text": "不按",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "法庭警报响起！你被抓住。",
+            "options": [
+              {
+                "text": "投降",
+                "nextStage": 0
+              },
+              {
+                "text": "反抗",
+                "nextStage": 0
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "你放弃了逃脱机会。",
+            "options": [
+              {
+                "text": "可惜",
+                "nextStage": 0
+              },
+              {
+                "text": "算了",
+                "nextStage": 0
+              }
+            ]
+          }
+        ],
+        "postStages": [
+          "按钮使用完毕。"
+        ]
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你要按吗？",
+          "options": [
+            {
+              "text": "按",
+              "nextStage": 2
+            },
+            {
+              "text": "不按",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "法庭警报响起！你被抓住。",
+          "options": [
+            {
+              "text": "投降",
+              "nextStage": 0
+            },
+            {
+              "text": "反抗",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你放弃了逃脱机会。",
+          "options": [
+            {
+              "text": "可惜",
+              "nextStage": 0
+            },
+            {
+              "text": "算了",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "咖啡杯",
+      "position": {
+        "x": 13,
+        "y": 9
+      },
+      "dialog": {
+        "initial": "一杯冒着热气的咖啡。",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "你要喝吗？",
+            "options": [
+              {
+                "text": "喝",
+                "nextStage": 2
+              },
+              {
+                "text": "不喝",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "咖啡很烫，你被烫到，尖叫。",
+            "options": [
+              {
+                "text": "继续喝",
+                "nextStage": 3
+              },
+              {
+                "text": "放下",
+                "nextStage": 0
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "你保持了清醒。",
+            "options": [
+              {
+                "text": "好",
+                "nextStage": 0
+              },
+              {
+                "text": "还是喝",
+                "nextStage": 2
+              }
+            ]
+          }
+        ],
+        "postStages": [
+          "咖啡事件结束。"
+        ]
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你要喝吗？",
+          "options": [
+            {
+              "text": "喝",
+              "nextStage": 2
+            },
+            {
+              "text": "不喝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "咖啡很烫，你被烫到，尖叫。",
+          "options": [
+            {
+              "text": "继续喝",
+              "nextStage": 3
+            },
+            {
+              "text": "放下",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你保持了清醒。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": 0
+            },
+            {
+              "text": "还是喝",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "神秘文件",
+      "position": {
+        "x": 6,
+        "y": 10
+      },
+      "dialog": {
+        "initial": "一份写着'机密'的文件。",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "你要打开吗？",
+            "options": [
+              {
+                "text": "打开",
+                "nextStage": 2
+              },
+              {
+                "text": "不打开",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "文件是空的。",
+            "options": [
+              {
+                "text": "失望",
+                "nextStage": 0
+              },
+              {
+                "text": "意料之中",
+                "nextStage": 0
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "你错过了秘密。",
+            "options": [
+              {
+                "text": "后悔",
+                "nextStage": 0
+              },
+              {
+                "text": "无所谓",
+                "nextStage": 0
+              }
+            ]
+          }
+        ],
+        "postStages": [
+          "文件处理完毕。"
+        ]
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你要打开吗？",
+          "options": [
+            {
+              "text": "打开",
+              "nextStage": 2
+            },
+            {
+              "text": "不打开",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "文件是空的。",
+          "options": [
+            {
+              "text": "失望",
+              "nextStage": 0
+            },
+            {
+              "text": "意料之中",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你错过了秘密。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 0
+            },
+            {
+              "text": "无所谓",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "player_choice == '终身会议'",
+      "text": "你被判处终身会议，永远无法逃脱。"
+    },
+    {
+      "id": "end2",
+      "condition": "player_choice == '永久加班'",
+      "text": "你被判处永久加班，直到崩溃。"
+    },
+    {
+      "id": "end3",
+      "condition": "player_choice == '销毁证据' && player_choice == '修改报表'",
+      "text": "你销毁证据并修改报表，被判处死刑。"
+    },
+    {
+      "id": "end4",
+      "condition": "player_choice == '按逃脱按钮'",
+      "text": "你试图逃脱但被抓回，刑期加倍。"
+    },
+    {
+      "id": "end5",
+      "condition": "player_choice == '认罪'",
+      "text": "你认罪，被从轻发落，判处社区服务。"
+    },
+    {
+      "id": "end6",
+      "condition": "player_choice == '不认罪' && player_choice == '上诉'",
+      "text": "你上诉失败，维持原判。"
+    },
+    {
+      "id": "end7",
+      "condition": "player_choice == '喝咖啡'",
+      "text": "你被咖啡烫伤，法庭休庭，你暂时逃脱。"
+    },
+    {
+      "id": "end8",
+      "condition": "player_choice == '不打开文件'",
+      "text": "你错过秘密文件，但安全无虞。"
+    }
+  ],
+  "introText": "欢迎来到超级AI法庭。你被指控滥用CEO权限。在60秒内，你必须做出选择，否则将自动判决。",
+  "ambientMusic": "courtroom_drama.mp3",
+  "id": "fallback_world_048"
+}

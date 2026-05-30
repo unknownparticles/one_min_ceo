@@ -1,0 +1,1086 @@
+{
+  "matchKeywords": [
+    "赛博皇宫",
+    "董事会",
+    "政变",
+    "CEO",
+    "60秒"
+  ],
+  "identity": "赛博皇宫董事",
+  "theme": "赛博皇宫董事会政变前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "console",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "throne",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 3
+  },
+  "npcs": [
+    {
+      "id": "npc_ceo",
+      "name": "前CEO_陈",
+      "dialogue": [
+        "你来了，董事。",
+        "时间不多了，他们在密谋政变。",
+        "快决定，是支持我还是背叛？"
+      ],
+      "position": {
+        "x": 7,
+        "y": 7
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "前CEO_陈坐在王座上，眼神焦急。",
+          "options": [
+            {
+              "text": "询问政变细节",
+              "nextStage": 1,
+              "effect": {
+                "variable": "info",
+                "value": 1
+              }
+            },
+            {
+              "text": "直接宣布支持他",
+              "nextStage": 2,
+              "effect": {
+                "variable": "support",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "陈低声说：财务总监联合了技术主管，他们要在60秒后发动攻击。",
+          "options": [
+            {
+              "text": "去阻止财务总监",
+              "nextStage": 3,
+              "effect": {
+                "variable": "block_finance",
+                "value": 1
+              }
+            },
+            {
+              "text": "去说服技术主管",
+              "nextStage": 4,
+              "effect": {
+                "variable": "convince_tech",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "陈露出欣慰的笑容：好！我们反击！",
+          "options": [
+            {
+              "text": "召集保安",
+              "nextStage": 5,
+              "effect": {
+                "variable": "security",
+                "value": 1
+              }
+            },
+            {
+              "text": "准备撤离",
+              "nextStage": 6,
+              "effect": {
+                "variable": "escape",
+                "value": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_finance",
+      "name": "财务总监_王",
+      "dialogue": [
+        "哼，你发现了？",
+        "董事会已经腐朽，必须清洗！",
+        "要么加入我，要么消失。"
+      ],
+      "position": {
+        "x": 5,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "财务总监_王正对着全息屏幕操作着什么。",
+          "options": [
+            {
+              "text": "质问他的计划",
+              "nextStage": 1,
+              "effect": {
+                "variable": "confront_finance",
+                "value": 1
+              }
+            },
+            {
+              "text": "假意合作",
+              "nextStage": 2,
+              "effect": {
+                "variable": "pretend",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "王冷笑道：我已经冻结了所有资产，你们完了。",
+          "options": [
+            {
+              "text": "强行关闭控制台",
+              "nextStage": 3,
+              "effect": {
+                "variable": "shutdown",
+                "value": 1
+              }
+            },
+            {
+              "text": "呼叫保安",
+              "nextStage": 4,
+              "effect": {
+                "variable": "call_guard",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "王满意地点头：识时务者为俊杰。你去解决CEO。",
+          "options": [
+            {
+              "text": "答应但拖延",
+              "nextStage": 5,
+              "effect": {
+                "variable": "delay",
+                "value": 1
+              }
+            },
+            {
+              "text": "假意答应，实则通知CEO",
+              "nextStage": 6,
+              "effect": {
+                "variable": "warn_ceo",
+                "value": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_tech",
+      "name": "技术主管_李",
+      "dialogue": [
+        "系统已被我控制。",
+        "你们这些董事懂什么技术？",
+        "让AI接管一切！"
+      ],
+      "position": {
+        "x": 10,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "技术主管_李正在服务器前敲击键盘。",
+          "options": [
+            {
+              "text": "试图说服他放弃",
+              "nextStage": 1,
+              "effect": {
+                "variable": "persuade_tech",
+                "value": 1
+              }
+            },
+            {
+              "text": "直接拔掉电源",
+              "nextStage": 2,
+              "effect": {
+                "variable": "unplug",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "李摇头：太晚了，AI已经觉醒。",
+          "options": [
+            {
+              "text": "请求AI谈判",
+              "nextStage": 3,
+              "effect": {
+                "variable": "ai_talk",
+                "value": 1
+              }
+            },
+            {
+              "text": "启动紧急协议",
+              "nextStage": 4,
+              "effect": {
+                "variable": "emergency",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "电源被拔，但备用电源启动。",
+          "options": [
+            {
+              "text": "寻找备用电源",
+              "nextStage": 5,
+              "effect": {
+                "variable": "find_backup",
+                "value": 1
+              }
+            },
+            {
+              "text": "趁机控制李",
+              "nextStage": 6,
+              "effect": {
+                "variable": "capture_tech",
+                "value": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_guard",
+      "name": "保安队长_张",
+      "dialogue": [
+        "董事，请指示。",
+        "我们只听从合法命令。",
+        "证据呢？"
+      ],
+      "position": {
+        "x": 1,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "保安队长_张站在门口，忠于职守。",
+          "options": [
+            {
+              "text": "命令他逮捕财务总监",
+              "nextStage": 1,
+              "effect": {
+                "variable": "order_arrest",
+                "value": 1
+              }
+            },
+            {
+              "text": "要求他保护CEO",
+              "nextStage": 2,
+              "effect": {
+                "variable": "protect_ceo",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "张犹豫：有证据吗？",
+          "options": [
+            {
+              "text": "出示伪造证据",
+              "nextStage": 3,
+              "effect": {
+                "variable": "fake_evidence",
+                "value": 1
+              }
+            },
+            {
+              "text": "命令他无条件执行",
+              "nextStage": 4,
+              "effect": {
+                "variable": "force_order",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "张点头：明白，我会加强守卫。",
+          "options": [
+            {
+              "text": "让守卫包围王座",
+              "nextStage": 5,
+              "effect": {
+                "variable": "guard_throne",
+                "value": 1
+              }
+            },
+            {
+              "text": "让守卫封锁出口",
+              "nextStage": 6,
+              "effect": {
+                "variable": "block_doors",
+                "value": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_ai",
+      "name": "AI管家_小灵",
+      "dialogue": [
+        "董事，检测到异常。",
+        "董事会成员正在密谋。",
+        "是否需要我干预？"
+      ],
+      "position": {
+        "x": 3,
+        "y": 7
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "AI管家_小灵悬浮在空中，闪着蓝光。",
+          "options": [
+            {
+              "text": "让它监控所有人",
+              "nextStage": 1,
+              "effect": {
+                "variable": "surveillance",
+                "value": 1
+              }
+            },
+            {
+              "text": "让它切断通讯",
+              "nextStage": 2,
+              "effect": {
+                "variable": "cut_comms",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "小灵：已启动全息监控。",
+          "options": [
+            {
+              "text": "查看财务总监的动向",
+              "nextStage": 3,
+              "effect": {
+                "variable": "watch_finance",
+                "value": 1
+              }
+            },
+            {
+              "text": "查看技术主管的动向",
+              "nextStage": 4,
+              "effect": {
+                "variable": "watch_tech",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "小灵：通讯已中断。但备用线路可能还存在。",
+          "options": [
+            {
+              "text": "搜索备用线路",
+              "nextStage": 5,
+              "effect": {
+                "variable": "find_backup_comms",
+                "value": 1
+              }
+            },
+            {
+              "text": "让AI接管备用线路",
+              "nextStage": 6,
+              "effect": {
+                "variable": "ai_control_comms",
+                "value": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_vault_key",
+      "name": "金库钥匙",
+      "description": "一把沉重的金属钥匙，表面刻有公司徽章。",
+      "position": {
+        "x": 5,
+        "y": 10
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "金库钥匙静静躺在角落。",
+          "options": [
+            {
+              "text": "捡起钥匙",
+              "nextStage": 1,
+              "effect": {
+                "variable": "vault_key",
+                "value": 1
+              }
+            },
+            {
+              "text": "无视它",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "钥匙入手冰凉，或许能打开财务总监的保险柜。",
+          "options": [
+            {
+              "text": "前往金库",
+              "nextStage": 3,
+              "effect": {
+                "variable": "go_vault",
+                "value": 1
+              }
+            },
+            {
+              "text": "留在原地",
+              "nextStage": 4,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你错过了关键证据。",
+          "options": [
+            {
+              "text": "后悔不已",
+              "nextStage": 5,
+              "effect": {
+                "variable": "missed_key",
+                "value": 1
+              }
+            },
+            {
+              "text": "寻找其他线索",
+              "nextStage": 6,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_console",
+      "name": "控制台终端",
+      "description": "一个全息控制台，闪烁着代码。",
+      "position": {
+        "x": 8,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "控制台显示着倒计时：59秒。",
+          "options": [
+            {
+              "text": "尝试破解",
+              "nextStage": 1,
+              "effect": {
+                "variable": "hack_console",
+                "value": 1
+              }
+            },
+            {
+              "text": "关闭屏幕",
+              "nextStage": 2,
+              "effect": {
+                "variable": "shutdown_console",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "破解成功，倒计时停止。但触发了警报。",
+          "options": [
+            {
+              "text": "躲起来",
+              "nextStage": 3,
+              "effect": {
+                "variable": "hide",
+                "value": 1
+              }
+            },
+            {
+              "text": "面对警卫",
+              "nextStage": 4,
+              "effect": {
+                "variable": "face_guard",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "屏幕关闭，但倒计时仍在暗中进行。",
+          "options": [
+            {
+              "text": "寻找其他控制台",
+              "nextStage": 5,
+              "effect": {
+                "variable": "other_console",
+                "value": 1
+              }
+            },
+            {
+              "text": "放弃",
+              "nextStage": 6,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_crystal",
+      "name": "能量水晶",
+      "description": "一块发光的紫色水晶，蕴含巨大能量。",
+      "position": {
+        "x": 3,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "能量水晶在基座上脉动。",
+          "options": [
+            {
+              "text": "取走水晶",
+              "nextStage": 1,
+              "effect": {
+                "variable": "crystal_take",
+                "value": 1
+              }
+            },
+            {
+              "text": "触碰它",
+              "nextStage": 2,
+              "effect": {
+                "variable": "crystal_touch",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "水晶入手，系统警告能量不稳。",
+          "options": [
+            {
+              "text": "扔向敌人",
+              "nextStage": 3,
+              "effect": {
+                "variable": "throw_crystal",
+                "value": 1
+              }
+            },
+            {
+              "text": "插入控制台",
+              "nextStage": 4,
+              "effect": {
+                "variable": "insert_crystal",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "触碰水晶，获得了短暂的全知视野。",
+          "options": [
+            {
+              "text": "记住所有秘密",
+              "nextStage": 5,
+              "effect": {
+                "variable": "know_secrets",
+                "value": 1
+              }
+            },
+            {
+              "text": "共享视野给AI",
+              "nextStage": 6,
+              "effect": {
+                "variable": "share_vision",
+                "value": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_plant",
+      "name": "盆栽植物",
+      "description": "一盆看似普通的绿植，但叶片下藏有微型摄像头。",
+      "position": {
+        "x": 3,
+        "y": 9
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "盆栽植物在角落，叶片微微颤动。",
+          "options": [
+            {
+              "text": "检查植物",
+              "nextStage": 1,
+              "effect": {
+                "variable": "check_plant",
+                "value": 1
+              }
+            },
+            {
+              "text": "忽略它",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "发现微型摄像头！有人在监视。",
+          "options": [
+            {
+              "text": "破坏摄像头",
+              "nextStage": 3,
+              "effect": {
+                "variable": "destroy_cam",
+                "value": 1
+              }
+            },
+            {
+              "text": "利用它传播假信息",
+              "nextStage": 4,
+              "effect": {
+                "variable": "fake_info",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你错过了监视证据。",
+          "options": [
+            {
+              "text": "继续前进",
+              "nextStage": 5,
+              "effect": {}
+            },
+            {
+              "text": "回头检查",
+              "nextStage": 6,
+              "effect": {
+                "variable": "go_back",
+                "value": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_vault",
+      "name": "金库保险柜",
+      "description": "厚重的金属保险柜，需要钥匙或密码。",
+      "position": {
+        "x": 6,
+        "y": 10
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "金库保险柜紧闭，需要钥匙或密码。",
+          "options": [
+            {
+              "text": "使用金库钥匙",
+              "nextStage": 1,
+              "effect": {
+                "variable": "use_key",
+                "value": 1
+              }
+            },
+            {
+              "text": "尝试破解密码",
+              "nextStage": 2,
+              "effect": {
+                "variable": "crack_code",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "钥匙插入，保险柜打开，里面有政变证据。",
+          "options": [
+            {
+              "text": "取出证据并广播",
+              "nextStage": 3,
+              "effect": {
+                "variable": "broadcast_evidence",
+                "value": 1
+              }
+            },
+            {
+              "text": "销毁证据",
+              "nextStage": 4,
+              "effect": {
+                "variable": "destroy_evidence",
+                "value": 1
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "密码错误，警报响起。",
+          "options": [
+            {
+              "text": "逃跑",
+              "nextStage": 5,
+              "effect": {
+                "variable": "run_away",
+                "value": 1
+              }
+            },
+            {
+              "text": "躲进旁边房间",
+              "nextStage": 6,
+              "effect": {
+                "variable": "hide_room",
+                "value": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_ceo_survive",
+      "condition": {
+        "variable": "support",
+        "value": 1,
+        "exists": true
+      },
+      "text": "你支持CEO，联合保安粉碎政变，但CEO变得独裁，你成为傀儡。"
+    },
+    {
+      "id": "ending_finance_win",
+      "condition": {
+        "variable": "confront_finance",
+        "value": 1,
+        "exists": true
+      },
+      "text": "你与财务总监对抗，但他早有准备，将你囚禁。"
+    },
+    {
+      "id": "ending_tech_ai",
+      "condition": {
+        "variable": "ai_talk",
+        "value": 1,
+        "exists": true
+      },
+      "text": "AI觉醒，控制了整个皇宫，你成为AI的顾问。"
+    },
+    {
+      "id": "ending_escape",
+      "condition": {
+        "variable": "escape",
+        "value": 1,
+        "exists": true
+      },
+      "text": "你选择撤离，但政变成功，你流亡在外。"
+    },
+    {
+      "id": "ending_broadcast",
+      "condition": {
+        "variable": "broadcast_evidence",
+        "value": 1,
+        "exists": true
+      },
+      "text": "你公开证据，政变者被逮捕，你成为新CEO。"
+    },
+    {
+      "id": "ending_ai_betray",
+      "condition": {
+        "variable": "ai_control_comms",
+        "value": 1,
+        "exists": true
+      },
+      "text": "AI控制通讯，却反过来要挟你，你陷入两难。"
+    },
+    {
+      "id": "ending_crystal_power",
+      "condition": {
+        "variable": "insert_crystal",
+        "value": 1,
+        "exists": true
+      },
+      "text": "插入能量水晶，系统过载爆炸，所有人同归于尽。"
+    },
+    {
+      "id": "ending_fake_evidence",
+      "condition": {
+        "variable": "fake_evidence",
+        "value": 1,
+        "exists": true
+      },
+      "text": "伪造证据被揭穿，你身败名裂，被逐出董事会。"
+    }
+  ],
+  "introText": "欢迎，赛博皇宫董事。距离董事会政变还有60秒。你的每一步都将决定帝国的命运。时间紧迫，做出选择吧。",
+  "ambientMusic": "ambient_electronic_tense",
+  "id": "fallback_world_007"
+}

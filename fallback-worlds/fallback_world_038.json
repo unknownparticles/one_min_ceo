@@ -1,0 +1,815 @@
+{
+  "matchKeywords": [
+    "超级网络帝国总裁",
+    "黑客入侵",
+    "60秒"
+  ],
+  "identity": "超级网络帝国总裁",
+  "theme": "超级黑客入侵总部前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    7
+  ],
+  "npcs": [
+    {
+      "id": "npc_secretary",
+      "name": "秘书小美",
+      "position": [
+        2,
+        8
+      ],
+      "dialogue": "总裁，您还有60秒！黑客已经突破第一道防火墙！",
+      "storyline": [
+        {
+          "stage": 1,
+          "content": "小美紧张地说：“总裁，黑客已经入侵了员工数据库！”",
+          "options": [
+            {
+              "text": "启动AI防御系统",
+              "effect": "unlock_console"
+            },
+            {
+              "text": "先稳住小美，问她细节",
+              "effect": "reveal_hacker_id"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "content": "小美递上一杯咖啡：“总裁，这是您最爱的手冲咖啡。”",
+          "options": [
+            {
+              "text": "喝咖啡提神",
+              "effect": "energy_boost"
+            },
+            {
+              "text": "推开咖啡，专注防御",
+              "effect": "ignore_coffee"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "content": "小美哭泣：“总裁，我的电脑被黑了！”",
+          "options": [
+            {
+              "text": "给她一台新电脑",
+              "effect": "new_computer"
+            },
+            {
+              "text": "让她用手写板",
+              "effect": "whiteboard"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_hacker",
+      "name": "黑客X",
+      "position": [
+        3,
+        5
+      ],
+      "dialogue": "哈哈，你的系统不堪一击！",
+      "storyline": [
+        {
+          "stage": 1,
+          "content": "黑客X嘲讽：“你挡不住我的！”",
+          "options": [
+            {
+              "text": "追踪他的IP",
+              "effect": "trace_ip"
+            },
+            {
+              "text": "发动DDoS反击",
+              "effect": "ddos_attack"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "content": "黑客X发来勒索信：“给我一百万比特币。”",
+          "options": [
+            {
+              "text": "假装答应，拖延时间",
+              "effect": "stall"
+            },
+            {
+              "text": "冷处理，不理他",
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "content": "黑客X发现你设下的陷阱，愤怒咆哮。",
+          "options": [
+            {
+              "text": "开启蜜罐系统",
+              "effect": "honeypot"
+            },
+            {
+              "text": "直接切断他网络",
+              "effect": "cut_internet"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_tech",
+      "name": "技术总监老王",
+      "position": [
+        5,
+        2
+      ],
+      "dialogue": "总裁，防火墙坚持不了30秒了！",
+      "storyline": [
+        {
+          "stage": 1,
+          "content": "老王满头大汗：“他们用了零日漏洞！”",
+          "options": [
+            {
+              "text": "启用备用防火墙",
+              "effect": "backup_firewall"
+            },
+            {
+              "text": "让团队手动修补",
+              "effect": "manual_patch"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "content": "老王报告：“我们追踪到一部分攻击源。”",
+          "options": [
+            {
+              "text": "反向入侵攻击源",
+              "effect": "counter_attack"
+            },
+            {
+              "text": "收集证据后报警",
+              "effect": "call_police"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "content": "老王倒下：“我不行了……”",
+          "options": [
+            {
+              "text": "人工呼吸急救",
+              "effect": "first_aid"
+            },
+            {
+              "text": "呼叫医疗团队",
+              "effect": "call_medic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_cleaner",
+      "name": "清洁工李姐",
+      "position": [
+        7,
+        12
+      ],
+      "dialogue": "总裁，我捡到一个U盘。",
+      "storyline": [
+        {
+          "stage": 1,
+          "content": "李姐神秘地说：“U盘里有奇怪的文件。”",
+          "options": [
+            {
+              "text": "插到电脑上查看",
+              "effect": "usb_scan"
+            },
+            {
+              "text": "交给IT部门隔离",
+              "effect": "quarantine"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "content": "李姐说：“我好像看见一个黑衣人进了机房。”",
+          "options": [
+            {
+              "text": "调取监控录像",
+              "effect": "check_cctv"
+            },
+            {
+              "text": "让保安去搜查",
+              "effect": "security_search"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "content": "李姐晕倒，手里拿着一个黑客工具。",
+          "options": [
+            {
+              "text": "叫救护车",
+              "effect": "ambulance"
+            },
+            {
+              "text": "调查她是否内鬼",
+              "effect": "investigate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_security",
+      "name": "保安队长大刘",
+      "position": [
+        9,
+        3
+      ],
+      "dialogue": "总裁，我们封锁了所有出入口！",
+      "storyline": [
+        {
+          "stage": 1,
+          "content": "大刘报告：“发现可疑包裹在服务器室。”",
+          "options": [
+            {
+              "text": "派出排爆机器人",
+              "effect": "bomb_robot"
+            },
+            {
+              "text": "紧急疏散人员",
+              "effect": "evacuate"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "content": "大刘说：“我们抓到了一个内鬼。”",
+          "options": [
+            {
+              "text": "亲自审问",
+              "effect": "interrogate"
+            },
+            {
+              "text": "交给警方处理",
+              "effect": "police_handover"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "content": "大刘受伤：“他们火力很猛！”",
+          "options": [
+            {
+              "text": "呼叫特警支援",
+              "effect": "swat"
+            },
+            {
+              "text": "拿灭火器反击",
+              "effect": "fire_extinguisher"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_firewall",
+      "name": "超级防火墙",
+      "position": [
+        2,
+        4
+      ],
+      "description": "可以抵御一次强力攻击。",
+      "storyline": [
+        {
+          "stage": 1,
+          "content": "发现一个未激活的防火墙模块。",
+          "options": [
+            {
+              "text": "激活并部署",
+              "effect": "activate"
+            },
+            {
+              "text": "先研究一下",
+              "effect": "study"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "content": "防火墙模块需要密钥。",
+          "options": [
+            {
+              "text": "从服务器获取密钥",
+              "effect": "get_key"
+            },
+            {
+              "text": "暴力破解",
+              "effect": "brute_force"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "content": "防火墙成功启动，网络流量恢复正常。",
+          "options": [
+            {
+              "text": "感谢团队",
+              "effect": "thank_team"
+            },
+            {
+              "text": "继续监控",
+              "effect": "monitor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_antivirus",
+      "name": "终极杀毒软件",
+      "position": [
+        4,
+        10
+      ],
+      "description": "可以清除所有病毒。",
+      "storyline": [
+        {
+          "stage": 1,
+          "content": "发现一个杀毒软件安装包。",
+          "options": [
+            {
+              "text": "立即安装",
+              "effect": "install"
+            },
+            {
+              "text": "先扫描一下",
+              "effect": "scan"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "content": "杀毒软件需要更新病毒库。",
+          "options": [
+            {
+              "text": "在线更新",
+              "effect": "update"
+            },
+            {
+              "text": "用离线包",
+              "effect": "offline_update"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "content": "杀毒软件查杀了大量木马。",
+          "options": [
+            {
+              "text": "查看报告",
+              "effect": "view_report"
+            },
+            {
+              "text": "继续深入扫描",
+              "effect": "deep_scan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_crypto",
+      "name": "加密芯片",
+      "position": [
+        6,
+        7
+      ],
+      "description": "可以加密所有数据。",
+      "storyline": [
+        {
+          "stage": 1,
+          "content": "发现一个加密芯片。",
+          "options": [
+            {
+              "text": "插入服务器",
+              "effect": "insert"
+            },
+            {
+              "text": "分析芯片固件",
+              "effect": "analyze"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "content": "加密芯片需要配对。",
+          "options": [
+            {
+              "text": "使用配对工具",
+              "effect": "pair"
+            },
+            {
+              "text": "手动配置",
+              "effect": "manual_config"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "content": "加密成功，黑客无法窃取数据。",
+          "options": [
+            {
+              "text": "公开表扬",
+              "effect": "praise"
+            },
+            {
+              "text": "加强其他系统",
+              "effect": "enhance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_coffee",
+      "name": "能量咖啡",
+      "position": [
+        8,
+        5
+      ],
+      "description": "喝下后可恢复体力。",
+      "storyline": [
+        {
+          "stage": 1,
+          "content": "发现一杯冒着热气的咖啡。",
+          "options": [
+            {
+              "text": "喝掉",
+              "effect": "drink"
+            },
+            {
+              "text": "倒掉",
+              "effect": "discard"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "content": "咖啡很烫，但很提神。",
+          "options": [
+            {
+              "text": "慢慢品味",
+              "effect": "savor"
+            },
+            {
+              "text": "一饮而尽",
+              "effect": "gulp"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "content": "咖啡因让你清醒，思路清晰。",
+          "options": [
+            {
+              "text": "制定新策略",
+              "effect": "strategy"
+            },
+            {
+              "text": "继续执行原计划",
+              "effect": "continue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_backup",
+      "name": "备份硬盘",
+      "position": [
+        10,
+        9
+      ],
+      "description": "包含所有重要数据备份。",
+      "storyline": [
+        {
+          "stage": 1,
+          "content": "发现一个备份硬盘。",
+          "options": [
+            {
+              "text": "连接到主服务器",
+              "effect": "connect"
+            },
+            {
+              "text": "物理销毁以防泄露",
+              "effect": "destroy"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "content": "备份硬盘需要格式化。",
+          "options": [
+            {
+              "text": "快速格式化",
+              "effect": "quick_format"
+            },
+            {
+              "text": "完全格式化",
+              "effect": "full_format"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "content": "数据备份成功，可以恢复系统。",
+          "options": [
+            {
+              "text": "立即恢复",
+              "effect": "restore"
+            },
+            {
+              "text": "作为备用",
+              "effect": "reserve"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_victory",
+      "condition": "成功防御黑客攻击",
+      "description": "你成功阻止了黑客入侵，公司安然无恙。"
+    },
+    {
+      "id": "ending_data_loss",
+      "condition": "重要数据被窃取",
+      "description": "黑客窃取了客户数据，公司声誉受损。"
+    },
+    {
+      "id": "ending_system_down",
+      "condition": "系统瘫痪",
+      "description": "所有服务器宕机，公司业务停滞。"
+    },
+    {
+      "id": "ending_employee_death",
+      "condition": "员工伤亡",
+      "description": "在混乱中有员工不幸遇难。"
+    },
+    {
+      "id": "ending_bankrupt",
+      "condition": "公司破产",
+      "description": "黑客勒索巨额赎金，公司无力支付而破产。"
+    },
+    {
+      "id": "ending_hero",
+      "condition": "亲自抓住黑客",
+      "description": "你英勇地抓住了黑客，成为公司英雄。"
+    },
+    {
+      "id": "ending_betrayal",
+      "condition": "发现内鬼",
+      "description": "发现高层是内鬼，公司内部大清洗。"
+    },
+    {
+      "id": "ending_nuclear",
+      "condition": "启动自毁程序",
+      "description": "你启动了总部自毁程序，一切归于灰烬。"
+    },
+    {
+      "id": "ending_timeout",
+      "condition": "60秒倒计时结束",
+      "description": "时间耗尽，黑客完全控制了系统。"
+    }
+  ],
+  "introText": "超级网络帝国总裁，你只有60秒！黑客已经突破外围防御，入侵总部核心系统。你需要迅速做出决策，调动资源，保护公司数据。每一秒都至关重要！",
+  "ambientMusic": "紧急警报声和键盘敲击声",
+  "id": "fallback_world_038"
+}

@@ -1,0 +1,822 @@
+{
+  "matchKeywords": [
+    "时空管理局",
+    "审计",
+    "CEO",
+    "60秒",
+    "危机"
+  ],
+  "identity": "时空管理局CEO",
+  "theme": "时空管理局审计降临前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "server",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "lava",
+      "lava",
+      "lava",
+      "lava",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "lava",
+      "fire",
+      "fire",
+      "fire",
+      "lava",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "lava",
+      "fire",
+      "console",
+      "fire",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "lava",
+      "lava",
+      "lava",
+      "lava",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    5,
+    4
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "审计官克罗",
+      "dialogue": "你好，CEO。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "审计官克罗突然出现在你面前，手中拿着一个发光的平板。",
+          "options": [
+            {
+              "text": "热情打招呼",
+              "effect": "克罗好感+1"
+            },
+            {
+              "text": "假装没看见",
+              "effect": "克罗好感-1"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "克罗开始询问你关于时间流稳定性报告的问题。",
+          "options": [
+            {
+              "text": "详细解释报告",
+              "effect": "审计进度-10%"
+            },
+            {
+              "text": "转移话题",
+              "effect": "克罗怀疑+1"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "克罗指出了报告中的一处矛盾。",
+          "options": [
+            {
+              "text": "承认错误并道歉",
+              "effect": "审计进度-20%"
+            },
+            {
+              "text": "狡辩说是系统错误",
+              "effect": "克罗愤怒+1"
+            }
+          ]
+        }
+      ],
+      "position": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "影子秘书",
+      "dialogue": "先生，需要咖啡吗？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你的影子秘书端着一杯冒着绿光的咖啡靠近。",
+          "options": [
+            {
+              "text": "接过咖啡",
+              "effect": "获得物品：可疑咖啡"
+            },
+            {
+              "text": "拒绝",
+              "effect": "秘书失望"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "秘书悄声说：'我听说审计官喜欢收集古董。'",
+          "options": [
+            {
+              "text": "询问更多细节",
+              "effect": "获得情报"
+            },
+            {
+              "text": "不感兴趣",
+              "effect": "无"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "秘书掏出一个怀表：'这是我在仓库找到的，或许有用。'",
+          "options": [
+            {
+              "text": "收下怀表",
+              "effect": "获得物品：古董怀表"
+            },
+            {
+              "text": "让她放回去",
+              "effect": "秘书不解"
+            }
+          ]
+        }
+      ],
+      "position": [
+        5,
+        2
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "时间保安队长",
+      "dialogue": "长官，一切正常。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "队长敬礼：'报告CEO，安保系统已全面升级。'",
+          "options": [
+            {
+              "text": "表示赞许",
+              "effect": "队长忠诚+1"
+            },
+            {
+              "text": "质疑他的效率",
+              "effect": "队长沮丧"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "队长压低声音：'我听说有人想破坏审计。'",
+          "options": [
+            {
+              "text": "命令他加强警戒",
+              "effect": "安保等级+1"
+            },
+            {
+              "text": "让他别管闲事",
+              "effect": "队长失望"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "队长递给你一份可疑人员名单。",
+          "options": [
+            {
+              "text": "仔细阅读名单",
+              "effect": "获得情报"
+            },
+            {
+              "text": "随手扔进垃圾桶",
+              "effect": "错过线索"
+            }
+          ]
+        }
+      ],
+      "position": [
+        8,
+        2
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "中央计算机",
+      "dialogue": "哔——系统自检中。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "中央计算机发出警报：'检测到未授权时间旅行！'",
+          "options": [
+            {
+              "text": "立即调查",
+              "effect": "审计进度+10%"
+            },
+            {
+              "text": "忽略警报",
+              "effect": "危机爆发风险"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "计算机屏幕闪烁：'建议启动应急协议。'",
+          "options": [
+            {
+              "text": "启动协议",
+              "effect": "获得临时权限"
+            },
+            {
+              "text": "否决建议",
+              "effect": "无"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "计算机显示：'审计官预计在30秒后抵达。'",
+          "options": [
+            {
+              "text": "深呼吸准备",
+              "effect": "冷静+1"
+            },
+            {
+              "text": "慌乱奔跑",
+              "effect": "混乱+1"
+            }
+          ]
+        }
+      ],
+      "position": [
+        2,
+        8
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "时间褶皱清洁工",
+      "dialogue": "这里好脏啊。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "清洁工正在用吸尘器吸走时间碎片。",
+          "options": [
+            {
+              "text": "问他发现了什么",
+              "effect": "获得碎片情报"
+            },
+            {
+              "text": "让他专心工作",
+              "effect": "清洁工无视你"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "清洁工举起一块发光的碎片：'这个很特别。'",
+          "options": [
+            {
+              "text": "索要碎片",
+              "effect": "获得物品：时间碎片"
+            },
+            {
+              "text": "让他扔掉",
+              "effect": "失去潜在道具"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "清洁工低声说：'我见过审计官……他们不喜欢混乱。'",
+          "options": [
+            {
+              "text": "询问如何应对",
+              "effect": "获得提示"
+            },
+            {
+              "text": "不以为然",
+              "effect": "无"
+            }
+          ]
+        }
+      ],
+      "position": [
+        9,
+        12
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "可疑咖啡",
+      "description": "冒着绿光的咖啡，喝下后可能产生幻觉或清醒。",
+      "position": [
+        5,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你拿起咖啡，犹豫是否要喝。",
+          "options": [
+            {
+              "text": "喝下",
+              "effect": "获得临时属性提升"
+            },
+            {
+              "text": "倒掉",
+              "effect": "无"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "咖啡杯底显现出一行小字：'真相在时间尽头。'",
+          "options": [
+            {
+              "text": "铭记这句话",
+              "effect": "获得线索"
+            },
+            {
+              "text": "忽略",
+              "effect": "无"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "空杯开始发出震动，似乎要爆炸。",
+          "options": [
+            {
+              "text": "扔掉",
+              "effect": "避免伤害"
+            },
+            {
+              "text": "紧握",
+              "effect": "轻度烧伤"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "古董怀表",
+      "description": "一枚精致的怀表，指针倒走。",
+      "position": [
+        5,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你端详怀表，发现它似乎能暂停时间。",
+          "options": [
+            {
+              "text": "使用怀表暂停时间",
+              "effect": "获得额外行动机会"
+            },
+            {
+              "text": "收起来",
+              "effect": "保留道具"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "怀表盖内侧刻着：'赠与最忠诚的仆人。'",
+          "options": [
+            {
+              "text": "寻找主人",
+              "effect": "触发隐藏剧情"
+            },
+            {
+              "text": "无视",
+              "effect": "无"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "怀表突然响起闹铃，引来审计官的注意。",
+          "options": [
+            {
+              "text": "藏起来",
+              "effect": "成功隐藏"
+            },
+            {
+              "text": "解释",
+              "effect": "审计官怀疑"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "时间碎片",
+      "description": "一块不稳定的时间能量结晶。",
+      "position": [
+        9,
+        12
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "碎片在你手中闪烁，似乎能改写过去。",
+          "options": [
+            {
+              "text": "尝试使用",
+              "effect": "随机改变一个事件"
+            },
+            {
+              "text": "谨慎保存",
+              "effect": "保留道具"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "碎片开始发热，显示出一个数字：42。",
+          "options": [
+            {
+              "text": "输入数字到控制台",
+              "effect": "解锁秘密"
+            },
+            {
+              "text": "忽略",
+              "effect": "无"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "碎片突然融入你的身体，你获得了短暂预知能力。",
+          "options": [
+            {
+              "text": "预知未来10秒",
+              "effect": "获得优势"
+            },
+            {
+              "text": "抗拒融合",
+              "effect": "失去碎片"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "审计报告草稿",
+      "description": "一份未完成的审计报告，似乎有修改痕迹。",
+      "position": [
+        5,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现报告上的数据与你记忆中的不符。",
+          "options": [
+            {
+              "text": "修改数据",
+              "effect": "审计进度-20%"
+            },
+            {
+              "text": "保持原样",
+              "effect": "可能被查出"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "报告边缘有手写批注：'注意时间悖论。'",
+          "options": [
+            {
+              "text": "调查时间悖论",
+              "effect": "获得线索"
+            },
+            {
+              "text": "不理会",
+              "effect": "无"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "报告突然自燃，只留下一片灰烬。",
+          "options": [
+            {
+              "text": "扑灭火",
+              "effect": "挽救部分报告"
+            },
+            {
+              "text": "任由燃烧",
+              "effect": "证据销毁"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "应急按钮",
+      "description": "一个红色按钮，上面写着'仅限紧急情况'。",
+      "position": [
+        2,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你看到按钮，犹豫是否按下。",
+          "options": [
+            {
+              "text": "按下",
+              "effect": "触发应急协议"
+            },
+            {
+              "text": "离开",
+              "effect": "无"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "按钮下方有一行小字：'按下去将重置一切。'",
+          "options": [
+            {
+              "text": "再次按下",
+              "effect": "世界重置"
+            },
+            {
+              "text": "不再触碰",
+              "effect": "保留按钮"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "按钮开始闪烁，发出警报声。",
+          "options": [
+            {
+              "text": "长按5秒",
+              "effect": "启动自毁程序"
+            },
+            {
+              "text": "拔掉电源",
+              "effect": "解除警报"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "trigger": "审计进度达到100%",
+      "text": "审计官满意地点头，宣布时空管理局运行良好。你保住了CEO的位置。"
+    },
+    {
+      "id": "ending2",
+      "trigger": "审计进度低于0%",
+      "text": "审计官发现严重违规，当场撤销你的资格。你被流放到时间裂缝。"
+    },
+    {
+      "id": "ending3",
+      "trigger": "使用应急按钮重置世界",
+      "text": "一切回到60秒前，但你的记忆保留。你有了第二次机会。"
+    },
+    {
+      "id": "ending4",
+      "trigger": "喝下可疑咖啡后选择错误选项",
+      "text": "你陷入幻觉，在审计官面前胡言乱语。审计失败。"
+    },
+    {
+      "id": "ending5",
+      "trigger": "成功使用怀表暂停时间并完成审计",
+      "text": "你利用时间暂停完美通过了审计。但怀表碎裂，时空出现涟漪。"
+    },
+    {
+      "id": "ending6",
+      "trigger": "收集所有时间碎片并合成",
+      "text": "你合成了完整的时间结晶，拥有了控制时间的能力。审计官敬畏地离开。"
+    },
+    {
+      "id": "ending7",
+      "trigger": "与影子秘书好感度满",
+      "text": "秘书实际上是一位时间守护者，她帮你化解了审计危机。"
+    },
+    {
+      "id": "ending8",
+      "trigger": "触发自毁程序",
+      "text": "整个时空管理局爆炸，你与审计官一同消失在时间洪流中。"
+    },
+    {
+      "id": "ending9",
+      "trigger": "输入数字42到控制台",
+      "text": "你解锁了隐藏的真相：宇宙的答案是42，审计官被这个答案折服。"
+    },
+    {
+      "id": "ending10",
+      "trigger": "拒绝所有NPC的提议",
+      "text": "你保持沉默，审计官认为你高深莫测，决定延期审计。"
+    }
+  ],
+  "introText": "你，时空管理局CEO，正坐在办公室。突然，警报响起：审计官将在60秒后抵达！你必须在这60秒内处理危机，整理报告，或者……用非常手段。时间开始倒数！",
+  "ambientMusic": "紧张而急促的电子音乐，夹杂时钟滴答声",
+  "id": "fallback_world_010"
+}

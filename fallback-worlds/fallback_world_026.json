@@ -1,0 +1,832 @@
+{
+  "matchKeywords": [
+    "广告",
+    "发布会",
+    "银河",
+    "帝",
+    "危机"
+  ],
+  "identity": "银河广告帝王",
+  "theme": "银河广告发布会灾难前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "stage",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "glass",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 1,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "广告内容审核官",
+      "type": "authority",
+      "position": {
+        "x": 4,
+        "y": 2
+      },
+      "personality": "挑剔而神经质",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "银河帝王，你这次的广告创意简直是对全宇宙的侮辱！",
+          "options": [
+            {
+              "text": "狂妄大笑，说广告就是要震撼",
+              "effect": "npc1_1"
+            },
+            {
+              "text": "冷静解释创意的深层含义",
+              "effect": "npc1_2"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "哪怕你解释得天花乱坠，也不能改变这是垃圾的事实！",
+          "options": [
+            {
+              "text": "威胁要封杀他的频道",
+              "effect": "npc1_3"
+            },
+            {
+              "text": "用金钱收买他",
+              "effect": "npc1_4"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "好吧，我可能有点过激了...但你的广告确实有风险。",
+          "options": [
+            {
+              "text": "继续坚持原方案",
+              "effect": "npc1_5"
+            },
+            {
+              "text": "听取建议修改广告",
+              "effect": "npc1_6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "首席VR技术员",
+      "type": "techie",
+      "position": {
+        "x": 8,
+        "y": 3
+      },
+      "personality": "紧张且沉迷数据",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "陛下，全息投影系统出现异常，可能是黑客攻击！",
+          "options": [
+            {
+              "text": "让他立即修复",
+              "effect": "npc2_1"
+            },
+            {
+              "text": "怀疑是系统自身故障",
+              "effect": "npc2_2"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "太晚了，系统已被植入广告病毒，会随机播放恶搞广告！",
+          "options": [
+            {
+              "text": "启动紧急清除程序",
+              "effect": "npc2_3"
+            },
+            {
+              "text": "将计就计，利用病毒宣传",
+              "effect": "npc2_4"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "病毒变异了，现在全息投影开始出现外星人入侵画面！",
+          "options": [
+            {
+              "text": "宣布这是广告特效",
+              "effect": "npc2_5"
+            },
+            {
+              "text": "让技术员强行关闭系统",
+              "effect": "npc2_6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "星际媒体记者",
+      "type": "reporter",
+      "position": {
+        "x": 2,
+        "y": 5
+      },
+      "personality": "八卦而刻薄",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "帝王，有传言说你的广告预算全是借的高利贷？",
+          "options": [
+            {
+              "text": "矢口否认并怒斥",
+              "effect": "npc3_1"
+            },
+            {
+              "text": "神秘微笑，不置可否",
+              "effect": "npc3_2"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "我已经拿到了证据，你的财务状况岌岌可危！",
+          "options": [
+            {
+              "text": "用更大的新闻威胁她闭嘴",
+              "effect": "npc3_3"
+            },
+            {
+              "text": "承认并博取同情",
+              "effect": "npc3_4"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "好吧，我可以不报道，但你必须给我独家专访。",
+          "options": [
+            {
+              "text": "同意专访",
+              "effect": "npc3_5"
+            },
+            {
+              "text": "拒绝并转移话题",
+              "effect": "npc3_6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "外星赞助商代表",
+      "type": "sponsor",
+      "position": {
+        "x": 7,
+        "y": 6
+      },
+      "personality": "傲慢且多疑",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "我们的投资不是让你搞这种低俗表演的！",
+          "options": [
+            {
+              "text": "卑躬屈膝道歉",
+              "effect": "npc4_1"
+            },
+            {
+              "text": "反讽他们不懂艺术",
+              "effect": "npc4_2"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "要么立刻更换广告，要么我们撤资。",
+          "options": [
+            {
+              "text": "接受条件更改广告",
+              "effect": "npc4_3"
+            },
+            {
+              "text": "威胁要曝光他们的丑闻",
+              "effect": "npc4_4"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "你竟敢威胁我？我要让你在银河系混不下去！",
+          "options": [
+            {
+              "text": "强硬对抗",
+              "effect": "npc4_5"
+            },
+            {
+              "text": "服软并给好处",
+              "effect": "npc4_6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "广告女主角",
+      "type": "celebrity",
+      "position": {
+        "x": 5,
+        "y": 8
+      },
+      "personality": "虚荣而善变",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "帝王，我的服装太丑了，我要换！",
+          "options": [
+            {
+              "text": "立刻安排人换装",
+              "effect": "npc5_1"
+            },
+            {
+              "text": "训斥她不懂时尚",
+              "effect": "npc5_2"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "如果不换，我就不上台了！",
+          "options": [
+            {
+              "text": "用合同威胁她",
+              "effect": "npc5_3"
+            },
+            {
+              "text": "亲自设计新服装",
+              "effect": "npc5_4"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "算了，看在你这么有诚意的份上，我勉强接受。",
+          "options": [
+            {
+              "text": "暗自庆幸",
+              "effect": "npc5_5"
+            },
+            {
+              "text": "得寸进尺要求加戏",
+              "effect": "npc5_6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "宇宙麦克风",
+      "type": "tool",
+      "position": {
+        "x": 4,
+        "y": 1
+      },
+      "description": "可以放大任何声音，但偶尔会加入奇怪的回声。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "拿起麦克风，你感觉充满了力量。",
+          "options": [
+            {
+              "text": "用它发表激情演讲",
+              "effect": "item1_1"
+            },
+            {
+              "text": "检查是否被做了手脚",
+              "effect": "item1_2"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "麦克风突然发出刺耳的噪音。",
+          "options": [
+            {
+              "text": "用力拍打它",
+              "effect": "item1_3"
+            },
+            {
+              "text": "调低音量",
+              "effect": "item1_4"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "麦克风恢复正常，甚至能翻译外星语言。",
+          "options": [
+            {
+              "text": "用它来与赞助商沟通",
+              "effect": "item1_5"
+            },
+            {
+              "text": "用它来指挥技术员",
+              "effect": "item1_6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "全息遥控器",
+      "type": "device",
+      "position": {
+        "x": 8,
+        "y": 2
+      },
+      "description": "控制所有全息投影，但只有三个按钮。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你找到了全息遥控器。",
+          "options": [
+            {
+              "text": "按下红色按钮",
+              "effect": "item2_1"
+            },
+            {
+              "text": "按下绿色按钮",
+              "effect": "item2_2"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "遥控器显示电量不足。",
+          "options": [
+            {
+              "text": "寻找电池",
+              "effect": "item2_3"
+            },
+            {
+              "text": "用力摇晃",
+              "effect": "item2_4"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "遥控器突然失灵，所有投影乱闪。",
+          "options": [
+            {
+              "text": "砸碎它",
+              "effect": "item2_5"
+            },
+            {
+              "text": "尝试用其他设备替代",
+              "effect": "item2_6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "星际钱袋",
+      "type": "currency",
+      "position": {
+        "x": 2,
+        "y": 6
+      },
+      "description": "装满星际通用货币，但似乎有追踪装置。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你捡起了沉甸甸的钱袋。",
+          "options": [
+            {
+              "text": "数一数有多少",
+              "effect": "item3_1"
+            },
+            {
+              "text": "直接揣进口袋",
+              "effect": "item3_2"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "钱袋突然发出警报声。",
+          "options": [
+            {
+              "text": "扔掉它",
+              "effect": "item3_3"
+            },
+            {
+              "text": "寻找解除警报的方法",
+              "effect": "item3_4"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "警报引来了安保机器人。",
+          "options": [
+            {
+              "text": "出示帝王身份",
+              "effect": "item3_5"
+            },
+            {
+              "text": "用钱袋收买机器人",
+              "effect": "item3_6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "记忆消除笔",
+      "type": "gadget",
+      "position": {
+        "x": 5,
+        "y": 4
+      },
+      "description": "可以消除指定对象的短期记忆，但只能用一次。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你获得了记忆消除笔。",
+          "options": [
+            {
+              "text": "对准记者使用",
+              "effect": "item4_1"
+            },
+            {
+              "text": "对准赞助商使用",
+              "effect": "item4_2"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "记忆消除笔的指示灯显示可用。",
+          "options": [
+            {
+              "text": "谨慎使用",
+              "effect": "item4_3"
+            },
+            {
+              "text": "留着以防万一",
+              "effect": "item4_4"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你决定使用它，但突然发现它其实是玩具。",
+          "options": [
+            {
+              "text": "失望地扔掉",
+              "effect": "item4_5"
+            },
+            {
+              "text": "用它开玩笑",
+              "effect": "item4_6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "神秘药丸",
+      "type": "consumable",
+      "position": {
+        "x": 9,
+        "y": 7
+      },
+      "description": "说明书丢失，可能是镇定剂或兴奋剂。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了这瓶药丸。",
+          "options": [
+            {
+              "text": "吞下一颗",
+              "effect": "item5_1"
+            },
+            {
+              "text": "让技术员化验",
+              "effect": "item5_2"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "药丸服用后，你感到极度自信。",
+          "options": [
+            {
+              "text": "借着药劲发挥",
+              "effect": "item5_3"
+            },
+            {
+              "text": "担心副作用",
+              "effect": "item5_4"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "药效过去，你开始头晕目眩。",
+          "options": [
+            {
+              "text": "找地方休息",
+              "effect": "item5_5"
+            },
+            {
+              "text": "硬撑着继续发布会",
+              "effect": "item5_6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": "所有NPC满意",
+      "description": "发布会完美落幕，广告大获成功，你成为银河系最伟大的广告帝王。"
+    },
+    {
+      "id": "ending2",
+      "condition": "得罪所有NPC",
+      "description": "发布会变成闹剧，你被赶出会场，名誉扫地。"
+    },
+    {
+      "id": "ending3",
+      "condition": "使用麦克风成功",
+      "description": "你的演讲震撼全场，但麦克风突然爆炸，你被送进医院。"
+    },
+    {
+      "id": "ending4",
+      "condition": "使用全息遥控器失败",
+      "description": "投影系统崩溃，整个会场陷入黑暗，发布会取消。"
+    },
+    {
+      "id": "ending5",
+      "condition": "收买记者",
+      "description": "记者替你隐瞒了财务危机，但你需要定期支付封口费。"
+    },
+    {
+      "id": "ending6",
+      "condition": "与赞助商和解",
+      "description": "你们达成新的合作协议，但你失去了主导权。"
+    },
+    {
+      "id": "ending7",
+      "condition": "女主角罢演",
+      "description": "她临时退出，你被迫亲自上场表演，意外走红。"
+    },
+    {
+      "id": "ending8",
+      "condition": "技术员修复系统",
+      "description": "系统恢复正常，但你发现所有广告都被替换成了竞争对手的产品。"
+    },
+    {
+      "id": "ending9",
+      "condition": "服用神秘药丸",
+      "description": "药丸让你精力充沛，但过后你失去了发布会期间的记忆。"
+    },
+    {
+      "id": "ending10",
+      "condition": "使用记忆消除笔",
+      "description": "消除了关键人物的记忆，但你自己也受到了影响。"
+    }
+  ],
+  "introText": "你，银河广告帝王，正在主持一场盛大的新品发布会。然而，距离直播开始仅剩60秒，各种麻烦接踵而至。你的每一个选择都将决定这场发布会的命运，以及你的帝国未来。",
+  "ambientMusic": "紧张而富有科技感的电子音乐，带有急促的鼓点",
+  "id": "fallback_world_026"
+}

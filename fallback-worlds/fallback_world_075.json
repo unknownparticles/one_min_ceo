@@ -1,0 +1,1253 @@
+{
+  "matchKeywords": [
+    "弹劾",
+    "议长",
+    "联盟",
+    "投票",
+    "危机"
+  ],
+  "identity": "银河联盟议长",
+  "theme": "银河联盟弹劾大会前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "stage",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "window",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "water",
+      "water",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "lava",
+      "lava",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "fountain",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "fire",
+      "fire",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_1",
+      "name": "参谋长",
+      "position": [
+        1,
+        10
+      ],
+      "role": "盟友",
+      "dialogue": "议长，弹劾议案已经提交，我们必须争取更多支持！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "参谋长低声说：有议员在秘密串联，我们需要反击。",
+          "options": [
+            {
+              "text": "让他继续监视",
+              "nextStage": 2,
+              "effect": {
+                "power": 10
+              }
+            },
+            {
+              "text": "直接公开指控",
+              "nextStage": 3,
+              "effect": {
+                "chaos": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "参谋长汇报：已经掌握部分证据，但还不充分。",
+          "options": [
+            {
+              "text": "搜集更多证据",
+              "nextStage": 3,
+              "effect": {
+                "power": 15
+              }
+            },
+            {
+              "text": "提前发动反击",
+              "nextStage": 4,
+              "effect": {
+                "chaos": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "参谋长：证据已经足够，但可能会引发混乱。",
+          "options": [
+            {
+              "text": "公布证据",
+              "nextStage": 4,
+              "effect": {
+                "power": 20,
+                "chaos": 15
+              }
+            },
+            {
+              "text": "私下交易",
+              "nextStage": 5,
+              "effect": {
+                "power": 5,
+                "chaos": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "弹劾大会陷入混乱，支持者与反对者开始对峙。",
+          "options": [
+            {
+              "text": "发表激情演讲",
+              "nextStage": 5,
+              "effect": {
+                "power": 30
+              }
+            },
+            {
+              "text": "宣布紧急状态",
+              "nextStage": 5,
+              "effect": {
+                "chaos": 20,
+                "power": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "最终投票即将开始，参谋长最后提醒。",
+          "options": [
+            {
+              "text": "坚定立场",
+              "nextStage": 0,
+              "effect": {
+                "ending": "胜利"
+              }
+            },
+            {
+              "text": "妥协求和",
+              "nextStage": 0,
+              "effect": {
+                "ending": "流亡"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_2",
+      "name": "反对派领袖",
+      "position": [
+        5,
+        3
+      ],
+      "role": "对手",
+      "dialogue": "议长，你的时代结束了！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "反对派领袖公开指责你腐败无能。",
+          "options": [
+            {
+              "text": "反驳指控",
+              "nextStage": 2,
+              "effect": {
+                "power": 5,
+                "chaos": 5
+              }
+            },
+            {
+              "text": "保持沉默",
+              "nextStage": 2,
+              "effect": {
+                "power": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他展示了一份所谓的证据文件。",
+          "options": [
+            {
+              "text": "质疑文件真实性",
+              "nextStage": 3,
+              "effect": {
+                "power": 10
+              }
+            },
+            {
+              "text": "承认部分事实",
+              "nextStage": 3,
+              "effect": {
+                "chaos": 10,
+                "power": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "反对派领袖提议进行不信任投票。",
+          "options": [
+            {
+              "text": "同意投票",
+              "nextStage": 4,
+              "effect": {
+                "chaos": 10
+              }
+            },
+            {
+              "text": "拖延时间",
+              "nextStage": 4,
+              "effect": {
+                "power": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "投票在即，反对派领袖显得自信满满。",
+          "options": [
+            {
+              "text": "揭露他的丑闻",
+              "nextStage": 5,
+              "effect": {
+                "power": 20,
+                "chaos": 20
+              }
+            },
+            {
+              "text": "寻求第三方调解",
+              "nextStage": 5,
+              "effect": {
+                "power": 5,
+                "chaos": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "最终对决，反对派领袖等待你的抉择。",
+          "options": [
+            {
+              "text": "强硬应对",
+              "nextStage": 0,
+              "effect": {
+                "ending": "险胜"
+              }
+            },
+            {
+              "text": "妥协退让",
+              "nextStage": 0,
+              "effect": {
+                "ending": "下台"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_3",
+      "name": "神秘顾问",
+      "position": [
+        4,
+        12
+      ],
+      "role": "中立",
+      "dialogue": "议长，我能帮助你扭转局面，但代价是什么？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "神秘顾问提出一个危险的计划。",
+          "options": [
+            {
+              "text": "接受计划",
+              "nextStage": 2,
+              "effect": {
+                "power": 20,
+                "chaos": 20
+              }
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 2,
+              "effect": {
+                "power": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "计划需要牺牲一名忠诚的部下。",
+          "options": [
+            {
+              "text": "牺牲部下",
+              "nextStage": 3,
+              "effect": {
+                "power": 30,
+                "chaos": 30
+              }
+            },
+            {
+              "text": "放弃计划",
+              "nextStage": 3,
+              "effect": {
+                "power": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "顾问又提出一个更诡诈的计谋。",
+          "options": [
+            {
+              "text": "使用计谋",
+              "nextStage": 4,
+              "effect": {
+                "power": 40,
+                "chaos": 40
+              }
+            },
+            {
+              "text": "拒绝并报警",
+              "nextStage": 4,
+              "effect": {
+                "power": 10,
+                "chaos": -20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "计划进行中，但联盟内部开始分裂。",
+          "options": [
+            {
+              "text": "继续执行",
+              "nextStage": 5,
+              "effect": {
+                "power": 50,
+                "chaos": 50
+              }
+            },
+            {
+              "text": "紧急叫停",
+              "nextStage": 5,
+              "effect": {
+                "chaos": -30,
+                "power": -20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "神秘顾问消失，留下烂摊子。",
+          "options": [
+            {
+              "text": "收拾残局",
+              "nextStage": 0,
+              "effect": {
+                "ending": "混乱中幸存"
+              }
+            },
+            {
+              "text": "推卸责任",
+              "nextStage": 0,
+              "effect": {
+                "ending": "被弹劾"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_4",
+      "name": "媒体记者",
+      "position": [
+        8,
+        2
+      ],
+      "role": "中立",
+      "dialogue": "议长，你对弹劾指控有什么回应？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "记者提问关于腐败指控。",
+          "options": [
+            {
+              "text": "否认一切",
+              "nextStage": 2,
+              "effect": {
+                "power": 5
+              }
+            },
+            {
+              "text": "承认失误",
+              "nextStage": 2,
+              "effect": {
+                "chaos": 5,
+                "power": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "记者追问细节。",
+          "options": [
+            {
+              "text": "提供模糊回答",
+              "nextStage": 3,
+              "effect": {
+                "power": -5
+              }
+            },
+            {
+              "text": "展示成就",
+              "nextStage": 3,
+              "effect": {
+                "power": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "记者声称有内部消息。",
+          "options": [
+            {
+              "text": "贿赂记者",
+              "nextStage": 4,
+              "effect": {
+                "power": -10,
+                "chaos": 10
+              }
+            },
+            {
+              "text": "威胁记者",
+              "nextStage": 4,
+              "effect": {
+                "chaos": 15,
+                "power": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "记者将报道偏向你或反对你。",
+          "options": [
+            {
+              "text": "友好合作",
+              "nextStage": 5,
+              "effect": {
+                "power": 15
+              }
+            },
+            {
+              "text": "拒绝合作",
+              "nextStage": 5,
+              "effect": {
+                "chaos": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "记者发布最终报道。",
+          "options": [
+            {
+              "text": "正面报道",
+              "nextStage": 0,
+              "effect": {
+                "ending": "舆论优势"
+              }
+            },
+            {
+              "text": "负面报道",
+              "nextStage": 0,
+              "effect": {
+                "ending": "舆论危机"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_5",
+      "name": "外星大使",
+      "position": [
+        10,
+        8
+      ],
+      "role": "盟友",
+      "dialogue": "议长，我们星域支持你，但需要贸易优惠。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "外星大使提出支持换取贸易特权。",
+          "options": [
+            {
+              "text": "答应条件",
+              "nextStage": 2,
+              "effect": {
+                "power": 20,
+                "chaos": 5
+              }
+            },
+            {
+              "text": "讨价还价",
+              "nextStage": 2,
+              "effect": {
+                "power": 10,
+                "chaos": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "大使要求更多。",
+          "options": [
+            {
+              "text": "增加优惠",
+              "nextStage": 3,
+              "effect": {
+                "power": 30,
+                "chaos": 10
+              }
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 3,
+              "effect": {
+                "power": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "大使威胁撤回支持。",
+          "options": [
+            {
+              "text": "妥协",
+              "nextStage": 4,
+              "effect": {
+                "power": 5,
+                "chaos": 15
+              }
+            },
+            {
+              "text": "强硬回应",
+              "nextStage": 4,
+              "effect": {
+                "power": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "大使要求签订秘密协议。",
+          "options": [
+            {
+              "text": "签署",
+              "nextStage": 5,
+              "effect": {
+                "power": 40,
+                "chaos": 30
+              }
+            },
+            {
+              "text": "公开协议",
+              "nextStage": 5,
+              "effect": {
+                "power": 10,
+                "chaos": -20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "大使表示支持与否取决于你。",
+          "options": [
+            {
+              "text": "接受支持",
+              "nextStage": 0,
+              "effect": {
+                "ending": "外星联盟"
+              }
+            },
+            {
+              "text": "放弃支持",
+              "nextStage": 0,
+              "effect": {
+                "ending": "孤立无援"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_1",
+      "name": "弹劾文件",
+      "position": [
+        2,
+        8
+      ],
+      "type": "document",
+      "effect": {
+        "power": 10,
+        "chaos": 5
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了一份弹劾文件的副本。",
+          "options": [
+            {
+              "text": "销毁文件",
+              "nextStage": 2,
+              "effect": {
+                "chaos": -10
+              }
+            },
+            {
+              "text": "公之于众",
+              "nextStage": 2,
+              "effect": {
+                "chaos": 20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "文件中有指控你的内容。",
+          "options": [
+            {
+              "text": "修改文件",
+              "nextStage": 3,
+              "effect": {
+                "power": 15,
+                "chaos": 15
+              }
+            },
+            {
+              "text": "保留原样",
+              "nextStage": 3,
+              "effect": {
+                "power": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "文件被媒体获得。",
+          "options": [
+            {
+              "text": "引导舆论",
+              "nextStage": 0,
+              "effect": {
+                "ending": "舆论控制"
+              }
+            },
+            {
+              "text": "沉默应对",
+              "nextStage": 0,
+              "effect": {
+                "ending": "被动"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_2",
+      "name": "贿赂金",
+      "position": [
+        4,
+        9
+      ],
+      "type": "money",
+      "effect": {
+        "power": 20,
+        "chaos": 15
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了一箱贿赂金。",
+          "options": [
+            {
+              "text": "据为己有",
+              "nextStage": 2,
+              "effect": {
+                "power": 20,
+                "chaos": 20
+              }
+            },
+            {
+              "text": "上交联盟",
+              "nextStage": 2,
+              "effect": {
+                "power": 10,
+                "chaos": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "有人看到你拿走了钱。",
+          "options": [
+            {
+              "text": "封口",
+              "nextStage": 3,
+              "effect": {
+                "chaos": 10,
+                "power": -5
+              }
+            },
+            {
+              "text": "承认",
+              "nextStage": 3,
+              "effect": {
+                "chaos": 20,
+                "power": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "贿赂金成为把柄。",
+          "options": [
+            {
+              "text": "用于收买",
+              "nextStage": 0,
+              "effect": {
+                "ending": "贿赂成功"
+              }
+            },
+            {
+              "text": "销毁证据",
+              "nextStage": 0,
+              "effect": {
+                "ending": "脱身"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_3",
+      "name": "录音笔",
+      "position": [
+        7,
+        11
+      ],
+      "type": "device",
+      "effect": {
+        "power": 15,
+        "chaos": 10
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了一支录音笔，里面录有秘密对话。",
+          "options": [
+            {
+              "text": "播放录音",
+              "nextStage": 2,
+              "effect": {
+                "chaos": 20
+              }
+            },
+            {
+              "text": "隐藏录音",
+              "nextStage": 2,
+              "effect": {
+                "power": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "录音内容涉及反对派的阴谋。",
+          "options": [
+            {
+              "text": "公开录音",
+              "nextStage": 3,
+              "effect": {
+                "power": 30,
+                "chaos": 30
+              }
+            },
+            {
+              "text": "私下利用",
+              "nextStage": 3,
+              "effect": {
+                "power": 20,
+                "chaos": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "录音被质疑真实性。",
+          "options": [
+            {
+              "text": "鉴定真伪",
+              "nextStage": 0,
+              "effect": {
+                "ending": "证据确凿"
+              }
+            },
+            {
+              "text": "放弃使用",
+              "nextStage": 0,
+              "effect": {
+                "ending": "失去机会"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_4",
+      "name": "忠诚勋章",
+      "position": [
+        6,
+        5
+      ],
+      "type": "badge",
+      "effect": {
+        "power": 25,
+        "chaos": -10
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你找到了前任议长的忠诚勋章。",
+          "options": [
+            {
+              "text": "佩戴勋章",
+              "nextStage": 2,
+              "effect": {
+                "power": 15
+              }
+            },
+            {
+              "text": "收藏起来",
+              "nextStage": 2,
+              "effect": {
+                "power": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "勋章象征权威。",
+          "options": [
+            {
+              "text": "展示给众人",
+              "nextStage": 3,
+              "effect": {
+                "power": 20
+              }
+            },
+            {
+              "text": "用于拉拢",
+              "nextStage": 3,
+              "effect": {
+                "power": 10,
+                "chaos": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "有人质疑勋章的合法性。",
+          "options": [
+            {
+              "text": "证明真品",
+              "nextStage": 0,
+              "effect": {
+                "ending": "权威认可"
+              }
+            },
+            {
+              "text": "低调处理",
+              "nextStage": 0,
+              "effect": {
+                "ending": "象征意义"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_5",
+      "name": "逃生舱钥匙",
+      "position": [
+        9,
+        14
+      ],
+      "type": "key",
+      "effect": {
+        "power": -10,
+        "chaos": 0
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了一把逃生舱钥匙。",
+          "options": [
+            {
+              "text": "保留钥匙",
+              "nextStage": 2,
+              "effect": {}
+            },
+            {
+              "text": "检查逃生舱",
+              "nextStage": 2,
+              "effect": {
+                "power": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "逃生舱可以带你离开。",
+          "options": [
+            {
+              "text": "准备逃跑",
+              "nextStage": 3,
+              "effect": {
+                "chaos": 10
+              }
+            },
+            {
+              "text": "留下战斗",
+              "nextStage": 3,
+              "effect": {
+                "power": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "最后一刻，你决定是否使用钥匙。",
+          "options": [
+            {
+              "text": "使用钥匙",
+              "nextStage": 0,
+              "effect": {
+                "ending": "逃亡"
+              }
+            },
+            {
+              "text": "放弃钥匙",
+              "nextStage": 0,
+              "effect": {
+                "ending": "坚守"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_1",
+      "condition": "power >= 80",
+      "text": "你成功镇压了反对派，继续担任议长。",
+      "type": "win"
+    },
+    {
+      "id": "ending_2",
+      "condition": "chaos >= 80",
+      "text": "联盟陷入内战，你被迫流亡。",
+      "type": "lose"
+    },
+    {
+      "id": "ending_3",
+      "condition": "power >= 60 && chaos >= 50",
+      "text": "你以强硬手段保住位置，但联盟分裂。",
+      "type": "neutral"
+    },
+    {
+      "id": "ending_4",
+      "condition": "power < 20",
+      "text": "你被成功弹劾，沦为阶下囚。",
+      "type": "lose"
+    },
+    {
+      "id": "ending_5",
+      "condition": "chaos < 20 && power >= 50",
+      "text": "你通过谈判化解危机，声望大增。",
+      "type": "win"
+    },
+    {
+      "id": "ending_6",
+      "condition": "power >= 30 && chaos >= 30",
+      "text": "弹劾结果悬而未决，你陷入长期政治斗争。",
+      "type": "neutral"
+    },
+    {
+      "id": "ending_7",
+      "condition": "power >= 70 && chaos < 30",
+      "text": "你得到广泛支持，轻松连任。",
+      "type": "win"
+    },
+    {
+      "id": "ending_8",
+      "condition": "chaos >= 70 && power < 30",
+      "text": "联盟崩溃，你在混乱中失踪。",
+      "type": "lose"
+    }
+  ],
+  "introText": "银河联盟弹劾大会即将开始，你作为议长只有60秒来扭转局面。每一个选择都将决定你的命运。",
+  "ambientMusic": "紧张的交响乐，配有低沉的鼓点和弦乐",
+  "id": "fallback_world_075"
+}

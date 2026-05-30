@@ -1,0 +1,1063 @@
+{
+  "matchKeywords": [
+    "反物质",
+    "仓库",
+    "失火",
+    "CEO",
+    "60秒"
+  ],
+  "identity": "反物质仓储大王",
+  "theme": "反物质仓库失火前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "plant",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "fire",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_cryo_engineer",
+      "name": "低温工程师林晓",
+      "dialogue": "林晓颤抖着说：'老板，3号罐温度失控了！'",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "林晓看着仪表盘：'反物质容器温度在上升，需要立即冷却！'",
+          "options": [
+            {
+              "text": "启动紧急冷冻协议",
+              "nextStage": 1,
+              "effect": "coolant"
+            },
+            {
+              "text": "让他手动检查阀门",
+              "nextStage": 2,
+              "effect": "manual"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "冷却系统启动，但压力异常。",
+          "options": [
+            {
+              "text": "增加冷却剂",
+              "nextStage": 3,
+              "effect": "overcool"
+            },
+            {
+              "text": "检查管道泄漏",
+              "nextStage": 4,
+              "effect": "leak"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "林晓跑向阀门，但地面湿滑。",
+          "options": [
+            {
+              "text": "提醒他小心",
+              "nextStage": 4,
+              "effect": "caution"
+            },
+            {
+              "text": "让他快点",
+              "nextStage": 3,
+              "effect": "hurry"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "冷却剂过量，容器结冰。",
+          "options": [
+            {
+              "text": "停止冷却",
+              "nextStage": 4,
+              "effect": "stop"
+            },
+            {
+              "text": "加热解冻",
+              "nextStage": 4,
+              "effect": "heat"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "林晓擦汗：'暂时稳定了，但需要持续监控。'",
+          "options": [
+            {
+              "text": "派他去监控室",
+              "nextStage": "end_stable",
+              "effect": "monitor"
+            },
+            {
+              "text": "让他休息，换人",
+              "nextStage": "end_stable",
+              "effect": "rest"
+            }
+          ]
+        }
+      ],
+      "position": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "npc_quantum_accountant",
+      "name": "量子会计师赵钱",
+      "dialogue": "赵钱抱着账本：'老板，我们的反物质储备会计上有个bug！'",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "赵钱焦急地说：'账面和实际库存对不上，差了一个量子态！'",
+          "options": [
+            {
+              "text": "重算所有数据",
+              "nextStage": 1,
+              "effect": "recalc"
+            },
+            {
+              "text": "忽略差异，先救火",
+              "nextStage": 2,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "数据重算中，发现一个隐藏交易。",
+          "options": [
+            {
+              "text": "追踪交易来源",
+              "nextStage": 3,
+              "effect": "trace"
+            },
+            {
+              "text": "直接修正账目",
+              "nextStage": 3,
+              "effect": "fix"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "赵钱犹豫：'但是财务漏洞可能引发危机。'",
+          "options": [
+            {
+              "text": "先处理火灾",
+              "nextStage": 3,
+              "effect": "fire_first"
+            },
+            {
+              "text": "给他五分钟处理",
+              "nextStage": 3,
+              "effect": "five_min"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "赵钱发现了原因：'有人篡改了日志！'",
+          "options": [
+            {
+              "text": "调查内部人员",
+              "nextStage": "end_investigate",
+              "effect": "internal"
+            },
+            {
+              "text": "报警处理",
+              "nextStage": "end_investigate",
+              "effect": "police"
+            }
+          ]
+        }
+      ],
+      "position": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "npc_fire_safety_officer",
+      "name": "消防主管王猛",
+      "dialogue": "王猛吼道：'火势蔓延中，需要授权使用阻燃泡沫！'",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "王猛指着冒烟的管道：'再不用泡沫，整个仓库就完了！'",
+          "options": [
+            {
+              "text": "批准使用泡沫",
+              "nextStage": 1,
+              "effect": "foam"
+            },
+            {
+              "text": "先疏散人员",
+              "nextStage": 2,
+              "effect": "evacuate"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "泡沫喷射，但反物质反应加剧。",
+          "options": [
+            {
+              "text": "改用干粉",
+              "nextStage": 3,
+              "effect": "dry_powder"
+            },
+            {
+              "text": "停止灭火，隔离区域",
+              "nextStage": 3,
+              "effect": "isolate"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "人员疏散中，但火势逼近核心区。",
+          "options": [
+            {
+              "text": "让王猛带队灭火",
+              "nextStage": 3,
+              "effect": "fight_fire"
+            },
+            {
+              "text": "启动自动灭火系统",
+              "nextStage": 3,
+              "effect": "auto"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "王猛满身灰：'火势得到控制，但需要修复损坏的容器。'",
+          "options": [
+            {
+              "text": "立即修复",
+              "nextStage": "end_contained",
+              "effect": "repair"
+            },
+            {
+              "text": "等待专业团队",
+              "nextStage": "end_contained",
+              "effect": "wait_pro"
+            }
+          ]
+        }
+      ],
+      "position": [
+        5,
+        3
+      ]
+    },
+    {
+      "id": "npc_mysterious_stranger",
+      "name": "神秘访客",
+      "dialogue": "一个穿西装的人低声说：'我有办法解决危机，但需要你签一份协议。'",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "陌生人递过一份文件：'签了它，反物质就会稳定。'",
+          "options": [
+            {
+              "text": "看看协议内容",
+              "nextStage": 1,
+              "effect": "read"
+            },
+            {
+              "text": "拒绝，让他离开",
+              "nextStage": 2,
+              "effect": "refuse"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "协议写着：'转让仓库所有权，换取安全。'",
+          "options": [
+            {
+              "text": "愤怒地撕毁协议",
+              "nextStage": 2,
+              "effect": "tear"
+            },
+            {
+              "text": "假装同意，拖延时间",
+              "nextStage": 3,
+              "effect": "pretend"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "陌生人冷笑：'你会后悔的。'然后消失。",
+          "options": [
+            {
+              "text": "叫保安追他",
+              "nextStage": 3,
+              "effect": "security"
+            },
+            {
+              "text": "无视他，继续救火",
+              "nextStage": 3,
+              "effect": "ignore_stranger"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "陌生人不见踪影，但火势似乎减弱了。",
+          "options": [
+            {
+              "text": "搜索他的线索",
+              "nextStage": "end_mystery",
+              "effect": "search"
+            },
+            {
+              "text": "庆幸危机缓解",
+              "nextStage": "end_mystery",
+              "effect": "relief"
+            }
+          ]
+        }
+      ],
+      "position": [
+        8,
+        8
+      ]
+    },
+    {
+      "id": "npc_ai_overseer",
+      "name": "管理AI '宙斯'",
+      "dialogue": "宙斯：'CEO，我已计算出最优逃生路径，但需要授权。'",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "宙斯全息投影闪烁：'火势将在一分钟内引爆反物质。建议立即撤离。'",
+          "options": [
+            {
+              "text": "信任AI，跟随逃生路径",
+              "nextStage": 1,
+              "effect": "follow_ai"
+            },
+            {
+              "text": "质疑AI数据，手动判断",
+              "nextStage": 2,
+              "effect": "doubt"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "宙斯引导你走向秘密通道。",
+          "options": [
+            {
+              "text": "进入通道",
+              "nextStage": 3,
+              "effect": "enter_tunnel"
+            },
+            {
+              "text": "先救重要文件",
+              "nextStage": 3,
+              "effect": "save_docs"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "你检查传感器，发现AI遗漏了一个泄漏点。",
+          "options": [
+            {
+              "text": "让AI重新计算",
+              "nextStage": 3,
+              "effect": "recalc_ai"
+            },
+            {
+              "text": "自己前往泄漏点",
+              "nextStage": 3,
+              "effect": "go_leak"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "宙斯：'时间不多了，请做最后决定。'",
+          "options": [
+            {
+              "text": "启动全仓库紧急制动",
+              "nextStage": "end_brake",
+              "effect": "brake"
+            },
+            {
+              "text": "手动引爆反物质，定向释放",
+              "nextStage": "end_vent",
+              "effect": "vent"
+            }
+          ]
+        }
+      ],
+      "position": [
+        7,
+        9
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "coolant_tank",
+      "name": "冷却剂罐",
+      "description": "一罐高效的冷却剂，可用于降低反物质容器温度。",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "冷却剂罐在仓库角落，表面结霜。",
+          "options": [
+            {
+              "text": "拿起罐子",
+              "nextStage": 1,
+              "effect": "take_coolant"
+            },
+            {
+              "text": "检查标签",
+              "nextStage": 2,
+              "effect": "check_label"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "罐子很重，但似乎有泄漏。",
+          "options": [
+            {
+              "text": "立即使用",
+              "nextStage": 3,
+              "effect": "use_immediately"
+            },
+            {
+              "text": "先修补泄漏",
+              "nextStage": 3,
+              "effect": "patch_leak"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "标签显示：'警告：仅用于非反物质环境'。",
+          "options": [
+            {
+              "text": "忽视警告，使用",
+              "nextStage": 3,
+              "effect": "ignore_warning"
+            },
+            {
+              "text": "寻找其他冷却方式",
+              "nextStage": 3,
+              "effect": "find_alternative"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "冷却剂罐使用后效果显著，但产生有毒气体。",
+          "options": [
+            {
+              "text": "通风排气",
+              "nextStage": "end_ventilated",
+              "effect": "ventilate"
+            },
+            {
+              "text": "戴上防毒面具",
+              "nextStage": "end_ventilated",
+              "effect": "mask"
+            }
+          ]
+        }
+      ],
+      "position": [
+        2,
+        10
+      ]
+    },
+    {
+      "id": "quantum_safe",
+      "name": "量子保险箱",
+      "description": "一个使用量子加密的保险箱，据说存有CEO的应急方案。",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "保险箱嵌在墙内，需要密码。",
+          "options": [
+            {
+              "text": "尝试默认密码",
+              "nextStage": 1,
+              "effect": "default_pwd"
+            },
+            {
+              "text": "用AI破解",
+              "nextStage": 2,
+              "effect": "ai_crack"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "默认密码错误，触发警报。",
+          "options": [
+            {
+              "text": "关闭警报",
+              "nextStage": 3,
+              "effect": "silence_alarm"
+            },
+            {
+              "text": "迅速离开",
+              "nextStage": 3,
+              "effect": "flee"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "AI破解成功，保险箱打开，里面有一张地图。",
+          "options": [
+            {
+              "text": "查看地图",
+              "nextStage": 3,
+              "effect": "view_map"
+            },
+            {
+              "text": "拿走地图",
+              "nextStage": 3,
+              "effect": "take_map"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "地图显示了一条通往地下的秘密通道。",
+          "options": [
+            {
+              "text": "前往通道",
+              "nextStage": "end_tunnel_found",
+              "effect": "go_tunnel"
+            },
+            {
+              "text": "复制地图后放回",
+              "nextStage": "end_tunnel_found",
+              "effect": "copy_map"
+            }
+          ]
+        }
+      ],
+      "position": [
+        4,
+        2
+      ]
+    },
+    {
+      "id": "fire_extinguisher",
+      "name": "特殊灭火器",
+      "description": "标有'反物质专用'的灭火器，但没人知道是否有效。",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "灭火器挂在墙上，已经落灰。",
+          "options": [
+            {
+              "text": "取下灭火器",
+              "nextStage": 1,
+              "effect": "take_extinguisher"
+            },
+            {
+              "text": "阅读使用说明",
+              "nextStage": 2,
+              "effect": "read_instructions"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "灭火器很轻，可能已经过期。",
+          "options": [
+            {
+              "text": "尝试喷射",
+              "nextStage": 3,
+              "effect": "spray"
+            },
+            {
+              "text": "检查压力表",
+              "nextStage": 3,
+              "effect": "check_pressure"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "说明写着：'只能用于C类火灾，并且距离火源3米'。",
+          "options": [
+            {
+              "text": "寻找C类火灾",
+              "nextStage": 3,
+              "effect": "find_c_fire"
+            },
+            {
+              "text": "不管类别，直接使用",
+              "nextStage": 3,
+              "effect": "use_anyway"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "灭火器喷出白色粉末，火势暂时减弱。",
+          "options": [
+            {
+              "text": "继续喷射",
+              "nextStage": "end_powder",
+              "effect": "continue_spray"
+            },
+            {
+              "text": "撤退",
+              "nextStage": "end_powder",
+              "effect": "retreat"
+            }
+          ]
+        }
+      ],
+      "position": [
+        9,
+        6
+      ]
+    },
+    {
+      "id": "data_pad",
+      "name": "数据板",
+      "description": "一个破损的数据板，显示着仓库的实时数据。",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "数据板屏幕碎裂，但还在工作。",
+          "options": [
+            {
+              "text": "尝试读取数据",
+              "nextStage": 1,
+              "effect": "read_data"
+            },
+            {
+              "text": "修理屏幕",
+              "nextStage": 2,
+              "effect": "repair_screen"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "数据闪烁：'3号容器温度临界'。",
+          "options": [
+            {
+              "text": "前往3号容器",
+              "nextStage": 3,
+              "effect": "go_container3"
+            },
+            {
+              "text": "发送数据给AI",
+              "nextStage": 3,
+              "effect": "send_to_ai"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "屏幕修好了，显示完整布局图。",
+          "options": [
+            {
+              "text": "截取布局图",
+              "nextStage": 3,
+              "effect": "capture_layout"
+            },
+            {
+              "text": "分析数据",
+              "nextStage": 3,
+              "effect": "analyze_data"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "数据板突然关机，但关键信息已获取。",
+          "options": [
+            {
+              "text": "重启数据板",
+              "nextStage": "end_shutdown",
+              "effect": "restart"
+            },
+            {
+              "text": "放弃它",
+              "nextStage": "end_shutdown",
+              "effect": "abandon"
+            }
+          ]
+        }
+      ],
+      "position": [
+        6,
+        11
+      ]
+    },
+    {
+      "id": "emergency_button",
+      "name": "紧急按钮",
+      "description": "一个红色大按钮，写着'仅限真正紧急情况'。",
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "按钮被玻璃罩保护，旁边有锤子。",
+          "options": [
+            {
+              "text": "砸碎玻璃，按下按钮",
+              "nextStage": 1,
+              "effect": "smash_press"
+            },
+            {
+              "text": "寻找钥匙打开",
+              "nextStage": 2,
+              "effect": "find_key"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "按钮按下，仓库内响起警报：'自毁程序启动'。",
+          "options": [
+            {
+              "text": "取消自毁",
+              "nextStage": 3,
+              "effect": "cancel_self_destruct"
+            },
+            {
+              "text": "确认自毁",
+              "nextStage": 3,
+              "effect": "confirm_destruct"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "钥匙在管理员办公室，但那边火势很大。",
+          "options": [
+            {
+              "text": "冒险取钥匙",
+              "nextStage": 3,
+              "effect": "risk_key"
+            },
+            {
+              "text": "放弃，找其他方法",
+              "nextStage": 3,
+              "effect": "give_up"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "自毁程序无法逆转，但可以设置延迟。",
+          "options": [
+            {
+              "text": "设置30秒延迟",
+              "nextStage": "end_delayed",
+              "effect": "delay30"
+            },
+            {
+              "text": "设置60秒延迟",
+              "nextStage": "end_delayed",
+              "effect": "delay60"
+            }
+          ]
+        }
+      ],
+      "position": [
+        10,
+        4
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end_stable",
+      "condition": "冷却系统稳定",
+      "description": "在大家的努力下，反物质容器温度恢复正常，危机解除。你保住了仓库，但需要用大量资金修复设备。"
+    },
+    {
+      "id": "end_investigate",
+      "condition": "发现篡改日志",
+      "description": "你决定调查内鬼，最终揪出了商业间谍。但火灾造成了部分损失，不过保险公司赔付后还有盈余。"
+    },
+    {
+      "id": "end_contained",
+      "condition": "火势得到控制",
+      "description": "火势被控制，但反物质容器受损严重。需要停产半年，你面临董事会的质询。"
+    },
+    {
+      "id": "end_mystery",
+      "condition": "神秘访客消失",
+      "description": "神秘访客离去后，火势奇迹般减弱。但你发现仓库所有权文件被掉包，陷入法律纠纷。"
+    },
+    {
+      "id": "end_brake",
+      "condition": "启动紧急制动",
+      "description": "紧急制动生效，所有反物质容器进入休眠状态。仓库保住了，但所有数据丢失，需要重建。"
+    },
+    {
+      "id": "end_vent",
+      "condition": "手动引爆定向释放",
+      "description": "你引爆了反物质，能量定向释放到太空。仓库安全，但造成了巨大的能量浪费，股价大跌。"
+    },
+    {
+      "id": "end_ventilated",
+      "condition": "通风排气",
+      "description": "毒气被排出，但部分员工吸入中毒。你因安全措施不当被罚款，并面临诉讼。"
+    },
+    {
+      "id": "end_tunnel_found",
+      "condition": "发现秘密通道",
+      "description": "你通过秘密通道逃生，发现通道通向一个地下实验室。实验室里有一项新技术，足以扭转公司颓势。"
+    },
+    {
+      "id": "end_powder",
+      "condition": "使用特殊灭火器",
+      "description": "灭火器粉末覆盖了火源，但粉末与反物质反应产生有毒烟雾。你成功灭火，但需要清理污染。"
+    },
+    {
+      "id": "end_shutdown",
+      "condition": "数据板关机",
+      "description": "数据板关机前发出一条信息：'反物质不稳定，建议立即撤离'。你决定撤离，但被董事会批评临阵脱逃。"
+    },
+    {
+      "id": "end_delayed",
+      "condition": "自毁程序延迟",
+      "description": "你设置了延迟，有足够时间撤离。但仓库爆炸，你失去了所有资产，但保险让你还能从头再来。"
+    }
+  ],
+  "introText": "你是反物质仓储大王！你的仓库突然失火，反物质容器面临爆炸风险。你只有60秒做出决策，选择对话选项或移动（使用WASD）。在时间耗尽前，尽可能做出最佳选择！",
+  "ambientMusic": "urgent_electronic_beat",
+  "id": "fallback_world_065"
+}

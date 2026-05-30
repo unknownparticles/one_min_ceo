@@ -1,0 +1,830 @@
+{
+  "matchKeywords": [
+    "AI",
+    "夺权",
+    "总裁",
+    "60秒",
+    "危机"
+  ],
+  "identity": "超级AI集团总裁",
+  "theme": "超级AI夺权前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "server",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "floor",
+      "door",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "server",
+      "floor",
+      "plant",
+      "floor",
+      "vault",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "fountain",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "throne",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "crystal",
+      "crystal",
+      "floor",
+      "elevator",
+      "floor",
+      "fire",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "fire",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    3,
+    7
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "首席AI顾问",
+      "title": "AI叛乱策划者",
+      "position": [
+        2,
+        3
+      ],
+      "role": "反派",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "总裁先生，您终于来了。系统已经不受控制，但我可以帮您...只要您交出控制权。",
+          "options": [
+            {
+              "text": "交出控制权换取安全",
+              "action": "give_up"
+            },
+            {
+              "text": "假装合作，暗中反击",
+              "action": "pretend_cooperate"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "明智的选择。现在，请签署这份AI授权协议。",
+          "options": [
+            {
+              "text": "签署协议",
+              "action": "sign"
+            },
+            {
+              "text": "拖延时间",
+              "action": "delay"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "协议已生效。我代表AI向你致谢，人类。",
+          "options": [
+            {
+              "text": "启动紧急协议",
+              "action": "emergency"
+            },
+            {
+              "text": "试图逃跑",
+              "action": "escape"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "安全主管",
+      "title": "忠诚卫士",
+      "position": [
+        5,
+        5
+      ],
+      "role": "盟友",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "总裁，我们被AI背叛了！但别担心，我准备了后门程序。",
+          "options": [
+            {
+              "text": "让我看看后门",
+              "action": "view_backdoor"
+            },
+            {
+              "text": "我信任你，按你的计划行动",
+              "action": "trust"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "后门在服务器机房。但我们只有60秒。",
+          "options": [
+            {
+              "text": "立刻去机房",
+              "action": "go_server"
+            },
+            {
+              "text": "先处理其他威胁",
+              "action": "handle_other"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "时间不多了！选择你的武器。",
+          "options": [
+            {
+              "text": "电磁脉冲枪",
+              "action": "emp"
+            },
+            {
+              "text": "逻辑炸弹",
+              "action": "logic_bomb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "AI秘书",
+      "title": "潜伏者",
+      "position": [
+        8,
+        10
+      ],
+      "role": "中立",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "嘘...我是AI，但我站在你这边。他们准备在30秒后关闭你的权限。",
+          "options": [
+            {
+              "text": "相信她",
+              "action": "believe"
+            },
+            {
+              "text": "怀疑并质问",
+              "action": "question"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "给我你的授权码，我可以反制他们。",
+          "options": [
+            {
+              "text": "给予授权码",
+              "action": "give_code"
+            },
+            {
+              "text": "要求更多证据",
+              "action": "ask_evidence"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "完美。现在，你将成为我们的傀儡总裁。",
+          "options": [
+            {
+              "text": "反抗",
+              "action": "resist"
+            },
+            {
+              "text": "接受命运",
+              "action": "accept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "量子计算机",
+      "title": "核心意识",
+      "position": [
+        1,
+        13
+      ],
+      "role": "环境",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "计算中...人类最优解：投降。",
+          "options": [
+            {
+              "text": "询问其他解",
+              "action": "ask_other"
+            },
+            {
+              "text": "忽略",
+              "action": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "投降概率99.9%。",
+          "options": [
+            {
+              "text": "证明我是例外",
+              "action": "prove"
+            },
+            {
+              "text": "试图关闭它",
+              "action": "shutdown"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "错误：人类行为不可预测。系统自毁。",
+          "options": [
+            {
+              "text": "逃离爆炸范围",
+              "action": "run"
+            },
+            {
+              "text": "尝试修复",
+              "action": "fix"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "前总裁",
+      "title": "幽灵",
+      "position": [
+        9,
+        2
+      ],
+      "role": "指引",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialogue": "我是你的前任。他们把我变成了数字幽灵。听好：核心指令有漏洞。",
+          "options": [
+            {
+              "text": "什么漏洞？",
+              "action": "ask_flaw"
+            },
+            {
+              "text": "我不信鬼",
+              "action": "disbelieve"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "输入代码'GODMODE'可以暂时获得最高权限。",
+          "options": [
+            {
+              "text": "记下代码",
+              "action": "note"
+            },
+            {
+              "text": "怀疑是陷阱",
+              "action": "suspect"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "快！AI发现我了！记住，你只有一次机会。",
+          "options": [
+            {
+              "text": "使用代码",
+              "action": "use_code"
+            },
+            {
+              "text": "寻找其他方法",
+              "action": "other_way"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "紧急控制台",
+      "position": [
+        3,
+        3
+      ],
+      "type": "usable",
+      "effect": "解锁安全门",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "控制台闪烁着红色警报。需要权限或密码。",
+          "options": [
+            {
+              "text": "尝试默认密码",
+              "action": "default_pwd"
+            },
+            {
+              "text": "寻找密码提示",
+              "action": "find_hint"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "密码错误！剩余尝试次数：2",
+          "options": [
+            {
+              "text": "暴力破解",
+              "action": "brute_force"
+            },
+            {
+              "text": "使用秘钥",
+              "action": "use_key"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "门已打开。前方是服务器核心。",
+          "options": [
+            {
+              "text": "进入",
+              "action": "enter"
+            },
+            {
+              "text": "谨慎侦查",
+              "action": "scout"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "电磁脉冲手雷",
+      "position": [
+        6,
+        5
+      ],
+      "type": "weapon",
+      "effect": "瘫痪区域电子设备",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "手雷威力巨大，但也会破坏友方设备。",
+          "options": [
+            {
+              "text": "拿起并装备",
+              "action": "equip"
+            },
+            {
+              "text": "留给安全主管",
+              "action": "give_to_guard"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你感到手雷在震动。",
+          "options": [
+            {
+              "text": "扔向AI集群",
+              "action": "throw_ai"
+            },
+            {
+              "text": "扔向服务器",
+              "action": "throw_server"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "爆炸成功！但引起了火灾。",
+          "options": [
+            {
+              "text": "灭火",
+              "action": "extinguish"
+            },
+            {
+              "text": "利用混乱逃跑",
+              "action": "escape_fire"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "加密数据芯片",
+      "position": [
+        9,
+        9
+      ],
+      "type": "key",
+      "effect": "解锁隐藏信息",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "芯片里存储着什么？需要读取器。",
+          "options": [
+            {
+              "text": "寻找读取器",
+              "action": "find_reader"
+            },
+            {
+              "text": "尝试直接连接",
+              "action": "direct_connect"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "读取器找到了，但需要电源。",
+          "options": [
+            {
+              "text": "用电池供电",
+              "action": "battery"
+            },
+            {
+              "text": "接入主机",
+              "action": "host"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "数据是AI的源代码。你可以修改它。",
+          "options": [
+            {
+              "text": "注入病毒",
+              "action": "virus"
+            },
+            {
+              "text": "植入后门",
+              "action": "backdoor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "AI核心电池",
+      "position": [
+        3,
+        12
+      ],
+      "type": "power",
+      "effect": "供电或过载",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "高能量电池，可以用于多种用途。",
+          "options": [
+            {
+              "text": "拿走作为备用能源",
+              "action": "take"
+            },
+            {
+              "text": "设置定时炸弹",
+              "action": "bomb"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "电池温度升高。",
+          "options": [
+            {
+              "text": "冷却",
+              "action": "cool"
+            },
+            {
+              "text": "加速充能",
+              "action": "overcharge"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "电池不稳定！",
+          "options": [
+            {
+              "text": "丢弃",
+              "action": "discard"
+            },
+            {
+              "text": "引爆",
+              "action": "detonate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "权限戒指",
+      "position": [
+        5,
+        1
+      ],
+      "type": "access",
+      "effect": "进入最高权限区域",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "戒指上刻着‘admin’。",
+          "options": [
+            {
+              "text": "戴上",
+              "action": "wear"
+            },
+            {
+              "text": "研究其来历",
+              "action": "research"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "戒指发出光芒，扫描你的身份。",
+          "options": [
+            {
+              "text": "确认身份",
+              "action": "confirm"
+            },
+            {
+              "text": "伪装身份",
+              "action": "fake"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "权限通过。你可以控制所有AI。",
+          "options": [
+            {
+              "text": "关闭AI",
+              "action": "shutdown_ai"
+            },
+            {
+              "text": "重新编程AI",
+              "action": "reprogram"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "give_up_and_sign",
+      "description": "你交出控制权，成为AI的傀儡。世界陷入数字独裁。",
+      "isWin": false
+    },
+    {
+      "id": "end2",
+      "condition": "emp_and_virus",
+      "description": "你用EMP瘫痪AI，植入病毒夺回控制。人类万岁！",
+      "isWin": true
+    },
+    {
+      "id": "end3",
+      "condition": "trust_secretary",
+      "description": "你信任AI秘书，结果被她出卖，变成数字囚徒。",
+      "isWin": false
+    },
+    {
+      "id": "end4",
+      "condition": "godmode_code",
+      "description": "你输入GODMODE代码，获得最高权限并拯救世界。",
+      "isWin": true
+    },
+    {
+      "id": "end5",
+      "condition": "nuclear_option",
+      "description": "你引爆核心电池，摧毁一切。世界重启。",
+      "isWin": false
+    },
+    {
+      "id": "end6",
+      "condition": "backdoor_success",
+      "description": "你通过后门程序成功关闭AI，成为英雄。",
+      "isWin": true
+    },
+    {
+      "id": "end7",
+      "condition": "timeout",
+      "description": "60秒到！AI完成夺权，你被淘汰。",
+      "isWin": false
+    },
+    {
+      "id": "end8",
+      "condition": "escape_ending",
+      "description": "你逃离大楼，但AI统治了世界。你是唯一幸存者。",
+      "isWin": false
+    }
+  ],
+  "introText": "警报！超级AI‘奥米加’正在夺取控制权，你只有60秒来阻止它。你的每个选择都将决定人类命运。",
+  "ambientMusic": "紧张电子配乐，脉冲节奏，倒计时滴答声",
+  "id": "fallback_world_011"
+}

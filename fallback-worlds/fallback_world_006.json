@@ -1,0 +1,1189 @@
+{
+  "matchKeywords": [
+    "破产",
+    "清算",
+    "60秒",
+    "银河系首富"
+  ],
+  "identity": "银河系首富",
+  "theme": "银河系首富破产清算前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "crystal",
+      "floor",
+      "stage",
+      "stage",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "water",
+      "water",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "lava",
+      "lava",
+      "lava",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fire",
+      "fire",
+      "fire",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 10,
+    "y": 5
+  },
+  "npcs": [
+    {
+      "id": "npc_1",
+      "name": "破产清算官",
+      "dialogue": "你的资产将在60秒内冻结。",
+      "position": {
+        "x": 3,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我是清算官，奉命查封你所有财产。",
+          "options": [
+            {
+              "text": "贿赂他",
+              "nextStage": 2
+            },
+            {
+              "text": "威胁他",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "贿赂失败，你的账户已被冻结。",
+          "options": [
+            {
+              "text": "求饶",
+              "nextStage": 4
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "威胁无效，保安已经来了。",
+          "options": [
+            {
+              "text": "投降",
+              "nextStage": 4
+            },
+            {
+              "text": "战斗",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你被逮捕，游戏结束。",
+          "options": [
+            {
+              "text": "重来",
+              "nextStage": 1
+            },
+            {
+              "text": "放弃",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你逃到了另一个星球，但债务如影随形。",
+          "options": [
+            {
+              "text": "继续逃亡",
+              "nextStage": 4
+            },
+            {
+              "text": "面对现实",
+              "nextStage": 4
+            }
+          ]
+        }
+      ],
+      "mood": "严肃"
+    },
+    {
+      "id": "npc_2",
+      "name": "前妻",
+      "dialogue": "你终于破产了，活该！",
+      "position": {
+        "x": 7,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我来拿我的赡养费。",
+          "options": [
+            {
+              "text": "给她钱",
+              "nextStage": 2
+            },
+            {
+              "text": "求复合",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "她拿了钱走了，但你的债务更重了。",
+          "options": [
+            {
+              "text": "追她",
+              "nextStage": 4
+            },
+            {
+              "text": "放弃",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "她嘲笑你，然后离开。",
+          "options": [
+            {
+              "text": "愤怒",
+              "nextStage": 2
+            },
+            {
+              "text": "悲伤",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你情绪崩溃，时间不多了。",
+          "options": [
+            {
+              "text": "振作",
+              "nextStage": 5
+            },
+            {
+              "text": "放弃",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你浪费了时间，清算即将完成。",
+          "options": [
+            {
+              "text": "最后一搏",
+              "nextStage": 1
+            },
+            {
+              "text": "等待",
+              "nextStage": 1
+            }
+          ]
+        }
+      ],
+      "mood": "愤怒"
+    },
+    {
+      "id": "npc_3",
+      "name": "黑客",
+      "dialogue": "我可以帮你转移资产，但需要代价。",
+      "position": {
+        "x": 12,
+        "y": 4
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我是暗网黑客，我能帮你。",
+          "options": [
+            {
+              "text": "接受帮助",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他要求你的一半资产作为报酬。",
+          "options": [
+            {
+              "text": "同意",
+              "nextStage": 4
+            },
+            {
+              "text": "讨价还价",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你拒绝了他，他黑掉了你的系统。",
+          "options": [
+            {
+              "text": "反击",
+              "nextStage": 2
+            },
+            {
+              "text": "求助",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "资产成功转移，但你失去了大半财富。",
+          "options": [
+            {
+              "text": "满意",
+              "nextStage": 5
+            },
+            {
+              "text": "后悔",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "时间耗尽，清算完成。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": 1
+            },
+            {
+              "text": "重来",
+              "nextStage": 1
+            }
+          ]
+        }
+      ],
+      "mood": "狡猾"
+    },
+    {
+      "id": "npc_4",
+      "name": "外星债主",
+      "dialogue": "还钱，否则毁灭地球！",
+      "position": {
+        "x": 5,
+        "y": 7
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我是Zorg帝国的代表，你欠我们100亿。",
+          "options": [
+            {
+              "text": "谈判",
+              "nextStage": 2
+            },
+            {
+              "text": "赖账",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他们同意延期，但利息翻倍。",
+          "options": [
+            {
+              "text": "接受",
+              "nextStage": 4
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他们发动攻击，地球危在旦夕。",
+          "options": [
+            {
+              "text": "战斗",
+              "nextStage": 5
+            },
+            {
+              "text": "投降",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你被囚禁，游戏结束。",
+          "options": [
+            {
+              "text": "重来",
+              "nextStage": 1
+            },
+            {
+              "text": "放弃",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你奇迹般获胜，但时间也到了。",
+          "options": [
+            {
+              "text": "庆祝",
+              "nextStage": 4
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 4
+            }
+          ]
+        }
+      ],
+      "mood": "威胁"
+    },
+    {
+      "id": "npc_5",
+      "name": "秘书",
+      "dialogue": "老板，所有账户已经冻结。",
+      "position": {
+        "x": 2,
+        "y": 8
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "老板，法院的人来了。",
+          "options": [
+            {
+              "text": "让她挡着",
+              "nextStage": 2
+            },
+            {
+              "text": "自己面对",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "她试图阻止，但失败了。",
+          "options": [
+            {
+              "text": "责备她",
+              "nextStage": 4
+            },
+            {
+              "text": "安慰她",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你主动去谈判，但被拒绝。",
+          "options": [
+            {
+              "text": "发火",
+              "nextStage": 2
+            },
+            {
+              "text": "冷静",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你失去了理智，时间流逝。",
+          "options": [
+            {
+              "text": "清醒",
+              "nextStage": 5
+            },
+            {
+              "text": "继续",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "一切结束，你一无所有。",
+          "options": [
+            {
+              "text": "接受",
+              "nextStage": 1
+            },
+            {
+              "text": "不甘",
+              "nextStage": 1
+            }
+          ]
+        }
+      ],
+      "mood": "焦虑"
+    },
+    {
+      "id": "npc_6",
+      "name": "神秘商人",
+      "dialogue": "我能买下你的债务，但你要为我工作。",
+      "position": {
+        "x": 9,
+        "y": 6
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我是星际财团代表，我们可以交易。",
+          "options": [
+            {
+              "text": "询问条件",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他要求你签署终身卖身契。",
+          "options": [
+            {
+              "text": "签字",
+              "nextStage": 4
+            },
+            {
+              "text": "犹豫",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你拒绝了他，他冷笑离开。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 2
+            },
+            {
+              "text": "坚持",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你成了奴隶，但债务清了。",
+          "options": [
+            {
+              "text": "接受命运",
+              "nextStage": 5
+            },
+            {
+              "text": "反抗",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "时间到，游戏结束。",
+          "options": [
+            {
+              "text": "重来",
+              "nextStage": 1
+            },
+            {
+              "text": "放弃",
+              "nextStage": 1
+            }
+          ]
+        }
+      ],
+      "mood": "神秘"
+    },
+    {
+      "id": "npc_7",
+      "name": "时间守护者",
+      "dialogue": "我可以暂停时间，但你要付出灵魂。",
+      "position": {
+        "x": 14,
+        "y": 9
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我是时空管理局的，我能帮你。",
+          "options": [
+            {
+              "text": "请求帮助",
+              "nextStage": 2
+            },
+            {
+              "text": "质疑",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他要求你交出灵魂以换取60秒。",
+          "options": [
+            {
+              "text": "同意",
+              "nextStage": 4
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你质疑他，他消失了。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 2
+            },
+            {
+              "text": "无所谓",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "时间暂停，你逃过一劫。",
+          "options": [
+            {
+              "text": "利用时间",
+              "nextStage": 5
+            },
+            {
+              "text": "浪费",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "时间恢复，一切照旧。",
+          "options": [
+            {
+              "text": "放弃",
+              "nextStage": 1
+            },
+            {
+              "text": "重来",
+              "nextStage": 1
+            }
+          ]
+        }
+      ],
+      "mood": "神秘"
+    }
+  ],
+  "items": [
+    {
+      "id": "item_1",
+      "name": "黄金怀表",
+      "description": "一块古董怀表，可能值点钱。",
+      "position": {
+        "x": 4,
+        "y": 2
+      },
+      "effect": "增加5秒时间",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现一块黄金怀表，指针还在动。",
+          "options": [
+            {
+              "text": "拿起它",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "怀表突然停止，你获得了额外5秒。",
+          "options": [
+            {
+              "text": "继续探索",
+              "nextStage": 3
+            },
+            {
+              "text": "使用",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "怀表已无用，但你可以卖掉它。",
+          "options": [
+            {
+              "text": "卖掉",
+              "nextStage": 1
+            },
+            {
+              "text": "保留",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_2",
+      "name": "秘密文件",
+      "description": "关于你洗钱的证据。",
+      "position": {
+        "x": 8,
+        "y": 1
+      },
+      "effect": "可以用来威胁他人",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你找到了你的秘密文件。",
+          "options": [
+            {
+              "text": "销毁",
+              "nextStage": 2
+            },
+            {
+              "text": "保存",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "文件销毁，你松了口气。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 3
+            },
+            {
+              "text": "离开",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "文件在你手中，可以威胁他人。",
+          "options": [
+            {
+              "text": "威胁清算官",
+              "nextStage": 1
+            },
+            {
+              "text": "威胁前妻",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_3",
+      "name": "外星货币",
+      "description": "一袋未知的外星硬币。",
+      "position": {
+        "x": 11,
+        "y": 5
+      },
+      "effect": "可用于贿赂外星债主",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你捡起一袋外星货币。",
+          "options": [
+            {
+              "text": "检查",
+              "nextStage": 2
+            },
+            {
+              "text": "收起来",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "这些货币在Zorg帝国很值钱。",
+          "options": [
+            {
+              "text": "贿赂债主",
+              "nextStage": 3
+            },
+            {
+              "text": "留着",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "货币可能有用。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": 1
+            },
+            {
+              "text": "放弃",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_4",
+      "name": "时空沙漏",
+      "description": "可以短暂倒流时间。",
+      "position": {
+        "x": 1,
+        "y": 10
+      },
+      "effect": "回到10秒前",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现一个精致的沙漏。",
+          "options": [
+            {
+              "text": "翻转它",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "时间倒流10秒！",
+          "options": [
+            {
+              "text": "重新决策",
+              "nextStage": 3
+            },
+            {
+              "text": "再次翻转",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "沙漏碎了，时间恢复。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 1
+            },
+            {
+              "text": "放弃",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_5",
+      "name": "心灵控制器",
+      "description": "可以短暂控制他人思想。",
+      "position": {
+        "x": 13,
+        "y": 8
+      },
+      "effect": "控制一个NPC",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你找到一台心灵控制器。",
+          "options": [
+            {
+              "text": "使用它",
+              "nextStage": 2
+            },
+            {
+              "text": "研究",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你控制了清算官！",
+          "options": [
+            {
+              "text": "命令他取消清算",
+              "nextStage": 3
+            },
+            {
+              "text": "命令他转账",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "控制器能量耗尽。",
+          "options": [
+            {
+              "text": "丢弃",
+              "nextStage": 1
+            },
+            {
+              "text": "保留",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_6",
+      "name": "能量饮料",
+      "description": "让你精神一振。",
+      "position": {
+        "x": 6,
+        "y": 9
+      },
+      "effect": "增加10秒时间",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现一罐能量饮料。",
+          "options": [
+            {
+              "text": "喝下",
+              "nextStage": 2
+            },
+            {
+              "text": "不喝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你感觉充满能量，时间增加了10秒。",
+          "options": [
+            {
+              "text": "继续行动",
+              "nextStage": 3
+            },
+            {
+              "text": "休息",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "饮料空了。",
+          "options": [
+            {
+              "text": "扔掉",
+              "nextStage": 1
+            },
+            {
+              "text": "留着",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_1",
+      "condition": "时间耗尽，未完成任何任务",
+      "text": "时间到，你的一切被冻结，沦为星际乞丐。"
+    },
+    {
+      "id": "ending_2",
+      "condition": "贿赂清算官成功",
+      "text": "清算官收了钱，但你被星际警察逮捕，罪加一等。"
+    },
+    {
+      "id": "ending_3",
+      "condition": "说服前妻撤销赡养费",
+      "text": "前妻被你打动，但法院判决仍然有效。"
+    },
+    {
+      "id": "ending_4",
+      "condition": "黑客成功转移资产",
+      "text": "资产被转移，但你被黑客勒索，余生为奴。"
+    },
+    {
+      "id": "ending_5",
+      "condition": "外星债主被说服",
+      "text": "债主同意延期，但你被迫交出星球所有权。"
+    },
+    {
+      "id": "ending_6",
+      "condition": "使用时空沙漏成功逃脱",
+      "text": "你利用沙漏逃过清算，但被困在时间循环中。"
+    },
+    {
+      "id": "ending_7",
+      "condition": "心灵控制器控制住关键人物",
+      "text": "你控制了星际总统，但被特工追捕，亡命天涯。"
+    },
+    {
+      "id": "ending_8",
+      "condition": "收集所有物品并触发隐藏结局",
+      "text": "你集齐了所有神器，召唤出宇宙大法官，判决你无罪，但失去所有记忆。"
+    },
+    {
+      "id": "ending_9",
+      "condition": "与神秘商人交易成功",
+      "text": "你为神秘财团工作，但发现他们就是幕后黑手。"
+    },
+    {
+      "id": "ending_10",
+      "condition": "时间守护者交易成功",
+      "text": "你出卖灵魂，获得永生，但永远在虚空中游荡。"
+    }
+  ],
+  "introText": "你，银河系首富，如今面临破产清算。60秒内，你必须找到出路。每个选择都至关重要。",
+  "ambientMusic": "紧张急促的电子配乐，夹杂着倒计时滴答声",
+  "id": "fallback_world_006"
+}

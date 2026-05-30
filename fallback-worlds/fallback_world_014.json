@@ -1,0 +1,1013 @@
+{
+  "matchKeywords": [
+    "独角兽",
+    "估值",
+    "崩溃",
+    "60秒",
+    "CEO"
+  ],
+  "identity": "独角兽帝国创始人",
+  "theme": "超级独角兽估值归零前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "throne",
+      "carpet",
+      "console",
+      "floor",
+      "fountain",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "window",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "stage",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "water",
+      "water",
+      "water",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "lava",
+      "lava",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "water",
+      "water",
+      "water",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "lava",
+      "lava",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_chief_finance",
+      "name": "首席财务官",
+      "position": [
+        1,
+        3
+      ],
+      "dialogue": "估值正在暴跌！我们需要奇迹！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "CFO冲到你面前，脸色苍白。",
+          "options": [
+            {
+              "text": "召开紧急会议",
+              "nextStage": 2,
+              "effect": "改变估值"
+            },
+            {
+              "text": "忽略他",
+              "nextStage": null,
+              "effect": "估值继续跌"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "会议中，财务部提出了一个疯狂的计划。",
+          "options": [
+            {
+              "text": "接受计划",
+              "nextStage": 3,
+              "effect": "估值暂时稳定"
+            },
+            {
+              "text": "否决计划",
+              "nextStage": null,
+              "effect": "估值暴跌"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "计划执行中，但时间不多了。",
+          "options": [
+            {
+              "text": "亲自监督",
+              "nextStage": null,
+              "effect": "估值回升"
+            },
+            {
+              "text": "交给下属",
+              "nextStage": null,
+              "effect": "估值归零"
+            }
+          ]
+        }
+      ],
+      "isHostile": false
+    },
+    {
+      "id": "npc_investor",
+      "name": "神秘投资人",
+      "position": [
+        2,
+        8
+      ],
+      "dialogue": "我可以拯救你的公司，但代价是什么？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "投资人露出狡黠的微笑。",
+          "options": [
+            {
+              "text": "问条件",
+              "nextStage": 2,
+              "effect": "了解代价"
+            },
+            {
+              "text": "拒绝",
+              "nextStage": null,
+              "effect": "失去机会"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "投资人要求你交出独角兽角。",
+          "options": [
+            {
+              "text": "同意",
+              "nextStage": 3,
+              "effect": "获得资金"
+            },
+            {
+              "text": "拒绝",
+              "nextStage": null,
+              "effect": "投资人消失"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你失去了独角兽角，但获得了资金。",
+          "options": [
+            {
+              "text": "庆祝",
+              "nextStage": null,
+              "effect": "估值稳定"
+            },
+            {
+              "text": "后悔",
+              "nextStage": null,
+              "effect": "士气低落"
+            }
+          ]
+        }
+      ],
+      "isHostile": false
+    },
+    {
+      "id": "npc_rival",
+      "name": "竞争对手",
+      "position": [
+        8,
+        1
+      ],
+      "dialogue": "你的帝国要垮了！哈哈！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "对手嘲笑你的失败。",
+          "options": [
+            {
+              "text": "回应",
+              "nextStage": 2,
+              "effect": "开启竞争"
+            },
+            {
+              "text": "无视",
+              "nextStage": null,
+              "effect": "保持冷静"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "对手提出收购提议。",
+          "options": [
+            {
+              "text": "同意收购",
+              "nextStage": null,
+              "effect": "失去公司"
+            },
+            {
+              "text": "拒绝并反击",
+              "nextStage": 3,
+              "effect": "估值波动"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你发动了公关战。",
+          "options": [
+            {
+              "text": "全力投入",
+              "nextStage": null,
+              "effect": "估值回升"
+            },
+            {
+              "text": "半途而废",
+              "nextStage": null,
+              "effect": "估值归零"
+            }
+          ]
+        }
+      ],
+      "isHostile": true
+    },
+    {
+      "id": "npc_mentor",
+      "name": "独角兽先知",
+      "position": [
+        5,
+        8
+      ],
+      "dialogue": "一切都是幻象，但时间真实。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "先知给你一个谜语。",
+          "options": [
+            {
+              "text": "解谜",
+              "nextStage": 2,
+              "effect": "获得启示"
+            },
+            {
+              "text": "放弃",
+              "nextStage": null,
+              "effect": "失去机会"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "谜底是‘回归本质’。",
+          "options": [
+            {
+              "text": "专注于产品",
+              "nextStage": 3,
+              "effect": "估值改善"
+            },
+            {
+              "text": "忽略",
+              "nextStage": null,
+              "effect": "无变化"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "产品大获成功。",
+          "options": [
+            {
+              "text": "扩大规模",
+              "nextStage": null,
+              "effect": "估值飙升"
+            },
+            {
+              "text": "保持现状",
+              "nextStage": null,
+              "effect": "估值稳定"
+            }
+          ]
+        }
+      ],
+      "isHostile": false
+    },
+    {
+      "id": "npc_employee",
+      "name": "焦虑的程序员",
+      "position": [
+        6,
+        2
+      ],
+      "dialogue": "服务器要爆炸了！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "程序员报告服务器过载。",
+          "options": [
+            {
+              "text": "增加服务器",
+              "nextStage": 2,
+              "effect": "解决危机"
+            },
+            {
+              "text": "让他自己解决",
+              "nextStage": null,
+              "effect": "系统崩溃"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "新服务器工作良好。",
+          "options": [
+            {
+              "text": "奖励程序员",
+              "nextStage": 3,
+              "effect": "士气提升"
+            },
+            {
+              "text": "忽略",
+              "nextStage": null,
+              "effect": "程序员离职"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "团队士气高涨。",
+          "options": [
+            {
+              "text": "庆祝",
+              "nextStage": null,
+              "effect": "估值提升"
+            },
+            {
+              "text": "继续工作",
+              "nextStage": null,
+              "effect": "保持稳定"
+            }
+          ]
+        }
+      ],
+      "isHostile": false
+    },
+    {
+      "id": "npc_media",
+      "name": "记者",
+      "position": [
+        10,
+        4
+      ],
+      "dialogue": "能谈谈公司估值暴跌的感想吗？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "记者拿着录音笔。",
+          "options": [
+            {
+              "text": "接受采访",
+              "nextStage": 2,
+              "effect": "影响舆论"
+            },
+            {
+              "text": "拒绝",
+              "nextStage": null,
+              "effect": "负面新闻"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你发表了乐观言论。",
+          "options": [
+            {
+              "text": "画大饼",
+              "nextStage": 3,
+              "effect": "暂时提振"
+            },
+            {
+              "text": "坦诚事实",
+              "nextStage": null,
+              "effect": "信任增加"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "市场对你的言论反应如何？",
+          "options": [
+            {
+              "text": "媒体正面报道",
+              "nextStage": null,
+              "effect": "估值上升"
+            },
+            {
+              "text": "媒体负面报道",
+              "nextStage": null,
+              "effect": "估值下跌"
+            }
+          ]
+        }
+      ],
+      "isHostile": false
+    }
+  ],
+  "items": [
+    {
+      "id": "item_unicorn_horn",
+      "name": "独角兽角",
+      "position": [
+        2,
+        2
+      ],
+      "description": "你的独角兽角，象征估值。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了独角兽角。",
+          "options": [
+            {
+              "text": "捡起",
+              "nextStage": 2,
+              "effect": "增加估值"
+            },
+            {
+              "text": "忽略",
+              "nextStage": null,
+              "effect": "无效果"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "角闪耀着光芒。",
+          "options": [
+            {
+              "text": "装备",
+              "nextStage": 3,
+              "effect": "提升领导力"
+            },
+            {
+              "text": "卖掉",
+              "nextStage": null,
+              "effect": "获得金钱"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你成为了真正的独角兽。",
+          "options": [
+            {
+              "text": "展示",
+              "nextStage": null,
+              "effect": "估值飙升"
+            },
+            {
+              "text": "隐藏",
+              "nextStage": null,
+              "effect": "保持低调"
+            }
+          ]
+        }
+      ],
+      "isUsable": true,
+      "effect": "估值增加"
+    },
+    {
+      "id": "item_golden_parachute",
+      "name": "金色降落伞",
+      "position": [
+        1,
+        12
+      ],
+      "description": "CEO的逃生工具。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了金色降落伞。",
+          "options": [
+            {
+              "text": "装备",
+              "nextStage": 2,
+              "effect": "增加安全"
+            },
+            {
+              "text": "忽略",
+              "nextStage": null,
+              "effect": "无效果"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "降落伞闪闪发光。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": 3,
+              "effect": "逃离危机"
+            },
+            {
+              "text": "出售",
+              "nextStage": null,
+              "effect": "获得资金"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你安全着陆。",
+          "options": [
+            {
+              "text": "回归公司",
+              "nextStage": null,
+              "effect": "重新开始"
+            },
+            {
+              "text": "退休",
+              "nextStage": null,
+              "effect": "游戏结束"
+            }
+          ]
+        }
+      ],
+      "isUsable": true,
+      "effect": "避免归零"
+    },
+    {
+      "id": "item_magic_console",
+      "name": "魔法控制台",
+      "position": [
+        1,
+        4
+      ],
+      "description": "可以改变估值的控制台。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "控制台闪烁着代码。",
+          "options": [
+            {
+              "text": "输入命令",
+              "nextStage": 2,
+              "effect": "改变估值"
+            },
+            {
+              "text": "离开",
+              "nextStage": null,
+              "effect": "无效果"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你输入了‘估值无限’。",
+          "options": [
+            {
+              "text": "确认",
+              "nextStage": 3,
+              "effect": "估值飙升"
+            },
+            {
+              "text": "取消",
+              "nextStage": null,
+              "effect": "无变化"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "系统过载。",
+          "options": [
+            {
+              "text": "修复",
+              "nextStage": null,
+              "effect": "估值稳定"
+            },
+            {
+              "text": "忽略",
+              "nextStage": null,
+              "effect": "系统崩溃"
+            }
+          ]
+        }
+      ],
+      "isUsable": true,
+      "effect": "估值改变"
+    },
+    {
+      "id": "item_crystal_ball",
+      "name": "水晶球",
+      "position": [
+        6,
+        13
+      ],
+      "description": "预知未来的水晶球。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "水晶球显现出未来。",
+          "options": [
+            {
+              "text": "凝视",
+              "nextStage": 2,
+              "effect": "看到结局"
+            },
+            {
+              "text": "放弃",
+              "nextStage": null,
+              "effect": "无效果"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你看到了估值归零。",
+          "options": [
+            {
+              "text": "采取行动",
+              "nextStage": 3,
+              "effect": "改变未来"
+            },
+            {
+              "text": "接受命运",
+              "nextStage": null,
+              "effect": "归零"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你改变了未来。",
+          "options": [
+            {
+              "text": "庆祝",
+              "nextStage": null,
+              "effect": "估值回升"
+            },
+            {
+              "text": "谨慎",
+              "nextStage": null,
+              "effect": "保持稳定"
+            }
+          ]
+        }
+      ],
+      "isUsable": true,
+      "effect": "预知"
+    },
+    {
+      "id": "item_emergency_fund",
+      "name": "紧急资金",
+      "position": [
+        7,
+        10
+      ],
+      "description": "一笔隐藏的资金。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了紧急资金。",
+          "options": [
+            {
+              "text": "取用",
+              "nextStage": 2,
+              "effect": "增加现金"
+            },
+            {
+              "text": "留下",
+              "nextStage": null,
+              "effect": "无效果"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "资金可以救急。",
+          "options": [
+            {
+              "text": "用于营销",
+              "nextStage": 3,
+              "effect": "提升估值"
+            },
+            {
+              "text": "用于研发",
+              "nextStage": null,
+              "effect": "长期收益"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "营销活动成功。",
+          "options": [
+            {
+              "text": "继续投资",
+              "nextStage": null,
+              "effect": "估值上升"
+            },
+            {
+              "text": "停止",
+              "nextStage": null,
+              "effect": "保持稳定"
+            }
+          ]
+        }
+      ],
+      "isUsable": true,
+      "effect": "资金增加"
+    },
+    {
+      "id": "item_lucky_charm",
+      "name": "幸运符",
+      "position": [
+        10,
+        6
+      ],
+      "description": "带来好运的符咒。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "幸运符闪闪发光。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 2,
+              "effect": "增加运气"
+            },
+            {
+              "text": "忽略",
+              "nextStage": null,
+              "effect": "无效果"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "好运加持。",
+          "options": [
+            {
+              "text": "佩戴",
+              "nextStage": 3,
+              "effect": "所有行动成功"
+            },
+            {
+              "text": "出售",
+              "nextStage": null,
+              "effect": "获得金钱"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你感到无比幸运。",
+          "options": [
+            {
+              "text": "投资风险项目",
+              "nextStage": null,
+              "effect": "估值翻倍"
+            },
+            {
+              "text": "保守行事",
+              "nextStage": null,
+              "effect": "稳定增长"
+            }
+          ]
+        }
+      ],
+      "isUsable": true,
+      "effect": "增加运气"
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_valuation_zero",
+      "condition": "估值归零",
+      "text": "估值归零，独角兽帝国崩塌。"
+    },
+    {
+      "id": "ending_valuation_skyrocket",
+      "condition": "估值飙升",
+      "text": "估值飙升，你成为传奇。"
+    },
+    {
+      "id": "ending_sold_company",
+      "condition": "公司被收购",
+      "text": "你卖掉了公司，黯然离场。"
+    },
+    {
+      "id": "ending_retire",
+      "condition": "使用金色降落伞",
+      "text": "你优雅地退休，财富自由。"
+    },
+    {
+      "id": "ending_revelation",
+      "condition": "解谜成功",
+      "text": "你领悟了商业真谛，估值稳定。"
+    },
+    {
+      "id": "ending_crash",
+      "condition": "服务器崩溃",
+      "text": "服务器崩溃，公司倒闭。"
+    },
+    {
+      "id": "ending_media_disaster",
+      "condition": "负面新闻",
+      "text": "媒体负面报道，估值雪崩。"
+    },
+    {
+      "id": "ending_unicorn_true",
+      "condition": "装备独角兽角",
+      "text": "你成为真正的独角兽，永垂不朽。"
+    },
+    {
+      "id": "ending_crystal_future",
+      "condition": "改变未来",
+      "text": "你改变了命运，估值反转。"
+    }
+  ],
+  "introText": "欢迎来到独角兽帝国！你的公司估值正在以每秒百万的速度暴跌。在60秒内，你必须做出关键决策，拯救你的估值。记住：时间就是金钱！",
+  "ambientMusic": "紧张刺激的电子背景音乐",
+  "id": "fallback_world_014"
+}

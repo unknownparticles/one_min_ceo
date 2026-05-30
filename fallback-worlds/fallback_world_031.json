@@ -1,0 +1,1066 @@
+{
+  "matchKeywords": [
+    "遗嘱",
+    "60秒",
+    "首富",
+    "危机"
+  ],
+  "identity": "世界首富",
+  "theme": "世界首富遗嘱公开前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "butler",
+      "name": "管家",
+      "position": [
+        1,
+        3
+      ],
+      "role": "遗嘱执行人",
+      "dialogue": [
+        "老爷，时间不多了",
+        "请跟我来"
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "管家紧张地搓着手",
+          "options": [
+            {
+              "text": "询问遗嘱内容",
+              "nextStage": 1
+            },
+            {
+              "text": "让他保持冷静",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "遗嘱在保险箱里",
+          "options": [
+            {
+              "text": "去保险箱",
+              "nextStage": 100
+            },
+            {
+              "text": "先见其他人",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "所有人都到了",
+          "options": [
+            {
+              "text": "召集所有人",
+              "nextStage": 100
+            },
+            {
+              "text": "单独见律师",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "律师在书房等您",
+          "options": [
+            {
+              "text": "去书房",
+              "nextStage": 100
+            },
+            {
+              "text": "先去花园",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "花园里有人在争吵",
+          "options": [
+            {
+              "text": "去看看",
+              "nextStage": 5
+            },
+            {
+              "text": "无视",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "两个继承人在争执",
+          "options": [
+            {
+              "text": "调解",
+              "nextStage": 6
+            },
+            {
+              "text": "宣布取消继承资格",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "他们暂时安静了",
+          "options": [
+            {
+              "text": "继续前往书房",
+              "nextStage": 100
+            },
+            {
+              "text": "回大厅",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lawyer",
+      "name": "律师",
+      "position": [
+        2,
+        5
+      ],
+      "role": "法律顾问",
+      "dialogue": [
+        "遗嘱已拟好",
+        "只差签字"
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "律师推了推眼镜",
+          "options": [
+            {
+              "text": "看遗嘱草案",
+              "nextStage": 1
+            },
+            {
+              "text": "直接签字",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "草案有很多争议条款",
+          "options": [
+            {
+              "text": "修改条款",
+              "nextStage": 2
+            },
+            {
+              "text": "坚持原案",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "修改需要其他继承人同意",
+          "options": [
+            {
+              "text": "召集继承人",
+              "nextStage": 3
+            },
+            {
+              "text": "独断专行",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "继承人们情绪激动",
+          "options": [
+            {
+              "text": "安抚",
+              "nextStage": 4
+            },
+            {
+              "text": "强硬宣布",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "暂时达成一致",
+          "options": [
+            {
+              "text": "签字",
+              "nextStage": 100
+            },
+            {
+              "text": "再考虑一下",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heir1",
+      "name": "长子",
+      "position": [
+        2,
+        7
+      ],
+      "role": "主要继承人",
+      "dialogue": [
+        "父亲，我应得一切",
+        "弟弟不配"
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "长子傲慢地站着",
+          "options": [
+            {
+              "text": "训斥他",
+              "nextStage": 1
+            },
+            {
+              "text": "好言相劝",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "长子不服",
+          "options": [
+            {
+              "text": "威胁取消继承",
+              "nextStage": 100
+            },
+            {
+              "text": "讲道理",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "长子稍显缓和",
+          "options": [
+            {
+              "text": "承诺给他更多",
+              "nextStage": 3
+            },
+            {
+              "text": "让他和弟弟和解",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "长子满意离开",
+          "options": [
+            {
+              "text": "去找次子",
+              "nextStage": 100
+            },
+            {
+              "text": "去签字",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "长子拒绝和解",
+          "options": [
+            {
+              "text": "强制命令",
+              "nextStage": 100
+            },
+            {
+              "text": "放弃调解",
+              "nextStage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heir2",
+      "name": "次子",
+      "position": [
+        2,
+        9
+      ],
+      "role": "次要继承人",
+      "dialogue": [
+        "哥哥总是欺负我",
+        "我只要公平"
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "次子委屈地站着",
+          "options": [
+            {
+              "text": "安慰他",
+              "nextStage": 1
+            },
+            {
+              "text": "批评他软弱",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "次子感激",
+          "options": [
+            {
+              "text": "许诺给他公司",
+              "nextStage": 3
+            },
+            {
+              "text": "让他和哥哥合作",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "次子更委屈了",
+          "options": [
+            {
+              "text": "道歉",
+              "nextStage": 1
+            },
+            {
+              "text": "不理他",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "次子欣喜",
+          "options": [
+            {
+              "text": "去找律师",
+              "nextStage": 100
+            },
+            {
+              "text": "去见哥哥",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "次子不愿合作",
+          "options": [
+            {
+              "text": "强迫",
+              "nextStage": 100
+            },
+            {
+              "text": "放弃",
+              "nextStage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mistress",
+      "name": "情人",
+      "position": [
+        1,
+        7
+      ],
+      "role": "秘密情人",
+      "dialogue": [
+        "你答应过要照顾我",
+        "现在呢？"
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "情人泪眼婆娑",
+          "options": [
+            {
+              "text": "给她一笔钱",
+              "nextStage": 1
+            },
+            {
+              "text": "让她离开",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "她嫌钱少",
+          "options": [
+            {
+              "text": "加价",
+              "nextStage": 3
+            },
+            {
+              "text": "威胁",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "她哭闹",
+          "options": [
+            {
+              "text": "安抚",
+              "nextStage": 1
+            },
+            {
+              "text": "叫保安",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "她满意离开",
+          "options": [
+            {
+              "text": "去书房",
+              "nextStage": 100
+            },
+            {
+              "text": "见管家",
+              "nextStage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rival",
+      "name": "商业对手",
+      "position": [
+        3,
+        4
+      ],
+      "role": "敌对公司CEO",
+      "dialogue": [
+        "你的公司我要定了",
+        "遗嘱也救不了你"
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "对手冷笑",
+          "options": [
+            {
+              "text": "嘲笑他",
+              "nextStage": 1
+            },
+            {
+              "text": "谈判",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "对手愤怒",
+          "options": [
+            {
+              "text": "宣布收购他公司",
+              "nextStage": 3
+            },
+            {
+              "text": "不理会",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "对手愿意谈判",
+          "options": [
+            {
+              "text": "提出合作",
+              "nextStage": 3
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "对手犹豫",
+          "options": [
+            {
+              "text": "施加压力",
+              "nextStage": 100
+            },
+            {
+              "text": "给出条件",
+              "nextStage": 100
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "safe_key",
+      "name": "保险箱钥匙",
+      "position": [
+        1,
+        2
+      ],
+      "type": "key",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一把金色钥匙",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 1
+            },
+            {
+              "text": "忽略",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "钥匙上刻着'遗嘱'",
+          "options": [
+            {
+              "text": "去开保险箱",
+              "nextStage": 100
+            },
+            {
+              "text": "先做其他事",
+              "nextStage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "will_document",
+      "name": "遗嘱文件",
+      "position": [
+        2,
+        10
+      ],
+      "type": "document",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一份密封的文件",
+          "options": [
+            {
+              "text": "打开",
+              "nextStage": 1
+            },
+            {
+              "text": "不打开",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "文件内容令人震惊",
+          "options": [
+            {
+              "text": "修改",
+              "nextStage": 2
+            },
+            {
+              "text": "公开",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "修改需要所有继承人签字",
+          "options": [
+            {
+              "text": "召集继承人",
+              "nextStage": 100
+            },
+            {
+              "text": "放弃修改",
+              "nextStage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "poison",
+      "name": "毒药",
+      "position": [
+        1,
+        8
+      ],
+      "type": "consumable",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一小瓶毒药",
+          "options": [
+            {
+              "text": "藏起来",
+              "nextStage": 1
+            },
+            {
+              "text": "扔掉",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "毒药在手",
+          "options": [
+            {
+              "text": "威胁他人",
+              "nextStage": 2
+            },
+            {
+              "text": "自己服用",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "用毒药威胁长子",
+          "options": [
+            {
+              "text": "他屈服",
+              "nextStage": 100
+            },
+            {
+              "text": "他报警",
+              "nextStage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cash",
+      "name": "现金",
+      "position": [
+        1,
+        11
+      ],
+      "type": "currency",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一箱现金",
+          "options": [
+            {
+              "text": "拿走",
+              "nextStage": 1
+            },
+            {
+              "text": "捐赠",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "现金很重",
+          "options": [
+            {
+              "text": "给情人",
+              "nextStage": 2
+            },
+            {
+              "text": "自己留着",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "情人接过现金离开",
+          "options": [
+            {
+              "text": "继续处理遗嘱",
+              "nextStage": 100
+            },
+            {
+              "text": "感到解脱",
+              "nextStage": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "letter",
+      "name": "秘密信件",
+      "position": [
+        3,
+        6
+      ],
+      "type": "document",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一封署名'你的爱'的信",
+          "options": [
+            {
+              "text": "阅读",
+              "nextStage": 1
+            },
+            {
+              "text": "销毁",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "信中提到私生子",
+          "options": [
+            {
+              "text": "寻找私生子",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "私生子就在宅邸内",
+          "options": [
+            {
+              "text": "承认他",
+              "nextStage": 3
+            },
+            {
+              "text": "否认",
+              "nextStage": 100
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "私生子出现",
+          "options": [
+            {
+              "text": "修改遗嘱",
+              "nextStage": 100
+            },
+            {
+              "text": "给他一笔钱",
+              "nextStage": 100
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end_1",
+      "condition": "timeout",
+      "text": "60秒到了！遗嘱自动生效，家族陷入混乱。"
+    },
+    {
+      "id": "end_2",
+      "condition": "all_heirs_agree",
+      "text": "所有继承人达成一致，遗嘱顺利公布，你安详离去。"
+    },
+    {
+      "id": "end_3",
+      "condition": "poison_self",
+      "text": "你服毒自尽，遗嘱内容成为永久的谜。"
+    },
+    {
+      "id": "end_4",
+      "condition": "safe_opened",
+      "text": "你打开保险箱，但发现遗嘱是假的！真遗嘱在律师手中。"
+    },
+    {
+      "id": "end_5",
+      "condition": "rival_takeover",
+      "text": "商业对手发动敌意收购，公司易主，遗嘱失去意义。"
+    },
+    {
+      "id": "end_6",
+      "condition": "mistress_scandal",
+      "text": "情人曝光丑闻，遗嘱被宣布无效，家族名誉扫地。"
+    },
+    {
+      "id": "end_7",
+      "condition": "illegitimate_heir",
+      "text": "私生子出现，遗嘱被重新改写，你承认所有子女。"
+    },
+    {
+      "id": "end_8",
+      "condition": "charity_donation",
+      "text": "你决定将所有财产捐给慈善机构，家人目瞪口呆。"
+    },
+    {
+      "id": "end_9",
+      "condition": "coup",
+      "text": "长子发动政变，你被迫提前宣布遗嘱，但内容被篡改。"
+    },
+    {
+      "id": "end_10",
+      "condition": "peaceful",
+      "text": "你放下一切，与家人和解，遗嘱成为爱的见证。"
+    }
+  ],
+  "introText": "你是世界首富，只剩下60秒来公布你的遗嘱。你的宅邸里充满了各怀心思的人：管家、律师、两个继承你的儿子、秘密情人，还有商业对手。你需要在这60秒内做出决定，否则遗嘱将自动生效，后果不堪设想。",
+  "ambientMusic": "tense_classical",
+  "id": "fallback_world_031"
+}

@@ -1,0 +1,862 @@
+{
+  "matchKeywords": [
+    "多元宇宙商会长",
+    "平行宇宙合并",
+    "60秒CEO",
+    "荒诞",
+    "华丽"
+  ],
+  "identity": "多元宇宙商会长",
+  "theme": "平行宇宙合并前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "neon_floor",
+      "statue",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    5,
+    8
+  ],
+  "npcs": [
+    {
+      "id": "npc_counselor",
+      "name": "宇宙顾问·艾克",
+      "x": 2,
+      "y": 3,
+      "dialogue": "欢迎来到多元宇宙商会。您有60秒来合并所有平行宇宙。",
+      "storyline": [
+        {
+          "stage": 1,
+          "question": "如何应对合并危机？",
+          "options": [
+            {
+              "text": "立即关闭所有平行宇宙入口",
+              "nextStage": 2
+            },
+            {
+              "text": "寻求其他宇宙的商会长帮助",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "question": "关闭入口导致部分宇宙被永久隔离。",
+          "options": [
+            {
+              "text": "确认隔离",
+              "nextStage": 4
+            },
+            {
+              "text": "重新考虑",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "question": "其他商会长同意协助，但需要你提供资源。",
+          "options": [
+            {
+              "text": "提供资源",
+              "nextStage": 4
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "question": "最终决定：是否同意合并协议？",
+          "options": [
+            {
+              "text": "同意",
+              "nextStage": "fixedEnding_success"
+            },
+            {
+              "text": "拒绝",
+              "nextStage": "fixedEnding_failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_merchant",
+      "name": "商人·卡洛斯",
+      "x": 7,
+      "y": 1,
+      "dialogue": "我有一些平行宇宙的货币，可以帮你稳定局势。",
+      "storyline": [
+        {
+          "stage": 1,
+          "question": "是否购买宇宙币？",
+          "options": [
+            {
+              "text": "购买1000宇宙币",
+              "nextStage": 2
+            },
+            {
+              "text": "不购买",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "question": "宇宙币到账，但需要你签署协议。",
+          "options": [
+            {
+              "text": "签署",
+              "nextStage": 4
+            },
+            {
+              "text": "不签署",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "question": "商人失望离开。",
+          "options": [
+            {
+              "text": "追回",
+              "nextStage": 1
+            },
+            {
+              "text": "让他走",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "question": "交易完成。",
+          "options": [
+            {
+              "text": "继续前行",
+              "nextStage": 1
+            },
+            {
+              "text": "打开宝箱",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_guard",
+      "name": "时空警卫·X",
+      "x": 3,
+      "y": 9,
+      "dialogue": "平行宇宙正在碰撞，请尽快行动！",
+      "storyline": [
+        {
+          "stage": 1,
+          "question": "警卫需要你的指令。",
+          "options": [
+            {
+              "text": "命令他封锁东侧走廊",
+              "nextStage": 2
+            },
+            {
+              "text": "命令他疏散群众",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "question": "东侧走廊已封锁。",
+          "options": [
+            {
+              "text": "检查封锁效果",
+              "nextStage": 4
+            },
+            {
+              "text": "前往西侧",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "question": "群众正在疏散。",
+          "options": [
+            {
+              "text": "跟随人群",
+              "nextStage": 4
+            },
+            {
+              "text": "逆流而上",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "question": "行动完成。",
+          "options": [
+            {
+              "text": "回到大厅",
+              "nextStage": 1
+            },
+            {
+              "text": "寻找出口",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_princess",
+      "name": "平行宇宙公主·莉亚",
+      "x": 9,
+      "y": 5,
+      "dialogue": "我的宇宙正在消失，请救救我！",
+      "storyline": [
+        {
+          "stage": 1,
+          "question": "如何帮助公主？",
+          "options": [
+            {
+              "text": "带她到安全区",
+              "nextStage": 2
+            },
+            {
+              "text": "给她一个护身符",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "question": "安全区已满。",
+          "options": [
+            {
+              "text": "清理空间",
+              "nextStage": 4
+            },
+            {
+              "text": "另找地方",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "question": "护身符暂时保护了她。",
+          "options": [
+            {
+              "text": "寻找更多护身符",
+              "nextStage": 4
+            },
+            {
+              "text": "带她逃离",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "question": "公主安全了。",
+          "options": [
+            {
+              "text": "告别",
+              "nextStage": 1
+            },
+            {
+              "text": "继续前行",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_sage",
+      "name": "宇宙智者·老莫",
+      "x": 5,
+      "y": 4,
+      "dialogue": "时间不多了，你必须在60秒内做出选择。",
+      "storyline": [
+        {
+          "stage": 1,
+          "question": "智者提出三个预言。",
+          "options": [
+            {
+              "text": "选择预言A",
+              "nextStage": 2
+            },
+            {
+              "text": "选择预言B",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "question": "预言A：宇宙将永恒。",
+          "options": [
+            {
+              "text": "相信预言",
+              "nextStage": 4
+            },
+            {
+              "text": "质疑预言",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "question": "预言B：一切将毁灭。",
+          "options": [
+            {
+              "text": "接受命运",
+              "nextStage": 4
+            },
+            {
+              "text": "反抗命运",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "question": "智者消失。",
+          "options": [
+            {
+              "text": "寻找智者",
+              "nextStage": 1
+            },
+            {
+              "text": "继续任务",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_amulet",
+      "name": "宇宙护符",
+      "x": 4,
+      "y": 2,
+      "description": "可以稳定一个宇宙的波动。",
+      "storyline": [
+        {
+          "stage": 1,
+          "question": "捡起护符？",
+          "options": [
+            {
+              "text": "捡起",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "question": "护符发光，你的力量增强了。",
+          "options": [
+            {
+              "text": "使用护符",
+              "nextStage": 3
+            },
+            {
+              "text": "收好护符",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "question": "护符的效果持续。",
+          "options": [
+            {
+              "text": "继续探索",
+              "nextStage": 1
+            },
+            {
+              "text": "返回",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_key",
+      "name": "次元钥匙",
+      "x": 8,
+      "y": 3,
+      "description": "可以打开任何宇宙之门。",
+      "storyline": [
+        {
+          "stage": 1,
+          "question": "发现钥匙，是否拾取？",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 2
+            },
+            {
+              "text": "不拾取",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "question": "钥匙适合你。",
+          "options": [
+            {
+              "text": "使用钥匙开门",
+              "nextStage": 3
+            },
+            {
+              "text": "保存钥匙",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "question": "门已打开。",
+          "options": [
+            {
+              "text": "进入门内",
+              "nextStage": "fixedEnding_portal"
+            },
+            {
+              "text": "后退",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_scroll",
+      "name": "宇宙卷轴",
+      "x": 10,
+      "y": 6,
+      "description": "记载了合并宇宙的咒语。",
+      "storyline": [
+        {
+          "stage": 1,
+          "question": "阅读卷轴？",
+          "options": [
+            {
+              "text": "阅读",
+              "nextStage": 2
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "question": "卷轴上的咒语强大而危险。",
+          "options": [
+            {
+              "text": "念咒",
+              "nextStage": 3
+            },
+            {
+              "text": "不念",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "question": "咒语生效了。",
+          "options": [
+            {
+              "text": "观察效果",
+              "nextStage": 1
+            },
+            {
+              "text": "离开",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_gem",
+      "name": "时空宝石",
+      "x": 6,
+      "y": 8,
+      "description": "可以暂停时间3秒。",
+      "storyline": [
+        {
+          "stage": 1,
+          "question": "获得宝石。",
+          "options": [
+            {
+              "text": "立即使用",
+              "nextStage": 2
+            },
+            {
+              "text": "保存",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "question": "时间暂停。",
+          "options": [
+            {
+              "text": "盗取宝物",
+              "nextStage": 3
+            },
+            {
+              "text": "拯救某人",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "question": "时间恢复。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 1
+            },
+            {
+              "text": "后悔",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_potion",
+      "name": "融合药水",
+      "x": 11,
+      "y": 10,
+      "description": "可以暂时将两个宇宙融合。",
+      "storyline": [
+        {
+          "stage": 1,
+          "question": "发现药水。",
+          "options": [
+            {
+              "text": "喝下",
+              "nextStage": 2
+            },
+            {
+              "text": "倒掉",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "question": "药水效果奇特。",
+          "options": [
+            {
+              "text": "融合两个小宇宙",
+              "nextStage": 3
+            },
+            {
+              "text": "什么都不做",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "question": "融合成功。",
+          "options": [
+            {
+              "text": "庆祝",
+              "nextStage": 1
+            },
+            {
+              "text": "继续",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "fixedEnding_success",
+      "description": "你成功合并了所有平行宇宙，成为多元宇宙的救世主！",
+      "condition": "完成所有主线任务"
+    },
+    {
+      "id": "fixedEnding_failure",
+      "description": "你未能阻止宇宙碰撞，一切化为虚无。",
+      "condition": "时间耗尽或关键选择错误"
+    },
+    {
+      "id": "fixedEnding_portal",
+      "description": "你通过次元钥匙进入了一个未知宇宙，迷失在无限可能性中。",
+      "condition": "使用次元钥匙进入门"
+    },
+    {
+      "id": "fixedEnding_power",
+      "description": "你获得了太多力量，成为了宇宙暴君。",
+      "condition": "使用所有强化物品"
+    },
+    {
+      "id": "fixedEnding_sacrifice",
+      "description": "你牺牲自己，拯救了所有平行宇宙。",
+      "condition": "选择自我牺牲"
+    },
+    {
+      "id": "fixedEnding_peace",
+      "description": "你与所有宇宙和平共处，成立了跨宇宙联盟。",
+      "condition": "完成所有和平对话"
+    },
+    {
+      "id": "fixedEnding_chaos",
+      "description": "宇宙合并失控，引发无尽混沌。",
+      "condition": "做出多个混乱选择"
+    },
+    {
+      "id": "fixedEnding_time",
+      "description": "你利用时空宝石创造了时间循环，永远困在60秒内。",
+      "condition": "滥用时空宝石"
+    }
+  ],
+  "introText": "欢迎，多元宇宙商会长。平行宇宙正在合并，你只有60秒来统筹一切。做出你的选择，决定所有宇宙的命运。",
+  "ambientMusic": "epic_orchestral_dramatic",
+  "id": "fallback_world_025"
+}

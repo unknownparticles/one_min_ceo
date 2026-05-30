@@ -1,0 +1,1010 @@
+{
+  "matchKeywords": [
+    "IPO",
+    "龙宫",
+    "赛博",
+    "60秒",
+    "龙王"
+  ],
+  "identity": "赛博龙宫龙王",
+  "theme": "赛博龙宫IPO前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "water",
+      "water",
+      "water",
+      "crystal",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "wall"
+    ],
+    [
+      "wall",
+      "water",
+      "gold_floor",
+      "gold_floor",
+      "throne",
+      "gold_floor",
+      "gold_floor",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "wall"
+    ],
+    [
+      "wall",
+      "water",
+      "gold_floor",
+      "console",
+      "console",
+      "console",
+      "gold_floor",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "wall"
+    ],
+    [
+      "wall",
+      "water",
+      "gold_floor",
+      "console",
+      "stage",
+      "console",
+      "gold_floor",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "wall"
+    ],
+    [
+      "wall",
+      "water",
+      "gold_floor",
+      "console",
+      "console",
+      "console",
+      "gold_floor",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "wall"
+    ],
+    [
+      "wall",
+      "water",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "wall"
+    ],
+    [
+      "wall",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "wall"
+    ],
+    [
+      "wall",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "wall"
+    ],
+    [
+      "wall",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "wall"
+    ],
+    [
+      "wall",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "water",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    3,
+    5
+  ],
+  "npcs": [
+    {
+      "id": "np1",
+      "name": "财务章鱼",
+      "position": [
+        2,
+        4
+      ],
+      "dialogue": "IPO定价多少？",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "章鱼财务官挥舞触手，计算器狂闪。",
+          "options": [
+            {
+              "text": "定100亿",
+              "nextStage": 1,
+              "effect": {
+                "npc_relationship": 10
+              }
+            },
+            {
+              "text": "定1000亿",
+              "nextStage": 2,
+              "effect": {
+                "npc_relationship": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "太低！我们要翻倍！",
+          "options": [
+            {
+              "text": "好，翻倍",
+              "nextStage": 0,
+              "effect": {
+                "npc_relationship": 5
+              }
+            },
+            {
+              "text": "不，就100亿",
+              "nextStage": 2,
+              "effect": {
+                "npc_relationship": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "太高！投资者会跑！",
+          "options": [
+            {
+              "text": "那折中",
+              "nextStage": 0,
+              "effect": {
+                "npc_relationship": 0
+              }
+            },
+            {
+              "text": "就要1000亿",
+              "nextStage": 0,
+              "effect": {
+                "npc_relationship": -5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "np2",
+      "name": "赛博虾兵",
+      "position": [
+        4,
+        2
+      ],
+      "dialogue": "虾兵巡逻中，一切正常！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "虾兵报告：发现异常数据流！",
+          "options": [
+            {
+              "text": "拦截它",
+              "nextStage": 1,
+              "effect": {
+                "security": 10
+              }
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2,
+              "effect": {
+                "security": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "成功拦截，原来是竞争对手的间谍。",
+          "options": [
+            {
+              "text": "逮捕他",
+              "nextStage": 0,
+              "effect": {
+                "morale": 5
+              }
+            },
+            {
+              "text": "收买他",
+              "nextStage": 0,
+              "effect": {
+                "intel": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "数据泄露，股价下跌！",
+          "options": [
+            {
+              "text": "公关危机处理",
+              "nextStage": 0,
+              "effect": {
+                "reputation": -5
+              }
+            },
+            {
+              "text": "否认",
+              "nextStage": 0,
+              "effect": {
+                "reputation": -10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "np3",
+      "name": "电子龟丞相",
+      "position": [
+        6,
+        3
+      ],
+      "dialogue": "龟丞相慢悠悠地说：时机未到。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "龟丞相建议推迟IPO。",
+          "options": [
+            {
+              "text": "听他的",
+              "nextStage": 1,
+              "effect": {
+                "time": 10
+              }
+            },
+            {
+              "text": "不听",
+              "nextStage": 2,
+              "effect": {
+                "time": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "推迟一周，市场更好。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": 0,
+              "effect": {
+                "morale": 5
+              }
+            },
+            {
+              "text": "还是现在吧",
+              "nextStage": 2,
+              "effect": {
+                "npc_relationship": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "现在IPO，风险很大！",
+          "options": [
+            {
+              "text": "冒险一搏",
+              "nextStage": 0,
+              "effect": {
+                "risk": 10
+              }
+            },
+            {
+              "text": "再想想",
+              "nextStage": 1,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "np4",
+      "name": "数据美人鱼",
+      "position": [
+        8,
+        5
+      ],
+      "dialogue": "美人鱼唱歌，数据流波动。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "美人鱼献唱，吸引投资者。",
+          "options": [
+            {
+              "text": "让她唱",
+              "nextStage": 1,
+              "effect": {
+                "attention": 10
+              }
+            },
+            {
+              "text": "让她闭嘴",
+              "nextStage": 2,
+              "effect": {
+                "attention": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "投资者蜂拥而至！",
+          "options": [
+            {
+              "text": "趁机定价",
+              "nextStage": 0,
+              "effect": {
+                "valuation": 10
+              }
+            },
+            {
+              "text": "保持冷静",
+              "nextStage": 0,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "投资者失望离开。",
+          "options": [
+            {
+              "text": "挽留",
+              "nextStage": 0,
+              "effect": {
+                "reputation": -5
+              }
+            },
+            {
+              "text": "无所谓",
+              "nextStage": 0,
+              "effect": {
+                "morale": -5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "np5",
+      "name": "机械海马",
+      "position": [
+        5,
+        7
+      ],
+      "dialogue": "海马快递，专送招股书。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "海马送来紧急文件。",
+          "options": [
+            {
+              "text": "签署",
+              "nextStage": 1,
+              "effect": {
+                "legal": 10
+              }
+            },
+            {
+              "text": "退回",
+              "nextStage": 2,
+              "effect": {
+                "legal": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "文件已签署，IPO进程加快。",
+          "options": [
+            {
+              "text": "下一步",
+              "nextStage": 0,
+              "effect": {}
+            },
+            {
+              "text": "检查细节",
+              "nextStage": 2,
+              "effect": {
+                "time": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "发现有陷阱条款！",
+          "options": [
+            {
+              "text": "修改",
+              "nextStage": 0,
+              "effect": {
+                "legal": 5
+              }
+            },
+            {
+              "text": "无视",
+              "nextStage": 0,
+              "effect": {
+                "legal": -10
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "it1",
+      "name": "龙珠电源",
+      "position": [
+        1,
+        2
+      ],
+      "description": "为赛博龙宫提供能量。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "龙珠能量不足，需要充电。",
+          "options": [
+            {
+              "text": "用核电充",
+              "nextStage": 1,
+              "effect": {
+                "energy": 10
+              }
+            },
+            {
+              "text": "用太阳能",
+              "nextStage": 2,
+              "effect": {
+                "energy": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "核电快速但污染。",
+          "options": [
+            {
+              "text": "接受",
+              "nextStage": 0,
+              "effect": {
+                "pollution": 10
+              }
+            },
+            {
+              "text": "换方式",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "太阳能清洁但慢。",
+          "options": [
+            {
+              "text": "等待",
+              "nextStage": 0,
+              "effect": {
+                "time": 10
+              }
+            },
+            {
+              "text": "混合使用",
+              "nextStage": 0,
+              "effect": {
+                "efficiency": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it2",
+      "name": "珊瑚服务器",
+      "position": [
+        3,
+        6
+      ],
+      "description": "存储所有数据。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "服务器过热！",
+          "options": [
+            {
+              "text": "水冷",
+              "nextStage": 1,
+              "effect": {
+                "performance": 10
+              }
+            },
+            {
+              "text": "风冷",
+              "nextStage": 2,
+              "effect": {
+                "performance": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "水冷有效，但可能短路。",
+          "options": [
+            {
+              "text": "小心操作",
+              "nextStage": 0,
+              "effect": {
+                "risk": 5
+              }
+            },
+            {
+              "text": "换方案",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "风冷不够，还是热。",
+          "options": [
+            {
+              "text": "加冰",
+              "nextStage": 0,
+              "effect": {
+                "cooling": 10
+              }
+            },
+            {
+              "text": "扩建",
+              "nextStage": 0,
+              "effect": {
+                "cost": 10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it3",
+      "name": "珍珠算盘",
+      "position": [
+        7,
+        4
+      ],
+      "description": "计算IPO估值。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "算盘打不出数字。",
+          "options": [
+            {
+              "text": "手动算",
+              "nextStage": 1,
+              "effect": {
+                "accuracy": 10
+              }
+            },
+            {
+              "text": "用电脑",
+              "nextStage": 2,
+              "effect": {
+                "speed": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "手动算太慢。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 0,
+              "effect": {
+                "time": 10
+              }
+            },
+            {
+              "text": "换电脑",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "电脑被黑客攻击！",
+          "options": [
+            {
+              "text": "防御",
+              "nextStage": 0,
+              "effect": {
+                "security": 10
+              }
+            },
+            {
+              "text": "重启",
+              "nextStage": 0,
+              "effect": {
+                "time": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it4",
+      "name": "海藻网络",
+      "position": [
+        9,
+        1
+      ],
+      "description": "连接所有系统。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "网络拥堵。",
+          "options": [
+            {
+              "text": "扩展带宽",
+              "nextStage": 1,
+              "effect": {
+                "speed": 10
+              }
+            },
+            {
+              "text": "限流",
+              "nextStage": 2,
+              "effect": {
+                "stability": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "带宽扩展成功。",
+          "options": [
+            {
+              "text": "测试",
+              "nextStage": 0,
+              "effect": {
+                "reliability": 5
+              }
+            },
+            {
+              "text": "直接使用",
+              "nextStage": 0,
+              "effect": {
+                "risk": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "限流导致通信延迟。",
+          "options": [
+            {
+              "text": "取消限流",
+              "nextStage": 0,
+              "effect": {
+                "speed": 5
+              }
+            },
+            {
+              "text": "优化限流",
+              "nextStage": 0,
+              "effect": {
+                "efficiency": 10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it5",
+      "name": "鲸鱼空调",
+      "position": [
+        10,
+        8
+      ],
+      "description": "冷却整个龙宫。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "空调故障！",
+          "options": [
+            {
+              "text": "维修",
+              "nextStage": 1,
+              "effect": {
+                "cooling": 10
+              }
+            },
+            {
+              "text": "换新",
+              "nextStage": 2,
+              "effect": {
+                "cost": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "维修需要零件。",
+          "options": [
+            {
+              "text": "买零件",
+              "nextStage": 0,
+              "effect": {
+                "cost": 5
+              }
+            },
+            {
+              "text": "自己造",
+              "nextStage": 0,
+              "effect": {
+                "time": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "新空调太贵。",
+          "options": [
+            {
+              "text": "砍价",
+              "nextStage": 0,
+              "effect": {
+                "cost": -5
+              }
+            },
+            {
+              "text": "贷款",
+              "nextStage": 0,
+              "effect": {
+                "debt": 10
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": {
+        "time": 0
+      },
+      "text": "时间到！IPO失败，龙宫破产。"
+    },
+    {
+      "id": "end2",
+      "condition": {
+        "valuation": ">=1000"
+      },
+      "text": "估值过高，泡沫破裂！"
+    },
+    {
+      "id": "end3",
+      "condition": {
+        "security": "<=0"
+      },
+      "text": "系统被黑，数据全失。"
+    },
+    {
+      "id": "end4",
+      "condition": {
+        "reputation": "<=0"
+      },
+      "text": "声誉扫地，无人投资。"
+    },
+    {
+      "id": "end5",
+      "condition": {
+        "energy": ">=100"
+      },
+      "text": "能量过剩，龙宫爆炸！"
+    },
+    {
+      "id": "end6",
+      "condition": {
+        "pollution": ">=100"
+      },
+      "text": "污染严重，环保局查封。"
+    },
+    {
+      "id": "end7",
+      "condition": {
+        "legal": "<=0"
+      },
+      "text": "违法操作，CEO被捕。"
+    },
+    {
+      "id": "end8",
+      "condition": {
+        "morale": ">=100"
+      },
+      "text": "士气高涨，IPO大获成功！"
+    },
+    {
+      "id": "end9",
+      "condition": {
+        "risk": ">=100"
+      },
+      "text": "风险失控，龙宫沉没。"
+    },
+    {
+      "id": "end10",
+      "condition": {
+        "attention": ">=100"
+      },
+      "text": "万众瞩目，但压力过大，CEO崩溃。"
+    }
+  ],
+  "introText": "赛博龙宫，IPO倒计时60秒！你是龙王，决定一切！",
+  "ambientMusic": "electronic_wave.mp3",
+  "id": "fallback_world_041"
+}

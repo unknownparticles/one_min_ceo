@@ -1,0 +1,862 @@
+{
+  "matchKeywords": [
+    "婚礼",
+    "首富",
+    "赞助商",
+    "60秒",
+    "宇宙"
+  ],
+  "identity": "宇宙婚礼赞助商",
+  "theme": "宇宙首富婚礼前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "carpet",
+      "stage",
+      "floor",
+      "carpet",
+      "carpet",
+      "console",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "plant",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "statue",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 6
+  },
+  "npcs": [
+    {
+      "id": "npc_bride",
+      "name": "新娘",
+      "x": 7,
+      "y": 3,
+      "color": "white",
+      "dialogue": "我们的婚礼要完美！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "新娘焦急地等待。",
+          "options": [
+            {
+              "text": "询问婚戒在哪",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "安抚新娘",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "她指向保险箱。",
+          "options": [
+            {
+              "text": "去检查保险箱",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "说我马上回来",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "新娘微笑，但要求检查蛋糕。",
+          "options": [
+            {
+              "text": "去厨房",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "派助理去",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_groom",
+      "name": "新郎",
+      "x": 8,
+      "y": 2,
+      "color": "blue",
+      "dialogue": "还有60秒，一切都要完美！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "新郎紧张地看表。",
+          "options": [
+            {
+              "text": "检查领结",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "确认音乐",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "领结歪了，需要调整。",
+          "options": [
+            {
+              "text": "帮忙整理",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "叫造型师",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "音乐播放器没电了。",
+          "options": [
+            {
+              "text": "换电池",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "用手机播放",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_bestman",
+      "name": "伴郎",
+      "x": 5,
+      "y": 5,
+      "color": "green",
+      "dialogue": "戒指在哪？",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "伴郎焦急地找戒指。",
+          "options": [
+            {
+              "text": "问他戒指在哪",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "说我来找",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "他指向上锁的箱子。",
+          "options": [
+            {
+              "text": "开锁",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "找钥匙",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他说戒指在保险箱里。",
+          "options": [
+            {
+              "text": "走向保险箱",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "让他去拿",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_caterer",
+      "name": "餐饮主管",
+      "x": 2,
+      "y": 4,
+      "color": "yellow",
+      "dialogue": "蛋糕还没送到？",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "他抱怨蛋糕迟到。",
+          "options": [
+            {
+              "text": "催蛋糕师",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "说换甜品",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "蛋糕师说堵在路上了。",
+          "options": [
+            {
+              "text": "派无人机取",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "亲自去取",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "需要备用甜品方案。",
+          "options": [
+            {
+              "text": "用冰淇淋蛋糕",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "用果盘",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_photographer",
+      "name": "摄影师",
+      "x": 10,
+      "y": 8,
+      "color": "purple",
+      "dialogue": "灯光不对！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "他抱怨灯光太暗。",
+          "options": [
+            {
+              "text": "调亮灯光",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "用闪光灯",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "灯光调亮后过热。",
+          "options": [
+            {
+              "text": "开空调",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "换LED灯",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "闪光灯电池没电。",
+          "options": [
+            {
+              "text": "换电池",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "不用闪光灯",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_ring",
+      "name": "婚戒",
+      "x": 7,
+      "y": 6,
+      "type": "special",
+      "description": "宇宙最贵的戒指",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "戒指在保险箱里。",
+          "options": [
+            {
+              "text": "输入密码",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "用指纹解锁",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "密码错误！还剩一次机会。",
+          "options": [
+            {
+              "text": "试另一个密码",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "求助新郎",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "指纹识别成功！戒指取出。",
+          "options": [
+            {
+              "text": "拿给新郎",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "给新娘惊喜",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_cake",
+      "name": "婚礼蛋糕",
+      "x": 3,
+      "y": 5,
+      "type": "special",
+      "description": "十层宇宙蛋糕",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "蛋糕模型出现。",
+          "options": [
+            {
+              "text": "检查蛋糕",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "找蛋糕师",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "蛋糕倒了一角。",
+          "options": [
+            {
+              "text": "修补",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "重新装饰",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "蛋糕师有备份蛋糕。",
+          "options": [
+            {
+              "text": "用备份",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "坚持用原蛋糕",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_music_player",
+      "name": "音乐播放器",
+      "x": 9,
+      "y": 4,
+      "type": "special",
+      "description": "播放婚礼进行曲",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "播放器没电。",
+          "options": [
+            {
+              "text": "换电池",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "用手机代替",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "电池仓卡住。",
+          "options": [
+            {
+              "text": "用力拔",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "用工具开",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "手机音量太小。",
+          "options": [
+            {
+              "text": "找音响",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "叫人安静",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_flower",
+      "name": "花束",
+      "x": 4,
+      "y": 9,
+      "type": "special",
+      "description": "新娘捧花",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "花束有点蔫。",
+          "options": [
+            {
+              "text": "喷水",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "换新的",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "喷水后恢复生机。",
+          "options": [
+            {
+              "text": "拿给新娘",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "放花瓶",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "花房有备用花束。",
+          "options": [
+            {
+              "text": "去取",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "让助理取",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_light",
+      "name": "灯光遥控器",
+      "x": 11,
+      "y": 7,
+      "type": "special",
+      "description": "控制婚礼灯光",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "遥控器失灵。",
+          "options": [
+            {
+              "text": "换电池",
+              "nextStage": 1,
+              "effect": {}
+            },
+            {
+              "text": "手动开关",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "电池型号不对。",
+          "options": [
+            {
+              "text": "找合适电池",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "用其他遥控器",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "手动开关在舞台后。",
+          "options": [
+            {
+              "text": "去舞台后",
+              "nextStage": -1,
+              "effect": {}
+            },
+            {
+              "text": "叫电工",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end_perfect",
+      "condition": "戒指到位、蛋糕完好、音乐响起",
+      "text": "婚礼完美进行，你获得首富的感谢！"
+    },
+    {
+      "id": "end_ring_missing",
+      "condition": "戒指未找到",
+      "text": "新娘发现戒指丢了，婚礼取消，你被解雇。"
+    },
+    {
+      "id": "end_cake_fail",
+      "condition": "蛋糕损坏且无备份",
+      "text": "没有蛋糕，新娘生气，你被赶出会场。"
+    },
+    {
+      "id": "end_music_fail",
+      "condition": "音乐没电且无替代",
+      "text": "婚礼无声，气氛尴尬，你被指责。"
+    },
+    {
+      "id": "end_light_fail",
+      "condition": "灯光未调好",
+      "text": "灯光混乱，摄影师罢工，婚礼失败。"
+    },
+    {
+      "id": "end_flower_fail",
+      "condition": "花束枯萎且未换",
+      "text": "新娘拒绝捧花，婚礼蒙上阴影。"
+    },
+    {
+      "id": "end_timeout",
+      "condition": "60秒结束未完成关键任务",
+      "text": "时间到，婚礼一团糟，你被解雇。"
+    },
+    {
+      "id": "end_chaos",
+      "condition": "多个任务失败",
+      "text": "所有问题爆发，婚礼变成灾难，你被宇宙除名。"
+    }
+  ],
+  "introText": "你是宇宙首富婚礼的赞助商，距离仪式开始只有60秒！你必须确保婚戒、蛋糕、音乐、灯光和花束全部到位。每解决一个问题，时间减少10秒。祝你好运！",
+  "ambientMusic": "https://example.com/wedding_march.mp3",
+  "id": "fallback_world_052"
+}

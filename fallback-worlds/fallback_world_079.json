@@ -1,0 +1,812 @@
+{
+  "matchKeywords": [
+    "直播",
+    "网红",
+    "CEO",
+    "危机",
+    "60秒"
+  ],
+  "identity": "超级网红CEO",
+  "theme": "超级网红CEO直播前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "stage",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 2,
+    "y": 2
+  },
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "助理小美",
+      "tile": "carpet",
+      "position": {
+        "x": 7,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "老板，直播马上开始，但赞助商突然撤资了！",
+          "options": [
+            {
+              "text": "别慌，先稳住气氛",
+              "next": 2
+            },
+            {
+              "text": "什么？我亲自打电话",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "好的，我让团队准备备用方案。",
+          "options": [
+            {
+              "text": "好，你处理吧",
+              "next": null
+            },
+            {
+              "text": "等等，还有别的坏消息吗？",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "还有，竞争对手也在同时直播。",
+          "options": [
+            {
+              "text": "怕什么，我人气高",
+              "next": null
+            },
+            {
+              "text": "必须出奇招",
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "技术总监",
+      "tile": "console",
+      "position": {
+        "x": 4,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "CEO，服务器压力太大，随时可能崩溃！",
+          "options": [
+            {
+              "text": "加大带宽！",
+              "next": 2
+            },
+            {
+              "text": "先限制观众进入",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "已经最大了，需要您吸引观众去其他平台。",
+          "options": [
+            {
+              "text": "那我发条推文",
+              "next": null
+            },
+            {
+              "text": "让我们团队再想想办法",
+              "next": null
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "限制的话会影响口碑。",
+          "options": [
+            {
+              "text": "那就赌一把",
+              "next": null
+            },
+            {
+              "text": "还是按原计划",
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "经纪人",
+      "tile": "carpet",
+      "position": {
+        "x": 8,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "刚接到通知，直播时间要提前10分钟！",
+          "options": [
+            {
+              "text": "立刻开始准备",
+              "next": 2
+            },
+            {
+              "text": "不行，来不及",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "好，我让化妆师马上来。",
+          "options": [
+            {
+              "text": "简单弄一下就行",
+              "next": null
+            },
+            {
+              "text": "必须完美",
+              "next": null
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "可是合同有规定。",
+          "options": [
+            {
+              "text": "那就违约",
+              "next": null
+            },
+            {
+              "text": "协商推迟",
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "化妆师",
+      "tile": "carpet",
+      "position": {
+        "x": 3,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "老板，您的妆还没定，口红颜色选哪个？",
+          "options": [
+            {
+              "text": "经典红",
+              "next": 2
+            },
+            {
+              "text": "大胆紫",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "好的，配合今天的西装。",
+          "options": [
+            {
+              "text": "就这样吧",
+              "next": null
+            },
+            {
+              "text": "再加点亮粉",
+              "next": null
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "紫色很前卫，但可能吓到观众。",
+          "options": [
+            {
+              "text": "就要这个效果",
+              "next": null
+            },
+            {
+              "text": "还是红色吧",
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "竞争对手",
+      "tile": "neon_floor",
+      "position": {
+        "x": 5,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "哈哈，你的直播要黄了！",
+          "options": [
+            {
+              "text": "接招吧",
+              "next": 2
+            },
+            {
+              "text": "无视他",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "我有秘密武器，你等着。",
+          "options": [
+            {
+              "text": "尽管放马过来",
+              "next": null
+            },
+            {
+              "text": "我们走着瞧",
+              "next": null
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "怂了？",
+          "options": [
+            {
+              "text": "谁怕谁",
+              "next": null
+            },
+            {
+              "text": "懒得理你",
+              "next": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "赞助商合同",
+      "tile": "vault",
+      "position": {
+        "x": 2,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一份价值百万的赞助合同，但需要签名。",
+          "options": [
+            {
+              "text": "签名",
+              "next": 2
+            },
+            {
+              "text": "再看看",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "签了名，但发现条款有陷阱。",
+          "options": [
+            {
+              "text": "撕毁合同",
+              "next": null
+            },
+            {
+              "text": "将计就计",
+              "next": null
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "发现是竞争对手的圈套。",
+          "options": [
+            {
+              "text": "揭穿他",
+              "next": null
+            },
+            {
+              "text": "假装中计",
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "手机",
+      "tile": "console",
+      "position": {
+        "x": 4,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "手机突然收到神秘短信。",
+          "options": [
+            {
+              "text": "查看短信",
+              "next": 2
+            },
+            {
+              "text": "忽略",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "短信说：我知道你的秘密。",
+          "options": [
+            {
+              "text": "回拨电话",
+              "next": null
+            },
+            {
+              "text": "删除短信",
+              "next": null
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "错过了重要信息。",
+          "options": [
+            {
+              "text": "后悔莫及",
+              "next": null
+            },
+            {
+              "text": "继续直播",
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "金色麦克风",
+      "tile": "stage",
+      "position": {
+        "x": 3,
+        "y": 4
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "这是你的幸运麦克风，但好像坏了。",
+          "options": [
+            {
+              "text": "自己修",
+              "next": 2
+            },
+            {
+              "text": "换一个",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "修好了，但声音有点怪。",
+          "options": [
+            {
+              "text": "将就着用",
+              "next": null
+            },
+            {
+              "text": "还是换吧",
+              "next": null
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "发现备用麦克风被动了手脚。",
+          "options": [
+            {
+              "text": "拆穿阴谋",
+              "next": null
+            },
+            {
+              "text": "秘密处理",
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "能量饮料",
+      "tile": "plant",
+      "position": {
+        "x": 12,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "喝一口提神，但可能含有违禁成分。",
+          "options": [
+            {
+              "text": "喝下去",
+              "next": 2
+            },
+            {
+              "text": "丢掉",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "感觉充满力量，但心跳加速。",
+          "options": [
+            {
+              "text": "继续",
+              "next": null
+            },
+            {
+              "text": "担心健康",
+              "next": null
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "发现是竞争对手送的。",
+          "options": [
+            {
+              "text": "报警",
+              "next": null
+            },
+            {
+              "text": "以其人之道",
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "演讲稿",
+      "tile": "floor",
+      "position": {
+        "x": 6,
+        "y": 8
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你的演讲稿，但被涂鸦了。",
+          "options": [
+            {
+              "text": "即兴发挥",
+              "next": 2
+            },
+            {
+              "text": "找助理重打",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "即兴效果出奇的好。",
+          "options": [
+            {
+              "text": "保持这个风格",
+              "next": null
+            },
+            {
+              "text": "以后都这样",
+              "next": null
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "助理发现是内部人干的。",
+          "options": [
+            {
+              "text": "开除他",
+              "next": null
+            },
+            {
+              "text": "给他机会",
+              "next": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": "成功解决所有危机，直播爆火",
+      "text": "你完美应对了所有挑战，直播观看人数破亿，成为年度网红CEO！"
+    },
+    {
+      "id": "ending2",
+      "condition": "服务器崩溃，直播失败",
+      "text": "服务器崩溃，观众流失，竞争对手趁机崛起，你跌落神坛。"
+    },
+    {
+      "id": "ending3",
+      "condition": "被竞争对手暗算",
+      "text": "你中了竞争对手的圈套，丑闻曝光，CEO生涯结束。"
+    },
+    {
+      "id": "ending4",
+      "condition": "合同陷阱导致破产",
+      "text": "你签下了陷阱合同，公司破产，你沦为普通网红。"
+    },
+    {
+      "id": "ending5",
+      "condition": "健康问题倒下",
+      "text": "能量饮料导致心脏问题，你在直播中倒下，被送医院。"
+    },
+    {
+      "id": "ending6",
+      "condition": "助理叛变",
+      "text": "助理小美其实是竞争对手的人，你被出卖，直播变成笑话。"
+    },
+    {
+      "id": "ending7",
+      "condition": "完美逆袭",
+      "text": "在最后关头，你凭借智慧和魅力逆袭，成为传奇。"
+    },
+    {
+      "id": "ending8",
+      "condition": "及时止损",
+      "text": "你意识到风险，及时停止直播，虽然损失但保留了底线。"
+    }
+  ],
+  "introText": "你是超级网红CEO，距离直播开始只剩60秒！你的助理、技术团队、经纪人等都在后台忙碌。但危机四伏：赞助商撤资、服务器压力、竞争对手虎视眈眈。你需要在60秒内做出关键决策，稳住局势，成就一场爆款直播！",
+  "ambientMusic": "急促的电子节拍，带有悬疑感，逐渐加强",
+  "id": "fallback_world_079"
+}

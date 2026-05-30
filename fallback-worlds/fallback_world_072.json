@@ -1,0 +1,1713 @@
+{
+  "matchKeywords": [
+    "退市",
+    "创始人",
+    "超级龙头企业",
+    "60秒"
+  ],
+  "identity": "退市集团创始人",
+  "theme": "超级龙头企业退市前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "water",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "fire",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "stage",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "张董事",
+      "dialogTitle": "最后通牒",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "张董事：我们还有60秒，你打算怎么办？",
+          "options": [
+            {
+              "text": "宣布重大重组",
+              "nextStage": 1,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 10
+              }
+            },
+            {
+              "text": "转移资产",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": 100
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "张董事：重组方案需要时间，来不及了。",
+          "options": [
+            {
+              "text": "强行实施",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -10
+              }
+            },
+            {
+              "text": "放弃",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": -50
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "张董事：资产转移被发现，更糟了。",
+          "options": [
+            {
+              "text": "销毁证据",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -20
+              }
+            },
+            {
+              "text": "自首",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "bad_ending_1"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "张董事：时间只剩30秒了！",
+          "options": [
+            {
+              "text": "启动紧急预案",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "neutral_ending"
+              }
+            },
+            {
+              "text": "祈祷奇迹",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "crazy_ending"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "张董事：结束了。",
+          "options": []
+        }
+      ],
+      "position": [
+        2,
+        3
+      ],
+      "isTarget": false
+    },
+    {
+      "id": "npc2",
+      "name": "李秘书",
+      "dialogTitle": "内幕消息",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "李秘书：我有个内幕消息，但需要代价。",
+          "options": [
+            {
+              "text": "支付100万",
+              "nextStage": 1,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": -100
+              }
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "李秘书：消息是：退市不可避免。",
+          "options": [
+            {
+              "text": "接受现实",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -5
+              }
+            },
+            {
+              "text": "愤怒斥责",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": -50
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "李秘书：你错过了机会。",
+          "options": [
+            {
+              "text": "求饶",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -10
+              }
+            },
+            {
+              "text": "威胁",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": 50
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "李秘书：时间不多了。",
+          "options": [
+            {
+              "text": "继续询问",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "neutral_ending"
+              }
+            },
+            {
+              "text": "离开",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "bad_ending_2"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "李秘书：再见。",
+          "options": []
+        }
+      ],
+      "position": [
+        2,
+        8
+      ],
+      "isTarget": false
+    },
+    {
+      "id": "npc3",
+      "name": "王经理",
+      "dialogTitle": "紧急会议",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "王经理：我们有一个紧急计划。",
+          "options": [
+            {
+              "text": "听他说",
+              "nextStage": 1,
+              "effect": {
+                "type": "modify",
+                "key": "knowledge",
+                "value": 10
+              }
+            },
+            {
+              "text": "打断他",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "王经理：我们可以收购另一家公司。",
+          "options": [
+            {
+              "text": "批准",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": -200
+              }
+            },
+            {
+              "text": "否决",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "王经理：你太武断了。",
+          "options": [
+            {
+              "text": "道歉",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 10
+              }
+            },
+            {
+              "text": "坚持",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "王经理：时间紧迫。",
+          "options": [
+            {
+              "text": "执行计划",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "good_ending_1"
+              }
+            },
+            {
+              "text": "放弃",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "bad_ending_3"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "王经理：好。",
+          "options": []
+        }
+      ],
+      "position": [
+        3,
+        5
+      ],
+      "isTarget": false
+    },
+    {
+      "id": "npc4",
+      "name": "赵分析师",
+      "dialogTitle": "数据预测",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "赵分析师：根据模型，只有一条路可走。",
+          "options": [
+            {
+              "text": "什么路？",
+              "nextStage": 1,
+              "effect": {
+                "type": "modify",
+                "key": "knowledge",
+                "value": 5
+              }
+            },
+            {
+              "text": "我不相信数据",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "赵分析师：造假账拖延时间。",
+          "options": [
+            {
+              "text": "好主意",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": -100
+              }
+            },
+            {
+              "text": "太冒险",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "赵分析师：那等死吧。",
+          "options": [
+            {
+              "text": "再想想",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "knowledge",
+                "value": 5
+              }
+            },
+            {
+              "text": "愤怒",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "赵分析师：还剩40秒。",
+          "options": [
+            {
+              "text": "按照数据来",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "neutral_ending"
+              }
+            },
+            {
+              "text": "反着来",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "crazy_ending"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "赵分析师：结束了。",
+          "options": []
+        }
+      ],
+      "position": [
+        4,
+        2
+      ],
+      "isTarget": false
+    },
+    {
+      "id": "npc5",
+      "name": "陈律师",
+      "dialogTitle": "法律建议",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "陈律师：我有办法让你免于起诉。",
+          "options": [
+            {
+              "text": "什么办法？",
+              "nextStage": 1,
+              "effect": {
+                "type": "modify",
+                "key": "knowledge",
+                "value": 10
+              }
+            },
+            {
+              "text": "我不需要",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "陈律师：把责任推给CFO。",
+          "options": [
+            {
+              "text": "同意",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -20
+              }
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "陈律师：那你自求多福。",
+          "options": [
+            {
+              "text": "求他帮忙",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": -200
+              }
+            },
+            {
+              "text": "硬扛",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "陈律师：最后20秒。",
+          "options": [
+            {
+              "text": "接受建议",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "bad_ending_4"
+              }
+            },
+            {
+              "text": "独自面对",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "bad_ending_5"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "陈律师：再见。",
+          "options": []
+        }
+      ],
+      "position": [
+        5,
+        7
+      ],
+      "isTarget": false
+    },
+    {
+      "id": "npc6",
+      "name": "神秘人",
+      "dialogTitle": "神秘交易",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "神秘人：我可以让你重生，但你要付出代价。",
+          "options": [
+            {
+              "text": "什么代价？",
+              "nextStage": 1,
+              "effect": {
+                "type": "modify",
+                "key": "knowledge",
+                "value": 5
+              }
+            },
+            {
+              "text": "滚开",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "神秘人：你的灵魂。",
+          "options": [
+            {
+              "text": "成交",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -50
+              }
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "神秘人：你会后悔的。",
+          "options": [
+            {
+              "text": "我不怕",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -5
+              }
+            },
+            {
+              "text": "等等",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": 50
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "神秘人：时间到了。",
+          "options": [
+            {
+              "text": "交易",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "good_ending_2"
+              }
+            },
+            {
+              "text": "放弃",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "bad_ending_6"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "神秘人：再见。",
+          "options": []
+        }
+      ],
+      "position": [
+        6,
+        5
+      ],
+      "isTarget": false
+    },
+    {
+      "id": "npc7",
+      "name": "保安队长",
+      "dialogTitle": "秩序维护",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "保安队长：外面有记者，怎么办？",
+          "options": [
+            {
+              "text": "让他们进来",
+              "nextStage": 1,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -10
+              }
+            },
+            {
+              "text": "拦住",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "保安队长：记者冲进来了！",
+          "options": [
+            {
+              "text": "发表声明",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -5
+              }
+            },
+            {
+              "text": "躲起来",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "保安队长：他们冲破了防线。",
+          "options": [
+            {
+              "text": "逃跑",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -30
+              }
+            },
+            {
+              "text": "面对",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "保安队长：最后10秒。",
+          "options": [
+            {
+              "text": "坦白",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "neutral_ending"
+              }
+            },
+            {
+              "text": "撒谎",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "bad_ending_7"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "保安队长：结束了。",
+          "options": []
+        }
+      ],
+      "position": [
+        5,
+        3
+      ],
+      "isTarget": false
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "机密文件",
+      "description": "里面有退市真相。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你捡起机密文件。",
+          "options": [
+            {
+              "text": "阅读",
+              "nextStage": 1,
+              "effect": {
+                "type": "modify",
+                "key": "knowledge",
+                "value": 20
+              }
+            },
+            {
+              "text": "销毁",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "文件显示所有违规操作。",
+          "options": [
+            {
+              "text": "公开",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -50
+              }
+            },
+            {
+              "text": "隐藏",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": 100
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你掩盖了证据。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -5
+              }
+            },
+            {
+              "text": "后悔",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "knowledge",
+                "value": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "文件已处理。",
+          "options": [
+            {
+              "text": "离开",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "bad_ending_8"
+              }
+            },
+            {
+              "text": "再检查",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "neutral_ending"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "结束。",
+          "options": []
+        }
+      ],
+      "position": [
+        2,
+        5
+      ],
+      "isTarget": false,
+      "visible": true
+    },
+    {
+      "id": "item2",
+      "name": "金表",
+      "description": "很值钱。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你发现一块金表。",
+          "options": [
+            {
+              "text": "拿走",
+              "nextStage": 1,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": 500
+              }
+            },
+            {
+              "text": "留下",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "金表是你的了。",
+          "options": [
+            {
+              "text": "卖掉",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": 500
+              }
+            },
+            {
+              "text": "典当",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": 300
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你保持了诚实。",
+          "options": [
+            {
+              "text": "感谢",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 10
+              }
+            },
+            {
+              "text": "无所谓",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 0
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "处理完毕。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "neutral_ending"
+              }
+            },
+            {
+              "text": "离开",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "bad_ending_3"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "结束。",
+          "options": []
+        }
+      ],
+      "position": [
+        4,
+        10
+      ],
+      "isTarget": false,
+      "visible": true
+    },
+    {
+      "id": "item3",
+      "name": "逃生通道钥匙",
+      "description": "可以打开紧急出口。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你找到一把钥匙。",
+          "options": [
+            {
+              "text": "拿上",
+              "nextStage": 1,
+              "effect": {
+                "type": "modify",
+                "key": "knowledge",
+                "value": 5
+              }
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 0
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "钥匙是开逃生通道的。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": -50
+              }
+            },
+            {
+              "text": "留着",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "knowledge",
+                "value": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你没有使用钥匙。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -5
+              }
+            },
+            {
+              "text": "无所谓",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 0
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "钥匙已处理。",
+          "options": [
+            {
+              "text": "逃生",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "good_ending_3"
+              }
+            },
+            {
+              "text": "留下",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "bad_ending_5"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "结束。",
+          "options": []
+        }
+      ],
+      "position": [
+        6,
+        2
+      ],
+      "isTarget": false,
+      "visible": true
+    },
+    {
+      "id": "item4",
+      "name": "毒药",
+      "description": "可以了结一切。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你发现一瓶毒药。",
+          "options": [
+            {
+              "text": "拿走",
+              "nextStage": 1,
+              "effect": {
+                "type": "modify",
+                "key": "knowledge",
+                "value": 5
+              }
+            },
+            {
+              "text": "扔掉",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "毒药在手。",
+          "options": [
+            {
+              "text": "喝下",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -100
+              }
+            },
+            {
+              "text": "留着",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "knowledge",
+                "value": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你没有动毒药。",
+          "options": [
+            {
+              "text": "庆幸",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 10
+              }
+            },
+            {
+              "text": "遗憾",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "毒药已处理。",
+          "options": [
+            {
+              "text": "离开",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "neutral_ending"
+              }
+            },
+            {
+              "text": "使用",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "bad_ending_9"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "结束。",
+          "options": []
+        }
+      ],
+      "position": [
+        3,
+        12
+      ],
+      "isTarget": false,
+      "visible": true
+    },
+    {
+      "id": "item5",
+      "name": "支票簿",
+      "description": "可以开巨额支票。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你找到支票簿。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": 1,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": 1000
+              }
+            },
+            {
+              "text": "销毁",
+              "nextStage": 2,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你开了一张巨额支票。",
+          "options": [
+            {
+              "text": "兑现",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": 1000
+              }
+            },
+            {
+              "text": "捐赠",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 50
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你销毁了支票簿。",
+          "options": [
+            {
+              "text": "明智",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "reputation",
+                "value": 10
+              }
+            },
+            {
+              "text": "后悔",
+              "nextStage": 3,
+              "effect": {
+                "type": "modify",
+                "key": "cash",
+                "value": -200
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "支票簿已处理。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "neutral_ending"
+              }
+            },
+            {
+              "text": "离开",
+              "nextStage": 4,
+              "effect": {
+                "type": "ending",
+                "key": "good_ending_4"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "结束。",
+          "options": []
+        }
+      ],
+      "position": [
+        1,
+        9
+      ],
+      "isTarget": false,
+      "visible": true
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "bad_ending_1",
+      "title": "自首入狱",
+      "description": "你选择了自首，被判入狱，公司退市。",
+      "condition": {
+        "key": "reputation",
+        "value": -50
+      }
+    },
+    {
+      "id": "bad_ending_2",
+      "title": "错过机会",
+      "description": "你拒绝了内幕消息，一切太迟了。",
+      "condition": {
+        "key": "knowledge",
+        "value": 0
+      }
+    },
+    {
+      "id": "bad_ending_3",
+      "title": "收购失败",
+      "description": "收购计划失败，公司倒闭。",
+      "condition": {
+        "key": "cash",
+        "value": -200
+      }
+    },
+    {
+      "id": "bad_ending_4",
+      "title": "推卸责任",
+      "description": "你推卸责任，但最终被揭穿。",
+      "condition": {
+        "key": "reputation",
+        "value": -20
+      }
+    },
+    {
+      "id": "bad_ending_5",
+      "title": "独自承担",
+      "description": "你独自面对一切，身败名裂。",
+      "condition": {
+        "key": "reputation",
+        "value": -30
+      }
+    },
+    {
+      "id": "bad_ending_6",
+      "title": "拒绝交易",
+      "description": "你拒绝了神秘交易，公司退市。",
+      "condition": {
+        "key": "reputation",
+        "value": 0
+      }
+    },
+    {
+      "id": "bad_ending_7",
+      "title": "撒谎被揭穿",
+      "description": "你对记者撒谎，被揭穿。",
+      "condition": {
+        "key": "reputation",
+        "value": -40
+      }
+    },
+    {
+      "id": "bad_ending_8",
+      "title": "隐藏文件被发现",
+      "description": "你隐藏机密文件，但被发现。",
+      "condition": {
+        "key": "reputation",
+        "value": -60
+      }
+    },
+    {
+      "id": "bad_ending_9",
+      "title": "服毒自尽",
+      "description": "你选择喝下毒药，结束一切。",
+      "condition": {
+        "key": "reputation",
+        "value": -100
+      }
+    },
+    {
+      "id": "neutral_ending",
+      "title": "正常退市",
+      "description": "公司按规定退市，你接受调查。",
+      "condition": {
+        "key": "reputation",
+        "value": -10
+      }
+    },
+    {
+      "id": "good_ending_1",
+      "title": "成功重组",
+      "description": "你成功重组公司，避免退市。",
+      "condition": {
+        "key": "cash",
+        "value": -200,
+        "reputation": 10
+      }
+    },
+    {
+      "id": "good_ending_2",
+      "title": "神秘重生",
+      "description": "你与神秘人交易，获得新生。",
+      "condition": {
+        "key": "reputation",
+        "value": -50
+      }
+    },
+    {
+      "id": "good_ending_3",
+      "title": "成功逃生",
+      "description": "你用钥匙逃生，一切抛在身后。",
+      "condition": {
+        "key": "knowledge",
+        "value": 5
+      }
+    },
+    {
+      "id": "good_ending_4",
+      "title": "捐赠获誉",
+      "description": "你捐赠支票，获得公众好评。",
+      "condition": {
+        "key": "reputation",
+        "value": 50
+      }
+    },
+    {
+      "id": "crazy_ending",
+      "title": "疯狂赌博",
+      "description": "你进行疯狂赌博，结果未知。",
+      "condition": {
+        "key": "reputation",
+        "value": -100
+      }
+    }
+  ],
+  "introText": "你是退市集团的创始人，超级龙头企业即将退市，你只有60秒时间。在这个荒诞的世界里，你的每一个决定都可能改变结局。祝你好运！",
+  "ambientMusic": "紧张节奏",
+  "id": "fallback_world_072"
+}

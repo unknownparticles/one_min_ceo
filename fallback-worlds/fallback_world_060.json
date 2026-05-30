@@ -1,0 +1,1526 @@
+{
+  "matchKeywords": [
+    "银河帝国",
+    "继承仪式",
+    "摄政王",
+    "王冠",
+    "星舰"
+  ],
+  "identity": "银河帝国摄政王",
+  "theme": "银河帝国继承仪式前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "throne",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "gold_floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 10
+  },
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "帝国宰相",
+      "x": 4,
+      "y": 3,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "摄政王，仪式即将开始，但王冠上的一颗宝石被窃了。",
+          "options": [
+            {
+              "text": "下令全城搜查",
+              "nextStage": 2
+            },
+            {
+              "text": "询问他怀疑谁",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "搜查令已发出，但时间紧迫，可能来不及。",
+          "options": [
+            {
+              "text": "使用备用王冠",
+              "nextStage": 4
+            },
+            {
+              "text": "亲自去追查",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "宰相低声说：我怀疑是星际海盗所为，他们可能藏在废弃空间站。",
+          "options": [
+            {
+              "text": "派兵围剿",
+              "nextStage": 6
+            },
+            {
+              "text": "假装不知，暗中调查",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "备用王冠虽然朴素，但足够应付仪式。",
+          "options": [
+            {
+              "text": "接受备用王冠",
+              "nextStage": "ending1"
+            },
+            {
+              "text": "坚持找回原王冠",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你决定亲自追查，但时间只剩30秒。",
+          "options": [
+            {
+              "text": "去空间站搜查",
+              "nextStage": 8
+            },
+            {
+              "text": "审问宫廷人员",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "舰队出发，但可能引发外交冲突。",
+          "options": [
+            {
+              "text": "不顾后果，强攻",
+              "nextStage": "ending2"
+            },
+            {
+              "text": "先谈判",
+              "nextStage": 10
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "你暗中调查，发现宰相形迹可疑。",
+          "options": [
+            {
+              "text": "直接质问宰相",
+              "nextStage": 11
+            },
+            {
+              "text": "继续跟踪",
+              "nextStage": 12
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "text": "在空间站找到了海盗，但他们要求谈判。",
+          "options": [
+            {
+              "text": "同意谈判",
+              "nextStage": 13
+            },
+            {
+              "text": "直接开战",
+              "nextStage": "ending3"
+            }
+          ]
+        },
+        {
+          "stage": 9,
+          "text": "审问下，一名侍从承认偷了宝石。",
+          "options": [
+            {
+              "text": "饶恕他",
+              "nextStage": 14
+            },
+            {
+              "text": "严惩不贷",
+              "nextStage": "ending4"
+            }
+          ]
+        },
+        {
+          "stage": 10,
+          "text": "谈判成功，海盗交还宝石，但要求赦免。",
+          "options": [
+            {
+              "text": "赦免他们",
+              "nextStage": 15
+            },
+            {
+              "text": "先拿宝石，再翻脸",
+              "nextStage": "ending5"
+            }
+          ]
+        },
+        {
+          "stage": 11,
+          "text": "宰相惊慌失措，承认是他监守自盗。",
+          "options": [
+            {
+              "text": "逮捕宰相",
+              "nextStage": "ending6"
+            },
+            {
+              "text": "给他一个机会",
+              "nextStage": 16
+            }
+          ]
+        },
+        {
+          "stage": 12,
+          "text": "你发现宰相与外星势力勾结。",
+          "options": [
+            {
+              "text": "揭露阴谋",
+              "nextStage": "ending7"
+            },
+            {
+              "text": "将计就计",
+              "nextStage": 17
+            }
+          ]
+        },
+        {
+          "stage": 13,
+          "text": "海盗同意归还宝石，但要求加入帝国。",
+          "options": [
+            {
+              "text": "接纳他们",
+              "nextStage": "ending8"
+            },
+            {
+              "text": "拒绝并开战",
+              "nextStage": "ending3"
+            }
+          ]
+        },
+        {
+          "stage": 14,
+          "text": "侍从感激涕零，交出宝石。",
+          "options": [
+            {
+              "text": "奖励他",
+              "nextStage": "ending9"
+            },
+            {
+              "text": "放他走",
+              "nextStage": "ending10"
+            }
+          ]
+        },
+        {
+          "stage": 15,
+          "text": "海盗成为帝国盟友，仪式顺利进行。",
+          "options": [
+            {
+              "text": "圆满结束",
+              "nextStage": "ending11"
+            }
+          ]
+        },
+        {
+          "stage": 16,
+          "text": "宰相感激不尽，发誓效忠。",
+          "options": [
+            {
+              "text": "信任他",
+              "nextStage": "ending12"
+            },
+            {
+              "text": "仍心存疑虑",
+              "nextStage": "ending13"
+            }
+          ]
+        },
+        {
+          "stage": 17,
+          "text": "你将计就计，设下陷阱。",
+          "options": [
+            {
+              "text": "成功捕获外星间谍",
+              "nextStage": "ending14"
+            },
+            {
+              "text": "计划败露",
+              "nextStage": "ending15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "星际海盗头目",
+      "x": 2,
+      "y": 7,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "哈哈，摄政王，你的王冠在我手中！",
+          "options": [
+            {
+              "text": "威胁他",
+              "nextStage": 2
+            },
+            {
+              "text": "谈判",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你以为我会怕？我有人质！",
+          "options": [
+            {
+              "text": "妥协",
+              "nextStage": 4
+            },
+            {
+              "text": "强攻",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "我们可以谈谈条件。",
+          "options": [
+            {
+              "text": "问条件",
+              "nextStage": 6
+            },
+            {
+              "text": "假装同意",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你答应了？好，放人。",
+          "options": [
+            {
+              "text": "暗算他",
+              "nextStage": "ending16"
+            },
+            {
+              "text": "遵守诺言",
+              "nextStage": "ending17"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "强攻失败，人质受伤。",
+          "options": [
+            {
+              "text": "懊悔",
+              "nextStage": "ending18"
+            },
+            {
+              "text": "继续战斗",
+              "nextStage": "ending19"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "条件：给我们一艘星舰和赦免。",
+          "options": [
+            {
+              "text": "答应",
+              "nextStage": 8
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "你假装同意，但暗中调动军队。",
+          "options": [
+            {
+              "text": "包围他们",
+              "nextStage": "ending20"
+            },
+            {
+              "text": "被识破",
+              "nextStage": "ending21"
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "text": "海盗满意，归还王冠。",
+          "options": [
+            {
+              "text": "放他们走",
+              "nextStage": "ending22"
+            },
+            {
+              "text": "背信弃义",
+              "nextStage": "ending23"
+            }
+          ]
+        },
+        {
+          "stage": 9,
+          "text": "海盗恼羞成怒，摧毁王冠。",
+          "options": [
+            {
+              "text": "动用备用",
+              "nextStage": "ending24"
+            },
+            {
+              "text": "暴怒攻击",
+              "nextStage": "ending25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "宫廷法师",
+      "x": 10,
+      "y": 4,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "殿下，星象显示今天不宜加冕。",
+          "options": [
+            {
+              "text": "推迟仪式",
+              "nextStage": 2
+            },
+            {
+              "text": "不信邪",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "推迟会引发政局动荡。",
+          "options": [
+            {
+              "text": "强行举行",
+              "nextStage": 4
+            },
+            {
+              "text": "寻求其他建议",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你不信，但法师坚持。",
+          "options": [
+            {
+              "text": "驱赶法师",
+              "nextStage": 6
+            },
+            {
+              "text": "听他解释",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "仪式开始，天空出现异象。",
+          "options": [
+            {
+              "text": "停止仪式",
+              "nextStage": 8
+            },
+            {
+              "text": "继续",
+              "nextStage": "ending26"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "法师建议用替身。",
+          "options": [
+            {
+              "text": "采纳",
+              "nextStage": "ending27"
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "法师被驱赶，但留下诅咒。",
+          "options": [
+            {
+              "text": "无视",
+              "nextStage": "ending28"
+            },
+            {
+              "text": "追回法师",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "法师说：有内奸在仪式上。",
+          "options": [
+            {
+              "text": "彻查",
+              "nextStage": 9
+            },
+            {
+              "text": "相信护卫",
+              "nextStage": "ending29"
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "text": "仪式中断，帝国陷入混乱。",
+          "options": [
+            {
+              "text": "重整秩序",
+              "nextStage": "ending30"
+            },
+            {
+              "text": "退位",
+              "nextStage": "ending31"
+            }
+          ]
+        },
+        {
+          "stage": 9,
+          "text": "内奸被抓，仪式安全。",
+          "options": [
+            {
+              "text": "奖励法师",
+              "nextStage": "ending32"
+            },
+            {
+              "text": "继续仪式",
+              "nextStage": "ending33"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "外星使者",
+      "x": 8,
+      "y": 8,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "摄政王，我们要求帝国割让边境星系。",
+          "options": [
+            {
+              "text": "拒绝",
+              "nextStage": 2
+            },
+            {
+              "text": "谈判",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "拒绝将导致战争。",
+          "options": [
+            {
+              "text": "备战",
+              "nextStage": 4
+            },
+            {
+              "text": "妥协",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "外星使者提出联姻。",
+          "options": [
+            {
+              "text": "接受",
+              "nextStage": "ending34"
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "战争爆发，但帝国准备不足。",
+          "options": [
+            {
+              "text": "御驾亲征",
+              "nextStage": "ending35"
+            },
+            {
+              "text": "任命元帅",
+              "nextStage": "ending36"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你妥协了，但民众不满。",
+          "options": [
+            {
+              "text": "镇压",
+              "nextStage": "ending37"
+            },
+            {
+              "text": "解释",
+              "nextStage": "ending38"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "御前侍卫长",
+      "x": 5,
+      "y": 9,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "殿下，有人企图在仪式上刺杀您。",
+          "options": [
+            {
+              "text": "加强安保",
+              "nextStage": 2
+            },
+            {
+              "text": "将计就计",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "安保升级，但刺客可能已混入。",
+          "options": [
+            {
+              "text": "盘查所有人",
+              "nextStage": 4
+            },
+            {
+              "text": "正常进行",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你假装中计，引蛇出洞。",
+          "options": [
+            {
+              "text": "成功捕获",
+              "nextStage": "ending39"
+            },
+            {
+              "text": "计划失败",
+              "nextStage": "ending40"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "盘查发现了一个可疑人物。",
+          "options": [
+            {
+              "text": "审问",
+              "nextStage": 6
+            },
+            {
+              "text": "直接处决",
+              "nextStage": "ending41"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "仪式上刺客出现，但被侍卫制服。",
+          "options": [
+            {
+              "text": "感谢侍卫长",
+              "nextStage": "ending42"
+            },
+            {
+              "text": "审问刺客",
+              "nextStage": 6
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "刺客招供是宰相指使。",
+          "options": [
+            {
+              "text": "逮捕宰相",
+              "nextStage": "ending43"
+            },
+            {
+              "text": "放长线钓大鱼",
+              "nextStage": "ending44"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "帝国王冠",
+      "x": 3,
+      "y": 1,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "王冠闪耀着光芒，但缺了一颗宝石。",
+          "options": [
+            {
+              "text": "寻找宝石",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "宝石就在附近的地板上。",
+          "options": [
+            {
+              "text": "捡起",
+              "nextStage": 4
+            },
+            {
+              "text": "不捡",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你决定不管它，但仪式可能受影响。",
+          "options": [
+            {
+              "text": "继续仪式",
+              "nextStage": "ending45"
+            },
+            {
+              "text": "改变主意",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你装好宝石，王冠恢复完整。",
+          "options": [
+            {
+              "text": "戴在头上",
+              "nextStage": "ending46"
+            },
+            {
+              "text": "交给侍从",
+              "nextStage": "ending47"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "星际地图",
+      "x": 2,
+      "y": 5,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "地图上标记着一个未知星系。",
+          "options": [
+            {
+              "text": "探索",
+              "nextStage": 2
+            },
+            {
+              "text": "收起来",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "星系中隐藏着远古科技。",
+          "options": [
+            {
+              "text": "前往",
+              "nextStage": "ending48"
+            },
+            {
+              "text": "报告帝国",
+              "nextStage": "ending49"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你收好地图，以后再用。",
+          "options": [
+            {
+              "text": "研究",
+              "nextStage": 2
+            },
+            {
+              "text": "销毁",
+              "nextStage": "ending50"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "通讯器",
+      "x": 9,
+      "y": 2,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "通讯器收到一条加密信息。",
+          "options": [
+            {
+              "text": "解密",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "信息显示有人要发动政变。",
+          "options": [
+            {
+              "text": "立即行动",
+              "nextStage": 4
+            },
+            {
+              "text": "按兵不动",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你忽略了信息，但危机临近。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 2
+            },
+            {
+              "text": "听天由命",
+              "nextStage": "ending51"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你成功挫败了政变。",
+          "options": [
+            {
+              "text": "嘉奖功臣",
+              "nextStage": "ending52"
+            },
+            {
+              "text": "独揽功劳",
+              "nextStage": "ending53"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "政变发生，帝国大乱。",
+          "options": [
+            {
+              "text": "平乱",
+              "nextStage": "ending54"
+            },
+            {
+              "text": "逃亡",
+              "nextStage": "ending55"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "神秘药剂",
+      "x": 6,
+      "y": 6,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一瓶闪着荧光的药剂。",
+          "options": [
+            {
+              "text": "喝下",
+              "nextStage": 2
+            },
+            {
+              "text": "研究",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你获得了短暂的超能力。",
+          "options": [
+            {
+              "text": "使用能力",
+              "nextStage": 4
+            },
+            {
+              "text": "保存",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "研究后发现是毒药。",
+          "options": [
+            {
+              "text": "销毁",
+              "nextStage": "ending56"
+            },
+            {
+              "text": "留着害人",
+              "nextStage": "ending57"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你用能力看穿了刺客的伪装。",
+          "options": [
+            {
+              "text": "逮捕刺客",
+              "nextStage": "ending58"
+            },
+            {
+              "text": "将计就计",
+              "nextStage": "ending59"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你保存了药剂，但能力消失了。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 2
+            },
+            {
+              "text": "无所谓",
+              "nextStage": "ending60"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "古代卷轴",
+      "x": 11,
+      "y": 7,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "卷轴上记载着失落的预言。",
+          "options": [
+            {
+              "text": "阅读",
+              "nextStage": 2
+            },
+            {
+              "text": "封存",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "预言说今日的加冕将带来灾难。",
+          "options": [
+            {
+              "text": "相信预言",
+              "nextStage": 4
+            },
+            {
+              "text": "嗤之以鼻",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你封存了卷轴，但好奇心驱使。",
+          "options": [
+            {
+              "text": "再次打开",
+              "nextStage": 2
+            },
+            {
+              "text": "彻底遗忘",
+              "nextStage": "ending61"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你推迟了加冕，避免了灾难。",
+          "options": [
+            {
+              "text": "重建仪式",
+              "nextStage": "ending62"
+            },
+            {
+              "text": "退位",
+              "nextStage": "ending31"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "灾难降临，帝国覆灭。",
+          "options": [
+            {
+              "text": "抵抗",
+              "nextStage": "ending63"
+            },
+            {
+              "text": "投降",
+              "nextStage": "ending64"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "text": "你用备用王冠完成了仪式，但失去了威信。"
+    },
+    {
+      "id": "ending2",
+      "text": "强攻导致星际战争，帝国陷入战火。"
+    },
+    {
+      "id": "ending3",
+      "text": "战斗爆发，你英勇牺牲。"
+    },
+    {
+      "id": "ending4",
+      "text": "你严惩了侍从，但宝石被毁，仪式失败。"
+    },
+    {
+      "id": "ending5",
+      "text": "你背信弃义，海盗报复，帝国动荡。"
+    },
+    {
+      "id": "ending6",
+      "text": "宰相被捕，余党潜伏，危机四伏。"
+    },
+    {
+      "id": "ending7",
+      "text": "你揭露了外星阴谋，成为英雄。"
+    },
+    {
+      "id": "ending8",
+      "text": "接纳海盗，但帝国声誉受损。"
+    },
+    {
+      "id": "ending9",
+      "text": "奖励侍从，他成为忠臣。"
+    },
+    {
+      "id": "ending10",
+      "text": "放走侍从，他感恩戴德。"
+    },
+    {
+      "id": "ending11",
+      "text": "仪式圆满，帝国繁荣。"
+    },
+    {
+      "id": "ending12",
+      "text": "宰相成为你最信任的人。"
+    },
+    {
+      "id": "ending13",
+      "text": "你怀疑宰相，导致君臣不和。"
+    },
+    {
+      "id": "ending14",
+      "text": "成功捕获外星间谍，帝国安全。"
+    },
+    {
+      "id": "ending15",
+      "text": "计划败露，你被暗杀。"
+    },
+    {
+      "id": "ending16",
+      "text": "你暗算海盗，但失去信誉。"
+    },
+    {
+      "id": "ending17",
+      "text": "你遵守诺言，海盗成为盟友。"
+    },
+    {
+      "id": "ending18",
+      "text": "人质受伤，你愧疚不已。"
+    },
+    {
+      "id": "ending19",
+      "text": "继续战斗，最终同归于尽。"
+    },
+    {
+      "id": "ending20",
+      "text": "包围海盗，成功夺回王冠。"
+    },
+    {
+      "id": "ending21",
+      "text": "被识破，海盗撕票。"
+    },
+    {
+      "id": "ending22",
+      "text": "放走海盗，他们销声匿迹。"
+    },
+    {
+      "id": "ending23",
+      "text": "背信弃义，引发仇恨。"
+    },
+    {
+      "id": "ending24",
+      "text": "动用备用王冠，仪式继续。"
+    },
+    {
+      "id": "ending25",
+      "text": "暴怒攻击，双方伤亡惨重。"
+    },
+    {
+      "id": "ending26",
+      "text": "仪式继续，但诅咒降临。"
+    },
+    {
+      "id": "ending27",
+      "text": "用替身，你躲过一劫。"
+    },
+    {
+      "id": "ending28",
+      "text": "无视诅咒，但灾祸不断。"
+    },
+    {
+      "id": "ending29",
+      "text": "相信护卫，但内奸得逞。"
+    },
+    {
+      "id": "ending30",
+      "text": "重整秩序，但元气大伤。"
+    },
+    {
+      "id": "ending31",
+      "text": "你退位，帝国进入新纪元。"
+    },
+    {
+      "id": "ending32",
+      "text": "奖励法师，他成为国师。"
+    },
+    {
+      "id": "ending33",
+      "text": "继续仪式，一切顺利。"
+    },
+    {
+      "id": "ending34",
+      "text": "联姻成功，帝国与外星结盟。"
+    },
+    {
+      "id": "ending35",
+      "text": "御驾亲征，你战死沙场。"
+    },
+    {
+      "id": "ending36",
+      "text": "任命元帅，帝国获胜。"
+    },
+    {
+      "id": "ending37",
+      "text": "镇压民众，失去民心。"
+    },
+    {
+      "id": "ending38",
+      "text": "解释后，民众理解。"
+    },
+    {
+      "id": "ending39",
+      "text": "成功捕获刺客，安全加冕。"
+    },
+    {
+      "id": "ending40",
+      "text": "计划失败，你被刺杀。"
+    },
+    {
+      "id": "ending41",
+      "text": "处决可疑人物，但错杀好人。"
+    },
+    {
+      "id": "ending42",
+      "text": "感谢侍卫长，晋升他。"
+    },
+    {
+      "id": "ending43",
+      "text": "逮捕宰相，清除内患。"
+    },
+    {
+      "id": "ending44",
+      "text": "放长线，却让大鱼跑了。"
+    },
+    {
+      "id": "ending45",
+      "text": "仪式因王冠瑕疵而不完美。"
+    },
+    {
+      "id": "ending46",
+      "text": "你戴上王冠，成为全宇宙的焦点。"
+    },
+    {
+      "id": "ending47",
+      "text": "交给侍从，但他卷款潜逃。"
+    },
+    {
+      "id": "ending48",
+      "text": "你前往未知星系，发现新大陆。"
+    },
+    {
+      "id": "ending49",
+      "text": "报告帝国，但被官僚耽误。"
+    },
+    {
+      "id": "ending50",
+      "text": "销毁地图，你失去了机遇。"
+    },
+    {
+      "id": "ending51",
+      "text": "听天由命，帝国灭亡。"
+    },
+    {
+      "id": "ending52",
+      "text": "嘉奖功臣，人心所向。"
+    },
+    {
+      "id": "ending53",
+      "text": "独揽功劳，引起不满。"
+    },
+    {
+      "id": "ending54",
+      "text": "平乱成功，但代价巨大。"
+    },
+    {
+      "id": "ending55",
+      "text": "逃亡途中，你被俘。"
+    },
+    {
+      "id": "ending56",
+      "text": "销毁毒药，救了别人一命。"
+    },
+    {
+      "id": "ending57",
+      "text": "留着害人，最终自食其果。"
+    },
+    {
+      "id": "ending58",
+      "text": "逮捕刺客，仪式安全。"
+    },
+    {
+      "id": "ending59",
+      "text": "将计就计，揪出幕后黑手。"
+    },
+    {
+      "id": "ending60",
+      "text": "无所谓，你失去了超能力的机会。"
+    },
+    {
+      "id": "ending61",
+      "text": "彻底遗忘，过平凡的一生。"
+    },
+    {
+      "id": "ending62",
+      "text": "重建仪式，帝国新气象。"
+    },
+    {
+      "id": "ending63",
+      "text": "抵抗到底，壮烈牺牲。"
+    },
+    {
+      "id": "ending64",
+      "text": "投降，成为阶下囚。"
+    }
+  ],
+  "introText": "【银河帝国继承仪式】你，身为摄政王，即将加冕为帝。但王冠失窃，内忧外患，只有60秒时间解决一切。步步惊心，每个选择都将决定帝国的命运。",
+  "ambientMusic": "epic_orchestral_60s.mp3",
+  "id": "fallback_world_060"
+}

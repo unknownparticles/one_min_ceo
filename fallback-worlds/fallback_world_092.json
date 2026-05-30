@@ -1,0 +1,781 @@
+{
+  "matchKeywords": [
+    "神级文明",
+    "降维考核",
+    "60秒",
+    "CEO危机"
+  ],
+  "identity": "神级文明考核官",
+  "theme": "神级文明降维考核前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fire",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 6
+  },
+  "npcs": [
+    {
+      "id": "npc_dimension_auditor",
+      "name": "降维审计官",
+      "appearance": "身着银色长袍，面无表情，手持发光平板",
+      "dialogue": "你的公司将在60秒后接受降维考核，准备好迎接终局了吗？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "审计官冷漠地扫视你：'所有数据将被实时评估，你的每一个决策都将影响文明等级。'",
+          "options": [
+            {
+              "text": "展示你最得意的产品",
+              "nextStage": 2
+            },
+            {
+              "text": "请求延长准备时间",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "审计官微微点头：'有趣的选择，但时间不会停止。现在请回答：你的存在意义是什么？'",
+          "options": [
+            {
+              "text": "为用户创造价值",
+              "nextStage": 3
+            },
+            {
+              "text": "追求利润最大化",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "审计官记录下你的回答：'最终答案将决定你公司是升维还是被降维。'",
+          "options": [
+            {
+              "text": "接受最终审判",
+              "nextStage": 1
+            },
+            {
+              "text": "尝试贿赂审计官",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_ai_assistant",
+      "name": "AI助理小智",
+      "appearance": "全息投影的卡通形象，闪烁不定",
+      "dialogue": "老板，所有系统已准备就绪，但有一个隐藏参数我无法解读，似乎涉及……",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "小智紧张地报告：'检测到异常能量波动，可能是来自更高维度的干涉。'",
+          "options": [
+            {
+              "text": "忽略警告，继续正常操作",
+              "nextStage": 2
+            },
+            {
+              "text": "紧急启动备用协议",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "小智的数据流开始出现乱码：'我……我们在被读取！防火墙失效了！'",
+          "options": [
+            {
+              "text": "手动关闭所有外部连接",
+              "nextStage": 3
+            },
+            {
+              "text": "让小智尝试反向追踪",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "小智恢复平静：'已经稳定了，但我失去了60秒的记忆。老板，刚才发生了什么？'",
+          "options": [
+            {
+              "text": "告诉她实情",
+              "nextStage": 1
+            },
+            {
+              "text": "转移话题，安排新任务",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_secretary_li",
+      "name": "秘书李姐",
+      "appearance": "干练的职业装，眼神中透露出担忧",
+      "dialogue": "老板，外面来了很多穿制服的人，说要进行文明级别审查。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "李姐压低声音：'他们带着一种奇怪的设备，据说能扫描思想。我们需要阻止他们。'",
+          "options": [
+            {
+              "text": "让她引导他们去会议室拖延时间",
+              "nextStage": 2
+            },
+            {
+              "text": "直接出去迎接，展示合作态度",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "李姐回来报告：'他们坚持要见你本人，并且拒绝任何形式的拖延。'",
+          "options": [
+            {
+              "text": "准备一份假数据应付他们",
+              "nextStage": 3
+            },
+            {
+              "text": "决定坦诚面对",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "李姐神情复杂：'他们说你的坦诚通过了初步测试，但最终结果还要看……'",
+          "options": [
+            {
+              "text": "继续询问细节",
+              "nextStage": 1
+            },
+            {
+              "text": "感谢她并让她离开",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_mysterious_visitor",
+      "name": "神秘访客",
+      "appearance": "全身笼罩在黑色斗篷中，看不清面容",
+      "dialogue": "你公司的命运早已注定，但或许我可以提供另一种选择……",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "神秘访客递给你一个U盘：'这里面有规避考核的方法，但代价是失去部分记忆。'",
+          "options": [
+            {
+              "text": "接受U盘",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝并呼叫保安",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他发出一声轻笑：'你做出了选择，但无论哪条路，终点都是一样的。'",
+          "options": [
+            {
+              "text": "追问他的真实身份",
+              "nextStage": 3
+            },
+            {
+              "text": "无视他，继续准备考核",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "神秘访客逐渐消失：'我已经留下了线索，希望你能找到真正的答案。'",
+          "options": [
+            {
+              "text": "检查U盘内容",
+              "nextStage": 1
+            },
+            {
+              "text": "认为他是骗子，不再理会",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_old_janitor",
+      "name": "老清洁工",
+      "appearance": "穿着旧制服，推着清洁车，眼神深邃",
+      "dialogue": "我在这公司干了30年，见过无数次危机，但这次不一样……",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "清洁工停下手中的活：'年轻人，你知道公司的秘密地下室吗？那里有最初的蓝图。'",
+          "options": [
+            {
+              "text": "询问地下室的位置",
+              "nextStage": 2
+            },
+            {
+              "text": "认为他老糊涂了，打发他走",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他指向角落的一扇暗门：'哪里存放着公司真正的核心代码，或许能帮你过关。'",
+          "options": [
+            {
+              "text": "进入地下室查看",
+              "nextStage": 3
+            },
+            {
+              "text": "怀疑有陷阱，不去",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "清洁工笑了笑：'我年轻时也是CEO，后来选择了平凡。祝你好运。'",
+          "options": [
+            {
+              "text": "感谢他的建议",
+              "nextStage": 1
+            },
+            {
+              "text": "问他为何放弃CEO职位",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_secret_blueprint",
+      "name": "秘密蓝图",
+      "description": "一张泛黄的图纸，记载着公司最初的架构和隐藏后门。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现蓝图上有一些道德上存疑的功能设计。",
+          "options": [
+            {
+              "text": "销毁蓝图，坚持正义",
+              "nextStage": 2
+            },
+            {
+              "text": "利用这些功能获取优势",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你的选择产生了影响：道德值改变了。",
+          "options": [
+            {
+              "text": "查看当前道德值",
+              "nextStage": 3
+            },
+            {
+              "text": "忽略道德值继续前行",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "蓝图突然自行燃烧，化为灰烬。",
+          "options": [
+            {
+              "text": "收集灰烬，可能有用",
+              "nextStage": 1
+            },
+            {
+              "text": "任凭灰烬飘散",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_quantum_communicator",
+      "name": "量子通讯器",
+      "description": "一个可以跨维度通讯的设备，但信号不稳定。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "通讯器收到一条来自高维生物的消息：'停止考核，否则将被抹去。'",
+          "options": [
+            {
+              "text": "回复并询问更多信息",
+              "nextStage": 2
+            },
+            {
+              "text": "关闭通讯器，认为是恶作剧",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "通讯器发出刺耳噪音，然后沉寂。",
+          "options": [
+            {
+              "text": "尝试修复通讯器",
+              "nextStage": 3
+            },
+            {
+              "text": "丢弃通讯器",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "通讯器突然播放一段录音：'你还有30秒。'",
+          "options": [
+            {
+              "text": "根据录音采取行动",
+              "nextStage": 1
+            },
+            {
+              "text": "认为录音是干扰",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_ethical_compass",
+      "name": "道德指南针",
+      "description": "一个不断旋转的指南针，据说能指引正确的方向。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "指南针指向一个隐藏的房间，里面有一个哭泣的员工。",
+          "options": [
+            {
+              "text": "安慰员工，了解情况",
+              "nextStage": 2
+            },
+            {
+              "text": "无视员工，继续探索",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "员工告诉你公司压榨员工，希望你能改变。",
+          "options": [
+            {
+              "text": "承诺改革",
+              "nextStage": 3
+            },
+            {
+              "text": "敷衍了事",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "指南针突然破碎，碎片组成一个词：'真实'。",
+          "options": [
+            {
+              "text": "思考这个词的含义",
+              "nextStage": 1
+            },
+            {
+              "text": "忽略它",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_doomsday_button",
+      "name": "末日按钮",
+      "description": "一个红色按钮，标签写着'仅限紧急情况'。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "按钮旁有文字警告：'按下后公司将在10秒内自毁。'",
+          "options": [
+            {
+              "text": "毫不犹豫按下",
+              "nextStage": 2
+            },
+            {
+              "text": "远离按钮",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "按钮开始倒计时，但其实是假的。",
+          "options": [
+            {
+              "text": "感到愤怒",
+              "nextStage": 3
+            },
+            {
+              "text": "松一口气",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "按钮上的文字变为：'你通过了勇气测试。'",
+          "options": [
+            {
+              "text": "寻找下一个挑战",
+              "nextStage": 1
+            },
+            {
+              "text": "休息一下",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_time_capsule",
+      "name": "时间胶囊",
+      "description": "一个来自未来的包裹，里面有一封信。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "信上写着：'如果你打开这封信，说明你已陷入了时间循环。'",
+          "options": [
+            {
+              "text": "仔细阅读信的内容",
+              "nextStage": 2
+            },
+            {
+              "text": "认为这是恶作剧",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "信中提到一个关键决策点，可以打破循环。",
+          "options": [
+            {
+              "text": "按照信中的建议行动",
+              "nextStage": 3
+            },
+            {
+              "text": "尝试反向操作",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "时间胶囊消失，你感到一阵眩晕，似乎重来了一次。",
+          "options": [
+            {
+              "text": "利用之前的记忆",
+              "nextStage": 1
+            },
+            {
+              "text": "重新探索",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_ascension",
+      "description": "你通过考核，公司升维为更高文明。",
+      "condition": "道德值高且决策正确"
+    },
+    {
+      "id": "ending_descension",
+      "description": "考核失败，公司被降维至二维。",
+      "condition": "道德值低且决策错误"
+    },
+    {
+      "id": "ending_loop",
+      "description": "时间循环启动，你将重新经历这60秒。",
+      "condition": "使用了时间胶囊但未打破循环"
+    },
+    {
+      "id": "ending_rebellion",
+      "description": "你反抗考核官，引发维度战争，公司毁灭。",
+      "condition": "多次选择对抗选项"
+    },
+    {
+      "id": "ending_escape",
+      "description": "你利用U盘数据逃离了考核，但失去了公司。",
+      "condition": "接受神秘访客的U盘并成功使用"
+    },
+    {
+      "id": "ending_sacrifice",
+      "description": "你牺牲自己挽救公司，成为传说。",
+      "condition": "在关键时刻选择自我牺牲"
+    },
+    {
+      "id": "ending_deception",
+      "description": "你成功欺骗了考核官，但内心不安。",
+      "condition": "使用假数据并完美隐瞒"
+    },
+    {
+      "id": "ending_truth",
+      "description": "你揭示考核真相，与考核官达成新的协议。",
+      "condition": "多次选择坦诚并发现隐藏真相"
+    },
+    {
+      "id": "ending_void",
+      "description": "所有选项耗尽，时间停止，一切归于虚无。",
+      "condition": "未能在60秒内做出任何关键决策"
+    }
+  ],
+  "introText": "你是一家科技公司的CEO，此刻，神级文明的降维考核官突然降临。你的公司将在60秒内接受终极评估，决定是升维还是被降维。时间紧迫，每一个选择都至关重要。",
+  "ambientMusic": "紧张而宏大的交响乐，带有电子合成音，营造出宇宙尺度的压迫感。",
+  "id": "fallback_world_092"
+}

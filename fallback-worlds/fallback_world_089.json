@@ -1,0 +1,923 @@
+{
+  "matchKeywords": [
+    "火星",
+    "皇室",
+    "财务",
+    "晚宴",
+    "CEO"
+  ],
+  "identity": "火星皇室财务总管",
+  "theme": "火星皇宫晚宴前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "throne",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "gold_floor",
+      "console",
+      "gold_floor",
+      "console",
+      "gold_floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "throne",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    7,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "火星国王",
+      "position": [
+        7,
+        7
+      ],
+      "dialogue": "爱卿，晚宴的预算...",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "国王威严地看着你，等待你的财务报告。",
+          "options": [
+            {
+              "text": "报告陛下，预算已超额。",
+              "nextStage": 2
+            },
+            {
+              "text": "一切尽在掌握。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "国王皱眉，拍案而起。",
+          "options": [
+            {
+              "text": "请求增加拨款。",
+              "nextStage": 4
+            },
+            {
+              "text": "承诺缩减开支。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "国王满意地点点头。",
+          "options": [
+            {
+              "text": "提出新的财政计划。",
+              "nextStage": 6
+            },
+            {
+              "text": "请求离席处理事务。",
+              "nextStage": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "火星王后",
+      "position": [
+        9,
+        5
+      ],
+      "dialogue": "我的珠宝预算...",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "王后优雅地招手，暗示你靠近。",
+          "options": [
+            {
+              "text": "恭敬地走过去。",
+              "nextStage": 2
+            },
+            {
+              "text": "假装没看见。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "王后低声说：'我需要更多火星钻。'",
+          "options": [
+            {
+              "text": "点头答应。",
+              "nextStage": 4
+            },
+            {
+              "text": "委婉拒绝。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "王后不满地哼了一声。",
+          "options": [
+            {
+              "text": "回头解释。",
+              "nextStage": 4
+            },
+            {
+              "text": "继续走开。",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "火星财政部长",
+      "position": [
+        5,
+        10
+      ],
+      "dialogue": "预算漏洞被发现！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "财政部长惊慌地跑过来，手里拿着账本。",
+          "options": [
+            {
+              "text": "镇定地接过账本。",
+              "nextStage": 2
+            },
+            {
+              "text": "让他冷静。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "账本显示巨额亏空。",
+          "options": [
+            {
+              "text": "撕掉账本（伪造）。",
+              "nextStage": 4
+            },
+            {
+              "text": "承认错误。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "部长依然慌乱，引来众人目光。",
+          "options": [
+            {
+              "text": "拉他到角落。",
+              "nextStage": 4
+            },
+            {
+              "text": "公开呵斥。",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "火星大厨",
+      "position": [
+        3,
+        3
+      ],
+      "dialogue": "晚宴食材短缺！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "大厨冲出厨房，满脸焦虑。",
+          "options": [
+            {
+              "text": "询问详情。",
+              "nextStage": 2
+            },
+            {
+              "text": "让他找别人。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "大厨说火星龙虾短缺，需要紧急采购。",
+          "options": [
+            {
+              "text": "批准采购。",
+              "nextStage": 4
+            },
+            {
+              "text": "拒绝，改用库存。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "大厨失望地离开。",
+          "options": [
+            {
+              "text": "追上去妥协。",
+              "nextStage": 4
+            },
+            {
+              "text": "不管了。",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "火星侍卫长",
+      "position": [
+        11,
+        2
+      ],
+      "dialogue": "有刺客混入晚宴！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "侍卫长低声报告，神色紧张。",
+          "options": [
+            {
+              "text": "立即封锁现场。",
+              "nextStage": 2
+            },
+            {
+              "text": "秘密调查。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "侍卫长执行封锁，但引起骚动。",
+          "options": [
+            {
+              "text": "安抚宾客。",
+              "nextStage": 4
+            },
+            {
+              "text": "亲自搜捕。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你决定低调行事。",
+          "options": [
+            {
+              "text": "让侍卫长暗中排查。",
+              "nextStage": 4
+            },
+            {
+              "text": "自己悄悄跟踪。",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc6",
+      "name": "火星星探",
+      "position": [
+        13,
+        8
+      ],
+      "dialogue": "想上火星头条吗？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "星探拿着相机，对你挤眉弄眼。",
+          "options": [
+            {
+              "text": "配合拍照。",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝并赶走。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "星探拍了几张，说头条见。",
+          "options": [
+            {
+              "text": "贿赂他不要发。",
+              "nextStage": 4
+            },
+            {
+              "text": "无所谓。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "星探悻悻离开，但偷拍了一张。",
+          "options": [
+            {
+              "text": "追回相机。",
+              "nextStage": 4
+            },
+            {
+              "text": "由他去吧。",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "火星金库钥匙",
+      "position": [
+        6,
+        5
+      ],
+      "description": "开启秘密金库的钥匙",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一把古老的钥匙，上面刻有火星皇室徽章。",
+          "options": [
+            {
+              "text": "捡起钥匙。",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略它。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "钥匙入手感觉沉重，似乎有秘密。",
+          "options": [
+            {
+              "text": "试探性地插入钥匙孔。",
+              "nextStage": 4
+            },
+            {
+              "text": "藏入袖中。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你走开了，但钥匙仍在原地。",
+          "options": [
+            {
+              "text": "回头捡起。",
+              "nextStage": 2
+            },
+            {
+              "text": "彻底不管。",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "火星钻项链",
+      "position": [
+        2,
+        7
+      ],
+      "description": "王后遗失的贵重项链",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一条闪耀的项链掉在地上。",
+          "options": [
+            {
+              "text": "捡起来。",
+              "nextStage": 2
+            },
+            {
+              "text": "踩过去。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "项链价值连城，王后正在寻找。",
+          "options": [
+            {
+              "text": "归还王后。",
+              "nextStage": 4
+            },
+            {
+              "text": "私藏起来。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "项链被踩脏，可能惹怒王后。",
+          "options": [
+            {
+              "text": "捡起来擦干净。",
+              "nextStage": 2
+            },
+            {
+              "text": "装作没看到。",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "财务报表",
+      "position": [
+        4,
+        10
+      ],
+      "description": "显示预算严重超支的报告",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一张财务报表落在角落。",
+          "options": [
+            {
+              "text": "捡起它。",
+              "nextStage": 2
+            },
+            {
+              "text": "踩住它。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "报表显示你的财务操作有问题。",
+          "options": [
+            {
+              "text": "销毁报表。",
+              "nextStage": 4
+            },
+            {
+              "text": "保留并修正。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你试图掩盖，但有人看到了。",
+          "options": [
+            {
+              "text": "捡起来撕掉。",
+              "nextStage": 4
+            },
+            {
+              "text": "公开它。",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "通讯器",
+      "position": [
+        9,
+        9
+      ],
+      "description": "与地球的秘密通讯设备",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个通讯器在震动，有消息。",
+          "options": [
+            {
+              "text": "查看消息。",
+              "nextStage": 2
+            },
+            {
+              "text": "关机。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "消息显示地球盟友有紧急情况。",
+          "options": [
+            {
+              "text": "回复。",
+              "nextStage": 4
+            },
+            {
+              "text": "删除消息。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "通讯器静默，但你错过了重要信息。",
+          "options": [
+            {
+              "text": "重新开机。",
+              "nextStage": 2
+            },
+            {
+              "text": "置之不理。",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "毒酒",
+      "position": [
+        10,
+        6
+      ],
+      "description": "一杯可疑的红酒",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一杯酒放在桌上，颜色异常。",
+          "options": [
+            {
+              "text": "检查一下。",
+              "nextStage": 2
+            },
+            {
+              "text": "端给国王。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "酒里有毒！你发现了一个阴谋。",
+          "options": [
+            {
+              "text": "悄悄倒掉。",
+              "nextStage": 4
+            },
+            {
+              "text": "保留证据。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "国王差点喝下，你急忙阻止。",
+          "options": [
+            {
+              "text": "承认错误。",
+              "nextStage": 4
+            },
+            {
+              "text": "嫁祸他人。",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item6",
+      "name": "皇室印章",
+      "position": [
+        1,
+        1
+      ],
+      "description": "用于签署财务文件的印章",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "印章被随意放在桌上。",
+          "options": [
+            {
+              "text": "拿走印章。",
+              "nextStage": 2
+            },
+            {
+              "text": "放回原处。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "有了印章，你可以伪造文件。",
+          "options": [
+            {
+              "text": "用它签署虚假文件。",
+              "nextStage": 4
+            },
+            {
+              "text": "交给国王。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "印章安全，但你需要它。",
+          "options": [
+            {
+              "text": "再考虑一下。",
+              "nextStage": 2
+            },
+            {
+              "text": "离开。",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": "玩家在晚宴开始前未能解决预算问题",
+      "text": "国王在晚宴上公开指责你，你被当场解职。"
+    },
+    {
+      "id": "ending2",
+      "condition": "玩家成功从火星金库中取出资金填补亏空",
+      "text": "你化解了财务危机，国王赏赐你火星勋章。"
+    },
+    {
+      "id": "ending3",
+      "condition": "玩家被王后陷害，被发现私藏项链",
+      "text": "王后指控你盗窃，你被关进火星监狱。"
+    },
+    {
+      "id": "ending4",
+      "condition": "玩家抓住刺客，保护了皇室安全",
+      "text": "国王感激你的忠诚，提升你为财务首相。"
+    },
+    {
+      "id": "ending5",
+      "condition": "玩家销毁财务报表并掩盖真相",
+      "text": "你暂时安全，但财政漏洞迟早会暴露，你开始逃亡。"
+    },
+    {
+      "id": "ending6",
+      "condition": "玩家与地球盟友通讯并背叛火星",
+      "text": "你与地球合作，颠覆火星王朝，成为新政权财务官。"
+    },
+    {
+      "id": "ending7",
+      "condition": "玩家透露毒酒阴谋，但被凶手灭口",
+      "text": "你发现了秘密，但被暗杀，晚宴变成你的葬礼。"
+    },
+    {
+      "id": "ending8",
+      "condition": "玩家利用印章伪造文件，被揭穿",
+      "text": "伪造暴露，你被处以流放火星荒漠。"
+    },
+    {
+      "id": "ending9",
+      "condition": "玩家完美处理所有危机，晚宴顺利进行",
+      "text": "晚宴成功，你被誉为火星最杰出的财务总管。"
+    }
+  ],
+  "introText": "你是火星皇室财务总管，晚宴还有60秒开始。火星国王、王后、财政部长、大厨、侍卫长和星探都在等着你。你必须在这60秒内处理预算危机、王后的珠宝要求、刺客威胁、食材短缺，以及各种诱惑。时间紧迫，你的每一个选择都将决定你的命运。",
+  "ambientMusic": "classical",
+  "id": "fallback_world_089"
+}

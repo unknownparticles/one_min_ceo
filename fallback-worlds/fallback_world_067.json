@@ -1,0 +1,812 @@
+{
+  "matchKeywords": [
+    "深空监狱",
+    "董事长",
+    "停电",
+    "60秒",
+    "危机"
+  ],
+  "identity": "深空监狱董事长",
+  "theme": "深空监狱停电前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "window",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": 1,
+      "name": "典狱长",
+      "dialog": "董事长！主电源将在60秒后中断！",
+      "position": {
+        "x": 1,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "紧急情况！主电源即将断电，所有系统将瘫痪！",
+          "options": [
+            {
+              "text": "启动备用发电机",
+              "nextStage": 2
+            },
+            {
+              "text": "疏散所有囚犯",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "备用发电机需要手动启动，但控制器在核心室。",
+          "options": [
+            {
+              "text": "亲自去核心室",
+              "nextStage": 3
+            },
+            {
+              "text": "派人去核心室",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "时间不多了！请做出最终决定。",
+          "options": [
+            {
+              "text": "冲向核心室",
+              "nextStage": 0
+            },
+            {
+              "text": "放弃发电，组织撤离",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "技术员",
+      "dialog": "备用发电机需要三分钟预热，我们没时间了！",
+      "position": {
+        "x": 3,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "备用发电机需要三分钟预热，但只有60秒！",
+          "options": [
+            {
+              "text": "尝试超频启动",
+              "nextStage": 2
+            },
+            {
+              "text": "寻找其他电源",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "超频启动有50%几率成功，但可能引发火灾。",
+          "options": [
+            {
+              "text": "冒险超频",
+              "nextStage": 3
+            },
+            {
+              "text": "放弃发电机，用电池",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "电池只能维持30秒关键系统。",
+          "options": [
+            {
+              "text": "集中供电到生命维持",
+              "nextStage": 0
+            },
+            {
+              "text": "集中供电到通讯",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "囚犯代表",
+      "dialog": "停电后，所有囚室门会打开！",
+      "position": {
+        "x": 5,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "停电后安全系统失效，囚室门会打开！",
+          "options": [
+            {
+              "text": "启动手动锁",
+              "nextStage": 2
+            },
+            {
+              "text": "说服囚犯合作",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "手动锁需要钥匙，钥匙在你办公室。",
+          "options": [
+            {
+              "text": "去拿钥匙",
+              "nextStage": 3
+            },
+            {
+              "text": "让警卫封锁走廊",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "你只有30秒了！",
+          "options": [
+            {
+              "text": "亲自拿钥匙",
+              "nextStage": 0
+            },
+            {
+              "text": "命令警卫行动",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "工程师",
+      "dialog": "核心室温度过高，进入有风险。",
+      "position": {
+        "x": 8,
+        "y": 7
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "核心室温度高达200度，进入需要防护服。",
+          "options": [
+            {
+              "text": "穿防护服进入",
+              "nextStage": 2
+            },
+            {
+              "text": "远程操作机器人",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "防护服只有一套，而且有破损。",
+          "options": [
+            {
+              "text": "冒险穿破损防护服",
+              "nextStage": 3
+            },
+            {
+              "text": "寻找替代方案",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "机器人可以操作，但需要网络连接。",
+          "options": [
+            {
+              "text": "用有线连接",
+              "nextStage": 0
+            },
+            {
+              "text": "用无线连接（可能受干扰）",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "安全主管",
+      "dialog": "我建议立即启动紧急协议。",
+      "position": {
+        "x": 2,
+        "y": 4
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "紧急协议包括全监狱封锁，但会消耗剩余电力。",
+          "options": [
+            {
+              "text": "启动紧急协议",
+              "nextStage": 2
+            },
+            {
+              "text": "不启动，节省电力",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "启动后，所有门关闭，但通风系统停转。",
+          "options": [
+            {
+              "text": "接受通风停转",
+              "nextStage": 3
+            },
+            {
+              "text": "修改协议，保持通风",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "修改协议需要10秒，但可以保障空气。",
+          "options": [
+            {
+              "text": "修改协议",
+              "nextStage": 0
+            },
+            {
+              "text": "不修改，保持原样",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "防护服",
+      "description": "破损的防护服，只能提供部分保护。",
+      "position": {
+        "x": 3,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "你找到一件防护服，但袖子破了。",
+          "options": [
+            {
+              "text": "穿上它",
+              "nextStage": 2
+            },
+            {
+              "text": "寻找更好的防护",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "穿上后，你感觉有些地方裸露。",
+          "options": [
+            {
+              "text": "用胶带修补",
+              "nextStage": 3
+            },
+            {
+              "text": "就这样去核心室",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "修补后防护效果提升，但仍然有限。",
+          "options": [
+            {
+              "text": "进入核心室",
+              "nextStage": 0
+            },
+            {
+              "text": "放弃",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "钥匙卡",
+      "description": "管理员的钥匙卡，可以打开大多数门。",
+      "position": {
+        "x": 7,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "钥匙卡在桌上，但旁边有警报。",
+          "options": [
+            {
+              "text": "小心拿起",
+              "nextStage": 2
+            },
+            {
+              "text": "直接拿走，触发警报",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "警报可能会引来警卫。",
+          "options": [
+            {
+              "text": "快速离开",
+              "nextStage": 3
+            },
+            {
+              "text": "藏起来等警卫离开",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "你成功拿到钥匙卡。",
+          "options": [
+            {
+              "text": "去开控制室门",
+              "nextStage": 0
+            },
+            {
+              "text": "去开武器库",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "便携电池",
+      "description": "大型便携电池，可以为关键设备供电。",
+      "position": {
+        "x": 12,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "电池很重，但可以临时供电。",
+          "options": [
+            {
+              "text": "搬走电池",
+              "nextStage": 2
+            },
+            {
+              "text": "就地使用",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "搬走需要时间，就地使用可能不够。",
+          "options": [
+            {
+              "text": "搬到核心室",
+              "nextStage": 3
+            },
+            {
+              "text": "搬到通讯室",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "电池电量有限，只能支持一个系统。",
+          "options": [
+            {
+              "text": "支持生命维持",
+              "nextStage": 0
+            },
+            {
+              "text": "支持通讯系统",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "紧急按钮",
+      "description": "红色大按钮，按下去会触发广播。",
+      "position": {
+        "x": 5,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "按钮上写着'仅限紧急情况'。",
+          "options": [
+            {
+              "text": "按下按钮",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略按钮",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "广播响起，所有囚犯开始骚动。",
+          "options": [
+            {
+              "text": "安抚囚犯",
+              "nextStage": 3
+            },
+            {
+              "text": "让警卫镇压",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "骚动平息，但时间浪费了。",
+          "options": [
+            {
+              "text": "继续执行计划",
+              "nextStage": 0
+            },
+            {
+              "text": "改变策略",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "电路板",
+      "description": "备用电路板，可以替换损坏的。",
+      "position": {
+        "x": 10,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "电路板看起来完好，但型号老旧。",
+          "options": [
+            {
+              "text": "拿去维修",
+              "nextStage": 2
+            },
+            {
+              "text": "寻找匹配型号",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "维修需要工具，工具在隔壁房间。",
+          "options": [
+            {
+              "text": "去拿工具",
+              "nextStage": 3
+            },
+            {
+              "text": "用手边工具凑合",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "更换电路板后，系统恢复部分功能。",
+          "options": [
+            {
+              "text": "测试系统",
+              "nextStage": 0
+            },
+            {
+              "text": "继续其他任务",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": 1,
+      "description": "成功启动发电机，监狱恢复正常供电，你被赞为英雄。"
+    },
+    {
+      "id": 2,
+      "description": "发电机爆炸，监狱陷入黑暗，囚犯暴动，你被绑架。"
+    },
+    {
+      "id": 3,
+      "description": "你成功疏散所有人员，但监狱被毁，你被董事会解雇。"
+    },
+    {
+      "id": 4,
+      "description": "你启动紧急协议，监狱封锁，但囚犯因缺氧而死，你面临指控。"
+    },
+    {
+      "id": 5,
+      "description": "你拿着钥匙卡打开武器库，武装警卫镇压暴动，但造成伤亡。"
+    },
+    {
+      "id": 6,
+      "description": "你带着电池到通讯室，呼叫救援，但监狱被遗弃。"
+    },
+    {
+      "id": 7,
+      "description": "你按下紧急按钮，引发集体恐慌，你趁机逃跑，成为逃犯。"
+    },
+    {
+      "id": 8,
+      "description": "你什么都不做，停电后监狱陷入混乱，你被囚犯控制。"
+    },
+    {
+      "id": 9,
+      "description": "你成功修复电路板，恢复部分电力，但仍有危机。"
+    },
+    {
+      "id": 10,
+      "description": "你穿着破损防护服进入核心室，成功启动发电机，但被烧伤。"
+    }
+  ],
+  "introText": "你，深空监狱的董事长，正享受悠闲的下午茶，突然警报响起：主电源将在60秒后中断！监狱将陷入黑暗，囚犯暴动一触即发。你必须在这60秒内做出决定，拯救监狱（或自己）。",
+  "ambientMusic": "紧迫的警报声，伴随低沉的机械轰鸣",
+  "id": "fallback_world_067"
+}

@@ -1,0 +1,1646 @@
+{
+  "matchKeywords": [
+    "火星",
+    "殖民地",
+    "叛乱",
+    "总督",
+    "60秒"
+  ],
+  "identity": "火星殖民总督",
+  "theme": "火星殖民地叛乱前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "wall",
+      "floor",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "floor",
+      "wall",
+      "wall",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "window",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 5
+  },
+  "npcs": [
+    {
+      "id": "npc_1",
+      "name": "首席工程师赵",
+      "position": {
+        "x": 3,
+        "y": 1
+      },
+      "type": "human",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "总督，氧气循环系统被破坏了，我们有60秒修复它。",
+          "options": [
+            {
+              "text": "命令他立即修复",
+              "nextStage": 1,
+              "effect": "time -10"
+            },
+            {
+              "text": "问他谁干的",
+              "nextStage": 2,
+              "effect": "info +1"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "我尽力了，但需要更多零件。",
+          "options": [
+            {
+              "text": "从备用库调取",
+              "nextStage": 3,
+              "effect": "resource -1"
+            },
+            {
+              "text": "让他用替代品",
+              "nextStage": 4,
+              "effect": "time -5"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "是叛乱分子，他们控制了三号气闸。",
+          "options": [
+            {
+              "text": "派警卫去镇压",
+              "nextStage": 5,
+              "effect": "guard -1"
+            },
+            {
+              "text": "谈判",
+              "nextStage": 6,
+              "effect": "time -10"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "零件安装中，还有30秒。",
+          "options": [
+            {
+              "text": "催促他",
+              "nextStage": 7,
+              "effect": "time -5"
+            },
+            {
+              "text": "等待",
+              "nextStage": 8,
+              "effect": "time -5"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "替代品不稳定，可能爆炸。",
+          "options": [
+            {
+              "text": "冒险使用",
+              "nextStage": 9,
+              "effect": "risk +1"
+            },
+            {
+              "text": "放弃，寻找其他方案",
+              "nextStage": 10,
+              "effect": "time -15"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialogue": "警卫被击退了，叛乱者更近了。",
+          "options": [
+            {
+              "text": "亲自去前线",
+              "nextStage": 11,
+              "effect": "risk +2"
+            },
+            {
+              "text": "呼叫支援",
+              "nextStage": 12,
+              "effect": "time -10"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialogue": "他们要求自治权。",
+          "options": [
+            {
+              "text": "同意，争取时间",
+              "nextStage": 13,
+              "effect": "morale -1"
+            },
+            {
+              "text": "拒绝，准备战斗",
+              "nextStage": 14,
+              "effect": "guard +1"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialogue": "修复完成，但压力下降。",
+          "options": [
+            {
+              "text": "检查管道",
+              "nextStage": 15,
+              "effect": "time -5"
+            },
+            {
+              "text": "相信他",
+              "nextStage": 16,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "dialogue": "系统重启成功。",
+          "options": [
+            {
+              "text": "庆祝",
+              "nextStage": 100,
+              "effect": "win"
+            },
+            {
+              "text": "保持警惕",
+              "nextStage": 100,
+              "effect": "win"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_2",
+      "name": "叛军领袖卡门",
+      "position": {
+        "x": 12,
+        "y": 8
+      },
+      "type": "human",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "总督，你的时代结束了。殖民地将属于人民。",
+          "options": [
+            {
+              "text": "试图说服他",
+              "nextStage": 1,
+              "effect": "time -5"
+            },
+            {
+              "text": "下令逮捕他",
+              "nextStage": 2,
+              "effect": "guard -1"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "空话！除非你满足我们的要求。",
+          "options": [
+            {
+              "text": "询问要求",
+              "nextStage": 3,
+              "effect": "info +1"
+            },
+            {
+              "text": "拒绝并离开",
+              "nextStage": 4,
+              "effect": "morale -1"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "你抓不到我，我无处不在。",
+          "options": [
+            {
+              "text": "搜索基地",
+              "nextStage": 5,
+              "effect": "time -10"
+            },
+            {
+              "text": "加强安保",
+              "nextStage": 6,
+              "effect": "guard +1"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "我们需要公平的资源分配和选举。",
+          "options": [
+            {
+              "text": "承诺改革",
+              "nextStage": 7,
+              "effect": "morale +1"
+            },
+            {
+              "text": "拖延时间",
+              "nextStage": 8,
+              "effect": "time -10"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "你会后悔的。",
+          "options": [
+            {
+              "text": "无视",
+              "nextStage": 9,
+              "effect": "none"
+            },
+            {
+              "text": "警惕",
+              "nextStage": 10,
+              "effect": "guard +1"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialogue": "找到他的藏身点，但那里是陷阱。",
+          "options": [
+            {
+              "text": "闯入",
+              "nextStage": 11,
+              "effect": "risk +2"
+            },
+            {
+              "text": "包围",
+              "nextStage": 12,
+              "effect": "time -10"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialogue": "安保升级，但士气低落。",
+          "options": [
+            {
+              "text": "安抚民心",
+              "nextStage": 13,
+              "effect": "morale +1"
+            },
+            {
+              "text": "高压统治",
+              "nextStage": 14,
+              "effect": "morale -2"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialogue": "空头支票，我们不信。",
+          "options": [
+            {
+              "text": "立即实施部分改革",
+              "nextStage": 15,
+              "effect": "time -15"
+            },
+            {
+              "text": "武力镇压",
+              "nextStage": 16,
+              "effect": "guard -2"
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "dialogue": "你没时间了。",
+          "options": [
+            {
+              "text": "逃跑",
+              "nextStage": 100,
+              "effect": "lose"
+            },
+            {
+              "text": "反击",
+              "nextStage": 100,
+              "effect": "win"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_3",
+      "name": "医疗官艾米",
+      "position": {
+        "x": 5,
+        "y": 1
+      },
+      "type": "human",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "总督，医疗舱被攻击，伤员众多。",
+          "options": [
+            {
+              "text": "派遣医疗队",
+              "nextStage": 1,
+              "effect": "resource -1"
+            },
+            {
+              "text": "优先保护关键人员",
+              "nextStage": 2,
+              "effect": "morale -1"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "医疗队出发，但需要更多药品。",
+          "options": [
+            {
+              "text": "从仓库调配",
+              "nextStage": 3,
+              "effect": "resource -1"
+            },
+            {
+              "text": "让伤员坚持",
+              "nextStage": 4,
+              "effect": "morale -2"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "关键人员安全，但民怨沸腾。",
+          "options": [
+            {
+              "text": "公开道歉",
+              "nextStage": 5,
+              "effect": "morale +1"
+            },
+            {
+              "text": "镇压抗议",
+              "nextStage": 6,
+              "effect": "guard -1"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "药品已送达，救治开始。",
+          "options": [
+            {
+              "text": "感谢医疗队",
+              "nextStage": 7,
+              "effect": "morale +1"
+            },
+            {
+              "text": "询问战况",
+              "nextStage": 8,
+              "effect": "info +1"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "伤员死亡，人心惶惶。",
+          "options": [
+            {
+              "text": "追责",
+              "nextStage": 9,
+              "effect": "morale -1"
+            },
+            {
+              "text": "隐瞒消息",
+              "nextStage": 10,
+              "effect": "trust -1"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialogue": "道歉被接受，但信任度低。",
+          "options": [
+            {
+              "text": "提高福利",
+              "nextStage": 11,
+              "effect": "resource -1"
+            },
+            {
+              "text": "增加安保",
+              "nextStage": 12,
+              "effect": "guard +1"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialogue": "抗议升级为冲突。",
+          "options": [
+            {
+              "text": "谈判",
+              "nextStage": 13,
+              "effect": "time -10"
+            },
+            {
+              "text": "强制驱散",
+              "nextStage": 14,
+              "effect": "morale -2"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialogue": "士气回升。",
+          "options": [
+            {
+              "text": "继续关注医疗",
+              "nextStage": 15,
+              "effect": "none"
+            },
+            {
+              "text": "转向其他危机",
+              "nextStage": 16,
+              "effect": "time -5"
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "dialogue": "叛乱分子正在渗透医疗区。",
+          "options": [
+            {
+              "text": "封锁医疗区",
+              "nextStage": 17,
+              "effect": "time -5"
+            },
+            {
+              "text": "加强守卫",
+              "nextStage": 18,
+              "effect": "guard +1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_4",
+      "name": "安保队长雷克斯",
+      "position": {
+        "x": 7,
+        "y": 1
+      },
+      "type": "human",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "总督，叛乱者已突破外围防线。",
+          "options": [
+            {
+              "text": "命令死守",
+              "nextStage": 1,
+              "effect": "guard -1"
+            },
+            {
+              "text": "撤退到内堡",
+              "nextStage": 2,
+              "effect": "morale -1"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "防线即将崩溃。",
+          "options": [
+            {
+              "text": "亲自督战",
+              "nextStage": 3,
+              "effect": "risk +1"
+            },
+            {
+              "text": "呼叫飞船支援",
+              "nextStage": 4,
+              "effect": "time -10"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "内堡安全，但失去了外围资源。",
+          "options": [
+            {
+              "text": "组织反击",
+              "nextStage": 5,
+              "effect": "guard -2"
+            },
+            {
+              "text": "固守等待救援",
+              "nextStage": 6,
+              "effect": "time -10"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "你受伤了，但士气大振。",
+          "options": [
+            {
+              "text": "继续战斗",
+              "nextStage": 7,
+              "effect": "risk +2"
+            },
+            {
+              "text": "撤退治疗",
+              "nextStage": 8,
+              "effect": "morale -1"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "飞船被击落。",
+          "options": [
+            {
+              "text": "愤怒",
+              "nextStage": 9,
+              "effect": "morale -1"
+            },
+            {
+              "text": "冷静应对",
+              "nextStage": 10,
+              "effect": "time -5"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialogue": "反击失败，损失惨重。",
+          "options": [
+            {
+              "text": "投降",
+              "nextStage": 100,
+              "effect": "lose"
+            },
+            {
+              "text": "决一死战",
+              "nextStage": 100,
+              "effect": "win"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialogue": "救援将在30秒后到达。",
+          "options": [
+            {
+              "text": "等待",
+              "nextStage": 11,
+              "effect": "time -10"
+            },
+            {
+              "text": "主动出击",
+              "nextStage": 12,
+              "effect": "guard -1"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialogue": "你击退了敌人，但伤重倒下。",
+          "options": [
+            {
+              "text": "下达最后命令",
+              "nextStage": 13,
+              "effect": "none"
+            },
+            {
+              "text": "失去意识",
+              "nextStage": 100,
+              "effect": "lose"
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "dialogue": "治疗中，但指挥部空虚。",
+          "options": [
+            {
+              "text": "遥控指挥",
+              "nextStage": 14,
+              "effect": "info +1"
+            },
+            {
+              "text": "快速返回",
+              "nextStage": 15,
+              "effect": "time -5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_5",
+      "name": "AI助手奥拉",
+      "position": {
+        "x": 8,
+        "y": 1
+      },
+      "type": "robot",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "总督，系统检测到多处故障。建议立即撤离。",
+          "options": [
+            {
+              "text": "询问故障详情",
+              "nextStage": 1,
+              "effect": "info +1"
+            },
+            {
+              "text": "忽略警告",
+              "nextStage": 2,
+              "effect": "risk +1"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "氧气、水、电力系统均受损。",
+          "options": [
+            {
+              "text": "优先修复氧气",
+              "nextStage": 3,
+              "effect": "time -10"
+            },
+            {
+              "text": "优先修复电力",
+              "nextStage": 4,
+              "effect": "time -10"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "警告：氧气含量下降。",
+          "options": [
+            {
+              "text": "紧急修复",
+              "nextStage": 5,
+              "effect": "time -5"
+            },
+            {
+              "text": "使用备用氧气",
+              "nextStage": 6,
+              "effect": "resource -1"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "氧气系统修复中，需要30秒。",
+          "options": [
+            {
+              "text": "加速修复",
+              "nextStage": 7,
+              "effect": "risk +1"
+            },
+            {
+              "text": "等待",
+              "nextStage": 8,
+              "effect": "time -10"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "电力恢复，但其他系统仍故障。",
+          "options": [
+            {
+              "text": "检查其他系统",
+              "nextStage": 9,
+              "effect": "time -5"
+            },
+            {
+              "text": "庆祝",
+              "nextStage": 10,
+              "effect": "morale +1"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialogue": "氧气泄漏已控制。",
+          "options": [
+            {
+              "text": "检查其他区域",
+              "nextStage": 11,
+              "effect": "time -5"
+            },
+            {
+              "text": "休息一下",
+              "nextStage": 12,
+              "effect": "time -10"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialogue": "备用氧气启动，但储量有限。",
+          "options": [
+            {
+              "text": "寻找更多氧气",
+              "nextStage": 13,
+              "effect": "time -10"
+            },
+            {
+              "text": "节约使用",
+              "nextStage": 14,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialogue": "加速成功，但系统过热。",
+          "options": [
+            {
+              "text": "冷却系统",
+              "nextStage": 15,
+              "effect": "time -5"
+            },
+            {
+              "text": "不顾一切",
+              "nextStage": 16,
+              "effect": "risk +2"
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "dialogue": "修复完成，一切正常。",
+          "options": [
+            {
+              "text": "准备撤离",
+              "nextStage": 100,
+              "effect": "win"
+            },
+            {
+              "text": "继续战斗",
+              "nextStage": 100,
+              "effect": "win"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_1",
+      "name": "紧急氧气罐",
+      "position": {
+        "x": 2,
+        "y": 1
+      },
+      "type": "consumable",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "一个氧气罐，能提供30秒氧气。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 1,
+              "effect": "oxygen +30"
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "氧气罐已装备。",
+          "options": [
+            {
+              "text": "继续搜索",
+              "nextStage": 2,
+              "effect": "none"
+            },
+            {
+              "text": "返回",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "氧气罐被丢弃。",
+          "options": [
+            {
+              "text": "重新拾取",
+              "nextStage": 1,
+              "effect": "oxygen +30"
+            },
+            {
+              "text": "离开",
+              "nextStage": 3,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "你离开了氧气罐。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 4,
+              "effect": "none"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_2",
+      "name": "加密通讯器",
+      "position": {
+        "x": 11,
+        "y": 1
+      },
+      "type": "tool",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "一个加密通讯器，可以联系地球。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 1,
+              "effect": "communication +1"
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "通讯器已获得。",
+          "options": [
+            {
+              "text": "联系地球",
+              "nextStage": 3,
+              "effect": "time -10"
+            },
+            {
+              "text": "关闭",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "通讯器未被使用。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 1,
+              "effect": "communication +1"
+            },
+            {
+              "text": "离开",
+              "nextStage": 4,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "地球回复：支援将在1分钟后到达。",
+          "options": [
+            {
+              "text": "等待支援",
+              "nextStage": 5,
+              "effect": "time -20"
+            },
+            {
+              "text": "自行解决",
+              "nextStage": 6,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "你错过了通讯器。",
+          "options": [
+            {
+              "text": "返回寻找",
+              "nextStage": 1,
+              "effect": "time -5"
+            },
+            {
+              "text": "放弃",
+              "nextStage": 6,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialogue": "支援即将到来，士气提升。",
+          "options": [
+            {
+              "text": "准备迎接",
+              "nextStage": 7,
+              "effect": "morale +1"
+            },
+            {
+              "text": "继续战斗",
+              "nextStage": 6,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialogue": "你放弃了通讯器。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 7,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialogue": "通讯器故事结束。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": 8,
+              "effect": "none"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_3",
+      "name": "叛乱传单",
+      "position": {
+        "x": 4,
+        "y": 6
+      },
+      "type": "info",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "一张传单，写着“自由或死亡”。",
+          "options": [
+            {
+              "text": "阅读",
+              "nextStage": 1,
+              "effect": "info +1"
+            },
+            {
+              "text": "撕毁",
+              "nextStage": 2,
+              "effect": "morale -1"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "传单揭示了叛军的诉求。",
+          "options": [
+            {
+              "text": "保留证据",
+              "nextStage": 3,
+              "effect": "info +1"
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "传单被销毁。",
+          "options": [
+            {
+              "text": "离开",
+              "nextStage": 4,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "你掌握了情报。",
+          "options": [
+            {
+              "text": "分析",
+              "nextStage": 5,
+              "effect": "time -5"
+            },
+            {
+              "text": "行动",
+              "nextStage": 4,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "传单故事结束。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": 6,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialogue": "分析显示叛军内部有分歧。",
+          "options": [
+            {
+              "text": "利用分歧",
+              "nextStage": 7,
+              "effect": "morale +1"
+            },
+            {
+              "text": "忽略",
+              "nextStage": 6,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialogue": "你忽略了传单。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 7,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialogue": "传单线索已用。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": 8,
+              "effect": "none"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_4",
+      "name": "医疗包",
+      "position": {
+        "x": 9,
+        "y": 2
+      },
+      "type": "consumable",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "一个医疗包，可以治疗伤口。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 1,
+              "effect": "health +1"
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "医疗包已使用。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 3,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "医疗包被留在地上。",
+          "options": [
+            {
+              "text": "回头拾取",
+              "nextStage": 1,
+              "effect": "health +1"
+            },
+            {
+              "text": "离开",
+              "nextStage": 3,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "医疗包故事结束。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": 4,
+              "effect": "none"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_5",
+      "name": "控制台钥匙",
+      "position": {
+        "x": 10,
+        "y": 3
+      },
+      "type": "key",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "一把控制台钥匙，可以解锁系统。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 1,
+              "effect": "key +1"
+            },
+            {
+              "text": "忽略",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "钥匙已获得。",
+          "options": [
+            {
+              "text": "使用钥匙",
+              "nextStage": 3,
+              "effect": "unlock +1"
+            },
+            {
+              "text": "保留",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "钥匙未被使用。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 1,
+              "effect": "key +1"
+            },
+            {
+              "text": "离开",
+              "nextStage": 4,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "控制台解锁，获得系统控制权。",
+          "options": [
+            {
+              "text": "关闭叛军通讯",
+              "nextStage": 5,
+              "effect": "time -10"
+            },
+            {
+              "text": "启动防御系统",
+              "nextStage": 6,
+              "effect": "guard +1"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "你离开了钥匙。",
+          "options": [
+            {
+              "text": "返回",
+              "nextStage": 1,
+              "effect": "time -5"
+            },
+            {
+              "text": "放弃",
+              "nextStage": 7,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialogue": "叛军通讯中断，士气受挫。",
+          "options": [
+            {
+              "text": "发动总攻",
+              "nextStage": 8,
+              "effect": "guard -1"
+            },
+            {
+              "text": "劝降",
+              "nextStage": 9,
+              "effect": "time -5"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialogue": "防御系统启动，基地安全。",
+          "options": [
+            {
+              "text": "等待",
+              "nextStage": 10,
+              "effect": "time -10"
+            },
+            {
+              "text": "反击",
+              "nextStage": 11,
+              "effect": "guard +1"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialogue": "你放弃了钥匙。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 8,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "dialogue": "总攻开始。",
+          "options": [
+            {
+              "text": "冲锋",
+              "nextStage": 100,
+              "effect": "win"
+            },
+            {
+              "text": "指挥",
+              "nextStage": 100,
+              "effect": "win"
+            }
+          ]
+        },
+        {
+          "stage": 9,
+          "dialogue": "叛军拒绝投降。",
+          "options": [
+            {
+              "text": "强攻",
+              "nextStage": 100,
+              "effect": "win"
+            },
+            {
+              "text": "撤离",
+              "nextStage": 100,
+              "effect": "lose"
+            }
+          ]
+        },
+        {
+          "stage": 10,
+          "dialogue": "时间耗尽，基地失守。",
+          "options": [
+            {
+              "text": "逃离",
+              "nextStage": 100,
+              "effect": "lose"
+            },
+            {
+              "text": "战死",
+              "nextStage": 100,
+              "effect": "lose"
+            }
+          ]
+        },
+        {
+          "stage": 11,
+          "dialogue": "反击成功，叛乱平定。",
+          "options": [
+            {
+              "text": "庆祝",
+              "nextStage": 100,
+              "effect": "win"
+            },
+            {
+              "text": "重建",
+              "nextStage": 100,
+              "effect": "win"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_1",
+      "condition": "time <= 0",
+      "description": "时间耗尽，殖民地崩溃，你窒息而死。",
+      "effect": "lose"
+    },
+    {
+      "id": "ending_2",
+      "condition": "morale <= -5",
+      "description": "民心尽失，被叛军推翻。",
+      "effect": "lose"
+    },
+    {
+      "id": "ending_3",
+      "condition": "guard <= 0 AND risk >= 3",
+      "description": "安保崩溃，你被叛军俘虏。",
+      "effect": "lose"
+    },
+    {
+      "id": "ending_4",
+      "condition": "oxygen <= 0",
+      "description": "氧气耗尽，所有人死亡。",
+      "effect": "lose"
+    },
+    {
+      "id": "ending_5",
+      "condition": "resource <= 0 AND time <= 10",
+      "description": "资源枯竭，无法支撑。",
+      "effect": "lose"
+    },
+    {
+      "id": "ending_6",
+      "condition": "win == true AND time > 0",
+      "description": "你成功平定叛乱，成为英雄。",
+      "effect": "win"
+    },
+    {
+      "id": "ending_7",
+      "condition": "win == true AND morale >= 5",
+      "description": "民心归附，殖民地繁荣。",
+      "effect": "win"
+    },
+    {
+      "id": "ending_8",
+      "condition": "win == true AND guard >= 5",
+      "description": "安保稳固，你成为铁腕领袖。",
+      "effect": "win"
+    }
+  ],
+  "introText": "你作为火星殖民总督，发现叛乱在60秒内即将爆发。你必须做出决策，生存下去。",
+  "ambientMusic": "紧张电子乐",
+  "id": "fallback_world_030"
+}

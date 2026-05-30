@@ -1,0 +1,997 @@
+{
+  "matchKeywords": [
+    "黑洞矿业",
+    "上市",
+    "CEO",
+    "60秒",
+    "危机"
+  ],
+  "identity": "黑洞矿业CEO",
+  "theme": "黑洞矿业上市前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "window",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 1,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "npc_1",
+      "name": "财务总监",
+      "dialogue": "上市钟声即将敲响！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "财务总监慌张地说：我们账上有个黑洞，快想办法！",
+          "options": [
+            {
+              "text": "把黑洞包装成资产",
+              "nextStage": 2,
+              "effect": "finance_1"
+            },
+            {
+              "text": "承认错误，推迟上市",
+              "nextStage": 3,
+              "effect": "finance_2"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你决定将黑洞包装成无限能源资产。财务总监擦汗：这样真的行吗？",
+          "options": [
+            {
+              "text": "没问题，投资者喜欢故事",
+              "nextStage": 4,
+              "effect": "story_good"
+            },
+            {
+              "text": "还是再考虑一下",
+              "nextStage": 1,
+              "effect": "back"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你决定推迟上市，但董事会震怒。",
+          "options": [
+            {
+              "text": "争取董事会支持",
+              "nextStage": 5,
+              "effect": "board_1"
+            },
+            {
+              "text": "辞职不干",
+              "nextStage": 6,
+              "effect": "quit"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "投资者被故事吸引，股价飙升！",
+          "options": [
+            {
+              "text": "继续吹嘘",
+              "nextStage": 7,
+              "effect": "success"
+            },
+            {
+              "text": "见好就收",
+              "nextStage": 8,
+              "effect": "caution"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_2",
+      "name": "首席科学家",
+      "dialogue": "黑洞正在吞噬数据！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "科学家：黑洞AI失控了，它开始吃掉服务器数据！",
+          "options": [
+            {
+              "text": "关闭AI",
+              "nextStage": 2,
+              "effect": "ai_off"
+            },
+            {
+              "text": "让它继续吃，也许能优化数据",
+              "nextStage": 3,
+              "effect": "ai_continue"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "AI关闭，但核心数据已损毁。",
+          "options": [
+            {
+              "text": "用备份恢复",
+              "nextStage": 4,
+              "effect": "backup"
+            },
+            {
+              "text": "隐瞒真相",
+              "nextStage": 5,
+              "effect": "hide"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "AI疯狂吞噬，系统即将崩溃。",
+          "options": [
+            {
+              "text": "紧急重启",
+              "nextStage": 6,
+              "effect": "restart"
+            },
+            {
+              "text": "放任不管",
+              "nextStage": 7,
+              "effect": "collapse"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "备份成功，但损失了部分交易记录。",
+          "options": [
+            {
+              "text": "补录数据",
+              "nextStage": 8,
+              "effect": "fix"
+            },
+            {
+              "text": "假装没事",
+              "nextStage": 9,
+              "effect": "fake"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_3",
+      "name": "市场部经理",
+      "dialogue": "我们的营销方案被黑洞吸走了！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "经理：所有营销材料都被黑洞吸进去了！",
+          "options": [
+            {
+              "text": "用AI生成新方案",
+              "nextStage": 2,
+              "effect": "ai_marketing"
+            },
+            {
+              "text": "亲自写",
+              "nextStage": 3,
+              "effect": "write"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "AI生成了一份疯狂的营销方案。",
+          "options": [
+            {
+              "text": "采纳",
+              "nextStage": 4,
+              "effect": "adopt"
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 5,
+              "effect": "refuse"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你熬夜写方案，但时间不够。",
+          "options": [
+            {
+              "text": "简化方案",
+              "nextStage": 6,
+              "effect": "simple"
+            },
+            {
+              "text": "拖延上市",
+              "nextStage": 7,
+              "effect": "delay"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "疯狂方案让公司成为焦点。",
+          "options": [
+            {
+              "text": "趁机炒作",
+              "nextStage": 8,
+              "effect": "hype"
+            },
+            {
+              "text": "低调处理",
+              "nextStage": 9,
+              "effect": "lowkey"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_4",
+      "name": "保安队长",
+      "dialogue": "有人要闯入交易所！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "队长：一伙人试图闯入交易所阻止上市！",
+          "options": [
+            {
+              "text": "加强安保",
+              "nextStage": 2,
+              "effect": "security"
+            },
+            {
+              "text": "谈判",
+              "nextStage": 3,
+              "effect": "negotiate"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "安保升级，但引发了骚乱。",
+          "options": [
+            {
+              "text": "武力镇压",
+              "nextStage": 4,
+              "effect": "force"
+            },
+            {
+              "text": "安抚人群",
+              "nextStage": 5,
+              "effect": "calm"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "谈判失败，对方要求取消上市。",
+          "options": [
+            {
+              "text": "取消上市",
+              "nextStage": 6,
+              "effect": "cancel"
+            },
+            {
+              "text": "强行继续",
+              "nextStage": 7,
+              "effect": "continue"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "武力镇压导致负面新闻。",
+          "options": [
+            {
+              "text": "公关危机处理",
+              "nextStage": 8,
+              "effect": "pr"
+            },
+            {
+              "text": "无视",
+              "nextStage": 9,
+              "effect": "ignore"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_5",
+      "name": "神秘顾问",
+      "dialogue": "我来自未来，上市会引发宇宙灾难。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "顾问：我是未来人，上市会创造黑洞吞噬地球！",
+          "options": [
+            {
+              "text": "相信他",
+              "nextStage": 2,
+              "effect": "believe"
+            },
+            {
+              "text": "不信，赶走他",
+              "nextStage": 3,
+              "effect": "dismiss"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你决定取消上市，但公司破产。",
+          "options": [
+            {
+              "text": "寻找其他投资者",
+              "nextStage": 4,
+              "effect": "investor"
+            },
+            {
+              "text": "接受命运",
+              "nextStage": 5,
+              "effect": "fate"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "顾问被保安带走，但心中不安。",
+          "options": [
+            {
+              "text": "调查顾问背景",
+              "nextStage": 6,
+              "effect": "investigate"
+            },
+            {
+              "text": "继续上市",
+              "nextStage": 7,
+              "effect": "proceed"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你找到一群天使投资人。",
+          "options": [
+            {
+              "text": "接受投资",
+              "nextStage": 8,
+              "effect": "angel"
+            },
+            {
+              "text": "拒绝，改为众筹",
+              "nextStage": 9,
+              "effect": "crowd"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_1",
+      "name": "黑洞核心",
+      "description": "一个微型黑洞，可用于能源或破坏。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现黑洞核心在机房。",
+          "options": [
+            {
+              "text": "提取能量",
+              "nextStage": 2,
+              "effect": "energy"
+            },
+            {
+              "text": "用它作为武器",
+              "nextStage": 3,
+              "effect": "weapon"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "能量提取成功，公司电力无限。",
+          "options": [
+            {
+              "text": "公开技术",
+              "nextStage": 4,
+              "effect": "public"
+            },
+            {
+              "text": "保密",
+              "nextStage": 5,
+              "effect": "secret"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "黑洞武器威力巨大，但可能失控。",
+          "options": [
+            {
+              "text": "测试",
+              "nextStage": 6,
+              "effect": "test"
+            },
+            {
+              "text": "销毁",
+              "nextStage": 7,
+              "effect": "destroy"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "技术公开，股价暴涨。",
+          "options": [
+            {
+              "text": "套现",
+              "nextStage": 8,
+              "effect": "cash"
+            },
+            {
+              "text": "继续持有",
+              "nextStage": 9,
+              "effect": "hold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_2",
+      "name": "时光机遥控器",
+      "description": "可以暂停时间60秒。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你捡到一个遥控器，上面写着‘暂停60秒’。",
+          "options": [
+            {
+              "text": "按下按钮",
+              "nextStage": 2,
+              "effect": "pause"
+            },
+            {
+              "text": "研究一下",
+              "nextStage": 3,
+              "effect": "research"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "时间暂停！你趁机修改上市文件。",
+          "options": [
+            {
+              "text": "篡改数据",
+              "nextStage": 4,
+              "effect": "cheat"
+            },
+            {
+              "text": "休息一下",
+              "nextStage": 5,
+              "effect": "rest"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "研究发现这是未来科技。",
+          "options": [
+            {
+              "text": "用它改变未来",
+              "nextStage": 6,
+              "effect": "change"
+            },
+            {
+              "text": "还给未来",
+              "nextStage": 7,
+              "effect": "return"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "数据篡改成功，但留下痕迹。",
+          "options": [
+            {
+              "text": "消除痕迹",
+              "nextStage": 8,
+              "effect": "erase"
+            },
+            {
+              "text": "无所谓",
+              "nextStage": 9,
+              "effect": "careless"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_3",
+      "name": "神秘U盘",
+      "description": "包含竞争对手的机密。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现一个U盘，里面有竞争对手的丑闻。",
+          "options": [
+            {
+              "text": "公开丑闻",
+              "nextStage": 2,
+              "effect": "expose"
+            },
+            {
+              "text": "勒索他们",
+              "nextStage": 3,
+              "effect": "blackmail"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "丑闻公开，竞争对手股价暴跌。",
+          "options": [
+            {
+              "text": "趁低收购",
+              "nextStage": 4,
+              "effect": "acquire"
+            },
+            {
+              "text": "旁观",
+              "nextStage": 5,
+              "effect": "watch"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "勒索成功，获得一大笔钱。",
+          "options": [
+            {
+              "text": "用于公司",
+              "nextStage": 6,
+              "effect": "invest"
+            },
+            {
+              "text": "私吞",
+              "nextStage": 7,
+              "effect": "pocket"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "收购成功，公司规模扩大。",
+          "options": [
+            {
+              "text": "整合业务",
+              "nextStage": 8,
+              "effect": "merge"
+            },
+            {
+              "text": "分拆出售",
+              "nextStage": 9,
+              "effect": "split"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_4",
+      "name": "应急逃生舱",
+      "description": "可以逃离地球的飞船。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现CEO办公室下有一个逃生舱。",
+          "options": [
+            {
+              "text": "检查燃料",
+              "nextStage": 2,
+              "effect": "fuel"
+            },
+            {
+              "text": "准备逃跑",
+              "nextStage": 3,
+              "effect": "escape"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "燃料足够飞到火星。",
+          "options": [
+            {
+              "text": "设定目的地",
+              "nextStage": 4,
+              "effect": "destination"
+            },
+            {
+              "text": "留下备用",
+              "nextStage": 5,
+              "effect": "keep"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你打算在上市失败时逃跑。",
+          "options": [
+            {
+              "text": "现在就跑",
+              "nextStage": 6,
+              "effect": "run"
+            },
+            {
+              "text": "再等等",
+              "nextStage": 7,
+              "effect": "wait"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你设定目的地为火星殖民地。",
+          "options": [
+            {
+              "text": "立即出发",
+              "nextStage": 8,
+              "effect": "launch"
+            },
+            {
+              "text": "先完成上市",
+              "nextStage": 9,
+              "effect": "finish"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_5",
+      "name": "董事会密信",
+      "description": "董事会计划罢免你。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现一封密信，董事会打算上市后换掉你。",
+          "options": [
+            {
+              "text": "先发制人",
+              "nextStage": 2,
+              "effect": "preemptive"
+            },
+            {
+              "text": "装不知道",
+              "nextStage": 3,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你决定在上市前罢免部分董事。",
+          "options": [
+            {
+              "text": "联合其他董事",
+              "nextStage": 4,
+              "effect": "ally"
+            },
+            {
+              "text": "直接开除",
+              "nextStage": 5,
+              "effect": "fire"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你装作不知，但暗中收集证据。",
+          "options": [
+            {
+              "text": "反击",
+              "nextStage": 6,
+              "effect": "counter"
+            },
+            {
+              "text": "妥协",
+              "nextStage": 7,
+              "effect": "compromise"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你成功获得多数支持。",
+          "options": [
+            {
+              "text": "巩固权力",
+              "nextStage": 8,
+              "effect": "consolidate"
+            },
+            {
+              "text": "分享利益",
+              "nextStage": 9,
+              "effect": "share"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_1",
+      "condition": "成功上市，股价翻倍",
+      "text": "你成功带领黑洞矿业上市，股价翻倍，成为宇宙首富！"
+    },
+    {
+      "id": "ending_2",
+      "condition": "公司破产，被黑洞吞噬",
+      "text": "黑洞失控，整个公司被吞噬，你一无所有。"
+    },
+    {
+      "id": "ending_3",
+      "condition": "时间循环，永远困在60秒",
+      "text": "你按下暂停键后，时间永远停在上市前60秒。"
+    },
+    {
+      "id": "ending_4",
+      "condition": "被董事会罢免",
+      "text": "董事会成功罢免你，你被赶出公司。"
+    },
+    {
+      "id": "ending_5",
+      "condition": "成功逃亡火星",
+      "text": "你乘坐逃生舱逃往火星，开始了新生活。"
+    },
+    {
+      "id": "ending_6",
+      "condition": "成为慈善家，取消上市",
+      "text": "你取消了上市，将公司收入捐给黑洞研究。"
+    },
+    {
+      "id": "ending_7",
+      "condition": "被竞争对手收购",
+      "text": "竞争对手趁机收购你的公司，你成为打工仔。"
+    },
+    {
+      "id": "ending_8",
+      "condition": "黑洞能源革命，实现永生",
+      "text": "你利用黑洞技术实现永生，统治宇宙。"
+    },
+    {
+      "id": "ending_9",
+      "condition": "丑闻曝光，锒铛入狱",
+      "text": "你的欺诈行为被揭露，你被捕入狱。"
+    }
+  ],
+  "introText": "欢迎来到黑洞矿业上市前60秒！作为CEO，你必须在60秒内解决各种危机，确保公司成功上市。选择明智，否则万劫不复！",
+  "ambientMusic": "紧张而急促的电子音乐，夹杂着黑洞的轰鸣声",
+  "id": "fallback_world_027"
+}

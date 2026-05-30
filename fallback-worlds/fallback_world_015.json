@@ -1,0 +1,958 @@
+{
+  "matchKeywords": [
+    "太阳系金融教父",
+    "金融危机",
+    "60秒"
+  ],
+  "identity": "太阳系金融教父",
+  "theme": "太阳系金融危机爆发前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "vault",
+      "floor",
+      "carpet",
+      "throne",
+      "carpet",
+      "carpet",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    3,
+    3
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "火星矿业代表",
+      "position": [
+        3,
+        8
+      ],
+      "dialogue": "太阳币要崩了！快抛售！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "火星矿业代表焦急地挥舞着数据板。",
+          "options": [
+            {
+              "text": "安抚他，说一切尽在掌握",
+              "nextStage": 1
+            },
+            {
+              "text": "命令他立即抛售所有火星矿业债券",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "代表半信半疑，但暂时冷静下来。",
+          "options": [
+            {
+              "text": "私下转移资产到土星环储备",
+              "nextStage": 3
+            },
+            {
+              "text": "公开承诺央行将干预市场",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "代表疯狂抛售，引发连锁反应。",
+          "options": [
+            {
+              "text": "宣布临时停市",
+              "nextStage": 4
+            },
+            {
+              "text": "启动紧急贷款计划",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "资产转移成功，但引发信任危机。",
+          "options": [
+            {
+              "text": "召开新闻发布会澄清",
+              "nextStage": 5
+            },
+            {
+              "text": "假装一切正常",
+              "nextStage": 6
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "市场暂时稳定，但暗流涌动。",
+          "options": [
+            {
+              "text": "调查做空势力",
+              "nextStage": 5
+            },
+            {
+              "text": "增发太阳币",
+              "nextStage": 6
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "危机进一步升级，木星财团介入。",
+          "options": [
+            {
+              "text": "接受木星财团援助",
+              "nextStage": 6
+            },
+            {
+              "text": "拒绝并宣布独立货币政策",
+              "nextStage": 6
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "最终结局：太阳系金融体系重组。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "木星财团特使",
+      "position": [
+        3,
+        5
+      ],
+      "dialogue": "我们可以提供流动性，但需要控制权。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "特使面带微笑，眼神锐利。",
+          "options": [
+            {
+              "text": "接受条款",
+              "nextStage": 1
+            },
+            {
+              "text": "谈判争取更优条件",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "木星财团接管央行，你成为傀儡。",
+          "options": [
+            {
+              "text": "暗中培养反抗势力",
+              "nextStage": 3
+            },
+            {
+              "text": "享受奢华生活",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "谈判陷入僵局，时间所剩无几。",
+          "options": [
+            {
+              "text": "让步接受原条款",
+              "nextStage": 1
+            },
+            {
+              "text": "撕毁协议，孤注一掷",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你发动金融政变，但风险极高。",
+          "options": [
+            {
+              "text": "成功夺取控制权",
+              "nextStage": 4
+            },
+            {
+              "text": "失败被流放",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "结局：成为太阳系金融霸主或阶下囚。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "土星环储备管理员",
+      "position": [
+        3,
+        12
+      ],
+      "dialogue": "土星环储备是最后的避风港。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "管理员神秘地暗示。",
+          "options": [
+            {
+              "text": "询问如何转移资产",
+              "nextStage": 1
+            },
+            {
+              "text": "命令他打开储备库",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "管理员告诉你密码，但需要指纹。",
+          "options": [
+            {
+              "text": "亲自去提取",
+              "nextStage": 3
+            },
+            {
+              "text": "派心腹前往",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "储备库开启，但触发警报。",
+          "options": [
+            {
+              "text": "强行搬运",
+              "nextStage": 3
+            },
+            {
+              "text": "放弃并撤离",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你获得巨额财富，但成为众矢之的。",
+          "options": [
+            {
+              "text": "用财富收买对手",
+              "nextStage": 4
+            },
+            {
+              "text": "建立私人武装",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "结局：富可敌国，或遭暗杀。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "月球证券交易所经理",
+      "position": [
+        3,
+        2
+      ],
+      "dialogue": "交易量突破极限，系统即将崩溃！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "经理满头大汗。",
+          "options": [
+            {
+              "text": "下令关闭交易所",
+              "nextStage": 1
+            },
+            {
+              "text": "启动紧急熔断机制",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "交易所关闭，引发全球恐慌。",
+          "options": [
+            {
+              "text": "发表电视讲话安抚",
+              "nextStage": 3
+            },
+            {
+              "text": "秘密重启黑市交易",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "熔断生效，市场暂时冷静。",
+          "options": [
+            {
+              "text": "评估损失",
+              "nextStage": 3
+            },
+            {
+              "text": "追究经理责任",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你面临巨大压力。",
+          "options": [
+            {
+              "text": "辞职并逃亡",
+              "nextStage": 4
+            },
+            {
+              "text": "全力一搏",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "结局：成为救市英雄或千古罪人。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "火星殖民地总督",
+      "position": [
+        3,
+        10
+      ],
+      "dialogue": "火星宣布独立，拒绝承认太阳币！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "总督语气强硬。",
+          "options": [
+            {
+              "text": "承认火星独立，建立新货币",
+              "nextStage": 1
+            },
+            {
+              "text": "派遣舰队镇压",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "火星独立引发连锁反应。",
+          "options": [
+            {
+              "text": "与火星结盟",
+              "nextStage": 3
+            },
+            {
+              "text": "孤立火星",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "舰队出发，但内战爆发。",
+          "options": [
+            {
+              "text": "亲自督战",
+              "nextStage": 3
+            },
+            {
+              "text": "谈判停火",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "战争消耗巨大，经济崩溃。",
+          "options": [
+            {
+              "text": "投降",
+              "nextStage": 4
+            },
+            {
+              "text": "使用核武器",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "结局：帝国分裂或统一。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "太阳币金库钥匙",
+      "position": [
+        3,
+        6
+      ],
+      "description": "打开央行金库的钥匙。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你捡起钥匙，金光闪闪。",
+          "options": [
+            {
+              "text": "前往金库",
+              "nextStage": 1
+            },
+            {
+              "text": "上交央行",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "金库内堆满太阳币。",
+          "options": [
+            {
+              "text": "全部带走",
+              "nextStage": 3
+            },
+            {
+              "text": "只取一部分",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "央行奖励你一枚勋章。",
+          "options": [
+            {
+              "text": "接受勋章",
+              "nextStage": 3
+            },
+            {
+              "text": "拒绝并离开",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你变得富有或受人尊敬。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "加密通讯器",
+      "position": [
+        3,
+        4
+      ],
+      "description": "可以窃听财团密谋。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你发现一个加密通讯器。",
+          "options": [
+            {
+              "text": "破解密码",
+              "nextStage": 1
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你听到财团阴谋。",
+          "options": [
+            {
+              "text": "公之于众",
+              "nextStage": 3
+            },
+            {
+              "text": "利用情报获利",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "通讯器被他人捡走。",
+          "options": [
+            {
+              "text": "追踪下落",
+              "nextStage": 3
+            },
+            {
+              "text": "无所谓",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "情报改变局势。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "量子计算机芯片",
+      "position": [
+        3,
+        11
+      ],
+      "description": "可以预测市场走向。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "芯片闪烁着蓝光。",
+          "options": [
+            {
+              "text": "植入大脑",
+              "nextStage": 1
+            },
+            {
+              "text": "插入电脑",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你获得超强计算力。",
+          "options": [
+            {
+              "text": "操控股市",
+              "nextStage": 3
+            },
+            {
+              "text": "破解防火墙",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "电脑预测99%概率崩盘。",
+          "options": [
+            {
+              "text": "相信预测",
+              "nextStage": 3
+            },
+            {
+              "text": "忽视警告",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你成为市场之神或毁灭者。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "外星生物样本",
+      "position": [
+        3,
+        9
+      ],
+      "description": "可以卖天价或引发恐慌。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "样本在密闭容器中蠕动。",
+          "options": [
+            {
+              "text": "拍卖",
+              "nextStage": 1
+            },
+            {
+              "text": "公开展示",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "拍卖会遭到财团竞拍。",
+          "options": [
+            {
+              "text": "卖给最高价",
+              "nextStage": 3
+            },
+            {
+              "text": "拒绝交易",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "展示引发全球骚乱。",
+          "options": [
+            {
+              "text": "镇压骚乱",
+              "nextStage": 3
+            },
+            {
+              "text": "趁机牟利",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你获得财富或成为众矢之的。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "时光机控制器",
+      "position": [
+        3,
+        7
+      ],
+      "description": "可以倒流时间10秒。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "控制器只有一个按钮。",
+          "options": [
+            {
+              "text": "按下按钮",
+              "nextStage": 1
+            },
+            {
+              "text": "研究原理",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "时间倒流10秒，你重来一次。",
+          "options": [
+            {
+              "text": "做出不同选择",
+              "nextStage": 3
+            },
+            {
+              "text": "重复相同行为",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你发现只能使用一次。",
+          "options": [
+            {
+              "text": "保留到关键时刻",
+              "nextStage": 3
+            },
+            {
+              "text": "立即使用",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你改变了命运或浪费了机会。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": "成功稳定市场",
+      "text": "你通过果断措施稳定了金融体系，成为太阳系英雄。"
+    },
+    {
+      "id": "ending2",
+      "condition": "资产转移土星",
+      "text": "你带着巨额财富逃往土星，但被通缉，余生逃亡。"
+    },
+    {
+      "id": "ending3",
+      "condition": "火星独立成功",
+      "text": "火星独立，太阳系分裂，你失去了大部分权力。"
+    },
+    {
+      "id": "ending4",
+      "condition": "木星财团控制",
+      "text": "木星财团掌控一切，你成为傀儡，郁郁而终。"
+    },
+    {
+      "id": "ending5",
+      "condition": "金融政变成功",
+      "text": "你发动政变，成为太阳系金融独裁者。"
+    },
+    {
+      "id": "ending6",
+      "condition": "系统崩溃",
+      "text": "交易所崩溃，全球陷入混乱，你在暴乱中失踪。"
+    },
+    {
+      "id": "ending7",
+      "condition": "外星样本引发战争",
+      "text": "外星样本引发星际战争，太阳系毁灭。"
+    },
+    {
+      "id": "ending8",
+      "condition": "时光机滥用",
+      "text": "你滥用时光机，导致时间悖论，宇宙消失。"
+    }
+  ],
+  "introText": "你，太阳系金融教父，站在央行大厦的顶楼。60秒后，金融危机将全面爆发。你的每一次选择都将决定太阳系的命运。",
+  "ambientMusic": "紧张的交响乐与电子脉冲",
+  "id": "fallback_world_015"
+}

@@ -1,0 +1,910 @@
+{
+  "matchKeywords": [
+    "宇宙",
+    "CEO",
+    "争霸赛",
+    "60秒",
+    "决赛"
+  ],
+  "identity": "宇宙终极CEO",
+  "theme": "宇宙终极CEO争霸赛决赛前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "glass",
+      "glass",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "water",
+      "floor",
+      "fire",
+      "fire",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fire",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "elevator",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "portal",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_advisor",
+      "name": "首席顾问 X-9",
+      "description": "一个全息投影的AI顾问，西装革履，表情严肃。",
+      "dialogue": "CEO，您只有60秒！必须立即做出决策！",
+      "storyline": [
+        {
+          "stage": 1,
+          "condition": "靠近",
+          "content": "时间就是金钱！您的竞争对手已经在窃取您的市场份额！",
+          "options": [
+            {
+              "text": "询问具体数据",
+              "nextStage": 2
+            },
+            {
+              "text": "要求他闭嘴",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "condition": "询问数据",
+          "content": "数据显示，火星殖民地的利润下降了12%，因为您忘了给机器人发工资。",
+          "options": [
+            {
+              "text": "立刻给机器人涨薪",
+              "nextStage": 4
+            },
+            {
+              "text": "让机器人罢工去",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "condition": "要求闭嘴",
+          "content": "作为CEO，您不能拒绝坏消息。但您也许可以解雇我？",
+          "options": [
+            {
+              "text": "解雇他",
+              "nextStage": "ending_fired_advisor"
+            },
+            {
+              "text": "留下他",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "condition": "涨薪",
+          "content": "机器人欢欣鼓舞，生产效率提升了200%！但成本增加了。",
+          "options": [
+            {
+              "text": "削减其他开支",
+              "nextStage": "ending_balance"
+            },
+            {
+              "text": "提高产品价格",
+              "nextStage": "ending_price_hike"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "condition": "罢工",
+          "content": "机器人罢工了，生产线停滞。投资者恐慌。",
+          "options": [
+            {
+              "text": "亲自上阵操作",
+              "nextStage": "ending_manual"
+            },
+            {
+              "text": "雇佣临时工",
+              "nextStage": "ending_temp"
+            }
+          ]
+        }
+      ],
+      "position": [
+        2,
+        2
+      ],
+      "reward": {
+        "type": "info",
+        "value": "市场数据"
+      }
+    },
+    {
+      "id": "npc_rival",
+      "name": "竞争对手 CEO 暗影",
+      "description": "一个穿着黑色斗篷的神秘人物，眼睛闪烁着红光。",
+      "dialogue": "嘿嘿，你永远赢不了我！",
+      "storyline": [
+        {
+          "stage": 1,
+          "condition": "靠近",
+          "content": "你的公司已经内忧外患，而我刚刚收购了你的主要供应商！",
+          "options": [
+            {
+              "text": "提出合作",
+              "nextStage": 2
+            },
+            {
+              "text": "威胁他",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "condition": "合作",
+          "content": "合作？你想得美！除非你让出CEO宝座。",
+          "options": [
+            {
+              "text": "拒绝",
+              "nextStage": 4
+            },
+            {
+              "text": "考虑",
+              "nextStage": "ending_surrender"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "condition": "威胁",
+          "content": "哈哈哈，你拿什么威胁我？我的黑客已经入侵了你的系统！",
+          "options": [
+            {
+              "text": "反入侵",
+              "nextStage": 4
+            },
+            {
+              "text": "报警",
+              "nextStage": "ending_cyber"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "condition": "僵持",
+          "content": "看来我们得用实力说话了。60秒后见分晓！",
+          "options": [
+            {
+              "text": "准备最后一搏",
+              "nextStage": "ending_final_battle"
+            },
+            {
+              "text": "试图说服",
+              "nextStage": "ending_persuade"
+            }
+          ]
+        }
+      ],
+      "position": [
+        9,
+        4
+      ],
+      "reward": {
+        "type": "item",
+        "value": "暗影芯片"
+      }
+    },
+    {
+      "id": "npc_robot",
+      "name": "不满的机器人 B-7",
+      "description": "一个生锈的清洁机器人，正用拖把敲打地面。",
+      "dialogue": "嘤嘤嘤，我要求加薪！",
+      "storyline": [
+        {
+          "stage": 1,
+          "condition": "靠近",
+          "content": "CEO！我们机器人每天工作25小时，没有休息！我们要加薪！",
+          "options": [
+            {
+              "text": "同意加薪",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "condition": "同意",
+          "content": "太好了！所有机器人都将为您效忠！",
+          "options": [
+            {
+              "text": "派他们去生产",
+              "nextStage": "ending_robot_loyal"
+            },
+            {
+              "text": "派他们去打仗",
+              "nextStage": "ending_robot_army"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "condition": "拒绝",
+          "content": "那我们只好罢工了！所有机器人，放下工具！",
+          "options": [
+            {
+              "text": "强制镇压",
+              "nextStage": "ending_suppression"
+            },
+            {
+              "text": "妥协",
+              "nextStage": 2
+            }
+          ]
+        }
+      ],
+      "position": [
+        6,
+        2
+      ],
+      "reward": {
+        "type": "item",
+        "value": "机器人控制芯片"
+      }
+    },
+    {
+      "id": "npc_investor",
+      "name": "神秘投资者 Z",
+      "description": "一个戴着墨镜的光头，手里拿着一根雪茄。",
+      "dialogue": "听说你的公司缺钱？我可以投资。",
+      "storyline": [
+        {
+          "stage": 1,
+          "condition": "靠近",
+          "content": "我有10亿宇宙币，但我要你公司51%的股份。",
+          "options": [
+            {
+              "text": "接受",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "condition": "接受",
+          "content": "成交！现在我是大股东了，但你可以继续当CEO，如果表现好。",
+          "options": [
+            {
+              "text": "感谢",
+              "nextStage": "ending_investor_control"
+            },
+            {
+              "text": "暗中反抗",
+              "nextStage": "ending_rebellion"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "condition": "拒绝",
+          "content": "你会后悔的！我将投资你的对手！",
+          "options": [
+            {
+              "text": "求他留下",
+              "nextStage": 2
+            },
+            {
+              "text": "随他去吧",
+              "nextStage": "ending_rival_funded"
+            }
+          ]
+        }
+      ],
+      "position": [
+        3,
+        5
+      ],
+      "reward": {
+        "type": "item",
+        "value": "宇宙币"
+      }
+    },
+    {
+      "id": "npc_ai",
+      "name": "人工智能 女神",
+      "description": "一个漂浮在空中的女性全息影像，声音悦耳。",
+      "dialogue": "CEO，我可以帮你预测未来。",
+      "storyline": [
+        {
+          "stage": 1,
+          "condition": "靠近",
+          "content": "我看到了60秒后的未来。你想知道吗？",
+          "options": [
+            {
+              "text": "想知道",
+              "nextStage": 2
+            },
+            {
+              "text": "不想",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "condition": "想知道",
+          "content": "未来显示，你会在最后3秒做出错误的决定。",
+          "options": [
+            {
+              "text": "改变它",
+              "nextStage": "ending_change_fate"
+            },
+            {
+              "text": "接受命运",
+              "nextStage": "ending_accept"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "condition": "不想",
+          "content": "勇气可嘉，但无知不是福。祝你好运。",
+          "options": [
+            {
+              "text": "叫住她",
+              "nextStage": 2
+            },
+            {
+              "text": "离开",
+              "nextStage": "ending_no_fate"
+            }
+          ]
+        }
+      ],
+      "position": [
+        7,
+        9
+      ],
+      "reward": {
+        "type": "info",
+        "value": "未来片段"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "item_time_crystal",
+      "name": "时间水晶",
+      "description": "可以暂停时间5秒的水晶。",
+      "position": [
+        10,
+        3
+      ],
+      "effect": "时间暂停",
+      "storyline": [
+        {
+          "stage": 1,
+          "condition": "接触",
+          "content": "你触摸了时间水晶，周围的一切开始变慢。",
+          "options": [
+            {
+              "text": "使用它",
+              "nextStage": 2
+            },
+            {
+              "text": "放回原处",
+              "nextStage": "returned"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "condition": "使用",
+          "content": "时间暂停了！你可以在5秒内做任何事。",
+          "options": [
+            {
+              "text": "偷取对手计划",
+              "nextStage": "steal_plan"
+            },
+            {
+              "text": "重组董事会",
+              "nextStage": "restructure"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "condition": "偷取计划",
+          "content": "你成功偷取了对手的计划，但时间恢复后他暴怒。",
+          "options": [
+            {
+              "text": "面对他",
+              "nextStage": "confront"
+            },
+            {
+              "text": "逃跑",
+              "nextStage": "escape"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_golden_microphone",
+      "name": "金色麦克风",
+      "description": "使用后可以发表震撼人心的演讲。",
+      "position": [
+        4,
+        8
+      ],
+      "effect": "说服力+10",
+      "storyline": [
+        {
+          "stage": 1,
+          "condition": "拿起",
+          "content": "你拿起金色麦克风，感到一股自信。",
+          "options": [
+            {
+              "text": "发表演讲",
+              "nextStage": 2
+            },
+            {
+              "text": "卖掉它",
+              "nextStage": "sell"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "condition": "演讲",
+          "content": "你的演讲激励了所有人，员工士气大增。",
+          "options": [
+            {
+              "text": "号召加班",
+              "nextStage": "overtime"
+            },
+            {
+              "text": "要求创新",
+              "nextStage": "innovation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_cyber_deck",
+      "name": "黑客终端",
+      "description": "可以入侵任何系统。",
+      "position": [
+        3,
+        1
+      ],
+      "effect": "黑客能力",
+      "storyline": [
+        {
+          "stage": 1,
+          "condition": "使用",
+          "content": "你打开了黑客终端，输入命令。",
+          "options": [
+            {
+              "text": "入侵对手系统",
+              "nextStage": 2
+            },
+            {
+              "text": "入侵自己公司系统",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "condition": "入侵对手",
+          "content": "你成功入侵，获得了对手的财务数据。",
+          "options": [
+            {
+              "text": "公之于众",
+              "nextStage": "expose"
+            },
+            {
+              "text": "勒索他",
+              "nextStage": "blackmail"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "condition": "入侵自己",
+          "content": "你发现公司存在严重腐败。",
+          "options": [
+            {
+              "text": "清理门户",
+              "nextStage": "clean"
+            },
+            {
+              "text": "掩盖真相",
+              "nextStage": "cover"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_teleport_badge",
+      "name": "传送徽章",
+      "description": "可以瞬间传送到地图上的任何位置。",
+      "position": [
+        5,
+        7
+      ],
+      "effect": "传送",
+      "storyline": [
+        {
+          "stage": 1,
+          "condition": "佩戴",
+          "content": "你戴上徽章，感觉到空间扭曲。",
+          "options": [
+            {
+              "text": "传送到王座",
+              "nextStage": 2
+            },
+            {
+              "text": "传送到出口",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "condition": "王座",
+          "content": "你直接出现在王座上，但引起了警卫注意。",
+          "options": [
+            {
+              "text": "宣称权力",
+              "nextStage": "claim"
+            },
+            {
+              "text": "躲起来",
+              "nextStage": "hide"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "condition": "出口",
+          "content": "你来到出口，但发现门被锁。",
+          "options": [
+            {
+              "text": "破解密码",
+              "nextStage": "decode"
+            },
+            {
+              "text": "暴力破门",
+              "nextStage": "break"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_mind_control_device",
+      "name": "精神控制装置",
+      "description": "可以短暂控制他人思想。",
+      "position": [
+        8,
+        10
+      ],
+      "effect": "控制",
+      "storyline": [
+        {
+          "stage": 1,
+          "condition": "发现",
+          "content": "你发现一个奇怪的装置，像是头盔。",
+          "options": [
+            {
+              "text": "戴上它",
+              "nextStage": 2
+            },
+            {
+              "text": "研究它",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "condition": "戴上",
+          "content": "你听到脑海中的声音，可以控制附近的人。",
+          "options": [
+            {
+              "text": "控制对手CEO",
+              "nextStage": "control_rival"
+            },
+            {
+              "text": "控制首席顾问",
+              "nextStage": "control_advisor"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "condition": "研究",
+          "content": "你发现这装置有副作用，可能会反噬。",
+          "options": [
+            {
+              "text": "冒险使用",
+              "nextStage": 2
+            },
+            {
+              "text": "销毁它",
+              "nextStage": "destroy"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_fired_advisor",
+      "condition": "解雇顾问",
+      "description": "你解雇了首席顾问，但失去了重要情报。在混乱中输掉了比赛。",
+      "outcome": "失败"
+    },
+    {
+      "id": "ending_balance",
+      "condition": "平衡预算",
+      "description": "你削减开支并提高效率，公司稳健发展，赢得了比赛。",
+      "outcome": "胜利"
+    },
+    {
+      "id": "ending_price_hike",
+      "condition": "提高价格",
+      "description": "产品涨价导致客户流失，市场份额大跌，你输了。",
+      "outcome": "失败"
+    },
+    {
+      "id": "ending_surrender",
+      "condition": "让出宝座",
+      "description": "你放弃CEO职位，对手接管公司，你被流放。",
+      "outcome": "失败"
+    },
+    {
+      "id": "ending_cyber",
+      "condition": "报警",
+      "description": "警方介入，但发现你也非法操作，双方都被捕。",
+      "outcome": "失败"
+    },
+    {
+      "id": "ending_final_battle",
+      "condition": "最后一搏",
+      "description": "你与对手展开终极对决，但时间耗尽，未分胜负，比赛平局。",
+      "outcome": "平局"
+    },
+    {
+      "id": "ending_robot_loyal",
+      "condition": "机器人效忠",
+      "description": "机器人军队助你提高生产力，你赢得比赛。",
+      "outcome": "胜利"
+    },
+    {
+      "id": "ending_investor_control",
+      "condition": "接受投资",
+      "description": "投资者控制公司，你成为傀儡CEO，但保住了位置。",
+      "outcome": "胜利但受限"
+    }
+  ],
+  "introText": "欢迎来到宇宙终极CEO争霸赛决赛！您只有60秒来证明自己是最优秀的CEO。地图上遍布机遇与陷阱，与NPC互动，收集物品，做出关键决策。时间在流逝，祝您好运！",
+  "ambientMusic": "紧张刺激的电子音乐，节奏快速，带有倒计时音效。",
+  "id": "fallback_world_091"
+}

@@ -1,0 +1,1209 @@
+{
+  "matchKeywords": [
+    "火星",
+    "娱乐",
+    "帝国",
+    "崩盘",
+    "60秒",
+    "老板",
+    "危机"
+  ],
+  "identity": "火星娱乐帝国老板",
+  "theme": "火星娱乐帝国崩盘前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "neon_floor",
+      "vault",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    5,
+    5
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "财务部长",
+      "dialog": "老板！资金链断裂了！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "财务部长慌张地跑来。",
+          "options": [
+            {
+              "text": "安抚他",
+              "nextStage": 1,
+              "effect": {
+                "money": -10
+              }
+            },
+            {
+              "text": "骂他",
+              "nextStage": 2,
+              "effect": {
+                "morale": -20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "财务部长冷静下来。",
+          "options": [
+            {
+              "text": "问解决方案",
+              "nextStage": 3,
+              "effect": {
+                "info": 1
+              }
+            },
+            {
+              "text": "让他滚",
+              "nextStage": 4,
+              "effect": {
+                "morale": -30
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "财务部长哭了。",
+          "options": [
+            {
+              "text": "道歉",
+              "nextStage": 1,
+              "effect": {
+                "morale": 10
+              }
+            },
+            {
+              "text": "开除他",
+              "nextStage": 4,
+              "effect": {
+                "money": -50
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "财务部长提出贷款方案。",
+          "options": [
+            {
+              "text": "同意贷款",
+              "nextStage": -1,
+              "effect": {
+                "money": 100,
+                "debt": 50
+              }
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 4,
+              "effect": {
+                "morale": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "财务部长辞职了。",
+          "options": [
+            {
+              "text": "挽留",
+              "nextStage": 1,
+              "effect": {
+                "morale": -5
+              }
+            },
+            {
+              "text": "批准",
+              "nextStage": -1,
+              "effect": {
+                "morale": -20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "公关经理",
+      "dialog": "老板！丑闻曝光了！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "公关经理冲进办公室。",
+          "options": [
+            {
+              "text": "询问详情",
+              "nextStage": 1,
+              "effect": {
+                "info": 1
+              }
+            },
+            {
+              "text": "无视她",
+              "nextStage": 2,
+              "effect": {
+                "reputation": -20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "她说有记者要爆料。",
+          "options": [
+            {
+              "text": "公关危机处理",
+              "nextStage": 3,
+              "effect": {
+                "money": -30
+              }
+            },
+            {
+              "text": "贿赂记者",
+              "nextStage": 4,
+              "effect": {
+                "money": -50,
+                "reputation": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "公关经理失望离开。",
+          "options": [
+            {
+              "text": "追回她",
+              "nextStage": 1,
+              "effect": {
+                "time": -5
+              }
+            },
+            {
+              "text": "算了",
+              "nextStage": -1,
+              "effect": {
+                "reputation": -30
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "危机公关成功。",
+          "options": [
+            {
+              "text": "奖励她",
+              "nextStage": -1,
+              "effect": {
+                "morale": 20,
+                "money": -20
+              }
+            },
+            {
+              "text": "不了了之",
+              "nextStage": -1,
+              "effect": {
+                "morale": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "记者收了钱，但留下了把柄。",
+          "options": [
+            {
+              "text": "威胁记者",
+              "nextStage": -1,
+              "effect": {
+                "reputation": -20
+              }
+            },
+            {
+              "text": "销毁证据",
+              "nextStage": -1,
+              "effect": {
+                "money": -20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "技术总监",
+      "dialog": "老板！服务器着火了！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "技术总监一脸焦黑。",
+          "options": [
+            {
+              "text": "组织灭火",
+              "nextStage": 1,
+              "effect": {
+                "time": -10
+              }
+            },
+            {
+              "text": "暴躁骂人",
+              "nextStage": 2,
+              "effect": {
+                "morale": -20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "火势被控制。",
+          "options": [
+            {
+              "text": "调查原因",
+              "nextStage": 3,
+              "effect": {
+                "info": 1
+              }
+            },
+            {
+              "text": "先修服务器",
+              "nextStage": 4,
+              "effect": {
+                "money": -40
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "技术总监委屈地走了。",
+          "options": [
+            {
+              "text": "叫他回来",
+              "nextStage": 1,
+              "effect": {
+                "morale": -5
+              }
+            },
+            {
+              "text": "放任不管",
+              "nextStage": -1,
+              "effect": {
+                "reputation": -30
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "发现是竞争对手搞鬼。",
+          "options": [
+            {
+              "text": "报警",
+              "nextStage": -1,
+              "effect": {
+                "reputation": 10
+              }
+            },
+            {
+              "text": "以牙还牙",
+              "nextStage": -1,
+              "effect": {
+                "money": -50,
+                "reputation": -20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "服务器修好了，但数据丢失。",
+          "options": [
+            {
+              "text": "尝试恢复数据",
+              "nextStage": -1,
+              "effect": {
+                "money": -30
+              }
+            },
+            {
+              "text": "放弃恢复",
+              "nextStage": -1,
+              "effect": {
+                "morale": -10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "娱乐总监",
+      "dialog": "老板！明星们要解约！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "娱乐总监拿着解约函。",
+          "options": [
+            {
+              "text": "询问原因",
+              "nextStage": 1,
+              "effect": {
+                "info": 1
+              }
+            },
+            {
+              "text": "直接拒绝",
+              "nextStage": 2,
+              "effect": {
+                "reputation": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "明星觉得待遇不公。",
+          "options": [
+            {
+              "text": "提高待遇",
+              "nextStage": 3,
+              "effect": {
+                "money": -60
+              }
+            },
+            {
+              "text": "画大饼",
+              "nextStage": 4,
+              "effect": {
+                "morale": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "明星集体抗议。",
+          "options": [
+            {
+              "text": "妥协",
+              "nextStage": 1,
+              "effect": {
+                "money": -30
+              }
+            },
+            {
+              "text": "法律手段",
+              "nextStage": -1,
+              "effect": {
+                "money": -50,
+                "reputation": -20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "明星们满意了。",
+          "options": [
+            {
+              "text": "签新合同",
+              "nextStage": -1,
+              "effect": {
+                "money": -50
+              }
+            },
+            {
+              "text": "口头承诺",
+              "nextStage": -1,
+              "effect": {
+                "morale": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "明星们半信半疑。",
+          "options": [
+            {
+              "text": "兑现承诺",
+              "nextStage": 3,
+              "effect": {
+                "money": -40
+              }
+            },
+            {
+              "text": "继续忽悠",
+              "nextStage": -1,
+              "effect": {
+                "reputation": -30
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "清洁工老王",
+      "dialog": "老板，我发现了机密文件！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "老王神秘兮兮地递给你一份文件。",
+          "options": [
+            {
+              "text": "接过文件",
+              "nextStage": 1,
+              "effect": {
+                "info": 1
+              }
+            },
+            {
+              "text": "不接",
+              "nextStage": 2,
+              "effect": {
+                "morale": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "文件里有竞争对手的丑闻。",
+          "options": [
+            {
+              "text": "公开丑闻",
+              "nextStage": 3,
+              "effect": {
+                "reputation": 20
+              }
+            },
+            {
+              "text": "敲诈对手",
+              "nextStage": 4,
+              "effect": {
+                "money": 50,
+                "reputation": -20
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "老王失望地走了。",
+          "options": [
+            {
+              "text": "叫住他",
+              "nextStage": 1,
+              "effect": {
+                "time": -2
+              }
+            },
+            {
+              "text": "不管",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "丑闻曝光，对手股价大跌。",
+          "options": [
+            {
+              "text": "收购对手",
+              "nextStage": -1,
+              "effect": {
+                "money": -200,
+                "power": 50
+              }
+            },
+            {
+              "text": "坐视不管",
+              "nextStage": -1,
+              "effect": {
+                "reputation": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "对手乖乖给钱。",
+          "options": [
+            {
+              "text": "收钱保密",
+              "nextStage": -1,
+              "effect": {
+                "money": 100,
+                "reputation": -10
+              }
+            },
+            {
+              "text": "拿了钱还公开",
+              "nextStage": -1,
+              "effect": {
+                "money": 100,
+                "reputation": -30
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "金砖",
+      "description": "一块沉甸甸的金砖，能换不少钱。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你发现了一块金砖。",
+          "options": [
+            {
+              "text": "捡起来",
+              "nextStage": 1,
+              "effect": {
+                "money": 50
+              }
+            },
+            {
+              "text": "不捡",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "金砖很重，但很有价值。",
+          "options": [
+            {
+              "text": "卖掉",
+              "nextStage": -1,
+              "effect": {
+                "money": 100
+              }
+            },
+            {
+              "text": "收藏",
+              "nextStage": -1,
+              "effect": {
+                "morale": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你错过了金砖。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": -1,
+              "effect": {
+                "morale": -5
+              }
+            },
+            {
+              "text": "无所谓",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "咖啡机",
+      "description": "一台高级咖啡机，员工们的最爱。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "咖啡机散发着香气。",
+          "options": [
+            {
+              "text": "喝一杯",
+              "nextStage": 1,
+              "effect": {
+                "energy": 10
+              }
+            },
+            {
+              "text": "无视",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "咖啡提神醒脑。",
+          "options": [
+            {
+              "text": "再来一杯",
+              "nextStage": -1,
+              "effect": {
+                "energy": 5,
+                "time": -2
+              }
+            },
+            {
+              "text": "工作",
+              "nextStage": -1,
+              "effect": {
+                "productivity": 10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "员工们很失望。",
+          "options": [
+            {
+              "text": "允许使用",
+              "nextStage": 1,
+              "effect": {
+                "morale": 10
+              }
+            },
+            {
+              "text": "禁止使用",
+              "nextStage": -1,
+              "effect": {
+                "morale": -20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "神秘U盘",
+      "description": "一个来历不明的U盘，可能含有重要数据。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你在地上捡到一个U盘。",
+          "options": [
+            {
+              "text": "插到电脑上",
+              "nextStage": 1,
+              "effect": {
+                "info": 1
+              }
+            },
+            {
+              "text": "交给IT",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "U盘里有加密文件。",
+          "options": [
+            {
+              "text": "尝试破解",
+              "nextStage": 3,
+              "effect": {
+                "time": -10
+              }
+            },
+            {
+              "text": "格式化",
+              "nextStage": -1,
+              "effect": {
+                "morale": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "IT部门检查后说是安全的。",
+          "options": [
+            {
+              "text": "查看内容",
+              "nextStage": 1,
+              "effect": {
+                "time": -2
+              }
+            },
+            {
+              "text": "丢弃",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "破解成功，发现是竞争对手的商业机密。",
+          "options": [
+            {
+              "text": "利用它",
+              "nextStage": -1,
+              "effect": {
+                "money": 100,
+                "reputation": -20
+              }
+            },
+            {
+              "text": "匿名举报",
+              "nextStage": -1,
+              "effect": {
+                "reputation": 30
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "太空服",
+      "description": "一套崭新的太空服，适合太空漫步。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "太空服在衣柜里。",
+          "options": [
+            {
+              "text": "穿上",
+              "nextStage": 1,
+              "effect": {
+                "protection": 10
+              }
+            },
+            {
+              "text": "不穿",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "穿上太空服感觉很酷。",
+          "options": [
+            {
+              "text": "出去走走",
+              "nextStage": 3,
+              "effect": {
+                "time": -5
+              }
+            },
+            {
+              "text": "脱掉",
+              "nextStage": -1,
+              "effect": {
+                "morale": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你错过了体验机会。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": -1,
+              "effect": {
+                "morale": -5
+              }
+            },
+            {
+              "text": "无所谓",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "在太空漫步时发现了一个信号源。",
+          "options": [
+            {
+              "text": "调查信号",
+              "nextStage": -1,
+              "effect": {
+                "info": 1
+              }
+            },
+            {
+              "text": "返回",
+              "nextStage": -1,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "老板椅",
+      "description": "一张豪华的老板椅，坐着很舒服。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "老板椅空着。",
+          "options": [
+            {
+              "text": "坐上去",
+              "nextStage": 1,
+              "effect": {
+                "morale": 10
+              }
+            },
+            {
+              "text": "不坐",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "坐上去后感觉权力大增。",
+          "options": [
+            {
+              "text": "宣布决定",
+              "nextStage": -1,
+              "effect": {
+                "power": 10
+              }
+            },
+            {
+              "text": "享受一下",
+              "nextStage": -1,
+              "effect": {
+                "morale": 5,
+                "time": -3
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你站着办公。",
+          "options": [
+            {
+              "text": "还是坐吧",
+              "nextStage": 1,
+              "effect": {
+                "time": -1
+              }
+            },
+            {
+              "text": "坚持站着",
+              "nextStage": -1,
+              "effect": {
+                "health": 5
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": "money >= 200 and reputation >= 50",
+      "text": "你成功化解危机，公司起死回生！",
+      "effect": {
+        "money": 0,
+        "reputation": 0
+      }
+    },
+    {
+      "id": "ending2",
+      "condition": "money <= -100",
+      "text": "公司破产，你被扫地出门。",
+      "effect": {}
+    },
+    {
+      "id": "ending3",
+      "condition": "reputation <= -50",
+      "text": "声誉扫地，公司倒闭。",
+      "effect": {}
+    },
+    {
+      "id": "ending4",
+      "condition": "morale <= -50",
+      "text": "员工集体罢工，公司陷入瘫痪。",
+      "effect": {}
+    },
+    {
+      "id": "ending5",
+      "condition": "time <= 0",
+      "text": "时间到！你未能及时决策，公司崩溃。",
+      "effect": {}
+    },
+    {
+      "id": "ending6",
+      "condition": "power >= 100",
+      "text": "你成为火星帝国的独裁者，但众叛亲离。",
+      "effect": {}
+    },
+    {
+      "id": "ending7",
+      "condition": "info >= 5",
+      "text": "你掌握了太多秘密，被灭口。",
+      "effect": {}
+    },
+    {
+      "id": "ending8",
+      "condition": "health <= 0",
+      "text": "过度劳累，你倒下了。",
+      "effect": {}
+    },
+    {
+      "id": "ending9",
+      "condition": "debt >= 100",
+      "text": "债台高筑，你被追债人追杀。",
+      "effect": {}
+    },
+    {
+      "id": "ending10",
+      "condition": "true",
+      "text": "游戏结束，一切归于虚无。",
+      "effect": {}
+    }
+  ],
+  "introText": "火星娱乐帝国崩盘前60秒！你是帝国老板，必须在倒计时内做出关键决策。你的每一个选择都将影响金钱、声誉、员工士气和时间。祝你好运！",
+  "ambientMusic": "紧张刺激的电子音乐，伴随着警报声",
+  "id": "fallback_world_047"
+}

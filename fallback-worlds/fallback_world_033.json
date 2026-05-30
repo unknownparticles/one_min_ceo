@@ -1,0 +1,1332 @@
+{
+  "matchKeywords": [
+    "地球出售",
+    "收购",
+    "60秒",
+    "CEO",
+    "外星文明"
+  ],
+  "identity": "地球出售委员会主席",
+  "theme": "外星文明收购地球前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "stage",
+      "floor",
+      "floor",
+      "water",
+      "water",
+      "floor",
+      "statue",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "lava",
+      "lava",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_ceo_advisor",
+      "name": "智囊先生",
+      "position": [
+        1,
+        4
+      ],
+      "appearance": "西装革履，手持平板",
+      "personality": "焦虑但专业",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "主席，外星买家即将到达，报价比预期低30%！",
+          "options": [
+            {
+              "text": "接受报价，快速成交",
+              "nextStage": 2
+            },
+            {
+              "text": "拖延时间，寻找其他买家",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "明智选择，虽然亏了但保住了面子。",
+          "options": [
+            {
+              "text": "准备签约仪式",
+              "nextStage": 4
+            },
+            {
+              "text": "要求附加条件",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "时间不多了，其他买家似乎不感兴趣。",
+          "options": [
+            {
+              "text": "降价促销",
+              "nextStage": 6
+            },
+            {
+              "text": "威胁外星买家",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "签约仪式开始，但外星人要求看财务报表。",
+          "options": [
+            {
+              "text": "提供虚假报表",
+              "nextStage": 8
+            },
+            {
+              "text": "实话实说",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "外星人同意附加条件，但要求更多土地。",
+          "options": [
+            {
+              "text": "同意，反正都是他们的",
+              "nextStage": 8
+            },
+            {
+              "text": "拒绝，保护地球尊严",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "降价后外星人表示要考虑。",
+          "options": [
+            {
+              "text": "继续施压",
+              "nextStage": 7
+            },
+            {
+              "text": "等待回复",
+              "nextStage": 8
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "威胁激怒了外星人，他们准备强行收购。",
+          "options": [
+            {
+              "text": "投降",
+              "nextStage": 8
+            },
+            {
+              "text": "启动紧急防御",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "text": "交易完成，地球易主。你被任命为地球管理者。",
+          "fixedEnding": "ending_colonial_administrator"
+        },
+        {
+          "stage": 9,
+          "text": "谈判破裂，地球被毁灭。你成为历史罪人。",
+          "fixedEnding": "ending_earth_destroyed"
+        }
+      ]
+    },
+    {
+      "id": "npc_alien_buyer",
+      "name": "赞特星代表",
+      "position": [
+        7,
+        5
+      ],
+      "appearance": "蓝色皮肤，四只眼睛，穿着发光长袍",
+      "personality": "傲慢且不耐烦",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "人类，我们时间有限。报价已经给出，接受或灭亡。",
+          "options": [
+            {
+              "text": "诚惶诚恐地接受",
+              "nextStage": 2
+            },
+            {
+              "text": "试图讨价还价",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "很好，签约吧。你们地球的自然资源我们将高效利用。",
+          "options": [
+            {
+              "text": "请求保留部分文化遗址",
+              "nextStage": 4
+            },
+            {
+              "text": "询问人类命运",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "讨价还价？愚蠢。我们决定降低报价10%以示惩罚。",
+          "options": [
+            {
+              "text": "愤怒抗议",
+              "nextStage": 6
+            },
+            {
+              "text": "无奈接受",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "可以保留几个博物馆，但大部分土地将用于采矿。",
+          "options": [
+            {
+              "text": "感谢",
+              "nextStage": 7
+            },
+            {
+              "text": "要求更多",
+              "nextStage": 8
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "人类将成为低等劳工，但不会被灭绝。",
+          "options": [
+            {
+              "text": "接受，保命要紧",
+              "nextStage": 7
+            },
+            {
+              "text": "拒绝，宁愿战斗",
+              "nextStage": 8
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "抗议无效。我们技术远超你们。最后机会：接受或毁灭。",
+          "options": [
+            {
+              "text": "接受",
+              "nextStage": 7
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 8
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "合同签署。地球现在是赞特星的殖民地。",
+          "fixedEnding": "ending_colonial_planet"
+        },
+        {
+          "stage": 8,
+          "text": "你们的选择导致地球毁灭。再见，愚蠢的文明。",
+          "fixedEnding": "ending_annihilation"
+        }
+      ]
+    },
+    {
+      "id": "npc_secretary",
+      "name": "秘书小林",
+      "position": [
+        3,
+        8
+      ],
+      "appearance": "OL装扮，戴着眼镜",
+      "personality": "干练但紧张",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "主席，媒体已经在外面等候，需要您发布声明。",
+          "options": [
+            {
+              "text": "发布乐观声明",
+              "nextStage": 2
+            },
+            {
+              "text": "发布悲观声明",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "媒体反应积极，但外星买家可能觉得我们太急切。",
+          "options": [
+            {
+              "text": "继续炒作",
+              "nextStage": 4
+            },
+            {
+              "text": "低调处理",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "市场恐慌，地球股价暴跌。外星买家趁机压价。",
+          "options": [
+            {
+              "text": "试图稳定市场",
+              "nextStage": 5
+            },
+            {
+              "text": "抛售个人股份",
+              "nextStage": 6
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "炒作过头，外星人认为我们急于出手，压低报价。",
+          "options": [
+            {
+              "text": "接受低价",
+              "nextStage": 6
+            },
+            {
+              "text": "放弃交易",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "情况暂时稳定，但时间不多了。",
+          "options": [
+            {
+              "text": "继续谈判",
+              "nextStage": 6
+            },
+            {
+              "text": "请教顾问",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "交易最终达成，你个人获得丰厚报酬，但地球命运已定。",
+          "fixedEnding": "ending_personal_gain"
+        },
+        {
+          "stage": 7,
+          "text": "交易失败，你被问责，锒铛入狱。",
+          "fixedEnding": "ending_imprisoned"
+        }
+      ]
+    },
+    {
+      "id": "npc_activist",
+      "name": "环保活动家",
+      "position": [
+        5,
+        3
+      ],
+      "appearance": "穿着印有地球图案的T恤，举着标语",
+      "personality": "愤怒且执着",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你这个卖国贼！地球不是商品！",
+          "options": [
+            {
+              "text": "试图解释",
+              "nextStage": 2
+            },
+            {
+              "text": "无视他",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "解释无效，他召集了更多抗议者。",
+          "options": [
+            {
+              "text": "安抚抗议者",
+              "nextStage": 4
+            },
+            {
+              "text": "叫保安驱逐",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他堵住了出口，要求你公开道歉。",
+          "options": [
+            {
+              "text": "道歉",
+              "nextStage": 4
+            },
+            {
+              "text": "强硬拒绝",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "抗议暂时平息，但舆论压力增大。",
+          "options": [
+            {
+              "text": "承诺环保条款",
+              "nextStage": 6
+            },
+            {
+              "text": "表面应付",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "暴力冲突升级，外星人借此指责人类不文明。",
+          "options": [
+            {
+              "text": "控制局面",
+              "nextStage": 6
+            },
+            {
+              "text": "求助外星人",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "你成功平息抗议，交易继续进行。",
+          "fixedEnding": "ending_smooth_deal"
+        },
+        {
+          "stage": 7,
+          "text": "抗议失控，外星人认为地球不稳定，取消收购并封锁地球。",
+          "fixedEnding": "ending_quarantine"
+        }
+      ]
+    },
+    {
+      "id": "npc_techie",
+      "name": "技术总监",
+      "position": [
+        1,
+        9
+      ],
+      "appearance": "穿着格子衫，戴着黑框眼镜",
+      "personality": "冷静务实",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "主席，检测到外星飞船正在部署轨道武器。",
+          "options": [
+            {
+              "text": "加速谈判",
+              "nextStage": 2
+            },
+            {
+              "text": "部署反击系统",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "外星人表示武器只是威慑。",
+          "options": [
+            {
+              "text": "相信他们",
+              "nextStage": 4
+            },
+            {
+              "text": "保持警惕",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "反击系统被外星黑客瘫痪。",
+          "options": [
+            {
+              "text": "重启系统",
+              "nextStage": 5
+            },
+            {
+              "text": "承认失败",
+              "nextStage": 6
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "外星人称赞你的信任，但暗中准备更苛刻条款。",
+          "options": [
+            {
+              "text": "接受条款",
+              "nextStage": 6
+            },
+            {
+              "text": "重新谈判",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "局势紧张，外星人发出最后通牒。",
+          "options": [
+            {
+              "text": "屈服",
+              "nextStage": 6
+            },
+            {
+              "text": "抵抗",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "地球被占领，你成为傀儡领袖。",
+          "fixedEnding": "ending_puppet_leader"
+        },
+        {
+          "stage": 7,
+          "text": "全面战争爆发，地球文明终结。",
+          "fixedEnding": "ending_war"
+        }
+      ]
+    },
+    {
+      "id": "npc_mysterious",
+      "name": "神秘人",
+      "position": [
+        9,
+        10
+      ],
+      "appearance": "穿着斗篷，脸隐藏在阴影中",
+      "personality": "神秘且深邃",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我知道一个秘密：外星人其实来自未来，想改变历史。",
+          "options": [
+            {
+              "text": "追问详情",
+              "nextStage": 2
+            },
+            {
+              "text": "认为他疯了",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他说：如果你配合他们，未来会更好。",
+          "options": [
+            {
+              "text": "相信他",
+              "nextStage": 4
+            },
+            {
+              "text": "质疑他",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他消失前留下一个装置。",
+          "options": [
+            {
+              "text": "使用装置",
+              "nextStage": 6
+            },
+            {
+              "text": "丢弃装置",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你选择信任，交易变得顺利。",
+          "options": [
+            {
+              "text": "继续合作",
+              "nextStage": 6
+            },
+            {
+              "text": "仍存疑虑",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "他揭露更多细节，但警告时间线正在崩溃。",
+          "options": [
+            {
+              "text": "采取行动",
+              "nextStage": 6
+            },
+            {
+              "text": "置之不理",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "你改变了未来，地球成为跨星际帝国。",
+          "fixedEnding": "ending_galactic_empire"
+        },
+        {
+          "stage": 7,
+          "text": "时间悖论导致地球被从历史上抹去。",
+          "fixedEnding": "ending_paradox"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_contract",
+      "name": "地球出售合同",
+      "position": [
+        1,
+        4
+      ],
+      "description": "具有法律效力的外星收购合同",
+      "interaction": "可阅读并签署",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "合同条款模糊，包含许多隐藏费用。",
+          "options": [
+            {
+              "text": "仔细阅读",
+              "nextStage": 2
+            },
+            {
+              "text": "直接签署",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你发现了隐藏的奴隶条款。",
+          "options": [
+            {
+              "text": "要求修改",
+              "nextStage": 4
+            },
+            {
+              "text": "拒绝签署",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你签署了合同，地球被卖掉了。",
+          "fixedEnding": "ending_signed_away"
+        },
+        {
+          "stage": 4,
+          "text": "外星人同意修改，但要求额外补偿。",
+          "options": [
+            {
+              "text": "同意补偿",
+              "nextStage": 6
+            },
+            {
+              "text": "退出交易",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "交易破裂，地球陷入混乱。",
+          "fixedEnding": "ending_chaos"
+        },
+        {
+          "stage": 6,
+          "text": "合同修改后，交易完成，人类获得一定自治权。",
+          "fixedEnding": "ending_autonomy"
+        }
+      ]
+    },
+    {
+      "id": "item_red_button",
+      "name": "红色按钮",
+      "position": [
+        3,
+        5
+      ],
+      "description": "一个神秘的红色按钮，上面写着‘紧急’",
+      "interaction": "按下去",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "按钮下方有一行小字：‘启动地球毁灭程序’。",
+          "options": [
+            {
+              "text": "按下去",
+              "nextStage": 2
+            },
+            {
+              "text": "不按",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你按下了按钮，地球进入自毁倒计时。",
+          "options": [
+            {
+              "text": "取消自毁",
+              "nextStage": 4
+            },
+            {
+              "text": "听天由命",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你将它收好，或许以后有用。",
+          "fixedEnding": "ending_saved_button"
+        },
+        {
+          "stage": 4,
+          "text": "你成功取消了自毁，但被外星人视为不稳定因素。",
+          "options": [
+            {
+              "text": "解释误会",
+              "nextStage": 6
+            },
+            {
+              "text": "先发制人",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "地球爆炸，一切都结束了。",
+          "fixedEnding": "ending_explosion"
+        },
+        {
+          "stage": 6,
+          "text": "外星人接受解释，交易继续。",
+          "fixedEnding": "ending_explanation"
+        },
+        {
+          "stage": 7,
+          "text": "你发动攻击，但被外星人轻易击败。",
+          "fixedEnding": "ending_defeated"
+        }
+      ]
+    },
+    {
+      "id": "item_briefcase",
+      "name": "装满现金的公文包",
+      "position": [
+        5,
+        8
+      ],
+      "description": "一箱不可追踪的现金",
+      "interaction": "可以拿走",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "这是黑钱，用来贿赂外星人？",
+          "options": [
+            {
+              "text": "用来贿赂",
+              "nextStage": 2
+            },
+            {
+              "text": "据为己有",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "外星人对贿赂嗤之以鼻，反而举报了你。",
+          "options": [
+            {
+              "text": "否认",
+              "nextStage": 4
+            },
+            {
+              "text": "承认",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你拿了钱，但良心不安。",
+          "fixedEnding": "ending_greedy"
+        },
+        {
+          "stage": 4,
+          "text": "你的否认被监控揭穿，身败名裂。",
+          "fixedEnding": "ending_disgraced"
+        },
+        {
+          "stage": 5,
+          "text": "你承认试图贿赂，交易破裂，地球陷入危机。",
+          "fixedEnding": "ending_bribery_fail"
+        }
+      ]
+    },
+    {
+      "id": "item_ancient_artifact",
+      "name": "古代神器",
+      "position": [
+        9,
+        3
+      ],
+      "description": "一件蕴含巨大能量的古代遗物",
+      "interaction": "可以激活",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "神器散发出奇异光芒，似乎有意识。",
+          "options": [
+            {
+              "text": "激活它",
+              "nextStage": 2
+            },
+            {
+              "text": "交给外星人",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "神器显示它是远古文明的科技，可以保护地球。",
+          "options": [
+            {
+              "text": "用来防御",
+              "nextStage": 4
+            },
+            {
+              "text": "用来谈判",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "外星人得到神器后，立即撤离，称地球有危险。",
+          "fixedEnding": "ending_artifact_fear"
+        },
+        {
+          "stage": 4,
+          "text": "神器撑起护盾，但消耗地球能量。",
+          "options": [
+            {
+              "text": "持续开启",
+              "nextStage": 6
+            },
+            {
+              "text": "关闭谈判",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "外星人敬畏神器，同意更公平的条款。",
+          "fixedEnding": "ending_fair_deal"
+        },
+        {
+          "stage": 6,
+          "text": "地球能量耗尽，成为死星。",
+          "fixedEnding": "ending_drained"
+        },
+        {
+          "stage": 7,
+          "text": "谈判成功，人类获得独立。",
+          "fixedEnding": "ending_independence"
+        }
+      ]
+    },
+    {
+      "id": "item_poison",
+      "name": "毒药",
+      "position": [
+        8,
+        6
+      ],
+      "description": "一瓶无色无味的剧毒物质",
+      "interaction": "可以下毒",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你可以毒死外星代表，但风险极大。",
+          "options": [
+            {
+              "text": "下毒",
+              "nextStage": 2
+            },
+            {
+              "text": "警告他们",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "外星代表中毒，他们报复性攻击地球。",
+          "options": [
+            {
+              "text": "道歉并提供解药",
+              "nextStage": 4
+            },
+            {
+              "text": "殊死抵抗",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "外星人感谢你的诚实，但加强戒备。",
+          "fixedEnding": "ending_caution"
+        },
+        {
+          "stage": 4,
+          "text": "外星人接受解药，但要求严惩你。",
+          "options": [
+            {
+              "text": "自我牺牲",
+              "nextStage": 6
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "抵抗失败，地球被毁灭。",
+          "fixedEnding": "ending_doom"
+        },
+        {
+          "stage": 6,
+          "text": "你被处决，但地球得救。",
+          "fixedEnding": "ending_martyr"
+        },
+        {
+          "stage": 7,
+          "text": "你逃亡宇宙，成为流浪者。",
+          "fixedEnding": "ending_exile"
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_colonial_administrator",
+      "title": "殖民地管理者",
+      "description": "地球被收购，你成为外星人的管理者，权力犹在但尊严尽失。"
+    },
+    {
+      "id": "ending_earth_destroyed",
+      "title": "地球毁灭",
+      "description": "谈判破裂，地球被彻底毁灭，人类文明终结。"
+    },
+    {
+      "id": "ending_colonial_planet",
+      "title": "殖民星球",
+      "description": "地球成为外星殖民地，人类沦为二等公民。"
+    },
+    {
+      "id": "ending_annihilation",
+      "title": "彻底消亡",
+      "description": "外星人摧毁地球，一切归于虚无。"
+    },
+    {
+      "id": "ending_personal_gain",
+      "title": "个人利益",
+      "description": "你通过交易中饱私囊，但背负千古骂名。"
+    },
+    {
+      "id": "ending_imprisoned",
+      "title": "锒铛入狱",
+      "description": "交易失败，你被追究责任，终身监禁。"
+    },
+    {
+      "id": "ending_smooth_deal",
+      "title": "顺利交易",
+      "description": "地球被平稳收购，人类受到一定待遇。"
+    },
+    {
+      "id": "ending_quarantine",
+      "title": "隔离封锁",
+      "description": "外星人认为地球不稳定，封锁地球，与世隔绝。"
+    },
+    {
+      "id": "ending_puppet_leader",
+      "title": "傀儡领袖",
+      "description": "你成为外星人的傀儡，表面统治实则被控制。"
+    },
+    {
+      "id": "ending_war",
+      "title": "全面战争",
+      "description": "人类与外星人开战，文明毁灭。"
+    },
+    {
+      "id": "ending_galactic_empire",
+      "title": "银河帝国",
+      "description": "你利用外星科技，建立跨星系帝国。"
+    },
+    {
+      "id": "ending_paradox",
+      "title": "时间悖论",
+      "description": "时间线崩溃，地球从历史上消失。"
+    },
+    {
+      "id": "ending_signed_away",
+      "title": "轻易签约",
+      "description": "你草率签约，地球被廉价出售。"
+    },
+    {
+      "id": "ending_chaos",
+      "title": "全球混乱",
+      "description": "交易破裂，地球陷入无政府状态。"
+    },
+    {
+      "id": "ending_autonomy",
+      "title": "自治协议",
+      "description": "人类获得一定自治权，但受外星监督。"
+    },
+    {
+      "id": "ending_explosion",
+      "title": "星球爆炸",
+      "description": "你启动了自毁程序，地球爆炸。"
+    },
+    {
+      "id": "ending_explanation",
+      "title": "解释清楚",
+      "description": "你成功解释误会，交易顺利进行。"
+    },
+    {
+      "id": "ending_defeated",
+      "title": "战败",
+      "description": "你试图抵抗，被外星人轻易击败。"
+    },
+    {
+      "id": "ending_greedy",
+      "title": "贪婪的下场",
+      "description": "你贪污贿赂，最终身败名裂。"
+    },
+    {
+      "id": "ending_disgraced",
+      "title": "身败名裂",
+      "description": "你的丑行曝光，遗臭万年。"
+    },
+    {
+      "id": "ending_bribery_fail",
+      "title": "贿赂失败",
+      "description": "贿赂被揭穿，交易失败。"
+    },
+    {
+      "id": "ending_artifact_fear",
+      "title": "神器恐惧",
+      "description": "外星人因神器而逃离，地球保持独立。"
+    },
+    {
+      "id": "ending_fair_deal",
+      "title": "公平交易",
+      "description": "通过神器威慑，获得公平条约。"
+    },
+    {
+      "id": "ending_drained",
+      "title": "能源枯竭",
+      "description": "神器耗尽地球能源，成为死星。"
+    },
+    {
+      "id": "ending_independence",
+      "title": "独立",
+      "description": "人类成功捍卫独立，外星人撤退。"
+    },
+    {
+      "id": "ending_caution",
+      "title": "谨慎对待",
+      "description": "外星人加强戒备，谈判陷入僵局。"
+    },
+    {
+      "id": "ending_doom",
+      "title": "末日",
+      "description": "抵抗失败，地球毁灭。"
+    },
+    {
+      "id": "ending_martyr",
+      "title": "殉道者",
+      "description": "你牺牲自己，拯救地球。"
+    },
+    {
+      "id": "ending_exile",
+      "title": "流亡",
+      "description": "你逃离地球，在宇宙中流浪。"
+    },
+    {
+      "id": "ending_saved_button",
+      "title": "保留按钮",
+      "description": "你保留了红色按钮，未来可能有变数。"
+    }
+  ],
+  "introText": "欢迎来到地球出售委员会总部。您作为主席，将决定地球的命运。60秒后，外星文明将完成收购。时间紧迫，做出您的选择。",
+  "ambientMusic": "紧张而宏大的交响乐，夹杂着外星电子音效",
+  "id": "fallback_world_033"
+}

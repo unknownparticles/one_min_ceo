@@ -1,0 +1,795 @@
+{
+  "matchKeywords": [
+    "拍卖",
+    "竞价",
+    "宇宙",
+    "CEO"
+  ],
+  "identity": "宇宙拍卖行老板",
+  "theme": "宇宙拍卖行最终竞价前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "plant",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "statue",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    6,
+    8
+  ],
+  "npcs": [
+    {
+      "id": "npc_1",
+      "name": "星系富豪",
+      "x": 2,
+      "y": 2,
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "年轻人，这枚星核是我的！",
+          "options": [
+            {
+              "text": "竞价加价",
+              "effect": "add_time_10"
+            },
+            {
+              "text": "放弃竞价",
+              "effect": "remove_item_star_core"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "你以为你能赢？我还有后手！",
+          "options": [
+            {
+              "text": "亮出底牌",
+              "effect": "add_score_500"
+            },
+            {
+              "text": "拖延时间",
+              "effect": "add_time_5"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "我认输，但别得意太早。",
+          "options": [
+            {
+              "text": "接受认输",
+              "effect": "add_score_1000"
+            },
+            {
+              "text": "嘲讽他",
+              "effect": "remove_score_200"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_2",
+      "name": "星际收藏家",
+      "x": 3,
+      "y": 5,
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "这颗星球上的古董是我的！",
+          "options": [
+            {
+              "text": "用金币压他",
+              "effect": "add_time_15"
+            },
+            {
+              "text": "威胁他",
+              "effect": "remove_npc"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "你休想得到！",
+          "options": [
+            {
+              "text": "出示凭证",
+              "effect": "add_score_300"
+            },
+            {
+              "text": "无视他",
+              "effect": "add_time_5"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "好吧，你赢了。",
+          "options": [
+            {
+              "text": "继续竞价",
+              "effect": "add_score_500"
+            },
+            {
+              "text": "离开",
+              "effect": "end_game"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_3",
+      "name": "宇宙拍卖师",
+      "x": 7,
+      "y": 4,
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "竞价开始！底价100万星币！",
+          "options": [
+            {
+              "text": "直接出价200万",
+              "effect": "add_score_200"
+            },
+            {
+              "text": "观察局势",
+              "effect": "add_time_5"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "还有更高的吗？",
+          "options": [
+            {
+              "text": "出价300万",
+              "effect": "add_score_300"
+            },
+            {
+              "text": "等待倒计时",
+              "effect": "add_time_10"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "成交！恭喜你获得星核！",
+          "options": [
+            {
+              "text": "感谢拍卖师",
+              "effect": "add_score_1000"
+            },
+            {
+              "text": "转身离开",
+              "effect": "end_game"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_4",
+      "name": "神秘买家",
+      "x": 9,
+      "y": 3,
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "我代表暗影帝国，放弃竞价。",
+          "options": [
+            {
+              "text": "虚张声势",
+              "effect": "add_score_100"
+            },
+            {
+              "text": "相信他",
+              "effect": "add_time_10"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "但我有条件。",
+          "options": [
+            {
+              "text": "什么条件？",
+              "effect": "reveal_secret"
+            },
+            {
+              "text": "不需要条件",
+              "effect": "add_score_200"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "合作愉快。",
+          "options": [
+            {
+              "text": "握手",
+              "effect": "add_score_500"
+            },
+            {
+              "text": "保持警惕",
+              "effect": "add_time_5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_5",
+      "name": "机器人管家",
+      "x": 5,
+      "y": 8,
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "主人，您有一封紧急消息。",
+          "options": [
+            {
+              "text": "查看消息",
+              "effect": "reveal_clue"
+            },
+            {
+              "text": "先竞价",
+              "effect": "add_time_5"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "是董事会要求您放弃竞拍。",
+          "options": [
+            {
+              "text": "拒绝董事会",
+              "effect": "add_score_200"
+            },
+            {
+              "text": "假装同意",
+              "effect": "add_time_10"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "我已按您吩咐回复了。",
+          "options": [
+            {
+              "text": "做得好",
+              "effect": "add_score_100"
+            },
+            {
+              "text": "沉默",
+              "effect": "add_time_5"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_1",
+      "name": "星核",
+      "x": 10,
+      "y": 2,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一颗蕴含巨大能量的星核。",
+          "options": [
+            {
+              "text": "拿起星核",
+              "effect": "add_score_500"
+            },
+            {
+              "text": "检查真假",
+              "effect": "reveal_secret"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "它似乎在震动。",
+          "options": [
+            {
+              "text": "用能量吸收器",
+              "effect": "add_score_300"
+            },
+            {
+              "text": "放回原处",
+              "effect": "remove_item_star_core"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "星核认可了你。",
+          "options": [
+            {
+              "text": "吸收能量",
+              "effect": "add_score_1000"
+            },
+            {
+              "text": "保留收藏",
+              "effect": "add_item_star_core"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_2",
+      "name": "古董星球",
+      "x": 4,
+      "y": 7,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个微型星球古董。",
+          "options": [
+            {
+              "text": "用放大镜观察",
+              "effect": "reveal_clue"
+            },
+            {
+              "text": "直接竞价",
+              "effect": "add_score_200"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "它刻有远古文字。",
+          "options": [
+            {
+              "text": "翻译文字",
+              "effect": "add_score_400"
+            },
+            {
+              "text": "忽略文字",
+              "effect": "add_time_5"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "文字记载了宝藏位置。",
+          "options": [
+            {
+              "text": "记下位置",
+              "effect": "add_score_800"
+            },
+            {
+              "text": "公开消息",
+              "effect": "remove_score_200"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_3",
+      "name": "能量剑",
+      "x": 8,
+      "y": 5,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一把古老的能量剑。",
+          "options": [
+            {
+              "text": "挥舞试试",
+              "effect": "add_score_100"
+            },
+            {
+              "text": "小心保管",
+              "effect": "add_item_energy_sword"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "剑刃发出嗡鸣。",
+          "options": [
+            {
+              "text": "充能",
+              "effect": "add_score_300"
+            },
+            {
+              "text": "收起来",
+              "effect": "add_time_5"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "它认你为主。",
+          "options": [
+            {
+              "text": "装备它",
+              "effect": "add_score_600"
+            },
+            {
+              "text": "拍卖它",
+              "effect": "add_score_200"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_4",
+      "name": "星际地图",
+      "x": 6,
+      "y": 2,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一张标注了未知星域的古老地图。",
+          "options": [
+            {
+              "text": "研究地图",
+              "effect": "reveal_secret"
+            },
+            {
+              "text": "收起地图",
+              "effect": "add_item_star_map"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "图上有一个红点。",
+          "options": [
+            {
+              "text": "前往红点",
+              "effect": "add_score_400"
+            },
+            {
+              "text": "标记坐标",
+              "effect": "add_time_10"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "红点处埋藏着宝藏。",
+          "options": [
+            {
+              "text": "挖掘宝藏",
+              "effect": "add_score_1000"
+            },
+            {
+              "text": "报告上级",
+              "effect": "add_score_200"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_5",
+      "name": "神秘药剂",
+      "x": 11,
+      "y": 8,
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一瓶闪烁着星光的药剂。",
+          "options": [
+            {
+              "text": "一饮而尽",
+              "effect": "add_time_30"
+            },
+            {
+              "text": "分析成分",
+              "effect": "reveal_clue"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "药剂能短暂提升感知。",
+          "options": [
+            {
+              "text": "使用药剂",
+              "effect": "add_score_500"
+            },
+            {
+              "text": "保存备用",
+              "effect": "add_item_potion"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "副作用是头晕。",
+          "options": [
+            {
+              "text": "硬撑",
+              "effect": "add_score_200"
+            },
+            {
+              "text": "休息一下",
+              "effect": "remove_time_10"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_1",
+      "condition": "score >= 1000",
+      "text": "你成功拍得星核，成为宇宙最富有的人之一。",
+      "effect": "win"
+    },
+    {
+      "id": "ending_2",
+      "condition": "time <= 0",
+      "text": "时间到！竞价失败，你失去了所有机会。",
+      "effect": "lose"
+    },
+    {
+      "id": "ending_3",
+      "condition": "has_item('star_core') && score >= 500",
+      "text": "你带着星核逃离拍卖行，但被通缉。",
+      "effect": "neutral"
+    },
+    {
+      "id": "ending_4",
+      "condition": "npc_removed >= 3",
+      "text": "你得罪了太多买家，被逐出拍卖行。",
+      "effect": "lose"
+    },
+    {
+      "id": "ending_5",
+      "condition": "score >= 2000",
+      "text": "你不仅拍得星核，还获得了神秘组织的青睐。",
+      "effect": "win_bonus"
+    },
+    {
+      "id": "ending_6",
+      "condition": "has_item('energy_sword') && has_item('star_map')",
+      "text": "你利用地图和剑找到了隐藏宝藏，成为传奇。",
+      "effect": "win_epic"
+    },
+    {
+      "id": "ending_7",
+      "condition": "score < 0",
+      "text": "你负债累累，被迫卖身给拍卖行。",
+      "effect": "lose"
+    },
+    {
+      "id": "ending_8",
+      "condition": "time >= 60",
+      "text": "你拖延了时间，拍卖被取消，一切归零。",
+      "effect": "neutral"
+    },
+    {
+      "id": "ending_9",
+      "condition": "score >= 1500 && npc_removed == 0",
+      "text": "你凭借智慧和礼貌赢得了所有人的尊重。",
+      "effect": "win_honor"
+    }
+  ],
+  "introText": "欢迎来到宇宙拍卖行！你作为CEO，必须在60秒内竞拍下稀世星核。注意时间，做出选择！",
+  "ambientMusic": "epic_auction_theme",
+  "id": "fallback_world_080"
+}

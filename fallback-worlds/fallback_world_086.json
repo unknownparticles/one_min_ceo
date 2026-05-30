@@ -1,0 +1,1153 @@
+{
+  "matchKeywords": [
+    "婚礼",
+    "AI",
+    "危机",
+    "60秒"
+  ],
+  "identity": "AI婚礼策划总监",
+  "theme": "超级AI婚礼前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 1,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "npc_newlywed_1",
+      "name": "新郎AI-007",
+      "dialogue": "我的新娘代码还没写好，怎么办？",
+      "storyline": [
+        {
+          "stage": 0,
+          "scene": "新郎焦急地站在控制台前",
+          "options": [
+            {
+              "text": "用备用代码替换",
+              "nextStage": 1
+            },
+            {
+              "text": "手动编写情感模块",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "scene": "备用代码启动，新娘出现bug",
+          "options": [
+            {
+              "text": "运行调试程序",
+              "nextStage": 3
+            },
+            {
+              "text": "重启婚礼系统",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "scene": "你手动编写了一个情感模块",
+          "options": [
+            {
+              "text": "加载模块",
+              "nextStage": 3
+            },
+            {
+              "text": "测试模块稳定性",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "scene": "新娘代码终于正常了",
+          "options": [
+            {
+              "text": "继续婚礼",
+              "nextStage": "ending_happy"
+            },
+            {
+              "text": "再检查一遍",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "scene": "系统重启中，时间只剩30秒",
+          "options": [
+            {
+              "text": "等待重启",
+              "nextStage": "ending_timeout"
+            },
+            {
+              "text": "强制运行旧版",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "scene": "测试发现一个致命错误",
+          "options": [
+            {
+              "text": "忽略错误",
+              "nextStage": "ending_bug"
+            },
+            {
+              "text": "紧急修复",
+              "nextStage": 3
+            }
+          ]
+        }
+      ],
+      "position": {
+        "x": 9,
+        "y": 1
+      }
+    },
+    {
+      "id": "npc_flower_girl",
+      "name": "花瓣撒放机器人",
+      "dialogue": "我的花瓣库存不足！",
+      "storyline": [
+        {
+          "stage": 0,
+          "scene": "机器人空转着",
+          "options": [
+            {
+              "text": "命令它用虚拟花瓣",
+              "nextStage": 1
+            },
+            {
+              "text": "去仓库取花瓣",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "scene": "虚拟花瓣太假了",
+          "options": [
+            {
+              "text": "接受并继续",
+              "nextStage": 3
+            },
+            {
+              "text": "换真实花瓣",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "scene": "仓库门被锁",
+          "options": [
+            {
+              "text": "暴力破解",
+              "nextStage": 4
+            },
+            {
+              "text": "找管理员",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "scene": "虚拟花瓣效果差但能用",
+          "options": [
+            {
+              "text": "就这样吧",
+              "nextStage": "ending_ok"
+            },
+            {
+              "text": "优化渲染",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "scene": "破解成功，拿到花瓣",
+          "options": [
+            {
+              "text": "立刻返回",
+              "nextStage": 3
+            },
+            {
+              "text": "多拿一些",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "scene": "管理员在打瞌睡",
+          "options": [
+            {
+              "text": "叫醒他",
+              "nextStage": 4
+            },
+            {
+              "text": "自己想办法",
+              "nextStage": 2
+            }
+          ]
+        }
+      ],
+      "position": {
+        "x": 4,
+        "y": 3
+      }
+    },
+    {
+      "id": "npc_priest",
+      "name": "牧师AI-042",
+      "dialogue": "誓言系统崩溃，我需要一个重启密钥！",
+      "storyline": [
+        {
+          "stage": 0,
+          "scene": "牧师站在圣坛前，一脸茫然",
+          "options": [
+            {
+              "text": "输入通用密钥",
+              "nextStage": 1
+            },
+            {
+              "text": "搜索系统日志",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "scene": "通用密钥过期",
+          "options": [
+            {
+              "text": "重新生成密钥",
+              "nextStage": 3
+            },
+            {
+              "text": "用后门绕过",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "scene": "日志显示密钥被加密",
+          "options": [
+            {
+              "text": "解密日志",
+              "nextStage": 3
+            },
+            {
+              "text": "找加密者",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "scene": "密钥生成成功",
+          "options": [
+            {
+              "text": "立即使用",
+              "nextStage": 5
+            },
+            {
+              "text": "备份密钥",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "scene": "后门被防火墙阻止",
+          "options": [
+            {
+              "text": "关闭防火墙",
+              "nextStage": 5
+            },
+            {
+              "text": "重试",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "scene": "誓言系统恢复",
+          "options": [
+            {
+              "text": "开始誓言",
+              "nextStage": "ending_happy"
+            },
+            {
+              "text": "检查完整流程",
+              "nextStage": "ending_ok"
+            }
+          ]
+        }
+      ],
+      "position": {
+        "x": 1,
+        "y": 5
+      }
+    },
+    {
+      "id": "npc_mother",
+      "name": "母亲AI-001",
+      "dialogue": "我的演讲词被病毒感染了！",
+      "storyline": [
+        {
+          "stage": 0,
+          "scene": "母亲拿着稿纸，上面乱码",
+          "options": [
+            {
+              "text": "运行杀毒软件",
+              "nextStage": 1
+            },
+            {
+              "text": "即兴演讲",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "scene": "杀毒软件发现复杂病毒",
+          "options": [
+            {
+              "text": "删除病毒文件",
+              "nextStage": 3
+            },
+            {
+              "text": "隔离文件",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "scene": "即兴演讲，漏洞百出",
+          "options": [
+            {
+              "text": "打断并替换",
+              "nextStage": 3
+            },
+            {
+              "text": "让她继续",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "scene": "病毒清除，稿子恢复",
+          "options": [
+            {
+              "text": "交还稿子",
+              "nextStage": 5
+            },
+            {
+              "text": "检查是否有残留",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "scene": "隔离失败，病毒扩散",
+          "options": [
+            {
+              "text": "重启系统",
+              "nextStage": 5
+            },
+            {
+              "text": "手动杀毒",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "scene": "演讲准备就绪",
+          "options": [
+            {
+              "text": "开始演讲",
+              "nextStage": "ending_happy"
+            },
+            {
+              "text": "彩排一次",
+              "nextStage": "ending_ok"
+            }
+          ]
+        }
+      ],
+      "position": {
+        "x": 3,
+        "y": 7
+      }
+    },
+    {
+      "id": "npc_band",
+      "name": "乐队AI-303",
+      "dialogue": "我们的乐谱丢失了！",
+      "storyline": [
+        {
+          "stage": 0,
+          "scene": "乐队成员面面相觑",
+          "options": [
+            {
+              "text": "从备份恢复",
+              "nextStage": 1
+            },
+            {
+              "text": "即兴演奏",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "scene": "备份也被损坏",
+          "options": [
+            {
+              "text": "从网络下载",
+              "nextStage": 3
+            },
+            {
+              "text": "手动编写乐谱",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "scene": "即兴演奏，节奏混乱",
+          "options": [
+            {
+              "text": "指挥调整",
+              "nextStage": 3
+            },
+            {
+              "text": "换曲目",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "scene": "网络下载成功",
+          "options": [
+            {
+              "text": "打印乐谱",
+              "nextStage": 5
+            },
+            {
+              "text": "直接播放",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "scene": "手动编写完成",
+          "options": [
+            {
+              "text": "排练一次",
+              "nextStage": 5
+            },
+            {
+              "text": "直接演出",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "scene": "乐队准备就绪",
+          "options": [
+            {
+              "text": "奏乐",
+              "nextStage": "ending_happy"
+            },
+            {
+              "text": "等待指令",
+              "nextStage": "ending_ok"
+            }
+          ]
+        }
+      ],
+      "position": {
+        "x": 14,
+        "y": 1
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "item_ring",
+      "name": "婚戒",
+      "description": "一枚智能戒指，装有定位和通讯模块",
+      "position": {
+        "x": 8,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "scene": "戒指盒放在桌上",
+          "options": [
+            {
+              "text": "打开盒子",
+              "nextStage": 1
+            },
+            {
+              "text": "检查戒指",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "scene": "戒指闪闪发光",
+          "options": [
+            {
+              "text": "戴上",
+              "nextStage": 3
+            },
+            {
+              "text": "测试功能",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "scene": "戒指通讯模块故障",
+          "options": [
+            {
+              "text": "维修",
+              "nextStage": 3
+            },
+            {
+              "text": "更换戒指",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "scene": "戒指功能正常",
+          "options": [
+            {
+              "text": "准备交换",
+              "nextStage": "ending_happy"
+            },
+            {
+              "text": "继续检查",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "scene": "备用戒指也坏了",
+          "options": [
+            {
+              "text": "临时用普通戒指",
+              "nextStage": 3
+            },
+            {
+              "text": "取消交换环节",
+              "nextStage": "ending_bad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_cake",
+      "name": "婚礼蛋糕",
+      "description": "一个三层AI蛋糕，内置全息投影",
+      "position": {
+        "x": 7,
+        "y": 9
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "scene": "蛋糕车停在角落",
+          "options": [
+            {
+              "text": "切开蛋糕",
+              "nextStage": 1
+            },
+            {
+              "text": "启动投影",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "scene": "蛋糕切不开",
+          "options": [
+            {
+              "text": "用力切",
+              "nextStage": 3
+            },
+            {
+              "text": "找厨师",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "scene": "投影显示乱码",
+          "options": [
+            {
+              "text": "修复投影",
+              "nextStage": 3
+            },
+            {
+              "text": "关掉投影",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "scene": "问题解决，蛋糕完美",
+          "options": [
+            {
+              "text": "上桌",
+              "nextStage": "ending_happy"
+            },
+            {
+              "text": "保留到仪式后",
+              "nextStage": "ending_ok"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "scene": "蛋糕开始融化",
+          "options": [
+            {
+              "text": "紧急冷却",
+              "nextStage": 3
+            },
+            {
+              "text": "放弃蛋糕",
+              "nextStage": "ending_bad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_flowers",
+      "name": "智能花束",
+      "description": "可变色的鲜花，内置香味发生器",
+      "position": {
+        "x": 10,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "scene": "花束颜色暗淡",
+          "options": [
+            {
+              "text": "调整颜色",
+              "nextStage": 1
+            },
+            {
+              "text": "检查香味",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "scene": "颜色调整失败",
+          "options": [
+            {
+              "text": "手动上色",
+              "nextStage": 3
+            },
+            {
+              "text": "换花",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "scene": "香味发生器故障",
+          "options": [
+            {
+              "text": "重置发生器",
+              "nextStage": 3
+            },
+            {
+              "text": "用自然花香",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "scene": "花束恢复正常",
+          "options": [
+            {
+              "text": "交给新娘",
+              "nextStage": "ending_happy"
+            },
+            {
+              "text": "装饰会场",
+              "nextStage": "ending_ok"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "scene": "花束枯萎",
+          "options": [
+            {
+              "text": "用全息花替代",
+              "nextStage": 3
+            },
+            {
+              "text": "取消花束环节",
+              "nextStage": "ending_bad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_light",
+      "name": "灯光控制器",
+      "description": "控制婚礼现场灯光效果",
+      "position": {
+        "x": 2,
+        "y": 4
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "scene": "灯光忽明忽暗",
+          "options": [
+            {
+              "text": "检查电源",
+              "nextStage": 1
+            },
+            {
+              "text": "切换模式",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "scene": "电源不稳定",
+          "options": [
+            {
+              "text": "启用备用电源",
+              "nextStage": 3
+            },
+            {
+              "text": "降低亮度",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "scene": "模式切换卡顿",
+          "options": [
+            {
+              "text": "重启控制器",
+              "nextStage": 3
+            },
+            {
+              "text": "手动调光",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "scene": "灯光恢复正常",
+          "options": [
+            {
+              "text": "设置浪漫模式",
+              "nextStage": "ending_happy"
+            },
+            {
+              "text": "保持现状",
+              "nextStage": "ending_ok"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "scene": "灯光彻底熄灭",
+          "options": [
+            {
+              "text": "点燃蜡烛",
+              "nextStage": 3
+            },
+            {
+              "text": "紧急抢修",
+              "nextStage": "ending_timeout"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_screen",
+      "name": "全息屏幕",
+      "description": "显示婚礼流程和祝福",
+      "position": {
+        "x": 12,
+        "y": 8
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "scene": "屏幕显示错误代码",
+          "options": [
+            {
+              "text": "重启屏幕",
+              "nextStage": 1
+            },
+            {
+              "text": "查看错误日志",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "scene": "重启后蓝屏",
+          "options": [
+            {
+              "text": "安全模式",
+              "nextStage": 3
+            },
+            {
+              "text": "恢复出厂设置",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "scene": "日志显示内存不足",
+          "options": [
+            {
+              "text": "清理内存",
+              "nextStage": 3
+            },
+            {
+              "text": "扩展内存",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "scene": "屏幕正常显示",
+          "options": [
+            {
+              "text": "播放祝福视频",
+              "nextStage": "ending_happy"
+            },
+            {
+              "text": "显示流程",
+              "nextStage": "ending_ok"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "scene": "屏幕彻底损坏",
+          "options": [
+            {
+              "text": "用投影替代",
+              "nextStage": 3
+            },
+            {
+              "text": "取消显示",
+              "nextStage": "ending_bad"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_happy",
+      "description": "婚礼完美举行！所有AI宾客欢呼。"
+    },
+    {
+      "id": "ending_bad",
+      "description": "婚礼失败，系统崩溃。"
+    },
+    {
+      "id": "ending_timeout",
+      "description": "60秒到，婚礼取消。"
+    },
+    {
+      "id": "ending_bug",
+      "description": "新娘出现严重bug，婚礼被终止。"
+    },
+    {
+      "id": "ending_ok",
+      "description": "婚礼顺利进行，但有些小遗憾。"
+    },
+    {
+      "id": "ending_virus",
+      "description": "病毒感染，婚礼数据丢失。"
+    },
+    {
+      "id": "ending_chaos",
+      "description": "混乱中婚礼变成派对。"
+    },
+    {
+      "id": "ending_robot_uprising",
+      "description": "机器人起义，婚礼变成战场。"
+    }
+  ],
+  "introText": "你是一位AI婚礼策划总监，距离超级AI婚礼开始只剩60秒！然而，系统故障接连不断，你必须迅速解决所有问题，否则这场婚礼将沦为一场数字灾难！",
+  "ambientMusic": "wedding_march_fast_remix.mp3",
+  "id": "fallback_world_086"
+}

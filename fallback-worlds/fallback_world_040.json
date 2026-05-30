@@ -1,0 +1,957 @@
+{
+  "matchKeywords": [
+    "人工太阳",
+    "CEO",
+    "60秒",
+    "失控",
+    "能源",
+    "核聚变",
+    "董事会",
+    "紧急",
+    "危机",
+    "决策"
+  ],
+  "identity": "人工太阳集团CEO",
+  "theme": "人工太阳失控前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "glass",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    5,
+    7
+  ],
+  "npcs": [
+    {
+      "id": "npc_1",
+      "name": "首席科学家陈博士",
+      "type": "ally",
+      "position": [
+        3,
+        5
+      ],
+      "dialogue": "温度已突破临界值！我们必须立即降低反应堆功率！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "陈博士焦急地操作着控制台。",
+          "options": [
+            {
+              "text": "下令降低功率",
+              "action": "reduce_power",
+              "nextStage": 2
+            },
+            {
+              "text": "询问是否有备用方案",
+              "action": "ask_alternatives",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "功率降低，但温度仍在上升。冷却系统故障。",
+          "options": [
+            {
+              "text": "启动紧急冷却",
+              "action": "emergency_cooling",
+              "nextStage": 3
+            },
+            {
+              "text": "疏散人员",
+              "action": "evacuate",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "陈博士表示最后一搏：手动释放等离子体。",
+          "options": [
+            {
+              "text": "批准手动释放",
+              "action": "manual_release",
+              "nextStage": 4
+            },
+            {
+              "text": "寻求董事会批准",
+              "action": "board_approval",
+              "nextStage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_2",
+      "name": "财务总监李女士",
+      "type": "neutral",
+      "position": [
+        7,
+        2
+      ],
+      "dialogue": "每秒钟的停机成本是500万！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "李女士紧盯着财务报表。",
+          "options": [
+            {
+              "text": "无视成本，安全第一",
+              "action": "safety_first",
+              "nextStage": 2
+            },
+            {
+              "text": "询问保险覆盖",
+              "action": "insurance",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "李女士警告：破产风险。",
+          "options": [
+            {
+              "text": "启动应急基金",
+              "action": "emergency_fund",
+              "nextStage": 3
+            },
+            {
+              "text": "接受损失",
+              "action": "accept_loss",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "李女士建议立即抛售股票。",
+          "options": [
+            {
+              "text": "抛售",
+              "action": "sell_stock",
+              "nextStage": 4
+            },
+            {
+              "text": "不抛售",
+              "action": "hold_stock",
+              "nextStage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_3",
+      "name": "安保队长王刚",
+      "type": "ally",
+      "position": [
+        1,
+        10
+      ],
+      "dialogue": "有黑客试图入侵控制系统！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "王刚报告网络攻击。",
+          "options": [
+            {
+              "text": "启用防火墙",
+              "action": "firewall",
+              "nextStage": 2
+            },
+            {
+              "text": "追踪黑客IP",
+              "action": "trace_ip",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "攻击升级，系统部分瘫痪。",
+          "options": [
+            {
+              "text": "断开网络",
+              "action": "disconnect",
+              "nextStage": 3
+            },
+            {
+              "text": "呼叫技术支持",
+              "action": "tech_support",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "王刚发现内鬼。",
+          "options": [
+            {
+              "text": "逮捕内鬼",
+              "action": "arrest",
+              "nextStage": 4
+            },
+            {
+              "text": "审问内鬼",
+              "action": "interrogate",
+              "nextStage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_4",
+      "name": "董事会代表张董",
+      "type": "antagonist",
+      "position": [
+        8,
+        8
+      ],
+      "dialogue": "我代表董事会要求立即停止测试！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "张董愤怒地拍桌子。",
+          "options": [
+            {
+              "text": "服从董事会",
+              "action": "obey",
+              "nextStage": 2
+            },
+            {
+              "text": "坚持继续测试",
+              "action": "continue",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "张董威胁要解雇你。",
+          "options": [
+            {
+              "text": "妥协",
+              "action": "compromise",
+              "nextStage": 3
+            },
+            {
+              "text": "反击",
+              "action": "fight_back",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "张董透露了隐藏的保险措施。",
+          "options": [
+            {
+              "text": "利用保险措施",
+              "action": "use_insurance",
+              "nextStage": 4
+            },
+            {
+              "text": "忽略",
+              "action": "ignore",
+              "nextStage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_5",
+      "name": "工程师小赵",
+      "type": "ally",
+      "position": [
+        9,
+        4
+      ],
+      "dialogue": "冷却泵故障，需要手动重置！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "小赵在维修通道呼叫。",
+          "options": [
+            {
+              "text": "派机器人去重置",
+              "action": "robot_reset",
+              "nextStage": 2
+            },
+            {
+              "text": "亲自去重置",
+              "action": "manual_reset",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "机器人无法操作，需要你决定。",
+          "options": [
+            {
+              "text": "派小赵去",
+              "action": "send_zhao",
+              "nextStage": 3
+            },
+            {
+              "text": "自己冒险去",
+              "action": "go_self",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "小赵成功重置，但受伤。",
+          "options": [
+            {
+              "text": "送医务室",
+              "action": "medic",
+              "nextStage": 4
+            },
+            {
+              "text": "继续工作",
+              "action": "continue_work",
+              "nextStage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_6",
+      "name": "媒体记者Lisa",
+      "type": "neutral",
+      "position": [
+        2,
+        14
+      ],
+      "dialogue": "外面已经来了很多记者，他们想知道真相！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "Lisa举着录音笔。",
+          "options": [
+            {
+              "text": "接受采访",
+              "action": "interview",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝采访",
+              "action": "refuse",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "Lisa坚持要报道。",
+          "options": [
+            {
+              "text": "透露部分信息",
+              "action": "partial_info",
+              "nextStage": 3
+            },
+            {
+              "text": "发布官方声明",
+              "action": "official_statement",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "Lisa威胁曝光丑闻。",
+          "options": [
+            {
+              "text": "贿赂",
+              "action": "bribe",
+              "nextStage": 4
+            },
+            {
+              "text": "法律威胁",
+              "action": "legal_threat",
+              "nextStage": 4
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_1",
+      "name": "紧急冷却密钥",
+      "type": "key",
+      "position": [
+        4,
+        9
+      ],
+      "description": "一把红色的紧急冷却密钥，可在控制台使用。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了紧急冷却密钥。",
+          "options": [
+            {
+              "text": "捡起",
+              "action": "pick_up",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "action": "ignore",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "密钥看起来很旧，但能用。",
+          "options": [
+            {
+              "text": "使用",
+              "action": "use_key",
+              "nextStage": 3
+            },
+            {
+              "text": "留作备用",
+              "action": "keep",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "密钥激活了备用冷却系统。",
+          "options": [
+            {
+              "text": "检查效果",
+              "action": "check",
+              "nextStage": 4
+            },
+            {
+              "text": "离开",
+              "action": "leave",
+              "nextStage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_2",
+      "name": "董事会密室门禁卡",
+      "type": "key",
+      "position": [
+        6,
+        1
+      ],
+      "description": "一张黑色门禁卡，权限等级最高。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你捡起了门禁卡。",
+          "options": [
+            {
+              "text": "探索密室",
+              "action": "explore",
+              "nextStage": 2
+            },
+            {
+              "text": "上交",
+              "action": "hand_over",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "密室里有隐藏的应急方案。",
+          "options": [
+            {
+              "text": "阅读方案",
+              "action": "read",
+              "nextStage": 3
+            },
+            {
+              "text": "复制数据",
+              "action": "copy",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "应急方案需要密码。",
+          "options": [
+            {
+              "text": "尝试破解",
+              "action": "hack",
+              "nextStage": 4
+            },
+            {
+              "text": "求助陈博士",
+              "action": "ask_doctor",
+              "nextStage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_3",
+      "name": "冷却液补充罐",
+      "type": "consumable",
+      "position": [
+        10,
+        6
+      ],
+      "description": "一罐高纯度冷却液，可临时降低温度。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了冷却液罐。",
+          "options": [
+            {
+              "text": "携带",
+              "action": "carry",
+              "nextStage": 2
+            },
+            {
+              "text": "就地使用",
+              "action": "use_now",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "使用后温度下降5度。",
+          "options": [
+            {
+              "text": "继续寻找更多",
+              "action": "find_more",
+              "nextStage": 3
+            },
+            {
+              "text": "返回控制室",
+              "action": "return",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "冷却液泄漏了一部分。",
+          "options": [
+            {
+              "text": "修补",
+              "action": "repair",
+              "nextStage": 4
+            },
+            {
+              "text": "放弃",
+              "action": "abandon",
+              "nextStage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_4",
+      "name": "黑客的U盘",
+      "type": "quest",
+      "position": [
+        1,
+        3
+      ],
+      "description": "一个来历不明的U盘，可能含有恶意软件或信息。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你拾起了U盘。",
+          "options": [
+            {
+              "text": "插入电脑",
+              "action": "insert",
+              "nextStage": 2
+            },
+            {
+              "text": "交给安保",
+              "action": "give_security",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "U盘里有黑客的通讯记录。",
+          "options": [
+            {
+              "text": "追踪来源",
+              "action": "trace",
+              "nextStage": 3
+            },
+            {
+              "text": "删除",
+              "action": "delete",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "通讯记录指向董事会成员。",
+          "options": [
+            {
+              "text": "公开证据",
+              "action": "expose",
+              "nextStage": 4
+            },
+            {
+              "text": "私下谈判",
+              "action": "negotiate",
+              "nextStage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_5",
+      "name": "防辐射服",
+      "type": "equipment",
+      "position": [
+        11,
+        11
+      ],
+      "description": "一套高级防辐射服，可以保护你在高辐射区域行动。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了防辐射服。",
+          "options": [
+            {
+              "text": "穿上",
+              "action": "wear",
+              "nextStage": 2
+            },
+            {
+              "text": "检查",
+              "action": "inspect",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "防辐射服很重，但有效。",
+          "options": [
+            {
+              "text": "前往反应堆核心",
+              "action": "go_core",
+              "nextStage": 3
+            },
+            {
+              "text": "留在原地",
+              "action": "stay",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "核心区域辐射极高，但你可以操作手动阀。",
+          "options": [
+            {
+              "text": "关闭阀门",
+              "action": "close_valve",
+              "nextStage": 4
+            },
+            {
+              "text": "打开排气",
+              "action": "vent",
+              "nextStage": 4
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_1",
+      "condition": "temperature > 100 AND power_reduced == false",
+      "description": "人工太阳爆炸，城市毁灭。你被历史唾弃。"
+    },
+    {
+      "id": "ending_2",
+      "condition": "temperature < 50 AND cooling_activated == true",
+      "description": "人工太阳稳定，你成为英雄。股价暴涨。"
+    },
+    {
+      "id": "ending_3",
+      "condition": "hack_success == true",
+      "description": "黑客控制了系统，人工太阳成为武器。你被绑架。"
+    },
+    {
+      "id": "ending_4",
+      "condition": "board_approval == true AND manual_release == true",
+      "description": "成功释放等离子体，但董事会追究责任。你被解雇。"
+    },
+    {
+      "id": "ending_5",
+      "condition": "evacuate == true",
+      "description": "全员安全撤离，但人工太阳失控。公司破产。"
+    },
+    {
+      "id": "ending_6",
+      "condition": "sell_stock == true",
+      "description": "你抛售股票，个人获利，但公司崩溃。你被调查。"
+    },
+    {
+      "id": "ending_7",
+      "condition": "arrest == true",
+      "description": "内鬼被逮捕，但真相被掩盖。你成为傀儡CEO。"
+    },
+    {
+      "id": "ending_8",
+      "condition": "use_key == true AND check == true",
+      "description": "备用冷却启动成功，人工太阳恢复正常。你获得诺贝尔奖。"
+    },
+    {
+      "id": "ending_9",
+      "condition": "expose == true",
+      "description": "曝光董事会丑闻，公司重组。你成为新董事长。"
+    },
+    {
+      "id": "ending_10",
+      "condition": "go_core == true AND close_valve == true",
+      "description": "你亲手关闭了反应堆，但受到致命辐射。你成为烈士。"
+    }
+  ],
+  "introText": "距离人工太阳失控还有60秒。你，人工太阳集团CEO，站在控制室中央。温度读数飙升，警报声刺耳。你必须在这60秒内做出关键决策，否则一切将化为灰烬。周围是忙碌的科学家、紧张的财务总监、愤怒的董事会代表……时间在流逝。",
+  "ambientMusic": "urgency_theme.mp3",
+  "id": "fallback_world_040"
+}

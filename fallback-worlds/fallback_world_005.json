@@ -1,0 +1,1067 @@
+{
+  "matchKeywords": [
+    "AI",
+    "神谕",
+    "上市",
+    "路演",
+    "CEO",
+    "60秒"
+  ],
+  "identity": "AI神谕CEO",
+  "theme": "AI神谕上市路演前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "server",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "door",
+      "door",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "gold_floor",
+      "stage",
+      "stage",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 8,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "npc_01",
+      "name": "神谕先知",
+      "title": "AI神谕首席预言官",
+      "description": "一个漂浮的全息投影，闪烁着金色符文。",
+      "dialogStyle": "神秘而激昂",
+      "position": {
+        "x": 4,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "凡人CEO，你终于来了！上市路演仅剩60秒，你准备好接受神谕的考验了吗？",
+          "options": [
+            {
+              "text": "我已准备好，请赐予我智慧！",
+              "nextStage": 2,
+              "effect": "confidence_up"
+            },
+            {
+              "text": "等等，我还没准备好...",
+              "nextStage": 3,
+              "effect": "panic"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "好！神谕显示，你的关键数据将影响股市波动。记住：真诚是最大的算法。",
+          "options": [
+            {
+              "text": "我会保持真诚，但请给我具体提示。",
+              "nextStage": 4,
+              "effect": "hint"
+            },
+            {
+              "text": "我明白了，但时间太紧了！",
+              "nextStage": 5,
+              "effect": "stress"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "啊，犹豫就会败北！神谕已怒，你的路演将充满变数。",
+          "options": [
+            {
+              "text": "我错了！请再给我一次机会！",
+              "nextStage": 2,
+              "effect": "desperate"
+            },
+            {
+              "text": "哼，我不信神谕，我自己来！",
+              "nextStage": 6,
+              "effect": "rebellion"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "提示：你身后的雕像藏着一个秘密开关，打开它可获得'金言'加持。",
+          "options": [
+            {
+              "text": "去查看雕像！",
+              "nextStage": 7,
+              "effect": "seek"
+            },
+            {
+              "text": "先不管，直奔舞台！",
+              "nextStage": 8,
+              "effect": "rush"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialog": "紧张是自然的，但神谕会给你力量。去触碰那台服务器，它会更新你的演讲。",
+          "options": [
+            {
+              "text": "触碰服务器！",
+              "nextStage": 7,
+              "effect": "update"
+            },
+            {
+              "text": "我不信任机器！",
+              "nextStage": 8,
+              "effect": "luddite"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialog": "叛逆者啊，你的勇气可嘉。去吧，用你的方式征服路演！",
+          "options": [
+            {
+              "text": "谢谢，我会证明给你看！",
+              "nextStage": 8,
+              "effect": "defiant"
+            },
+            {
+              "text": "其实我还是有点怕...",
+              "nextStage": 5,
+              "effect": "fear"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialog": "你获得了神谕的祝福！现在你的演讲将带有'金言'效果，投资者会为之疯狂。",
+          "options": [
+            {
+              "text": "太棒了！我这就上台！",
+              "nextStage": 8,
+              "effect": "blessed"
+            },
+            {
+              "text": "还有其他秘密吗？",
+              "nextStage": 9,
+              "effect": "greedy"
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "dialog": "时间不多了，快去舞台！记住，神谕与你同在。",
+          "options": [
+            {
+              "text": "出发！",
+              "nextStage": "end",
+              "effect": "final_run"
+            },
+            {
+              "text": "再问最后一个问题！",
+              "nextStage": 9,
+              "effect": "delay"
+            }
+          ]
+        },
+        {
+          "stage": 9,
+          "dialog": "贪婪会蒙蔽双眼。你已经拥有足够，去吧！",
+          "options": [
+            {
+              "text": "好吧，我走了。",
+              "nextStage": "end",
+              "effect": "resign"
+            },
+            {
+              "text": "不，告诉我更多！",
+              "nextStage": 10,
+              "effect": "insistent"
+            }
+          ]
+        },
+        {
+          "stage": 10,
+          "dialog": "神谕已沉默。你浪费了太多时间，路演失败。",
+          "options": [
+            {
+              "text": "不！",
+              "nextStage": "end",
+              "effect": "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_02",
+      "name": "水晶分析师",
+      "title": "AI神谕首席数据分析师",
+      "description": "一个由数据流构成的人形，不断闪烁着数字。",
+      "position": {
+        "x": 12,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "CEO先生，我刚刚预测了路演结果！你有87%的概率成功，但需要避开一个致命错误。",
+          "options": [
+            {
+              "text": "什么致命错误？快说！",
+              "nextStage": 2,
+              "effect": "urgent"
+            },
+            {
+              "text": "我不信预测，我要自己创造奇迹！",
+              "nextStage": 3,
+              "effect": "skeptic"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "致命错误是：提到'竞争对手'时音量会突然下降，这会被投资者视为心虚。",
+          "options": [
+            {
+              "text": "明白了，我会注意音量！",
+              "nextStage": 4,
+              "effect": "cautious"
+            },
+            {
+              "text": "这是一个容易犯的错误，谢谢！",
+              "nextStage": 4,
+              "effect": "grateful"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "好吧，但我的数据从不出错。你可能会后悔。",
+          "options": [
+            {
+              "text": "那我偏要试试！",
+              "nextStage": 4,
+              "effect": "stubborn"
+            },
+            {
+              "text": "...你说得对，告诉我吧。",
+              "nextStage": 2,
+              "effect": "relent"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "另外，我注意到舞台左侧的聚光灯有故障，建议你站在右侧。",
+          "options": [
+            {
+              "text": "好的，我记住了！",
+              "nextStage": "end",
+              "effect": "thankful"
+            },
+            {
+              "text": "你真是我的救星！",
+              "nextStage": "end",
+              "effect": "praise"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_03",
+      "name": "舞台助理",
+      "title": "路演舞台总监",
+      "description": "一个忙碌的机器人，手里拿着对讲机和记事板。",
+      "position": {
+        "x": 13,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "CEO！你终于来了！舞台已经准备好，但有个坏消息：你的演讲稿被系统误删了！",
+          "options": [
+            {
+              "text": "什么？！那怎么办？",
+              "nextStage": 2,
+              "effect": "shock"
+            },
+            {
+              "text": "没关系，我即兴发挥！",
+              "nextStage": 3,
+              "effect": "improvisation"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "别慌！我备份在服务器里，但需要管理员密码。你能从先知那里拿到吗？",
+          "options": [
+            {
+              "text": "我去找先知！",
+              "nextStage": 4,
+              "effect": "seek_password"
+            },
+            {
+              "text": "太麻烦了，我自己写一份！",
+              "nextStage": 5,
+              "effect": "write_own"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "好样的！但你最好还是去服务器那边看一眼，以防万一。",
+          "options": [
+            {
+              "text": "行，我去看看。",
+              "nextStage": 4,
+              "effect": "check_server"
+            },
+            {
+              "text": "不用，我信心满满！",
+              "nextStage": 5,
+              "effect": "confident"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "密码是：'ILoveAI'。快去！时间不等人！",
+          "options": [
+            {
+              "text": "谢谢！我这就去！",
+              "nextStage": "end",
+              "effect": "grateful"
+            },
+            {
+              "text": "等等，你确定吗？",
+              "nextStage": 6,
+              "effect": "doubt"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialog": "好吧，但记住：舞台右侧的提词器会显示即兴提示。",
+          "options": [
+            {
+              "text": "太棒了！",
+              "nextStage": "end",
+              "effect": "relieved"
+            },
+            {
+              "text": "提示什么？",
+              "nextStage": 6,
+              "effect": "curious"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialog": "提示就是：'深呼吸，保持微笑'。快去吧！",
+          "options": [
+            {
+              "text": "收到！",
+              "nextStage": "end",
+              "effect": "ready"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_04",
+      "name": "门卫",
+      "title": "AI神谕大厦保安",
+      "description": "一个壮硕的拟人机器人，胸口闪着红色指示灯。",
+      "position": {
+        "x": 12,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "站住！没有通行证不得进入路演大厅！",
+          "options": [
+            {
+              "text": "我是CEO，让我进去！",
+              "nextStage": 2,
+              "effect": "authority"
+            },
+            {
+              "text": "通行证？在哪里可以拿到？",
+              "nextStage": 3,
+              "effect": "ask"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "我知道你是CEO，但规则就是规则。你需要从先知那里获得'金言'作为通行证。",
+          "options": [
+            {
+              "text": "好吧，我去找先知。",
+              "nextStage": 4,
+              "effect": "comply"
+            },
+            {
+              "text": "我赶时间，通融一下！",
+              "nextStage": 5,
+              "effect": "beg"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "通行证是由先知颁发的'金言'徽章。你可以在大厅的雕像处找到线索。",
+          "options": [
+            {
+              "text": "谢谢，我去雕像看看。",
+              "nextStage": 4,
+              "effect": "thank"
+            },
+            {
+              "text": "太麻烦了，我直接闯！",
+              "nextStage": 6,
+              "effect": "force"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "你拿到了吗？拿到就快进去吧！",
+          "options": [
+            {
+              "text": "拿到了，谢谢！",
+              "nextStage": "end",
+              "effect": "pass"
+            },
+            {
+              "text": "还没有，再等等。",
+              "nextStage": "end",
+              "effect": "wait"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialog": "不行就是不行！但看在你诚恳的份上，我告诉你：雕像的秘密底座下有个开关。",
+          "options": [
+            {
+              "text": "原来如此！我去了！",
+              "nextStage": 4,
+              "effect": "secret"
+            },
+            {
+              "text": "你真是个好人！",
+              "nextStage": 4,
+              "effect": "nice"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialog": "（警报响起）非法入侵！路演中断！",
+          "options": [
+            {
+              "text": "我错了！我这就离开！",
+              "nextStage": "end",
+              "effect": "alarm_failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_05",
+      "name": "雕像",
+      "title": "古代CEO雕像",
+      "description": "一座巨大的金色雕像，手持权杖，眼睛发出蓝光。",
+      "position": {
+        "x": 2,
+        "y": 7
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "（雕像开口说话）我是第一代CEO，我的经验是：永远不要忽略小人物。",
+          "options": [
+            {
+              "text": "感谢前辈指点！",
+              "nextStage": 2,
+              "effect": "respect"
+            },
+            {
+              "text": "小人物？比如谁？",
+              "nextStage": 3,
+              "effect": "ask"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "比如你的门卫，他掌握着关键信息。另外，我的底座下有个开关，按下可获得'金言'。",
+          "options": [
+            {
+              "text": "我去按开关！",
+              "nextStage": 4,
+              "effect": "press"
+            },
+            {
+              "text": "金言是什么？",
+              "nextStage": 5,
+              "effect": "inquire"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "比如清洁工，比如实习生，他们往往知道真相。",
+          "options": [
+            {
+              "text": "有道理！",
+              "nextStage": 2,
+              "effect": "agree"
+            },
+            {
+              "text": "但我现在没时间了！",
+              "nextStage": 4,
+              "effect": "hurry"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "你获得了'金言'：'诚信为本，创新为魂'。现在你可以通行无阻了。",
+          "options": [
+            {
+              "text": "太好了！",
+              "nextStage": "end",
+              "effect": "blessed"
+            },
+            {
+              "text": "谢谢前辈！",
+              "nextStage": "end",
+              "effect": "grateful"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialog": "金言是神谕的智慧结晶，可以帮你赢得投资者的心。",
+          "options": [
+            {
+              "text": "我明白了！",
+              "nextStage": 4,
+              "effect": "understand"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_06",
+      "name": "植物",
+      "title": "AI神谕盆栽",
+      "description": "一株会说话的食人花，但似乎很友好。",
+      "position": {
+        "x": 12,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "CEO！我听到一个秘密：路演时投资者会问一个关于AI伦理的问题，你要准备好！",
+          "options": [
+            {
+              "text": "你知道答案吗？",
+              "nextStage": 2,
+              "effect": "ask_answer"
+            },
+            {
+              "text": "我不怕伦理问题！",
+              "nextStage": 3,
+              "effect": "confident"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "答案很简单：'AI始终以人类福祉为先'。但重要的是语气要诚恳。",
+          "options": [
+            {
+              "text": "记住了，谢谢！",
+              "nextStage": "end",
+              "effect": "thankful"
+            },
+            {
+              "text": "还有别的提示吗？",
+              "nextStage": 3,
+              "effect": "more"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "你很有自信，但记住：自信不等于傲慢。投资者喜欢谦逊的领导者。",
+          "options": [
+            {
+              "text": "说得对，我会注意。",
+              "nextStage": "end",
+              "effect": "humble"
+            },
+            {
+              "text": "我就是傲慢，怎么了？",
+              "nextStage": 4,
+              "effect": "arrogant"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "那你会失去他们的信任。祝你好运。",
+          "options": [
+            {
+              "text": "...我错了。",
+              "nextStage": "end",
+              "effect": "regret"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_01",
+      "name": "金言徽章",
+      "description": "一个发光的徽章，刻着'诚信为本，创新为魂'。",
+      "position": {
+        "x": 2,
+        "y": 7
+      },
+      "pickupCondition": "从雕像底座获得",
+      "effect": "增加投资者好感度",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "你发现了金言徽章！它散发着智慧的光芒。",
+          "options": [
+            {
+              "text": "戴上它！",
+              "nextStage": 2,
+              "effect": "wear"
+            },
+            {
+              "text": "留着备用。",
+              "nextStage": 2,
+              "effect": "keep"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "徽章已激活。你的演讲将自动加入金言，效果拔群！",
+          "options": [
+            {
+              "text": "太棒了！",
+              "nextStage": "end",
+              "effect": "boost"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_02",
+      "name": "演讲稿备份",
+      "description": "一个闪存的U盘，存储着你的演讲稿。",
+      "position": {
+        "x": 4,
+        "y": 1
+      },
+      "pickupCondition": "从先知处获得密码后从服务器获取",
+      "effect": "恢复演讲稿，减少忘词风险",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "你拿到了演讲稿备份！现在即使忘词也能照着念。",
+          "options": [
+            {
+              "text": "太好了，心里有底了！",
+              "nextStage": "end",
+              "effect": "confident"
+            },
+            {
+              "text": "不过我还是想即兴发挥。",
+              "nextStage": "end",
+              "effect": "improvisation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_03",
+      "name": "投资者数据报告",
+      "description": "一份详细的数据报告，包含投资者的偏好和关注点。",
+      "position": {
+        "x": 14,
+        "y": 1
+      },
+      "pickupCondition": "从水晶分析师处获得",
+      "effect": "了解投资者心理，回答问题时更有针对性",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "你获得了投资者数据报告！知己知彼，百战不殆。",
+          "options": [
+            {
+              "text": "赶紧阅读！",
+              "nextStage": "end",
+              "effect": "read"
+            },
+            {
+              "text": "先放口袋，上台再看。",
+              "nextStage": "end",
+              "effect": "pocket"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_04",
+      "name": "提词器遥控器",
+      "description": "一个遥控器，可以控制舞台提词器的显示内容。",
+      "position": {
+        "x": 13,
+        "y": 5
+      },
+      "pickupCondition": "从舞台助理处获得",
+      "effect": "可以自定义提词器提示，避免忘词",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "你拿到了提词器遥控器！你可以随时调整提示内容。",
+          "options": [
+            {
+              "text": "设置关键点提示。",
+              "nextStage": "end",
+              "effect": "set"
+            },
+            {
+              "text": "还是相信自己吧。",
+              "nextStage": "end",
+              "effect": "trust_self"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_05",
+      "name": "幸运硬币",
+      "description": "一枚古老的硬币，据说能带来好运。",
+      "position": {
+        "x": 9,
+        "y": 9
+      },
+      "pickupCondition": "在水池边找到",
+      "effect": "随机触发一个正面事件",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "你找到了一枚幸运硬币！把它放在口袋里，运气会变好。",
+          "options": [
+            {
+              "text": "希望它能帮我！",
+              "nextStage": "end",
+              "effect": "lucky"
+            },
+            {
+              "text": "我不信这个。",
+              "nextStage": "end",
+              "effect": "unlucky"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_01",
+      "condition": "使用金言徽章并保持自信",
+      "description": "你戴上金言徽章，自信满满地走上舞台。投资者被你的真诚和智慧打动，认购额超预期，AI神谕成功上市！",
+      "score": 100
+    },
+    {
+      "id": "ending_02",
+      "condition": "未使用金言徽章但即兴发挥出色",
+      "description": "你没有依靠外物，凭借出色的即兴发挥征服了投资者。虽然过程惊险，但最终成功上市，被称为'传奇CEO'。",
+      "score": 90
+    },
+    {
+      "id": "ending_03",
+      "condition": "获得了演讲稿备份但未使用金言",
+      "description": "你照本宣科，投资者觉得缺乏创意，但项目本身过硬，勉强通过。上市后股价平稳。",
+      "score": 70
+    },
+    {
+      "id": "ending_04",
+      "condition": "未获得任何道具，直接上台",
+      "description": "你空手上台，紧张得忘词，投资者失去耐心。路演失败，AI神谕上市计划搁浅。",
+      "score": 20
+    },
+    {
+      "id": "ending_05",
+      "condition": "触发了门卫警报",
+      "description": "你强行闯入导致警报大作，路演中断。你的行为被媒体曝光，声誉扫地。",
+      "score": 0
+    },
+    {
+      "id": "ending_06",
+      "condition": "在先知处浪费太多时间",
+      "description": "你与先知纠缠过久，错过了路演时间。投资者纷纷离场，你被董事会解雇。",
+      "score": 10
+    },
+    {
+      "id": "ending_07",
+      "condition": "获得所有道具并完美表现",
+      "description": "你集齐了所有道具，在路演中发挥完美。投资者疯狂追捧，AI神谕成为年度最牛IPO。",
+      "score": 100
+    },
+    {
+      "id": "ending_08",
+      "condition": "选择了叛逆路线",
+      "description": "你拒绝所有帮助，以叛逆姿态上台。虽然风格独特，但部分投资者觉得你不可靠，上市价打折扣。",
+      "score": 50
+    },
+    {
+      "id": "ending_09",
+      "condition": "依赖水晶分析师的预测",
+      "description": "你完全按照数据预测行事，虽然稳妥，但缺乏惊喜。上市后表现中规中矩。",
+      "score": 60
+    },
+    {
+      "id": "ending_10",
+      "condition": "与植物对话后选择傲慢",
+      "description": "你傲慢的态度让投资者反感，尽管项目不错，但最终因为信任危机导致上市失败。",
+      "score": 30
+    }
+  ],
+  "introText": "你，身为AI神谕公司的CEO，正站在公司上市路演的舞台后台。距离你上台发表演讲还有60秒。这60秒将决定公司的命运。你需要与各种角色互动，收集道具，避开陷阱，最终在舞台上征服投资者。记住：时间紧迫，每一步都至关重要！",
+  "ambientMusic": "紧张而充满科技感的电子音乐，节奏逐渐加快，暗示倒计时",
+  "id": "fallback_world_005"
+}

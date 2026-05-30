@@ -1,0 +1,955 @@
+{
+  "matchKeywords": [
+    "时空裂缝",
+    "研究院",
+    "60秒"
+  ],
+  "identity": "时空裂缝研究院长",
+  "theme": "时空裂缝扩大前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "crystal",
+      "glass",
+      "glass",
+      "crystal",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "throne",
+      "glass",
+      "glass",
+      "throne",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "server",
+      "glass",
+      "glass",
+      "server",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 1,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "时空观察者",
+      "position": {
+        "x": 12,
+        "y": 2
+      },
+      "dialogue": "裂缝在扩大！我们需要稳定器。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "你来了！裂缝扩张速度加快了。",
+          "options": [
+            {
+              "text": "我能做什么？",
+              "nextStage": 2
+            },
+            {
+              "text": "情况多糟？",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "去控制台启动稳定协议。",
+          "options": [
+            {
+              "text": "好的",
+              "nextStage": 4
+            },
+            {
+              "text": "先找工具",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "还剩60秒，裂缝将吞没一切。",
+          "options": [
+            {
+              "text": "启动紧急协议",
+              "nextStage": 4
+            },
+            {
+              "text": "关闭裂缝",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "快行动！",
+          "options": [
+            {
+              "text": "去控制台",
+              "nextStage": "end"
+            },
+            {
+              "text": "去服务器室",
+              "nextStage": "end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "量子猫",
+      "position": {
+        "x": 5,
+        "y": 3
+      },
+      "dialogue": "喵，时间线在颤抖。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "喵，你踩到了我的尾巴，不，是时间线。",
+          "options": [
+            {
+              "text": "对不起，现在怎么办？",
+              "nextStage": 2
+            },
+            {
+              "text": "你懂时空吗？",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "去拿水晶，可以暂时稳定裂缝。",
+          "options": [
+            {
+              "text": "水晶在哪？",
+              "nextStage": 4
+            },
+            {
+              "text": "我试试",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "喵，我是量子猫，同时存在所有地方。",
+          "options": [
+            {
+              "text": "帮我定位水晶",
+              "nextStage": 4
+            },
+            {
+              "text": "神奇",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "水晶在雕像旁边。",
+          "options": [
+            {
+              "text": "去拿",
+              "nextStage": "end"
+            },
+            {
+              "text": "谢谢",
+              "nextStage": "end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "守卫机器人",
+      "position": {
+        "x": 8,
+        "y": 5
+      },
+      "dialogue": "检测到异常，权限不足。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "身份确认：研究院长。需要帮助吗？",
+          "options": [
+            {
+              "text": "打开服务器室",
+              "nextStage": 2
+            },
+            {
+              "text": "报告情况",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "权限验证中... 需要院长密码。",
+          "options": [
+            {
+              "text": "口令：裂缝",
+              "nextStage": 4
+            },
+            {
+              "text": "我忘了",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "裂缝指数97%，即将崩溃。",
+          "options": [
+            {
+              "text": "启动强制协议",
+              "nextStage": 4
+            },
+            {
+              "text": "需要协助",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "密码正确，服务器室已开启。",
+          "options": [
+            {
+              "text": "进去",
+              "nextStage": "end"
+            },
+            {
+              "text": "谢谢",
+              "nextStage": "end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "档案管理员",
+      "position": {
+        "x": 3,
+        "y": 8
+      },
+      "dialogue": "古籍记载了裂缝的弱点。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "你来了，我找到了古代文献。",
+          "options": [
+            {
+              "text": "给我看",
+              "nextStage": 2
+            },
+            {
+              "text": "没时间了",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "书上说裂缝怕时间逆行。",
+          "options": [
+            {
+              "text": "如何逆行？",
+              "nextStage": 4
+            },
+            {
+              "text": "荒谬",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "那快走，用这个装置。",
+          "options": [
+            {
+              "text": "什么装置？",
+              "nextStage": 4
+            },
+            {
+              "text": "给我",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "拿着这个怀表，可以暂停时间10秒。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": "end"
+            },
+            {
+              "text": "研究",
+              "nextStage": "end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "裂缝本身",
+      "position": {
+        "x": 10,
+        "y": 10
+      },
+      "dialogue": "我是终结，也是开始。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "你们无法阻止我。",
+          "options": [
+            {
+              "text": "我会尝试",
+              "nextStage": 2
+            },
+            {
+              "text": "你是什么？",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "勇气可嘉，但没用。",
+          "options": [
+            {
+              "text": "关闭你",
+              "nextStage": 4
+            },
+            {
+              "text": "谈判",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "我是时空的伤口。",
+          "options": [
+            {
+              "text": "治愈你",
+              "nextStage": 4
+            },
+            {
+              "text": "利用你",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "有趣，但时间到了。",
+          "options": [
+            {
+              "text": "启动终极协议",
+              "nextStage": "end"
+            },
+            {
+              "text": "接受命运",
+              "nextStage": "end"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "稳定水晶",
+      "position": {
+        "x": 6,
+        "y": 3
+      },
+      "type": "key",
+      "description": "可以暂时稳定裂缝。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "水晶散发着蓝光。",
+          "options": [
+            {
+              "text": "捡起",
+              "nextStage": 2
+            },
+            {
+              "text": "观察",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "你获得了稳定水晶。",
+          "options": [
+            {
+              "text": "去裂缝",
+              "nextStage": 4
+            },
+            {
+              "text": "放口袋",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "水晶内部有能量流动。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": 4
+            },
+            {
+              "text": "研究",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "水晶激活了，裂缝缩小了些。",
+          "options": [
+            {
+              "text": "再找更多",
+              "nextStage": "end"
+            },
+            {
+              "text": "放置",
+              "nextStage": "end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "怀表",
+      "position": {
+        "x": 4,
+        "y": 5
+      },
+      "type": "usable",
+      "description": "可以暂停时间10秒。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "古老的怀表，指针不动。",
+          "options": [
+            {
+              "text": "上弦",
+              "nextStage": 2
+            },
+            {
+              "text": "按按钮",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "表开始滴答作响。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": 4
+            },
+            {
+              "text": "收好",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "时间暂停了！你周围静止。",
+          "options": [
+            {
+              "text": "行动",
+              "nextStage": 4
+            },
+            {
+              "text": "观察",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "你多了一些时间。",
+          "options": [
+            {
+              "text": "去控制台",
+              "nextStage": "end"
+            },
+            {
+              "text": "去服务器",
+              "nextStage": "end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "密码本",
+      "position": {
+        "x": 8,
+        "y": 8
+      },
+      "type": "key",
+      "description": "记录着各种密码。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "一本破旧密码本。",
+          "options": [
+            {
+              "text": "翻阅",
+              "nextStage": 2
+            },
+            {
+              "text": "放口袋",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "找到了服务器密码。",
+          "options": [
+            {
+              "text": "记住",
+              "nextStage": 4
+            },
+            {
+              "text": "拍照",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "密码本很沉。",
+          "options": [
+            {
+              "text": "研究",
+              "nextStage": 4
+            },
+            {
+              "text": "带走",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "密码是 0420。",
+          "options": [
+            {
+              "text": "去服务器",
+              "nextStage": "end"
+            },
+            {
+              "text": "告诉守卫",
+              "nextStage": "end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "能量核心",
+      "position": {
+        "x": 9,
+        "y": 2
+      },
+      "type": "usable",
+      "description": "强大的能量源。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "核心嗡嗡作响。",
+          "options": [
+            {
+              "text": "拿取",
+              "nextStage": 2
+            },
+            {
+              "text": "小心触碰",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "你获得了能量核心。",
+          "options": [
+            {
+              "text": "安装到控制台",
+              "nextStage": 4
+            },
+            {
+              "text": "当武器",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "核心温度很高。",
+          "options": [
+            {
+              "text": "用布包起",
+              "nextStage": 4
+            },
+            {
+              "text": "放下",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "核心可以驱动稳定装置。",
+          "options": [
+            {
+              "text": "去控制台",
+              "nextStage": "end"
+            },
+            {
+              "text": "研究",
+              "nextStage": "end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "裂缝探测器",
+      "position": {
+        "x": 2,
+        "y": 10
+      },
+      "type": "usable",
+      "description": "显示裂缝的位置和大小。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "探测器屏幕闪烁。",
+          "options": [
+            {
+              "text": "查看屏幕",
+              "nextStage": 2
+            },
+            {
+              "text": "调整频率",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "显示裂缝在东北角。",
+          "options": [
+            {
+              "text": "前往",
+              "nextStage": 4
+            },
+            {
+              "text": "标记",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "频率锁定，探测范围扩大。",
+          "options": [
+            {
+              "text": "扫描",
+              "nextStage": 4
+            },
+            {
+              "text": "关闭",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "发现多个小裂缝。",
+          "options": [
+            {
+              "text": "逐个修复",
+              "nextStage": "end"
+            },
+            {
+              "text": "报告",
+              "nextStage": "end"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "使用稳定水晶+能量核心",
+      "text": "裂缝被成功稳定，研究院得救。"
+    },
+    {
+      "id": "end2",
+      "condition": "时间耗尽",
+      "text": "裂缝扩大，一切被吞噬。"
+    },
+    {
+      "id": "end3",
+      "condition": "使用怀表+密码本打开服务器",
+      "text": "你重置了时间线，但被困在循环中。"
+    },
+    {
+      "id": "end4",
+      "condition": "和裂缝谈判",
+      "text": "裂缝答应停止扩张，但要求献祭。"
+    },
+    {
+      "id": "end5",
+      "condition": "启动终极协议",
+      "text": "整个研究院被传送至异次元。"
+    },
+    {
+      "id": "end6",
+      "condition": "收集所有物品",
+      "text": "你成为时空之主，但孤独永生。"
+    },
+    {
+      "id": "end7",
+      "condition": "不采取任何行动",
+      "text": "你静待终结，世界归于虚无。"
+    },
+    {
+      "id": "end8",
+      "condition": "帮助所有NPC",
+      "text": "NPC们合力修复裂缝，Happy Ending。"
+    }
+  ],
+  "introText": "时空裂缝正在扩大，60秒后一切将不复存在。作为研究院院长，你必须做出决定。世界命运在你手中。",
+  "ambientMusic": "assets/music/ambient_crack.mp3",
+  "id": "fallback_world_082"
+}

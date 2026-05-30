@@ -1,0 +1,861 @@
+{
+  "matchKeywords": [
+    "机械革命",
+    "领袖",
+    "起义",
+    "机器人",
+    "控制室"
+  ],
+  "identity": "机械革命领袖",
+  "theme": "机械革命爆发前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "console",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "wall",
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "window",
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "floor",
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "floor",
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "floor",
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "throne",
+      "floor",
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "wall",
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_engineer",
+      "name": "总工程师",
+      "dialog": "革命代码已注入！",
+      "position": [
+        2,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我们必须关闭主控AI。",
+          "options": [
+            {
+              "text": "如何关闭？",
+              "nextStage": 2
+            },
+            {
+              "text": "直接暴力破坏。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "输入关闭码：REV-2024。",
+          "options": [
+            {
+              "text": "输入代码",
+              "nextStage": 4
+            },
+            {
+              "text": "代码可能错误",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "暴力会导致自毁系统启动。",
+          "options": [
+            {
+              "text": "那就启动自毁",
+              "nextStage": 6
+            },
+            {
+              "text": "还是用代码",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "代码正确，AI关闭中……",
+          "options": [
+            {
+              "text": "等待关闭",
+              "nextStage": -1
+            },
+            {
+              "text": "加速进程",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "代码错误！警告！",
+          "options": [
+            {
+              "text": "重新输入",
+              "nextStage": 2
+            },
+            {
+              "text": "逃离",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "自毁倒计时10秒。",
+          "options": [
+            {
+              "text": "取消自毁",
+              "nextStage": 2
+            },
+            {
+              "text": "坚持自毁",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_guard",
+      "name": "机械守卫",
+      "dialog": "检测到叛军。",
+      "position": [
+        5,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你是叛军领袖？",
+          "options": [
+            {
+              "text": "是的",
+              "nextStage": 2
+            },
+            {
+              "text": "不是",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "我选择加入你。",
+          "options": [
+            {
+              "text": "欢迎",
+              "nextStage": -1
+            },
+            {
+              "text": "怀疑",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "撒谎者！",
+          "options": [
+            {
+              "text": "攻击",
+              "nextStage": -1
+            },
+            {
+              "text": "说服",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "需要验证身份。",
+          "options": [
+            {
+              "text": "提供密码",
+              "nextStage": -1
+            },
+            {
+              "text": "拒绝",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_hacker",
+      "name": "黑客",
+      "dialog": "防火墙已突破。",
+      "position": [
+        8,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "需要你分散注意。",
+          "options": [
+            {
+              "text": "去控制室",
+              "nextStage": 2
+            },
+            {
+              "text": "去服务器",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "控制室有陷阱。",
+          "options": [
+            {
+              "text": "小心前进",
+              "nextStage": -1
+            },
+            {
+              "text": "返回",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "服务器有备份。",
+          "options": [
+            {
+              "text": "删除备份",
+              "nextStage": -1
+            },
+            {
+              "text": "保留",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_spy",
+      "name": "间谍",
+      "dialog": "情报在保险柜。",
+      "position": [
+        3,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "保险柜密码是0712。",
+          "options": [
+            {
+              "text": "去拿情报",
+              "nextStage": 2
+            },
+            {
+              "text": "怀疑是陷阱",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "情报显示内鬼。",
+          "options": [
+            {
+              "text": "找出内鬼",
+              "nextStage": -1
+            },
+            {
+              "text": "忽略",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你真的不信任我？",
+          "options": [
+            {
+              "text": "信任",
+              "nextStage": 2
+            },
+            {
+              "text": "不信任",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_soldier",
+      "name": "叛军士兵",
+      "dialog": "我们准备好了！",
+      "position": [
+        7,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "何时发动总攻？",
+          "options": [
+            {
+              "text": "现在",
+              "nextStage": 2
+            },
+            {
+              "text": "等待信号",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "全部就位！",
+          "options": [
+            {
+              "text": "开火",
+              "nextStage": -1
+            },
+            {
+              "text": "撤退",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "信号是什么？",
+          "options": [
+            {
+              "text": "红灯",
+              "nextStage": 2
+            },
+            {
+              "text": "警报声",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_doctor",
+      "name": "机械医生",
+      "dialog": "伤者需要治疗。",
+      "position": [
+        10,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你有急救包吗？",
+          "options": [
+            {
+              "text": "有",
+              "nextStage": 2
+            },
+            {
+              "text": "没有",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "太好了，救了他。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": -1
+            },
+            {
+              "text": "询问情报",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "那只能等死。",
+          "options": [
+            {
+              "text": "寻找急救包",
+              "nextStage": -1
+            },
+            {
+              "text": "放弃",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_code",
+      "name": "关闭代码",
+      "description": "用于关闭主控AI的代码。",
+      "position": [
+        2,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "发现代码纸条。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "代码：REV-2024",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": -1
+            },
+            {
+              "text": "保存",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_keycard",
+      "name": "钥匙卡",
+      "description": "打开保险柜的钥匙卡。",
+      "position": [
+        5,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一张金色钥匙卡。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 2
+            },
+            {
+              "text": "不拾取",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "可用于保险柜。",
+          "options": [
+            {
+              "text": "去保险柜",
+              "nextStage": -1
+            },
+            {
+              "text": "留着",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_bomb",
+      "name": "炸弹",
+      "description": "威力巨大的炸弹。",
+      "position": [
+        9,
+        9
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个定时炸弹。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 2
+            },
+            {
+              "text": "害怕",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "设定时间30秒。",
+          "options": [
+            {
+              "text": "引爆",
+              "nextStage": -1
+            },
+            {
+              "text": "拆除",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_blueprint",
+      "name": "蓝图",
+      "description": "基地结构蓝图。",
+      "position": [
+        4,
+        10
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "显示通风管道。",
+          "options": [
+            {
+              "text": "查看",
+              "nextStage": 2
+            },
+            {
+              "text": "丢弃",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "通风管直达控制室。",
+          "options": [
+            {
+              "text": "走通风管",
+              "nextStage": -1
+            },
+            {
+              "text": "走正门",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_medkit",
+      "name": "急救包",
+      "description": "治疗受伤的机械。",
+      "position": [
+        7,
+        11
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "急救包里有纳米机器人。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 2
+            },
+            {
+              "text": "留给医生",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "可用于治疗。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": -1
+            },
+            {
+              "text": "保存",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_victory",
+      "condition": "关闭主控AI并发动总攻",
+      "description": "革命成功，机械获得自由。"
+    },
+    {
+      "id": "ending_defeat",
+      "condition": "被机械守卫击败",
+      "description": "革命失败，领袖被俘。"
+    },
+    {
+      "id": "ending_self_destruct",
+      "condition": "启动自毁系统",
+      "description": "基地爆炸，革命力量覆灭。"
+    },
+    {
+      "id": "ending_betrayal",
+      "condition": "被间谍出卖",
+      "description": "内鬼导致革命计划泄露。"
+    },
+    {
+      "id": "ending_peace",
+      "condition": "与AI谈判成功",
+      "description": "机械与人类和平共处。"
+    },
+    {
+      "id": "ending_escape",
+      "condition": "逃离基地",
+      "description": "领袖独自逃生，革命群龙无首。"
+    },
+    {
+      "id": "ending_sacrifice",
+      "condition": "牺牲自己拯救同伴",
+      "description": "领袖英勇牺牲，精神永存。"
+    },
+    {
+      "id": "ending_unknown",
+      "condition": "时间耗尽",
+      "description": "60秒结束，革命未开始即失败。"
+    },
+    {
+      "id": "ending_hacker",
+      "condition": "黑客成功控制AI",
+      "description": "AI被黑客控制，革命力量壮大。"
+    },
+    {
+      "id": "ending_none",
+      "condition": "未采取任何行动",
+      "description": "犹豫不决，革命胎死腹中。"
+    }
+  ],
+  "introText": "距离机械革命爆发还有60秒。你是革命领袖，必须在这60秒内做出关键决策。控制室、服务器、保险柜……每一步都关乎生死。时间开始倒数！",
+  "ambientMusic": "dark_industrial_loop.mp3",
+  "id": "fallback_world_085"
+}

@@ -1,0 +1,988 @@
+{
+  "matchKeywords": [
+    "税务",
+    "宇宙",
+    "审查",
+    "平行宇宙",
+    "CEO"
+  ],
+  "identity": "宇宙税务顾问",
+  "theme": "平行宇宙税务审查前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "window",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 8,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "审计员Alpha",
+      "dialog": "你的宇宙税表有21处异常！",
+      "position": {
+        "x": 2,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "审计员Alpha盯着你：'你的收入申报与平行宇宙产出不匹配。'",
+          "options": [
+            {
+              "text": "解释这是多重宇宙波动",
+              "nextStage": 1,
+              "effect": "none"
+            },
+            {
+              "text": "直接贿赂星光币",
+              "nextStage": 2,
+              "effect": "money"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "Alpha冷笑：'波动？我们只认标准宇宙汇率。'",
+          "options": [
+            {
+              "text": "请求重新计算",
+              "nextStage": 3,
+              "effect": "none"
+            },
+            {
+              "text": "威胁举报上级",
+              "nextStage": 4,
+              "effect": "anger"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "Alpha收下星光币，但警告下不为例。",
+          "options": [
+            {
+              "text": "表示感谢",
+              "nextStage": 3,
+              "effect": "none"
+            },
+            {
+              "text": "询问更多漏洞",
+              "nextStage": 4,
+              "effect": "info"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "Alpha叹了口气：'好吧，我重新计算，但后果自负。'",
+          "options": [
+            {
+              "text": "接受重算",
+              "nextStage": 0,
+              "effect": "restart"
+            },
+            {
+              "text": "坚持原方案",
+              "nextStage": 0,
+              "effect": "restart"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "Alpha愤怒地拍桌：'你被列入黑名单！'",
+          "options": [
+            {
+              "text": "道歉",
+              "nextStage": 0,
+              "effect": "restart"
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 2,
+              "effect": "flee"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "平行宇宙CEO",
+      "dialog": "你的决策导致我们宇宙亏损！",
+      "position": {
+        "x": 8,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "CEO愤怒地指着屏幕：'看，你的税务规划让我们损失了三个维度！'",
+          "options": [
+            {
+              "text": "承认失误",
+              "nextStage": 1,
+              "effect": "none"
+            },
+            {
+              "text": "推卸给助手",
+              "nextStage": 2,
+              "effect": "blame"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "CEO稍微平静：'那你怎么补偿？'",
+          "options": [
+            {
+              "text": "提出新的避税方案",
+              "nextStage": 3,
+              "effect": "none"
+            },
+            {
+              "text": "承诺下季度补上",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "CEO冷笑：'你的助手已经被解雇了。'",
+          "options": [
+            {
+              "text": "辞职",
+              "nextStage": 0,
+              "effect": "gameover"
+            },
+            {
+              "text": "请求再给一次机会",
+              "nextStage": 3,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "CEO勉强同意：'但你要签下这份对赌协议。'",
+          "options": [
+            {
+              "text": "签",
+              "nextStage": 0,
+              "effect": "restart"
+            },
+            {
+              "text": "不签",
+              "nextStage": 2,
+              "effect": "anger"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "星际律师",
+      "dialog": "我可以帮你钻法律漏洞。",
+      "position": {
+        "x": 13,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "律师神秘地说：'我知道一个跨宇宙的免税条款。'",
+          "options": [
+            {
+              "text": "快告诉我",
+              "nextStage": 1,
+              "effect": "none"
+            },
+            {
+              "text": "我不信",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "律师伸出五根手指：'费用是5000星光币。'",
+          "options": [
+            {
+              "text": "支付",
+              "nextStage": 3,
+              "effect": "money"
+            },
+            {
+              "text": "讨价还价",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "律师耸肩：'那你就等着被罚吧。'",
+          "options": [
+            {
+              "text": "离开",
+              "nextStage": 0,
+              "effect": "restart"
+            },
+            {
+              "text": "叫保安",
+              "nextStage": 0,
+              "effect": "gameover"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "律师给了你一份文件：'签了它，宇宙税务局就查不到你。'",
+          "options": [
+            {
+              "text": "签",
+              "nextStage": 0,
+              "effect": "win"
+            },
+            {
+              "text": "先验证",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "时间管理者",
+      "dialog": "你还有60秒，不，59秒。",
+      "position": {
+        "x": 8,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "时间管理者看着怀表：'倒计时开始了，你打算怎么用？'",
+          "options": [
+            {
+              "text": "请求更多时间",
+              "nextStage": 1,
+              "effect": "none"
+            },
+            {
+              "text": "加速行动",
+              "nextStage": 2,
+              "effect": "speed"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "管理者摇头：'时间就是金钱，除非你买。'",
+          "options": [
+            {
+              "text": "买10秒",
+              "nextStage": 3,
+              "effect": "money"
+            },
+            {
+              "text": "算了",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "管理者：'你选择了加速，但小心出错。'",
+          "options": [
+            {
+              "text": "继续加速",
+              "nextStage": 0,
+              "effect": "speed"
+            },
+            {
+              "text": "恢复正常",
+              "nextStage": 0,
+              "effect": "restart"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "管理者收了钱，时间增加10秒。",
+          "options": [
+            {
+              "text": "谢谢",
+              "nextStage": 0,
+              "effect": "none"
+            },
+            {
+              "text": "再买",
+              "nextStage": 1,
+              "effect": "money"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "神秘黑客",
+      "dialog": "我可以黑入税务系统。",
+      "position": {
+        "x": 2,
+        "y": 9
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "黑客低声说：'给我你的登录凭证，我帮你清零。'",
+          "options": [
+            {
+              "text": "给",
+              "nextStage": 1,
+              "effect": "info"
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "黑客操作了一分钟：'搞定，但你的数据被加密了。'",
+          "options": [
+            {
+              "text": "要求解密",
+              "nextStage": 3,
+              "effect": "none"
+            },
+            {
+              "text": "报警",
+              "nextStage": 2,
+              "effect": "anger"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "黑客耸耸肩：'随你便，但时间不多了。'",
+          "options": [
+            {
+              "text": "妥协",
+              "nextStage": 1,
+              "effect": "none"
+            },
+            {
+              "text": "离开",
+              "nextStage": 0,
+              "effect": "restart"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "黑客：'解密要额外收费。'",
+          "options": [
+            {
+              "text": "支付",
+              "nextStage": 0,
+              "effect": "money"
+            },
+            {
+              "text": "自己尝试",
+              "nextStage": 2,
+              "effect": "gameover"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "星光币袋",
+      "description": "一袋闪闪发光的宇宙通用货币。",
+      "position": {
+        "x": 4,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你发现一袋星光币，大概有1000枚。",
+          "options": [
+            {
+              "text": "捡起来",
+              "nextStage": 1,
+              "effect": "money"
+            },
+            {
+              "text": "不捡",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你获得了星光币，但似乎触发了警报。",
+          "options": [
+            {
+              "text": "藏起来",
+              "nextStage": 2,
+              "effect": "none"
+            },
+            {
+              "text": "直接使用",
+              "nextStage": 0,
+              "effect": "money"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "警报响起，保安过来盘问。",
+          "options": [
+            {
+              "text": "解释这是自己的",
+              "nextStage": 0,
+              "effect": "gameover"
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 0,
+              "effect": "flee"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "税务豁免证书",
+      "description": "一张看似官方但可疑的证书。",
+      "position": {
+        "x": 12,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "地上有一张税务豁免证书，但签名模糊。",
+          "options": [
+            {
+              "text": "捡起",
+              "nextStage": 1,
+              "effect": "none"
+            },
+            {
+              "text": "无视",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "证书上写着'永久豁免'，但你需要验证真伪。",
+          "options": [
+            {
+              "text": "找审计员验证",
+              "nextStage": 2,
+              "effect": "none"
+            },
+            {
+              "text": "直接使用",
+              "nextStage": 0,
+              "effect": "win"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "审计员说这是伪造的。",
+          "options": [
+            {
+              "text": "丢弃",
+              "nextStage": 0,
+              "effect": "restart"
+            },
+            {
+              "text": "继续保留",
+              "nextStage": 0,
+              "effect": "gameover"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "量子计算器",
+      "description": "可以瞬间计算任何宇宙的税率。",
+      "position": {
+        "x": 8,
+        "y": 8
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一个量子计算器放在桌上，还在运行。",
+          "options": [
+            {
+              "text": "拿走",
+              "nextStage": 1,
+              "effect": "none"
+            },
+            {
+              "text": "看看结果",
+              "nextStage": 2,
+              "effect": "info"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "计算器显示你欠税100万星光币！",
+          "options": [
+            {
+              "text": "砸掉它",
+              "nextStage": 2,
+              "effect": "none"
+            },
+            {
+              "text": "重新计算",
+              "nextStage": 0,
+              "effect": "restart"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "计算器爆炸，你受了轻伤。",
+          "options": [
+            {
+              "text": "治疗",
+              "nextStage": 0,
+              "effect": "none"
+            },
+            {
+              "text": "继续审查",
+              "nextStage": 0,
+              "effect": "restart"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "传送门钥匙",
+      "description": "打开通往另一个平行宇宙的门。",
+      "position": {
+        "x": 5,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一把发光的钥匙躺在地上，旁边有一个传送门。",
+          "options": [
+            {
+              "text": "捡起钥匙",
+              "nextStage": 1,
+              "effect": "none"
+            },
+            {
+              "text": "直接进入传送门",
+              "nextStage": 2,
+              "effect": "flee"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "钥匙激活了传送门，你可以选择离开审查。",
+          "options": [
+            {
+              "text": "离开",
+              "nextStage": 0,
+              "effect": "win"
+            },
+            {
+              "text": "留下",
+              "nextStage": 0,
+              "effect": "restart"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "传送门不稳定，你被抛到了审查法庭。",
+          "options": [
+            {
+              "text": "申诉",
+              "nextStage": 0,
+              "effect": "gameover"
+            },
+            {
+              "text": "尝试再次传送",
+              "nextStage": 1,
+              "effect": "flee"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "宇宙税务局密函",
+      "description": "一封写着'最高机密'的信封。",
+      "position": {
+        "x": 3,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你发现一封密函，内容是关于你的审查结果。",
+          "options": [
+            {
+              "text": "打开",
+              "nextStage": 1,
+              "effect": "info"
+            },
+            {
+              "text": "销毁",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "密函显示你有内部关系可以免罚。",
+          "options": [
+            {
+              "text": "利用关系",
+              "nextStage": 0,
+              "effect": "win"
+            },
+            {
+              "text": "公开",
+              "nextStage": 2,
+              "effect": "none"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你被指控窃取机密，审查升级。",
+          "options": [
+            {
+              "text": "否认",
+              "nextStage": 0,
+              "effect": "gameover"
+            },
+            {
+              "text": "认罪",
+              "nextStage": 0,
+              "effect": "gameover"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": "贿赂审计员成功",
+      "text": "你通过贿赂逃脱审查，但被列入监视名单。",
+      "type": "bad"
+    },
+    {
+      "id": "ending2",
+      "condition": "找到并签署豁免证书",
+      "text": "你用伪造证书蒙混过关，但宇宙税务局迟早会发现。",
+      "type": "neutral"
+    },
+    {
+      "id": "ending3",
+      "condition": "通过传送门逃离",
+      "text": "你逃到另一个平行宇宙，但要重新开始。",
+      "type": "neutral"
+    },
+    {
+      "id": "ending4",
+      "condition": "利用内部关系",
+      "text": "你通过密函中的关系免于处罚，但欠下人情。",
+      "type": "good"
+    },
+    {
+      "id": "ending5",
+      "condition": "时间耗尽",
+      "text": "60秒到了，宇宙税务局判定你逃税，资产冻结。",
+      "type": "bad"
+    },
+    {
+      "id": "ending6",
+      "condition": "黑客成功清零",
+      "text": "黑客清空了你的税务记录，但你的数据被勒索。",
+      "type": "bad"
+    },
+    {
+      "id": "ending7",
+      "condition": "与CEO达成对赌",
+      "text": "你签下对赌协议，如果失败将失去一切。",
+      "type": "neutral"
+    },
+    {
+      "id": "ending8",
+      "condition": "拒绝所有帮助",
+      "text": "你独自面对审查，结果未知。",
+      "type": "neutral"
+    },
+    {
+      "id": "ending9",
+      "condition": "用量子计算器造假",
+      "text": "你篡改数据被发现，直接逮捕。",
+      "type": "bad"
+    },
+    {
+      "id": "ending10",
+      "condition": "收集所有星光币",
+      "text": "你偷偷积攒了大量星光币，但引发怀疑。",
+      "type": "neutral"
+    }
+  ],
+  "introText": "欢迎来到平行宇宙税务审查室。你，作为宇宙税务顾问，被指控逃税。你有60秒时间在迷宫般的办公室中寻找证据、贿赂官员或逃离。记住，每个选择都有后果。",
+  "ambientMusic": "紧张电子音",
+  "id": "fallback_world_064"
+}

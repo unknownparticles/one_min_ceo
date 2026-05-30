@@ -1,0 +1,847 @@
+{
+  "matchKeywords": [
+    "时空快递",
+    "上市",
+    "60秒",
+    "CEO",
+    "危机"
+  ],
+  "identity": "时空快递董事长",
+  "theme": "时空快递集团上市前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "gold_floor",
+      "gold_floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gate",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    6,
+    3
+  ],
+  "npcs": [
+    {
+      "id": "npc_01",
+      "name": "时空审计官",
+      "position": [
+        1,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "首次对话",
+          "dialog": "时空快递的账目出现了38世纪未入账的快递费！你得在60秒内解决。",
+          "options": [
+            {
+              "text": "用时间回溯修正账目",
+              "effect": "time_fix"
+            },
+            {
+              "text": "直接贿赂审计官",
+              "effect": "bribe_auditor"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "stage1后",
+          "dialog": "情况更糟了，星际税务局也介入了！",
+          "options": [
+            {
+              "text": "启动紧急平行宇宙转移",
+              "effect": "parallel_escape"
+            },
+            {
+              "text": "召开临时股东大会",
+              "effect": "shareholder_meeting"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "stage2后",
+          "dialog": "最后一分钟，你必须决定是否泄露时间旅行技术以换取上市批准。",
+          "options": [
+            {
+              "text": "泄露技术",
+              "effect": "leak_tech"
+            },
+            {
+              "text": "拒绝并坚持合规",
+              "effect": "refuse_leak"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_02",
+      "name": "未来投资人",
+      "position": [
+        4,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "互动",
+          "dialog": "我是来自2157年的投资人，你的快递公司前景如何？",
+          "options": [
+            {
+              "text": "展示增长率",
+              "effect": "show_growth"
+            },
+            {
+              "text": "承诺未来分红",
+              "effect": "promise_dividend"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "stage1后",
+          "dialog": "我注意到你们的时空穿梭器有安全隐患。",
+          "options": [
+            {
+              "text": "否认问题",
+              "effect": "deny_issue"
+            },
+            {
+              "text": "承认并承诺改进",
+              "effect": "admit_and_fix"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "stage2后",
+          "dialog": "要么你让我参与董事会，要么我撤资。",
+          "options": [
+            {
+              "text": "同意加入董事会",
+              "effect": "board_seat"
+            },
+            {
+              "text": "拒绝并寻找新投资人",
+              "effect": "find_new_investor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_03",
+      "name": "竞争对手CEO",
+      "position": [
+        7,
+        10
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "接近",
+          "dialog": "哈哈，你的公司就要完蛋了！",
+          "options": [
+            {
+              "text": "冷静回应",
+              "effect": "calm_response"
+            },
+            {
+              "text": "嘲讽回去",
+              "effect": "mock_back"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "stage1后",
+          "dialog": "我已经买通了你的几个董事。",
+          "options": [
+            {
+              "text": "调查内鬼",
+              "effect": "investigate_traitor"
+            },
+            {
+              "text": "直接开董事会整顿",
+              "effect": "board_overhaul"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "stage2后",
+          "dialog": "最后通牒：放弃上市，或者我揭露你的丑闻。",
+          "options": [
+            {
+              "text": "妥协放弃",
+              "effect": "give_up_ipo"
+            },
+            {
+              "text": "反击揭露他的秘密",
+              "effect": "counter_expose"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_04",
+      "name": "首席工程师",
+      "position": [
+        3,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "对话",
+          "dialog": "老板，时空引擎超载了！我们可能被传送到恐龙时代。",
+          "options": [
+            {
+              "text": "要求立即检修",
+              "effect": "urgent_repair"
+            },
+            {
+              "text": "忽略风险继续运行",
+              "effect": "ignore_risk"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "stage1后",
+          "dialog": "找到问题了：一个37世纪的零件坏了，但库存是空的。",
+          "options": [
+            {
+              "text": "从平行宇宙偷一个",
+              "effect": "steal_part"
+            },
+            {
+              "text": "自己研发替代品",
+              "effect": "r_d_replacement"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "stage2后",
+          "dialog": "如果我们让引擎超负荷，可能会创造时间悖论。",
+          "options": [
+            {
+              "text": "冒险超负荷",
+              "effect": "overload_engine"
+            },
+            {
+              "text": "关闭系统保守安全",
+              "effect": "shutdown_safely"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_05",
+      "name": "星际媒体记者",
+      "position": [
+        10,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "采访",
+          "dialog": "请问贵公司的快递员是否有时间旅行职业病？",
+          "options": [
+            {
+              "text": "否认并转移话题",
+              "effect": "deny_and_shift"
+            },
+            {
+              "text": "承认并说明已采取措施",
+              "effect": "admit_and_measures"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "stage1后",
+          "dialog": "有人爆料你们使用奴隶劳工。",
+          "options": [
+            {
+              "text": "否认并声称是竞争对手污蔑",
+              "effect": "deny_and_blame"
+            },
+            {
+              "text": "承诺调查并公开",
+              "effect": "promise_investigation"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "stage2后",
+          "dialog": "上市前，你会发布官方声明吗？",
+          "options": [
+            {
+              "text": "发布积极声明",
+              "effect": "positive_statement"
+            },
+            {
+              "text": "保持沉默",
+              "effect": "keep_silent"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_01",
+      "name": "时间暂停器",
+      "position": [
+        6,
+        7
+      ],
+      "description": "暂停时间10秒，但使用后可能造成时间裂缝。",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "拾取",
+          "dialog": "你找到了时间暂停器，要现在使用吗？",
+          "options": [
+            {
+              "text": "使用",
+              "effect": "pause_time"
+            },
+            {
+              "text": "保留备用",
+              "effect": "keep_for_later"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "stage1:使用后",
+          "dialog": "时间暂停了，但你在现实世界留下了残影。",
+          "options": [
+            {
+              "text": "快速行动",
+              "effect": "act_fast"
+            },
+            {
+              "text": "修复残影",
+              "effect": "fix_afterimage"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "stage2后",
+          "dialog": "时间裂缝正在扩大，需要立即关闭。",
+          "options": [
+            {
+              "text": "用仪器关闭",
+              "effect": "close_crack"
+            },
+            {
+              "text": "逃离裂缝区域",
+              "effect": "escape_crack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_02",
+      "name": "万能通行证",
+      "position": [
+        4,
+        10
+      ],
+      "description": "可以打开任何门或进入任何区域。",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "拾取",
+          "dialog": "万能通行证入手，你想用它做什么？",
+          "options": [
+            {
+              "text": "进入董事会议室",
+              "effect": "enter_boardroom"
+            },
+            {
+              "text": "进入引擎室",
+              "effect": "enter_engine_room"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "stage1后",
+          "dialog": "通行证开始闪烁，电量不足。",
+          "options": [
+            {
+              "text": "充电继续使用",
+              "effect": "recharge"
+            },
+            {
+              "text": "放弃通行证",
+              "effect": "discard"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "stage2后",
+          "dialog": "通行证过热要爆炸了！",
+          "options": [
+            {
+              "text": "扔掉",
+              "effect": "throw_away"
+            },
+            {
+              "text": "尝试解除",
+              "effect": "defuse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_03",
+      "name": "心灵控制芯片",
+      "position": [
+        1,
+        5
+      ],
+      "description": "植入后可以控制一个NPC的行为。",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "拾取",
+          "dialog": "芯片可用，你想控制谁？",
+          "options": [
+            {
+              "text": "控制审计官",
+              "effect": "control_auditor"
+            },
+            {
+              "text": "控制投资人",
+              "effect": "control_investor"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "stage1后",
+          "dialog": "被控制者开始反抗，芯片不稳定。",
+          "options": [
+            {
+              "text": "加强控制信号",
+              "effect": "boost_signal"
+            },
+            {
+              "text": "解除控制",
+              "effect": "release_control"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "stage2后",
+          "dialog": "芯片可能造成永久精神损伤。",
+          "options": [
+            {
+              "text": "继续使用",
+              "effect": "continue_use"
+            },
+            {
+              "text": "销毁芯片",
+              "effect": "destroy_chip"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_04",
+      "name": "未来预言机",
+      "position": [
+        8,
+        2
+      ],
+      "description": "显示未来30秒内的一个事件。",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "使用",
+          "dialog": "预言机显示：你将被股东弹劾。",
+          "options": [
+            {
+              "text": "采取预防措施",
+              "effect": "prevent_impeach"
+            },
+            {
+              "text": "忽视预言",
+              "effect": "ignore_prophecy"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "stage1后",
+          "dialog": "预言机又显示：公司股价暴跌。",
+          "options": [
+            {
+              "text": "准备救市计划",
+              "effect": "bailout_plan"
+            },
+            {
+              "text": "做空自己公司",
+              "effect": "short_stock"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "stage2后",
+          "dialog": "预言机提示：你的选择已改变未来。",
+          "options": [
+            {
+              "text": "查看新未来",
+              "effect": "check_new_future"
+            },
+            {
+              "text": "关闭预言机",
+              "effect": "turn_off"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_05",
+      "name": "缩时药水",
+      "position": [
+        9,
+        5
+      ],
+      "description": "喝下后时间流逝减慢50%，持续15秒。",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "拾取",
+          "dialog": "药水散发着诡异的光泽，喝吗？",
+          "options": [
+            {
+              "text": "喝下",
+              "effect": "drink_potion"
+            },
+            {
+              "text": "留着",
+              "effect": "keep_potion"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "stage1:喝下后",
+          "dialog": "你感觉周围变慢了，但副作用是你会加速衰老。",
+          "options": [
+            {
+              "text": "快速完成工作",
+              "effect": "rush_work"
+            },
+            {
+              "text": "寻找解药",
+              "effect": "find_antidote"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "stage2后",
+          "dialog": "衰老不可逆，你决定如何处理剩余时间？",
+          "options": [
+            {
+              "text": "享受剩余时光",
+              "effect": "enjoy_time"
+            },
+            {
+              "text": "继续拼搏上市",
+              "effect": "continue_ipo"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_01",
+      "condition": "time_fix && board_seat",
+      "description": "账目修正，投资人加入董事会，公司成功上市。"
+    },
+    {
+      "id": "ending_02",
+      "condition": "bribe_auditor && leak_tech",
+      "description": "贿赂审计官但技术泄露，被政府接管。"
+    },
+    {
+      "id": "ending_03",
+      "condition": "parallel_escape && give_up_ipo",
+      "description": "逃到平行宇宙，但公司破产。"
+    },
+    {
+      "id": "ending_04",
+      "condition": "refuse_leak && counter_expose",
+      "description": "拒绝泄露，反击对手，成功上市。"
+    },
+    {
+      "id": "ending_05",
+      "condition": "steal_part && overload_engine",
+      "description": "偷零件并超负荷，公司爆炸。"
+    },
+    {
+      "id": "ending_06",
+      "condition": "shutdown_safely && positive_statement",
+      "description": "安全关闭引擎，发布积极声明，股价稳定。"
+    },
+    {
+      "id": "ending_07",
+      "condition": "control_auditor && continue_use",
+      "description": "控制审计官并继续使用芯片，被揭发入狱。"
+    },
+    {
+      "id": "ending_08",
+      "condition": "prevent_impeach && bailout_plan",
+      "description": "预防弹劾并救市，成为英雄。"
+    },
+    {
+      "id": "ending_09",
+      "condition": "drink_potion && continue_ipo",
+      "description": "喝药水加速上市，但快速衰老退休。"
+    },
+    {
+      "id": "ending_10",
+      "condition": "default",
+      "description": "60秒结束，未做关键决定，公司被竞争对手收购。"
+    }
+  ],
+  "introText": "欢迎来到时空快递集团上市倒计时60秒！你作为董事长，必须在混乱中做出关键决策。时间紧迫，命运由你掌握！",
+  "ambientMusic": "tense_electronic_loop.mp3",
+  "id": "fallback_world_046"
+}

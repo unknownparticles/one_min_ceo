@@ -1,0 +1,839 @@
+{
+  "matchKeywords": [
+    "庭审",
+    "法官",
+    "审判",
+    "星际",
+    "被告",
+    "裁决",
+    "罪名"
+  ],
+  "identity": "银河审判庭首席法官",
+  "theme": "银河审判庭开庭前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "gold_floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "throne",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    3,
+    7
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "星际检察官",
+      "position": [
+        2,
+        4
+      ],
+      "role": "检察官",
+      "dialogue": "被告，你涉嫌非法星际贸易，证据确凿！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "检察官提交证据",
+          "options": [
+            {
+              "text": "查看证据",
+              "nextStage": 2
+            },
+            {
+              "text": "质疑证据",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "证据显示你有罪",
+          "options": [
+            {
+              "text": "认罪",
+              "nextStage": 4
+            },
+            {
+              "text": "申辩",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你提出质疑，法庭哗然",
+          "options": [
+            {
+              "text": "要求休庭",
+              "nextStage": 5
+            },
+            {
+              "text": "继续辩论",
+              "nextStage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "辩护律师",
+      "position": [
+        3,
+        9
+      ],
+      "role": "辩护人",
+      "dialogue": "我的当事人是清白的！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "律师开始辩护",
+          "options": [
+            {
+              "text": "采纳辩护",
+              "nextStage": 2
+            },
+            {
+              "text": "驳回辩护",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "辩护有效，案件复杂化",
+          "options": [
+            {
+              "text": "传唤证人",
+              "nextStage": 4
+            },
+            {
+              "text": "休庭讨论",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "辩护被驳回",
+          "options": [
+            {
+              "text": "继续申诉",
+              "nextStage": 2
+            },
+            {
+              "text": "放弃",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "书记官",
+      "position": [
+        2,
+        8
+      ],
+      "role": "记录员",
+      "dialogue": "请保持安静，庭审即将开始。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "书记官宣读法庭纪律",
+          "options": [
+            {
+              "text": "认真听",
+              "nextStage": 2
+            },
+            {
+              "text": "打断",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "纪律宣读完毕",
+          "options": [
+            {
+              "text": "宣布开庭",
+              "nextStage": 4
+            },
+            {
+              "text": "推迟开庭",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你被警告",
+          "options": [
+            {
+              "text": "道歉",
+              "nextStage": 2
+            },
+            {
+              "text": "无视",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "被告",
+      "position": [
+        7,
+        8
+      ],
+      "role": "被告",
+      "dialogue": "法官大人，我冤枉啊！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "被告喊冤",
+          "options": [
+            {
+              "text": "相信他",
+              "nextStage": 2
+            },
+            {
+              "text": "不信",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你倾向于相信",
+          "options": [
+            {
+              "text": "深入调查",
+              "nextStage": 4
+            },
+            {
+              "text": "劝他认罪",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你认为他有罪",
+          "options": [
+            {
+              "text": "严判",
+              "nextStage": 5
+            },
+            {
+              "text": "给机会",
+              "nextStage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "法警",
+      "position": [
+        7,
+        4
+      ],
+      "role": "法警",
+      "dialogue": "请所有人员就座。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "法警维持秩序",
+          "options": [
+            {
+              "text": "感谢",
+              "nextStage": 2
+            },
+            {
+              "text": "命令他退下",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "秩序良好",
+          "options": [
+            {
+              "text": "开庭",
+              "nextStage": 4
+            },
+            {
+              "text": "检查安保",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "法警不满",
+          "options": [
+            {
+              "text": "安抚",
+              "nextStage": 2
+            },
+            {
+              "text": "惩戒",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "法槌",
+      "position": [
+        3,
+        8
+      ],
+      "type": "tool",
+      "effect": "敲击法槌可维持秩序",
+      "description": "象征法官权威的法槌",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你拿起法槌",
+          "options": [
+            {
+              "text": "敲一下",
+              "nextStage": 2
+            },
+            {
+              "text": "放下",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "全场安静",
+          "options": [
+            {
+              "text": "开始审判",
+              "nextStage": 4
+            },
+            {
+              "text": "再敲一下",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你放下法槌",
+          "options": [
+            {
+              "text": "宣判",
+              "nextStage": 4
+            },
+            {
+              "text": "休庭",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "证据光盘",
+      "position": [
+        2,
+        5
+      ],
+      "type": "evidence",
+      "effect": "记录关键证据",
+      "description": "包含被告犯罪证据的光盘",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你拿起光盘",
+          "options": [
+            {
+              "text": "播放",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "光盘显示罪证",
+          "options": [
+            {
+              "text": "定罪",
+              "nextStage": 4
+            },
+            {
+              "text": "质疑真实性",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你忽略光盘",
+          "options": [
+            {
+              "text": "凭直觉判",
+              "nextStage": 4
+            },
+            {
+              "text": "再审",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "星际法典",
+      "position": [
+        4,
+        8
+      ],
+      "type": "book",
+      "effect": "查阅法典条文",
+      "description": "厚厚的星际法律书籍",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你翻开法典",
+          "options": [
+            {
+              "text": "查找相关法条",
+              "nextStage": 2
+            },
+            {
+              "text": "合上",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "找到一条适用法律",
+          "options": [
+            {
+              "text": "依法判决",
+              "nextStage": 4
+            },
+            {
+              "text": "从轻发落",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你合上法典",
+          "options": [
+            {
+              "text": "凭经验判",
+              "nextStage": 4
+            },
+            {
+              "text": "请教学者",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "咖啡杯",
+      "position": [
+        1,
+        1
+      ],
+      "type": "consumable",
+      "effect": "恢复精力",
+      "description": "冒热气的法官咖啡",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你端起咖啡",
+          "options": [
+            {
+              "text": "喝一口",
+              "nextStage": 2
+            },
+            {
+              "text": "放下",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "精神一振",
+          "options": [
+            {
+              "text": "继续开庭",
+              "nextStage": 4
+            },
+            {
+              "text": "再喝一口",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你放下咖啡",
+          "options": [
+            {
+              "text": "宣判",
+              "nextStage": 4
+            },
+            {
+              "text": "休庭",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "星际通讯器",
+      "position": [
+        2,
+        9
+      ],
+      "type": "tool",
+      "effect": "紧急联络",
+      "description": "可以联系星际议会",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你拿起通讯器",
+          "options": [
+            {
+              "text": "呼叫议会",
+              "nextStage": 2
+            },
+            {
+              "text": "关闭",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "议会回应",
+          "options": [
+            {
+              "text": "听从指示",
+              "nextStage": 4
+            },
+            {
+              "text": "自行裁决",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你关闭通讯器",
+          "options": [
+            {
+              "text": "独立审判",
+              "nextStage": 4
+            },
+            {
+              "text": "重新考虑",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "playerPosition == [3,8] and item1 used",
+      "text": "你用法槌敲击桌面，宣布被告有罪，终身监禁。银河系为之震动。"
+    },
+    {
+      "id": "end2",
+      "condition": "playerPosition == [3,8] and item2 used",
+      "text": "你播放了证据光盘，被告认罪，被判处流放边疆。"
+    },
+    {
+      "id": "end3",
+      "condition": "playerPosition == [3,8] and item3 used",
+      "text": "你依据星际法典，判决被告无罪，引发轩然大波。"
+    },
+    {
+      "id": "end4",
+      "condition": "playerPosition == [3,8] and item4 used",
+      "text": "你喝下咖啡，精神十足，宣布休庭，择日再审。"
+    },
+    {
+      "id": "end5",
+      "condition": "playerPosition == [3,8] and item5 used",
+      "text": "你通过通讯器联系议会，他们要求你从重判决，你照做了。"
+    },
+    {
+      "id": "end6",
+      "condition": "playerPosition == [7,8] and npc4 stage == 4",
+      "text": "你深入调查，发现被告确实无罪，你当庭释放了他。"
+    },
+    {
+      "id": "end7",
+      "condition": "playerPosition == [7,8] and npc4 stage == 5",
+      "text": "你严判被告，但后来发现他是无辜的，你追悔莫及。"
+    },
+    {
+      "id": "end8",
+      "condition": "playerPosition == [2,8] and npc3 stage == 5",
+      "text": "你无视法庭纪律，被弹劾，结束了法官生涯。"
+    },
+    {
+      "id": "end9",
+      "condition": "playerPosition == [2,4] and npc1 stage == 4",
+      "text": "你与检察官合作，快速定罪，效率极高。"
+    },
+    {
+      "id": "end10",
+      "condition": "playerPosition == [3,9] and npc2 stage == 4",
+      "text": "你采纳了辩护律师的意见，案件变得复杂，最终不了了之。"
+    }
+  ],
+  "introText": "你，银河审判庭首席法官，即将主持一场星际大案。在开庭前60秒，你需要决定如何处理证据、证人以及被告的命运。每一秒都至关重要！",
+  "ambientMusic": "courtroom_tense.mp3",
+  "id": "fallback_world_084"
+}

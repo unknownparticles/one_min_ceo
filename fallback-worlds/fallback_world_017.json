@@ -1,0 +1,963 @@
+{
+  "matchKeywords": [
+    "破产",
+    "赌场",
+    "星际",
+    "60秒",
+    "危机"
+  ],
+  "identity": "星际赌场老板",
+  "theme": "星际赌场破产前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "table",
+      "table",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_001",
+      "name": "赌场经理",
+      "dialogue": {
+        "greeting": "老板！账上只剩60秒了！",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "你疯狂地翻着账本，数字在跳动。",
+            "options": [
+              {
+                "text": "冷静分析",
+                "nextStage": 2
+              },
+              {
+                "text": "砸掉电脑",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "你发现了一笔隐藏资金。",
+            "options": [
+              {
+                "text": "转移到安全账户",
+                "nextStage": 4
+              },
+              {
+                "text": "孤注一掷",
+                "nextStage": 5
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "电脑报废，警报响起。",
+            "options": [
+              {
+                "text": "逃跑",
+                "nextStage": 6
+              },
+              {
+                "text": "解释",
+                "nextStage": 7
+              }
+            ]
+          },
+          {
+            "stage": 4,
+            "text": "资金转移成功！但时间快到了。",
+            "options": [
+              {
+                "text": "庆祝",
+                "nextStage": "ending_happy"
+              },
+              {
+                "text": "继续查看",
+                "nextStage": 5
+              }
+            ]
+          },
+          {
+            "stage": 5,
+            "text": "你输掉了所有。",
+            "options": [
+              {
+                "text": "接受命运",
+                "nextStage": "ending_bad"
+              },
+              {
+                "text": "再试一次",
+                "nextStage": "ending_loop"
+              }
+            ]
+          },
+          {
+            "stage": 6,
+            "text": "你逃到了逃生舱。",
+            "options": [
+              {
+                "text": "发射",
+                "nextStage": "ending_escape"
+              },
+              {
+                "text": "犹豫",
+                "nextStage": "ending_caught"
+              }
+            ]
+          },
+          {
+            "stage": 7,
+            "text": "没人相信你。",
+            "options": [
+              {
+                "text": "贿赂",
+                "nextStage": "ending_bribe"
+              },
+              {
+                "text": "认罪",
+                "nextStage": "ending_arrested"
+              }
+            ]
+          }
+        ]
+      },
+      "position": [
+        2,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "经理慌张地跑来。",
+          "options": []
+        },
+        {
+          "stage": 2,
+          "text": "你决定冷静。",
+          "options": []
+        },
+        {
+          "stage": 3,
+          "text": "你决定发疯。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_002",
+      "name": "外星赌徒",
+      "dialogue": {
+        "greeting": "再给我一次机会！",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "他输得精光，但有一艘飞船。",
+            "options": [
+              {
+                "text": "接受抵押",
+                "nextStage": 2
+              },
+              {
+                "text": "赶走他",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "飞船价值连城。",
+            "options": [
+              {
+                "text": "收下",
+                "nextStage": "ending_rich"
+              },
+              {
+                "text": "怀疑",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "他愤怒地走了。",
+            "options": [
+              {
+                "text": "追上去",
+                "nextStage": "ending_fight"
+              },
+              {
+                "text": "不管",
+                "nextStage": "ending_lost"
+              }
+            ]
+          }
+        ]
+      },
+      "position": [
+        5,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "外星赌徒哀求。",
+          "options": []
+        },
+        {
+          "stage": 2,
+          "text": "你考虑抵押。",
+          "options": []
+        },
+        {
+          "stage": 3,
+          "text": "冲突爆发。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_003",
+      "name": "机器人荷官",
+      "dialogue": {
+        "greeting": "正在计算概率……",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "荷官显示破产概率99%。",
+            "options": [
+              {
+                "text": "重启系统",
+                "nextStage": 2
+              },
+              {
+                "text": "砸毁它",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "系统重启后显示不同数据。",
+            "options": [
+              {
+                "text": "相信新数据",
+                "nextStage": "ending_gamble"
+              },
+              {
+                "text": "不信",
+                "nextStage": "ending_deny"
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "机器人爆炸。",
+            "options": [
+              {
+                "text": "灭火",
+                "nextStage": "ending_fire"
+              },
+              {
+                "text": "逃跑",
+                "nextStage": "ending_chaos"
+              }
+            ]
+          }
+        ]
+      },
+      "position": [
+        8,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "机器人冷静报告。",
+          "options": []
+        },
+        {
+          "stage": 2,
+          "text": "你尝试修复。",
+          "options": []
+        },
+        {
+          "stage": 3,
+          "text": "你破坏机器。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_004",
+      "name": "神秘富豪",
+      "dialogue": {
+        "greeting": "我可以拯救你的赌场。",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "他提出一个交易。",
+            "options": [
+              {
+                "text": "接受",
+                "nextStage": 2
+              },
+              {
+                "text": "拒绝",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "他要求一半股份。",
+            "options": [
+              {
+                "text": "同意",
+                "nextStage": "ending_partner"
+              },
+              {
+                "text": "讨价还价",
+                "nextStage": "ending_negotiate"
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "他离开了。",
+            "options": [
+              {
+                "text": "后悔",
+                "nextStage": "ending_regret"
+              },
+              {
+                "text": "坚持",
+                "nextStage": "ending_bankrupt"
+              }
+            ]
+          }
+        ]
+      },
+      "position": [
+        3,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "富豪出现。",
+          "options": []
+        },
+        {
+          "stage": 2,
+          "text": "你考虑交易。",
+          "options": []
+        },
+        {
+          "stage": 3,
+          "text": "你拒绝。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_005",
+      "name": "前合伙人",
+      "dialogue": {
+        "greeting": "还记得我吗？我来讨债了。",
+        "stages": [
+          {
+            "stage": 1,
+            "text": "他要求立即还钱。",
+            "options": [
+              {
+                "text": "拖延",
+                "nextStage": 2
+              },
+              {
+                "text": "打架",
+                "nextStage": 3
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "text": "你争取到10秒。",
+            "options": [
+              {
+                "text": "求助",
+                "nextStage": "ending_help"
+              },
+              {
+                "text": "逃跑",
+                "nextStage": "ending_run"
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "text": "你打不过他。",
+            "options": [
+              {
+                "text": "求饶",
+                "nextStage": "ending_mercy"
+              },
+              {
+                "text": "硬撑",
+                "nextStage": "ending_hurt"
+              }
+            ]
+          }
+        ]
+      },
+      "position": [
+        10,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "前合伙人出现。",
+          "options": []
+        },
+        {
+          "stage": 2,
+          "text": "你试图拖延。",
+          "options": []
+        },
+        {
+          "stage": 3,
+          "text": "冲突。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_001",
+      "name": "金骰子",
+      "description": "一颗纯金骰子，据说能带来好运。",
+      "position": [
+        2,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你捡起金骰子。",
+          "options": [
+            {
+              "text": "把玩",
+              "nextStage": 2
+            },
+            {
+              "text": "卖掉",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "骰子显示6点。",
+          "options": [
+            {
+              "text": "赌一把",
+              "nextStage": "ending_win"
+            },
+            {
+              "text": "收好",
+              "nextStage": "ending_lucky"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你卖了个好价钱。",
+          "options": [
+            {
+              "text": "投资",
+              "nextStage": "ending_invest"
+            },
+            {
+              "text": "挥霍",
+              "nextStage": "ending_waste"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_002",
+      "name": "黑客U盘",
+      "description": "可以入侵任何系统。",
+      "position": [
+        4,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了U盘。",
+          "options": [
+            {
+              "text": "插入主机",
+              "nextStage": 2
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "系统被控制。",
+          "options": [
+            {
+              "text": "转移资金",
+              "nextStage": "ending_hack"
+            },
+            {
+              "text": "删除记录",
+              "nextStage": "ending_erase"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你失去了机会。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": "ending_sad"
+            },
+            {
+              "text": "无所谓",
+              "nextStage": "ending_hopeless"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_003",
+      "name": "香槟",
+      "description": "一瓶价值不菲的香槟。",
+      "position": [
+        6,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你拿起香槟。",
+          "options": [
+            {
+              "text": "打开庆祝",
+              "nextStage": 2
+            },
+            {
+              "text": "卖掉",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "香槟喷涌而出。",
+          "options": [
+            {
+              "text": "喝掉",
+              "nextStage": "ending_drunk"
+            },
+            {
+              "text": "泼向敌人",
+              "nextStage": "ending_fight2"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你获得一笔现金。",
+          "options": [
+            {
+              "text": "还债",
+              "nextStage": "ending_debt"
+            },
+            {
+              "text": "赌博",
+              "nextStage": "ending_gamble2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_004",
+      "name": "逃生钥匙",
+      "description": "能启动逃生舱。",
+      "position": [
+        9,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你找到钥匙。",
+          "options": [
+            {
+              "text": "立刻逃走",
+              "nextStage": 2
+            },
+            {
+              "text": "隐藏起来",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你冲向逃生舱。",
+          "options": [
+            {
+              "text": "带上别人",
+              "nextStage": "ending_together"
+            },
+            {
+              "text": "独自离开",
+              "nextStage": "ending_alone"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你藏好钥匙。",
+          "options": [
+            {
+              "text": "回去继续",
+              "nextStage": "ending_continue"
+            },
+            {
+              "text": "等待时机",
+              "nextStage": "ending_wait"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_005",
+      "name": "星际信用卡",
+      "description": "额度无限的信用卡。",
+      "position": [
+        11,
+        6
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你捡到信用卡。",
+          "options": [
+            {
+              "text": "疯狂购物",
+              "nextStage": 2
+            },
+            {
+              "text": "谨慎使用",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你买下整个赌场。",
+          "options": [
+            {
+              "text": "成为主人",
+              "nextStage": "ending_owner"
+            },
+            {
+              "text": "转卖",
+              "nextStage": "ending_sell"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你只买了一点。",
+          "options": [
+            {
+              "text": "还债",
+              "nextStage": "ending_pay"
+            },
+            {
+              "text": "存着",
+              "nextStage": "ending_save"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_happy",
+      "condition": "转移资金成功",
+      "text": "你成功保住了赌场，但需要长期努力。"
+    },
+    {
+      "id": "ending_bad",
+      "condition": "输掉一切",
+      "text": "你破产了，被债主追杀。"
+    },
+    {
+      "id": "ending_loop",
+      "condition": "尝试重来",
+      "text": "时间重置，你回到了60秒前。"
+    },
+    {
+      "id": "ending_escape",
+      "condition": "乘坐逃生舱",
+      "text": "你逃到了太空，但一无所有。"
+    },
+    {
+      "id": "ending_caught",
+      "condition": "犹豫被捉",
+      "text": "你被安保抓住，送进了监狱。"
+    },
+    {
+      "id": "ending_bribe",
+      "condition": "贿赂成功",
+      "text": "你贿赂了所有人，但债务更重了。"
+    },
+    {
+      "id": "ending_arrested",
+      "condition": "认罪被捕",
+      "text": "你被判刑，赌场被查封。"
+    },
+    {
+      "id": "ending_rich",
+      "condition": "得到飞船",
+      "text": "你变卖了飞船，还清债务。"
+    }
+  ],
+  "introText": "你，星际赌场老板，正面临破产危机。账上资金只剩60秒就要清零！你必须在这最后60秒内找到出路。赌场里充满了机会和陷阱，每一个选择都至关重要。开始你的最后挣扎吧！",
+  "ambientMusic": "紧张的电音配乐，伴随着倒计时滴答声",
+  "id": "fallback_world_017"
+}

@@ -1,0 +1,980 @@
+{
+  "matchKeywords": [
+    "元宇宙",
+    "CEO",
+    "服务器",
+    "关停",
+    "60秒"
+  ],
+  "identity": "元宇宙集团CEO",
+  "theme": "元宇宙服务器关停前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "server",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "water",
+      "water",
+      "floor",
+      "statue",
+      "floor",
+      "lava",
+      "lava",
+      "floor",
+      "fountain",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "water",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "lava",
+      "lava",
+      "floor",
+      "floor",
+      "elevator",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fire",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_tech",
+      "name": "首席技术官",
+      "dialogue": "系统即将崩溃！",
+      "position": [
+        2,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "服务器过热，需要冷却。",
+          "options": [
+            {
+              "text": "启动紧急冷却",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "冷却成功！但时间不多了。",
+          "options": [
+            {
+              "text": "继续监控",
+              "nextStage": 4
+            },
+            {
+              "text": "撤离",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "服务器爆炸，游戏结束。",
+          "options": [
+            {
+              "text": "重新开始",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "一切在掌控中。",
+          "options": [
+            {
+              "text": "宣布胜利",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你安全了。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_marketing",
+      "name": "市场总监",
+      "dialogue": "我们的品牌岌岌可危！",
+      "position": [
+        5,
+        1
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "用户流失，快想办法。",
+          "options": [
+            {
+              "text": "发代金券",
+              "nextStage": 2
+            },
+            {
+              "text": "道歉",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "用户回潮，但服务器快撑不住了。",
+          "options": [
+            {
+              "text": "扩容",
+              "nextStage": 4
+            },
+            {
+              "text": "限制登录",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "道歉无效，用户愤怒。",
+          "options": [
+            {
+              "text": "补救",
+              "nextStage": 2
+            },
+            {
+              "text": "放弃",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "扩容成功，暂时安全。",
+          "options": [
+            {
+              "text": "庆祝",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_security",
+      "name": "安全主管",
+      "dialogue": "检测到入侵！",
+      "position": [
+        7,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "黑客攻击，防火墙被破。",
+          "options": [
+            {
+              "text": "启用反制",
+              "nextStage": 2
+            },
+            {
+              "text": "关闭系统",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "反制成功，但消耗大量资源。",
+          "options": [
+            {
+              "text": "继续战斗",
+              "nextStage": 4
+            },
+            {
+              "text": "妥协",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "系统关闭，一片黑暗。",
+          "options": [
+            {
+              "text": "重启",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "击退黑客，但时间不多了。",
+          "options": [
+            {
+              "text": "修复漏洞",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "安全了。",
+          "options": [
+            {
+              "text": "ok",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_investor",
+      "name": "投资人",
+      "dialogue": "我的钱呢？",
+      "position": [
+        8,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "股价暴跌，你怎么办？",
+          "options": [
+            {
+              "text": "回购股票",
+              "nextStage": 2
+            },
+            {
+              "text": "画大饼",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "资金耗尽，但暂时稳住。",
+          "options": [
+            {
+              "text": "寻求注资",
+              "nextStage": 4
+            },
+            {
+              "text": "裁员",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "投资人不再信任。",
+          "options": [
+            {
+              "text": "实话实说",
+              "nextStage": 2
+            },
+            {
+              "text": "跑路",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "新资金注入，有救了。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_cleaner",
+      "name": "清洁工",
+      "dialogue": "我只是来打扫的。",
+      "position": [
+        3,
+        9
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "他发现了服务器秘密。",
+          "options": [
+            {
+              "text": "收买他",
+              "nextStage": 2
+            },
+            {
+              "text": "灭口",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他答应保密。",
+          "options": [
+            {
+              "text": "相信他",
+              "nextStage": 4
+            },
+            {
+              "text": "仍不放心",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你被捕了。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "秘密保住。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结局。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_energy",
+      "name": "能量晶石",
+      "description": "可以给服务器充能。",
+      "position": [
+        1,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "晶石闪烁着光芒。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你获得了能量晶石。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": 4
+            },
+            {
+              "text": "保留",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "晶石被他人捡走。",
+          "options": [
+            {
+              "text": "可惜",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "服务器恢复部分功能。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结束。",
+          "options": [
+            {
+              "text": "ok",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_code",
+      "name": "备份代码",
+      "description": "可以修复漏洞。",
+      "position": [
+        4,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一份代码。",
+          "options": [
+            {
+              "text": "获取",
+              "nextStage": 2
+            },
+            {
+              "text": "不感兴趣",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "代码包含关键补丁。",
+          "options": [
+            {
+              "text": "应用",
+              "nextStage": 4
+            },
+            {
+              "text": "研究",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "代码丢失。",
+          "options": [
+            {
+              "text": "遗憾",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "漏洞修复，系统稳定。",
+          "options": [
+            {
+              "text": "完美",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结束。",
+          "options": [
+            {
+              "text": "ok",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_key",
+      "name": "金色钥匙",
+      "description": "打开神秘宝箱。",
+      "position": [
+        7,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一把钥匙。",
+          "options": [
+            {
+              "text": "捡起",
+              "nextStage": 2
+            },
+            {
+              "text": "无视",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "钥匙入手。",
+          "options": [
+            {
+              "text": "找宝箱",
+              "nextStage": 4
+            },
+            {
+              "text": "卖掉",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "钥匙消失。",
+          "options": [
+            {
+              "text": "算了",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "宝箱里有新装备。",
+          "options": [
+            {
+              "text": "装备",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结束。",
+          "options": [
+            {
+              "text": "ok",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_drink",
+      "name": "能量饮料",
+      "description": "恢复精力。",
+      "position": [
+        9,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一瓶饮料。",
+          "options": [
+            {
+              "text": "喝掉",
+              "nextStage": 2
+            },
+            {
+              "text": "留着",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "精力充沛。",
+          "options": [
+            {
+              "text": "继续工作",
+              "nextStage": 4
+            },
+            {
+              "text": "休息",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "饮料被偷。",
+          "options": [
+            {
+              "text": "气恼",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "效率提高。",
+          "options": [
+            {
+              "text": "好",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结束。",
+          "options": [
+            {
+              "text": "ok",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_manual",
+      "name": "操作手册",
+      "description": "教你如何关停服务器。",
+      "position": [
+        2,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一本手册。",
+          "options": [
+            {
+              "text": "阅读",
+              "nextStage": 2
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你知道了关停步骤。",
+          "options": [
+            {
+              "text": "执行",
+              "nextStage": 4
+            },
+            {
+              "text": "犹豫",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "错失良机。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "服务器安全关闭。",
+          "options": [
+            {
+              "text": "成功",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "结束。",
+          "options": [
+            {
+              "text": "ok",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_success",
+      "condition": "关停服务器并保护数据",
+      "text": "你成功关停服务器，数据完好，公司转型成功。"
+    },
+    {
+      "id": "ending_fire",
+      "condition": "服务器过热爆炸",
+      "text": "服务器爆炸，元宇宙崩塌，你被解雇。"
+    },
+    {
+      "id": "ending_hack",
+      "condition": "黑客入侵成功",
+      "text": "黑客盗取数据，公司破产，你身败名裂。"
+    },
+    {
+      "id": "ending_investor",
+      "condition": "投资人撤资",
+      "text": "投资人撤资，公司倒闭，你一无所有。"
+    },
+    {
+      "id": "ending_cleaner",
+      "condition": "清洁工曝光秘密",
+      "text": "秘密曝光，你因丑闻入狱。"
+    },
+    {
+      "id": "ending_timeout",
+      "condition": "60秒耗尽",
+      "text": "时间到，服务器自动崩溃，一切归零。"
+    },
+    {
+      "id": "ending_hero",
+      "condition": "解决所有危机",
+      "text": "你化解所有危机，成为传奇CEO。"
+    },
+    {
+      "id": "ending_escape",
+      "condition": "逃离服务器",
+      "text": "你独自逃离，但元宇宙毁灭，你成为逃兵。"
+    }
+  ],
+  "introText": "你是元宇宙集团CEO。服务器将在60秒后永久关停。你必须做出决策，拯救公司或逃离。倒计时开始！",
+  "ambientMusic": "urgent_electronic_beat",
+  "id": "fallback_world_035"
+}

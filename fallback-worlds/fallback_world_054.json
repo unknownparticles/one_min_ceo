@@ -1,0 +1,1220 @@
+{
+  "matchKeywords": [
+    "深海",
+    "财政大臣",
+    "金融危机"
+  ],
+  "identity": "深海王国财政大臣",
+  "theme": "深海王国金融危机前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "console",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "window",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 1,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "章鱼顾问",
+      "x": 3,
+      "y": 2,
+      "dialogue": "陛下，国库的珍珠正在被鲸鱼巨鳄吞噬！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "您来得正好，财政大臣！海蛇集团正在抛售国债，我们需要紧急干预。",
+          "options": [
+            {
+              "text": "启动紧急印钞机",
+              "nextStage": 1,
+              "effect": "inflation"
+            },
+            {
+              "text": "向鲨鱼银行借款",
+              "nextStage": 2,
+              "effect": "debt"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "印钞导致海藻通胀，平民怨声载道。您必须想其他办法。",
+          "options": [
+            {
+              "text": "征收珊瑚税",
+              "nextStage": 2,
+              "effect": "tax"
+            },
+            {
+              "text": "出售海底油田",
+              "nextStage": 3,
+              "effect": "sell_oil"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "借款利息高昂，债务如同海沟深不见底。",
+          "options": [
+            {
+              "text": "发行新债券",
+              "nextStage": 3,
+              "effect": "bonds"
+            },
+            {
+              "text": "请求海神援助",
+              "nextStage": 4,
+              "effect": "pray"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "债券无人问津，海神沉默不语。",
+          "options": [
+            {
+              "text": "宣布破产",
+              "nextStage": 4,
+              "effect": "bankruptcy"
+            },
+            {
+              "text": "发动对珊瑚礁的战争",
+              "nextStage": 5,
+              "effect": "war"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "破产导致王国崩溃，您被流放到深海沟。",
+          "options": [
+            {
+              "text": "接受命运",
+              "nextStage": 5,
+              "effect": "end"
+            },
+            {
+              "text": "试图逃跑",
+              "nextStage": 5,
+              "effect": "escape"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "故事结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "美人鱼秘书",
+      "x": 7,
+      "y": 4,
+      "dialogue": "大臣，您的咖啡杯里全是海水！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "报告大臣，审计发现王国金库其实是一堆空贝壳！",
+          "options": [
+            {
+              "text": "处决审计官",
+              "nextStage": 1,
+              "effect": "kill"
+            },
+            {
+              "text": "假装没听见",
+              "nextStage": 2,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "审计官被处决，但消息泄露，民众暴动。",
+          "options": [
+            {
+              "text": "调集水母军队镇压",
+              "nextStage": 3,
+              "effect": "repress"
+            },
+            {
+              "text": "宣布这是假新闻",
+              "nextStage": 4,
+              "effect": "fake"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "您假装没听见，但谣言四起，信用崩塌。",
+          "options": [
+            {
+              "text": "召开新闻发布会",
+              "nextStage": 4,
+              "effect": "press"
+            },
+            {
+              "text": "潜逃至海藻森林",
+              "nextStage": 5,
+              "effect": "flee"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "水母军队倒戈，您被俘。",
+          "options": [
+            {
+              "text": "投降",
+              "nextStage": 5,
+              "effect": "surrender"
+            },
+            {
+              "text": "自杀",
+              "nextStage": 5,
+              "effect": "suicide"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "新闻发布会失败，民众要求您下台。",
+          "options": [
+            {
+              "text": "辞职",
+              "nextStage": 5,
+              "effect": "resign"
+            },
+            {
+              "text": "用魔法改变记忆",
+              "nextStage": 5,
+              "effect": "magic"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "故事结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "海龟经济学家",
+      "x": 5,
+      "y": 6,
+      "dialogue": "根据我的模型，我们需要更多海蜗牛作为货币。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "大臣，我有一套挽救经济的方案：推行海星币！",
+          "options": [
+            {
+              "text": "采纳方案",
+              "nextStage": 1,
+              "effect": "adopt"
+            },
+            {
+              "text": "嘲笑他",
+              "nextStage": 2,
+              "effect": "mock"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "海星币发行后，市场混乱，海星大量繁殖。",
+          "options": [
+            {
+              "text": "管制海星",
+              "nextStage": 3,
+              "effect": "regulate"
+            },
+            {
+              "text": "放任自流",
+              "nextStage": 4,
+              "effect": "laissez"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "海龟经济学家伤心离去，发布看空报告。",
+          "options": [
+            {
+              "text": "禁止报告",
+              "nextStage": 3,
+              "effect": "ban"
+            },
+            {
+              "text": "无视他",
+              "nextStage": 4,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "管制导致海星黑市，经济更加恶化。",
+          "options": [
+            {
+              "text": "发动海星清洗",
+              "nextStage": 5,
+              "effect": "clean"
+            },
+            {
+              "text": "改回旧货币",
+              "nextStage": 5,
+              "effect": "revert"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "放任导致海星币贬值，经济崩溃。",
+          "options": [
+            {
+              "text": "求助于章鱼顾问",
+              "nextStage": 5,
+              "effect": "ask_octopus"
+            },
+            {
+              "text": "向国民道歉",
+              "nextStage": 5,
+              "effect": "apologize"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "故事结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "螃蟹将军",
+      "x": 8,
+      "y": 8,
+      "dialogue": "军队需要新的钳子武器，但预算为零！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "大臣，北方的虎鲸舰队正在逼近，我们需要军费！",
+          "options": [
+            {
+              "text": "增加军费",
+              "nextStage": 1,
+              "effect": "military_spend"
+            },
+            {
+              "text": "削减军费",
+              "nextStage": 2,
+              "effect": "cut_military"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "军费增加，但国库空虚，只好向海星银行借贷。",
+          "options": [
+            {
+              "text": "同意高利贷",
+              "nextStage": 3,
+              "effect": "loan"
+            },
+            {
+              "text": "发行战争债券",
+              "nextStage": 4,
+              "effect": "war_bonds"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "削减军费导致军队哗变，螃蟹将军发动政变。",
+          "options": [
+            {
+              "text": "镇压政变",
+              "nextStage": 3,
+              "effect": "crackdown"
+            },
+            {
+              "text": "逃亡",
+              "nextStage": 5,
+              "effect": "flee"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "借贷导致债务危机，虎鲸舰队趁虚而入。",
+          "options": [
+            {
+              "text": "投降",
+              "nextStage": 5,
+              "effect": "surrender"
+            },
+            {
+              "text": "战斗到底",
+              "nextStage": 4,
+              "effect": "fight"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "战争债券无人购买，虎鲸舰队已至城下。",
+          "options": [
+            {
+              "text": "求和",
+              "nextStage": 5,
+              "effect": "peace"
+            },
+            {
+              "text": "决一死战",
+              "nextStage": 5,
+              "effect": "battle"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "故事结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "水母预言家",
+      "x": 12,
+      "y": 3,
+      "dialogue": "我看到了……巨大的泡沫！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "大臣，我预见到一场金融海啸即将来临！",
+          "options": [
+            {
+              "text": "相信预言",
+              "nextStage": 1,
+              "effect": "believe"
+            },
+            {
+              "text": "斥为胡言",
+              "nextStage": 2,
+              "effect": "dismiss"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "您相信了预言，开始储备食物和武器。",
+          "options": [
+            {
+              "text": "建立应急基金",
+              "nextStage": 3,
+              "effect": "fund"
+            },
+            {
+              "text": "加固城墙",
+              "nextStage": 4,
+              "effect": "wall"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "您斥责预言家，但金融海啸真的来了。",
+          "options": [
+            {
+              "text": "紧急召回预言家",
+              "nextStage": 3,
+              "effect": "recall"
+            },
+            {
+              "text": "自己想办法",
+              "nextStage": 4,
+              "effect": "own"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "应急基金被官员贪污，准备不足。",
+          "options": [
+            {
+              "text": "严惩贪官",
+              "nextStage": 5,
+              "effect": "punish"
+            },
+            {
+              "text": "视而不见",
+              "nextStage": 5,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "城墙倒塌，海啸涌入王宫。",
+          "options": [
+            {
+              "text": "逃往高处",
+              "nextStage": 5,
+              "effect": "high_ground"
+            },
+            {
+              "text": "打开闸门",
+              "nextStage": 5,
+              "effect": "open_gate"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "故事结束。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "珍珠国库钥匙",
+      "x": 2,
+      "y": 2,
+      "description": "打开国库的钥匙，但国库是空的。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "您找到了国库钥匙，但上面刻着：此库已空。",
+          "options": [
+            {
+              "text": "拿去卖钱",
+              "nextStage": 1,
+              "effect": "sell"
+            },
+            {
+              "text": "扔掉",
+              "nextStage": 2,
+              "effect": "discard"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "钥匙卖给古董商，赚了一小笔。",
+          "options": [
+            {
+              "text": "投资海藻期货",
+              "nextStage": 3,
+              "effect": "invest"
+            },
+            {
+              "text": "买通预言家",
+              "nextStage": 4,
+              "effect": "bribe"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "扔掉钥匙后，您又后悔了。",
+          "options": [
+            {
+              "text": "回去找",
+              "nextStage": 3,
+              "effect": "find"
+            },
+            {
+              "text": "算了",
+              "nextStage": 4,
+              "effect": "forget"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "投资失败，海藻期货崩盘。",
+          "options": [
+            {
+              "text": "跳海自尽",
+              "nextStage": 5,
+              "effect": "suicide"
+            },
+            {
+              "text": "继续挣扎",
+              "nextStage": 4,
+              "effect": "struggle"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "买通预言家后，预言家却逃走了。",
+          "options": [
+            {
+              "text": "追捕",
+              "nextStage": 5,
+              "effect": "chase"
+            },
+            {
+              "text": "放弃",
+              "nextStage": 5,
+              "effect": "give_up"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "故事结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "海螺扩音器",
+      "x": 4,
+      "y": 3,
+      "description": "可以放大声音，用于煽动群众。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "您捡起海螺扩音器，对着它喊了一声。",
+          "options": [
+            {
+              "text": "发表演讲",
+              "nextStage": 1,
+              "effect": "speech"
+            },
+            {
+              "text": "吹响号角",
+              "nextStage": 2,
+              "effect": "horn"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "演讲鼓动了民众，但他们要求改革。",
+          "options": [
+            {
+              "text": "承诺改革",
+              "nextStage": 3,
+              "effect": "reform"
+            },
+            {
+              "text": "镇压",
+              "nextStage": 4,
+              "effect": "repress"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "号角声引来了一群鲨鱼。",
+          "options": [
+            {
+              "text": "与鲨鱼谈判",
+              "nextStage": 3,
+              "effect": "negotiate"
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 4,
+              "effect": "run"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "谈判破裂，鲨鱼要求您辞职。",
+          "options": [
+            {
+              "text": "辞职",
+              "nextStage": 5,
+              "effect": "resign"
+            },
+            {
+              "text": "抵抗",
+              "nextStage": 4,
+              "effect": "resist"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "抵抗失败，被鲨鱼吞掉。",
+          "options": [
+            {
+              "text": "认命",
+              "nextStage": 5,
+              "effect": "accept"
+            },
+            {
+              "text": "祈祷",
+              "nextStage": 5,
+              "effect": "pray"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "故事结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "珊瑚王冠",
+      "x": 10,
+      "y": 5,
+      "description": "象征王权，但很沉重。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "您戴上了珊瑚王冠，感觉呼吸困难。",
+          "options": [
+            {
+              "text": "坚持戴着",
+              "nextStage": 1,
+              "effect": "keep"
+            },
+            {
+              "text": "摘下来",
+              "nextStage": 2,
+              "effect": "remove"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "王冠吸引了海马刺客的注意。",
+          "options": [
+            {
+              "text": "战斗",
+              "nextStage": 3,
+              "effect": "fight"
+            },
+            {
+              "text": "逃跑",
+              "nextStage": 4,
+              "effect": "flee"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "摘下王冠后，您感到一阵轻松，但权力也随之消失。",
+          "options": [
+            {
+              "text": "寻找假王冠",
+              "nextStage": 3,
+              "effect": "fake_crown"
+            },
+            {
+              "text": "放弃权力",
+              "nextStage": 4,
+              "effect": "abdicate"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "战斗受伤，被俘。",
+          "options": [
+            {
+              "text": "投降",
+              "nextStage": 5,
+              "effect": "surrender"
+            },
+            {
+              "text": "说服刺客",
+              "nextStage": 4,
+              "effect": "convince"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "说服成功，但刺客要您戴上更重的王冠。",
+          "options": [
+            {
+              "text": "戴上",
+              "nextStage": 5,
+              "effect": "wear"
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 5,
+              "effect": "refuse"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "故事结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "墨汁炸弹",
+      "x": 9,
+      "y": 7,
+      "description": "乌贼制造的烟雾弹。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "您找到了一枚墨汁炸弹，可以用来制造混乱。",
+          "options": [
+            {
+              "text": "扔向议会",
+              "nextStage": 1,
+              "effect": "parliament"
+            },
+            {
+              "text": "扔向媒体",
+              "nextStage": 2,
+              "effect": "media"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "议会混乱，您趁机通过了一项紧急法案。",
+          "options": [
+            {
+              "text": "增加税收",
+              "nextStage": 3,
+              "effect": "tax"
+            },
+            {
+              "text": "削减福利",
+              "nextStage": 4,
+              "effect": "welfare"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "媒体混乱，他们开始报道假新闻。",
+          "options": [
+            {
+              "text": "利用假新闻",
+              "nextStage": 3,
+              "effect": "use"
+            },
+            {
+              "text": "澄清",
+              "nextStage": 4,
+              "effect": "clarify"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "增税引发抗议，您使用更多炸弹镇压。",
+          "options": [
+            {
+              "text": "继续镇压",
+              "nextStage": 5,
+              "effect": "suppress"
+            },
+            {
+              "text": "妥协",
+              "nextStage": 4,
+              "effect": "compromise"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "福利削减导致儿童营养不良，您成为众矢之的。",
+          "options": [
+            {
+              "text": "引咎辞职",
+              "nextStage": 5,
+              "effect": "resign"
+            },
+            {
+              "text": "推卸责任",
+              "nextStage": 5,
+              "effect": "blame"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "故事结束。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "海神三叉戟",
+      "x": 14,
+      "y": 10,
+      "description": "传说神器，能控制海洋。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "您发现了海神三叉戟，但被封印着。",
+          "options": [
+            {
+              "text": "尝试解封",
+              "nextStage": 1,
+              "effect": "unseal"
+            },
+            {
+              "text": "放弃",
+              "nextStage": 2,
+              "effect": "give_up"
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "解封需要献祭一只海星。",
+          "options": [
+            {
+              "text": "献祭海星",
+              "nextStage": 3,
+              "effect": "sacrifice"
+            },
+            {
+              "text": "寻找替代品",
+              "nextStage": 4,
+              "effect": "alternative"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "放弃后，三叉戟被螃蟹将军偷走。",
+          "options": [
+            {
+              "text": "追回",
+              "nextStage": 3,
+              "effect": "retrieve"
+            },
+            {
+              "text": "不管",
+              "nextStage": 4,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "献祭后，三叉戟发出光芒，但您无法控制。",
+          "options": [
+            {
+              "text": "强行使用",
+              "nextStage": 4,
+              "effect": "force"
+            },
+            {
+              "text": "请教智者",
+              "nextStage": 5,
+              "effect": "ask_wisdom"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "强行使用导致海啸，王国被淹。",
+          "options": [
+            {
+              "text": "逃跑",
+              "nextStage": 5,
+              "effect": "flee"
+            },
+            {
+              "text": "修复",
+              "nextStage": 5,
+              "effect": "repair"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "故事结束。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "inflation > 3",
+      "description": "恶性通货膨胀，海藻货币沦为废纸，您被愤怒的民众撕碎。"
+    },
+    {
+      "id": "end2",
+      "condition": "debt > 5",
+      "description": "债务缠身，王国被鲨鱼银行接管，您被流放。"
+    },
+    {
+      "id": "end3",
+      "condition": "war == true",
+      "description": "发动战争失败，您被俘虏，成为虎鲸的奴隶。"
+    },
+    {
+      "id": "end4",
+      "condition": "bankruptcy == true",
+      "description": "宣布破产，王国分裂，您被送上法庭。"
+    },
+    {
+      "id": "end5",
+      "condition": "repress > 3",
+      "description": "过度镇压导致革命，您被推翻，吊死在珊瑚树上。"
+    },
+    {
+      "id": "end6",
+      "condition": "flee == true",
+      "description": "潜逃成功，但余生都在逃亡中度过，孤独终老。"
+    },
+    {
+      "id": "end7",
+      "condition": "pray == true",
+      "description": "海神显灵，但要求您献出灵魂，您成为海神的傀儡。"
+    },
+    {
+      "id": "end8",
+      "condition": "magic == true",
+      "description": "魔法失败，您变成了一只海参，永远在海底爬行。"
+    }
+  ],
+  "introText": "您，深海王国的财政大臣，突然接到报告：王国金库空虚，经济崩溃在即！您只有60秒（现实时间）来挽救局面。您的每一个决定都将影响王国的命运。开始行动吧！",
+  "ambientMusic": "深海危机的旋律",
+  "id": "fallback_world_054"
+}

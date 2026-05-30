@@ -1,0 +1,821 @@
+{
+  "matchKeywords": [
+    "数字货币",
+    "崩盘",
+    "CEO",
+    "60秒"
+  ],
+  "identity": "数字货币之王",
+  "theme": "数字货币帝国崩盘前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "console",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "server",
+      "floor",
+      "statue",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "glass",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "window",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "console",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "server",
+      "floor",
+      "statue",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "gold_floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "glass",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "window",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "console",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "server",
+      "floor",
+      "statue",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 3,
+    "y": 5
+  },
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "疯狂交易员",
+      "description": "一个眼神狂乱，不断敲击键盘的交易员。",
+      "position": {
+        "x": 2,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "完了完了！比特币暴跌！快抛售！",
+          "options": [
+            {
+              "text": "冷静，稳住市场。",
+              "nextStage": 1
+            },
+            {
+              "text": "跟着抛售！",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "来不及了！所有交易所都在崩盘！",
+          "options": [
+            {
+              "text": "启动紧急预案。",
+              "nextStage": 2
+            },
+            {
+              "text": "向政府求助。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "已经无法挽回了。我们的帝国要完了。",
+          "options": [
+            {
+              "text": "承认失败。",
+              "nextStage": -1
+            },
+            {
+              "text": "再试一次。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "神秘预言家",
+      "description": "一个穿着长袍，手持水晶球的人。",
+      "position": {
+        "x": 7,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "我看到了，你的帝国将在60秒内崩塌。",
+          "options": [
+            {
+              "text": "胡说八道！",
+              "nextStage": 1
+            },
+            {
+              "text": "告诉我怎么避免！",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "唯一的办法是找到传说中的稳定币。",
+          "options": [
+            {
+              "text": "稳定币在哪里？",
+              "nextStage": 2
+            },
+            {
+              "text": "我不信。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "就藏在金库之中。但需要密钥。",
+          "options": [
+            {
+              "text": "去寻找密钥。",
+              "nextStage": -1
+            },
+            {
+              "text": "时间不够了。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "前CEO",
+      "description": "一个失落的前任CEO，坐在角落。",
+      "position": {
+        "x": 9,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "我当年也经历过这种危机。",
+          "options": [
+            {
+              "text": "你是怎么应对的？",
+              "nextStage": 1
+            },
+            {
+              "text": "现在怎么办？",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "我选择了透明公开，但依然失败了。",
+          "options": [
+            {
+              "text": "那我该隐瞒吗？",
+              "nextStage": 2
+            },
+            {
+              "text": "公开也是死路？",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "真相是，无论你怎么做，帝国终将消亡。",
+          "options": [
+            {
+              "text": "我不信命。",
+              "nextStage": -1
+            },
+            {
+              "text": "那就接受吧。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "黑客",
+      "description": "一个戴着墨镜，正在入侵系统的黑客。",
+      "position": {
+        "x": 4,
+        "y": 7
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "你们的系统已经被我控制。",
+          "options": [
+            {
+              "text": "你要什么？",
+              "nextStage": 1
+            },
+            {
+              "text": "报警！",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "我要所有比特币的私钥。",
+          "options": [
+            {
+              "text": "给你，但求你留点。",
+              "nextStage": 2
+            },
+            {
+              "text": "休想！",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "哈哈，我已经拿到了。帝国完了。",
+          "options": [
+            {
+              "text": "启动自毁程序。",
+              "nextStage": -1
+            },
+            {
+              "text": "同归于尽。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "扫地僧",
+      "description": "一个默默扫地的老人，似乎知道什么秘密。",
+      "position": {
+        "x": 6,
+        "y": 9
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "你脚下踩着的，就是整个帝国的命脉。",
+          "options": [
+            {
+              "text": "什么意思？",
+              "nextStage": 1
+            },
+            {
+              "text": "地板有什么特别？",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "金库的地板下藏着真正的财富。",
+          "options": [
+            {
+              "text": "怎么打开？",
+              "nextStage": 2
+            },
+            {
+              "text": "我现在就去。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "用CEO的指纹就能打开。",
+          "options": [
+            {
+              "text": "我去试试。",
+              "nextStage": -1
+            },
+            {
+              "text": "你帮我。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "闪电密钥",
+      "description": "一个闪闪发光的U盘，里面可能存有私钥。",
+      "position": {
+        "x": 5,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "你捡起了一个U盘，上面标注着“闪电网络”。",
+          "options": [
+            {
+              "text": "插入电脑查看。",
+              "nextStage": 1
+            },
+            {
+              "text": "交给别人。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "U盘里有一个加密文件，需要密码。",
+          "options": [
+            {
+              "text": "尝试常用密码。",
+              "nextStage": 2
+            },
+            {
+              "text": "找黑客破解。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "密码错误，文件自毁。线索断了。",
+          "options": [
+            {
+              "text": "放弃。",
+              "nextStage": -1
+            },
+            {
+              "text": "寻找其他方法。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "稳定币圣杯",
+      "description": "一个镶满宝石的圣杯，传说能稳定市场。",
+      "position": {
+        "x": 8,
+        "y": 4
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "你在金库中发现了圣杯，但它是空的。",
+          "options": [
+            {
+              "text": "注入自己的加密货币。",
+              "nextStage": 1
+            },
+            {
+              "text": "研究圣杯的铭文。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "圣杯开始发光，但市场依然崩盘。",
+          "options": [
+            {
+              "text": "继续注入。",
+              "nextStage": 2
+            },
+            {
+              "text": "停止。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "圣杯炸裂，你失去了所有。",
+          "options": [
+            {
+              "text": "接受命运。",
+              "nextStage": -1
+            },
+            {
+              "text": "重新开始。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "CEO日志",
+      "description": "一本记录着帝国秘密的日志。",
+      "position": {
+        "x": 10,
+        "y": 6
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "日志中记载着前任CEO的失败经验。",
+          "options": [
+            {
+              "text": "仔细阅读。",
+              "nextStage": 1
+            },
+            {
+              "text": "扔到一边。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "日志提到一个隐藏的保险箱。",
+          "options": [
+            {
+              "text": "去找保险箱。",
+              "nextStage": 2
+            },
+            {
+              "text": "这可能是个陷阱。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "保险箱里有一张纸条：一切都是幻觉。",
+          "options": [
+            {
+              "text": "崩溃。",
+              "nextStage": -1
+            },
+            {
+              "text": "顿悟。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "神秘药剂",
+      "description": "一瓶发出荧光的液体，标签写着“时间逆转”。",
+      "position": {
+        "x": 1,
+        "y": 8
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "你找到一瓶药剂，似乎能扭转时间。",
+          "options": [
+            {
+              "text": "喝下它。",
+              "nextStage": 1
+            },
+            {
+              "text": "保存起来。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "你喝下后，时间开始倒流，但副作用巨大。",
+          "options": [
+            {
+              "text": "回到过去10秒。",
+              "nextStage": 2
+            },
+            {
+              "text": "回到过去30秒。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你回到了过去，但记忆模糊了。",
+          "options": [
+            {
+              "text": "重复之前的选择。",
+              "nextStage": -1
+            },
+            {
+              "text": "做出不同选择。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "皇帝的新装",
+      "description": "一件看不见的衣服，据说穿上后能获得智慧。",
+      "position": {
+        "x": 11,
+        "y": 9
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "description": "你发现一件空无一物的衣架，但标签写着“皇帝的新装”。",
+          "options": [
+            {
+              "text": "穿上它。",
+              "nextStage": 1
+            },
+            {
+              "text": "无视。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "description": "你感觉自己变得透明，但无所不知。",
+          "options": [
+            {
+              "text": "利用智慧解决危机。",
+              "nextStage": 2
+            },
+            {
+              "text": "这太荒谬了。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "你发现市场崩盘只是一个骗局，你其实一无所有。",
+          "options": [
+            {
+              "text": "承认自己是个骗子。",
+              "nextStage": -1
+            },
+            {
+              "text": "继续演戏。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": "在60秒内抛售所有资产",
+      "description": "你成功套现，但帝国崩溃，你成了众矢之的。"
+    },
+    {
+      "id": "ending2",
+      "condition": "找到稳定币并注入系统",
+      "description": "市场稳定，但你失去了所有权力，被董事会罢免。"
+    },
+    {
+      "id": "ending3",
+      "condition": "启动紧急预案",
+      "description": "预案失败，帝国崩塌，你被逮捕。"
+    },
+    {
+      "id": "ending4",
+      "condition": "向政府求助",
+      "description": "政府接管，你被调查，最终入狱。"
+    },
+    {
+      "id": "ending5",
+      "condition": "喝下时间药剂并回到过去改变一切",
+      "description": "你改变了历史，但创造了更糟的结局。"
+    },
+    {
+      "id": "ending6",
+      "condition": "穿上皇帝的新装并揭露真相",
+      "description": "你承认一切是骗局，但获得公众谅解，重新开始。"
+    },
+    {
+      "id": "ending7",
+      "condition": "与黑客同归于尽",
+      "description": "系统自毁，一切归零，你消失在数据中。"
+    },
+    {
+      "id": "ending8",
+      "condition": "接受命运，什么都不做",
+      "description": "帝国自然消亡，你成了历史罪人。"
+    },
+    {
+      "id": "ending9",
+      "condition": "找到扫地僧的秘密金库",
+      "description": "你发现真正的财富，但失去了帝国。"
+    },
+    {
+      "id": "ending10",
+      "condition": "完全听从预言家",
+      "description": "预言成真，你无力回天。"
+    }
+  ],
+  "introText": "你，数字货币之王，正面临帝国崩盘前的最后60秒。市场崩溃，交易员疯狂，预言家低语。每一步选择都关乎生死。时间不等人，行动吧！",
+  "ambientMusic": "紧张而急促的电子音乐，夹杂着警报声和键盘敲击声",
+  "id": "fallback_world_016"
+}

@@ -1,0 +1,1154 @@
+{
+  "matchKeywords": [
+    "银河银行",
+    "总库",
+    "断电",
+    "60秒",
+    "总裁"
+  ],
+  "identity": "银河银行总裁",
+  "theme": "银河银行总库断电前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "fire",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    2,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "security_chief",
+      "name": "安保主管",
+      "description": "一位满脸焦虑的机器人，手持电击棒。",
+      "position": [
+        1,
+        5
+      ],
+      "dialogue": "总裁！备用电源只能再撑30秒！",
+      "storyline": [
+        {
+          "stage": "initial",
+          "text": "安保主管紧张地汇报情况。",
+          "options": [
+            {
+              "text": "询问备用电源详情",
+              "nextStage": "detail",
+              "effect": "know_power"
+            },
+            {
+              "text": "命令他立即修复",
+              "nextStage": "order",
+              "effect": "anger_security"
+            }
+          ]
+        },
+        {
+          "stage": "detail",
+          "text": "备用电源已耗能80%，主线路被外星黑客切断。",
+          "options": [
+            {
+              "text": "派他去抓黑客",
+              "nextStage": "hunt",
+              "effect": "send_security"
+            },
+            {
+              "text": "亲自去重启主线路",
+              "nextStage": "restart",
+              "effect": "go_restart"
+            }
+          ]
+        },
+        {
+          "stage": "order",
+          "text": "安保主管无奈地摊手：我无能为力，需要您的权限。",
+          "options": [
+            {
+              "text": "授予权限",
+              "nextStage": "grant",
+              "effect": "authorize"
+            },
+            {
+              "text": "责骂他无能",
+              "nextStage": "scold",
+              "effect": "low_morale"
+            }
+          ]
+        },
+        {
+          "stage": "hunt",
+          "text": "安保主管带队出发，留下一个通讯器。",
+          "options": [
+            {
+              "text": "联系黑客谈判",
+              "nextStage": "negotiate",
+              "effect": "contact_hacker"
+            },
+            {
+              "text": "等待消息",
+              "nextStage": "wait",
+              "effect": "pass_time"
+            }
+          ]
+        },
+        {
+          "stage": "restart",
+          "text": "您决定亲自前往主线路室。",
+          "options": [
+            {
+              "text": "快速跑去",
+              "nextStage": "run",
+              "effect": "speed"
+            },
+            {
+              "text": "先拿上防护装备",
+              "nextStage": "armor",
+              "effect": "safe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hacker",
+      "name": "外星黑客",
+      "description": "一个漂浮的全息投影，发出扭曲的声音。",
+      "position": [
+        4,
+        11
+      ],
+      "dialogue": "哈哈，你们的财富即将归零！",
+      "storyline": [
+        {
+          "stage": "initial",
+          "text": "黑客嘲笑你的困境。",
+          "options": [
+            {
+              "text": "威胁要冻结他的账户",
+              "nextStage": "threat",
+              "effect": "intimidate"
+            },
+            {
+              "text": "尝试利诱",
+              "nextStage": "bribe",
+              "effect": "offer_money"
+            }
+          ]
+        },
+        {
+          "stage": "threat",
+          "text": "黑客大笑：你找不到我的真正账户！",
+          "options": [
+            {
+              "text": "启动追踪协议",
+              "nextStage": "trace",
+              "effect": "trace_hacker"
+            },
+            {
+              "text": "放弃威胁，转为合作",
+              "nextStage": "cooperate",
+              "effect": "change_tactic"
+            }
+          ]
+        },
+        {
+          "stage": "bribe",
+          "text": "黑客犹豫了一下：你能给我多少？",
+          "options": [
+            {
+              "text": "开价100万星币",
+              "nextStage": "offer1",
+              "effect": "too_low"
+            },
+            {
+              "text": "开价1亿星币",
+              "nextStage": "offer2",
+              "effect": "tempting"
+            }
+          ]
+        },
+        {
+          "stage": "trace",
+          "text": "追踪系统锁定了一个隐藏地址。",
+          "options": [
+            {
+              "text": "派人突袭",
+              "nextStage": "raid",
+              "effect": "catch_hacker"
+            },
+            {
+              "text": "远程摧毁",
+              "nextStage": "destroy",
+              "effect": "lose_evidence"
+            }
+          ]
+        },
+        {
+          "stage": "cooperate",
+          "text": "黑客提出条件：让他成为银行股东。",
+          "options": [
+            {
+              "text": "答应",
+              "nextStage": "agree",
+              "effect": "hacker_ally"
+            },
+            {
+              "text": "假装答应，然后反悔",
+              "nextStage": "trick",
+              "effect": "betray"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "secretary",
+      "name": "秘书",
+      "description": "一位优雅的章鱼人，触手飞速操作平板。",
+      "position": [
+        2,
+        6
+      ],
+      "dialogue": "总裁，金库的量子锁即将失效！",
+      "storyline": [
+        {
+          "stage": "initial",
+          "text": "秘书慌张地报告。",
+          "options": [
+            {
+              "text": "让她启动紧急锁定",
+              "nextStage": "lockdown",
+              "effect": "secure_vault"
+            },
+            {
+              "text": "询问还有多少时间",
+              "nextStage": "time_left",
+              "effect": "get_time"
+            }
+          ]
+        },
+        {
+          "stage": "lockdown",
+          "text": "紧急锁定需要您的视网膜扫描。",
+          "options": [
+            {
+              "text": "立即扫描",
+              "nextStage": "scan",
+              "effect": "vault_locked"
+            },
+            {
+              "text": "先处理其他事",
+              "nextStage": "delay",
+              "effect": "vault_risk"
+            }
+          ]
+        },
+        {
+          "stage": "time_left",
+          "text": "还有45秒，但黑客可能篡改了倒计时。",
+          "options": [
+            {
+              "text": "相信倒计时",
+              "nextStage": "trust",
+              "effect": "calm"
+            },
+            {
+              "text": "派人检查计时器",
+              "nextStage": "check",
+              "effect": "find_tamper"
+            }
+          ]
+        },
+        {
+          "stage": "scan",
+          "text": "视网膜扫描完成，金库锁定。",
+          "options": [
+            {
+              "text": "感谢秘书",
+              "nextStage": "thanks",
+              "effect": "morale_up"
+            },
+            {
+              "text": "继续下一步",
+              "nextStage": "next",
+              "effect": "proceed"
+            }
+          ]
+        },
+        {
+          "stage": "check",
+          "text": "发现计时器被加速，实际只剩20秒！",
+          "options": [
+            {
+              "text": "手动重置",
+              "nextStage": "reset",
+              "effect": "gain_time"
+            },
+            {
+              "text": "广播警告",
+              "nextStage": "warn",
+              "effect": "panic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engineer",
+      "name": "首席工程师",
+      "description": "矮小的地精，戴着巨大的护目镜。",
+      "position": [
+        3,
+        1
+      ],
+      "dialogue": "主线路室有辐射泄漏！",
+      "storyline": [
+        {
+          "stage": "initial",
+          "text": "工程师从走廊跑来。",
+          "options": [
+            {
+              "text": "让他穿防护服去维修",
+              "nextStage": "suit",
+              "effect": "fix_power"
+            },
+            {
+              "text": "亲自去查看",
+              "nextStage": "inspect",
+              "effect": "risk_radiation"
+            }
+          ]
+        },
+        {
+          "stage": "suit",
+          "text": "防护服只有一件，工程师穿上后出发。",
+          "options": [
+            {
+              "text": "等待他好消息",
+              "nextStage": "wait_repair",
+              "effect": "hope"
+            },
+            {
+              "text": "跟上去协助",
+              "nextStage": "follow",
+              "effect": "double_effort"
+            }
+          ]
+        },
+        {
+          "stage": "inspect",
+          "text": "您来到主线路室，发现是外星生物搞鬼。",
+          "options": [
+            {
+              "text": "消灭生物",
+              "nextStage": "fight",
+              "effect": "kill_alien"
+            },
+            {
+              "text": "尝试沟通",
+              "nextStage": "talk",
+              "effect": "negotiate_alien"
+            }
+          ]
+        },
+        {
+          "stage": "wait_repair",
+          "text": "工程师成功修复了部分线路，电力恢复10%。",
+          "options": [
+            {
+              "text": "鼓励他继续",
+              "nextStage": "encourage",
+              "effect": "progress"
+            },
+            {
+              "text": "觉得不够，亲自出马",
+              "nextStage": "intervene",
+              "effect": "speed_up"
+            }
+          ]
+        },
+        {
+          "stage": "fight",
+          "text": "外星生物被击败，但线路受损严重。",
+          "options": [
+            {
+              "text": "呼叫工程师支援",
+              "nextStage": "call_eng",
+              "effect": "teamwork"
+            },
+            {
+              "text": "自己尝试修复",
+              "nextStage": "self_fix",
+              "effect": "maybe_fail"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trader",
+      "name": "星际商人",
+      "description": "穿着华丽袍子的蜥蜴人，提着装满星币的箱子。",
+      "position": [
+        5,
+        2
+      ],
+      "dialogue": "听说银行要倒闭了，我要取回存款！",
+      "storyline": [
+        {
+          "stage": "initial",
+          "text": "商人焦虑地要求取款。",
+          "options": [
+            {
+              "text": "安抚他，保证安全",
+              "nextStage": "calm_down",
+              "effect": "prevent_run"
+            },
+            {
+              "text": "让他排队等候",
+              "nextStage": "queue",
+              "effect": "anger_trader"
+            }
+          ]
+        },
+        {
+          "stage": "calm_down",
+          "text": "商人半信半疑。",
+          "options": [
+            {
+              "text": "展示金库的安全系统",
+              "nextStage": "show_vault",
+              "effect": "convince"
+            },
+            {
+              "text": "给他一份高息存款合同",
+              "nextStage": "contract",
+              "effect": "bribe_trader"
+            }
+          ]
+        },
+        {
+          "stage": "queue",
+          "text": "商人愤怒地召唤了保镖。",
+          "options": [
+            {
+              "text": "命令安保驱赶",
+              "nextStage": "expel",
+              "effect": "conflict"
+            },
+            {
+              "text": "让步，优先处理",
+              "nextStage": "priority",
+              "effect": "lose_face"
+            }
+          ]
+        },
+        {
+          "stage": "show_vault",
+          "text": "商人看到金库坚固，稍微放心。",
+          "options": [
+            {
+              "text": "建议他投资应急基金",
+              "nextStage": "invest",
+              "effect": "get_funds"
+            },
+            {
+              "text": "让他离开",
+              "nextStage": "leave",
+              "effect": "peace"
+            }
+          ]
+        },
+        {
+          "stage": "contract",
+          "text": "商人签署合同，但要你签字担保。",
+          "options": [
+            {
+              "text": "签字",
+              "nextStage": "sign",
+              "effect": "personal_liability"
+            },
+            {
+              "text": "拒绝，改为银行担保",
+              "nextStage": "bank_guarantee",
+              "effect": "safe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mysterious_being",
+      "name": "量子幽灵",
+      "description": "半透明的能量体，闪烁着蓝光。",
+      "position": [
+        1,
+        12
+      ],
+      "dialogue": "我能帮你重置时间，但需要代价。",
+      "storyline": [
+        {
+          "stage": "initial",
+          "text": "幽灵漂浮在你面前。",
+          "options": [
+            {
+              "text": "接受帮助",
+              "nextStage": "accept",
+              "effect": "deal_with_ghost"
+            },
+            {
+              "text": "拒绝，相信自己",
+              "nextStage": "refuse",
+              "effect": "no_deal"
+            }
+          ]
+        },
+        {
+          "stage": "accept",
+          "text": "幽灵要求你一半的财富。",
+          "options": [
+            {
+              "text": "同意",
+              "nextStage": "agree_ghost",
+              "effect": "lose_half"
+            },
+            {
+              "text": "讨价还价",
+              "nextStage": "bargain",
+              "effect": "reduce_cost"
+            }
+          ]
+        },
+        {
+          "stage": "refuse",
+          "text": "幽灵消失，留下一个谜题。",
+          "options": [
+            {
+              "text": "解谜",
+              "nextStage": "puzzle",
+              "effect": "solve"
+            },
+            {
+              "text": "忽略",
+              "nextStage": "ignore",
+              "effect": "miss_chance"
+            }
+          ]
+        },
+        {
+          "stage": "agree_ghost",
+          "text": "幽灵取走一半财富，时间重置到断电前60秒。",
+          "options": [
+            {
+              "text": "重新规划策略",
+              "nextStage": "replan",
+              "effect": "second_chance"
+            },
+            {
+              "text": "重复同样行动",
+              "nextStage": "repeat",
+              "effect": "loop"
+            }
+          ]
+        },
+        {
+          "stage": "bargain",
+          "text": "幽灵同意只取30%。",
+          "options": [
+            {
+              "text": "接受",
+              "nextStage": "accept30",
+              "effect": "less_loss"
+            },
+            {
+              "text": "再降到10%",
+              "nextStage": "lowball",
+              "effect": "offend_ghost"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "power_core",
+      "name": "备用能源核心",
+      "description": "一个发光的蓝色球体，可以提供30秒电力。",
+      "position": [
+        1,
+        6
+      ],
+      "interaction": "拾取后可以延长电力时间。",
+      "storyline": [
+        {
+          "stage": "find",
+          "text": "你发现了备用能源核心。",
+          "options": [
+            {
+              "text": "安装到主控台",
+              "nextStage": "install",
+              "effect": "add_power"
+            },
+            {
+              "text": "随身携带",
+              "nextStage": "carry",
+              "effect": "portable_power"
+            }
+          ]
+        },
+        {
+          "stage": "install",
+          "text": "核心安装成功，电力恢复至40秒。",
+          "options": [
+            {
+              "text": "继续搜索其他能源",
+              "nextStage": "search_more",
+              "effect": "more_power"
+            },
+            {
+              "text": "去处理黑客",
+              "nextStage": "hack_focus",
+              "effect": "prioritize"
+            }
+          ]
+        },
+        {
+          "stage": "carry",
+          "text": "核心在你手中，但需要时才能使用。",
+          "options": [
+            {
+              "text": "随时准备使用",
+              "nextStage": "ready",
+              "effect": "emergency"
+            },
+            {
+              "text": "交给工程师分析",
+              "nextStage": "analyze",
+              "effect": "learn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hack_device",
+      "name": "黑客破解器",
+      "description": "一个小型装置，可以中断黑客攻击。",
+      "position": [
+        2,
+        8
+      ],
+      "interaction": "可以用来对付外星黑客。",
+      "storyline": [
+        {
+          "stage": "find",
+          "text": "在桌子下发现了黑客破解器。",
+          "options": [
+            {
+              "text": "立即使用",
+              "nextStage": "use_now",
+              "effect": "stop_hack"
+            },
+            {
+              "text": "研究一下",
+              "nextStage": "study",
+              "effect": "understand"
+            }
+          ]
+        },
+        {
+          "stage": "use_now",
+          "text": "破解器发射信号，黑客攻击暂停10秒。",
+          "options": [
+            {
+              "text": "趁机修复主线路",
+              "nextStage": "fix_line",
+              "effect": "repair"
+            },
+            {
+              "text": "追踪黑客位置",
+              "nextStage": "track",
+              "effect": "locate"
+            }
+          ]
+        },
+        {
+          "stage": "study",
+          "text": "发现破解器有自毁程序。",
+          "options": [
+            {
+              "text": "拆除自毁",
+              "nextStage": "disarm",
+              "effect": "safe_use"
+            },
+            {
+              "text": "保留以防万一",
+              "nextStage": "keep",
+              "effect": "risk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gold_bar",
+      "name": "金条",
+      "description": "一根沉甸甸的金条，可以收买人心。",
+      "position": [
+        3,
+        9
+      ],
+      "interaction": "可用于贿赂或交易。",
+      "storyline": [
+        {
+          "stage": "find",
+          "text": "你捡起一根金条。",
+          "options": [
+            {
+              "text": "贿赂星际商人",
+              "nextStage": "bribe_trader2",
+              "effect": "calm_trader"
+            },
+            {
+              "text": "送给工程师",
+              "nextStage": "gift_engineer",
+              "effect": "motivate"
+            }
+          ]
+        },
+        {
+          "stage": "bribe_trader2",
+          "text": "商人接受了金条，不再闹事。",
+          "options": [
+            {
+              "text": "让他离开",
+              "nextStage": "leave_trader",
+              "effect": "peace"
+            },
+            {
+              "text": "请他帮助",
+              "nextStage": "ask_help",
+              "effect": "ally_trader"
+            }
+          ]
+        },
+        {
+          "stage": "gift_engineer",
+          "text": "工程师很高兴，维修速度加倍。",
+          "options": [
+            {
+              "text": "让他继续修",
+              "nextStage": "continue_repair",
+              "effect": "fast_repair"
+            },
+            {
+              "text": "让他培训其他人",
+              "nextStage": "train",
+              "effect": "long_term"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quantum_key",
+      "name": "量子密钥",
+      "description": "一把闪光的钥匙，可以打开任何量子锁。",
+      "position": [
+        4,
+        2
+      ],
+      "interaction": "可用于打开金库或服务器。",
+      "storyline": [
+        {
+          "stage": "find",
+          "text": "你发现了量子密钥。",
+          "options": [
+            {
+              "text": "打开金库检查",
+              "nextStage": "open_vault",
+              "effect": "check_funds"
+            },
+            {
+              "text": "插入主控台",
+              "nextStage": "insert_console",
+              "effect": "override"
+            }
+          ]
+        },
+        {
+          "stage": "open_vault",
+          "text": "金库打开，里面全是星币。",
+          "options": [
+            {
+              "text": "转移星币",
+              "nextStage": "transfer",
+              "effect": "secure_wealth"
+            },
+            {
+              "text": "留在原地",
+              "nextStage": "leave_vault",
+              "effect": "risk"
+            }
+          ]
+        },
+        {
+          "stage": "insert_console",
+          "text": "主控台显示全息银行系统。",
+          "options": [
+            {
+              "text": "关闭黑客端口",
+              "nextStage": "close_port",
+              "effect": "block_hack"
+            },
+            {
+              "text": "启动反病毒程序",
+              "nextStage": "antivirus",
+              "effect": "clean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "medkit",
+      "name": "医疗包",
+      "description": "紧急医疗用品，可以治疗辐射伤害。",
+      "position": [
+        5,
+        13
+      ],
+      "interaction": "如果受伤可以使用。",
+      "storyline": [
+        {
+          "stage": "find",
+          "text": "你拿到医疗包。",
+          "options": [
+            {
+              "text": "随身携带",
+              "nextStage": "carry_med",
+              "effect": "prepare"
+            },
+            {
+              "text": "放到急救站",
+              "nextStage": "station",
+              "effect": "public"
+            }
+          ]
+        },
+        {
+          "stage": "carry_med",
+          "text": "医疗包在身上。",
+          "options": [
+            {
+              "text": "如果受伤则使用",
+              "nextStage": "use_if_needed",
+              "effect": "heal"
+            },
+            {
+              "text": "给工程师",
+              "nextStage": "give_eng",
+              "effect": "help_eng"
+            }
+          ]
+        },
+        {
+          "stage": "station",
+          "text": "医疗包放在急救站，所有人都能用。",
+          "options": [
+            {
+              "text": "广播告知位置",
+              "nextStage": "announce",
+              "effect": "info"
+            },
+            {
+              "text": "保持沉默",
+              "nextStage": "silent",
+              "effect": "secret"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "power_lost",
+      "condition": "timeout",
+      "text": "断电！银行陷入黑暗，所有资产被外星黑客洗劫一空。",
+      "effect": "game_over"
+    },
+    {
+      "id": "hack_stopped",
+      "condition": "stop_hack_success",
+      "text": "成功阻止黑客，电力恢复，银行得以保全。",
+      "effect": "victory"
+    },
+    {
+      "id": "ghost_deal",
+      "condition": "deal_with_ghost",
+      "text": "与量子幽灵交易，失去一半财富但时间重置，获得第二次机会。",
+      "effect": "restart"
+    },
+    {
+      "id": "vault_breach",
+      "condition": "vault_open",
+      "text": "金库被打开，所有存款被内部人员盗走。",
+      "effect": "game_over"
+    },
+    {
+      "id": "engineer_hero",
+      "condition": "engineer_fix",
+      "text": "工程师成功修复主线路，银行恢复正常。",
+      "effect": "victory"
+    },
+    {
+      "id": "trader_riot",
+      "condition": "trader_angry",
+      "text": "星际商人煽动客户暴动，银行被砸。",
+      "effect": "game_over"
+    },
+    {
+      "id": "hacker_ally",
+      "condition": "hacker_cooperate",
+      "text": "与黑客合作，银行系统升级，但黑客成为股东。",
+      "effect": "mixed"
+    },
+    {
+      "id": "radiation_poison",
+      "condition": "no_protection",
+      "text": "你受到致命辐射，在最后一刻倒在主控台前。",
+      "effect": "game_over"
+    },
+    {
+      "id": "quantum_puzzle",
+      "condition": "solve_puzzle",
+      "text": "解开量子幽灵的谜题，获得无限能源。",
+      "effect": "victory"
+    },
+    {
+      "id": "time_loop",
+      "condition": "repeat_actions",
+      "text": "你陷入时间循环，永远在60秒内挣扎。",
+      "effect": "loop"
+    }
+  ],
+  "introText": "你是银河银行总裁。外星黑客切断了总库电源，还有60秒，金库将失去防护，所有星际存款危在旦夕。快速决策，拯救银行！",
+  "ambientMusic": "紧张电子节拍，夹杂警报声",
+  "id": "fallback_world_050"
+}

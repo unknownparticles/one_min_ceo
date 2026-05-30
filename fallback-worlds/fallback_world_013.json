@@ -1,0 +1,812 @@
+{
+  "matchKeywords": [
+    "税务",
+    "查账",
+    "银河",
+    "CEO",
+    "60秒"
+  ],
+  "identity": "跨星系税务巨头",
+  "theme": "银河税务局查账前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "gold_floor",
+      "floor",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "window",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "window",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "window",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "window",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "window",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "console",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    6,
+    8
+  ],
+  "npcs": [
+    {
+      "id": "npc_auditor1",
+      "name": "审计官阿列克谢",
+      "dialogue": "这些报表...全都有问题！",
+      "position": [
+        1,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "阿列克谢盯着你的眼睛。",
+          "options": [
+            {
+              "text": "递上一杯咖啡",
+              "effect": "好感+10"
+            },
+            {
+              "text": "解释报表异常",
+              "effect": "时间-10秒"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他翻看着账本。",
+          "options": [
+            {
+              "text": "指出合法避税条目",
+              "effect": "信任+5"
+            },
+            {
+              "text": "转移话题到星际贸易",
+              "effect": "好感-5"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他找到了一个漏洞。",
+          "options": [
+            {
+              "text": "承认并求情",
+              "effect": "罚款减少"
+            },
+            {
+              "text": "辩称是技术错误",
+              "effect": "调查升级"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_secretary",
+      "name": "秘书莉娜",
+      "position": [
+        2,
+        5
+      ],
+      "dialogue": "老板，他们的态度很坚决。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "莉娜悄悄递给你一份文件。",
+          "options": [
+            {
+              "text": "查看文件",
+              "effect": "获得线索"
+            },
+            {
+              "text": "让她销毁文件",
+              "effect": "证据消失"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "她提醒你审计组已经到门口了。",
+          "options": [
+            {
+              "text": "准备迎接",
+              "effect": "时间+5秒"
+            },
+            {
+              "text": "从后门溜走",
+              "effect": "逃脱失败"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "她建议你贿赂审计官。",
+          "options": [
+            {
+              "text": "接受建议",
+              "effect": "道德-20"
+            },
+            {
+              "text": "拒绝并斥责",
+              "effect": "道德+10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_tech",
+      "name": "技术员佐伊",
+      "position": [
+        7,
+        2
+      ],
+      "dialogue": "服务器好像被入侵了！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "佐伊慌张地指着屏幕。",
+          "options": [
+            {
+              "text": "让她立即修复",
+              "effect": "数据恢复"
+            },
+            {
+              "text": "关闭服务器",
+              "effect": "证据丢失"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "她发现了一个加密文件。",
+          "options": [
+            {
+              "text": "解密文件",
+              "effect": "获得秘密"
+            },
+            {
+              "text": "删除文件",
+              "effect": "消除痕迹"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "审计组正在检查服务器日志。",
+          "options": [
+            {
+              "text": "篡改日志",
+              "effect": "风险增加"
+            },
+            {
+              "text": "如实报告",
+              "effect": "诚实奖励"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_lawyer",
+      "name": "法律顾问张伟",
+      "position": [
+        4,
+        3
+      ],
+      "dialogue": "我们有法律漏洞可以利用。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "张伟递给你一叠法律文件。",
+          "options": [
+            {
+              "text": "仔细阅读",
+              "effect": "法律知识+10"
+            },
+            {
+              "text": "扔到一边",
+              "effect": "错过机会"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他建议你申报破产。",
+          "options": [
+            {
+              "text": "同意",
+              "effect": "公司解散"
+            },
+            {
+              "text": "拒绝",
+              "effect": "继续战斗"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他找到了一个税务豁免条款。",
+          "options": [
+            {
+              "text": "立即使用",
+              "effect": "免除部分税款"
+            },
+            {
+              "text": "保留备用",
+              "effect": "后期可用"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_janitor",
+      "name": "清洁工老王",
+      "position": [
+        8,
+        12
+      ],
+      "dialogue": "我好像捡到了什么东西。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "老王拿出一个U盘。",
+          "options": [
+            {
+              "text": "拿过来看看",
+              "effect": "获得U盘"
+            },
+            {
+              "text": "让他扔掉",
+              "effect": "失去证据"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "U盘里是审计组的内部报告。",
+          "options": [
+            {
+              "text": "阅读报告",
+              "effect": "了解对手"
+            },
+            {
+              "text": "销毁报告",
+              "effect": "无知无畏"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "老王悄悄说审计组有内鬼。",
+          "options": [
+            {
+              "text": "追问详情",
+              "effect": "获得关键信息"
+            },
+            {
+              "text": "不予理会",
+              "effect": "错过机会"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_cockroach",
+      "name": "小强",
+      "position": [
+        3,
+        9
+      ],
+      "description": "一只会说话的蟑螂，声称知道税务局的秘密。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "小强说：我知道你们公司的秘密账本在哪。",
+          "options": [
+            {
+              "text": "跟它走",
+              "effect": "发现账本"
+            },
+            {
+              "text": "踩死它",
+              "effect": "失去线索"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "它带你到一个保险箱前。",
+          "options": [
+            {
+              "text": "打开保险箱",
+              "effect": "获得现金"
+            },
+            {
+              "text": "报警",
+              "effect": "引来审计"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "小强要求你喂它食物。",
+          "options": [
+            {
+              "text": "喂它饼干",
+              "effect": "小强继续帮助"
+            },
+            {
+              "text": "无视它",
+              "effect": "小强离去"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_blackmail",
+      "name": "黑料文件",
+      "position": [
+        5,
+        6
+      ],
+      "description": "一份关于审计官的丑闻文件。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "文件显示审计官曾受贿。",
+          "options": [
+            {
+              "text": "公开它",
+              "effect": "审计官被调离"
+            },
+            {
+              "text": "私下谈判",
+              "effect": "获得优待"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "对方提出用钱交换文件。",
+          "options": [
+            {
+              "text": "高价卖出",
+              "effect": "获得资金"
+            },
+            {
+              "text": "拒绝",
+              "effect": "保持道德"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "文件被泄露的风险。",
+          "options": [
+            {
+              "text": "销毁文件",
+              "effect": "安全"
+            },
+            {
+              "text": "加密保存",
+              "effect": "未来可用"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_money",
+      "name": "一箱星际货币",
+      "position": [
+        6,
+        7
+      ],
+      "description": "满满一箱现金，来源不明。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "这箱钱可能是非法所得。",
+          "options": [
+            {
+              "text": "藏起来",
+              "effect": "保留现金"
+            },
+            {
+              "text": "上交税务局",
+              "effect": "减税"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "有人举报了这箱钱。",
+          "options": [
+            {
+              "text": "转移地点",
+              "effect": "风险降低"
+            },
+            {
+              "text": "原地不动",
+              "effect": "被查获"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你可以用钱贿赂审计员。",
+          "options": [
+            {
+              "text": "贿赂",
+              "effect": "审查通过"
+            },
+            {
+              "text": "拒绝",
+              "effect": "正直名声"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_keycard",
+      "name": "高级门禁卡",
+      "position": [
+        9,
+        4
+      ],
+      "description": "能打开所有办公室的门。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "门禁卡属于已离职的财务总监。",
+          "options": [
+            {
+              "text": "用它进入财务室",
+              "effect": "找到证据"
+            },
+            {
+              "text": "归还给人事",
+              "effect": "诚实奖励"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "门禁卡有定位功能。",
+          "options": [
+            {
+              "text": "拆除定位器",
+              "effect": "匿名行动"
+            },
+            {
+              "text": "保持原样",
+              "effect": "留下痕迹"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "审计组需要门禁卡才能进入服务器房。",
+          "options": [
+            {
+              "text": "借给他们",
+              "effect": "信任增加"
+            },
+            {
+              "text": "拒绝",
+              "effect": "他们破门而入"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_plant",
+      "name": "电子盆栽",
+      "position": [
+        2,
+        2
+      ],
+      "description": "一盆能录音的假植物。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "盆栽里藏有录音笔。",
+          "options": [
+            {
+              "text": "取出录音笔",
+              "effect": "获得对话证据"
+            },
+            {
+              "text": "无视",
+              "effect": "错过信息"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "录音笔里有你和审计官的对话。",
+          "options": [
+            {
+              "text": "删除录音",
+              "effect": "消除不利证据"
+            },
+            {
+              "text": "备份录音",
+              "effect": "保留把柄"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "花盆需要浇水。",
+          "options": [
+            {
+              "text": "浇水",
+              "effect": "植物复苏"
+            },
+            {
+              "text": "不浇水",
+              "effect": "植物枯萎"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end_arrested",
+      "description": "你被审计组逮捕，公司破产。",
+      "trigger": "道德低于20且时间耗尽"
+    },
+    {
+      "id": "end_bribe",
+      "description": "你成功贿赂审计官，但长期被勒索。",
+      "trigger": "贿赂成功且未被发现"
+    },
+    {
+      "id": "end_escape",
+      "description": "你带着钱逃离银河系，成为通缉犯。",
+      "trigger": "从后门溜走并携带现金"
+    },
+    {
+      "id": "end_whistleblower",
+      "description": "你揭发公司内幕，成为英雄。",
+      "trigger": "公开黑料文件并上交所有非法所得"
+    },
+    {
+      "id": "end_legal",
+      "description": "你利用法律漏洞完美避税，但臭名昭著。",
+      "trigger": "使用法律顾问的所有建议"
+    },
+    {
+      "id": "end_collapse",
+      "description": "公司倒闭，你被股东起诉。",
+      "trigger": "拒绝所有帮助且不处理问题"
+    },
+    {
+      "id": "end_success",
+      "description": "你通过审计，公司合法经营。",
+      "trigger": "所有指标正常且时间充足"
+    },
+    {
+      "id": "end_chaos",
+      "description": "你引发星际税务战争，成为历史罪人。",
+      "trigger": "多次选择对抗且激怒审计组"
+    }
+  ],
+  "introText": "欢迎来到银河税务局！你是跨星系税务巨头，60秒后审计组将到达。准备好迎接挑战了吗？",
+  "ambientMusic": "紧张警报声",
+  "id": "fallback_world_013"
+}

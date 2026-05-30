@@ -1,0 +1,1105 @@
+{
+  "matchKeywords": [
+    "时空列车",
+    "总经理",
+    "60秒",
+    "失控"
+  ],
+  "identity": "时空列车总经理",
+  "theme": "时空列车失控前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "console",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    6,
+    8
+  ],
+  "npcs": [
+    {
+      "name": "列车长",
+      "role": "资深调度员",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "总经理！列车引擎过热，冷却系统失效！",
+          "options": [
+            {
+              "text": "启动备用冷却剂",
+              "nextStage": 2
+            },
+            {
+              "text": "检查引擎数据",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "备用冷却剂已注入，但压力不足！",
+          "options": [
+            {
+              "text": "手动增压",
+              "nextStage": 4
+            },
+            {
+              "text": "呼叫维修机器人",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "数据显示主冷却泵损坏，需要紧急更换。",
+          "options": [
+            {
+              "text": "亲自去更换",
+              "nextStage": 6
+            },
+            {
+              "text": "派遣维修组",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "手动增压成功，温度下降中。但可能会触发安全警报。",
+          "options": [
+            {
+              "text": "忽略警报继续运行",
+              "nextStage": 8
+            },
+            {
+              "text": "重置警报系统",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "维修机器人响应，但需要5分钟到达。",
+          "options": [
+            {
+              "text": "等待机器人",
+              "nextStage": 10
+            },
+            {
+              "text": "尝试其他方法",
+              "nextStage": 11
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "你冲向引擎室，但时间紧迫！",
+          "options": [
+            {
+              "text": "加速奔跑",
+              "nextStage": 12
+            },
+            {
+              "text": "用对讲机指挥",
+              "nextStage": 13
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "维修组已出发，但他们被困在3号车厢。",
+          "options": [
+            {
+              "text": "前往3号车厢救援",
+              "nextStage": 14
+            },
+            {
+              "text": "派无人机协助",
+              "nextStage": 15
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "text": "安全警报引发恐慌，乘客开始骚乱。",
+          "options": [
+            {
+              "text": "广播安抚",
+              "nextStage": 16
+            },
+            {
+              "text": "出动安保",
+              "nextStage": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "人工智能AI",
+      "role": "系统管家",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "检测到时空扭曲异常，列车可能偏离轨道。",
+          "options": [
+            {
+              "text": "紧急停靠最近站台",
+              "nextStage": 2
+            },
+            {
+              "text": "尝试修正轨道",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "最近站台是量子车站，但已废弃！",
+          "options": [
+            {
+              "text": "冒险停靠",
+              "nextStage": 4
+            },
+            {
+              "text": "继续前行寻找安全站",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "轨道修正需要能量，但可能耗尽备用电源。",
+          "options": [
+            {
+              "text": "牺牲空调系统供电",
+              "nextStage": 6
+            },
+            {
+              "text": "使用应急反应堆",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "停靠成功，但发现站台有未知生物。",
+          "options": [
+            {
+              "text": "武装应对",
+              "nextStage": 8
+            },
+            {
+              "text": "尝试沟通",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "前方发现时空裂缝，列车可能被吸入。",
+          "options": [
+            {
+              "text": "紧急转向",
+              "nextStage": 10
+            },
+            {
+              "text": "加速冲过",
+              "nextStage": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "机械师",
+      "role": "维修专家",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "引擎室发现炸弹！还有30秒爆炸！",
+          "options": [
+            {
+              "text": "尝试拆除",
+              "nextStage": 2
+            },
+            {
+              "text": "将炸弹丢出列车",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "拆除需要密码，但密码未知。",
+          "options": [
+            {
+              "text": "猜密码",
+              "nextStage": 4
+            },
+            {
+              "text": "使用紧急切断",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "打开气闸需要授权，时间不够！",
+          "options": [
+            {
+              "text": "强行开启",
+              "nextStage": 6
+            },
+            {
+              "text": "寻找备用通道",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "猜错！炸弹提前爆炸。",
+          "options": [
+            {
+              "text": "跑向紧急出口",
+              "nextStage": 8
+            },
+            {
+              "text": "躲入防护舱",
+              "nextStage": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "乘务长",
+      "role": "乘客安抚",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "乘客恐慌，有人试图打开紧急车门。",
+          "options": [
+            {
+              "text": "强制制止",
+              "nextStage": 2
+            },
+            {
+              "text": "解释情况",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "制止引发冲突，多人受伤。",
+          "options": [
+            {
+              "text": "呼叫医疗组",
+              "nextStage": 4
+            },
+            {
+              "text": "封锁车厢",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "部分乘客理解，但仍有骚动。",
+          "options": [
+            {
+              "text": "开放VIP休息室安抚",
+              "nextStage": 6
+            },
+            {
+              "text": "分发镇定剂",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "医疗组到达，但物资不足。",
+          "options": [
+            {
+              "text": "征用乘客药品",
+              "nextStage": 8
+            },
+            {
+              "text": "减少剂量",
+              "nextStage": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "信号员",
+      "role": "通讯联络",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "与总部失去联系，无法获得援助。",
+          "options": [
+            {
+              "text": "尝试卫星通讯",
+              "nextStage": 2
+            },
+            {
+              "text": "使用备用天线",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "卫星通讯受干扰，信号微弱。",
+          "options": [
+            {
+              "text": "放大信号",
+              "nextStage": 4
+            },
+            {
+              "text": "发送莫尔斯电码",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "备用天线损坏，需要修复。",
+          "options": [
+            {
+              "text": "自行修理",
+              "nextStage": 6
+            },
+            {
+              "text": "指派技术员",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "信号放大导致系统过载。",
+          "options": [
+            {
+              "text": "关闭非必要系统",
+              "nextStage": 8
+            },
+            {
+              "text": "冒风险继续",
+              "nextStage": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "保安队长",
+      "role": "安全维护",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "发现可疑乘客携带危险品。",
+          "options": [
+            {
+              "text": "立即逮捕",
+              "nextStage": 2
+            },
+            {
+              "text": "监视其行动",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "逮捕引发同伙反抗，发生枪战。",
+          "options": [
+            {
+              "text": "启用电磁屏障",
+              "nextStage": 4
+            },
+            {
+              "text": "疏散乘客",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "乘客进入引擎室，意图破坏。",
+          "options": [
+            {
+              "text": "追捕",
+              "nextStage": 6
+            },
+            {
+              "text": "封锁引擎室",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "电磁屏障启动，但部分设备受损。",
+          "options": [
+            {
+              "text": "修复设备",
+              "nextStage": 8
+            },
+            {
+              "text": "优先控制局势",
+              "nextStage": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "name": "冷却剂罐",
+      "description": "用于应急冷却的化学罐",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你找到一罐冷却剂，但标签模糊。",
+          "options": [
+            {
+              "text": "直接使用",
+              "nextStage": 2
+            },
+            {
+              "text": "检测成分",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "使用后引擎温度骤降，但有泄漏。",
+          "options": [
+            {
+              "text": "密封泄漏点",
+              "nextStage": 4
+            },
+            {
+              "text": "排放到外部",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "检测显示这是易燃物，不能用于冷却。",
+          "options": [
+            {
+              "text": "丢弃",
+              "nextStage": 6
+            },
+            {
+              "text": "用作燃料",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "密封成功，但消耗了时间。",
+          "options": [
+            {
+              "text": "继续前进",
+              "nextStage": 8
+            },
+            {
+              "text": "检查其他系统",
+              "nextStage": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "时空导航仪",
+      "description": "修正列车轨道的核心设备",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "导航仪显示前方有多个时间分支。",
+          "options": [
+            {
+              "text": "选择稳定分支",
+              "nextStage": 2
+            },
+            {
+              "text": "随机穿越",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "稳定分支通往安全未来。",
+          "options": [
+            {
+              "text": "设定坐标",
+              "nextStage": 4
+            },
+            {
+              "text": "请求AI确认",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "随机穿越可能导致未知后果。",
+          "options": [
+            {
+              "text": "冒险尝试",
+              "nextStage": 6
+            },
+            {
+              "text": "重新计算",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "坐标设定完成，但能源不足。",
+          "options": [
+            {
+              "text": "节约能源",
+              "nextStage": 8
+            },
+            {
+              "text": "恢复全部能源",
+              "nextStage": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "万能钥匙",
+      "description": "能打开任何门的电子钥匙",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "钥匙需要激活码才能使用。",
+          "options": [
+            {
+              "text": "尝试默认密码",
+              "nextStage": 2
+            },
+            {
+              "text": "寻找激活码",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "默认密码错误，钥匙锁死。",
+          "options": [
+            {
+              "text": "重置钥匙",
+              "nextStage": 4
+            },
+            {
+              "text": "暴力破解",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "激活码在列车长的保险箱里。",
+          "options": [
+            {
+              "text": "询问列车长",
+              "nextStage": 6
+            },
+            {
+              "text": "自行开箱",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "重置后钥匙可用，但仅限一次。",
+          "options": [
+            {
+              "text": "打开紧急出口",
+              "nextStage": 8
+            },
+            {
+              "text": "打开武器库",
+              "nextStage": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "医疗包",
+      "description": "包含急救用品",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "医疗包内有特效药和绷带。",
+          "options": [
+            {
+              "text": "治疗伤员",
+              "nextStage": 2
+            },
+            {
+              "text": "留作自用",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "伤员康复，但药物不足。",
+          "options": [
+            {
+              "text": "节约用药",
+              "nextStage": 4
+            },
+            {
+              "text": "寻求补给",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "保护自己，但乘客不满。",
+          "options": [
+            {
+              "text": "解释情况",
+              "nextStage": 6
+            },
+            {
+              "text": "分发部分",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "节约用药导致部分伤员恶化。",
+          "options": [
+            {
+              "text": "重新分配",
+              "nextStage": 8
+            },
+            {
+              "text": "冒险使用全部",
+              "nextStage": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "能量块",
+      "description": "高密度能源，可驱动系统",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "能量块可以给列车提供额外动力。",
+          "options": [
+            {
+              "text": "安装到引擎",
+              "nextStage": 2
+            },
+            {
+              "text": "用于武器系统",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "引擎功率提升，但可能过热。",
+          "options": [
+            {
+              "text": "降低功率",
+              "nextStage": 4
+            },
+            {
+              "text": "加强冷却",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "武器系统激活，可攻击障碍。",
+          "options": [
+            {
+              "text": "攻击前方陨石",
+              "nextStage": 6
+            },
+            {
+              "text": "防御后方追兵",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "降低功率后速度不足，可能晚点。",
+          "options": [
+            {
+              "text": "接受晚点",
+              "nextStage": 8
+            },
+            {
+              "text": "再加速",
+              "nextStage": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "通讯器",
+      "description": "便携式通讯设备",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "通讯器能联系到其他时空列车。",
+          "options": [
+            {
+              "text": "请求援助",
+              "nextStage": 2
+            },
+            {
+              "text": "询问信息",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "收到回应，但对方要求付出代价。",
+          "options": [
+            {
+              "text": "接受条件",
+              "nextStage": 4
+            },
+            {
+              "text": "拒绝并另寻他法",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "对方告知前方有安全站。",
+          "options": [
+            {
+              "text": "前往安全站",
+              "nextStage": 6
+            },
+            {
+              "text": "怀疑并核实",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "代价是提供一部分能源，能源下降。",
+          "options": [
+            {
+              "text": "节省能源",
+              "nextStage": 8
+            },
+            {
+              "text": "放弃援助",
+              "nextStage": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end_1",
+      "condition": "玩家成功冷却引擎并修正轨道",
+      "text": "列车安全到达终点，你被授予英雄称号。"
+    },
+    {
+      "id": "end_2",
+      "condition": "玩家未能处理引擎过热",
+      "text": "列车爆炸，全员遇难。"
+    },
+    {
+      "id": "end_3",
+      "condition": "玩家选择停靠废弃车站",
+      "text": "遭遇异星生物，列车被占领。"
+    },
+    {
+      "id": "end_4",
+      "condition": "玩家拆除炸弹失败",
+      "text": "引擎被毁，列车失控坠入时空裂缝。"
+    },
+    {
+      "id": "end_5",
+      "condition": "玩家安抚乘客成功，但引擎问题未解决",
+      "text": "列车在平静中毁灭。"
+    },
+    {
+      "id": "end_6",
+      "condition": "玩家使用万能钥匙打开武器库",
+      "text": "武装乘客引发暴动，列车变为战场。"
+    },
+    {
+      "id": "end_7",
+      "condition": "玩家选择前往安全站",
+      "text": "安全站是陷阱，列车被劫持。"
+    },
+    {
+      "id": "end_8",
+      "condition": "玩家合理分配所有资源",
+      "text": "列车险中求胜，成功脱险。"
+    },
+    {
+      "id": "end_9",
+      "condition": "玩家拒绝所有援助",
+      "text": "孤立无援，列车消失在时间中。"
+    },
+    {
+      "id": "end_10",
+      "condition": "玩家成功与总部恢复联系",
+      "text": "总部派出救援，列车获救。"
+    }
+  ],
+  "introText": "你是时空列车总经理。此刻，列车引擎过热，时空轨道紊乱，距离毁灭还有60秒！你必须做出决策，拯救列车和乘客。",
+  "ambientMusic": "紧张急促的电子乐，夹杂着时钟滴答声",
+  "id": "fallback_world_028"
+}

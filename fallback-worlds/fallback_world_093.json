@@ -1,0 +1,1049 @@
+{
+  "matchKeywords": [
+    "ipo",
+    "上市",
+    "路演",
+    "估值"
+  ],
+  "identity": "银河IPO委员会主席",
+  "theme": "银河系最后一次IPO前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "portal",
+      "floor",
+      "carpet",
+      "carpet",
+      "throne",
+      "throne",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "water",
+      "water",
+      "water",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 1,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "ceo",
+      "name": "星际科技CEO",
+      "title": "路演主讲人",
+      "avatar": "ceo",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "年轻人，你来了！距离IPO只剩60秒，我需要你帮我稳住局面。",
+          "options": [
+            {
+              "text": "放心，交给我！",
+              "nextStage": 1,
+              "effect": {
+                "reputation": 10
+              }
+            },
+            {
+              "text": "我尽力……但不太有把握。",
+              "nextStage": 1,
+              "effect": {
+                "reputation": 5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "好，现在你要去三个地方：检查估值模型、安抚投资人、搞定监管漏洞。",
+          "options": [
+            {
+              "text": "先去检查估值模型。",
+              "nextStage": 2,
+              "effect": {
+                "direction": "console"
+              }
+            },
+            {
+              "text": "先去安抚投资人。",
+              "nextStage": 2,
+              "effect": {
+                "direction": "carpet"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "记住，每个选择都关乎IPO成败！我在这里等你消息。",
+          "options": [
+            {
+              "text": "明白，我行动了。",
+              "nextStage": 3,
+              "effect": {}
+            },
+            {
+              "text": "再问一个问题……",
+              "nextStage": 0,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "你回来了！情况如何？",
+          "options": [
+            {
+              "text": "一切顺利，准备敲钟！",
+              "nextStage": 4,
+              "effect": {
+                "ipo_success": true
+              }
+            },
+            {
+              "text": "出了点问题，需要您出马。",
+              "nextStage": 4,
+              "effect": {
+                "ipo_success": false
+              }
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialogue": "最终时刻到了！敲钟吧！",
+          "options": [
+            {
+              "text": "敲钟！",
+              "nextStage": 5,
+              "effect": {
+                "ending": "success"
+              }
+            },
+            {
+              "text": "再等等……",
+              "nextStage": 4,
+              "effect": {}
+            }
+          ]
+        }
+      ],
+      "position": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    {
+      "id": "investor1",
+      "name": "银河资本合伙人",
+      "title": "主投资人",
+      "avatar": "investor",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "你们的估值模型有问题！增长率假设太激进。",
+          "options": [
+            {
+              "text": "我们根据最新数据调整了。",
+              "nextStage": 1,
+              "effect": {
+                "reputation": 10
+              }
+            },
+            {
+              "text": "那您觉得多少合适？",
+              "nextStage": 1,
+              "effect": {
+                "reputation": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "如果你们能证明用户留存率，我可以考虑支持。",
+          "options": [
+            {
+              "text": "请看这份报告。",
+              "nextStage": 2,
+              "effect": {
+                "reputation": 15
+              }
+            },
+            {
+              "text": "我们还在优化中……",
+              "nextStage": 2,
+              "effect": {
+                "reputation": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "好吧，我暂时相信你。",
+          "options": [
+            {
+              "text": "感谢信任！",
+              "nextStage": 3,
+              "effect": {
+                "investor_support": true
+              }
+            },
+            {
+              "text": "还有其他问题吗？",
+              "nextStage": 3,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "IPO后别忘了我们的合约。",
+          "options": [
+            {
+              "text": "当然。",
+              "nextStage": 4,
+              "effect": {}
+            },
+            {
+              "text": "再谈谈条件？",
+              "nextStage": 3,
+              "effect": {}
+            }
+          ]
+        }
+      ],
+      "position": {
+        "x": 5,
+        "y": 3
+      }
+    },
+    {
+      "id": "investor2",
+      "name": "星际投行董事",
+      "title": "承销商代表",
+      "avatar": "banker",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "监管部门盯上你们的数据安全了。",
+          "options": [
+            {
+              "text": "我们有顶级加密。",
+              "nextStage": 1,
+              "effect": {
+                "reputation": 10
+              }
+            },
+            {
+              "text": "真的吗？有多严重？",
+              "nextStage": 1,
+              "effect": {
+                "reputation": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "需要立即提交合规证明。",
+          "options": [
+            {
+              "text": "我马上去准备。",
+              "nextStage": 2,
+              "effect": {
+                "direction": "server"
+              }
+            },
+            {
+              "text": "能通融一下吗？",
+              "nextStage": 2,
+              "effect": {
+                "reputation": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "最好在30秒内搞定。",
+          "options": [
+            {
+              "text": "没问题。",
+              "nextStage": 3,
+              "effect": {}
+            },
+            {
+              "text": "太赶了！",
+              "nextStage": 3,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "时间不多了。",
+          "options": [
+            {
+              "text": "我加速处理。",
+              "nextStage": 4,
+              "effect": {
+                "compliance_done": true
+              }
+            },
+            {
+              "text": "帮我拖延一下。",
+              "nextStage": 4,
+              "effect": {}
+            }
+          ]
+        }
+      ],
+      "position": {
+        "x": 14,
+        "y": 8
+      }
+    },
+    {
+      "id": "tech",
+      "name": "首席技术官",
+      "title": "CTO",
+      "avatar": "tech",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "直播路演系统出现故障！",
+          "options": [
+            {
+              "text": "我看看。",
+              "nextStage": 1,
+              "effect": {
+                "direction": "console"
+              }
+            },
+            {
+              "text": "重启试试。",
+              "nextStage": 1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "是代码冲突，需要快速修复。",
+          "options": [
+            {
+              "text": "我来写补丁。",
+              "nextStage": 2,
+              "effect": {
+                "tech_support": true
+              }
+            },
+            {
+              "text": "你行你上。",
+              "nextStage": 2,
+              "effect": {
+                "reputation": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "搞定了，但需要测试。",
+          "options": [
+            {
+              "text": "快速测试一下。",
+              "nextStage": 3,
+              "effect": {}
+            },
+            {
+              "text": "相信你的能力。",
+              "nextStage": 3,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "系统恢复，多亏了你。",
+          "options": [
+            {
+              "text": "小意思。",
+              "nextStage": 4,
+              "effect": {}
+            },
+            {
+              "text": "下次注意。",
+              "nextStage": 4,
+              "effect": {}
+            }
+          ]
+        }
+      ],
+      "position": {
+        "x": 13,
+        "y": 4
+      }
+    },
+    {
+      "id": "media",
+      "name": "银河日报记者",
+      "title": "媒体",
+      "avatar": "reporter",
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "听说你们有内幕交易？",
+          "options": [
+            {
+              "text": "纯属谣言。",
+              "nextStage": 1,
+              "effect": {
+                "reputation": 10
+              }
+            },
+            {
+              "text": "无可奉告。",
+              "nextStage": 1,
+              "effect": {
+                "reputation": -5
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "那为什么股价异常？",
+          "options": [
+            {
+              "text": "市场正常波动。",
+              "nextStage": 2,
+              "effect": {
+                "reputation": 5
+              }
+            },
+            {
+              "text": "有人在操纵。",
+              "nextStage": 2,
+              "effect": {
+                "reputation": -10
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "我会持续关注。",
+          "options": [
+            {
+              "text": "欢迎监督。",
+              "nextStage": 3,
+              "effect": {}
+            },
+            {
+              "text": "别乱写。",
+              "nextStage": 3,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "采访结束。",
+          "options": [
+            {
+              "text": "谢谢。",
+              "nextStage": 4,
+              "effect": {}
+            },
+            {
+              "text": "再见。",
+              "nextStage": 4,
+              "effect": {}
+            }
+          ]
+        }
+      ],
+      "position": {
+        "x": 9,
+        "y": 2
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "估值模型",
+      "name": "估值模型文件",
+      "type": "document",
+      "description": "一份包含财务预测的电子表格。",
+      "position": {
+        "x": 4,
+        "y": 1
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "你找到了估值模型。",
+          "options": [
+            {
+              "text": "检查增长率。",
+              "nextStage": 1,
+              "effect": {
+                "growth_rate": "adjusted"
+              }
+            },
+            {
+              "text": "检查现金流。",
+              "nextStage": 1,
+              "effect": {
+                "cashflow": "verified"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "数据基本正确，但需要微调。",
+          "options": [
+            {
+              "text": "微调后上传。",
+              "nextStage": 2,
+              "effect": {
+                "valuation_ready": true
+              }
+            },
+            {
+              "text": "先不处理。",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "模型已更新。",
+          "options": [
+            {
+              "text": "通知CEO。",
+              "nextStage": 3,
+              "effect": {}
+            },
+            {
+              "text": "走开。",
+              "nextStage": 3,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "合规证书",
+      "name": "数据合规证书",
+      "type": "document",
+      "description": "来自银河数据监管局的认证。",
+      "position": {
+        "x": 13,
+        "y": 8
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "你发现了合规证书。",
+          "options": [
+            {
+              "text": "立即提交。",
+              "nextStage": 1,
+              "effect": {
+                "compliance_submitted": true
+              }
+            },
+            {
+              "text": "检查有效期。",
+              "nextStage": 1,
+              "effect": {
+                "expiry": "valid"
+              }
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "证书有效，问题解决。",
+          "options": [
+            {
+              "text": "太好了。",
+              "nextStage": 2,
+              "effect": {}
+            },
+            {
+              "text": "备份一份。",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "监管风险解除。",
+          "options": [
+            {
+              "text": "返回CEO处。",
+              "nextStage": 3,
+              "effect": {}
+            },
+            {
+              "text": "继续探索。",
+              "nextStage": 3,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "路演PPT",
+      "name": "路演演示文稿",
+      "type": "document",
+      "description": "用于向投资人展示的PPT。",
+      "position": {
+        "x": 9,
+        "y": 4
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "你拿到了路演PPT。",
+          "options": [
+            {
+              "text": "检查关键数据。",
+              "nextStage": 1,
+              "effect": {
+                "ppt_data": "checked"
+              }
+            },
+            {
+              "text": "直接交给CEO。",
+              "nextStage": 1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "PPT内容充实。",
+          "options": [
+            {
+              "text": "做最后润色。",
+              "nextStage": 2,
+              "effect": {
+                "ppt_polished": true
+              }
+            },
+            {
+              "text": "无需改动。",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "PPT已就绪。",
+          "options": [
+            {
+              "text": "带去路演。",
+              "nextStage": 3,
+              "effect": {}
+            },
+            {
+              "text": "放在这里。",
+              "nextStage": 3,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "神秘代码",
+      "name": "一串神秘代码",
+      "type": "key",
+      "description": "可能用于访问隐藏系统。",
+      "position": {
+        "x": 5,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "你发现了一串代码。",
+          "options": [
+            {
+              "text": "尝试解码。",
+              "nextStage": 1,
+              "effect": {
+                "code_decoded": true
+              }
+            },
+            {
+              "text": "忽略它。",
+              "nextStage": 1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "代码指向一个隐藏账户。",
+          "options": [
+            {
+              "text": "调查账户。",
+              "nextStage": 2,
+              "effect": {
+                "hidden_account": "found"
+              }
+            },
+            {
+              "text": "报告CEO。",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "这个账户可能有用。",
+          "options": [
+            {
+              "text": "保留信息。",
+              "nextStage": 3,
+              "effect": {}
+            },
+            {
+              "text": "销毁代码。",
+              "nextStage": 3,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "香槟",
+      "name": "庆祝香槟",
+      "type": "consumable",
+      "description": "一瓶用于庆祝的香槟。",
+      "position": {
+        "x": 8,
+        "y": 9
+      },
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "你找到了一瓶香槟。",
+          "options": [
+            {
+              "text": "打开它。",
+              "nextStage": 1,
+              "effect": {
+                "celebration": true
+              }
+            },
+            {
+              "text": "留着敲钟用。",
+              "nextStage": 1,
+              "effect": {}
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "香槟喷涌而出！",
+          "options": [
+            {
+              "text": "喝一口。",
+              "nextStage": 2,
+              "effect": {
+                "morale": "boosted"
+              }
+            },
+            {
+              "text": "洒向人群。",
+              "nextStage": 2,
+              "effect": {
+                "chaos": true
+              }
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "气氛热烈起来。",
+          "options": [
+            {
+              "text": "继续工作。",
+              "nextStage": 3,
+              "effect": {}
+            },
+            {
+              "text": "再喝一杯。",
+              "nextStage": 2,
+              "effect": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "success",
+      "condition": "ipo_success == true",
+      "text": "敲钟成功！公司上市，估值千亿！你成为英雄。"
+    },
+    {
+      "id": "failure",
+      "condition": "ipo_success == false",
+      "text": "IPO失败，公司破产。你被董事会解雇。"
+    },
+    {
+      "id": "investor_revolt",
+      "condition": "reputation < 20",
+      "text": "投资人集体撤资，IPO取消。"
+    },
+    {
+      "id": "regulatory_ban",
+      "condition": "compliance_done == false",
+      "text": "监管机构介入，IPO无限期推迟。"
+    },
+    {
+      "id": "tech_meltdown",
+      "condition": "tech_support == false",
+      "text": "系统崩溃，路演中断，IPO失败。"
+    },
+    {
+      "id": "media_scandal",
+      "condition": "reputation < 0",
+      "text": "媒体曝光丑闻，股价暴跌，IPO终止。"
+    },
+    {
+      "id": "secret_ending",
+      "condition": "hidden_account != null",
+      "text": "发现隐藏账户，公司被收购，你获得巨额回报。"
+    },
+    {
+      "id": "chaos_ending",
+      "condition": "chaos == true",
+      "text": "香槟引发混乱，IPO现场失控，你被赶出场。"
+    }
+  ],
+  "introText": "你身处银河系最后一次IPO路演现场，距离敲钟只剩60秒！作为CEO的得力助手，你需要解决估值、合规、技术等问题，并应对投资人、媒体和监管。时间紧迫，选择决定命运！",
+  "ambientMusic": "tension_60s",
+  "id": "fallback_world_093"
+}

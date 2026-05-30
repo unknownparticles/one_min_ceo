@@ -1,0 +1,887 @@
+{
+  "matchKeywords": [
+    "外星资本",
+    "峰会",
+    "联盟主席",
+    "入侵",
+    "董事会"
+  ],
+  "identity": "外星资本联盟主席",
+  "theme": "外星资本峰会前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 1,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "npc_01",
+      "name": "星云资本代表",
+      "position": {
+        "x": 4,
+        "y": 1
+      },
+      "dialogue": "你好，我是来自仙女座的星云资本代表。",
+      "storyline": [
+        {
+          "stage": 0,
+          "title": "初次接触",
+          "dialogue": "人类投资者，我们带来了最新的金融技术。",
+          "options": [
+            {
+              "text": "展示你们的方案",
+              "nextStage": 1
+            },
+            {
+              "text": "我对此有疑虑",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "title": "技术展示",
+          "dialogue": "我们的量子对冲基金能在0.01秒内完成一笔交易。",
+          "options": [
+            {
+              "text": "合作愉快",
+              "nextStage": -1
+            },
+            {
+              "text": "我需要更多时间考虑",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "title": "疑虑",
+          "dialogue": "您对跨星系金融风险有担忧？",
+          "options": [
+            {
+              "text": "是的，风险太大",
+              "nextStage": -1
+            },
+            {
+              "text": "不，只是好奇",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_02",
+      "name": "猎户座风险投资人",
+      "position": {
+        "x": 8,
+        "y": 2
+      },
+      "dialogue": "我是猎户座风险投资人，寻找下一个星际独角兽。",
+      "storyline": [
+        {
+          "stage": 0,
+          "title": "投资意向",
+          "dialogue": "听说你们地球初创公司很有潜力。",
+          "options": [
+            {
+              "text": "我们正在开发反重力技术",
+              "nextStage": 1
+            },
+            {
+              "text": "我们专注AI芯片",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "title": "反重力",
+          "dialogue": "反重力技术？那可是热门领域。",
+          "options": [
+            {
+              "text": "需要融资5000万",
+              "nextStage": -1
+            },
+            {
+              "text": "先看看您的投资组合",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "title": "AI芯片",
+          "dialogue": "AI芯片竞争激烈，但回报可观。",
+          "options": [
+            {
+              "text": "我们有独特架构",
+              "nextStage": -1
+            },
+            {
+              "text": "我们需要战略伙伴",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_03",
+      "name": "仙女座中央银行行长",
+      "position": {
+        "x": 3,
+        "y": 3
+      },
+      "dialogue": "我代表仙女座中央银行，负责星际货币政策。",
+      "storyline": [
+        {
+          "stage": 0,
+          "title": "货币政策",
+          "dialogue": "跨星系资本流动需要新的货币框架。",
+          "options": [
+            {
+              "text": "支持数字货币结算",
+              "nextStage": 1
+            },
+            {
+              "text": "反对金融干预",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "title": "数字货币",
+          "dialogue": "我们将发行星系稳定币，与黄金挂钩。",
+          "options": [
+            {
+              "text": "我们愿意试点",
+              "nextStage": -1
+            },
+            {
+              "text": "我需要更多细节",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "title": "反对",
+          "dialogue": "金融干预可能会破坏本地经济。",
+          "options": [
+            {
+              "text": "但我们需要监管",
+              "nextStage": -1
+            },
+            {
+              "text": "让我们寻求折中方案",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_04",
+      "name": "天琴座天使投资人",
+      "position": {
+        "x": 10,
+        "y": 3
+      },
+      "dialogue": "我是天琴座的天使投资人，专投早期星际创业公司。",
+      "storyline": [
+        {
+          "stage": 0,
+          "title": "天使投资",
+          "dialogue": "你们有没有颠覆性的想法？",
+          "options": [
+            {
+              "text": "我们有太空电梯计划",
+              "nextStage": 1
+            },
+            {
+              "text": "我们在做火星房地产",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "title": "太空电梯",
+          "dialogue": "太空电梯！那是改变游戏规则的技术。",
+          "options": [
+            {
+              "text": "需要种子轮1000万",
+              "nextStage": -1
+            },
+            {
+              "text": "我们可以提供原型",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "title": "火星房地产",
+          "dialogue": "火星房地产？有点早期，但潜力巨大。",
+          "options": [
+            {
+              "text": "我们已有土地所有权",
+              "nextStage": -1
+            },
+            {
+              "text": "需要合作伙伴开发",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_05",
+      "name": "双鱼星系并购顾问",
+      "position": {
+        "x": 6,
+        "y": 4
+      },
+      "dialogue": "我来自双鱼星系，专门从事跨星系并购。",
+      "storyline": [
+        {
+          "stage": 0,
+          "title": "并购提议",
+          "dialogue": "我们注意到贵公司在银河系的扩张计划。",
+          "options": [
+            {
+              "text": "我们正在寻找收购目标",
+              "nextStage": 1
+            },
+            {
+              "text": "我们打算保持独立",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "title": "收购目标",
+          "dialogue": "我们推荐收购半人马座的一家AI公司。",
+          "options": [
+            {
+              "text": "请提供详细资料",
+              "nextStage": -1
+            },
+            {
+              "text": "估值是多少？",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "title": "独立",
+          "dialogue": "独立发展也是不错的选择，但我们仍可合作。",
+          "options": [
+            {
+              "text": "好吧，我们谈谈战略合作",
+              "nextStage": -1
+            },
+            {
+              "text": "不，谢谢",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_01",
+      "name": "星际战略投资书",
+      "position": {
+        "x": 2,
+        "y": 2
+      },
+      "description": "一份关于外星资本市场的详细分析报告。",
+      "storyline": [
+        {
+          "stage": 0,
+          "title": "获得投资书",
+          "dialogue": "你发现了一本星际战略投资书。",
+          "options": [
+            {
+              "text": "仔细阅读",
+              "nextStage": 1
+            },
+            {
+              "text": "忽略它",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "title": "阅读投资书",
+          "dialogue": "书中提到一个秘密：银河系中心有隐藏的资本。",
+          "options": [
+            {
+              "text": "记下坐标",
+              "nextStage": -1
+            },
+            {
+              "text": "分享给盟友",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_02",
+      "name": "量子通讯器",
+      "position": {
+        "x": 7,
+        "y": 2
+      },
+      "description": "一个可以跨星系即时通讯的设备。",
+      "storyline": [
+        {
+          "stage": 0,
+          "title": "获得通讯器",
+          "dialogue": "你捡起一个量子通讯器。",
+          "options": [
+            {
+              "text": "呼叫母星",
+              "nextStage": 1
+            },
+            {
+              "text": "调查通讯记录",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "title": "呼叫母星",
+          "dialogue": "母星回复：注意，有内部间谍。",
+          "options": [
+            {
+              "text": "警惕起来",
+              "nextStage": -1
+            },
+            {
+              "text": "继续开会",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "title": "调查记录",
+          "dialogue": "发现猎户座代表的可疑通话。",
+          "options": [
+            {
+              "text": "质问猎户座代表",
+              "nextStage": -1
+            },
+            {
+              "text": "秘密跟踪",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_03",
+      "name": "外星货币样本",
+      "position": {
+        "x": 4,
+        "y": 4
+      },
+      "description": "一种奇特的发光货币，可能具有巨大价值。",
+      "storyline": [
+        {
+          "stage": 0,
+          "title": "发现货币",
+          "dialogue": "你发现了一枚外星货币。",
+          "options": [
+            {
+              "text": "研究其成分",
+              "nextStage": 1
+            },
+            {
+              "text": "试图兑换成地球货币",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "title": "研究成分",
+          "dialogue": "这种货币由暗物质构成，价值连城。",
+          "options": [
+            {
+              "text": "秘密收藏",
+              "nextStage": -1
+            },
+            {
+              "text": "展示给中央银行行长",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "title": "兑换",
+          "dialogue": "兑换商表示无法估价。",
+          "options": [
+            {
+              "text": "失望地离开",
+              "nextStage": -1
+            },
+            {
+              "text": "坚持要求兑换",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_04",
+      "name": "董事会投票芯片",
+      "position": {
+        "x": 9,
+        "y": 4
+      },
+      "description": "用于董事会投票的加密芯片。",
+      "storyline": [
+        {
+          "stage": 0,
+          "title": "获得芯片",
+          "dialogue": "你找到了一个投票芯片。",
+          "options": [
+            {
+              "text": "插入投票终端",
+              "nextStage": 1
+            },
+            {
+              "text": "分析芯片内容",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "title": "插入终端",
+          "dialogue": "终端显示：你的一票将决定峰会走向。",
+          "options": [
+            {
+              "text": "投给星云资本",
+              "nextStage": -1
+            },
+            {
+              "text": "投给天琴座",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "title": "分析内容",
+          "dialogue": "芯片内藏有秘密协议：要小心双鱼座顾问。",
+          "options": [
+            {
+              "text": "警惕双鱼座",
+              "nextStage": -1
+            },
+            {
+              "text": "忽视警告",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_05",
+      "name": "能量饮料",
+      "position": {
+        "x": 12,
+        "y": 2
+      },
+      "description": "一瓶来自半人马座的提神能量饮料。",
+      "storyline": [
+        {
+          "stage": 0,
+          "title": "发现饮料",
+          "dialogue": "你看到一瓶能量饮料。",
+          "options": [
+            {
+              "text": "喝下它",
+              "nextStage": 1
+            },
+            {
+              "text": "谨慎地检查成分",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "title": "喝下",
+          "dialogue": "感觉精力充沛！但有些头晕。",
+          "options": [
+            {
+              "text": "继续谈判",
+              "nextStage": -1
+            },
+            {
+              "text": "休息一下",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "title": "检查成分",
+          "dialogue": "成分里含有微量兴奋剂，但合法。",
+          "options": [
+            {
+              "text": "放心喝下",
+              "nextStage": -1
+            },
+            {
+              "text": "扔掉它",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_01",
+      "trigger": {
+        "type": "item",
+        "id": "item_01",
+        "stage": 1,
+        "option": 0
+      },
+      "description": "你发现了隐藏资本，成为银河系最富有的人。"
+    },
+    {
+      "id": "ending_02",
+      "trigger": {
+        "type": "npc",
+        "id": "npc_05",
+        "stage": 1,
+        "option": 0
+      },
+      "description": "你收购了半人马座AI公司，业务扩张到新星系。"
+    },
+    {
+      "id": "ending_03",
+      "trigger": {
+        "type": "item",
+        "id": "item_02",
+        "stage": 1,
+        "option": 0
+      },
+      "description": "呼叫母星后，你发现间谍并挫败了阴谋。"
+    },
+    {
+      "id": "ending_04",
+      "trigger": {
+        "type": "item",
+        "id": "item_04",
+        "stage": 1,
+        "option": 0
+      },
+      "description": "你投出关键一票，星云资本主导了峰会。"
+    },
+    {
+      "id": "ending_05",
+      "trigger": {
+        "type": "item",
+        "id": "item_03",
+        "stage": 1,
+        "option": 0
+      },
+      "description": "你收藏了暗物质货币，成为神秘富豪。"
+    },
+    {
+      "id": "ending_06",
+      "trigger": {
+        "type": "npc",
+        "id": "npc_01",
+        "stage": 1,
+        "option": 0
+      },
+      "description": "与星云资本合作，量子基金大获成功。"
+    },
+    {
+      "id": "ending_07",
+      "trigger": {
+        "type": "npc",
+        "id": "npc_03",
+        "stage": 1,
+        "option": 0
+      },
+      "description": "支持数字货币结算，银河系金融一体化。"
+    },
+    {
+      "id": "ending_08",
+      "trigger": {
+        "type": "npc",
+        "id": "npc_04",
+        "stage": 1,
+        "option": 0
+      },
+      "description": "太空电梯计划获得天使投资，开启星际旅行时代。"
+    },
+    {
+      "id": "ending_09",
+      "trigger": {
+        "type": "item",
+        "id": "item_05",
+        "stage": 1,
+        "option": 0
+      },
+      "description": "喝下能量饮料后，你精力过剩，做出冲动决定，导致峰会失败。"
+    },
+    {
+      "id": "ending_10",
+      "trigger": {
+        "type": "npc",
+        "id": "npc_02",
+        "stage": 1,
+        "option": 0
+      },
+      "description": "反重力技术获得投资，你成为科技巨头。"
+    }
+  ],
+  "introText": "欢迎来到外星资本峰会！作为外星资本联盟主席，你需要在60秒内做出关键决策，与各方代表周旋，发现隐藏的机遇与威胁。时间紧迫，宇宙的资本命运掌握在你手中！",
+  "ambientMusic": "星际会晤",
+  "id": "fallback_world_070"
+}

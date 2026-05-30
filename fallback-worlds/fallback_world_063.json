@@ -1,0 +1,774 @@
+{
+  "matchKeywords": [
+    "量子",
+    "神殿",
+    "祭司",
+    "开放",
+    "60秒"
+  ],
+  "identity": "量子神殿祭司长",
+  "theme": "量子神殿开放前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 6
+  },
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "量子先知",
+      "x": 3,
+      "y": 3,
+      "dialogue": "神殿即将开启，你准备好了吗？",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "先知站在水晶旁，眼神深邃。",
+          "options": [
+            {
+              "text": "询问神殿的秘密",
+              "nextStage": 1
+            },
+            {
+              "text": "无视他",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "先知低语：神殿深处藏着量子之核，但需要三个碎片。",
+          "options": [
+            {
+              "text": "我愿意寻找碎片",
+              "nextStage": 3
+            },
+            {
+              "text": "太危险了",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "先知叹息：时间不多了。",
+          "options": [
+            {
+              "text": "回头",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "先知点头：很好，碎片分别由其他守护者持有。",
+          "options": [
+            {
+              "text": "去找其他守护者",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "守护者阿卡",
+      "x": 8,
+      "y": 3,
+      "dialogue": "我是火焰的守护者。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "阿卡周身环绕火焰。",
+          "options": [
+            {
+              "text": "挑战他",
+              "nextStage": 1
+            },
+            {
+              "text": "礼貌询问碎片",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "阿卡大笑：打败我才能得到碎片！",
+          "options": [
+            {
+              "text": "接受挑战",
+              "nextStage": 3
+            },
+            {
+              "text": "放弃",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "阿卡：碎片可以给你，但你得证明你的价值。",
+          "options": [
+            {
+              "text": "展示力量",
+              "nextStage": 3
+            },
+            {
+              "text": "展示智慧",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "阿卡赞赏：你通过了！给你碎片。",
+          "options": [
+            {
+              "text": "接过碎片",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "阿卡疑惑：这还不够。",
+          "options": [
+            {
+              "text": "再次尝试",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "守护者冰霜",
+      "x": 2,
+      "y": 7,
+      "dialogue": "寒冷就是我的力量。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "冰霜雕像般矗立。",
+          "options": [
+            {
+              "text": "融化他的冰心",
+              "nextStage": 1
+            },
+            {
+              "text": "直接索要碎片",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "冰霜微微动容：你的热情让我动摇。",
+          "options": [
+            {
+              "text": "继续温暖他",
+              "nextStage": 3
+            },
+            {
+              "text": "趁机抢夺",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "冰霜冷笑：你以为你是谁？",
+          "options": [
+            {
+              "text": "道歉",
+              "nextStage": 0
+            },
+            {
+              "text": "威胁",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "冰霜融化，交出碎片。",
+          "options": [
+            {
+              "text": "接过碎片",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "冰霜暴怒，战斗开始！",
+          "options": [
+            {
+              "text": "逃跑",
+              "nextStage": 0
+            },
+            {
+              "text": "战斗",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "守护者雷霆",
+      "x": 12,
+      "y": 6,
+      "dialogue": "雷霆万钧！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "雷霆在空中轰鸣。",
+          "options": [
+            {
+              "text": "躲避雷霆",
+              "nextStage": 1
+            },
+            {
+              "text": "直面雷霆",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你闪开了，雷霆赞许。",
+          "options": [
+            {
+              "text": "请求碎片",
+              "nextStage": 3
+            },
+            {
+              "text": "再试一次",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你被雷劈中，但意志坚定。",
+          "options": [
+            {
+              "text": "再次挑战",
+              "nextStage": 1
+            },
+            {
+              "text": "放弃",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "雷霆递给你碎片：你值得拥有。",
+          "options": [
+            {
+              "text": "接过碎片",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "神殿守卫",
+      "x": 7,
+      "y": 10,
+      "dialogue": "没有碎片，不得入内！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "守卫拦住去路。",
+          "options": [
+            {
+              "text": "出示碎片",
+              "nextStage": 1
+            },
+            {
+              "text": "硬闯",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "守卫检查碎片后放行。",
+          "options": [
+            {
+              "text": "进入神殿",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "守卫将你击退。",
+          "options": [
+            {
+              "text": "收集碎片",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你进入了神殿深处。",
+          "options": [
+            {
+              "text": "探索",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "火焰碎片",
+      "x": 8,
+      "y": 3,
+      "description": "蕴含火焰力量的碎片。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "碎片在阿卡手中闪烁。",
+          "options": [
+            {
+              "text": "获取碎片",
+              "nextStage": 1
+            },
+            {
+              "text": "离开",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你获得了火焰碎片！",
+          "options": [
+            {
+              "text": "装备",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "冰霜碎片",
+      "x": 2,
+      "y": 7,
+      "description": "散发寒气的碎片。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "碎片从冰霜手中掉落。",
+          "options": [
+            {
+              "text": "拾取",
+              "nextStage": 1
+            },
+            {
+              "text": "无视",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你获得了冰霜碎片！",
+          "options": [
+            {
+              "text": "装备",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "雷霆碎片",
+      "x": 12,
+      "y": 6,
+      "description": "噼啪作响的碎片。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "雷霆碎片悬浮在空中。",
+          "options": [
+            {
+              "text": "伸手拿",
+              "nextStage": 1
+            },
+            {
+              "text": "观察",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你获得了雷霆碎片！",
+          "options": [
+            {
+              "text": "装备",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "量子之核",
+      "x": 7,
+      "y": 5,
+      "description": "神殿的核心，需要三个碎片激活。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "量子之核在祭坛上脉动。",
+          "options": [
+            {
+              "text": "放入碎片",
+              "nextStage": 1
+            },
+            {
+              "text": "离开",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "碎片嵌入，神殿开启！",
+          "options": [
+            {
+              "text": "进入",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你成为了神殿的主人。",
+          "options": [
+            {
+              "text": "结束",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "古代卷轴",
+      "x": 4,
+      "y": 4,
+      "description": "记载了神殿的历史。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "卷轴静静躺在地上。",
+          "options": [
+            {
+              "text": "阅读",
+              "nextStage": 1
+            },
+            {
+              "text": "忽略",
+              "nextStage": 0
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "卷轴揭示了碎片的秘密。",
+          "options": [
+            {
+              "text": "记下",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "收集所有碎片并激活量子之核",
+      "text": "你成功开启神殿，成为量子之神！"
+    },
+    {
+      "id": "end2",
+      "condition": "未收集碎片直接闯入神殿",
+      "text": "你被守卫击杀，游戏结束。"
+    },
+    {
+      "id": "end3",
+      "condition": "时间耗尽",
+      "text": "60秒到，神殿关闭，你被困在量子裂隙中。"
+    },
+    {
+      "id": "end4",
+      "condition": "与所有守护者交好",
+      "text": "守护者们认可你，共同推举你为神殿祭司长。"
+    },
+    {
+      "id": "end5",
+      "condition": "攻击所有守护者",
+      "text": "你被合力击败，化为量子尘埃。"
+    },
+    {
+      "id": "end6",
+      "condition": "使用卷轴智慧",
+      "text": "你凭借智慧解开谜题，获得终极力量。"
+    },
+    {
+      "id": "end7",
+      "condition": "放弃任务",
+      "text": "你离开了神殿，世界陷入混沌。"
+    },
+    {
+      "id": "end8",
+      "condition": "破坏量子之核",
+      "text": "神殿崩塌，一切归于虚无。"
+    }
+  ],
+  "introText": "欢迎来到量子神殿！你身为祭司长，必须在60秒内收集三个碎片，激活量子之核，否则神殿将永远关闭。时间紧迫，行动吧！",
+  "ambientMusic": "mystical_ambient.mp3",
+  "id": "fallback_world_063"
+}

@@ -1,0 +1,1243 @@
+{
+  "matchKeywords": [
+    "股东",
+    "外星",
+    "资本",
+    "CEO",
+    "降临",
+    "60秒"
+  ],
+  "identity": "银河资本董事长",
+  "theme": "外星股东降临前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "statue",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_1",
+      "name": "高级顾问扎普",
+      "dialogue": "董事长，外星股东还有60秒降临！",
+      "position": [
+        1,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "npcDialogue": "我们得赶紧准备财报，您有什么指示？",
+          "options": [
+            {
+              "text": "伪造利润数据",
+              "effect": "profit_fake",
+              "nextStage": 2
+            },
+            {
+              "text": "强调长期价值",
+              "effect": "value_longterm",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "npcDialogue": "可是审计部门会发现的！",
+          "options": [
+            {
+              "text": "收买审计",
+              "effect": "bribe_audit",
+              "nextStage": 4
+            },
+            {
+              "text": "销毁证据",
+              "effect": "destroy_evidence",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "npcDialogue": "股东们喜欢听故事，我支持您。",
+          "options": [
+            {
+              "text": "准备PPT",
+              "effect": "prepare_ppt",
+              "nextStage": 6
+            },
+            {
+              "text": "找替罪羊",
+              "effect": "find_scapegoat",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "npcDialogue": "审计员已经被搞定了。",
+          "options": [
+            {
+              "text": "继续造假",
+              "effect": "continue_fraud",
+              "nextStage": 8
+            },
+            {
+              "text": "见好就收",
+              "effect": "stop_fraud",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "npcDialogue": "证据已经烧毁，但服务器还有备份。",
+          "options": [
+            {
+              "text": "攻击服务器",
+              "effect": "hack_server",
+              "nextStage": 10
+            },
+            {
+              "text": "转移数据",
+              "effect": "transfer_data",
+              "nextStage": 11
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "npcDialogue": "PPT做好了，全是太空歌剧风格。",
+          "options": [
+            {
+              "text": "加入爆炸特效",
+              "effect": "explosion_effect",
+              "nextStage": 12
+            },
+            {
+              "text": "保持简洁",
+              "effect": "keep_simple",
+              "nextStage": 13
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "npcDialogue": "替罪羊已经找到，是财务总监。",
+          "options": [
+            {
+              "text": "公开指责",
+              "effect": "blame_public",
+              "nextStage": 14
+            },
+            {
+              "text": "私下解决",
+              "effect": "private_deal",
+              "nextStage": 15
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "npcDialogue": "数据越来越离谱了。",
+          "options": [
+            {
+              "text": "及时修正",
+              "effect": "correct_now",
+              "nextStage": 16
+            },
+            {
+              "text": "破罐破摔",
+              "effect": "give_up",
+              "nextStage": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_2",
+      "name": "公关经理丽萨",
+      "dialogue": "董事长，外星媒体也在关注我们！",
+      "position": [
+        1,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "npcDialogue": "我们需要一个完美的危机公关方案。",
+          "options": [
+            {
+              "text": "发布假新闻",
+              "effect": "fake_news",
+              "nextStage": 2
+            },
+            {
+              "text": "承认错误",
+              "effect": "admit_mistake",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "npcDialogue": "假新闻已经发出，但有人质疑。",
+          "options": [
+            {
+              "text": "删除评论",
+              "effect": "delete_comments",
+              "nextStage": 4
+            },
+            {
+              "text": "水军洗白",
+              "effect": "use_bots",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "npcDialogue": "承认错误让股东们稍微冷静了。",
+          "options": [
+            {
+              "text": "承诺改革",
+              "effect": "promise_reform",
+              "nextStage": 6
+            },
+            {
+              "text": "转移话题",
+              "effect": "change_subject",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "npcDialogue": "评论越删越多。",
+          "options": [
+            {
+              "text": "关闭评论区",
+              "effect": "close_comments",
+              "nextStage": 8
+            },
+            {
+              "text": "正面回应",
+              "effect": "respond_positively",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "npcDialogue": "水军被识破了。",
+          "options": [
+            {
+              "text": "加大投入",
+              "effect": "more_bots",
+              "nextStage": 10
+            },
+            {
+              "text": "停止水军",
+              "effect": "stop_bots",
+              "nextStage": 11
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "npcDialogue": "改革承诺听起来很空洞。",
+          "options": [
+            {
+              "text": "具体措施",
+              "effect": "concrete_measures",
+              "nextStage": 12
+            },
+            {
+              "text": "含糊其辞",
+              "effect": "vague_promises",
+              "nextStage": 13
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "npcDialogue": "我们宣布进军元宇宙。",
+          "options": [
+            {
+              "text": "夸大前景",
+              "effect": "exaggerate",
+              "nextStage": 14
+            },
+            {
+              "text": "低调务实",
+              "effect": "low_key",
+              "nextStage": 15
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "npcDialogue": "评论区关闭，但骂声转到其他平台。",
+          "options": [
+            {
+              "text": "全面封杀",
+              "effect": "total_block",
+              "nextStage": 16
+            },
+            {
+              "text": "诚恳道歉",
+              "effect": "sincere_apology",
+              "nextStage": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_3",
+      "name": "技术总监格鲁",
+      "dialogue": "董事长，星际信号不稳定！",
+      "position": [
+        2,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "npcDialogue": "外星股东的视频会议信号很糟。",
+          "options": [
+            {
+              "text": "升级设备",
+              "effect": "upgrade_equipment",
+              "nextStage": 2
+            },
+            {
+              "text": "用备用方案",
+              "effect": "backup_plan",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "npcDialogue": "新设备需要时间安装。",
+          "options": [
+            {
+              "text": "催促安装",
+              "effect": "rush_install",
+              "nextStage": 4
+            },
+            {
+              "text": "自己动手",
+              "effect": "do_it_yourself",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "npcDialogue": "备用方案是量子通讯器。",
+          "options": [
+            {
+              "text": "使用量子通讯",
+              "effect": "use_quantum",
+              "nextStage": 6
+            },
+            {
+              "text": "还是用传统方式",
+              "effect": "traditional_way",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "npcDialogue": "安装完成了，但信号更差了。",
+          "options": [
+            {
+              "text": "调试参数",
+              "effect": "tune_parameters",
+              "nextStage": 8
+            },
+            {
+              "text": "重启系统",
+              "effect": "reboot_system",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "npcDialogue": "你搞坏了设备。",
+          "options": [
+            {
+              "text": "叫维修",
+              "effect": "call_repair",
+              "nextStage": 10
+            },
+            {
+              "text": "隐瞒故障",
+              "effect": "hide_fault",
+              "nextStage": 11
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "npcDialogue": "量子通讯成功，但消耗大量能量。",
+          "options": [
+            {
+              "text": "节约能量",
+              "effect": "save_energy",
+              "nextStage": 12
+            },
+            {
+              "text": "继续使用",
+              "effect": "keep_using",
+              "nextStage": 13
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "npcDialogue": "传统方式延迟高。",
+          "options": [
+            {
+              "text": "接受延迟",
+              "effect": "accept_delay",
+              "nextStage": 14
+            },
+            {
+              "text": "优化线路",
+              "effect": "optimize_line",
+              "nextStage": 15
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "npcDialogue": "参数调整后信号恢复正常。",
+          "options": [
+            {
+              "text": "立即开会",
+              "effect": "meet_now",
+              "nextStage": 16
+            },
+            {
+              "text": "测试稳定性",
+              "effect": "test_stability",
+              "nextStage": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_4",
+      "name": "财务总监菲奥娜",
+      "dialogue": "董事长，账目漏洞补不上了！",
+      "position": [
+        1,
+        10
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "npcDialogue": "外星股东要求审计所有账目。",
+          "options": [
+            {
+              "text": "拖延时间",
+              "effect": "delay_time",
+              "nextStage": 2
+            },
+            {
+              "text": "主动坦白",
+              "effect": "confess",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "npcDialogue": "拖延可能激怒股东。",
+          "options": [
+            {
+              "text": "找借口",
+              "effect": "make_excuses",
+              "nextStage": 4
+            },
+            {
+              "text": "部分公开",
+              "effect": "partial_disclosure",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "npcDialogue": "坦白可能让你下台。",
+          "options": [
+            {
+              "text": "推卸责任",
+              "effect": "shift_blame",
+              "nextStage": 6
+            },
+            {
+              "text": "承担责任",
+              "effect": "take_responsibility",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "npcDialogue": "借口是系统升级。",
+          "options": [
+            {
+              "text": "假装升级",
+              "effect": "pretend_upgrade",
+              "nextStage": 8
+            },
+            {
+              "text": "实际升级",
+              "effect": "actual_upgrade",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "npcDialogue": "部分公开反而引起怀疑。",
+          "options": [
+            {
+              "text": "继续遮掩",
+              "effect": "continue_hide",
+              "nextStage": 10
+            },
+            {
+              "text": "全部公开",
+              "effect": "full_disclosure",
+              "nextStage": 11
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "npcDialogue": "你推给了下属，下属很愤怒。",
+          "options": [
+            {
+              "text": "安抚下属",
+              "effect": "appease_subordinate",
+              "nextStage": 12
+            },
+            {
+              "text": "开除下属",
+              "effect": "fire_subordinate",
+              "nextStage": 13
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "npcDialogue": "承担责任后，股东给你一次机会。",
+          "options": [
+            {
+              "text": "制定还款计划",
+              "effect": "repayment_plan",
+              "nextStage": 14
+            },
+            {
+              "text": "寻求投资",
+              "effect": "seek_investment",
+              "nextStage": 15
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "npcDialogue": "假装升级被发现是谎言。",
+          "options": [
+            {
+              "text": "再撒一个谎",
+              "effect": "another_lie",
+              "nextStage": 16
+            },
+            {
+              "text": "承认撒谎",
+              "effect": "admit_lie",
+              "nextStage": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_5",
+      "name": "神秘外星人使者",
+      "dialogue": "地球人，你们的CEO考核开始了。",
+      "position": [
+        6,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "npcDialogue": "我代表外星股东，你有60秒证明自己。",
+          "options": [
+            {
+              "text": "展示业绩",
+              "effect": "show_performance",
+              "nextStage": 2
+            },
+            {
+              "text": "请求宽限",
+              "effect": "ask_extension",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "npcDialogue": "业绩数据看似不错。",
+          "options": [
+            {
+              "text": "强调增长",
+              "effect": "emphasize_growth",
+              "nextStage": 4
+            },
+            {
+              "text": "强调创新",
+              "effect": "emphasize_innovation",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "npcDialogue": "宽限需要付出代价。",
+          "options": [
+            {
+              "text": "同意代价",
+              "effect": "accept_price",
+              "nextStage": 6
+            },
+            {
+              "text": "拒绝代价",
+              "effect": "refuse_price",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "npcDialogue": "增长率是注水的，被发现了。",
+          "options": [
+            {
+              "text": "辩解",
+              "effect": "defend",
+              "nextStage": 8
+            },
+            {
+              "text": "认错",
+              "effect": "admit_fault",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "npcDialogue": "创新点不实用。",
+          "options": [
+            {
+              "text": "夸大效用",
+              "effect": "exaggerate_utility",
+              "nextStage": 10
+            },
+            {
+              "text": "承认不足",
+              "effect": "admit_shortcoming",
+              "nextStage": 11
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "npcDialogue": "代价是交出股份。",
+          "options": [
+            {
+              "text": "交出股份",
+              "effect": "give_shares",
+              "nextStage": 12
+            },
+            {
+              "text": "谈判",
+              "effect": "negotiate",
+              "nextStage": 13
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "npcDialogue": "拒绝代价导致股东不满。",
+          "options": [
+            {
+              "text": "安抚股东",
+              "effect": "appease_shareholders",
+              "nextStage": 14
+            },
+            {
+              "text": "威胁股东",
+              "effect": "threaten_shareholders",
+              "nextStage": 15
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "npcDialogue": "辩解无效，股东决定撤资。",
+          "options": [
+            {
+              "text": "恳求留下",
+              "effect": "beg_stay",
+              "nextStage": 16
+            },
+            {
+              "text": "接受撤资",
+              "effect": "accept_withdrawal",
+              "nextStage": 17
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_1",
+      "name": "星际名片",
+      "description": "印有银河系各大股东的联系方式。",
+      "position": [
+        1,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "itemDialogue": "你捡起一张名片，上面有外星董事长的号码。",
+          "options": [
+            {
+              "text": "拨打号码",
+              "effect": "call_number"
+            },
+            {
+              "text": "保存名片",
+              "effect": "keep_card"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "itemDialogue": "号码接通，传来外星人的声音。",
+          "options": [
+            {
+              "text": "自我介绍",
+              "effect": "introduce"
+            },
+            {
+              "text": "挂断",
+              "effect": "hang_up"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "itemDialogue": "外星人表示愿意投资更多。",
+          "options": [
+            {
+              "text": "接受投资",
+              "effect": "accept_investment"
+            },
+            {
+              "text": "拒绝投资",
+              "effect": "refuse_investment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_2",
+      "name": "金色计算器",
+      "description": "可以显示任何数字，但不可靠。",
+      "position": [
+        2,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "itemDialogue": "计算器显示利润增长了1000%！",
+          "options": [
+            {
+              "text": "相信数据",
+              "effect": "believe_data"
+            },
+            {
+              "text": "怀疑数据",
+              "effect": "doubt_data"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "itemDialogue": "你发现计算器有故障。",
+          "options": [
+            {
+              "text": "修理计算器",
+              "effect": "repair_calculator"
+            },
+            {
+              "text": "利用故障",
+              "effect": "exploit_fault"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "itemDialogue": "修理后数据恢复正常，但不好看。",
+          "options": [
+            {
+              "text": "公布真实数据",
+              "effect": "true_data"
+            },
+            {
+              "text": "隐藏真实数据",
+              "effect": "hide_true_data"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_3",
+      "name": "能量饮料",
+      "description": "喝下后精神百倍，但有副作用。",
+      "position": [
+        1,
+        6
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "itemDialogue": "你发现一罐能量饮料，标签写着'超光速'。",
+          "options": [
+            {
+              "text": "喝下",
+              "effect": "drink"
+            },
+            {
+              "text": "不喝",
+              "effect": "not_drink"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "itemDialogue": "喝下后你变得极其兴奋，说话飞快。",
+          "options": [
+            {
+              "text": "快速演讲",
+              "effect": "fast_speech"
+            },
+            {
+              "text": "强制冷静",
+              "effect": "force_calm"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "itemDialogue": "副作用让你开始胡言乱语。",
+          "options": [
+            {
+              "text": "继续演讲",
+              "effect": "continue_speech"
+            },
+            {
+              "text": "道歉离开",
+              "effect": "apologize_leave"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_4",
+      "name": "全息投影仪",
+      "description": "可以投影出任何场景，迷惑股东。",
+      "position": [
+        2,
+        6
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "itemDialogue": "投影仪可以制造虚假的繁荣景象。",
+          "options": [
+            {
+              "text": "投影假财报",
+              "effect": "fake_report"
+            },
+            {
+              "text": "投影星际舰队",
+              "effect": "fleet_projection"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "itemDialogue": "投影被识破的可能性很大。",
+          "options": [
+            {
+              "text": "调整参数",
+              "effect": "adjust_params"
+            },
+            {
+              "text": "直接使用",
+              "effect": "use_directly"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "itemDialogue": "投影成功，但需要持续供电。",
+          "options": [
+            {
+              "text": "节省电力",
+              "effect": "save_power"
+            },
+            {
+              "text": "加大功率",
+              "effect": "increase_power"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_5",
+      "name": "紧急逃生舱密钥",
+      "description": "通往秘密逃生舱的钥匙，放弃一切。",
+      "position": [
+        1,
+        11
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "itemDialogue": "你发现一把密钥，上面刻着'最后手段'。",
+          "options": [
+            {
+              "text": "使用密钥",
+              "effect": "use_key"
+            },
+            {
+              "text": "丢弃密钥",
+              "effect": "discard_key"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "itemDialogue": "使用密钥后，逃生舱开启，你面临选择。",
+          "options": [
+            {
+              "text": "进入逃生舱",
+              "effect": "enter_escape"
+            },
+            {
+              "text": "留下战斗",
+              "effect": "stay_fight"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "itemDialogue": "进入逃生舱意味着抛弃公司。",
+          "options": [
+            {
+              "text": "独自逃离",
+              "effect": "escape_alone"
+            },
+            {
+              "text": "带团队逃离",
+              "effect": "escape_with_team"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_1",
+      "condition": "profit_fake + bribe_audit + continue_fraud",
+      "description": "继续造假最终暴露，被外星股东逮捕，公司破产。"
+    },
+    {
+      "id": "ending_2",
+      "condition": "profit_fake + destroy_evidence + hack_server",
+      "description": "销毁证据并攻击服务器，引发星际网络战争，你成为通缉犯。"
+    },
+    {
+      "id": "ending_3",
+      "condition": "value_longterm + prepare_ppt + explosion_effect",
+      "description": "PPT上的爆炸特效太夸张，股东们被吓到，决定撤资。"
+    },
+    {
+      "id": "ending_4",
+      "condition": "value_longterm + find_scapegoat + blame_public",
+      "description": "公开指责财务总监，但证据不足，反被揭穿，身败名裂。"
+    },
+    {
+      "id": "ending_5",
+      "condition": "fake_news + delete_comments + close_comments",
+      "description": "关闭评论引发更大反弹，外星媒体介入，公司股价暴跌。"
+    },
+    {
+      "id": "ending_6",
+      "condition": "admit_mistake + promise_reform + concrete_measures",
+      "description": "真诚改革取得股东信任，公司获得新投资，转危为安。"
+    },
+    {
+      "id": "ending_7",
+      "condition": "use_quantum + save_energy",
+      "description": "量子通讯成功，但能源耗尽，公司陷入黑暗。"
+    },
+    {
+      "id": "ending_8",
+      "condition": "confess + take_responsibility + repayment_plan",
+      "description": "承担责任并制定还款计划，股东们被感动，决定再给一次机会。"
+    }
+  ],
+  "introText": "你是银河资本的董事长，外星股东即将在60秒后降临。你的每一个决策都将影响公司的命运。准备好了吗？",
+  "ambientMusic": "紧张急促的电子合成音乐，带有外星风格",
+  "id": "fallback_world_012"
+}

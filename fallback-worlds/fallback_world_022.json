@@ -1,0 +1,1062 @@
+{
+  "matchKeywords": [
+    "赛博东京",
+    "财阀",
+    "停电",
+    "60秒",
+    "危机"
+  ],
+  "identity": "赛博东京财阀",
+  "theme": "赛博东京停电前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "server",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "water",
+      "water",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "fire",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_1",
+      "name": "系统管家",
+      "type": "friendly",
+      "position": [
+        1,
+        4
+      ],
+      "dialogue": "主人，还有60秒全市停电，请抓紧时间！",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "对话",
+          "text": "主人，备份系统需要您的授权，但可能触发未知协议。",
+          "options": [
+            {
+              "text": "立即备份",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝备份",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "选择备份",
+          "text": "备份启动，但发现数据中有未加密的债务记录。",
+          "options": [
+            {
+              "text": "销毁债务记录",
+              "nextStage": 4
+            },
+            {
+              "text": "保留债务记录",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "选择拒绝",
+          "text": "管家提醒：不备份可能导致财阀身份丢失。",
+          "options": [
+            {
+              "text": "重新考虑备份",
+              "nextStage": 2
+            },
+            {
+              "text": "坚持拒绝",
+              "nextStage": 6
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "trigger": "销毁债务",
+          "text": "债务记录被销毁，债权人将无法追讨，但留下法律隐患。",
+          "options": [
+            {
+              "text": "接受隐患",
+              "nextStage": "end_1"
+            },
+            {
+              "text": "尝试恢复",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "trigger": "保留债务",
+          "text": "债务记录保留，债权人满意，但财阀信用受损。",
+          "options": [
+            {
+              "text": "公开债务",
+              "nextStage": "end_2"
+            },
+            {
+              "text": "私下解决",
+              "nextStage": "end_3"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "trigger": "坚持拒绝",
+          "text": "停电来临，财阀身份数据丢失，一切归零。",
+          "options": [
+            {
+              "text": "接受命运",
+              "nextStage": "end_4"
+            },
+            {
+              "text": "后悔已晚",
+              "nextStage": "end_4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_2",
+      "name": "股票经纪人",
+      "type": "neutral",
+      "position": [
+        3,
+        2
+      ],
+      "dialogue": "市场即将崩盘，您的选择将影响财阀命运！",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "对话",
+          "text": "还有30秒，是否要抛售所有股票换取现金？",
+          "options": [
+            {
+              "text": "抛售",
+              "nextStage": 2
+            },
+            {
+              "text": "持有",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "抛售",
+          "text": "现金到手，但停电后系统瘫痪，现金变为废纸。",
+          "options": [
+            {
+              "text": "购买物资",
+              "nextStage": "end_5"
+            },
+            {
+              "text": "存入保险箱",
+              "nextStage": "end_6"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "持有",
+          "text": "股票价值归零，但停电后可能重启市场。",
+          "options": [
+            {
+              "text": "等待重启",
+              "nextStage": "end_7"
+            },
+            {
+              "text": "另寻出路",
+              "nextStage": "end_8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_3",
+      "name": "黑客集团首领",
+      "type": "hostile",
+      "position": [
+        8,
+        4
+      ],
+      "dialogue": "你们财阀的好日子到头了！",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "接触",
+          "text": "黑客声称已经控制了备用电源，要么合作要么毁灭。",
+          "options": [
+            {
+              "text": "合作",
+              "nextStage": 2
+            },
+            {
+              "text": "对抗",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "合作",
+          "text": "黑客要求共享财阀机密，否则立即断电。",
+          "options": [
+            {
+              "text": "共享机密",
+              "nextStage": "end_9"
+            },
+            {
+              "text": "假装共享",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "对抗",
+          "text": "启动反黑客程序，但可能误伤系统。",
+          "options": [
+            {
+              "text": "启动程序",
+              "nextStage": 5
+            },
+            {
+              "text": "放弃抵抗",
+              "nextStage": "end_10"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "trigger": "假装共享",
+          "text": "黑客识破伪装，暴怒切断电源。",
+          "options": [
+            {
+              "text": "求饶",
+              "nextStage": "end_11"
+            },
+            {
+              "text": "反制",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "trigger": "反制",
+          "text": "反黑客程序成功，但停电导致系统崩溃。",
+          "options": [
+            {
+              "text": "重启系统",
+              "nextStage": "end_12"
+            },
+            {
+              "text": "手动操作",
+              "nextStage": "end_13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_4",
+      "name": "神秘预言家",
+      "type": "neutral",
+      "position": [
+        5,
+        10
+      ],
+      "dialogue": "我看到了结局，但你可以改变它。",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "询问",
+          "text": "预言家说：有三种未来，选择其一。",
+          "options": [
+            {
+              "text": "未来一：财富永存",
+              "nextStage": 2
+            },
+            {
+              "text": "未来二：权力永恒",
+              "nextStage": 3
+            },
+            {
+              "text": "未来三：一切虚无",
+              "nextStage": 4
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "财富永存",
+          "text": "财阀获得永恒财富，但成为孤家寡人。",
+          "options": [
+            {
+              "text": "接受孤独",
+              "nextStage": "end_14"
+            },
+            {
+              "text": "尝试改变",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "权力永恒",
+          "text": "财阀掌握绝对权力，但世界陷入黑暗。",
+          "options": [
+            {
+              "text": "享受权力",
+              "nextStage": "end_15"
+            },
+            {
+              "text": "放弃权力",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "trigger": "一切虚无",
+          "text": "所有努力化为泡影，但获得内心平静。",
+          "options": [
+            {
+              "text": "接受虚无",
+              "nextStage": "end_16"
+            },
+            {
+              "text": "奋力一搏",
+              "nextStage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_5",
+      "name": "前财阀盟友",
+      "type": "friendly",
+      "position": [
+        10,
+        8
+      ],
+      "dialogue": "还记得我们当年的协议吗？现在需要你了。",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "对话",
+          "text": "盟友透露：停电是内部人策划的，有内鬼。",
+          "options": [
+            {
+              "text": "找出内鬼",
+              "nextStage": 2
+            },
+            {
+              "text": "怀疑盟友",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "找出内鬼",
+          "text": "内鬼竟然是盟友本人！他企图篡位。",
+          "options": [
+            {
+              "text": "逮捕盟友",
+              "nextStage": "end_17"
+            },
+            {
+              "text": "原谅盟友",
+              "nextStage": "end_18"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "怀疑盟友",
+          "text": "盟友失望离去，停电时他带走了关键数据。",
+          "options": [
+            {
+              "text": "追回数据",
+              "nextStage": "end_19"
+            },
+            {
+              "text": "放弃数据",
+              "nextStage": "end_20"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_1",
+      "name": "应急电源",
+      "type": "usable",
+      "position": [
+        1,
+        9
+      ],
+      "effect": "延长10秒时间",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "拾取",
+          "text": "你获得了应急电源，可延长10秒时间。",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": 2
+            },
+            {
+              "text": "保留",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "使用",
+          "text": "时间延长，但电源发出噪音引来敌人。",
+          "options": [
+            {
+              "text": "战斗",
+              "nextStage": "end_21"
+            },
+            {
+              "text": "躲避",
+              "nextStage": "end_22"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "保留",
+          "text": "保留电源，但停电后无法使用。",
+          "options": [
+            {
+              "text": "丢弃",
+              "nextStage": 1
+            },
+            {
+              "text": "继续保留",
+              "nextStage": "end_23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_2",
+      "name": "加密密钥",
+      "type": "key",
+      "position": [
+        7,
+        2
+      ],
+      "effect": "解锁服务器",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "拾取",
+          "text": "你获得了加密密钥，可以解锁服务器。",
+          "options": [
+            {
+              "text": "立即解锁",
+              "nextStage": 2
+            },
+            {
+              "text": "稍后使用",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "解锁",
+          "text": "服务器中存储着财阀的终极秘密，公开与否？",
+          "options": [
+            {
+              "text": "公开秘密",
+              "nextStage": "end_24"
+            },
+            {
+              "text": "隐藏秘密",
+              "nextStage": "end_25"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "稍后",
+          "text": "停电后密钥失效，秘密永远消失。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": "end_26"
+            },
+            {
+              "text": "无所谓",
+              "nextStage": "end_27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_3",
+      "name": "神经接口",
+      "type": "upgrade",
+      "position": [
+        3,
+        12
+      ],
+      "effect": "提升决策速度",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "拾取",
+          "text": "你获得了神经接口，可以提升决策速度。",
+          "options": [
+            {
+              "text": "立即植入",
+              "nextStage": 2
+            },
+            {
+              "text": "保存起来",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "植入",
+          "text": "接口植入成功，但出现副作用：记忆混乱。",
+          "options": [
+            {
+              "text": "忍受副作用",
+              "nextStage": "end_28"
+            },
+            {
+              "text": "移除接口",
+              "nextStage": "end_29"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "保存",
+          "text": "停电后接口损坏，错失了机会。",
+          "options": [
+            {
+              "text": "尝试修复",
+              "nextStage": "end_30"
+            },
+            {
+              "text": "放弃",
+              "nextStage": "end_31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_4",
+      "name": "控制器",
+      "type": "usable",
+      "position": [
+        9,
+        5
+      ],
+      "effect": "控制门禁",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "拾取",
+          "text": "你获得了控制器，可以控制所有门禁。",
+          "options": [
+            {
+              "text": "关闭所有门",
+              "nextStage": 2
+            },
+            {
+              "text": "打开所有门",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "关门",
+          "text": "所有门关闭，但困住了自己。",
+          "options": [
+            {
+              "text": "等待救援",
+              "nextStage": "end_32"
+            },
+            {
+              "text": "强行破门",
+              "nextStage": "end_33"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "开门",
+          "text": "所有门打开，敌人涌入。",
+          "options": [
+            {
+              "text": "迎战",
+              "nextStage": "end_34"
+            },
+            {
+              "text": "逃跑",
+              "nextStage": "end_35"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_5",
+      "name": "财阀印章",
+      "type": "key",
+      "position": [
+        5,
+        14
+      ],
+      "effect": "权威象征",
+      "storyline": [
+        {
+          "stage": 1,
+          "trigger": "拾取",
+          "text": "你获得了财阀印章，可以调动最后资源。",
+          "options": [
+            {
+              "text": "调动资源",
+              "nextStage": 2
+            },
+            {
+              "text": "保存印章",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "trigger": "调动",
+          "text": "资源耗尽，但保住了财阀地位。",
+          "options": [
+            {
+              "text": "巩固地位",
+              "nextStage": "end_36"
+            },
+            {
+              "text": "分享权力",
+              "nextStage": "end_37"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "trigger": "保存",
+          "text": "停电后印章成为废铁，财阀解散。",
+          "options": [
+            {
+              "text": "重建财阀",
+              "nextStage": "end_38"
+            },
+            {
+              "text": "归隐田园",
+              "nextStage": "end_39"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end_1",
+      "text": "债务隐患导致财阀被法律制裁，破产清算。"
+    },
+    {
+      "id": "end_2",
+      "text": "公开债务引发信任危机，财阀名誉扫地。"
+    },
+    {
+      "id": "end_3",
+      "text": "私下解决债务，财阀与债权人达成秘密协议，暂时安全。"
+    },
+    {
+      "id": "end_4",
+      "text": "停电后数据丢失，财阀身份消失，你变成普通人。"
+    },
+    {
+      "id": "end_5",
+      "text": "购买大量物资，却无法保存，最终腐烂。"
+    },
+    {
+      "id": "end_6",
+      "text": "现金存入保险箱，但停电后无法取出，财富成谜。"
+    },
+    {
+      "id": "end_7",
+      "text": "市场重启，股票价值飙升，财阀成为最大赢家。"
+    },
+    {
+      "id": "end_8",
+      "text": "另寻出路，发现新的财源，但需付出代价。"
+    },
+    {
+      "id": "end_9",
+      "text": "共享机密后，黑客控制财阀，你沦为傀儡。"
+    },
+    {
+      "id": "end_10",
+      "text": "放弃抵抗，黑客接管财阀，你被流放。"
+    },
+    {
+      "id": "end_11",
+      "text": "求饶使黑客得意，但暗设陷阱，最终反杀。"
+    },
+    {
+      "id": "end_12",
+      "text": "重启系统成功，但停电已过，财阀复位。"
+    },
+    {
+      "id": "end_13",
+      "text": "手动操作成功，但耗尽体力，昏倒在地。"
+    },
+    {
+      "id": "end_14",
+      "text": "财富永存，但孤独终老，所有亲人离去。"
+    },
+    {
+      "id": "end_15",
+      "text": "权力永恒，但世界陷入黑暗，你成为独裁者。"
+    },
+    {
+      "id": "end_16",
+      "text": "一切虚无，但内心平静，超脱世俗。"
+    },
+    {
+      "id": "end_17",
+      "text": "逮捕盟友，财阀内乱，但核心稳定。"
+    },
+    {
+      "id": "end_18",
+      "text": "原谅盟友，他感恩戴德，成为忠诚助手。"
+    },
+    {
+      "id": "end_19",
+      "text": "追回数据，但盟友反目成仇，财阀分裂。"
+    },
+    {
+      "id": "end_20",
+      "text": "放弃数据，财阀科技落后，但保全和谐。"
+    },
+    {
+      "id": "end_21",
+      "text": "战斗胜利，但时间耗尽，陷入黑暗。"
+    },
+    {
+      "id": "end_22",
+      "text": "躲避成功，赢得时间，但失去电源。"
+    },
+    {
+      "id": "end_23",
+      "text": "保留电源到停电后，却无处可用。"
+    },
+    {
+      "id": "end_24",
+      "text": "公开秘密，震惊世界，财阀成为焦点。"
+    },
+    {
+      "id": "end_25",
+      "text": "隐藏秘密，安全度过，但秘密永沉。"
+    },
+    {
+      "id": "end_26",
+      "text": "后悔不已，但时光不再，只能接受。"
+    },
+    {
+      "id": "end_27",
+      "text": "无所谓，继续前行，但错失良机。"
+    },
+    {
+      "id": "end_28",
+      "text": "忍受副作用，决策加速，但记忆混乱。"
+    },
+    {
+      "id": "end_29",
+      "text": "移除接口，恢复原状，但失去优势。"
+    },
+    {
+      "id": "end_30",
+      "text": "修复失败，接口报废，一无所获。"
+    },
+    {
+      "id": "end_31",
+      "text": "放弃，没有接口也能活，但效率降低。"
+    },
+    {
+      "id": "end_32",
+      "text": "等待救援，却无人来，最终困死。"
+    },
+    {
+      "id": "end_33",
+      "text": "强行破门，成功逃脱，但受伤严重。"
+    },
+    {
+      "id": "end_34",
+      "text": "迎战敌人，英勇就义，成为传奇。"
+    },
+    {
+      "id": "end_35",
+      "text": "逃跑成功，但财阀基业毁于一旦。"
+    },
+    {
+      "id": "end_36",
+      "text": "巩固地位，财阀永续，但代价巨大。"
+    },
+    {
+      "id": "end_37",
+      "text": "分享权力，建立联盟，实现共治。"
+    },
+    {
+      "id": "end_38",
+      "text": "重建财阀，白手起家，重获辉煌。"
+    },
+    {
+      "id": "end_39",
+      "text": "归隐田园，平淡生活，远离纷争。"
+    }
+  ],
+  "introText": "欢迎来到赛博东京，财阀大人！全市将在60秒后停电，你的帝国岌岌可危。在这最后的时间里，你必须做出决策，确保财阀的存续。记住，每一秒都至关重要！",
+  "ambientMusic": "cyberpunk_emergency.mp3",
+  "id": "fallback_world_022"
+}

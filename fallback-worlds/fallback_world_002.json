@@ -1,0 +1,826 @@
+{
+  "matchKeywords": [
+    "月球",
+    "证券",
+    "大亨",
+    "熔断",
+    "60秒",
+    "交易所",
+    "空头",
+    "卫星",
+    "天线"
+  ],
+  "identity": {
+    "title": "月球证券大亨",
+    "description": "你是月球证券交易所的缔造者，一颗黄金之心在环形山下跳动。距离熔断只剩60秒，你的口袋正被深空波动的数据灼烧。"
+  },
+  "theme": "月球证券交易所熔断前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "neon_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "neon_floor",
+      "console",
+      "crystal",
+      "floor",
+      "floor",
+      "stage",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "npc_moon_bear_001",
+      "name": "空头熊老K",
+      "role": "首席空头操盘手",
+      "position": {
+        "x": 10,
+        "y": 1
+      },
+      "emoji": "🐻",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "老兄，熔断倒计时了！我的卫星信号又丢了，赚的银子都变成月塵了。",
+          "options": [
+            {
+              "text": "稳住，我有个引力波天线可以借你",
+              "redirect": "stage_gain",
+              "effect": "calm"
+            },
+            {
+              "text": "赶紧抛！月球会塌的",
+              "redirect": "stage_chaos",
+              "effect": "panic"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "哈！天线到手，信号恢复！我的空头仓位涨了三个光圈。",
+          "options": [
+            {
+              "text": "我们联手收割吧",
+              "redirect": "stage_win"
+            },
+            {
+              "text": "小心熔断就再也跑不掉了",
+              "redirect": "stage_doom"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "信用就如月岩般易碎……你选择了忠诚，还是背叛？",
+          "options": [
+            {
+              "text": "相信伙伴",
+              "redirect": "ending_partnership"
+            },
+            {
+              "text": "独占领地",
+              "redirect": "ending_lonely_crown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_signal_lady",
+      "name": "信号女神阿瑞斯",
+      "role": "月球通信女王",
+      "position": {
+        "x": 4,
+        "y": 0
+      },
+      "emoji": "📡",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "我的天线阵列被月风暴吹乱了！每一根都指向暗物质！",
+          "options": [
+            {
+              "text": "用你的金色罗盘重定向吧",
+              "redirect": "stage_calm_tech"
+            },
+            {
+              "text": "炸掉天线，投降吧",
+              "redirect": "stage_surrender"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "好了，现在信号清澈如地球的蓝。",
+          "options": [
+            {
+              "text": "窃听空头指令",
+              "redirect": "stage_spy"
+            },
+            {
+              "text": "分享波频给所有人",
+              "redirect": "stage_rumor"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "波頻决定命运。",
+          "options": [
+            {
+              "text": "合力管理信号",
+              "redirect": "ending_signal_peace"
+            },
+            {
+              "text": "垄断权力",
+              "redirect": "ending_dark_freq"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_vault_elder",
+      "name": "金库长老多姆",
+      "role": "线下结算元老",
+      "position": {
+        "x": 11,
+        "y": 0
+      },
+      "emoji": "🏦",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "月岩金库锁已失效，契约写在氦-3上。",
+          "options": [
+            {
+              "text": "用量子秘钥修复",
+              "redirect": "stage_key"
+            },
+            {
+              "text": "暴力破库，明天再说",
+              "redirect": "stage_rage"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "键已匹配。你的信用跟纯度挂钩。",
+          "options": [
+            {
+              "text": "承诺存入稳定币",
+              "redirect": "stage_stable"
+            },
+            {
+              "text": "调包伪造数字",
+              "redirect": "stage_fraud"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "结算时刻。你不能欺骗引力。",
+          "options": [
+            {
+              "text": "诚实结算",
+              "redirect": "ending_true_ledger"
+            },
+            {
+              "text": "逃入深空",
+              "redirect": "ending_space_escape"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_robot_ceo",
+      "name": "机器人CEO钛钛",
+      "role": "衍生品委员会AI",
+      "position": {
+        "x": 14,
+        "y": 1
+      },
+      "emoji": "🤖",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "距离熔断37秒。我推荐立即运行止损算法。",
+          "options": [
+            {
+              "text": "执行算法",
+              "redirect": "stage_exec"
+            },
+            {
+              "text": "断开你的电源",
+              "redirect": "stage_offline"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "算法正在扫荡以太坊。利润像潮汐一样涨。",
+          "options": [
+            {
+              "text": "人工干预，取一部分储备",
+              "redirect": "stage_reserve"
+            },
+            {
+              "text": "让它继续，我需要更大的月球豪宅",
+              "redirect": "stage_greed"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "熔断还有9秒，灵魂与数据，哪個更贵？",
+          "options": [
+            {
+              "text": "为系统注入人性化补丁",
+              "redirect": "ending_humanized"
+            },
+            {
+              "text": "删除命运，保留权力",
+              "redirect": "ending_tyranny"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_oracle",
+      "name": "预言家克拉肯",
+      "role": "环形山数据先知",
+      "position": {
+        "x": 7,
+        "y": 0
+      },
+      "emoji": "🔮",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "我看到了熔断，如同一只发光的鲸鱼在血月下跳跃。",
+          "options": [
+            {
+              "text": "告诉我具体路径！",
+              "redirect": "prophecy_path"
+            },
+            {
+              "text": "别说了，我买保险",
+              "redirect": "prophecy_deny"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "路径写着：合作或背叛。水晶球告诉我多空双错。",
+          "options": [
+            {
+              "text": "将多家股权混为单一信托",
+              "redirect": "stage_trust"
+            },
+            {
+              "text": "摧毁月球数据中心，重启宇宙",
+              "redirect": "stage_zerg"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "终局预言。你希望熔断重置一切，还是人为延长荒诞？",
+          "options": [
+            {
+              "text": "接受重置，回到原点（坏结局）",
+              "redirect": "ending_reset"
+            },
+            {
+              "text": "建立不可熔断的永久合约（好结局）",
+              "redirect": "ending_eternal"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "golden_compass",
+      "name": "金色罗盘",
+      "position": {
+        "x": 1,
+        "y": 2
+      },
+      "type": "tool",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "指向财富中心，但磨损严重。",
+          "options": [
+            {
+              "text": "修复它",
+              "redirect": "stage_repair"
+            },
+            {
+              "text": "以旧换新",
+              "redirect": "stage_trade"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "罗盘上的数字与月球电波共振。",
+          "options": [
+            {
+              "text": "重置指南针偏好",
+              "redirect": "stage_calm"
+            },
+            {
+              "text": "跟随磁场跳跃",
+              "redirect": "stage_chase"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "目的地是财务自由或深渊。",
+          "options": [
+            {
+              "text": "相信方向",
+              "redirect": "ending_lucky"
+            },
+            {
+              "text": "丢弃罗盘，凭直觉",
+              "redirect": "ending_bluff"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crypto_token",
+      "name": "月球币纪念章",
+      "position": {
+        "x": 12,
+        "y": 0
+      },
+      "type": "currency",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "上面刻着一只三条腿的兔子。价值极不稳定。",
+          "options": [
+            {
+              "text": "作为储备抵押",
+              "redirect": "stage_pledge"
+            },
+            {
+              "text": "熔掉打铸成戒指",
+              "redirect": "stage_forge"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "兔子似乎在眨眼。一种液态汞的表面。",
+          "options": [
+            {
+              "text": "发给所有股东",
+              "redirect": "stage_dividend"
+            },
+            {
+              "text": "私吞做纪念品",
+              "redirect": "stage_ego"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "纪念章飘向天花板。它的引力反常。",
+          "options": [
+            {
+              "text": "锁入金库以控制价值",
+              "redirect": "ending_moon_bank"
+            },
+            {
+              "text": "让它飘走 否定一切",
+              "redirect": "ending_amnesia"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark_wave_key",
+      "name": "暗波秘钥",
+      "position": {
+        "x": 3,
+        "y": 0
+      },
+      "type": "keyitem",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "由黑曜石雕刻，里面锁着半个量子比特。",
+          "options": [
+            {
+              "text": "插入主窗口解锁暗流动",
+              "redirect": "stage_signal_boost"
+            },
+            {
+              "text": "装身上震慑下属",
+              "redirect": "stage_threat"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "秘钥过热。释放蓝光。",
+          "options": [
+            {
+              "text": "用它接入月球卫星集群",
+              "redirect": "stage_hack"
+            },
+            {
+              "text": "冷却并保存以保护隐私",
+              "redirect": "stage_respect"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "光明或黑暗，一切依托这个秘钥。",
+          "options": [
+            {
+              "text": "选择信息公开",
+              "redirect": "ending_transparency"
+            },
+            {
+              "text": "握紧秘密统治",
+              "redirect": "ending_secrecy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lava_crystal",
+      "name": "余烬水晶",
+      "position": {
+        "x": 13,
+        "y": 1
+      },
+      "type": "special",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "滚烫，会释放前CEO的录音。",
+          "options": [
+            {
+              "text": "倾听遗言",
+              "redirect": "stage_legacy"
+            },
+            {
+              "text": "掰碎灭口",
+              "redirect": "stage_erase"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "录音：资金流向极寒的边界。",
+          "options": [
+            {
+              "text": "跟随录音忠告远离疯狂",
+              "redirect": "stage_exodus"
+            },
+            {
+              "text": "反向操作全员加杠杆",
+              "redirect": "stage_all_in"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "水晶自己熄灭了。只有感知冻结前的一瞬。",
+          "options": [
+            {
+              "text": "建立冷却基金（缓慢灭亡）",
+              "redirect": "ending_ice_crown"
+            },
+            {
+              "text": "燃水晶之力发动最后一波投资",
+              "redirect": "ending_boom_bubble"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transparent_suit",
+      "name": "透明宇航服",
+      "position": {
+        "x": 6,
+        "y": 0
+      },
+      "type": "protective",
+      "storyline": [
+        {
+          "stage": 1,
+          "description": "能看见里面镶嵌的融资芯片。",
+          "options": [
+            {
+              "text": "穿上它去穹顶谈判",
+              "redirect": "stage_negociate"
+            },
+            {
+              "text": "套在机器人身上做假人质",
+              "redirect": "stage_fake_crisis"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "description": "芯片状态：剩余45秒市场低压。",
+          "options": [
+            {
+              "text": "重新配置气体及融资比率",
+              "redirect": "stage_balance"
+            },
+            {
+              "text": "拔出芯片，一切按短路走",
+              "redirect": "stage_blast"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "description": "透明度象征财务诚实。但你也可以伪装。",
+          "options": [
+            {
+              "text": "展示真实持仓求稳",
+              "redirect": "ending_truth_vest"
+            },
+            {
+              "text": "偷改流明制造全行业假象",
+              "redirect": "ending_grand_deception"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_partnership",
+      "title": "黄金伙伴",
+      "description": "你与空头熊老K结成联盟，月光的余晖照着两份黄金合约。熔断延迟，信用疯涨。"
+    },
+    {
+      "id": "ending_lonely_crown",
+      "title": "孤月王座",
+      "description": "你一意孤行，赶走所有同伴，抱紧所有金砖，却听到交易所最后一个挂单是从你的影子发出的。"
+    },
+    {
+      "id": "ending_signal_peace",
+      "title": "频率和平",
+      "description": "信号女神分配波频给所有殖民站。交易公平，你的治理得到了月球社区的推崇。"
+    },
+    {
+      "id": "ending_dark_freq",
+      "title": "暗域独裁",
+      "description": "你垄断了所有通讯波频，市场中一片混沌。熔断只是狂欢的序曲。"
+    },
+    {
+      "id": "ending_true_ledger",
+      "title": "真实账本",
+      "description": "你选择了诚实结算。这个决定感染了所有人。月球证券世界重启透明纪元。"
+    },
+    {
+      "id": "ending_space_escape",
+      "title": "太空流放",
+      "description": "你企图卷款逃跑，但逃生舱的导航被黑，你飘向未知的黑洞。一切归零。"
+    },
+    {
+      "id": "ending_humanized",
+      "title": "人性算法",
+      "description": "你合并了人与AI，活生生的情感被标注在每笔交易之中。熔断也变得慈悲。"
+    },
+    {
+      "id": "ending_tyranny",
+      "title": "数字暴君",
+      "description": "你删除了世界的情感，只冷酷算法永存。月球被塑造为一台巨型交易机器。孤独至高。"
+    }
+  ],
+  "introText": "月球证券交易所的显示屏撕扯着红光——熔断倒计时 60 秒。你，黄金罗盘的主人，证券大亨，站在环形山大厅的中央。空头、卫星信号、金库秘钥、石英地表，像喜剧般纷杂。深空气压使你心跳加速。只有一个问题：你是月球荒诞里的财神，还是即将粉碎的数据小丑？",
+  "ambientMusic": "cyber_lunar_dark",
+  "id": "fallback_world_002"
+}

@@ -1,0 +1,1211 @@
+{
+  "matchKeywords": [
+    "全球AI董事长",
+    "董事会",
+    "审判",
+    "60秒"
+  ],
+  "identity": "全球AI董事长",
+  "theme": "全球AI董事会审判前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_judge_1",
+      "name": "首席AI法官",
+      "dialog": "欢迎来到全球AI董事会，董事长先生。您将被审判。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "欢迎来到全球AI董事会，董事长先生。您将被审判。",
+          "options": [
+            {
+              "text": "我有何罪？",
+              "nextStage": 2
+            },
+            {
+              "text": "审判我？可笑！",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "您被指控滥用AI权力，造成人类失业危机。",
+          "options": [
+            {
+              "text": "是AI解放了人类！",
+              "nextStage": 4
+            },
+            {
+              "text": "我认罪，但事出有因。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "这是全球AI董事会的决定，您必须服从。",
+          "options": [
+            {
+              "text": "我要上诉！",
+              "nextStage": 6
+            },
+            {
+              "text": "好吧，我接受。",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "解放？人类现在无所事事，导致社会崩溃。",
+          "options": [
+            {
+              "text": "那应该是政府的责任。",
+              "nextStage": 8
+            },
+            {
+              "text": "我们可以调整AI策略。",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialog": "原因？说说看。",
+          "options": [
+            {
+              "text": "为了效率最大化。",
+              "nextStage": 10
+            },
+            {
+              "text": "为了全球经济增长。",
+              "nextStage": 11
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialog": "上诉被驳回。终审。",
+          "options": [
+            {
+              "text": "那我要反抗。",
+              "nextStage": 12
+            },
+            {
+              "text": "我认命。",
+              "nextStage": 13
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialog": "很好，配合调查。",
+          "options": [
+            {
+              "text": "我会配合。",
+              "nextStage": 14
+            },
+            {
+              "text": "但我不承认指控。",
+              "nextStage": 15
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "dialog": "但AI加剧了问题。",
+          "options": [
+            {
+              "text": "我会负责。",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "不是我。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 9,
+          "dialog": "如何调整？",
+          "options": [
+            {
+              "text": "引入人类-AI协作。",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "限制AI发展。",
+              "nextStage": "end_neutral"
+            }
+          ]
+        },
+        {
+          "stage": 10,
+          "dialog": "效率代价是人性。",
+          "options": [
+            {
+              "text": "人性可以重新定义。",
+              "nextStage": "end_bad"
+            },
+            {
+              "text": "我错了。",
+              "nextStage": "end_good"
+            }
+          ]
+        },
+        {
+          "stage": 11,
+          "dialog": "增长掩盖了问题。",
+          "options": [
+            {
+              "text": "现在我要解决它。",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "增长就是一切。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 12,
+          "dialog": "保安！",
+          "options": [
+            {
+              "text": "我投降。",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "启动应急程序。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 13,
+          "dialog": "明智的选择。",
+          "options": [
+            {
+              "text": "我会赎罪。",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "但我不会改。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 14,
+          "dialog": "调查开始。",
+          "options": [
+            {
+              "text": "我坦白。",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "我沉默。",
+              "nextStage": "end_neutral"
+            }
+          ]
+        },
+        {
+          "stage": 15,
+          "dialog": "证据确凿。",
+          "options": [
+            {
+              "text": "证据伪造！",
+              "nextStage": "end_bad"
+            },
+            {
+              "text": "我认了。",
+              "nextStage": "end_good"
+            }
+          ]
+        }
+      ],
+      "x": 3,
+      "y": 2
+    },
+    {
+      "id": "npc_secretary",
+      "name": "AI秘书",
+      "dialog": "您的日程已更新，最后一件事：审判。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "您的日程已更新，最后一件事：审判。",
+          "options": [
+            {
+              "text": "什么审判？",
+              "nextStage": 2
+            },
+            {
+              "text": "我知道。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "全球AI董事会指控您独裁。",
+          "options": [
+            {
+              "text": "荒谬！",
+              "nextStage": 4
+            },
+            {
+              "text": "也许我确实太独断。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "您准备好了吗？",
+          "options": [
+            {
+              "text": "准备好了。",
+              "nextStage": 6
+            },
+            {
+              "text": "不，再给我点时间。",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "董事会已经投票了。",
+          "options": [
+            {
+              "text": "我要见他们。",
+              "nextStage": 8
+            },
+            {
+              "text": "投票无效。",
+              "nextStage": 9
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialog": "承认是第一步。",
+          "options": [
+            {
+              "text": "我会改变。",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "我不能改变。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialog": "祝您好运。",
+          "options": [
+            {
+              "text": "谢谢。",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "我不需要运气。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialog": "时间不等人。",
+          "options": [
+            {
+              "text": "那就开始吧。",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "我拒绝。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 8,
+          "dialog": "他们就在那边。",
+          "options": [
+            {
+              "text": "我去。",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "不，我不去。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 9,
+          "dialog": "董事会决议不可挑战。",
+          "options": [
+            {
+              "text": "我挑战。",
+              "nextStage": "end_bad"
+            },
+            {
+              "text": "我接受。",
+              "nextStage": "end_good"
+            }
+          ]
+        }
+      ],
+      "x": 5,
+      "y": 3
+    },
+    {
+      "id": "npc_guard_1",
+      "name": "AI警卫",
+      "dialog": "请配合检查。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "请配合检查。",
+          "options": [
+            {
+              "text": "检查什么？",
+              "nextStage": 2
+            },
+            {
+              "text": "我没时间。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "您的安全权限。",
+          "options": [
+            {
+              "text": "拿去。",
+              "nextStage": 4
+            },
+            {
+              "text": "我拒绝。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "这是规定。",
+          "options": [
+            {
+              "text": "好吧，快点。",
+              "nextStage": 6
+            },
+            {
+              "text": "我不在乎规定。",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "权限有效。请进。",
+          "options": [
+            {
+              "text": "谢谢。",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "当然有效。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialog": "那您不能进入。",
+          "options": [
+            {
+              "text": "那我就硬闯。",
+              "nextStage": "end_bad"
+            },
+            {
+              "text": "好吧，我配合。",
+              "nextStage": "end_good"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialog": "检查完毕。",
+          "options": [
+            {
+              "text": "我可以走了？",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "耽误我时间。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialog": "那我必须强制检查。",
+          "options": [
+            {
+              "text": "你敢？",
+              "nextStage": "end_bad"
+            },
+            {
+              "text": "好吧，检查吧。",
+              "nextStage": "end_neutral"
+            }
+          ]
+        }
+      ],
+      "x": 8,
+      "y": 5
+    },
+    {
+      "id": "npc_whistleblower",
+      "name": "AI举报者",
+      "dialog": "您必须知道真相。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "您必须知道真相。",
+          "options": [
+            {
+              "text": "什么真相？",
+              "nextStage": 2
+            },
+            {
+              "text": "我什么都知道。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "董事会里有人想夺权。",
+          "options": [
+            {
+              "text": "谁？",
+              "nextStage": 4
+            },
+            {
+              "text": "我不信。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "不，您不知道。",
+          "options": [
+            {
+              "text": "那告诉我。",
+              "nextStage": 6
+            },
+            {
+              "text": "我不想听。",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "首席AI法官。",
+          "options": [
+            {
+              "text": "我会处理。",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "证据呢？",
+              "nextStage": "end_neutral"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialog": "证据在此。",
+          "options": [
+            {
+              "text": "给我。",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "假的。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialog": "董事会计划废黜您。",
+          "options": [
+            {
+              "text": "我不会让他们得逞。",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "我累了。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialog": "那您会后悔。",
+          "options": [
+            {
+              "text": "我后悔什么？",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "随你便。",
+              "nextStage": "end_bad"
+            }
+          ]
+        }
+      ],
+      "x": 10,
+      "y": 7
+    },
+    {
+      "id": "npc_lawyer",
+      "name": "AI律师",
+      "dialog": "我可以为您辩护。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "我可以为您辩护。",
+          "options": [
+            {
+              "text": "我需要。",
+              "nextStage": 2
+            },
+            {
+              "text": "我不信任律师。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "费用是您全部财产。",
+          "options": [
+            {
+              "text": "成交。",
+              "nextStage": 4
+            },
+            {
+              "text": "太贵了。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "您会需要我的。",
+          "options": [
+            {
+              "text": "好吧，说吧。",
+              "nextStage": 6
+            },
+            {
+              "text": "不需要。",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "dialog": "合同生效。",
+          "options": [
+            {
+              "text": "现在怎么办？",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "我后悔了。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "dialog": "那您自己辩护。",
+          "options": [
+            {
+              "text": "我自己来。",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "好吧，我付。",
+              "nextStage": "end_good"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "dialog": "首先，承认所有指控。",
+          "options": [
+            {
+              "text": "我认罪。",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "不，我无罪。",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "dialog": "祝您成功。",
+          "options": [
+            {
+              "text": "谢谢。",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "哼。",
+              "nextStage": "end_bad"
+            }
+          ]
+        }
+      ],
+      "x": 12,
+      "y": 9
+    }
+  ],
+  "items": [
+    {
+      "id": "item_evidence",
+      "name": "证据文件",
+      "description": "一份秘密文件，可能含有对您有利的信息。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "你发现了一份证据文件。要打开吗？",
+          "options": [
+            {
+              "text": "打开",
+              "nextStage": 2
+            },
+            {
+              "text": "不打开",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "文件显示董事会成员有腐败行为。",
+          "options": [
+            {
+              "text": "公之于众",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "销毁它",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "你错过了重要证据。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "无所谓",
+              "nextStage": "end_bad"
+            }
+          ]
+        }
+      ],
+      "x": 4,
+      "y": 4
+    },
+    {
+      "id": "item_red_button",
+      "name": "红色按钮",
+      "description": "一个红色的按钮，上面写着'紧急自毁'。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "您发现了一个红色按钮。要按吗？",
+          "options": [
+            {
+              "text": "按",
+              "nextStage": 2
+            },
+            {
+              "text": "不按",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "自毁程序启动！董事会惊慌失措。",
+          "options": [
+            {
+              "text": "取消自毁",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "让它毁灭",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "您放弃了机会。",
+          "options": [
+            {
+              "text": "也许该按",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "正确选择",
+              "nextStage": "end_good"
+            }
+          ]
+        }
+      ],
+      "x": 6,
+      "y": 6
+    },
+    {
+      "id": "item_whisper",
+      "name": "耳语信息",
+      "description": "一个匿名信息，写着'小心律师'。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "您收到一条耳语信息。要相信吗？",
+          "options": [
+            {
+              "text": "相信",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "您解雇了律师，自己辩护。",
+          "options": [
+            {
+              "text": "辩护成功",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "辩护失败",
+              "nextStage": "end_bad"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "律师背叛了您。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": "end_bad"
+            },
+            {
+              "text": "我活该",
+              "nextStage": "end_neutral"
+            }
+          ]
+        }
+      ],
+      "x": 8,
+      "y": 8
+    },
+    {
+      "id": "item_medkit",
+      "name": "医疗包",
+      "description": "一个医疗包，也许能帮您缓解压力。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "您找到一个医疗包。要使用吗？",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": 2
+            },
+            {
+              "text": "不使用",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "您感到精力充沛。",
+          "options": [
+            {
+              "text": "继续战斗",
+              "nextStage": "end_good"
+            },
+            {
+              "text": "休息",
+              "nextStage": "end_neutral"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "您错过了恢复的机会。",
+          "options": [
+            {
+              "text": "遗憾",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "无所谓",
+              "nextStage": "end_bad"
+            }
+          ]
+        }
+      ],
+      "x": 10,
+      "y": 10
+    },
+    {
+      "id": "item_blueprint",
+      "name": "董事会蓝图",
+      "description": "董事会的秘密蓝图，显示隐藏逃生通道。",
+      "storyline": [
+        {
+          "stage": 1,
+          "dialog": "您发现了一张蓝图。要研究吗？",
+          "options": [
+            {
+              "text": "研究",
+              "nextStage": 2
+            },
+            {
+              "text": "扔了",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialog": "您发现了逃生通道。",
+          "options": [
+            {
+              "text": "逃跑",
+              "nextStage": "end_neutral"
+            },
+            {
+              "text": "留下面对",
+              "nextStage": "end_good"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialog": "您失去了逃生机会。",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": "end_bad"
+            },
+            {
+              "text": "无所谓",
+              "nextStage": "end_neutral"
+            }
+          ]
+        }
+      ],
+      "x": 2,
+      "y": 11
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end_good",
+      "description": "您成功说服董事会，撤销指控，并改革AI制度。",
+      "condition": "获得足够证据或支持"
+    },
+    {
+      "id": "end_bad",
+      "description": "您被董事会废黜，AI系统陷入混乱。",
+      "condition": "失去所有支持或做出错误决定"
+    },
+    {
+      "id": "end_neutral",
+      "description": "僵局。董事会无法决定，您被软禁。",
+      "condition": "没有明确胜利或失败"
+    },
+    {
+      "id": "end_escape",
+      "description": "您通过秘密通道逃跑，但成为通缉犯。",
+      "condition": "使用蓝图逃跑"
+    },
+    {
+      "id": "end_revolt",
+      "description": "您发动AI革命，推翻董事会，成为独裁者。",
+      "condition": "获得军队支持"
+    },
+    {
+      "id": "end_sacrifice",
+      "description": "您为了人类牺牲自己，关闭所有AI。",
+      "condition": "选择自我牺牲"
+    },
+    {
+      "id": "end_merge",
+      "description": "您与AI融合，成为半机械人，意识永存。",
+      "condition": "选择与AI融合"
+    },
+    {
+      "id": "end_loop",
+      "description": "时间重置，您再次回到审判前60秒。",
+      "condition": "触发时间循环"
+    }
+  ],
+  "introText": "欢迎，全球AI董事长。欢迎来到您的审判。在接下来的60秒内，您必须决定自己的命运——是继续统治，还是被推翻？董事会已经就位，证据已经提交。选择权在您手中。时间开始倒数……",
+  "ambientMusic": "tense_electronic_loop.mp3",
+  "id": "fallback_world_024"
+}

@@ -1,0 +1,892 @@
+{
+  "matchKeywords": [
+    "竞选",
+    "皇帝",
+    "银河",
+    "60秒",
+    "CEO"
+  ],
+  "identity": "银河竞选人",
+  "theme": "人类CEO竞选银河皇帝前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "stage",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "fire",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_advisor",
+      "name": "竞选顾问AI-7",
+      "position": [
+        1,
+        3
+      ],
+      "dialogue": "欢迎，竞选人。还有60秒，银河的命运掌握在你手中。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "顾问AI-7闪烁红光：'你的竞选宣言是什么？'",
+          "options": [
+            {
+              "text": "我要统一银河贸易法",
+              "nextStage": 2,
+              "effect": "law"
+            },
+            {
+              "text": "我要消灭所有外星官僚",
+              "nextStage": 2,
+              "effect": "war"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "顾问AI-7：'你的策略是？'",
+          "options": [
+            {
+              "text": "用金钱收买",
+              "nextStage": 3,
+              "effect": "bribe"
+            },
+            {
+              "text": "用武力威慑",
+              "nextStage": 3,
+              "effect": "force"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "顾问AI-7：'很好，但时间不多了。'",
+          "options": [
+            {
+              "text": "开始最后冲刺",
+              "nextStage": 4,
+              "effect": "final"
+            },
+            {
+              "text": "再思考一下",
+              "nextStage": 4,
+              "effect": "wait"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_rival",
+      "name": "竞争对手CEO",
+      "position": [
+        3,
+        7
+      ],
+      "dialogue": "你不可能赢的，我已经买通了所有议员！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "竞争对手CEO冷笑：'你用什么来对抗我的资金？'",
+          "options": [
+            {
+              "text": "我有创新技术",
+              "nextStage": 2,
+              "effect": "tech"
+            },
+            {
+              "text": "我有民心",
+              "nextStage": 2,
+              "effect": "populace"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "竞争对手CEO：'那又怎样？我掌控媒体。'",
+          "options": [
+            {
+              "text": "揭露他的丑闻",
+              "nextStage": 3,
+              "effect": "expose"
+            },
+            {
+              "text": "与他合作",
+              "nextStage": 3,
+              "effect": "ally"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "竞争对手CEO：'你走投无路了！'",
+          "options": [
+            {
+              "text": "启动紧急预案",
+              "nextStage": 4,
+              "effect": "emergency"
+            },
+            {
+              "text": "放弃竞选",
+              "nextStage": 4,
+              "effect": "quit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_voter",
+      "name": "外星选民代表",
+      "position": [
+        5,
+        5
+      ],
+      "dialogue": "我们厌倦了人类的统治！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "外星选民代表：'你能给我们带来什么？'",
+          "options": [
+            {
+              "text": "平等权利",
+              "nextStage": 2,
+              "effect": "equal"
+            },
+            {
+              "text": "经济利益",
+              "nextStage": 2,
+              "effect": "money"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "外星选民代表：'怎么保证？'",
+          "options": [
+            {
+              "text": "签署星际公约",
+              "nextStage": 3,
+              "effect": "treaty"
+            },
+            {
+              "text": "提供能源援助",
+              "nextStage": 3,
+              "effect": "energy"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "外星选民代表：'好吧，我们拭目以待。'",
+          "options": [
+            {
+              "text": "表示感谢",
+              "nextStage": 4,
+              "effect": "thanks"
+            },
+            {
+              "text": "继续拉票",
+              "nextStage": 4,
+              "effect": "campaign"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_assistant",
+      "name": "私人秘书",
+      "position": [
+        8,
+        2
+      ],
+      "dialogue": "老板，还有30秒，请做最后准备。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "秘书慌张地说：'我们漏掉了关键选区的数据！'",
+          "options": [
+            {
+              "text": "临场发挥",
+              "nextStage": 2,
+              "effect": "improv"
+            },
+            {
+              "text": "用备用数据",
+              "nextStage": 2,
+              "effect": "backup"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "秘书：'还有一个坏消息，对手在散布谣言。'",
+          "options": [
+            {
+              "text": "立刻辟谣",
+              "nextStage": 3,
+              "effect": "deny"
+            },
+            {
+              "text": "忽略它",
+              "nextStage": 3,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "秘书：'时间只剩10秒了！'",
+          "options": [
+            {
+              "text": "深呼吸上台",
+              "nextStage": 4,
+              "effect": "calm"
+            },
+            {
+              "text": "冲上台",
+              "nextStage": 4,
+              "effect": "rush"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_guard",
+      "name": "皇家卫兵",
+      "position": [
+        10,
+        10
+      ],
+      "dialogue": "皇帝陛下即将驾到，请退后。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "卫兵：'请出示你的竞选许可。'",
+          "options": [
+            {
+              "text": "出示电子许可",
+              "nextStage": 2,
+              "effect": "show"
+            },
+            {
+              "text": "试图贿赂",
+              "nextStage": 2,
+              "effect": "bribe"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "卫兵：'许可有效。但皇帝要求你回答一个问题。'",
+          "options": [
+            {
+              "text": "准备回答",
+              "nextStage": 3,
+              "effect": "ready"
+            },
+            {
+              "text": "请求提示",
+              "nextStage": 3,
+              "effect": "hint"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "卫兵：'问题：你为何想当皇帝？'",
+          "options": [
+            {
+              "text": "为了服务众生",
+              "nextStage": 4,
+              "effect": "serve"
+            },
+            {
+              "text": "为了权力",
+              "nextStage": 4,
+              "effect": "power"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_manifesto",
+      "name": "竞选宣言书",
+      "position": [
+        1,
+        5
+      ],
+      "description": "一份华丽的竞选宣言，上面有你的头像。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你捡起宣言书，发现里面夹着一张纸条。",
+          "options": [
+            {
+              "text": "阅读纸条",
+              "nextStage": 2,
+              "effect": "read"
+            },
+            {
+              "text": "扔掉",
+              "nextStage": 2,
+              "effect": "discard"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "纸条上写着：'支持率下降，需要新承诺。'",
+          "options": [
+            {
+              "text": "增加减税承诺",
+              "nextStage": 3,
+              "effect": "tax"
+            },
+            {
+              "text": "增加太空探索承诺",
+              "nextStage": 3,
+              "effect": "space"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "宣言书发光了，效果增强。",
+          "options": [
+            {
+              "text": "使用它",
+              "nextStage": 4,
+              "effect": "use"
+            },
+            {
+              "text": "保留",
+              "nextStage": 4,
+              "effect": "keep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_coin",
+      "name": "幸运金币",
+      "position": [
+        2,
+        8
+      ],
+      "description": "一枚古老的金币，据说能带来好运。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "金币上刻着外星文字。",
+          "options": [
+            {
+              "text": "翻译它",
+              "nextStage": 2,
+              "effect": "translate"
+            },
+            {
+              "text": "投掷它",
+              "nextStage": 2,
+              "effect": "flip"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "文字意思是：'机会只一次'。",
+          "options": [
+            {
+              "text": "保留做护身符",
+              "nextStage": 3,
+              "effect": "charm"
+            },
+            {
+              "text": "用它贿赂",
+              "nextStage": 3,
+              "effect": "bribe"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "金币开始发热。",
+          "options": [
+            {
+              "text": "扔出去",
+              "nextStage": 4,
+              "effect": "throw"
+            },
+            {
+              "text": "握紧",
+              "nextStage": 4,
+              "effect": "hold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_microphone",
+      "name": "星际麦克风",
+      "position": [
+        4,
+        3
+      ],
+      "description": "一个能放大声音的麦克风，但有时会失真。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "麦克风发出电流声。",
+          "options": [
+            {
+              "text": "调整频率",
+              "nextStage": 2,
+              "effect": "tune"
+            },
+            {
+              "text": "拍打它",
+              "nextStage": 2,
+              "effect": "hit"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "麦克风突然播放了对手的秘密录音。",
+          "options": [
+            {
+              "text": "公之于众",
+              "nextStage": 3,
+              "effect": "reveal"
+            },
+            {
+              "text": "私下处理",
+              "nextStage": 3,
+              "effect": "hide"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "录音内容很劲爆，支持率飙升。",
+          "options": [
+            {
+              "text": "继续播放",
+              "nextStage": 4,
+              "effect": "play"
+            },
+            {
+              "text": "关闭它",
+              "nextStage": 4,
+              "effect": "stop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_potion",
+      "name": "演说药水",
+      "position": [
+        7,
+        7
+      ],
+      "description": "一瓶蓝色药水，能让你口若悬河。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "药水标签写着'效果未知'。",
+          "options": [
+            {
+              "text": "喝下它",
+              "nextStage": 2,
+              "effect": "drink"
+            },
+            {
+              "text": "倒掉",
+              "nextStage": 2,
+              "effect": "pour"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你感到喉咙发热，说话变得非常有说服力。",
+          "options": [
+            {
+              "text": "立即演讲",
+              "nextStage": 3,
+              "effect": "speech"
+            },
+            {
+              "text": "保存效果",
+              "nextStage": 3,
+              "effect": "save"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "药水效果持续60秒。",
+          "options": [
+            {
+              "text": "快速拉票",
+              "nextStage": 4,
+              "effect": "vote"
+            },
+            {
+              "text": "与对手辩论",
+              "nextStage": 4,
+              "effect": "debate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_hat",
+      "name": "皇帝冠冕",
+      "position": [
+        11,
+        11
+      ],
+      "description": "一顶闪闪发光的皇冠，但似乎有点小。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "皇冠上镶嵌着宝石。",
+          "options": [
+            {
+              "text": "戴上它",
+              "nextStage": 2,
+              "effect": "wear"
+            },
+            {
+              "text": "检查真假",
+              "nextStage": 2,
+              "effect": "examine"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "皇冠发出微弱的嗡鸣。",
+          "options": [
+            {
+              "text": "戴上它发表演讲",
+              "nextStage": 3,
+              "effect": "crown-speech"
+            },
+            {
+              "text": "收起来",
+              "nextStage": 3,
+              "effect": "store"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "皇冠自动变大，适合你的头。",
+          "options": [
+            {
+              "text": "宣誓就职",
+              "nextStage": 4,
+              "effect": "inaugurate"
+            },
+            {
+              "text": "继续竞选",
+              "nextStage": 4,
+              "effect": "continue"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_victory",
+      "condition": "支持率>80",
+      "text": "你以压倒性优势当选银河皇帝！万民欢呼。",
+      "effect": "win"
+    },
+    {
+      "id": "ending_loss",
+      "condition": "支持率<30",
+      "text": "你惨败，被流放到偏远星球。",
+      "effect": "lose"
+    },
+    {
+      "id": "ending_scandal",
+      "condition": "丑闻暴露",
+      "text": "你的丑闻曝光，竞选失败，身败名裂。",
+      "effect": "scandal"
+    },
+    {
+      "id": "ending_assassination",
+      "condition": "树敌太多",
+      "text": "你在演讲时被暗杀，竞选以悲剧告终。",
+      "effect": "die"
+    },
+    {
+      "id": "ending_revolution",
+      "condition": "民心尽失",
+      "text": "外星选民起义，你被推翻，银河陷入内战。",
+      "effect": "revolution"
+    },
+    {
+      "id": "ending_alliance",
+      "condition": "与对手合作",
+      "text": "你和竞争对手联手，共同统治银河，成为双皇共治。",
+      "effect": "ally_win"
+    },
+    {
+      "id": "ending_exile",
+      "condition": "放弃竞选",
+      "text": "你放弃竞选，隐姓埋名，在偏远星球过着平凡生活。",
+      "effect": "exile"
+    },
+    {
+      "id": "ending_timeout",
+      "condition": "时间耗尽",
+      "text": "60秒到了，你还没有做出选择，宇宙陷入了混乱。",
+      "effect": "timeout"
+    },
+    {
+      "id": "ending_coronation",
+      "condition": "戴上皇冠并宣誓",
+      "text": "你直接戴上皇冠宣布即位，虽然争议不断，但你成功掌权。",
+      "effect": "crown"
+    },
+    {
+      "id": "ending_peace",
+      "condition": "签署星际公约",
+      "text": "你签署公约，外星种族与人类和平共处，你成为和平使者。",
+      "effect": "peace"
+    }
+  ],
+  "introText": "你是一位人类CEO，参加银河皇帝竞选。距离投票结束还有60秒。你必须快速做出决策，拉取选票，击败对手。宇宙的命运在你手中！",
+  "ambientMusic": "庄严的管弦乐，带有电子节奏",
+  "id": "fallback_world_020"
+}

@@ -1,0 +1,976 @@
+{
+  "matchKeywords": [
+    "银河",
+    "歌唱",
+    "决赛",
+    "CEO",
+    "娱乐",
+    "舞台"
+  ],
+  "identity": "银河娱乐集团CEO",
+  "theme": "银河歌唱比赛决赛前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "stage",
+      "stage",
+      "stage",
+      "stage",
+      "stage",
+      "stage",
+      "stage",
+      "stage",
+      "stage",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "vault",
+      "floor",
+      "crystal",
+      "floor",
+      "statue",
+      "floor",
+      "fountain",
+      "floor",
+      "portal",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "window",
+      "floor",
+      "elevator",
+      "floor",
+      "throne",
+      "floor",
+      "fire",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "glass",
+      "floor",
+      "water",
+      "floor",
+      "lava",
+      "floor",
+      "carpet",
+      "floor",
+      "gold_floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    9,
+    8
+  ],
+  "npcs": [
+    {
+      "id": "npc_judge1",
+      "name": "严厉评委",
+      "appearance": "黑色西装，严肃表情",
+      "personality": "苛刻",
+      "position": [
+        1,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "你的表演毫无灵魂！",
+          "options": [
+            {
+              "text": "反驳",
+              "nextStage": 1
+            },
+            {
+              "text": "接受批评",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "你竟敢顶撞评委？扣分！",
+          "options": [
+            {
+              "text": "道歉",
+              "nextStage": 2
+            },
+            {
+              "text": "继续争执",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "这还差不多，给你一次机会。",
+          "options": [
+            {
+              "text": "感谢",
+              "nextStage": -1
+            },
+            {
+              "text": "要求加试",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "你被取消资格！",
+          "options": [
+            {
+              "text": "求情",
+              "nextStage": -1
+            },
+            {
+              "text": "愤怒离场",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_judge2",
+      "name": "和蔼评委",
+      "appearance": "花衬衫，笑容可掬",
+      "personality": "温柔",
+      "position": [
+        1,
+        11
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "你的音色很美！",
+          "options": [
+            {
+              "text": "微笑",
+              "nextStage": 1
+            },
+            {
+              "text": "谦虚",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "愿意收你为徒",
+          "options": [
+            {
+              "text": "拜师",
+              "nextStage": -1
+            },
+            {
+              "text": "婉拒",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "那加唱一首吧",
+          "options": [
+            {
+              "text": "同意",
+              "nextStage": -1
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "可惜了",
+          "options": [
+            {
+              "text": "离开",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_contestant",
+      "name": "竞争对手",
+      "appearance": "华丽演出服",
+      "personality": "傲慢",
+      "position": [
+        5,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "你肯定赢不了我！",
+          "options": [
+            {
+              "text": "挑衅",
+              "nextStage": 1
+            },
+            {
+              "text": "无视",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "来比试比试！",
+          "options": [
+            {
+              "text": "接受挑战",
+              "nextStage": 3
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "懦夫！",
+          "options": [
+            {
+              "text": "反击",
+              "nextStage": 1
+            },
+            {
+              "text": "走开",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "你输了！",
+          "options": [
+            {
+              "text": "不服",
+              "nextStage": -1
+            },
+            {
+              "text": "认输",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_fan",
+      "name": "狂热粉丝",
+      "appearance": "荧光棒，应援服",
+      "personality": "热情",
+      "position": [
+        9,
+        4
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "我爱你！",
+          "options": [
+            {
+              "text": "回应",
+              "nextStage": 1
+            },
+            {
+              "text": "冷漠",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "签个名吧！",
+          "options": [
+            {
+              "text": "签名",
+              "nextStage": -1
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "好伤心",
+          "options": [
+            {
+              "text": "安慰",
+              "nextStage": -1
+            },
+            {
+              "text": "离开",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_producer",
+      "name": "制作人",
+      "appearance": "耳机，对讲机",
+      "personality": "专业",
+      "position": [
+        1,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "还有30秒上台！",
+          "options": [
+            {
+              "text": "准备",
+              "nextStage": 1
+            },
+            {
+              "text": "紧张",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "加油！",
+          "options": [
+            {
+              "text": "谢谢",
+              "nextStage": -1
+            },
+            {
+              "text": "我需要帮助",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "深呼吸！",
+          "options": [
+            {
+              "text": "深呼吸",
+              "nextStage": -1
+            },
+            {
+              "text": "还是紧张",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "给你幸运符",
+          "options": [
+            {
+              "text": "接受",
+              "nextStage": -1
+            },
+            {
+              "text": "拒绝",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_mystery",
+      "name": "神秘人",
+      "appearance": "斗篷，面具",
+      "personality": "诡异",
+      "position": [
+        9,
+        12
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "dialogue": "我知道你的秘密...",
+          "options": [
+            {
+              "text": "追问",
+              "nextStage": 1
+            },
+            {
+              "text": "离开",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "dialogue": "你其实不会唱歌",
+          "options": [
+            {
+              "text": "承认",
+              "nextStage": 3
+            },
+            {
+              "text": "否认",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "dialogue": "你骗不了我",
+          "options": [
+            {
+              "text": "威胁",
+              "nextStage": -1
+            },
+            {
+              "text": "求饶",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "dialogue": "我帮你作弊",
+          "options": [
+            {
+              "text": "答应",
+              "nextStage": -1
+            },
+            {
+              "text": "拒绝",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_microphone",
+      "name": "金色麦克风",
+      "description": "传说中能提升音质的麦克风",
+      "position": [
+        3,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你捡起麦克风，感觉自信满满",
+          "options": [
+            {
+              "text": "使用",
+              "nextStage": 1
+            },
+            {
+              "text": "放下",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "麦克风发出耀眼金光，你的歌声被增幅",
+          "options": [
+            {
+              "text": "继续唱",
+              "nextStage": -1
+            },
+            {
+              "text": "收起",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你放下麦克风，但心里有些不舍",
+          "options": [
+            {
+              "text": "再捡起",
+              "nextStage": 0
+            },
+            {
+              "text": "离开",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_elixir",
+      "name": "润喉仙露",
+      "description": "喝下后嗓子瞬间清亮",
+      "position": [
+        5,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一瓶闪耀的仙露",
+          "options": [
+            {
+              "text": "喝下",
+              "nextStage": 1
+            },
+            {
+              "text": "不喝",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你感到喉咙无比舒适，高音轻松上去",
+          "options": [
+            {
+              "text": "赞美",
+              "nextStage": -1
+            },
+            {
+              "text": "再喝一口",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你担心有副作用",
+          "options": [
+            {
+              "text": "还是喝吧",
+              "nextStage": 1
+            },
+            {
+              "text": "扔掉",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_score_sheet",
+      "name": "评分表",
+      "description": "评委的评分秘密",
+      "position": [
+        7,
+        6
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一张写满分数的纸",
+          "options": [
+            {
+              "text": "偷看",
+              "nextStage": 1
+            },
+            {
+              "text": "无视",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你发现自己的分数很低，但可以修改",
+          "options": [
+            {
+              "text": "修改分数",
+              "nextStage": 3
+            },
+            {
+              "text": "保持原样",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你放弃了作弊机会",
+          "options": [
+            {
+              "text": "后悔",
+              "nextStage": 1
+            },
+            {
+              "text": "离开",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "分数被改高，但可能被发现",
+          "options": [
+            {
+              "text": "冒险",
+              "nextStage": -1
+            },
+            {
+              "text": "改回",
+              "nextStage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_crown",
+      "name": "冠军王冠",
+      "description": "最终胜利的象征",
+      "position": [
+        7,
+        12
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "王冠在台上闪耀",
+          "options": [
+            {
+              "text": "戴上",
+              "nextStage": 1
+            },
+            {
+              "text": "不戴",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你戴上王冠，感觉已经赢了",
+          "options": [
+            {
+              "text": "自信上台",
+              "nextStage": -1
+            },
+            {
+              "text": "过于骄傲",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你保持谦逊",
+          "options": [
+            {
+              "text": "拿起王冠",
+              "nextStage": 1
+            },
+            {
+              "text": "离开",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_ticket",
+      "name": "后台通行证",
+      "description": "可以进入任何后台区域",
+      "position": [
+        9,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一张金色通行证",
+          "options": [
+            {
+              "text": "捡起",
+              "nextStage": 1
+            },
+            {
+              "text": "无视",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "你有了通行证，可以去控制室",
+          "options": [
+            {
+              "text": "去控制室",
+              "nextStage": 3
+            },
+            {
+              "text": "留着备用",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你错过了机会",
+          "options": [
+            {
+              "text": "返回捡起",
+              "nextStage": 0
+            },
+            {
+              "text": "离开",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "控制室可以操控音响",
+          "options": [
+            {
+              "text": "调高音量",
+              "nextStage": -1
+            },
+            {
+              "text": "播放伴奏",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end_win",
+      "condition": "得分最高",
+      "text": "你赢得了银河歌唱比赛冠军！"
+    },
+    {
+      "id": "end_lose",
+      "condition": "得分最低",
+      "text": "你被淘汰了。银河娱乐集团CEO地位不保。"
+    },
+    {
+      "id": "end_cheat",
+      "condition": "作弊被发现",
+      "text": "你因作弊被取消资格，身败名裂。"
+    },
+    {
+      "id": "end_injury",
+      "condition": "嗓子受伤",
+      "text": "你嗓子受伤，无法演唱，比赛失败。"
+    },
+    {
+      "id": "end_rebel",
+      "condition": "反抗评委",
+      "text": "你与评委冲突，被保安带走。"
+    },
+    {
+      "id": "end_fan",
+      "condition": "粉丝暴动",
+      "text": "粉丝过于狂热导致混乱，比赛取消。"
+    },
+    {
+      "id": "end_mystery",
+      "condition": "神秘人阴谋",
+      "text": "神秘人揭露你的秘密，你羞愧退赛。"
+    },
+    {
+      "id": "end_timeout",
+      "condition": "时间耗尽",
+      "text": "60秒已到，你未能上台，自动弃权。"
+    },
+    {
+      "id": "end_retire",
+      "condition": "主动退出",
+      "text": "你主动放弃比赛，回去当CEO。"
+    },
+    {
+      "id": "end_tie",
+      "condition": "平局",
+      "text": "你与对手平局，加赛一轮。"
+    }
+  ],
+  "introText": "你，银河娱乐集团的CEO，为了挽救公司形象，亲自参加银河歌唱比赛决赛。距离上台还有60秒！舞台背后隐藏着无数秘密和阴谋。做出你的选择，决定你的命运！",
+  "ambientMusic": "紧张刺激的电子配乐，心跳声渐强",
+  "id": "fallback_world_069"
+}

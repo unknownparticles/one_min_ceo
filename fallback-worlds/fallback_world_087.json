@@ -1,0 +1,995 @@
+{
+  "matchKeywords": [
+    "量子龙宫",
+    "继承仪式",
+    "龙珠",
+    "虾兵蟹将",
+    "龙王"
+  ],
+  "identity": "量子龙宫继承人",
+  "theme": "量子龙宫继承仪式前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "throne",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "water",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "water",
+      "water",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fire",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "lava",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "lava",
+      "lava",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "console",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "stage",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "console",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "stage",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "row": 5,
+    "col": 8
+  },
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "龟丞相",
+      "type": "advisor",
+      "dialogue": "殿下，继承仪式即将开始，您需要集齐七颗龙珠。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "龟丞相捋着胡须，神色凝重。",
+          "options": [
+            {
+              "text": "龙珠在哪？",
+              "nextStage": 2
+            },
+            {
+              "text": "我还没准备好。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "龙珠散落在龙宫各处，还有一颗被蟹将军私藏。",
+          "options": [
+            {
+              "text": "去找蟹将军。",
+              "nextStage": 4
+            },
+            {
+              "text": "先找其他龙珠。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "时间不等人，殿下！60秒后您必须站上祭坛。",
+          "options": [
+            {
+              "text": "好，我出发。",
+              "nextStage": 2
+            },
+            {
+              "text": "再想想办法。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "蟹将军在宝库中，但他要求用宝物交换。",
+          "options": [
+            {
+              "text": "给他宝物。",
+              "nextStage": 5
+            },
+            {
+              "text": "用武力夺取。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "龟丞相点头：明智的选择。",
+          "options": [
+            {
+              "text": "告辞。",
+              "nextStage": -1
+            },
+            {
+              "text": "还有什么建议？",
+              "nextStage": 6
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "小心水母刺客，他们可能已经潜入。",
+          "options": [
+            {
+              "text": "明白了。",
+              "nextStage": -1
+            },
+            {
+              "text": "我会注意。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ],
+      "position": {
+        "row": 2,
+        "col": 4
+      }
+    },
+    {
+      "id": "npc2",
+      "name": "蟹将军",
+      "type": "guard",
+      "dialogue": "想要龙珠？拿你的王冠来换！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "蟹将军横着钳子，傲慢地挡住去路。",
+          "options": [
+            {
+              "text": "交出龙珠！",
+              "nextStage": 2
+            },
+            {
+              "text": "我用宝物交换。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "武力挑战！蟹将军挥舞大钳。",
+          "options": [
+            {
+              "text": "战斗！",
+              "nextStage": 4
+            },
+            {
+              "text": "理智谈判。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "蟹将军伸出钳子：我要一颗夜明珠。",
+          "options": [
+            {
+              "text": "给他夜明珠。",
+              "nextStage": 5
+            },
+            {
+              "text": "没有，换个条件。",
+              "nextStage": 6
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你击败了蟹将军，他交出龙珠。",
+          "options": [
+            {
+              "text": "拿走龙珠。",
+              "nextStage": -1
+            },
+            {
+              "text": "饶他一命。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "蟹将军满意地交出龙珠。",
+          "options": [
+            {
+              "text": "谢谢。",
+              "nextStage": -1
+            },
+            {
+              "text": "告辞。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "那我不给。蟹将军转身要走。",
+          "options": [
+            {
+              "text": "等等，我有夜明珠。",
+              "nextStage": 5
+            },
+            {
+              "text": "算了，找别的龙珠。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ],
+      "position": {
+        "row": 2,
+        "col": 8
+      }
+    },
+    {
+      "id": "npc3",
+      "name": "水母刺客",
+      "type": "enemy",
+      "dialogue": "你的死期到了！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "透明的水母幽灵般出现，触手带电。",
+          "options": [
+            {
+              "text": "防御！",
+              "nextStage": 2
+            },
+            {
+              "text": "逃跑！",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你挡住了攻击，但损失了一些体力。",
+          "options": [
+            {
+              "text": "反击！",
+              "nextStage": 4
+            },
+            {
+              "text": "寻求帮助。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你逃到安全区，但水母紧追不舍。",
+          "options": [
+            {
+              "text": "回头战斗。",
+              "nextStage": 2
+            },
+            {
+              "text": "继续跑。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你击退了水母刺客，获得一颗龙珠。",
+          "options": [
+            {
+              "text": "拾取龙珠。",
+              "nextStage": -1
+            },
+            {
+              "text": "查看伤势。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "龟丞相出现，用拐杖击退水母。",
+          "options": [
+            {
+              "text": "感谢丞相。",
+              "nextStage": -1
+            },
+            {
+              "text": "继续前进。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ],
+      "position": {
+        "row": 5,
+        "col": 5
+      }
+    },
+    {
+      "id": "npc4",
+      "name": "龙宫舞女",
+      "type": "entertainer",
+      "dialogue": "殿下，跳一支祈福舞吧！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "舞女们翩翩起舞，水袖飘摇。",
+          "options": [
+            {
+              "text": "一起跳舞。",
+              "nextStage": 2
+            },
+            {
+              "text": "没时间，跳过。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你笨拙地跳舞，但舞女们很开心，给了你一颗龙珠。",
+          "options": [
+            {
+              "text": "收下龙珠。",
+              "nextStage": -1
+            },
+            {
+              "text": "继续跳舞。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "舞女们失望地散去。",
+          "options": [
+            {
+              "text": "等等，我跳。",
+              "nextStage": 2
+            },
+            {
+              "text": "对不起。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ],
+      "position": {
+        "row": 8,
+        "col": 7
+      }
+    },
+    {
+      "id": "npc5",
+      "name": "龙宫宝库守卫",
+      "type": "guard",
+      "dialogue": "口令！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "守卫手持三叉戟，严肃地站在宝库前。",
+          "options": [
+            {
+              "text": "我是继承人。",
+              "nextStage": 2
+            },
+            {
+              "text": "我有密令。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "守卫点头：殿下请进。但你需要找到钥匙。",
+          "options": [
+            {
+              "text": "钥匙在哪？",
+              "nextStage": 4
+            },
+            {
+              "text": "强行进入。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "守卫怀疑：什么密令？",
+          "options": [
+            {
+              "text": "海神波塞冬。",
+              "nextStage": 6
+            },
+            {
+              "text": "龙王万岁。",
+              "nextStage": 7
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "钥匙在龟丞相那里。",
+          "options": [
+            {
+              "text": "去找丞相。",
+              "nextStage": -1
+            },
+            {
+              "text": "自己撬锁。",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "强行闯入，守卫与你战斗。你打败守卫，进入宝库。",
+          "options": [
+            {
+              "text": "拿走宝物。",
+              "nextStage": -1
+            },
+            {
+              "text": "只是看看。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "守卫让开：原来是海神使者。",
+          "options": [
+            {
+              "text": "进入宝库。",
+              "nextStage": -1
+            },
+            {
+              "text": "询问龙珠。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "守卫大笑：这个老套。不行！",
+          "options": [
+            {
+              "text": "再试一次。",
+              "nextStage": 3
+            },
+            {
+              "text": "放弃。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ],
+      "position": {
+        "row": 9,
+        "col": 13
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "龙珠·火",
+      "type": "collectible",
+      "effect": "增加力量",
+      "description": "赤红色的龙珠，散发着热力。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你看到龙珠悬浮在火焰之上。",
+          "options": [
+            {
+              "text": "伸手去拿。",
+              "nextStage": 2
+            },
+            {
+              "text": "观察周围。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "火焰灼烧，但你忍痛拿到了龙珠。",
+          "options": [
+            {
+              "text": "使用龙珠。",
+              "nextStage": -1
+            },
+            {
+              "text": "继续前进。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "周围有陷阱，你小心避开后拿到龙珠。",
+          "options": [
+            {
+              "text": "收好。",
+              "nextStage": -1
+            },
+            {
+              "text": "检查陷阱。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ],
+      "position": {
+        "row": 4,
+        "col": 10
+      }
+    },
+    {
+      "id": "item2",
+      "name": "龙珠·水",
+      "type": "collectible",
+      "effect": "增加速度",
+      "description": "蓝色的龙珠，如海水般深邃。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "龙珠在水池中央的贝壳中。",
+          "options": [
+            {
+              "text": "潜入水中。",
+              "nextStage": 2
+            },
+            {
+              "text": "用工具勾取。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你潜水拿到龙珠，但差点溺水。",
+          "options": [
+            {
+              "text": "深呼吸。",
+              "nextStage": -1
+            },
+            {
+              "text": "赶快离开。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你用鱼竿勾到了贝壳，获得龙珠。",
+          "options": [
+            {
+              "text": "高兴。",
+              "nextStage": -1
+            },
+            {
+              "text": "小心保管。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ],
+      "position": {
+        "row": 2,
+        "col": 3
+      }
+    },
+    {
+      "id": "item3",
+      "name": "夜明珠",
+      "type": "trade",
+      "effect": "可用于交换",
+      "description": "一颗拳头大的夜明珠，价值连城。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "夜明珠在宝库的架子上。",
+          "options": [
+            {
+              "text": "拿走。",
+              "nextStage": 2
+            },
+            {
+              "text": "留下标记。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你得到了夜明珠。",
+          "options": [
+            {
+              "text": "给蟹将军。",
+              "nextStage": -1
+            },
+            {
+              "text": "自己留着。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你做了标记，但被别人拿走了。",
+          "options": [
+            {
+              "text": "搜索其他。",
+              "nextStage": -1
+            },
+            {
+              "text": "算了。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ],
+      "position": {
+        "row": 8,
+        "col": 4
+      }
+    },
+    {
+      "id": "item4",
+      "name": "海神三叉戟",
+      "type": "weapon",
+      "effect": "攻击力+10",
+      "description": "海神波塞冬的武器，威力无穷。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "三叉戟插在祭坛前的石缝中。",
+          "options": [
+            {
+              "text": "拔出来。",
+              "nextStage": 2
+            },
+            {
+              "text": "膜拜。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你拔出了三叉戟，雷电闪烁。",
+          "options": [
+            {
+              "text": "装备上。",
+              "nextStage": -1
+            },
+            {
+              "text": "试试威力。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你虔诚膜拜，三叉戟自动飞到你手中。",
+          "options": [
+            {
+              "text": "感谢海神。",
+              "nextStage": -1
+            },
+            {
+              "text": "战斗！",
+              "nextStage": -1
+            }
+          ]
+        }
+      ],
+      "position": {
+        "row": 8,
+        "col": 12
+      }
+    },
+    {
+      "id": "item5",
+      "name": "龙王王冠",
+      "type": "key",
+      "effect": "开启最终祭坛",
+      "description": "老龙王的王冠，继承人的信物。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "王冠放在龙宫大殿的宝座上。",
+          "options": [
+            {
+              "text": "戴上王冠。",
+              "nextStage": 2
+            },
+            {
+              "text": "仔细检查。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "王冠戴上，你感到无穷的力量。",
+          "options": [
+            {
+              "text": "前往祭坛。",
+              "nextStage": -1
+            },
+            {
+              "text": "继续收集龙珠。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "王冠上有机关，你解除后安全戴上。",
+          "options": [
+            {
+              "text": "放心。",
+              "nextStage": -1
+            },
+            {
+              "text": "小心保管。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ],
+      "position": {
+        "row": 1,
+        "col": 10
+      }
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "集齐七颗龙珠并戴上王冠",
+      "text": "你站在祭坛上，七龙珠环绕，光芒万丈。你成为新的龙王，龙宫复兴！"
+    },
+    {
+      "id": "end2",
+      "condition": "时间耗尽未集齐龙珠",
+      "text": "仪式失败，老龙王叹息。龙宫陷入混乱，你被贬为庶民。"
+    },
+    {
+      "id": "end3",
+      "condition": "被水母刺客击败",
+      "text": "你倒在血泊中，水母刺客夺走龙珠，龙宫陷入黑暗。"
+    },
+    {
+      "id": "end4",
+      "condition": "与蟹将军结盟",
+      "text": "蟹将军助你夺得王位，但要求分享权力。你成为傀儡龙王。"
+    },
+    {
+      "id": "end5",
+      "condition": "放弃继承",
+      "text": "你逃离龙宫，隐姓埋名。龙宫日渐衰落。"
+    },
+    {
+      "id": "end6",
+      "condition": "使用海神三叉戟击败所有敌人",
+      "text": "你以武力镇压一切反对者，成为暴君，龙宫怨声载道。"
+    },
+    {
+      "id": "end7",
+      "condition": "获得舞女青睐并娶其为妻",
+      "text": "你与舞女结婚，共同治理龙宫，生活幸福。"
+    },
+    {
+      "id": "end8",
+      "condition": "集齐六颗龙珠但王冠被偷",
+      "text": "没有王冠，你无法完成仪式。龙珠失控，龙宫被炸毁。"
+    }
+  ],
+  "introText": "量子龙宫，继承仪式前60秒。你身为龙王继承人，必须在60秒内集齐七颗龙珠，戴上王冠，站上祭坛。时间紧迫，危机四伏，开始吧！",
+  "ambientMusic": "龙宫悠扬而紧张的古筝曲",
+  "id": "fallback_world_087"
+}

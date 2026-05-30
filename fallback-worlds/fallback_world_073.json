@@ -1,0 +1,697 @@
+{
+  "matchKeywords": [
+    "AI偶像",
+    "出道",
+    "经纪人",
+    "60秒",
+    "危机",
+    "娱乐公司"
+  ],
+  "identity": "AI偶像经纪人",
+  "theme": "AI偶像出道前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "stage",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "wall",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "glass",
+      "window",
+      "window",
+      "window",
+      "window",
+      "window",
+      "window",
+      "window",
+      "window",
+      "glass",
+      "wall",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "glass",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "window",
+      "glass",
+      "wall",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "glass",
+      "window",
+      "floor",
+      "server",
+      "server",
+      "server",
+      "server",
+      "floor",
+      "window",
+      "glass",
+      "wall",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "glass",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "window",
+      "glass",
+      "wall",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "wall",
+      "glass",
+      "window",
+      "window",
+      "window",
+      "window",
+      "window",
+      "window",
+      "window",
+      "window",
+      "glass",
+      "wall",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "producer_ai",
+      "name": "制作人AI-007",
+      "position": [
+        2,
+        4
+      ],
+      "dialogue": "欢迎来到AI偶像孵化中心！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你的AI偶像候选者刚诞生，需要选择出道风格。",
+          "options": [
+            {
+              "text": "选择甜美可爱风",
+              "nextStage": 2
+            },
+            {
+              "text": "选择冷酷霸气风",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "很好！现在需要给她起个艺名。",
+          "options": [
+            {
+              "text": "叫小甜心",
+              "nextStage": 3
+            },
+            {
+              "text": "叫暗夜女王",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "最后一步：选择出道曲目类型。",
+          "options": [
+            {
+              "text": "快节奏舞曲",
+              "nextStage": -1
+            },
+            {
+              "text": "深情慢歌",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fan_leader",
+      "name": "粉丝团团长",
+      "position": [
+        5,
+        3
+      ],
+      "dialogue": "我们期待新偶像！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "粉丝们已经聚集，但有个要求。",
+          "options": [
+            {
+              "text": "满足他们",
+              "nextStage": 2
+            },
+            {
+              "text": "无视他们",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "他们要求与偶像互动直播。",
+          "options": [
+            {
+              "text": "同意直播",
+              "nextStage": -1
+            },
+            {
+              "text": "拒绝直播",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tech_support",
+      "name": "技术员小码",
+      "position": [
+        8,
+        12
+      ],
+      "dialogue": "系统可能出bug！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "检测到AI偶像代码中有错误。",
+          "options": [
+            {
+              "text": "紧急修复",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略错误",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "修复完成，但消耗了10秒。",
+          "options": [
+            {
+              "text": "继续推进",
+              "nextStage": -1
+            },
+            {
+              "text": "检查其他bug",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "media_reporter",
+      "name": "娱乐记者",
+      "position": [
+        3,
+        7
+      ],
+      "dialogue": "能透露一些独家新闻吗？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "记者想挖黑料。",
+          "options": [
+            {
+              "text": "给点假消息",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝采访",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "记者不依不饶。",
+          "options": [
+            {
+              "text": "贿赂他",
+              "nextStage": -1
+            },
+            {
+              "text": "叫保安",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai_mentor",
+      "name": "AI导师",
+      "position": [
+        10,
+        5
+      ],
+      "dialogue": "需要训练指导吗？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "AI偶像需要紧急舞蹈训练。",
+          "options": [
+            {
+              "text": "安排训练",
+              "nextStage": 2
+            },
+            {
+              "text": "跳过训练",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "训练后偶像魅力提升。",
+          "options": [
+            {
+              "text": "继续声乐训练",
+              "nextStage": -1
+            },
+            {
+              "text": "直接出道",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "microphone",
+      "name": "金色麦克风",
+      "position": [
+        1,
+        2
+      ],
+      "effect": "偶像魅力+10",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "发现一个金色麦克风，可以大幅提升表演效果。",
+          "options": [
+            {
+              "text": "捡起麦克风",
+              "nextStage": 2
+            },
+            {
+              "text": "无视它",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "麦克风自带特效，但需要电池。",
+          "options": [
+            {
+              "text": "安装电池",
+              "nextStage": -1
+            },
+            {
+              "text": "手动使用",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dance_shoes",
+      "name": "舞鞋",
+      "position": [
+        3,
+        14
+      ],
+      "effect": "舞蹈技能+10",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一双舞鞋，似乎有魔力。",
+          "options": [
+            {
+              "text": "穿上舞鞋",
+              "nextStage": 2
+            },
+            {
+              "text": "丢弃",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "舞鞋让偶像舞步更流畅。",
+          "options": [
+            {
+              "text": "练习舞步",
+              "nextStage": -1
+            },
+            {
+              "text": "直接上台",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sparkle",
+      "name": "闪耀粉",
+      "position": [
+        6,
+        8
+      ],
+      "effect": "视觉效果+10",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一罐闪耀粉，撒上后闪闪发光。",
+          "options": [
+            {
+              "text": "撒在偶像身上",
+              "nextStage": 2
+            },
+            {
+              "text": "留着",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "闪光效果吸引所有目光。",
+          "options": [
+            {
+              "text": "加强效果",
+              "nextStage": -1
+            },
+            {
+              "text": "适可而止",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "autotune",
+      "name": "自动调音器",
+      "position": [
+        9,
+        9
+      ],
+      "effect": "歌唱技能+10",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个自动调音器，能完美修正音准。",
+          "options": [
+            {
+              "text": "安装到系统",
+              "nextStage": 2
+            },
+            {
+              "text": "不用",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "调音器让歌声更完美。",
+          "options": [
+            {
+              "text": "微调参数",
+              "nextStage": -1
+            },
+            {
+              "text": "默认设置",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage_light",
+      "name": "舞台灯光控制器",
+      "position": [
+        1,
+        4
+      ],
+      "effect": "舞台效果+10",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一个灯光控制器，可以营造炫酷舞台。",
+          "options": [
+            {
+              "text": "开启灯光秀",
+              "nextStage": 2
+            },
+            {
+              "text": "关闭",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "灯光效果惊艳全场。",
+          "options": [
+            {
+              "text": "增加烟雾",
+              "nextStage": -1
+            },
+            {
+              "text": "保持简洁",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_1",
+      "condition": "偶像魅力>20且时间耗尽",
+      "text": "AI偶像成功出道，一夜爆红！"
+    },
+    {
+      "id": "ending_2",
+      "condition": "偶像魅力<10且时间耗尽",
+      "text": "出道失败，AI偶像被公司雪藏。"
+    },
+    {
+      "id": "ending_3",
+      "condition": "与粉丝团关系好",
+      "text": "粉丝团疯狂支持，偶像人气飙升。"
+    },
+    {
+      "id": "ending_4",
+      "condition": "技术bug未修复",
+      "text": "直播时AI偶像卡顿，引发群嘲。"
+    },
+    {
+      "id": "ending_5",
+      "condition": "记者获得黑料",
+      "text": "黑料曝光，偶像形象崩塌。"
+    },
+    {
+      "id": "ending_6",
+      "condition": "完成所有训练",
+      "text": "全能型AI偶像诞生，征服舞台。"
+    },
+    {
+      "id": "ending_7",
+      "condition": "不使用任何道具",
+      "text": "素颜出道，意外走清纯路线。"
+    },
+    {
+      "id": "ending_8",
+      "condition": "收集所有道具",
+      "text": "装备齐全，AI偶像成为传说。"
+    },
+    {
+      "id": "ending_9",
+      "condition": "时间耗尽前未选择出道",
+      "text": "犹豫不决，错过最佳时机。"
+    },
+    {
+      "id": "ending_10",
+      "condition": "与所有NPC互动",
+      "text": "人脉广博，娱乐圈顺风顺水。"
+    }
+  ],
+  "introText": "你是一名AI偶像经纪人，距离AI偶像出道还有60秒。你必须在这60秒内做出关键决策，处理粉丝、媒体、技术问题，并收集道具提升偶像能力。时间紧迫，行动吧！",
+  "ambientMusic": "急促电子节拍",
+  "id": "fallback_world_073"
+}

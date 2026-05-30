@@ -1,0 +1,952 @@
+{
+  "matchKeywords": [
+    "宇宙购物中心",
+    "开业",
+    "60秒",
+    "老板",
+    "危机"
+  ],
+  "identity": "宇宙购物中心老板",
+  "theme": "宇宙尽头购物中心开业前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc_1",
+      "name": "营销总监马文",
+      "x": 5,
+      "y": 2,
+      "role": "营销总监",
+      "dialogue": "老板！我们的宇宙气球广告被黑洞吸走了！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "营销总监马文慌张地跑过来。",
+          "options": [
+            {
+              "id": "opt_1",
+              "text": "再放100个气球！",
+              "nextStage": 1
+            },
+            {
+              "id": "opt_2",
+              "text": "用反物质气球试试。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "马文泪流满面：可是气球工厂也被吸走了！",
+          "options": [
+            {
+              "id": "opt_3",
+              "text": "那就用星际投影。",
+              "nextStage": 3
+            },
+            {
+              "id": "opt_4",
+              "text": "算了，放弃气球。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "马文惊讶：反物质气球会爆炸！",
+          "options": [
+            {
+              "id": "opt_5",
+              "text": "那就炸出个广告效果。",
+              "nextStage": 3
+            },
+            {
+              "id": "opt_6",
+              "text": "撤回，太危险。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "马文点头：明白了，我马上去办。",
+          "options": [
+            {
+              "id": "opt_7",
+              "text": "好，继续工作。",
+              "nextStage": -1
+            },
+            {
+              "id": "opt_8",
+              "text": "等等，还有事。",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_2",
+      "name": "保安队长赵铁柱",
+      "x": 10,
+      "y": 4,
+      "role": "保安队长",
+      "dialogue": "老板！外星人闯进停车场了！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "赵铁柱一脸严肃。",
+          "options": [
+            {
+              "id": "opt_9",
+              "text": "给他们办会员卡。",
+              "nextStage": 1
+            },
+            {
+              "id": "opt_10",
+              "text": "用激光网困住他们。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "赵铁柱困惑：可是他们没带钱。",
+          "options": [
+            {
+              "id": "opt_11",
+              "text": "先赊账，开业再说。",
+              "nextStage": 3
+            },
+            {
+              "id": "opt_12",
+              "text": "让他们打工抵债。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "赵铁柱提醒：激光网可能损坏飞船。",
+          "options": [
+            {
+              "id": "opt_13",
+              "text": "改用欢迎毯。",
+              "nextStage": 3
+            },
+            {
+              "id": "opt_14",
+              "text": "直接谈判。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "赵铁柱敬礼：明白，我立刻处理。",
+          "options": [
+            {
+              "id": "opt_15",
+              "text": "做得好。",
+              "nextStage": -1
+            },
+            {
+              "id": "opt_16",
+              "text": "再报告情况。",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_3",
+      "name": "清洁工老王",
+      "x": 4,
+      "y": 8,
+      "role": "清洁工",
+      "dialogue": "老板，厕所里长出了异次元藤蔓！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "老王拿着拖把发抖。",
+          "options": [
+            {
+              "id": "opt_17",
+              "text": "用除草剂喷它。",
+              "nextStage": 1
+            },
+            {
+              "id": "opt_18",
+              "text": "叫植物学家来。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "老王惊呼：除草剂没用，藤蔓更大了！",
+          "options": [
+            {
+              "id": "opt_19",
+              "text": "用火焰喷射器。",
+              "nextStage": 3
+            },
+            {
+              "id": "opt_20",
+              "text": "让它长，做景点。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "植物学家正忙，不来。",
+          "options": [
+            {
+              "id": "opt_21",
+              "text": "加钱。",
+              "nextStage": 3
+            },
+            {
+              "id": "opt_22",
+              "text": "自己研究。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "老王松了口气：终于解决了。",
+          "options": [
+            {
+              "id": "opt_23",
+              "text": "继续打扫。",
+              "nextStage": -1
+            },
+            {
+              "id": "opt_24",
+              "text": "还有别的问题吗？",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_4",
+      "name": "程序员小李",
+      "x": 2,
+      "y": 5,
+      "role": "程序员",
+      "dialogue": "老板，收银系统被赛博幽灵入侵了！",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "小李盯着屏幕冷汗直流。",
+          "options": [
+            {
+              "id": "opt_25",
+              "text": "重启系统。",
+              "nextStage": 1
+            },
+            {
+              "id": "opt_26",
+              "text": "用圣水洒键盘。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "重启无效，赛博幽灵还在。",
+          "options": [
+            {
+              "id": "opt_27",
+              "text": "拔电源。",
+              "nextStage": 3
+            },
+            {
+              "id": "opt_28",
+              "text": "请驱魔师。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "圣水让键盘短路了。",
+          "options": [
+            {
+              "id": "opt_29",
+              "text": "换新键盘。",
+              "nextStage": 3
+            },
+            {
+              "id": "opt_30",
+              "text": "用手写记账。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "小李恢复冷静：搞定了，暂时。",
+          "options": [
+            {
+              "id": "opt_31",
+              "text": "好，盯紧点。",
+              "nextStage": -1
+            },
+            {
+              "id": "opt_32",
+              "text": "写个防火墙。",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_5",
+      "name": "神秘顾客",
+      "x": 8,
+      "y": 6,
+      "role": "顾客",
+      "dialogue": "你们这有卖宇宙尽头特产吗？",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一个穿着星云图案衣服的顾客问。",
+          "options": [
+            {
+              "id": "opt_33",
+              "text": "有，在负一楼。",
+              "nextStage": 1
+            },
+            {
+              "id": "opt_34",
+              "text": "还没进货。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "顾客皱眉：负一楼还没装修好。",
+          "options": [
+            {
+              "id": "opt_35",
+              "text": "那就送您优惠券。",
+              "nextStage": 3
+            },
+            {
+              "id": "opt_36",
+              "text": "带您去秘密仓库。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "顾客失望：那我来干嘛？",
+          "options": [
+            {
+              "id": "opt_37",
+              "text": "免费喝杯咖啡。",
+              "nextStage": 3
+            },
+            {
+              "id": "opt_38",
+              "text": "下次再来。",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "顾客满意地点头：这服务还行。",
+          "options": [
+            {
+              "id": "opt_39",
+              "text": "欢迎再来。",
+              "nextStage": -1
+            },
+            {
+              "id": "opt_40",
+              "text": "记得给好评。",
+              "nextStage": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_1",
+      "name": "宇宙气球",
+      "x": 6,
+      "y": 2,
+      "type": "usable",
+      "description": "一种能在真空中膨胀的气球。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "你发现了一箱宇宙气球。",
+          "options": [
+            {
+              "id": "opt_41",
+              "text": "拿走。",
+              "nextStage": 1
+            },
+            {
+              "id": "opt_42",
+              "text": "留下。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "气球箱很轻，似乎漏气了。",
+          "options": [
+            {
+              "id": "opt_43",
+              "text": "检查漏气。",
+              "nextStage": 2
+            },
+            {
+              "id": "opt_44",
+              "text": "直接使用。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你发现其中一个气球是反物质做的。",
+          "options": [
+            {
+              "id": "opt_45",
+              "text": "小心存放。",
+              "nextStage": -1
+            },
+            {
+              "id": "opt_46",
+              "text": "放飞它。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_2",
+      "name": "星际投影仪",
+      "x": 3,
+      "y": 4,
+      "type": "usable",
+      "description": "能投射出动态星图。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "一个星际投影仪放在角落里。",
+          "options": [
+            {
+              "id": "opt_47",
+              "text": "捡起来。",
+              "nextStage": 1
+            },
+            {
+              "id": "opt_48",
+              "text": "踢一脚。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "投影仪启动了，投射出黑洞图像。",
+          "options": [
+            {
+              "id": "opt_49",
+              "text": "调整设置。",
+              "nextStage": 2
+            },
+            {
+              "id": "opt_50",
+              "text": "关闭它。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你成功切换到了购物中心广告。",
+          "options": [
+            {
+              "id": "opt_51",
+              "text": "用于宣传。",
+              "nextStage": -1
+            },
+            {
+              "id": "opt_52",
+              "text": "留着备用。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_3",
+      "name": "反物质咖啡",
+      "x": 7,
+      "y": 7,
+      "type": "consumable",
+      "description": "一杯冒着紫色气泡的咖啡。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "柜台上有杯反物质咖啡。",
+          "options": [
+            {
+              "id": "opt_53",
+              "text": "喝掉。",
+              "nextStage": 1
+            },
+            {
+              "id": "opt_54",
+              "text": "倒掉。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "喝完后你精力充沛，但开始漂浮。",
+          "options": [
+            {
+              "id": "opt_55",
+              "text": "享受漂浮。",
+              "nextStage": 2
+            },
+            {
+              "id": "opt_56",
+              "text": "抓住桌子。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "漂浮持续了一分钟，然后你落地。",
+          "options": [
+            {
+              "id": "opt_57",
+              "text": "再来一杯。",
+              "nextStage": -1
+            },
+            {
+              "id": "opt_58",
+              "text": "不敢了。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_4",
+      "name": "量子钥匙",
+      "x": 1,
+      "y": 9,
+      "type": "key",
+      "description": "一把能打开任何量子锁的钥匙。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "地上有一把发光的钥匙。",
+          "options": [
+            {
+              "id": "opt_59",
+              "text": "捡起。",
+              "nextStage": 1
+            },
+            {
+              "id": "opt_60",
+              "text": "忽视。",
+              "nextStage": -1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "钥匙在你手中分裂成两把。",
+          "options": [
+            {
+              "id": "opt_61",
+              "text": "试着合并。",
+              "nextStage": 2
+            },
+            {
+              "id": "opt_62",
+              "text": "分别使用。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "钥匙合并后变成了万能钥匙。",
+          "options": [
+            {
+              "id": "opt_63",
+              "text": "收好。",
+              "nextStage": -1
+            },
+            {
+              "id": "opt_64",
+              "text": "试试开金库。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_5",
+      "name": "星际地图",
+      "x": 11,
+      "y": 3,
+      "type": "document",
+      "description": "一份标记着隐藏商店的星图。",
+      "storyline": [
+        {
+          "stage": 0,
+          "text": "墙上挂着一张星际地图。",
+          "options": [
+            {
+              "id": "opt_65",
+              "text": "取下。",
+              "nextStage": 1
+            },
+            {
+              "id": "opt_66",
+              "text": "拍照。",
+              "nextStage": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "text": "地图显示负二层有秘密商店。",
+          "options": [
+            {
+              "id": "opt_67",
+              "text": "前往探索。",
+              "nextStage": 2
+            },
+            {
+              "id": "opt_68",
+              "text": "标记位置。",
+              "nextStage": 2
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "秘密商店卖的是时间。",
+          "options": [
+            {
+              "id": "opt_69",
+              "text": "购买更多时间。",
+              "nextStage": -1
+            },
+            {
+              "id": "opt_70",
+              "text": "离开。",
+              "nextStage": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_1",
+      "condition": "时间耗尽",
+      "text": "开业时间到，一切混乱，购物中心倒闭了。"
+    },
+    {
+      "id": "ending_2",
+      "condition": "解决所有危机",
+      "text": "你完美解决了所有问题，购物中心顺利开业，成为宇宙热点。"
+    },
+    {
+      "id": "ending_3",
+      "condition": "被外星人投诉",
+      "text": "外星顾客投诉服务态度，购物中心被星际消协查封。"
+    },
+    {
+      "id": "ending_4",
+      "condition": "系统崩溃",
+      "text": "收银系统彻底崩溃，无法开业，你破产了。"
+    },
+    {
+      "id": "ending_5",
+      "condition": "反物质爆炸",
+      "text": "反物质气球爆炸，购物中心变成废墟。"
+    },
+    {
+      "id": "ending_6",
+      "condition": "赢得顾客好感",
+      "text": "神秘顾客成为忠实粉丝，带来更多客流。"
+    },
+    {
+      "id": "ending_7",
+      "condition": "藤蔓失控",
+      "text": "异次元藤蔓吞噬了整个购物中心。"
+    },
+    {
+      "id": "ending_8",
+      "condition": "量子钥匙丢失",
+      "text": "量子钥匙被误用，空间折叠，购物中心消失。"
+    },
+    {
+      "id": "ending_9",
+      "condition": "营销成功",
+      "text": "营销总监的疯狂计划奏效，购物中心人满为患。"
+    },
+    {
+      "id": "ending_10",
+      "condition": "时间购买成功",
+      "text": "你用时间商店买到额外时间，但代价是未来。"
+    }
+  ],
+  "introText": "欢迎，宇宙购物中心老板！距离开业还有60秒，一切都在混乱中。快做出决策，拯救你的商场！",
+  "ambientMusic": "紧张而滑稽的太空电子音乐，带有急促的节拍和搞笑音效。",
+  "id": "fallback_world_071"
+}

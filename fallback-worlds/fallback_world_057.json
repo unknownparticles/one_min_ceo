@@ -1,0 +1,963 @@
+{
+  "matchKeywords": [
+    "火星",
+    "交易所",
+    "CEO",
+    "重启",
+    "60秒",
+    "股票",
+    "交易",
+    "财富"
+  ],
+  "identity": "火星交易所CEO",
+  "theme": "火星证券交易所重启前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "server",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "console",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "elevator",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "throne",
+      "wall"
+    ],
+    [
+      "wall",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "stage",
+      "stage",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": [
+    1,
+    1
+  ],
+  "npcs": [
+    {
+      "id": "npc1",
+      "name": "交易员老王",
+      "role": "资深交易员",
+      "dialogue": "还有60秒！我押注火星畜牧股！",
+      "position": [
+        1,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "老王焦急地看着屏幕。",
+          "options": [
+            {
+              "text": "询问行情",
+              "nextStage": 2
+            },
+            {
+              "text": "无视他",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "老王说：火星畜牧股要涨！快买！",
+          "options": [
+            {
+              "text": "买入",
+              "nextStage": 4
+            },
+            {
+              "text": "再观望",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "老王叹了口气。",
+          "options": [
+            {
+              "text": "回头安慰",
+              "nextStage": 2
+            },
+            {
+              "text": "离开",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你买入火星畜牧股，暴涨！",
+          "options": [
+            {
+              "text": "太棒了",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "老王继续盯着屏幕。",
+          "options": [
+            {
+              "text": "再见",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc2",
+      "name": "清洁机器人",
+      "role": "清洁员",
+      "dialogue": "嘀——检测到金钱味，建议消毒。",
+      "position": [
+        4,
+        2
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "机器人在你脚边绕圈。",
+          "options": [
+            {
+              "text": "踢它一脚",
+              "nextStage": 2
+            },
+            {
+              "text": "无视",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "机器人发出警报：暴力行为！罚款！",
+          "options": [
+            {
+              "text": "逃跑",
+              "nextStage": 3
+            },
+            {
+              "text": "道歉",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "机器人继续清洁。",
+          "options": [
+            {
+              "text": "离开",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc3",
+      "name": "美女秘书",
+      "role": "秘书",
+      "dialogue": "老板，还有30秒！您的咖啡准备好了。",
+      "position": [
+        2,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "秘书递给你一杯咖啡。",
+          "options": [
+            {
+              "text": "喝咖啡",
+              "nextStage": 2
+            },
+            {
+              "text": "不喝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你精神一振，反应加快！",
+          "options": [
+            {
+              "text": "谢谢",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "秘书微笑着离开。",
+          "options": [
+            {
+              "text": "继续工作",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc4",
+      "name": "保安",
+      "role": "保安",
+      "dialogue": "禁止内幕交易！我会盯着你。",
+      "position": [
+        5,
+        5
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "保安警惕地看着你。",
+          "options": [
+            {
+              "text": "贿赂",
+              "nextStage": 2
+            },
+            {
+              "text": "无视",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "保安收下钱，放你一马。",
+          "options": [
+            {
+              "text": "得意",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "保安继续巡逻。",
+          "options": [
+            {
+              "text": "离开",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc5",
+      "name": "占星师",
+      "role": "占星师",
+      "dialogue": "火星与金星合相，股市大吉！",
+      "position": [
+        2,
+        12
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "占星师摆弄星盘。",
+          "options": [
+            {
+              "text": "询问运势",
+              "nextStage": 2
+            },
+            {
+              "text": "不信",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "占星师说：买航天股！",
+          "options": [
+            {
+              "text": "听从",
+              "nextStage": 4
+            },
+            {
+              "text": "怀疑",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "占星师摇摇头。",
+          "options": [
+            {
+              "text": "离开",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你买入航天股，大涨！",
+          "options": [
+            {
+              "text": "感谢",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc6",
+      "name": "神秘黑客",
+      "role": "黑客",
+      "dialogue": "我可以帮你篡改数据...50秒够吗？",
+      "position": [
+        4,
+        10
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "黑客悄声对你说。",
+          "options": [
+            {
+              "text": "同意",
+              "nextStage": 2
+            },
+            {
+              "text": "拒绝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "黑客入侵系统，你获得内幕消息。",
+          "options": [
+            {
+              "text": "太好了",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "黑客消失。",
+          "options": [
+            {
+              "text": "离开",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc7",
+      "name": "送外卖的",
+      "role": "外卖员",
+      "dialogue": "您的火星蚯蚓汉堡到了！",
+      "position": [
+        3,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "外卖员递上汉堡。",
+          "options": [
+            {
+              "text": "吃",
+              "nextStage": 2
+            },
+            {
+              "text": "不吃",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "味道不错，精力+10。",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "外卖员离开。",
+          "options": [
+            {
+              "text": "回见",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item1",
+      "name": "金砖",
+      "type": "treasure",
+      "value": 1000,
+      "description": "一块火星金砖，可以贿赂或投资。",
+      "position": [
+        1,
+        9
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "发现金砖！",
+          "options": [
+            {
+              "text": "捡起",
+              "nextStage": 2
+            },
+            {
+              "text": "不捡",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你获得了金砖。",
+          "options": [
+            {
+              "text": "放入口袋",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "金砖消失了。",
+          "options": [
+            {
+              "text": "算了",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item2",
+      "name": "神秘U盘",
+      "type": "tool",
+      "value": 0,
+      "description": "里面可能有内幕消息。",
+      "position": [
+        3,
+        3
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "发现一个U盘。",
+          "options": [
+            {
+              "text": "查看",
+              "nextStage": 2
+            },
+            {
+              "text": "丢掉",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "U盘里有加密数据。",
+          "options": [
+            {
+              "text": "破解",
+              "nextStage": 4
+            },
+            {
+              "text": "放弃",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "U盘丢失。",
+          "options": [
+            {
+              "text": "算了",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你获得内幕消息！",
+          "options": [
+            {
+              "text": "利用",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item3",
+      "name": "咖啡杯",
+      "type": "consumable",
+      "value": 0,
+      "description": "一杯热咖啡，提神醒脑。",
+      "position": [
+        5,
+        7
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "发现一杯咖啡。",
+          "options": [
+            {
+              "text": "喝掉",
+              "nextStage": 2
+            },
+            {
+              "text": "不喝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你精神抖擞！",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "咖啡凉了。",
+          "options": [
+            {
+              "text": "离开",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item4",
+      "name": "股票代码纸",
+      "type": "info",
+      "value": 0,
+      "description": "一张写着股票代码的纸条。",
+      "position": [
+        3,
+        11
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "发现纸条。",
+          "options": [
+            {
+              "text": "捡起",
+              "nextStage": 2
+            },
+            {
+              "text": "不捡",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "代码是MARS-001。",
+          "options": [
+            {
+              "text": "记住",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "纸条消失。",
+          "options": [
+            {
+              "text": "算了",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item5",
+      "name": "幸运硬币",
+      "type": "treasure",
+      "value": 500,
+      "description": "一枚火星幸运币，能带来好运。",
+      "position": [
+        4,
+        13
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "发现一枚硬币。",
+          "options": [
+            {
+              "text": "捡起",
+              "nextStage": 2
+            },
+            {
+              "text": "不要",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "获得幸运硬币，运气+1。",
+          "options": [
+            {
+              "text": "收好",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "硬币消失。",
+          "options": [
+            {
+              "text": "好吧",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item6",
+      "name": "能量饮料",
+      "type": "consumable",
+      "value": 0,
+      "description": "火星特饮，瞬间恢复精力。",
+      "position": [
+        2,
+        8
+      ],
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "发现能量饮料。",
+          "options": [
+            {
+              "text": "喝下",
+              "nextStage": 2
+            },
+            {
+              "text": "不喝",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "充满能量！",
+          "options": [
+            {
+              "text": "继续",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "饮料被拿走了。",
+          "options": [
+            {
+              "text": "好吧",
+              "nextStage": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending1",
+      "condition": "player_wealth >= 10000",
+      "text": "你成为火星首富！交易所重启，你掌控一切。",
+      "isWin": true
+    },
+    {
+      "id": "ending2",
+      "condition": "player_wealth <= -5000",
+      "text": "你破产了，被逐出火星交易所。",
+      "isWin": false
+    },
+    {
+      "id": "ending3",
+      "condition": "time_left <= 0",
+      "text": "时间到！交易所重启，但你毫无准备，一片混乱。",
+      "isWin": false
+    },
+    {
+      "id": "ending4",
+      "condition": "hacked_system == true",
+      "text": "你利用黑客数据大赚一笔，但东窗事发，被捕入狱。",
+      "isWin": false
+    },
+    {
+      "id": "ending5",
+      "condition": "bribe_guard == true",
+      "text": "保安受贿，但被监控发现，你被取消资格。",
+      "isWin": false
+    },
+    {
+      "id": "ending6",
+      "condition": "invest_mars_stock == true && mars_stock_rise == true",
+      "text": "火星畜牧股暴涨，你赚得盆满钵满！",
+      "isWin": true
+    },
+    {
+      "id": "ending7",
+      "condition": "invest_space_stock == true && space_stock_rise == true",
+      "text": "航天股飙升，你成为航天大亨！",
+      "isWin": true
+    },
+    {
+      "id": "ending8",
+      "condition": "gold_brick_used == true && bribe_success == true",
+      "text": "你用金砖贿赂所有人，成为幕后黑手。",
+      "isWin": true
+    },
+    {
+      "id": "ending9",
+      "condition": "coffee_drunk == true && energy_boost == true",
+      "text": "咖啡因让你过度兴奋，心脏病发，game over。",
+      "isWin": false
+    }
+  ],
+  "introText": "你，火星交易所CEO，站在交易所大厅中央。60秒后，火星证券交易所将重启！你是利用内幕消息暴富，还是守住底线？时间紧迫，做出你的选择！",
+  "ambientMusic": "tense_electronic",
+  "id": "fallback_world_057"
+}

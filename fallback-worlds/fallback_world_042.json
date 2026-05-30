@@ -1,0 +1,799 @@
+{
+  "matchKeywords": [
+    "机械佛祖",
+    "融资",
+    "路演",
+    "60秒"
+  ],
+  "identity": "机械佛祖",
+  "theme": "机械佛祖融资路演前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "gold_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "water",
+      "water",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 5
+  },
+  "npcs": [
+    {
+      "id": "np1",
+      "name": "风投菩萨",
+      "x": 2,
+      "y": 2,
+      "dialogue": "你的路演只有60秒，开始吧。",
+      "storyline": [
+        {
+          "stage": 1,
+          "narrator": "风投菩萨审视着你",
+          "options": [
+            {
+              "text": "展示财务报表",
+              "nextStage": 2
+            },
+            {
+              "text": "展示产品原型",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "narrator": "财务报表令人满意",
+          "options": [
+            {
+              "text": "请求投资",
+              "nextStage": 4
+            },
+            {
+              "text": "介绍团队",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "narrator": "产品原型惊艳全场",
+          "options": [
+            {
+              "text": "请求投资",
+              "nextStage": 4
+            },
+            {
+              "text": "演示用户增长",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "np2",
+      "name": "数据金刚",
+      "x": 5,
+      "y": 4,
+      "dialogue": "让我看看你的数据。",
+      "storyline": [
+        {
+          "stage": 1,
+          "narrator": "数据金刚盯着屏幕",
+          "options": [
+            {
+              "text": "展示DAU曲线",
+              "nextStage": 2
+            },
+            {
+              "text": "展示营收数据",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "narrator": "DAU增长强劲",
+          "options": [
+            {
+              "text": "解释留存率",
+              "nextStage": 4
+            },
+            {
+              "text": "展示转化漏斗",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "narrator": "营收数据亮眼",
+          "options": [
+            {
+              "text": "解释毛利率",
+              "nextStage": 4
+            },
+            {
+              "text": "展示未来预测",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "np3",
+      "name": "运营罗汉",
+      "x": 10,
+      "y": 3,
+      "dialogue": "运营效率如何？",
+      "storyline": [
+        {
+          "stage": 1,
+          "narrator": "运营罗汉提出问题",
+          "options": [
+            {
+              "text": "展示自动化流程",
+              "nextStage": 2
+            },
+            {
+              "text": "展示团队协作",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "narrator": "自动化流程高效",
+          "options": [
+            {
+              "text": "展示成本节约",
+              "nextStage": 4
+            },
+            {
+              "text": "展示扩展性",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "narrator": "团队协作融洽",
+          "options": [
+            {
+              "text": "展示敏捷开发",
+              "nextStage": 4
+            },
+            {
+              "text": "展示员工满意度",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "np4",
+      "name": "市场天王",
+      "x": 3,
+      "y": 7,
+      "dialogue": "市场策略是什么？",
+      "storyline": [
+        {
+          "stage": 1,
+          "narrator": "市场天王期待你的方案",
+          "options": [
+            {
+              "text": "展示社交媒体策略",
+              "nextStage": 2
+            },
+            {
+              "text": "展示合作伙伴",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "narrator": "社交媒体策略有创意",
+          "options": [
+            {
+              "text": "展示KOL合作",
+              "nextStage": 4
+            },
+            {
+              "text": "展示用户生成内容",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "narrator": "合作伙伴资源丰富",
+          "options": [
+            {
+              "text": "展示联合营销",
+              "nextStage": 4
+            },
+            {
+              "text": "展示渠道拓展",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "np5",
+      "name": "技术迦叶",
+      "x": 12,
+      "y": 4,
+      "dialogue": "技术栈是否先进？",
+      "storyline": [
+        {
+          "stage": 1,
+          "narrator": "技术迦叶提问",
+          "options": [
+            {
+              "text": "展示架构图",
+              "nextStage": 2
+            },
+            {
+              "text": "展示代码质量",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "narrator": "架构图清晰合理",
+          "options": [
+            {
+              "text": "展示微服务",
+              "nextStage": 4
+            },
+            {
+              "text": "展示云原生",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "narrator": "代码质量优秀",
+          "options": [
+            {
+              "text": "展示测试覆盖率",
+              "nextStage": 4
+            },
+            {
+              "text": "展示性能指标",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "it1",
+      "name": "黄金PPT",
+      "x": 7,
+      "y": 4,
+      "pickupEffect": "获得黄金PPT，路演时增加说服力",
+      "storyline": [
+        {
+          "stage": 1,
+          "narrator": "你发现了黄金PPT",
+          "options": [
+            {
+              "text": "拿起它",
+              "nextStage": 2
+            },
+            {
+              "text": "忽略它",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "narrator": "黄金PPT闪闪发光",
+          "options": [
+            {
+              "text": "放入公文包",
+              "nextStage": 4
+            },
+            {
+              "text": "立即打开",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "narrator": "你错过了机会",
+          "options": [
+            {
+              "text": "继续前进",
+              "nextStage": 4
+            },
+            {
+              "text": "返回寻找",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it2",
+      "name": "财务魔方",
+      "x": 4,
+      "y": 3,
+      "pickupEffect": "获得财务魔方，解锁财务状况报告",
+      "storyline": [
+        {
+          "stage": 1,
+          "narrator": "财务魔方在转动",
+          "options": [
+            {
+              "text": "触碰它",
+              "nextStage": 2
+            },
+            {
+              "text": "观察它",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "narrator": "魔方变成财报",
+          "options": [
+            {
+              "text": "阅读财报",
+              "nextStage": 4
+            },
+            {
+              "text": "收起财报",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "narrator": "你观察魔方",
+          "options": [
+            {
+              "text": "尝试破解",
+              "nextStage": 4
+            },
+            {
+              "text": "拍照记录",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it3",
+      "name": "用户增长圣杯",
+      "x": 9,
+      "y": 6,
+      "pickupEffect": "获得用户增长圣杯，展示用户增长数据",
+      "storyline": [
+        {
+          "stage": 1,
+          "narrator": "圣杯散发着光芒",
+          "options": [
+            {
+              "text": "举起圣杯",
+              "nextStage": 2
+            },
+            {
+              "text": "检查圣杯",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "narrator": "圣杯显示增长曲线",
+          "options": [
+            {
+              "text": "投屏展示",
+              "nextStage": 4
+            },
+            {
+              "text": "低声念出数字",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "narrator": "圣杯刻有铭文",
+          "options": [
+            {
+              "text": "解读铭文",
+              "nextStage": 4
+            },
+            {
+              "text": "带走铭文",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it4",
+      "name": "团队光环",
+      "x": 2,
+      "y": 8,
+      "pickupEffect": "获得团队光环，展示团队实力",
+      "storyline": [
+        {
+          "stage": 1,
+          "narrator": "光环悬浮空中",
+          "options": [
+            {
+              "text": "伸手触摸",
+              "nextStage": 2
+            },
+            {
+              "text": "环绕观察",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "narrator": "光环照亮团队照片",
+          "options": [
+            {
+              "text": "介绍团队成员",
+              "nextStage": 4
+            },
+            {
+              "text": "突出核心成员",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "narrator": "光环闪烁",
+          "options": [
+            {
+              "text": "记录光环",
+              "nextStage": 4
+            },
+            {
+              "text": "戴上光环",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it5",
+      "name": "未来眼镜",
+      "x": 11,
+      "y": 8,
+      "pickupEffect": "获得未来眼镜，看到市场预测",
+      "storyline": [
+        {
+          "stage": 1,
+          "narrator": "眼镜在桌上",
+          "options": [
+            {
+              "text": "戴上眼镜",
+              "nextStage": 2
+            },
+            {
+              "text": "仔细端详",
+              "nextStage": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "narrator": "眼镜显示未来数据",
+          "options": [
+            {
+              "text": "分享预测",
+              "nextStage": 4
+            },
+            {
+              "text": "调整策略",
+              "nextStage": 5
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "narrator": "眼镜有划痕",
+          "options": [
+            {
+              "text": "擦拭眼镜",
+              "nextStage": 4
+            },
+            {
+              "text": "忽略它",
+              "nextStage": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end1",
+      "condition": "获得投资满额",
+      "description": "你成功获得全部投资，机械佛祖飞升。",
+      "score": 100
+    },
+    {
+      "id": "end2",
+      "condition": "获得部分投资",
+      "description": "你获得部分投资，机械佛祖继续修行。",
+      "score": 60
+    },
+    {
+      "id": "end3",
+      "condition": "无人投资",
+      "description": "路演失败，机械佛祖堕入轮回。",
+      "score": 0
+    },
+    {
+      "id": "end4",
+      "condition": "触发了所有隐藏彩蛋",
+      "description": "你发现隐藏彩蛋，机械佛祖觉醒。",
+      "score": 150
+    },
+    {
+      "id": "end5",
+      "condition": "时间耗尽",
+      "description": "60秒到，路演中断，机械佛祖沉默。",
+      "score": 20
+    },
+    {
+      "id": "end6",
+      "condition": "得罪所有投资人",
+      "description": "你激怒投资人，机械佛祖被驱逐。",
+      "score": 10
+    },
+    {
+      "id": "end7",
+      "condition": "收集所有道具",
+      "description": "你集齐所有圣物，机械佛祖成真。",
+      "score": 200
+    },
+    {
+      "id": "end8",
+      "condition": "完成所有NPC任务",
+      "description": "你赢得所有支持，机械佛祖封神。",
+      "score": 180
+    }
+  ],
+  "introText": "欢迎来到机械佛祖的融资路演！你只有60秒说服投资人，完成这场荒诞而华丽的商业表演。",
+  "ambientMusic": "electronic_ambient",
+  "id": "fallback_world_042"
+}

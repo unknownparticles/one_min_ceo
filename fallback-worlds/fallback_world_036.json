@@ -1,0 +1,918 @@
+{
+  "matchKeywords": [
+    "直播",
+    "事故",
+    "60秒",
+    "CEO",
+    "危机"
+  ],
+  "identity": "全宇宙直播平台老板",
+  "theme": "全宇宙直播事故前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "neon_floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "server",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "window",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "vault",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 9
+  },
+  "npcs": [
+    {
+      "id": "npc_tech_lead",
+      "name": "技术主管老王",
+      "position": {
+        "x": 5,
+        "y": 2
+      },
+      "personality": "焦虑",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "老板！直播系统出现异常流量，可能是黑客攻击！",
+          "options": [
+            {
+              "text": "启动应急防火墙",
+              "effect": "success"
+            },
+            {
+              "text": "假装没听到",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "防火墙启动成功，但还有后门！",
+          "options": [
+            {
+              "text": "让他直接切断服务器",
+              "effect": "success"
+            },
+            {
+              "text": "让他继续监控",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "已经切断了，但备用系统也瘫痪了！",
+          "options": [
+            {
+              "text": "亲自去机房检查",
+              "effect": "success"
+            },
+            {
+              "text": "远程指挥",
+              "effect": "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_host",
+      "name": "当红主播小美",
+      "position": {
+        "x": 8,
+        "y": 4
+      },
+      "personality": "慌张",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "老板！我的直播间突然涌入一堆奇怪的人！",
+          "options": [
+            {
+              "text": "让她暂时停播",
+              "effect": "success"
+            },
+            {
+              "text": "让她继续播",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "停播了，但观众要求退款！",
+          "options": [
+            {
+              "text": "同意退款并安抚",
+              "effect": "success"
+            },
+            {
+              "text": "拒绝退款",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "退款处理好了，但平台声誉受损！",
+          "options": [
+            {
+              "text": "发布道歉声明",
+              "effect": "success"
+            },
+            {
+              "text": "冷处理",
+              "effect": "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_investor",
+      "name": "投资人张总",
+      "position": {
+        "x": 3,
+        "y": 6
+      },
+      "personality": "暴躁",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "我听说平台出事了！我的钱怎么办！",
+          "options": [
+            {
+              "text": "诚恳解释并承诺解决",
+              "effect": "success"
+            },
+            {
+              "text": "敷衍过去",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "解释没用！我要撤资！",
+          "options": [
+            {
+              "text": "恳求再给一次机会",
+              "effect": "success"
+            },
+            {
+              "text": "让他撤资",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他答应再观察一周，但要求分红翻倍",
+          "options": [
+            {
+              "text": "同意条件",
+              "effect": "success"
+            },
+            {
+              "text": "拒绝并威胁法律手段",
+              "effect": "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_security",
+      "name": "保安队长大刘",
+      "position": {
+        "x": 11,
+        "y": 3
+      },
+      "personality": "忠诚",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "老板，楼下有记者包围了大楼！",
+          "options": [
+            {
+              "text": "让保安封锁大门",
+              "effect": "success"
+            },
+            {
+              "text": "允许记者进入",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "封锁成功，但记者在侧门发现了漏洞",
+          "options": [
+            {
+              "text": "派更多保安守住侧门",
+              "effect": "success"
+            },
+            {
+              "text": "不在意",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "有记者混进来了，正在直播！",
+          "options": [
+            {
+              "text": "让大刘没收设备",
+              "effect": "success"
+            },
+            {
+              "text": "让公关去沟通",
+              "effect": "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_hr",
+      "name": "HR主管莉莉",
+      "position": {
+        "x": 7,
+        "y": 8
+      },
+      "personality": "八卦",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "老板，员工都在议论公司要倒闭了！",
+          "options": [
+            {
+              "text": "召开全员大会稳定军心",
+              "effect": "success"
+            },
+            {
+              "text": "发内部邮件辟谣",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "开会后员工情绪稳定，但有人要求加薪",
+          "options": [
+            {
+              "text": "承诺危机后加薪",
+              "effect": "success"
+            },
+            {
+              "text": "拒绝并警告",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "加薪承诺传出去了，财务不满",
+          "options": [
+            {
+              "text": "和财务协商分期加薪",
+              "effect": "success"
+            },
+            {
+              "text": "直接取消加薪承诺",
+              "effect": "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_cleaner",
+      "name": "清洁工老赵",
+      "position": {
+        "x": 10,
+        "y": 10
+      },
+      "personality": "神秘",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "老板，我在机房发现了一个可疑设备。",
+          "options": [
+            {
+              "text": "让他带你去查看",
+              "effect": "success"
+            },
+            {
+              "text": "让他扔掉",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "设备是一个黑客留下的后门装置。",
+          "options": [
+            {
+              "text": "保留证据并报警",
+              "effect": "success"
+            },
+            {
+              "text": "自己拆除",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "警察来了，但黑客已经逃跑了。",
+          "options": [
+            {
+              "text": "提供线索协助追捕",
+              "effect": "success"
+            },
+            {
+              "text": "责怪老赵没有及时报告",
+              "effect": "failure"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_firewall",
+      "name": "防火墙密钥",
+      "position": {
+        "x": 4,
+        "y": 2
+      },
+      "type": "key",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你拿到了防火墙密钥，可以启动最高级别的防护。",
+          "options": [
+            {
+              "text": "立即使用",
+              "effect": "success"
+            },
+            {
+              "text": "先保留",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "密钥使用成功，但需要定期更新。",
+          "options": [
+            {
+              "text": "设置自动更新",
+              "effect": "success"
+            },
+            {
+              "text": "手动更新",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "自动更新启动，系统暂时安全。",
+          "options": [
+            {
+              "text": "检查其他漏洞",
+              "effect": "success"
+            },
+            {
+              "text": "庆祝一下",
+              "effect": "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_drone",
+      "name": "采访无人机",
+      "position": {
+        "x": 12,
+        "y": 5
+      },
+      "type": "tool",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了一架采访无人机，可能被记者操控。",
+          "options": [
+            {
+              "text": "干扰信号",
+              "effect": "success"
+            },
+            {
+              "text": "任由它拍摄",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "信号干扰成功，无人机坠落。",
+          "options": [
+            {
+              "text": "回收并检查数据",
+              "effect": "success"
+            },
+            {
+              "text": "丢弃",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "从无人机中发现了记者偷拍的证据。",
+          "options": [
+            {
+              "text": "起诉记者",
+              "effect": "success"
+            },
+            {
+              "text": "私下和解",
+              "effect": "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_contract",
+      "name": "紧急合约",
+      "position": {
+        "x": 2,
+        "y": 5
+      },
+      "type": "document",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你找到了一份紧急合约，签署可以获取资金。",
+          "options": [
+            {
+              "text": "仔细阅读后签署",
+              "effect": "success"
+            },
+            {
+              "text": "直接签署",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "合约条款苛刻，但资金到账迅速。",
+          "options": [
+            {
+              "text": "接受条款",
+              "effect": "success"
+            },
+            {
+              "text": "拒绝并退还资金",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "资金到账，但对方要求直播植入广告。",
+          "options": [
+            {
+              "text": "同意植入",
+              "effect": "success"
+            },
+            {
+              "text": "拒绝并赔偿",
+              "effect": "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_antidote",
+      "name": "网络解毒剂",
+      "position": {
+        "x": 6,
+        "y": 7
+      },
+      "type": "medicine",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你找到了网络解毒剂，可以清除部分病毒。",
+          "options": [
+            {
+              "text": "对主服务器使用",
+              "effect": "success"
+            },
+            {
+              "text": "保存备用",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "使用成功，但病毒变异了。",
+          "options": [
+            {
+              "text": "继续寻找变异病毒的解药",
+              "effect": "success"
+            },
+            {
+              "text": "重启服务器",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "找到了变异病毒的解药，系统恢复。",
+          "options": [
+            {
+              "text": "全面扫描系统",
+              "effect": "success"
+            },
+            {
+              "text": "恢复直播",
+              "effect": "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_crown",
+      "name": "虚假皇冠",
+      "position": {
+        "x": 9,
+        "y": 1
+      },
+      "type": "decoration",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了一个虚假皇冠，戴上可以增加权威。",
+          "options": [
+            {
+              "text": "戴上",
+              "effect": "success"
+            },
+            {
+              "text": "扔掉",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "戴上皇冠后，员工以为你还在掌控局面。",
+          "options": [
+            {
+              "text": "利用皇冠稳定军心",
+              "effect": "success"
+            },
+            {
+              "text": "摘下来并说明真相",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "皇冠被媒体拍到，成了笑柄。",
+          "options": [
+            {
+              "text": "承认错误并道歉",
+              "effect": "success"
+            },
+            {
+              "text": "指责媒体断章取义",
+              "effect": "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_code",
+      "name": "神秘代码",
+      "position": {
+        "x": 11,
+        "y": 7
+      },
+      "type": "code",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你得到了一段神秘代码，可能控制着后门。",
+          "options": [
+            {
+              "text": "尝试破解",
+              "effect": "success"
+            },
+            {
+              "text": "交给技术部",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "破解需要时间，但可以暂时关闭后门。",
+          "options": [
+            {
+              "text": "关闭后门",
+              "effect": "success"
+            },
+            {
+              "text": "继续破解",
+              "effect": "failure"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "后门关闭，但黑客留下了警告信息。",
+          "options": [
+            {
+              "text": "忽视警告",
+              "effect": "success"
+            },
+            {
+              "text": "加强安全",
+              "effect": "failure"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_success",
+      "condition": "所有危机解除",
+      "text": "你成功化解了所有事故，平台恢复正常，直播继续！"
+    },
+    {
+      "id": "ending_failure_hack",
+      "condition": "黑客控制直播",
+      "text": "黑客控制了直播，播放了你的丑闻，公司股价暴跌，你被迫辞职。"
+    },
+    {
+      "id": "ending_failure_investor",
+      "condition": "投资人撤资",
+      "text": "投资人撤资，公司资金链断裂，宣布破产。"
+    },
+    {
+      "id": "ending_failure_panic",
+      "condition": "员工恐慌",
+      "text": "员工集体辞职，公司无人可用，直播中断。"
+    },
+    {
+      "id": "ending_failure_media",
+      "condition": "媒体曝光",
+      "text": "媒体曝光了所有内幕，公司形象崩塌，你被董事会罢免。"
+    },
+    {
+      "id": "ending_failure_riot",
+      "condition": "观众暴动",
+      "text": "观众因不满涌入公司，打砸设备，直播平台彻底瘫痪。"
+    },
+    {
+      "id": "ending_neutral",
+      "condition": "勉强维持",
+      "text": "你勉强维持了局面，但损失惨重，需要长时间恢复。"
+    },
+    {
+      "id": "ending_mystery",
+      "condition": "发现阴谋",
+      "text": "你发现这一切都是竞争对手的阴谋，虽然赢了但留下了心理阴影。"
+    }
+  ],
+  "introText": "你是全宇宙直播平台的老板，距离年度盛典开始还有60秒。突然，系统报警，黑客入侵，记者包围，员工恐慌。你必须在这60秒内做出决策，拯救你的平台！",
+  "ambientMusic": "紧张悬疑的背景音乐",
+  "id": "fallback_world_036"
+}

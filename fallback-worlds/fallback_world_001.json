@@ -1,0 +1,828 @@
+{
+  "matchKeywords": [
+    "IPO",
+    "敲钟",
+    "纳斯达克",
+    "纳斯达克终极CEO",
+    "60秒",
+    "CEO",
+    "招股书",
+    "投资者"
+  ],
+  "identity": "纳斯达克终极CEO",
+  "theme": "纳斯达克IPO敲钟前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "gold_floor",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "vault",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "gold_floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "gold_floor",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "throne",
+      "floor",
+      "gold_floor",
+      "floor",
+      "statue",
+      "floor",
+      "gold_floor",
+      "floor",
+      "throne",
+      "gold_floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "neon_floor",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "plant",
+      "floor",
+      "floor",
+      "glass",
+      "neon_floor",
+      "stage",
+      "stage",
+      "stage",
+      "neon_floor",
+      "glass",
+      "floor",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "glass",
+      "neon_floor",
+      "stage",
+      "portal",
+      "stage",
+      "neon_floor",
+      "glass",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "gold_floor",
+      "floor",
+      "console",
+      "neon_floor",
+      "stage",
+      "stage",
+      "stage",
+      "neon_floor",
+      "console",
+      "floor",
+      "gold_floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "glass",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "console",
+      "floor",
+      "fountain",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "fountain",
+      "floor",
+      "console",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "carpet",
+      "carpet",
+      "crystal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 4
+  },
+  "npcs": [
+    {
+      "id": "npc_underwriter",
+      "name": "首席承销官",
+      "position": {
+        "x": 3,
+        "y": 2
+      },
+      "sprite": "underwriter_sprite",
+      "dialogueTitle": "资本魔音",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "终极CEO！还有60秒我们就要登上纳斯达克敲钟台！每股定价你能接受吗？市场上的鳄鱼们正盯着我们！",
+          "options": [
+            {
+              "text": "定天价每股1000，展现雄风！",
+              "next": 2
+            },
+            {
+              "text": "定个安全价，保守一点。",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "疯了！定1000美元一股！机构们兴奋得捶桌子，散户股民开始疯抢！但定价太高有下挫风险，你确定？",
+          "options": [
+            {
+              "text": "全部让我吞下，我扛！",
+              "toEnd": "wild_ipo"
+            },
+            {
+              "text": "有点虚，那我们降低到500。",
+              "next": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "保守定价被华尔街知道了，他们都觉得我们都病猫，阴笑一片。但我们还有最后15秒，来点猛的？",
+          "options": [
+            {
+              "text": "反悔！改点刺激价格！",
+              "next": 2
+            },
+            {
+              "text": "算了，还有退市预案没？",
+              "toEnd": "safe_crash"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_investor_maven",
+      "name": "国际对冲基金女魔头",
+      "position": {
+        "x": 10,
+        "y": 4
+      },
+      "sprite": "maven_sprite",
+      "dialogueTitle": "淘金或沙海",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "年轻的小总裁，现在你的纳斯达克抽签上市，我给你200亿美元铺子，条件是让我独享头批收益。答应吗？",
+          "options": [
+            {
+              "text": "接受！200亿到手，准备被卖了也值！",
+              "next": 2
+            },
+            {
+              "text": "拒绝！我独立自主先敲钟再看。",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你签了魔契！女魔头立即控制董事会，股票缩水50%。计时器剩40秒开始，被操控的荣誉终究是丑闻？",
+          "options": [
+            {
+              "text": "突然变心态，砸碎签约屏幕，吼出正义！",
+              "toEnd": "mutiny_unlock"
+            },
+            {
+              "text": "忍！熬过这60秒，将来黑化称王。",
+              "toEnd": "fallen_tycoon"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你拒绝了她。她冷笑着说会在敲钟前给你们搞一场公关地震，但暂时空出手帮你打气。不过你的独立令旁者刮目。",
+          "options": [
+            {
+              "text": "借她余力，利用他媒体造势。",
+              "next": 1
+            },
+            {
+              "text": "敲钟前与她彻底切割！所有喊价独立！",
+              "toEnd": "rogue_capitalist"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_vendor",
+      "name": "交易所二层助理",
+      "position": {
+        "x": 13,
+        "y": 3
+      },
+      "sprite": "assistant_sprite",
+      "dialogueTitle": "柜台红色预警",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "长官！我刚收到内部消息：你的珠宝线会因商标在敲钟后被起诉。要不要提前销毁涉事库存？",
+          "options": [
+            {
+              "text": "销毁所有库存，防患未然！",
+              "next": 2
+            },
+            {
+              "text": "造假帐把这段清理掉！",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "销毁了10亿资产，公司现金流瞬间减半，但少了麻烦。但是激起的烟雾触发证监会警报，你该怎么回应？",
+          "options": [
+            {
+              "text": "承认违规处理，强行IPO通过诉讼化力！",
+              "toEnd": "rough_justice"
+            },
+            {
+              "text": "贿赂那个审计员把报告删了。",
+              "next": 1
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "做假账在秒杀中被交易所拒盘，即将通报。此刻如果坦白还有一线生机。",
+          "options": [
+            {
+              "text": "坦然抹去假账，推向自家名誉自焚，稳一稳再说。",
+              "toEnd": "whistle_fail"
+            },
+            {
+              "text": "撤回冲上市，转私募继续作战。",
+              "toEnd": "private_escape"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_technocrat",
+      "name": "首席技术怪人",
+      "position": {
+        "x": 14,
+        "y": 5
+      },
+      "sprite": "techie_sprite",
+      "dialogueTitle": "内部代码核弹",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "交易系统最后一道防火墙我塞了一键退市彩蛋啊！你说在敲钱吗？还是打开毒酒库？生死一按。",
+          "options": [
+            {
+              "text": "开启退市彩蛋，震慑投机！",
+              "next": 2
+            },
+            {
+              "text": "骂他立即锁定系统绝对不能有风险。",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "按下彩蛋，交易系统原地崩溃。数据封红，纳斯达克沉默了三秒后发出全市场警告。倒数剩下10秒疯狂翻转。",
+          "options": [
+            {
+              "text": "歇斯底里冲到台前唱一首“轰趴曲”！",
+              "toEnd": "chaos_bard"
+            },
+            {
+              "text": "安排海量买家闪电托市并购单，把漏洞假装操作。",
+              "toEnd": "dark_energy"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "他把紧锁的钥匙交给了你：里面是家族宝典‘现金流的四重魔法’，而且还能阻承任何技术暗杀。",
+          "options": [
+            {
+              "text": "立马让他封锁所有远程且添加护甲。",
+              "next": 1
+            },
+            {
+              "text": "发动“全部做多”——勇气即利润。",
+              "toEnd": "faith_machine"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc_celebrity",
+      "name": "网红财经主播",
+      "position": {
+        "x": 5,
+        "y": 7
+      },
+      "sprite": "streamer_sprite",
+      "dialogueTitle": "直播间的血泪呐喊",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "天哪！我现在直播着500万人围观你哦！快透露是起飞还是吓崩？所有人拿好钞票板作准备了！操作些什么？",
+          "options": [
+            {
+              "text": "直接在直播里给全部散户分发全员Bonus股！",
+              "next": 2
+            },
+            {
+              "text": "中二喊出：“打败熊市！血流成河我凤凰”。",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "全网崩了——你送了每一股一股！在节奏里敲钟一秒全员转盈！马上在股票版本更新黄金模式……",
+          "options": [
+            {
+              "text": "再加上股东VIP藏宝阁，收割名气。",
+              "toEnd": "golden_crown"
+            },
+            {
+              "text": "突然放大炮买俄勒冈矿场！激进派。",
+              "toEnd": "crazy_speculator"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "观众疯狂打call你的霸气，这一刻股票确实在乱动。一句指令导致后台争夺地开响。是机会还是隐毒？",
+          "options": [
+            {
+              "text": "立马控制狂热度以静制动推出稳定承诺骗视。,",
+              "toEnd": "fake_adviser"
+            },
+            {
+              "text": "给全民送特斯拉联动卡，宣布入军造车。",
+              "toEnd": "elon_gambit"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_stock_bell",
+      "name": "敲钟锤（纯金龙）",
+      "position": {
+        "x": 7,
+        "y": 6
+      },
+      "sprite": "hammer_sprite",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "敲钟的权杖，象征无上权利或谎言地狱。",
+          "options": [
+            {
+              "text": "拾起来霸气挥舞，吸尽聚光灯。",
+              "next": 2
+            },
+            {
+              "text": "不起用这支锤，永远封在盒子。",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你猛挥锤子，震耳欲聋的金声振动整个大厅。股票飙升又瞬间闪现波澜…",
+          "options": [
+            {
+              "text": "借此金声宣布‘人类投降科技疯狂’，获得无限灵魂增值。",
+              "toEnd": "orca_oracle"
+            },
+            {
+              "text": "借锤之重量立刻下达低价保证计划。",
+              "toEnd": "common_rescue"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "没用锤，但你把这个纯金宝贝黑了加密于舱房。有一股异常能量暗示它被动了手脚。",
+          "options": [
+            {
+              "text": "查它重码开发一个虚拟锤虚拟敲，惊艳群众！",
+              "toEnd": "fake_pomp"
+            },
+            {
+              "text": "就把锤上交给交易所换最后一个人情。",
+              "next": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_mystic_terminal",
+      "name": "幽暗指令终端",
+      "position": {
+        "x": 10,
+        "y": 2
+      },
+      "sprite": "console_sprite",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "伪装交易系统，实则操控K线走势的黑道魔法底座。只要你碰代码就能反转盘面。冒还是弃？",
+          "options": [
+            {
+              "text": "输入‘CASHMONEY+++’核改变动订单",
+              "next": 2
+            },
+            {
+              "text": "摧毁即兴连接以逃离虚假繁荣",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "终端热浪沸腾；数字瞬间冲乱！被操控的利润呼之即来，但如果算法捉住你会直接崩死交易。",
+          "options": [
+            {
+              "text": "再叠加一团烂价格机器骗骗抽风监察出来！",
+              "toEnd": "machine_gambler"
+            },
+            {
+              "text": "配合瞬间修复脚本产生杠杆！",
+              "toEnd": "algorithmox"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你摧毁了终端，屏裂后刮出一张旧咖啡色证券，内容是公司旧债券。看来骗局终有暗示。",
+          "options": [
+            {
+              "text": "凭这一张债券发挥‘历史遗产’上新闻挽回声誉。",
+              "toEnd": "showman_victory"
+            },
+            {
+              "text": "把它发给监管人换取诚信令牌兜底。",
+              "toEnd": "fever_last"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_vision_goggles",
+      "name": "算力透视镜",
+      "position": {
+        "x": 3,
+        "y": 9
+      },
+      "sprite": "goggles_sprite",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一副把整个交易所所有level与暗箱可视化的暴利眼镜。令你从容成为上帝。戴不戴？",
+          "options": [
+            {
+              "text": "戴上，一眼看空多并逃无可逃。",
+              "next": 2
+            },
+            {
+              "text": "摘下踩碎了这东西很危险——物极必反。",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "一切真相逆天明晰——看到每张K线潜在的子弹和哭脸！你会打出致命牌或选择安然普通牌？",
+          "options": [
+            {
+              "text": "用核爆套餐高杠杆逼迫垄断区彻底后退。",
+              "toEnd": "glass_tyrant"
+            },
+            {
+              "text": "耍了一把温和统计，用智慧撑2分钟。",
+              "toEnd": "cerebral_sage"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "碎片溅了一地。周遭的主播都惊吓不敢靠近。但是地板的纳米屑依然能看到少许机会线脉。",
+          "options": [
+            {
+              "text": "抓紧去谈判并利用残存图案去搞PR偷袭。",
+              "toEnd": "smash_chest"
+            },
+            {
+              "text": "呼唤技术怪人来解决它们升级义眼。",
+              "next": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_golden_parachute",
+      "name": "金色降落伞支票",
+      "position": {
+        "x": 1,
+        "y": 6
+      },
+      "sprite": "check_sprite",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "一张空白兑现的挽歌支票？极适合在最后失败之前自己空降逃跑。或将全部回馈股东赴死？",
+          "options": [
+            {
+              "text": "大写满自己的救生票快速撤出现场。",
+              "next": 2
+            },
+            {
+              "text": "将它捐给交易所，表示为理想不退缩。",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你把私人生路掏了出来——钱会自动入安全账号，但一切尊严彻底掷了！",
+          "options": [
+            {
+              "text": "逃离并立刻登上直升机，这世界留下嚎叫。",
+              "toEnd": "coward_sail"
+            },
+            {
+              "text": "逃到半路猛然把支票融化成金画然后回击IPO！",
+              "toEnd": "phoenix_iron"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "众目睽睽之下把支票化为烧掉的敬礼。顿时网络狂论：‘他是赌徒？还是神？’",
+          "options": [
+            {
+              "text": "引爆全球影响力创造新政派体系登顶。",
+              "toEnd": "martyr_king"
+            },
+            {
+              "text": "你因为丢失后台导致后续崩盘又脱不了身……",
+              "toEnd": "plunge_abyss"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_tracker_trophy",
+      "name": "20亿用户魔牌",
+      "position": {
+        "x": 11,
+        "y": 7
+      },
+      "sprite": "trophy_sprite",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "这冰冷的数据：原来全是僵尸僵尸‘假人’，用户根本不存在！爆出毁灭上市还是瞒天阴毒？",
+          "options": [
+            {
+              "text": "立刻数据注水，把假活跃放到开场亮点。",
+              "next": 2
+            },
+            {
+              "text": "劈断奖牌承认通缉作假作重来归用真数。",
+              "next": 3
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "报表魔性丰盈敲钟，但灰卡里密码提醒这事顶多骗一时诚实总致命……",
+          "options": [
+            {
+              "text": "在演说时主动自承数据灌水风波开场股灾引流！",
+              "toEnd": "bomb_conflict"
+            },
+            {
+              "text": "调仓把所有僵尸数据变现一波就消失天堂！",
+              "toEnd": "purge_disconnect"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "你当面碎了假数据雕像将事实坦荡向所有人宣告。一瞬间寂静然后陷入愤怒还是膜拜音波？",
+          "options": [
+            {
+              "text": "凭着诚实人设做基石而重新书写神话传。",
+              "toEnd": "honest_line"
+            },
+            {
+              "text": "悲壮的投降……因为资金链真断层而出大事。",
+              "toEnd": "ocean_black"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "wild_ipo",
+      "title": "疯狂IPO启程",
+      "text": "股价从一开始高跃云端，接着连续一个月震荡；但经你这样极限操作全媒焦印，终成狂人传奇。",
+      "endingScore": 350
+    },
+    {
+      "id": "safe_crash",
+      "title": "冰河撤退",
+      "text": "保守使你沦为二流CEO，还被做空组织击垮，失去江湖地位只能当配角。",
+      "endingScore": 80
+    },
+    {
+      "id": "mutiny_unlock",
+      "title": "反叛铁拳",
+      "text": "你一个翻转失控狂，把董事会砸掉，且获得了‘平民救世主’光环股市奇迹反弹！",
+      "endingScore": 410
+    },
+    {
+      "id": "fallen_tycoon",
+      "title": "暗堕帝王",
+      "text": "忍让的代价是你做了刀俎鱼肉被迫退市，但暗中积累十亿大私财，成阴影金融大亨。",
+      "endingScore": 280
+    },
+    {
+      "id": "rogue_capitalist",
+      "title": "独狼法则",
+      "text": "清醒独立的策略发动，股市一飞冲天并无束缚——你最后成为独自吃金天的传说。",
+      "endingScore": 480
+    },
+    {
+      "id": "rough_justice",
+      "title": "钢刀硬理",
+      "text": "冒险通过盘问一切，但在大家眼里你非法走过刀山也重起山河。",
+      "endingScore": 370
+    },
+    {
+      "id": "private_escape",
+      "title": "幽灵私募",
+      "text": "放弃IPO却在幕后建立神秘基金圈，得到无数幽会权贵后来掌控一大半债券。",
+      "endingScore": 440
+    },
+    {
+      "id": "algorithmox",
+      "title": "异次元算法王",
+      "text": "终端的真实疯狂让你在短暂几秒造就了数据海啸，最后你成了加密巨人。",
+      "endingScore": 320
+    }
+  ],
+  "introText": "纳斯达克敲钟即将开始……你内心灼热而又战栗！独掌五十亿公司命脉倒计时——怎么走上这条耀眼而又可啪的家伙？！黄金一般60秒钟，任何一次贪举蠢行或清亮做法都载入传奇（或铜臭黑簿）。出发吧，终极首席执行官。",
+  "ambientMusic": "epic_orchestra_street_energy_loop_with_whips_and_cashier_sound.wav",
+  "id": "fallback_world_001"
+}

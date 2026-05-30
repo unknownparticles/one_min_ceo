@@ -1,0 +1,1044 @@
+{
+  "matchKeywords": [
+    "火星",
+    "总统",
+    "竞选",
+    "直播",
+    "翻车",
+    "危机",
+    "60秒"
+  ],
+  "identity": "火星总统候选人",
+  "theme": "火星总统竞选直播翻车前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "console",
+      "floor",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "neon_floor",
+      "neon_floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "glass",
+      "glass",
+      "water",
+      "water",
+      "floor",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "throne",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "portal",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "carpet",
+      "gold_floor",
+      "console",
+      "floor",
+      "window",
+      "window",
+      "floor",
+      "server",
+      "vault",
+      "floor",
+      "plant",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 1,
+    "y": 1
+  },
+  "npcs": [
+    {
+      "id": "npc_advisor",
+      "name": "竞选顾问",
+      "dialogue": "候选人！直播信号出问题了，15秒后全国直播！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "顾问慌张地跑来：摄像机离线了！",
+          "options": [
+            {
+              "text": "重启摄像机",
+              "nextStage": 2,
+              "effect": "fix_camera"
+            },
+            {
+              "text": "用手机直播",
+              "nextStage": 2,
+              "effect": "phone_live"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "顾问：还有10秒！",
+          "options": [
+            {
+              "text": "即兴演讲",
+              "nextStage": 3,
+              "effect": "speech"
+            },
+            {
+              "text": "播放预备视频",
+              "nextStage": 3,
+              "effect": "video"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "直播开始，但观众发现你在厕所背景前。",
+          "options": [
+            {
+              "text": "解释这是‘透明政府’",
+              "nextStage": 4,
+              "effect": "explain"
+            },
+            {
+              "text": "关掉直播",
+              "nextStage": 4,
+              "effect": "shutdown"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "顾问叹气：你的支持率跌了10%。",
+          "options": [
+            {
+              "text": "强硬挽回",
+              "nextStage": 5,
+              "effect": "tough"
+            },
+            {
+              "text": "承认失误",
+              "nextStage": 5,
+              "effect": "admit"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "最终：你以微弱劣势输掉选举。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_rival",
+      "name": "竞争对手",
+      "dialogue": "哼，你的直播真业余。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "对手嘲笑你的技术故障。",
+          "options": [
+            {
+              "text": "反击他的丑闻",
+              "nextStage": 2,
+              "effect": "counterattack"
+            },
+            {
+              "text": "无视他",
+              "nextStage": 2,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "对手拿出你的黑历史。",
+          "options": [
+            {
+              "text": "否认",
+              "nextStage": 3,
+              "effect": "deny"
+            },
+            {
+              "text": "承认并道歉",
+              "nextStage": 3,
+              "effect": "apologize"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "观众哗然。",
+          "options": [
+            {
+              "text": "转移话题到火星经济",
+              "nextStage": 4,
+              "effect": "economy"
+            },
+            {
+              "text": "攻击对手政策",
+              "nextStage": 4,
+              "effect": "attack"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "辩论陷入混乱。",
+          "options": [
+            {
+              "text": "优雅离场",
+              "nextStage": 5,
+              "effect": "exit"
+            },
+            {
+              "text": "继续争吵",
+              "nextStage": 5,
+              "effect": "argue"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你被视为不专业。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_technician",
+      "name": "技术员",
+      "dialogue": "信号不稳！我需要时间！",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "技术员在修理设备。",
+          "options": [
+            {
+              "text": "催促他",
+              "nextStage": 2,
+              "effect": "hurry"
+            },
+            {
+              "text": "让他慢慢来",
+              "nextStage": 2,
+              "effect": "patient"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "设备冒烟了。",
+          "options": [
+            {
+              "text": "用灭火器",
+              "nextStage": 3,
+              "effect": "fire"
+            },
+            {
+              "text": "拔电源",
+              "nextStage": 3,
+              "effect": "unplug"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "直播中断5秒。",
+          "options": [
+            {
+              "text": "即兴表演",
+              "nextStage": 4,
+              "effect": "improv"
+            },
+            {
+              "text": "沉默等待",
+              "nextStage": 4,
+              "effect": "silence"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "技术员修好了。",
+          "options": [
+            {
+              "text": "感谢他",
+              "nextStage": 5,
+              "effect": "thanks"
+            },
+            {
+              "text": "责备他",
+              "nextStage": 5,
+              "effect": "blame"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "技术员辞职了。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_reporter",
+      "name": "记者",
+      "dialogue": "候选人，您对刚才的故障有何评论？",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "记者咄咄逼人。",
+          "options": [
+            {
+              "text": "幽默回应",
+              "nextStage": 2,
+              "effect": "humor"
+            },
+            {
+              "text": "严肃回答",
+              "nextStage": 2,
+              "effect": "serious"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "记者追问更多。",
+          "options": [
+            {
+              "text": "提供独家",
+              "nextStage": 3,
+              "effect": "exclusive"
+            },
+            {
+              "text": "拒绝回答",
+              "nextStage": 3,
+              "effect": "refuse"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "记者爆料你的秘密。",
+          "options": [
+            {
+              "text": "否认",
+              "nextStage": 4,
+              "effect": "deny"
+            },
+            {
+              "text": "承认",
+              "nextStage": 4,
+              "effect": "confess"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "新闻标题对你很不利。",
+          "options": [
+            {
+              "text": "起诉媒体",
+              "nextStage": 5,
+              "effect": "sue"
+            },
+            {
+              "text": "接受采访",
+              "nextStage": 5,
+              "effect": "interview"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你的形象受损。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "npc_supporter",
+      "name": "支持者",
+      "dialogue": "我们永远支持你！但这次直播……",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "支持者表示担忧。",
+          "options": [
+            {
+              "text": "安抚他",
+              "nextStage": 2,
+              "effect": "calm"
+            },
+            {
+              "text": "要求他帮忙",
+              "nextStage": 2,
+              "effect": "help"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "支持者愿意组织线下活动。",
+          "options": [
+            {
+              "text": "同意",
+              "nextStage": 3,
+              "effect": "agree"
+            },
+            {
+              "text": "拒绝，专注线上",
+              "nextStage": 3,
+              "effect": "decline"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "支持者被对手收买。",
+          "options": [
+            {
+              "text": "揭露他",
+              "nextStage": 4,
+              "effect": "expose"
+            },
+            {
+              "text": "原谅他",
+              "nextStage": 4,
+              "effect": "forgive"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你的支持率波动。",
+          "options": [
+            {
+              "text": "加大宣传",
+              "nextStage": 5,
+              "effect": "promote"
+            },
+            {
+              "text": "调整策略",
+              "nextStage": 5,
+              "effect": "adjust"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "支持者群体分裂。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "item_lucky_coin",
+      "name": "幸运硬币",
+      "description": "一枚火星币，正面是你头像，背面是吉祥物。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现幸运硬币，也许能带来好运。",
+          "options": [
+            {
+              "text": "带在身上",
+              "nextStage": 2,
+              "effect": "take"
+            },
+            {
+              "text": "扔掉",
+              "nextStage": 2,
+              "effect": "discard"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "硬币掉落，滚向角落。",
+          "options": [
+            {
+              "text": "捡起来",
+              "nextStage": 3,
+              "effect": "pick"
+            },
+            {
+              "text": "不去管它",
+              "nextStage": 3,
+              "effect": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "硬币在直播中反射光，干扰摄像机。",
+          "options": [
+            {
+              "text": "放进口袋",
+              "nextStage": 4,
+              "effect": "pocket"
+            },
+            {
+              "text": "交给助手",
+              "nextStage": 4,
+              "effect": "assistant"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "助手不小心弄丢了。",
+          "options": [
+            {
+              "text": "责怪助手",
+              "nextStage": 5,
+              "effect": "blame"
+            },
+            {
+              "text": "没关系",
+              "nextStage": 5,
+              "effect": "forgive"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "硬币再也找不到了。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item_teleprompter",
+      "name": "提词器",
+      "description": "写满演讲稿的提词器，但字迹模糊。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "提词器突然黑屏。",
+          "options": [
+            {
+              "text": "凭记忆演讲",
+              "nextStage": 2,
+              "effect": "memory"
+            },
+            {
+              "text": "找备用提词器",
+              "nextStage": 2,
+              "effect": "spare"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "备用提词器也没电。",
+          "options": [
+            {
+              "text": "即兴发挥",
+              "nextStage": 3,
+              "effect": "improv"
+            },
+            {
+              "text": "看手稿",
+              "nextStage": 3,
+              "effect": "script"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "手稿被风吹走。",
+          "options": [
+            {
+              "text": "追手稿",
+              "nextStage": 4,
+              "effect": "chase"
+            },
+            {
+              "text": "放弃手稿",
+              "nextStage": 4,
+              "effect": "abandon"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "追手稿时摔倒。",
+          "options": [
+            {
+              "text": "自嘲化解",
+              "nextStage": 5,
+              "effect": "selfdeprecate"
+            },
+            {
+              "text": "愤怒指责",
+              "nextStage": 5,
+              "effect": "angry"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "观众觉得你滑稽。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item_fake_news",
+      "name": "假新闻稿",
+      "description": "一份关于你的假新闻，但写得很有说服力。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你发现了假新闻稿。",
+          "options": [
+            {
+              "text": "当场撕毁",
+              "nextStage": 2,
+              "effect": "tear"
+            },
+            {
+              "text": "用来当草稿",
+              "nextStage": 2,
+              "effect": "draft"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "假新闻被记者捡到。",
+          "options": [
+            {
+              "text": "解释是假的",
+              "nextStage": 3,
+              "effect": "explain"
+            },
+            {
+              "text": "保持沉默",
+              "nextStage": 3,
+              "effect": "silence"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "记者公开质疑。",
+          "options": [
+            {
+              "text": "提供证据",
+              "nextStage": 4,
+              "effect": "evidence"
+            },
+            {
+              "text": "起诉诽谤",
+              "nextStage": 4,
+              "effect": "sue"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "证据不足，情况尴尬。",
+          "options": [
+            {
+              "text": "转移话题",
+              "nextStage": 5,
+              "effect": "change_topic"
+            },
+            {
+              "text": "承认疏失",
+              "nextStage": 5,
+              "effect": "admit"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "你的诚信受损。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item_red_button",
+      "name": "红色按钮",
+      "description": "写着‘紧急情况按下’的按钮，但后果不明。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "你看到红色按钮。",
+          "options": [
+            {
+              "text": "按下它",
+              "nextStage": 2,
+              "effect": "press"
+            },
+            {
+              "text": "不按",
+              "nextStage": 2,
+              "effect": "no_press"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "按钮触发舞台灯光秀。",
+          "options": [
+            {
+              "text": "享受灯光",
+              "nextStage": 3,
+              "effect": "enjoy"
+            },
+            {
+              "text": "关掉灯光",
+              "nextStage": 3,
+              "effect": "shut_off"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "灯光太刺眼，观众看不清你。",
+          "options": [
+            {
+              "text": "大声演讲",
+              "nextStage": 4,
+              "effect": "shout"
+            },
+            {
+              "text": "走到台下",
+              "nextStage": 4,
+              "effect": "down"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "台下更混乱。",
+          "options": [
+            {
+              "text": "维持秩序",
+              "nextStage": 5,
+              "effect": "order"
+            },
+            {
+              "text": "逃离现场",
+              "nextStage": 5,
+              "effect": "flee"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "直播变成闹剧。",
+          "options": []
+        }
+      ]
+    },
+    {
+      "id": "item_mysterious_package",
+      "name": "神秘包裹",
+      "description": "上面写着‘机密’，来自未知发件人。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "包裹出现在桌上。",
+          "options": [
+            {
+              "text": "打开它",
+              "nextStage": 2,
+              "effect": "open"
+            },
+            {
+              "text": "扔掉",
+              "nextStage": 2,
+              "effect": "trash"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "里面是对手把柄。",
+          "options": [
+            {
+              "text": "公开它",
+              "nextStage": 3,
+              "effect": "reveal"
+            },
+            {
+              "text": "销毁它",
+              "nextStage": 3,
+              "effect": "destroy"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "公开后对手反击。",
+          "options": [
+            {
+              "text": "坚持立场",
+              "nextStage": 4,
+              "effect": "stand"
+            },
+            {
+              "text": "道歉",
+              "nextStage": 4,
+              "effect": "apologize"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "你的支持率波动。",
+          "options": [
+            {
+              "text": "强调正义",
+              "nextStage": 5,
+              "effect": "justice"
+            },
+            {
+              "text": "低调处理",
+              "nextStage": 5,
+              "effect": "lowkey"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "事件逐渐平息。",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "end_win_election",
+      "description": "你成功化解危机，赢得大选。"
+    },
+    {
+      "id": "end_lose_election",
+      "description": "因为直播事故，你输掉了选举。"
+    },
+    {
+      "id": "end_scandal",
+      "description": "丑闻曝光，你被迫退选。"
+    },
+    {
+      "id": "end_assassination",
+      "description": "直播中遭遇刺杀，一命呜呼。"
+    },
+    {
+      "id": "end_martyr",
+      "description": "因意外身亡，成为火星英雄。"
+    },
+    {
+      "id": "end_escape",
+      "description": "你放弃竞选，逃回地球。"
+    },
+    {
+      "id": "end_dictator",
+      "description": "你利用危机掌控权力，成为独裁者。"
+    },
+    {
+      "id": "end_comedy",
+      "description": "直播变成搞笑节目，你转行当网红。"
+    },
+    {
+      "id": "end_mystery",
+      "description": "包裹里是外星人信件，你被绑架。"
+    },
+    {
+      "id": "end_alliance",
+      "description": "与对手和解，组成联合政府。"
+    }
+  ],
+  "introText": "你是一位火星总统候选人，即将开始全国直播。但倒计时已经启动，各种意外接踵而至。在60秒内，你必须做出关键决策，要么赢得大选，要么身败名裂。欢迎来到竞选直播翻车现场！",
+  "ambientMusic": "紧张激昂的竞选进行曲，带有轻微的电子干扰音",
+  "id": "fallback_world_021"
+}

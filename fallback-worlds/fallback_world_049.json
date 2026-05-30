@@ -1,0 +1,1371 @@
+{
+  "matchKeywords": [
+    "外星王室",
+    "订婚宴",
+    "60秒",
+    "CEO危机"
+  ],
+  "identity": "外星王室财务官",
+  "theme": "外星王室订婚宴前60秒",
+  "mapLayout": [
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "stage",
+      "stage",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "console",
+      "carpet",
+      "carpet",
+      "stage",
+      "stage",
+      "carpet",
+      "carpet",
+      "vault",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "stage",
+      "stage",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "plant",
+      "floor",
+      "fountain",
+      "floor",
+      "statue",
+      "floor",
+      "floor",
+      "floor",
+      "crystal",
+      "floor",
+      "window",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "throne",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "console",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "carpet",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "floor",
+      "wall"
+    ],
+    [
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall",
+      "wall"
+    ]
+  ],
+  "playerPosition": {
+    "x": 7,
+    "y": 5
+  },
+  "npcs": [
+    {
+      "id": "npc_king",
+      "name": "泽塔国王",
+      "dialogue": "财务官！订婚戒指预算超支了，但王妃想要一颗反物质钻石。",
+      "state": "idle",
+      "position": {
+        "x": 8,
+        "y": 8
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "国王焦虑地踱步。",
+          "options": [
+            {
+              "text": "建议用普通钻石替代",
+              "nextStage": 2,
+              "action": "replace_diamond"
+            },
+            {
+              "text": "批准追加预算",
+              "nextStage": 3,
+              "action": "approve_budget"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "国王皱眉：“但王妃会发现的。”",
+          "options": [
+            {
+              "text": "保证不会穿帮",
+              "nextStage": 4,
+              "action": "guarantee"
+            },
+            {
+              "text": "威胁要辞职",
+              "nextStage": 5,
+              "action": "resign"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "国王松了口气：“很好，但国库要空了。”",
+          "options": [
+            {
+              "text": "建议征收新税",
+              "nextStage": 6,
+              "action": "new_tax"
+            },
+            {
+              "text": "挪用皇室基金",
+              "nextStage": 7,
+              "action": "embezzle"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "国王满意：“希望你是对的。”",
+          "options": [
+            {
+              "text": "安排保密协议",
+              "nextStage": -1,
+              "action": "secret"
+            },
+            {
+              "text": "转移话题",
+              "nextStage": -1,
+              "action": "change_subject"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "国王震惊：“你不能辞职！”",
+          "options": [
+            {
+              "text": "收回辞职",
+              "nextStage": -1,
+              "action": "retract"
+            },
+            {
+              "text": "坚持辞职",
+              "nextStage": -1,
+              "action": "insist"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "国王犹豫：“会引发民怨。”",
+          "options": [
+            {
+              "text": "加奢侈品税",
+              "nextStage": -1,
+              "action": "luxury_tax"
+            },
+            {
+              "text": "加宇宙税",
+              "nextStage": -1,
+              "action": "cosmic_tax"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "国王默许：“别让人知道。”",
+          "options": [
+            {
+              "text": "记录假账",
+              "nextStage": -1,
+              "action": "fake_books"
+            },
+            {
+              "text": "贿赂审计官",
+              "nextStage": -1,
+              "action": "bribe"
+            }
+          ]
+        }
+      ],
+      "fixedEndings": []
+    },
+    {
+      "id": "npc_queen",
+      "name": "仙女座王妃",
+      "dialogue": "财务官，我的礼服需要镶一万颗星星。",
+      "state": "idle",
+      "position": {
+        "x": 7,
+        "y": 2
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "王妃展示礼服设计图。",
+          "options": [
+            {
+              "text": "建议用LED代替真星星",
+              "nextStage": 2,
+              "action": "use_led"
+            },
+            {
+              "text": "承诺采购真实星星",
+              "nextStage": 3,
+              "action": "real_stars"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "王妃不悦：“不够闪。”",
+          "options": [
+            {
+              "text": "增加钻石点缀",
+              "nextStage": 4,
+              "action": "add_diamonds"
+            },
+            {
+              "text": "解释环保理念",
+              "nextStage": 5,
+              "action": "eco_friendly"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "王妃欣喜：“太好了！”",
+          "options": [
+            {
+              "text": "要求加预算",
+              "nextStage": 6,
+              "action": "increase_budget"
+            },
+            {
+              "text": "炫耀人脉",
+              "nextStage": 7,
+              "action": "show_off"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "王妃勉强同意。",
+          "options": [
+            {
+              "text": "减少其他开支",
+              "nextStage": -1,
+              "action": "cut_elsewhere"
+            },
+            {
+              "text": "让设计师优化",
+              "nextStage": -1,
+              "action": "optimize"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "王妃觉得无聊。",
+          "options": [
+            {
+              "text": "转移话题到蛋糕",
+              "nextStage": -1,
+              "action": "cake"
+            },
+            {
+              "text": "承诺免费升级",
+              "nextStage": -1,
+              "action": "free_upgrade"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "王妃高兴地点头。",
+          "options": [
+            {
+              "text": "提交紧急预算案",
+              "nextStage": -1,
+              "action": "emergency_budget"
+            },
+            {
+              "text": "挪用其他基金",
+              "nextStage": -1,
+              "action": "misappropriate"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "王妃更加崇拜你。",
+          "options": [
+            {
+              "text": "乘机要求升职",
+              "nextStage": -1,
+              "action": "promotion"
+            },
+            {
+              "text": "要求休假",
+              "nextStage": -1,
+              "action": "vacation"
+            }
+          ]
+        }
+      ],
+      "fixedEndings": []
+    },
+    {
+      "id": "npc_butler",
+      "name": "总管巴特勒",
+      "dialogue": "财务官，酒宴的量子香槟不够了。",
+      "state": "idle",
+      "position": {
+        "x": 5,
+        "y": 6
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "巴特勒焦急地报告。",
+          "options": [
+            {
+              "text": "用水替代",
+              "nextStage": 2,
+              "action": "water"
+            },
+            {
+              "text": "从黑市购买",
+              "nextStage": 3,
+              "action": "black_market"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "巴特勒：“会穿帮的！”",
+          "options": [
+            {
+              "text": "加食用色素",
+              "nextStage": 4,
+              "action": "food_dye"
+            },
+            {
+              "text": "让宾客少喝",
+              "nextStage": 5,
+              "action": "ration"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "巴特勒：“风险很大。”",
+          "options": [
+            {
+              "text": "加价购买",
+              "nextStage": 6,
+              "action": "pay_more"
+            },
+            {
+              "text": "威胁卖家",
+              "nextStage": 7,
+              "action": "threaten"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "巴特勒照做。",
+          "options": [
+            {
+              "text": "奖励他",
+              "nextStage": -1,
+              "action": "reward"
+            },
+            {
+              "text": "让他保密",
+              "nextStage": -1,
+              "action": "secret"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "巴特勒：“可能会被投诉。”",
+          "options": [
+            {
+              "text": "提供免费续杯",
+              "nextStage": -1,
+              "action": "free_refill"
+            },
+            {
+              "text": "推给侍者",
+              "nextStage": -1,
+              "action": "blame_waiter"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "巴特勒成功购得。",
+          "options": [
+            {
+              "text": "增加安保费",
+              "nextStage": -1,
+              "action": "security"
+            },
+            {
+              "text": "记在秘密账户",
+              "nextStage": -1,
+              "action": "secret_account"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "巴特勒搞定了。",
+          "options": [
+            {
+              "text": "认可他的忠诚",
+              "nextStage": -1,
+              "action": "praise"
+            },
+            {
+              "text": "让他继续监视",
+              "nextStage": -1,
+              "action": "monitor"
+            }
+          ]
+        }
+      ],
+      "fixedEndings": []
+    },
+    {
+      "id": "npc_chef",
+      "name": "厨神佐尔格",
+      "dialogue": "财务官，订婚蛋糕要用银河奶油，但我们的奶牛星被海盗劫了。",
+      "state": "idle",
+      "position": {
+        "x": 3,
+        "y": 5
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "厨师挥舞着菜刀。",
+          "options": [
+            {
+              "text": "用普通奶油替代",
+              "nextStage": 2,
+              "action": "normal_cream"
+            },
+            {
+              "text": "雇佣星际海盗",
+              "nextStage": 3,
+              "action": "hire_pirates"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "厨师：“口感会差很多。”",
+          "options": [
+            {
+              "text": "加添加剂",
+              "nextStage": 4,
+              "action": "additives"
+            },
+            {
+              "text": "缩短仪式时间",
+              "nextStage": 5,
+              "action": "shorten_ceremony"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "厨师：“他们开价很高。”",
+          "options": [
+            {
+              "text": "答应价格",
+              "nextStage": 6,
+              "action": "accept_price"
+            },
+            {
+              "text": "派舰队去抢",
+              "nextStage": 7,
+              "action": "send_fleet"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "厨师勉强同意。",
+          "options": [
+            {
+              "text": "增加糖分",
+              "nextStage": -1,
+              "action": "more_sugar"
+            },
+            {
+              "text": "重新设计蛋糕",
+              "nextStage": -1,
+              "action": "redesign"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "厨师：“可能会被察觉。”",
+          "options": [
+            {
+              "text": "贿赂宾客",
+              "nextStage": -1,
+              "action": "bribe_guests"
+            },
+            {
+              "text": "制造混乱",
+              "nextStage": -1,
+              "action": "create_chaos"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "厨师开始交易。",
+          "options": [
+            {
+              "text": "暗中减量",
+              "nextStage": -1,
+              "action": "reduce_quantity"
+            },
+            {
+              "text": "提高蛋糕售价",
+              "nextStage": -1,
+              "action": "raise_price"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "厨师派出舰队。",
+          "options": [
+            {
+              "text": "鼓励速战速决",
+              "nextStage": -1,
+              "action": "quick_victory"
+            },
+            {
+              "text": "准备备用方案",
+              "nextStage": -1,
+              "action": "backup_plan"
+            }
+          ]
+        }
+      ],
+      "fixedEndings": []
+    },
+    {
+      "id": "npc_advisor",
+      "name": "首席顾问卡珊德拉",
+      "dialogue": "财务官，占星师说今天不宜订婚，否则王室将遭诅咒。",
+      "state": "idle",
+      "position": {
+        "x": 11,
+        "y": 6
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "顾问面色凝重。",
+          "options": [
+            {
+              "text": "无视预言",
+              "nextStage": 2,
+              "action": "ignore"
+            },
+            {
+              "text": "找占星师改预言",
+              "nextStage": 3,
+              "action": "change_prophecy"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "顾问：“你会后悔的。”",
+          "options": [
+            {
+              "text": "准备祭品",
+              "nextStage": 4,
+              "action": "offering"
+            },
+            {
+              "text": "加强安保",
+              "nextStage": 5,
+              "action": "security"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "顾问：“占星师要价很高。”",
+          "options": [
+            {
+              "text": "给占星师加官进爵",
+              "nextStage": 6,
+              "action": "promote_astrologer"
+            },
+            {
+              "text": "威胁占星师",
+              "nextStage": 7,
+              "action": "threaten_astrologer"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "顾问安排祭品。",
+          "options": [
+            {
+              "text": "用假祭品",
+              "nextStage": -1,
+              "action": "fake_offering"
+            },
+            {
+              "text": "用珍贵祭品",
+              "nextStage": -1,
+              "action": "precious_offering"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "顾问加强安保。",
+          "options": [
+            {
+              "text": "增加隐形卫兵",
+              "nextStage": -1,
+              "action": "invisible_guards"
+            },
+            {
+              "text": "关闭所有传送门",
+              "nextStage": -1,
+              "action": "close_portals"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "占星师同意改预言。",
+          "options": [
+            {
+              "text": "要求占星师保密",
+              "nextStage": -1,
+              "action": "secrecy"
+            },
+            {
+              "text": "让占星师说出好预言",
+              "nextStage": -1,
+              "action": "good_prophecy"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "占星师被迫改口。",
+          "options": [
+            {
+              "text": "监视占星师",
+              "nextStage": -1,
+              "action": "monitor"
+            },
+            {
+              "text": "灭口",
+              "nextStage": -1,
+              "action": "silence"
+            }
+          ]
+        }
+      ],
+      "fixedEndings": []
+    },
+    {
+      "id": "npc_guard",
+      "name": "禁卫军统领",
+      "dialogue": "财务官，有刺客混入宴会，但我们需要预算购买新装备。",
+      "state": "idle",
+      "position": {
+        "x": 9,
+        "y": 3
+      },
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "统领低声报告。",
+          "options": [
+            {
+              "text": "增加安保预算",
+              "nextStage": 2,
+              "action": "increase_security_budget"
+            },
+            {
+              "text": "用现有装备应付",
+              "nextStage": 3,
+              "action": "use_existing"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "统领感谢。",
+          "options": [
+            {
+              "text": "要求效率",
+              "nextStage": 4,
+              "action": "demand_efficiency"
+            },
+            {
+              "text": "亲自监督",
+              "nextStage": 5,
+              "action": "supervise"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "统领：“风险很高。”",
+          "options": [
+            {
+              "text": "加派人手",
+              "nextStage": 6,
+              "action": "add_manpower"
+            },
+            {
+              "text": "使用陷阱",
+              "nextStage": 7,
+              "action": "use_traps"
+            }
+          ]
+        },
+        {
+          "stage": 4,
+          "text": "统领承诺。",
+          "options": [
+            {
+              "text": "设立奖金",
+              "nextStage": -1,
+              "action": "bonus"
+            },
+            {
+              "text": "威胁惩罚",
+              "nextStage": -1,
+              "action": "punishment"
+            }
+          ]
+        },
+        {
+          "stage": 5,
+          "text": "统领配合。",
+          "options": [
+            {
+              "text": "检查每个角落",
+              "nextStage": -1,
+              "action": "check_corners"
+            },
+            {
+              "text": "设立暗哨",
+              "nextStage": -1,
+              "action": "hidden_sentries"
+            }
+          ]
+        },
+        {
+          "stage": 6,
+          "text": "统领调集人手。",
+          "options": [
+            {
+              "text": "从其他岗位抽调",
+              "nextStage": -1,
+              "action": "reassign"
+            },
+            {
+              "text": "雇佣临时保镖",
+              "nextStage": -1,
+              "action": "temp_guards"
+            }
+          ]
+        },
+        {
+          "stage": 7,
+          "text": "统领设置陷阱。",
+          "options": [
+            {
+              "text": "在门口设陷阱",
+              "nextStage": -1,
+              "action": "door_traps"
+            },
+            {
+              "text": "在舞台设陷阱",
+              "nextStage": -1,
+              "action": "stage_traps"
+            }
+          ]
+        }
+      ],
+      "fixedEndings": []
+    }
+  ],
+  "items": [
+    {
+      "id": "item_ring",
+      "name": "反物质订婚戒",
+      "description": "一颗闪闪发光的反物质钻石，价值连城。",
+      "position": {
+        "x": 8,
+        "y": 8
+      },
+      "pickupDialogue": "你拿起了反物质戒指，但它开始不稳定。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "戒指在你手中震动。",
+          "options": [
+            {
+              "text": "赶紧放下",
+              "nextStage": 2,
+              "action": "put_down"
+            },
+            {
+              "text": "交给专家",
+              "nextStage": 3,
+              "action": "expert"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "戒指掉在地上，安然无恙。",
+          "options": [
+            {
+              "text": "捡起来还给国王",
+              "nextStage": -1,
+              "action": "return_to_king"
+            },
+            {
+              "text": "藏起来",
+              "nextStage": -1,
+              "action": "hide"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "专家稳定了戒指。",
+          "options": [
+            {
+              "text": "支付专家费",
+              "nextStage": -1,
+              "action": "pay_expert"
+            },
+            {
+              "text": "让专家保密",
+              "nextStage": -1,
+              "action": "expert_secrecy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_crown",
+      "name": "女王王冠",
+      "description": "镶满星钻的王冠，但少了一颗。",
+      "position": {
+        "x": 7,
+        "y": 2
+      },
+      "pickupDialogue": "你拿起王冠，发现缺失的宝石。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "缺失的宝石是关键。",
+          "options": [
+            {
+              "text": "寻找替代宝石",
+              "nextStage": 2,
+              "action": "find_gem"
+            },
+            {
+              "text": "隐瞒事实",
+              "nextStage": 3,
+              "action": "hide_fact"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你找到了一颗相似的宝石。",
+          "options": [
+            {
+              "text": "镶嵌上去",
+              "nextStage": -1,
+              "action": "set_gem"
+            },
+            {
+              "text": "报告王妃",
+              "nextStage": -1,
+              "action": "report"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "没人注意到缺失。",
+          "options": [
+            {
+              "text": "松一口气",
+              "nextStage": -1,
+              "action": "relief"
+            },
+            {
+              "text": "暗自担心",
+              "nextStage": -1,
+              "action": "worry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_champagne",
+      "name": "量子香槟瓶",
+      "description": "一瓶被掉包的假香槟。",
+      "position": {
+        "x": 5,
+        "y": 6
+      },
+      "pickupDialogue": "你拿起香槟，发现标签是伪造的。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "假香槟可能泄露。",
+          "options": [
+            {
+              "text": "偷偷换掉",
+              "nextStage": 2,
+              "action": "replace"
+            },
+            {
+              "text": "威胁供应商",
+              "nextStage": 3,
+              "action": "threaten_supplier"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "你换了一瓶真的。",
+          "options": [
+            {
+              "text": "自掏腰包",
+              "nextStage": -1,
+              "action": "pay_self"
+            },
+            {
+              "text": "记在公账",
+              "nextStage": -1,
+              "action": "public_account"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "供应商承诺退款。",
+          "options": [
+            {
+              "text": "接受退款",
+              "nextStage": -1,
+              "action": "accept_refund"
+            },
+            {
+              "text": "加倍索赔",
+              "nextStage": -1,
+              "action": "double_claim"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_cake",
+      "name": "订婚蛋糕",
+      "description": "缺少银河奶油的蛋糕，摇摇欲坠。",
+      "position": {
+        "x": 3,
+        "y": 5
+      },
+      "pickupDialogue": "蛋糕看起来随时会塌。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "需要加固蛋糕。",
+          "options": [
+            {
+              "text": "用支架支撑",
+              "nextStage": 2,
+              "action": "support"
+            },
+            {
+              "text": "让厨师重做",
+              "nextStage": 3,
+              "action": "redo"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "蛋糕暂时稳定。",
+          "options": [
+            {
+              "text": "提醒宾客小心",
+              "nextStage": -1,
+              "action": "warn_guests"
+            },
+            {
+              "text": "忽略问题",
+              "nextStage": -1,
+              "action": "ignore"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "厨师来不及重做。",
+          "options": [
+            {
+              "text": "推迟上蛋糕",
+              "nextStage": -1,
+              "action": "delay"
+            },
+            {
+              "text": "用其他甜品替代",
+              "nextStage": -1,
+              "action": "alternative"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item_scroll",
+      "name": "预言卷轴",
+      "description": "上面写着不祥的预言。",
+      "position": {
+        "x": 11,
+        "y": 6
+      },
+      "pickupDialogue": "你展开卷轴，看到诅咒。",
+      "storyline": [
+        {
+          "stage": 1,
+          "text": "预言说今日订婚将带来灾难。",
+          "options": [
+            {
+              "text": "销毁卷轴",
+              "nextStage": 2,
+              "action": "destroy"
+            },
+            {
+              "text": "公之于众",
+              "nextStage": 3,
+              "action": "reveal"
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "text": "卷轴化为灰烬。",
+          "options": [
+            {
+              "text": "假装没事发生",
+              "nextStage": -1,
+              "action": "pretend"
+            },
+            {
+              "text": "准备应对诅咒",
+              "nextStage": -1,
+              "action": "prepare"
+            }
+          ]
+        },
+        {
+          "stage": 3,
+          "text": "众人恐慌。",
+          "options": [
+            {
+              "text": "安抚众人",
+              "nextStage": -1,
+              "action": "calm"
+            },
+            {
+              "text": "趁机夺权",
+              "nextStage": -1,
+              "action": "seize_power"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fixedEndings": [
+    {
+      "id": "ending_1",
+      "condition": {
+        "action": "replace_diamond",
+        "stage": 2
+      },
+      "text": "你成功用普通钻石替代，但王妃发现后勃然大怒，订婚取消，你被流放。"
+    },
+    {
+      "id": "ending_2",
+      "condition": {
+        "action": "approve_budget",
+        "stage": 3
+      },
+      "text": "你批准预算，国库空虚，引发经济危机，王室被推翻，你逃亡宇宙。"
+    },
+    {
+      "id": "ending_3",
+      "condition": {
+        "action": "use_led",
+        "stage": 2
+      },
+      "text": "LED礼服在灯光下显得廉价，王妃在众人面前羞辱你，你羞愧辞职。"
+    },
+    {
+      "id": "ending_4",
+      "condition": {
+        "action": "real_stars",
+        "stage": 3
+      },
+      "text": "你承诺真实星星，但无法采购，王妃认为你欺骗，将你关入地牢。"
+    },
+    {
+      "id": "ending_5",
+      "condition": {
+        "action": "water",
+        "stage": 2
+      },
+      "text": "用水替代香槟，宾客发现后集体离席，订婚宴变成笑柄，你被解职。"
+    },
+    {
+      "id": "ending_6",
+      "condition": {
+        "action": "black_market",
+        "stage": 3
+      },
+      "text": "黑市香槟被查出有毒，导致中毒事件，你被逮捕判刑。"
+    },
+    {
+      "id": "ending_7",
+      "condition": {
+        "action": "normal_cream",
+        "stage": 2
+      },
+      "text": "普通奶油蛋糕口感差，国王认为你敷衍，当场将你革职。"
+    },
+    {
+      "id": "ending_8",
+      "condition": {
+        "action": "hire_pirates",
+        "stage": 3
+      },
+      "text": "雇佣海盗后，他们反悔并劫走了所有婚礼物资，你因失职被处决。"
+    },
+    {
+      "id": "ending_9",
+      "condition": {
+        "action": "ignore",
+        "stage": 2
+      },
+      "text": "无视预言，诅咒降临，王室遭遇厄运，你被认为是灾星，被驱逐。"
+    },
+    {
+      "id": "ending_10",
+      "condition": {
+        "action": "change_prophecy",
+        "stage": 3
+      },
+      "text": "改预言被揭露，王室认为你亵渎神灵，你被送上星际法庭。"
+    }
+  ],
+  "introText": "你，外星王室财务官，正面临职业生涯最疯狂的60秒：外星王室订婚宴即将开始，但预算超支、物资短缺、预言诅咒接踵而至。每一个决定都可能让你升职加薪，或万劫不复。时间滴答作响，你能稳住这场宇宙级派对吗？",
+  "ambientMusic": "ambient_alien_wedding",
+  "id": "fallback_world_049"
+}
