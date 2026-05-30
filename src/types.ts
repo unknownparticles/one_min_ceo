@@ -20,6 +20,7 @@ export interface StoryOption {
   actionId: string;
   isEarlyEnd?: boolean;
   soundHint?: string;
+  nextStage?: number | string;
 }
 
 export interface TriggerRules {
@@ -127,6 +128,7 @@ export interface EndingResult {
     insanityLevel: string;
   };
   isFallback?: boolean;
+  screenshot?: string;
 }
 
 export interface SavedLife {
@@ -144,6 +146,7 @@ export interface SavedLife {
     insanityLevel: string;
   };
   timestamp: string;
+  screenshot?: string;
 }
 
 export interface DailyChallenge {

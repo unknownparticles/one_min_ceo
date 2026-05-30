@@ -40,7 +40,7 @@ const RESOURCE_SEEDS: Record<string, ResourceSeed> = {
     },
     tileSet: ["floor", "carpet", "wall", "metal_plate"],
     propSet: ["desk", "pen", "coffee", "chest", "rocket_button", "lever"],
-    spriteSet: ["ceo", "secretary", "investor", "robot", "dog"],
+    spriteSet: ["secretary", "investor", "robot", "dog", "butler"],
     ambiance: ["纳斯达克电子敲钟", "高空玻璃会议室", "黄金消防喷淋", "财报碎纸暴雨"],
   },
   SKI: {

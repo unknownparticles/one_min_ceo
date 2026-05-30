@@ -245,7 +245,7 @@ export const PixelMap: React.FC<PixelMapProps> = ({
       </div>
 
       {/* Main retro CRT screen wrapper */}
-      <div className="relative p-4 rounded-3xl border-4 border-slate-850 shadow-2xl overflow-hidden w-full max-w-[680px] crt-container neon-glow-emerald glass-panel">
+      <div id="pixel-map-container" className="relative p-4 rounded-3xl border-4 border-slate-850 shadow-2xl overflow-hidden w-full max-w-[680px] crt-container neon-glow-emerald glass-panel">
         {/* Glow effect */}
         <div className="absolute inset-0 bg-radial-gradient from-transparent to-black pointer-events-none opacity-50 z-10" />
         <div className="crt-flicker-overlay" />
@@ -299,7 +299,7 @@ export const PixelMap: React.FC<PixelMapProps> = ({
                   {isPlayer && (
                     <div className="absolute z-30 drop-shadow-[0_6px_8px_rgba(0,0,0,0.6)] transition-all duration-75">
                       <SpriteRenderer
-                        type={window.localStorage.getItem("currentIdentityType") || "ceo"}
+                        type="ceo"
                         size={32}
                         direction={direction}
                         isMoving={isMoving}

@@ -39,6 +39,7 @@ import {
   Gift,
   PartyPopper
 } from "lucide-react";
+import html2canvas from "html2canvas";
 import { PixelMap } from "./components/PixelMap";
 import { SpriteRenderer } from "./components/SpriteRenderer";
 import { Position, NPC, Item, WorldScenario, InteractionResult, EndingResult, SavedLife, DailyChallenge, BossIdentityType } from "./types";
@@ -568,16 +569,131 @@ export default function App() {
       const item = worldScenario?.items?.find(it => it.id === id);
       const entity = npc || item;
 
+      const shouldTryAi = isVip && hasApiKey && !localMode;
+
+      if (shouldTryAi && entity) {
+        const stageIndex = entityStageMap[id] || 0;
+        const maxStages = (entity.storyline && entity.storyline.length > 0) ? entity.storyline.length : 3;
+
+        if (stageIndex >= maxStages) {
+          const allExhausted = checkIfAllExhausted(entityStageMap);
+          if (allExhausted) {
+            setInteractionResult({
+              text: `【时空维度闭合】「${name}」以及此处的其他因果极点已经全部通盘探索完毕（阶段均已完美收官），量子宇宙已没有更深层的随机选项。时光不待，直接开始最终极的时空评级与成就清算吧！`,
+              options: [
+                { label: "👑 进行终极神豪财富与宿命评估", action: "trigger_ending_via_exhaustion" }
+              ],
+              allowsFreeInput: false,
+              soundHint: "alert",
+              timeDelta: 0,
+              isEarlyEnd: false
+            });
+          } else {
+            setInteractionResult({
+              text: `【时空波动稳定】「${name}」背后的因果世界线已被彻底固化（${maxStages}个阶段已全部完美收官）。去寻找其他的因果锚点吧，时间一分一秒正在流逝！`,
+              options: [
+                { label: "👌 完成因果 (继续探索)", action: "close_after_advance" }
+              ],
+              allowsFreeInput: false,
+              soundHint: "bling",
+              timeDelta: 0,
+              isEarlyEnd: false
+            });
+          }
+          setIsAiLoading(false);
+          return;
+        }
+
+        try {
+          setInteractionResult({
+            text: `正在与「${name}」对接时空频率，推演因果波动中...`,
+            options: [],
+            allowsFreeInput: false,
+            soundHint: "",
+            timeDelta: 0,
+            isEarlyEnd: false
+          });
+
+          const parsedOfflineStep = (entity.storyline && entity.storyline.length > 0)
+            ? entity.storyline[stageIndex]
+            : null;
+
+          const contextGreeting = parsedOfflineStep
+            ? parsedOfflineStep.text
+            : (type === "NPC" ? (entity as NPC).dialogue : (entity as Item).description) || "空气中回荡起时空乱流的鸣响...";
+
+          const signal = getAbortSignal();
+          const data = await generateInteraction({
+            identity: worldScenario?.identity,
+            theme: worldScenario?.theme,
+            targetType: type,
+            targetName: name,
+            targetId: id,
+            dialogueHistory: currentDialogueHistory,
+            playerAction: currentDialogueHistory.length === 0
+              ? `First approach (实体初始情境: "${contextGreeting}")`
+              : currentDialogueHistory[currentDialogueHistory.length - 1]
+          }, signal);
+
+          let finalOptions = data.options.map((opt: any, idx: number) => ({
+            label: opt.label,
+            action: opt.action || `option_${idx}`
+          }));
+
+          if (finalOptions.length === 0 && !data.allowsFreeInput) {
+            finalOptions.push({
+              label: "👌 完成因果 (继续探索)",
+              action: "close_and_advance_stage"
+            });
+          }
+
+          setInteractionResult({
+            text: currentDialogueHistory.length === 0
+              ? `🎬 【${name}】：${contextGreeting}\n\n${data.text}`
+              : data.text,
+            options: finalOptions,
+            allowsFreeInput: !!data.allowsFreeInput,
+            soundHint: data.soundHint || "",
+            timeDelta: 0,
+            isEarlyEnd: !!data.isEarlyEnd
+          });
+
+          if (data.soundHint) {
+            audio.playSound(data.soundHint);
+          }
+
+          if (data.isEarlyEnd) {
+            setTimeout(() => {
+              handleTriggerEnding();
+            }, 3500);
+          }
+
+          setIsAiLoading(false);
+          return;
+        } catch (err) {
+          console.warn("AI dynamic dialogue generation failed, falling back to local storyline:", err);
+        }
+      }
+
       if (entity && entity.storyline && entity.storyline.length > 0) {
         const stageIndex = entityStageMap[id] || 0;
         if (stageIndex < entity.storyline.length) {
           const step = entity.storyline[stageIndex];
+          let stepOptions = step.options.map((opt: any, idx: number) => ({
+            label: opt.label,
+            action: `option_${idx}`
+          }));
+
+          if (stepOptions.length === 0 && !step.allowsFreeInput) {
+            stepOptions.push({
+              label: "👌 完成因果 (继续探索)",
+              action: "close_and_advance_stage"
+            });
+          }
+
           setInteractionResult({
             text: step.text,
-            options: step.options.map((opt: any, idx: number) => ({
-              label: opt.label,
-              action: `option_${idx}`
-            })),
+            options: stepOptions,
             allowsFreeInput: !!step.allowsFreeInput,
             soundHint: "",
             timeDelta: 0,
@@ -646,6 +762,15 @@ export default function App() {
           return;
         }
 
+        setInteractionResult({
+          text: `正在与「${name}」进行量子波动咬合，加载背景构想...`,
+          options: [],
+          allowsFreeInput: false,
+          soundHint: "",
+          timeDelta: 0,
+          isEarlyEnd: false
+        });
+
         // Use pre-saved greeting dialogue/description from the model as the starting point
         const greetingText = (type === "NPC"
           ? (entity as NPC).dialogue
@@ -663,12 +788,21 @@ export default function App() {
           playerAction: `First approach (实体初次见面台词: "${greetingText}")`
         }, signal);
 
+        let finalOptions = data.options.map((opt: any, idx: number) => ({
+          label: opt.label,
+          action: opt.action || `option_${idx}`
+        }));
+
+        if (finalOptions.length === 0 && !data.allowsFreeInput) {
+          finalOptions.push({
+            label: "👌 完成因果 (继续探索)",
+            action: "close_and_advance_stage"
+          });
+        }
+
         setInteractionResult({
           text: `🎬 【${name}】：${greetingText}\n\n${data.text}`,
-          options: data.options.map((opt: any, idx: number) => ({
-            label: opt.label,
-            action: opt.action || `option_${idx}`
-          })),
+          options: finalOptions,
           allowsFreeInput: !!data.allowsFreeInput,
           soundHint: data.soundHint || "",
           timeDelta: 0,
@@ -715,6 +849,21 @@ export default function App() {
     const stageIndex = entityStageMap[lastInteractedEntity.id] || 0;
 
     // 1. Close overlay or trigger settlement
+    if (actionKey === "close_and_advance_stage") {
+      setInteractionResult(null);
+      if (lastInteractedEntity) {
+        const entityId = lastInteractedEntity.id;
+        const currentStage = entityStageMap[entityId] || 0;
+        setEntityStageMap(prev => ({
+          ...prev,
+          [entityId]: currentStage + 1
+        }));
+      }
+      setLastInteractedEntity(null);
+      setIsAiLoading(false);
+      return;
+    }
+
     if (actionKey === "close_after_advance") {
       setInteractionResult(null);
       setLastInteractedEntity(null);
@@ -833,6 +982,80 @@ export default function App() {
       const item = worldScenario.items.find(i => i.id === lastInteractedEntity.id);
       const entity = npc || item;
 
+      const shouldTryAi = isVip && hasApiKey && !localMode;
+
+      if (shouldTryAi && entity) {
+        const maxStages = (entity.storyline && entity.storyline.length > 0) ? entity.storyline.length : 3;
+        const isLastStep = stageIndex + 1 >= maxStages;
+
+        try {
+          const signal = getAbortSignal();
+          const data = await generateInteraction({
+            identity: worldScenario.identity,
+            theme: worldScenario.theme,
+            targetType: lastInteractedEntity.type,
+            targetName: lastInteractedEntity.name,
+            targetId: lastInteractedEntity.id,
+            dialogueHistory: [...currentDialogueHistory, `选择: ${currentText}`],
+            playerAction: currentText
+          }, signal);
+
+          const finalActionId = data.options?.[0]?.action || `action_${lastInteractedEntity.id}_${stageIndex}`;
+          setActionSequence(prev => [...prev, finalActionId]);
+
+          const timeDelta = normalizeTimeDelta(data.timeDelta);
+          if (timeDelta) {
+            setTimer(t => {
+              return clampTimer(t + timeDelta);
+            });
+          }
+
+          appendHistoryLog({
+            entity: lastInteractedEntity.name,
+            action: currentText,
+            outcome: data.text
+          });
+
+          const nextStageMap = {
+            ...entityStageMap,
+            [lastInteractedEntity.id]: stageIndex + 1
+          };
+          const allCompleted = checkIfAllExhausted(nextStageMap) || isLastStep;
+
+          setInteractionResult({
+            text: `👉 【你选择】：${currentText}\n\n🎬 【时空后果】：${data.text}`,
+            options: allCompleted ? [
+              { label: "👑 精选选项已全部探索，直接开始神豪宿命评估结算", action: "trigger_ending_via_exhaustion" }
+            ] : [
+              { label: "👌 完成因果 (继续探索)", action: "close_after_advance" }
+            ],
+            allowsFreeInput: !isLastStep && !!data.allowsFreeInput,
+            soundHint: data.soundHint || "bling",
+            timeDelta,
+            isEarlyEnd: !!data.isEarlyEnd
+          });
+
+          setEntityStageMap(nextStageMap);
+
+          setCurrentDialogueHistory(h => [...h, `你选择: ${currentText}`, `反馈: ${data.text}`]);
+
+          if (data.soundHint) {
+            audio.playSound(data.soundHint);
+          }
+
+          if (data.isEarlyEnd) {
+            setTimeout(() => {
+              handleTriggerEnding();
+            }, 3500);
+          }
+
+          setIsAiLoading(false);
+          return;
+        } catch (err) {
+          console.warn("AI dynamic action resolution failed, falling back to local storyline resolution:", err);
+        }
+      }
+
       if (entity && entity.storyline && stageIndex < entity.storyline.length) {
         const step = entity.storyline[stageIndex];
         const optIndex = actionKey && actionKey.startsWith("option_")
@@ -863,9 +1086,40 @@ export default function App() {
           outcome: opt.outcomeText
         });
 
+        let targetNextStage = stageIndex + 1;
+        if (opt.nextStage !== undefined) {
+          if (typeof opt.nextStage === 'number') {
+            targetNextStage = opt.nextStage === -1 ? entity.storyline.length : opt.nextStage;
+          } else if (typeof opt.nextStage === 'string') {
+            if (opt.nextStage.startsWith('ending') || opt.nextStage.startsWith('end')) {
+              targetNextStage = entity.storyline.length;
+            } else {
+              const matchedIdx = entity.storyline.findIndex(s => s.id === opt.nextStage);
+              if (matchedIdx >= 0) {
+                targetNextStage = matchedIdx;
+              } else {
+                const numMatch = opt.nextStage.match(/\d+/);
+                if (numMatch) {
+                  const stageNum = parseInt(numMatch[0]);
+                  const stageMatchedIdx = entity.storyline.findIndex(s => {
+                    const sNumMatch = s.id?.match(/\d+/);
+                    return sNumMatch ? parseInt(sNumMatch[0]) === stageNum : false;
+                  });
+                  if (stageMatchedIdx >= 0) {
+                    targetNextStage = stageMatchedIdx;
+                  } else {
+                    targetNextStage = stageIndex + 1;
+                  }
+                } else {
+                  targetNextStage = stageIndex + 1;
+                }
+              }
+            }
+          }
+        }
         const nextStageMap = {
           ...entityStageMap,
-          [lastInteractedEntity.id]: stageIndex + 1
+          [lastInteractedEntity.id]: targetNextStage
         };
         const allCompleted = checkIfAllExhausted(nextStageMap);
 
@@ -987,6 +1241,23 @@ export default function App() {
     if (timer <= 10) {
       unlockAchievement("last_second");
     }
+
+    // Capture screenshot of the pixel map first
+    let screenshotUrl = "";
+    const mapEl = document.getElementById("pixel-map-container");
+    if (mapEl) {
+      try {
+        const canvas = await html2canvas(mapEl, {
+          useCORS: true,
+          backgroundColor: null,
+          scale: 1.5, // higher resolution
+        });
+        screenshotUrl = canvas.toDataURL("image/png");
+      } catch (err) {
+        console.error("Failed to capture map screenshot:", err);
+      }
+    }
+
     setGameState("loading");
     audio.stopBGM();
     audio.playSound("explosion");
@@ -1001,11 +1272,13 @@ export default function App() {
         actionSequence: actionSequence,
         fixedEndings: worldScenario?.fixedEndings || []
       }, signal);
-      setEndingResult(data);
+      
+      const endingWithScreenshot = { ...data, screenshot: screenshotUrl };
+      setEndingResult(endingWithScreenshot);
 
       // Save to Collection in localStorage
       const newSavedEnding: SavedLife = {
-        ...data,
+        ...endingWithScreenshot,
         identityName: worldScenario?.identity || (selectedPreset?.name || "科技公司创始人"),
         identityType: (window.localStorage.getItem("currentIdentityType") as BossIdentityType) || "CEO",
         theme: worldScenario?.theme || "纳斯达克终极一分钟",
@@ -1033,7 +1306,8 @@ export default function App() {
           wealthWasted: "$100,000,000,000",
           butterflyEffectIndex: "999% (超负荷)",
           insanityLevel: "无可救药级"
-        }
+        },
+        screenshot: screenshotUrl
       };
       setEndingResult(fallbackEnd);
 
@@ -1306,10 +1580,10 @@ export default function App() {
 
           {/* 1. LOBBY STATE */}
           {gameState === "lobby" && (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start animate-fade-in">
+            <div className="max-w-3xl mx-auto animate-fade-in">
               
-              {/* Left Column: Selector and prompt */}
-              <div className="lg:col-span-7 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden neon-glow-emerald glass-panel">
+              {/* Main Panel: Selector and prompt */}
+              <div className="rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden neon-glow-emerald glass-panel">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full filter blur-2xl pointer-events-none"></div>
 
                 <div className="mb-6">
@@ -1555,7 +1829,7 @@ export default function App() {
                                       ? "bg-slate-950 border-emerald-450/50 scale-105 shadow-inner"
                                       : "bg-slate-900 border-slate-850 group-hover:border-slate-700 shadow"
                                   }`}>
-                                    <SpriteRenderer type={p.type.toLowerCase()} size={32} className="group-hover:scale-110 transition-transform duration-200" />
+                                    <SpriteRenderer type="ceo" size={32} className="group-hover:scale-110 transition-transform duration-200" />
                                   </div>
 
                                   {/* Right Side: metadata & naming */}
@@ -1715,6 +1989,16 @@ export default function App() {
                               <h4 className="font-mono text-xs font-bold text-white mt-2 line-clamp-1">{save.title}</h4>
                               <p className="text-[9px] font-mono text-amber-400 mt-0.5 line-clamp-1">身份: {save.identityName}</p>
                               
+                              {save.screenshot && (
+                                <div className="mt-2.5 border border-slate-800 rounded-lg overflow-hidden max-h-[100px] shadow-sm select-none">
+                                  <img 
+                                    src={save.screenshot} 
+                                    alt="时空印记" 
+                                    className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
+                                  />
+                                </div>
+                              )}
+
                               <p className="text-[10px] text-slate-400 line-clamp-2 mt-2 leading-relaxed">
                                 {save.endingText}
                               </p>
@@ -1954,76 +2238,6 @@ export default function App() {
                   </p>
                 </div>
 
-              </div>
-
-              {/* Right Column: Visual Poster Card representation */}
-              <div className="lg:col-span-5 rounded-2xl p-6 shadow-xl flex flex-col justify-between aspect-auto glass-panel">
-                <div className="space-y-4">
-                  <div className="bg-slate-950 p-2 border border-slate-800 rounded flex justify-between items-center text-[10px] font-mono text-slate-500">
-                    <span>系统状态: 接入神功</span>
-                    <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> 实时就绪</span>
-                  </div>
-
-                  <div className="bg-slate-950 border-2 border-slate-850 rounded-xl relative overflow-hidden p-4 group">
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.04)_1px,transparent_1px)] bg-[size:16px_16px]"></div>
-                    <div className="relative z-10 flex items-start gap-4">
-                      <img src={logoUrl} alt="一分钟老板资源标识" className="w-20 h-20 rounded-2xl border border-emerald-500/40 shadow-lg shadow-emerald-950/60 shrink-0 object-cover" />
-                      <div className="min-w-0">
-                        <span className="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded uppercase">
-                          RESOURCE KIT
-                        </span>
-                        <h3 className="font-mono text-sm font-bold text-white mt-2 leading-tight">
-                          {previewResourcePack.posterTitle}
-                        </h3>
-                        <p className="text-[10px] text-slate-400 leading-relaxed mt-1">
-                          {previewResourcePack.posterSubtitle}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="relative z-10 grid grid-cols-4 gap-2 mt-4">
-                      {Object.entries(previewResourcePack.palette).map(([name, color]) => (
-                        <div key={name} className="h-10 rounded-lg border border-slate-800 shadow-inner" style={{ backgroundColor: color }} title={`${name}: ${color}`}>
-                          <span className="sr-only">{name}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="relative z-10 mt-4 grid grid-cols-3 gap-2">
-                      {previewResourcePack.spriteSet.slice(0, 6).map(sprite => (
-                        <div key={sprite} className="h-16 bg-slate-900/85 border border-slate-800 rounded-lg flex flex-col items-center justify-center gap-1">
-                          <SpriteRenderer type={sprite} size={28} />
-                          <span className="text-[8px] font-mono text-slate-500 uppercase">{sprite}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <h4 className="font-mono text-[11px] font-bold text-slate-300 uppercase tracking-wider block">生成资源规格:</h4>
-                    <div className="grid grid-cols-1 gap-2 text-[10px] font-mono">
-                      <div className="p-2.5 bg-slate-950 border border-slate-850 rounded-lg">
-                        <span className="text-emerald-400 font-bold block">地块</span>
-                        <p className="text-slate-450 mt-1">{previewResourcePack.tileSet.join(" / ")}</p>
-                      </div>
-                      <div className="p-2.5 bg-slate-950 border border-slate-850 rounded-lg">
-                        <span className="text-amber-400 font-bold block">物件</span>
-                        <p className="text-slate-450 mt-1">{previewResourcePack.propSet.slice(0, 8).join(" / ")}</p>
-                      </div>
-                      <div className="p-2.5 bg-slate-950 border border-slate-850 rounded-lg">
-                        <span className="text-sky-400 font-bold block">氛围</span>
-                        <p className="text-slate-450 mt-1">{previewResourcePack.ambiance.slice(0, 3).join(" / ")}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-3 bg-emerald-950/20 border border-emerald-500/20 rounded-xl mt-6 text-center">
-                  <span className="text-[10px] text-emerald-400 font-mono font-bold block">💡 想开启更离奇人生吗？</span>
-                  <p className="text-[9px] font-mono text-slate-450 mt-1">
-                    在左侧“自定义特征”中随心所欲输入你的背景吧，AI 将自动融合至生成的地图与互动物体中。
-                  </p>
-                </div>
               </div>
 
             </div>
@@ -2503,6 +2717,16 @@ export default function App() {
 
                 {/* Main plot retrospective */}
                 <div className="space-y-4">
+                  {endingResult.screenshot && (
+                    <div className="border border-slate-800 rounded-2xl overflow-hidden shadow-[2.5px_2.5px_0px_#2D3436] bg-slate-950/80 p-1 flex items-center justify-center max-w-lg mx-auto select-none">
+                      <img 
+                        src={endingResult.screenshot} 
+                        alt="时空节点纪念印记" 
+                        className="w-full h-auto object-cover rounded-xl"
+                      />
+                    </div>
+                  )}
+
                   <div className="bg-slate-950 p-4 rounded-2xl border border-slate-850 font-mono text-xs md:text-sm text-slate-200 leading-relaxed">
                     <span className="text-emerald-400 font-bold block mb-2 font-mono text-[11px]">❖ 蝴蝶效应全记录:</span>
                     <p className="whitespace-pre-line font-serif italic text-slate-100">{endingResult.endingText}</p>
@@ -2733,7 +2957,7 @@ export default function App() {
                     className={`py-2 px-2 border-2 border-[#2D3436] rounded-xl font-bold text-xs transition duration-150 active:scale-95 shadow-[2px_2px_0px_#2D3436] cursor-pointer text-center ${
                       settingsProvider === "siliconflow"
                         ? "bg-[#FFD93D] text-[#2D3436]"
-                        : "bg-white text-slate-650 hover:bg-slate-50"
+                        : "bg-white text-slate-500 hover:bg-slate-50"
                     }`}
                   >
                     ⚡ SiliconFlow
@@ -2746,7 +2970,7 @@ export default function App() {
                     className={`py-2 px-2 border-2 border-[#2D3436] rounded-xl font-bold text-xs transition duration-150 active:scale-95 shadow-[2px_2px_0px_#2D3436] cursor-pointer text-center ${
                       settingsProvider === "minimax"
                         ? "bg-[#FFD93D] text-[#2D3436]"
-                        : "bg-white text-slate-650 hover:bg-slate-50"
+                        : "bg-white text-slate-500 hover:bg-slate-50"
                     }`}
                   >
                     🚀 MiniMax
@@ -2759,7 +2983,7 @@ export default function App() {
                     className={`py-2 px-2 border-2 border-[#2D3436] rounded-xl font-bold text-xs transition duration-150 active:scale-95 shadow-[2px_2px_0px_#2D3436] cursor-pointer text-center ${
                       settingsProvider === "deepseek"
                         ? "bg-[#FFD93D] text-[#2D3436]"
-                        : "bg-white text-slate-650 hover:bg-slate-50"
+                        : "bg-white text-slate-500 hover:bg-slate-50"
                     }`}
                   >
                     🐋 DeepSeek
