@@ -1,4 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;1,400&family=Press+Start+2P&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-pixel: 'Press Start 2P', monospace;
+
+  /* Vibrant Casual Fun Theme Colors */
+  --color-bg-primary: #FFF8E7;
+  --color-bg-secondary: #FFF3BF;
+  --color-bg-accent: #EAF6FF;
+
+  --color-brand-main: #FFD93D;
+  --color-brand-secondary: #FF9F1C;
+  --color-brand-highlight: #4D96FF;
+  --color-brand-fun-event: #A66CFF;
+  --color-brand-danger: #FF6B6B;
+  --color-brand-success: #6BCB77;
+
+  /* Redefine Tailwind default slate/emerald color scales to seamlessly transform dark style codebase to bright mode */
+  --color-slate-950: #FFF8E7; /* Deepest bg -> Creamy light primary bg */
+  --color-slate-900: #FFF3BF; /* Panel bg -> Warm yellow secondary bg */
+  --color-slate-850: #EAF6FF; /* Inner block bg -> soft blue accent */
+  --color-slate-955: #EAF6FF;
+  
+  --color-slate-100: #2D3436; /* Text color flip: white/light text -> Dark Slate gray text */
+  --color-white: #2D3436;
+  --color-slate-200: #333333;
+  --color-slate-300: #444444;
+  --color-slate-400: #555555;
+  --color-slate-450: #64748b;
+  --color-slate-455: #475569;
+  --color-slate-500: #666666;
+  --color-slate-505: #334155;
+  --color-slate-550: #2a3547;
+  --color-slate-600: #475569;
+  --color-slate-655: #1e293b;
+  --color-slate-700: #64748b;
+  --color-slate-800: rgba(45, 52, 54, 0.15); /* borders: soft outline */
+  
+  --color-emerald-500: #FFD93D; /* Buttons: main yellow */
+  --color-emerald-400: #FF9F1C; /* Hover state: warm orange */
+  
+  --color-emerald-450: #4D96FF; /* Accent highlight blue */
+  --color-emerald-455: #4D96FF;
+  --color-emerald-405: #4D96FF;
+  
+  --color-rose-500: #FF6B6B; /* Red warning */
+  --color-rose-450: #FF6B6B;
+  --color-rose-505: #ff8787;
+  
+  --color-amber-400: #FF9F1C; /* VIP gold/orange */
+  --color-amber-300: #FFD93D;
+  --color-amber-600: #d97706;
+}
 
 @keyframes holographic-sweep {
   0% {
@@ -16,25 +71,31 @@
   animation: holographic-sweep 5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
 }
 
-/* Glassmorphism panel styling */
+/* Glassmorphism panel styling - Casual Cartoon Outlined theme style */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(234, 246, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 3px solid #2D3436;
+  box-shadow: 4px 4px 0px #2A2A2A;
 }
 
-/* Arcade/Neon floating card styling */
+/* Premium glows with smoother colors */
 .neon-glow-emerald {
-  box-shadow: 0 0 15px rgba(16, 185, 129, 0.15), inset 0 0 10px rgba(16, 185, 129, 0.05);
+  box-shadow: 3px 3px 0px rgba(77, 150, 255, 0.25), inset 0 0 10px rgba(77, 150, 255, 0.05);
 }
 
 .neon-glow-amber {
-  box-shadow: 0 0 15px rgba(245, 158, 11, 0.15), inset 0 0 10px rgba(245, 158, 11, 0.05);
+  box-shadow: 3px 3px 0px rgba(255, 159, 28, 0.25), inset 0 0 10px rgba(255, 159, 28, 0.05);
 }
 
 .neon-glow-rose {
-  box-shadow: 0 0 15px rgba(244, 63, 94, 0.2), inset 0 0 10px rgba(244, 63, 94, 0.05);
+  box-shadow: 3px 3px 0px rgba(255, 107, 107, 0.25), inset 0 0 10px rgba(255, 107, 107, 0.05);
+}
+
+.premium-glow {
+  border: 3px solid #2D3436;
+  box-shadow: 5px 5px 0px #FF9F1C, inset 0 0 15px rgba(255, 159, 28, 0.05);
 }
 
 /* Floating animation */
@@ -65,52 +126,34 @@
   animation: heartbeat 1.5s ease-in-out infinite;
 }
 
-/* CRT monitor effects */
+/* CRT monitor effects - softened to be barely noticeable in casual light mode */
 .crt-container::after {
   content: " ";
   display: block;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background: linear-gradient(rgba(45, 52, 54, 0) 50%, rgba(45, 52, 54, 0.04) 50%);
   z-index: 10;
-  background-size: 100% 4px, 6px 100%;
+  background-size: 100% 4px;
   pointer-events: none;
-  opacity: 0.85;
+  opacity: 0.25;
 }
 
 /* Scanline flicker */
 @keyframes crt-flicker {
-  0% { opacity: 0.97861; }
-  5% { opacity: 0.94869; }
-  10% { opacity: 0.98501; }
-  15% { opacity: 0.93292; }
-  20% { opacity: 0.98983; }
-  25% { opacity: 0.94047; }
-  30% { opacity: 0.99623; }
-  35% { opacity: 0.95072; }
-  40% { opacity: 0.99285; }
-  45% { opacity: 0.96112; }
-  50% { opacity: 0.98394; }
-  55% { opacity: 0.93559; }
-  60% { opacity: 0.97523; }
-  65% { opacity: 0.9463; }
-  70% { opacity: 0.98197; }
-  75% { opacity: 0.99344; }
-  80% { opacity: 0.94193; }
-  85% { opacity: 0.9724; }
-  90% { opacity: 0.99538; }
-  95% { opacity: 0.96905; }
-  100% { opacity: 0.98663; }
+  0% { opacity: 0.99; }
+  50% { opacity: 0.98; }
+  100% { opacity: 0.99; }
 }
 
 .crt-flicker-overlay {
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
-  background: rgba(18, 16, 16, 0.03);
-  opacity: 0.95;
+  background: rgba(45, 52, 54, 0.005);
+  opacity: 0.2;
   z-index: 11;
   pointer-events: none;
-  animation: crt-flicker 0.15s infinite;
+  animation: crt-flicker 0.4s infinite;
 }
 
 /* Wave animation for water tiles */
@@ -152,10 +195,11 @@
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.4) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   transform: skewX(-25deg);
   animation: gold-shine 6s infinite;
 }
+
 

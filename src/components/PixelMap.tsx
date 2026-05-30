@@ -124,25 +124,25 @@ export const PixelMap: React.FC<PixelMapProps> = ({
   const getTileStyles = (type: string) => {
     switch (type) {
       case "wall":
-        return "bg-slate-700 border-b-2 border-slate-900 text-slate-550 shadow-inner";
+        return "bg-[#C68642] border-b-4 border-[#8b5a2b] text-slate-800 shadow-inner";
       case "floor":
-        return "bg-zinc-200 border border-zinc-300 relative after:absolute after:inset-0 after:bg-[radial-gradient(#d4d4d8_1px,transparent_1px)] after:bg-[size:4px_4px]";
+        return "bg-[#C68642]/80 border border-[#8b5a2b]/25 relative after:absolute after:inset-0 after:bg-[radial-gradient(#8b5a2b_1px,transparent_1px)] after:bg-[size:8px_8px] after:opacity-20";
       case "carpet":
-        return "bg-rose-800 border border-rose-900 relative after:absolute after:inset-1 after:border after:border-dashed after:border-yellow-500/30";
+        return "bg-[#E63946] border border-[#a5212c] relative after:absolute after:inset-1 after:border after:border-dashed after:border-[#FFD93D]/30";
       case "grass":
-        return "bg-emerald-600 border border-emerald-700";
+        return "bg-[#6BCB77] border border-[#52a35e]";
       case "snow":
-        return "bg-slate-100 border border-slate-200/60";
+        return "bg-[#FFFFFF] border border-slate-200/80 shadow-inner";
       case "water":
-        return "bg-sky-600 border border-sky-700 overflow-hidden";
+        return "bg-[#BDE0FE] border border-[#9cc6eb] overflow-hidden";
       case "deck":
-        return "bg-amber-700 border-r border-amber-900";
+        return "bg-[#C68642] border-r border-[#8b5a2b]/35";
       case "road":
-        return "bg-zinc-700 border border-zinc-800";
+        return "bg-[#FF6B35] border border-[#d95221]";
       case "metal_plate":
-        return "bg-cyan-950 border border-cyan-900 text-cyan-400";
+        return "bg-[#BDE0FE] border border-[#8ebbe6] text-[#4D96FF]";
       default:
-        return "bg-zinc-300";
+        return "bg-[#FFF3BF]";
     }
   };
 
@@ -246,7 +246,7 @@ export const PixelMap: React.FC<PixelMapProps> = ({
       </div>
 
       {/* Main retro CRT screen wrapper */}
-      <div className="relative p-4 bg-slate-900 rounded-3xl border-4 border-slate-800 shadow-2xl overflow-hidden w-full max-w-[680px] crt-container neon-glow-emerald">
+      <div className="relative p-4 rounded-3xl border-4 border-slate-850 shadow-2xl overflow-hidden w-full max-w-[680px] crt-container neon-glow-emerald glass-panel">
         {/* Glow effect */}
         <div className="absolute inset-0 bg-radial-gradient from-transparent to-black pointer-events-none opacity-50 z-10" />
         <div className="crt-flicker-overlay" />
@@ -319,35 +319,35 @@ export const PixelMap: React.FC<PixelMapProps> = ({
       </div>
 
       {/* Tactile D-pad Control Panel for Mobile Support */}
-      <div className="flex flex-col items-center gap-1 sm:hidden mt-2 p-4 bg-slate-900 rounded-3xl border border-slate-800/80 shadow-2xl neon-glow-amber">
+      <div className="flex flex-col items-center gap-1 sm:hidden mt-2 p-4 rounded-3xl shadow-[4px_4px_0px_#2A2A2A] border-3 border-[#2D3436] bg-[#EAF6FF]">
         <button
           onClick={() => tryMove(0, -1)}
-          className="w-14 h-14 flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white rounded-full active:scale-90 border border-slate-700 shadow-md font-bold cursor-pointer transition"
+          className="w-14 h-14 flex items-center justify-center bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#FF9F1C] rounded-full active:scale-90 border-3 border-[#2D3436] shadow-[2.5px_2.5px_0px_#2A2A2A] font-bold cursor-pointer transition"
         >
-          <ArrowUp size={24} className="text-amber-400" />
+          <ArrowUp size={24} className="text-[#FF9F1C]" style={{ strokeWidth: 3 }} />
         </button>
 
         <div className="flex gap-10">
           <button
             onClick={() => tryMove(-1, 0)}
-            className="w-14 h-14 flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white rounded-full active:scale-90 border border-slate-700 shadow-md font-bold cursor-pointer transition"
+            className="w-14 h-14 flex items-center justify-center bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#FF9F1C] rounded-full active:scale-90 border-3 border-[#2D3436] shadow-[2.5px_2.5px_0px_#2A2A2A] font-bold cursor-pointer transition"
           >
-            <ArrowLeft size={24} className="text-amber-400" />
+            <ArrowLeft size={24} className="text-[#FF9F1C]" style={{ strokeWidth: 3 }} />
           </button>
 
           <button
             onClick={() => tryMove(1, 0)}
-            className="w-14 h-14 flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white rounded-full active:scale-90 border border-slate-700 shadow-md font-bold cursor-pointer transition"
+            className="w-14 h-14 flex items-center justify-center bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#FF9F1C] rounded-full active:scale-90 border-3 border-[#2D3436] shadow-[2.5px_2.5px_0px_#2A2A2A] font-bold cursor-pointer transition"
           >
-            <ArrowRight size={24} className="text-amber-400" />
+            <ArrowRight size={24} className="text-[#FF9F1C]" style={{ strokeWidth: 3 }} />
           </button>
         </div>
 
         <button
           onClick={() => tryMove(0, 1)}
-          className="w-14 h-14 flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-white rounded-full active:scale-90 border border-slate-700 shadow-md font-bold cursor-pointer transition"
+          className="w-14 h-14 flex items-center justify-center bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#FF9F1C] rounded-full active:scale-90 border-3 border-[#2D3436] shadow-[2.5px_2.5px_0px_#2A2A2A] font-bold cursor-pointer transition"
         >
-          <ArrowDown size={24} className="text-amber-400" />
+          <ArrowDown size={24} className="text-[#FF9F1C]" style={{ strokeWidth: 3 }} />
         </button>
       </div>
     </div>

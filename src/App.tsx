@@ -668,14 +668,14 @@ export default function App() {
       <header className="bg-slate-900/85 backdrop-blur-md border-b border-slate-800 py-3 px-4 shadow-xl sticky top-0 z-40">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3 cursor-pointer select-none active:scale-95 transition-all" onClick={handleBackToLobby}>
-            <div className="w-11 h-11 rounded-xl flex items-center justify-center border border-emerald-300/70 bg-slate-950 shadow neon-glow-emerald overflow-hidden">
+            <div className="w-11 h-11 rounded-2xl flex items-center justify-center border-3 border-[#2D3436] bg-[#FFD93D] shadow-[2.5px_2.5px_0px_#2A2A2A] overflow-hidden shrink-0">
               <img src={logoUrl} alt="一分钟老板 Logo" className="w-full h-full object-cover" />
             </div>
             <div>
-              <h1 className="font-mono text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
-                一分钟老板 <span className="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-black tracking-widest animate-pulse">AI NATIVE</span>
+              <h1 className="font-sans text-xl md:text-2xl font-black tracking-tight text-white flex items-center gap-1.5 leading-none select-none" style={{ color: '#FFD93D', WebkitTextStroke: '1.2px #FF9F1C', textShadow: '2.5px 2.5px 0px #2A2A2A' }}>
+                一分钟老板 <span className="text-[9px] bg-[#EAF6FF] text-[#4D96FF] border-2 border-[#4D96FF] px-2 py-0.5 rounded-full font-black tracking-widest leading-none" style={{ color: '#4D96FF', WebkitTextStroke: '0px', textShadow: 'none' }}>AI NATIVE</span>
               </h1>
-              <p className="text-[9px] text-slate-450 font-mono tracking-widest">ONE MINUTE BOSS • PIXEL ADVENTURE</p>
+              <p className="text-[9px] text-[#FF9F1C] font-mono tracking-widest font-black mt-1">ONE MINUTE BOSS • PIXEL ADVENTURE</p>
             </div>
           </div>
 
@@ -732,7 +732,7 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start animate-fade-in">
               
               {/* Left Column: Selector and prompt */}
-              <div className="lg:col-span-7 bg-slate-900 rounded-3xl border border-slate-800/80 p-6 md:p-8 shadow-2xl relative overflow-hidden neon-glow-emerald glass-panel">
+              <div className="lg:col-span-7 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden neon-glow-emerald glass-panel">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full filter blur-2xl pointer-events-none"></div>
 
                 <div className="mb-6">
@@ -1184,7 +1184,7 @@ export default function App() {
               </div>
 
               {/* Right Column: Visual Poster Card representation */}
-              <div className="lg:col-span-5 bg-slate-900 rounded-2xl border border-slate-800 p-6 shadow-xl flex flex-col justify-between aspect-auto">
+              <div className="lg:col-span-5 rounded-2xl p-6 shadow-xl flex flex-col justify-between aspect-auto glass-panel">
                 <div className="space-y-4">
                   <div className="bg-slate-950 p-2 border border-slate-800 rounded flex justify-between items-center text-[10px] font-mono text-slate-500">
                     <span>系统状态: 接入神功</span>
@@ -1258,7 +1258,7 @@ export default function App() {
 
           {/* 2. LOADING STATE */}
           {gameState === "loading" && (
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-12 shadow-2xl text-center max-w-md mx-auto space-y-8 animate-pulse">
+            <div className="border border-slate-655 rounded-3xl p-12 shadow-2xl text-center max-w-md mx-auto space-y-8 animate-pulse glass-panel">
               <div className="relative inline-block">
                 <div className="w-16 h-16 rounded-full border-4 border-slate-850 border-t-emerald-500 animate-spin"></div>
                 <img src={logoUrl} alt="一分钟老板 Logo" className="absolute inset-2 rounded-full object-cover" />
@@ -1286,7 +1286,7 @@ export default function App() {
             <div className="space-y-4">
               
               {/* Gameplay Top Status HUD */}
-              <div className="bg-slate-900 rounded-2xl border border-slate-850 p-4 flex items-center justify-between shadow-lg">
+              <div className="rounded-2xl p-4 flex items-center justify-between shadow-lg glass-panel">
                 <div className="space-y-0.5">
                   <span className="text-[9px] bg-slate-950 border border-emerald-500/30 text-emerald-400 px-2 py-0.5 rounded uppercase font-mono font-bold tracking-wider">
                     {worldScenario.identity}
@@ -1339,7 +1339,7 @@ export default function App() {
                 <div className="lg:col-span-4 h-full flex flex-col gap-4">
                   
                   {/* Encounter dialogue box */}
-                  <div className="bg-slate-955/90 border-2 border-emerald-500/40 shadow-2xl rounded-3xl p-5 flex-grow flex flex-col justify-between min-h-[300px] relative overflow-hidden neon-glow-emerald">
+                  <div className="border-2 border-emerald-500/40 shadow-2xl rounded-3xl p-5 flex-grow flex flex-col justify-between min-h-[300px] relative overflow-hidden neon-glow-emerald glass-panel">
                     {/* Corner decors */}
                     <div className="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-emerald-400 opacity-60"></div>
                     <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-emerald-400 opacity-60"></div>
@@ -1407,10 +1407,10 @@ export default function App() {
                                     <button
                                       key={i}
                                       onClick={() => handleResolveAction(opt.label, opt.action)}
-                                      className="w-full text-left p-3 bg-slate-900 hover:bg-emerald-950/40 text-xs text-white border border-slate-800 hover:border-emerald-500/50 rounded-2xl transition-all duration-200 active:scale-98 shadow flex items-center justify-between group cursor-pointer"
+                                      className="w-full text-left p-3 bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#2D3436] text-xs font-bold border-2 border-[#2D3436] rounded-xl transition-all duration-200 shadow-[3px_3px_0px_#2A2A2A] active:scale-95 flex items-center justify-between group cursor-pointer"
                                     >
-                                      <span className="group-hover:text-emerald-350 transition-colors">{opt.label}</span>
-                                      <ChevronRight size={14} className="text-slate-500 group-hover:text-emerald-450 group-hover:translate-x-1 transition-all shrink-0" />
+                                      <span className="group-hover:translate-x-1 transition-all">{opt.label}</span>
+                                      <ChevronRight size={14} />
                                     </button>
                                   ))}
                                 </div>
@@ -1446,7 +1446,7 @@ export default function App() {
 
                               <button
                                 onClick={handleCloseDialogue}
-                                className="w-full py-2 bg-slate-950 hover:bg-slate-900 border border-slate-850 text-slate-450 rounded-xl text-[10px] font-mono hover:text-white mt-1 cursor-pointer transition select-none"
+                                className="w-full py-2 bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#2D3436] border-2 border-[#2D3436] rounded-xl text-[10px] font-mono font-black shadow-[2px_2px_0px_#2A2A2A] mt-1 cursor-pointer transition select-none"
                               >
                                 回到探索地图
                               </button>
@@ -1461,7 +1461,7 @@ export default function App() {
                   </div>
 
                   {/* Active inventory traces logs */}
-                  <div className="bg-slate-900 rounded-2xl border border-slate-850 p-4 shadow-xl flex flex-col justify-between max-h-[220px]">
+                  <div className="rounded-2xl p-4 shadow-xl flex flex-col justify-between max-h-[220px] glass-panel">
                     <div className="border-b border-slate-850 pb-1.5 mb-2 flex items-center justify-between text-[10px] font-mono text-slate-450 uppercase">
                       <span>📜 老板因果印记</span>
                       <span>已记录 {historyLog.length} 条</span>
@@ -1500,7 +1500,7 @@ export default function App() {
 
           {/* 4. FOLLOW TO UNLOCK TIME MACHINE */}
           {gameState === "follow_unlock" && (
-            <div className="max-w-3xl mx-auto bg-slate-900 border-4 border-amber-500 rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
+            <div className="max-w-3xl mx-auto border-4 border-amber-500 rounded-3xl p-6 md:p-8 shadow-2xl space-y-6 glass-panel">
               <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                 <span className="text-xs bg-amber-500 text-slate-950 font-bold px-2 rounded font-mono tracking-widest flex items-center gap-1">
                   <ScanLine size={12} /> 关注阿伦开启时光机
@@ -1517,7 +1517,7 @@ export default function App() {
                   <img
                     src={xiaohongshuQrUrl}
                     alt="阿伦小红书二维码"
-                    className="w-full rounded-xl border border-slate-800 bg-white object-contain max-h-[360px]"
+                    className="w-full rounded-xl border border-slate-800 bg-[#ffffff] object-contain max-h-[360px]"
                   />
                 </div>
 
@@ -1529,7 +1529,7 @@ export default function App() {
                   <img
                     src={douyinQrUrl}
                     alt="阿伦抖音二维码"
-                    className="w-full rounded-xl border border-slate-800 bg-slate-950 object-contain max-h-[360px]"
+                    className="w-full rounded-xl border border-slate-800 bg-[#ffffff] object-contain max-h-[360px]"
                   />
                 </div>
               </div>
@@ -1543,7 +1543,7 @@ export default function App() {
                   href="https://github.com/unknownparticles"
                   target="_blank"
                   rel="noreferrer"
-                  className="px-4 py-3 bg-slate-100 hover:bg-white text-slate-950 rounded-xl font-mono text-xs font-black active:scale-95 transition flex items-center justify-center gap-2"
+                  className="px-4 py-3 bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#2D3436] rounded-xl font-mono text-xs font-black active:scale-95 transition flex items-center justify-center gap-2 border-2 border-[#2D3436] shadow-[2px_2px_0px_#2A2A2A]"
                 >
                   <Github size={16} /> 打开 GitHub
                 </a>
@@ -1551,14 +1551,14 @@ export default function App() {
 
               <button
                 onClick={handleConfirmFollowToRewind}
-                className="w-full py-4 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-950 font-mono font-black text-sm rounded-xl transition active:scale-95 cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-amber-950/40"
+                className="w-full py-4 bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#2D3436] font-mono font-black text-sm rounded-xl transition active:scale-95 cursor-pointer flex items-center justify-center gap-2 border-3 border-[#2D3436] shadow-[3px_3px_0px_#2A2A2A]"
               >
                 <CheckCircle2 size={18} /> 我已关注，开启时光机回到 35 秒
               </button>
 
               <button
                 onClick={() => setGameState("ending")}
-                className="w-full py-2 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-slate-450 rounded-xl text-[10px] font-mono hover:text-white cursor-pointer transition"
+                className="w-full py-2 bg-[#FF9F1C] hover:bg-[#FFD93D] text-[#2D3436] border-2 border-[#2D3436] rounded-xl text-[10px] font-mono font-black shadow-[2px_2px_0px_#2A2A2A] cursor-pointer transition"
               >
                 暂不回溯，返回结局卡
               </button>
@@ -1587,7 +1587,7 @@ export default function App() {
                   duration: 1.5, 
                   ease: "easeOut" 
                 }}
-                className="bg-slate-900 border-4 border-double border-emerald-450 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden neon-glow-emerald"
+                className="border-4 border-double border-emerald-450 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden neon-glow-emerald glass-panel"
               >
                 {/* CRT screen glow overlay */}
                 <div className="absolute inset-0 bg-radial-gradient from-transparent to-black pointer-events-none opacity-40"></div>
