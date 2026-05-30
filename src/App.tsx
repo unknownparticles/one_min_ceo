@@ -35,6 +35,7 @@ import { SpriteRenderer } from "./components/SpriteRenderer";
 import { Position, NPC, Item, WorldScenario, InteractionResult, EndingResult, SavedLife, DailyChallenge, BossIdentityType } from "./types";
 import { getDailyChallenge } from "./utils/dailyPresets";
 import { audio } from "./utils/audio";
+import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey } from "./utils/siliconFlow";
 
 // Ticker lines for the header to increase high-contrast satire & immersive feeling
 const METADATA_TICKERS = [
@@ -134,16 +135,7 @@ export default function App() {
 
   // Fetch local collection and config checks
   useEffect(() => {
-    // Check key
-    fetch("/api/config/status")
-      .then(res => res.json())
-      .then(data => {
-        setHasApiKey(data.hasApiKey);
-      })
-      .catch(() => {
-        // Fallback
-        setHasApiKey(true);
-      });
+    setHasApiKey(hasSiliconFlowKey());
 
     // Load saved ending cards
     const cached = localStorage.getItem("boss_minute_endings");
@@ -232,20 +224,7 @@ export default function App() {
     window.localStorage.setItem("currentIdentityType", chosenIdentity);
 
     try {
-      const response = await fetch("/api/boss/generate-world", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          identity: chosenIdentity,
-          customPrompt: finalPrompt
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error("接口调用失败，可能由于服务暂时无法加载");
-      }
-
-      const worldData = await response.json();
+      const worldData = await generateWorld(chosenIdentity, finalPrompt);
       setWorldScenario(worldData);
       setPlayerPos(worldData.playerPosition);
       setGameState("playing");
@@ -254,7 +233,7 @@ export default function App() {
       audio.playBGM(worldData.ambientMusic || "corporate-jazz");
     } catch (error: any) {
       setGameState("lobby");
-      setSystemAlertMessage(error.message || "您尚未配置 GEMINI_API_KEY，游戏无法连接至大模型服务。请在界面右上角的 Settings > Secrets 中填入。");
+      setSystemAlertMessage(error.message || "SiliconFlow 服务暂时不可用，请检查 GitHub Actions Secret 或本地 VITE_SILICONFLOW_API_KEY。");
       audio.playSound("error");
     }
   };
@@ -333,26 +312,15 @@ export default function App() {
         }
       }
 
-      // If no pre-generated storyline exists, fetch from endpoint
-      const response = await fetch("/api/boss/interact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          identity: worldScenario?.identity,
-          theme: worldScenario?.theme,
-          targetType: type,
-          targetName: name,
-          targetId: id,
-          dialogueHistory: currentDialogueHistory,
-          playerAction: "First approach"
-        })
+      const data = await generateInteraction({
+        identity: worldScenario?.identity,
+        theme: worldScenario?.theme,
+        targetType: type,
+        targetName: name,
+        targetId: id,
+        dialogueHistory: currentDialogueHistory,
+        playerAction: "First approach"
       });
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      const data = await response.json();
       setInteractionResult(data);
 
       if (data.soundHint) {
@@ -412,25 +380,15 @@ export default function App() {
     // 2. Custom text input
     if (actionKey === "custom") {
       try {
-        const response = await fetch("/api/boss/interact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            identity: worldScenario.identity,
-            theme: worldScenario.theme,
-            targetType: lastInteractedEntity.type,
-            targetName: lastInteractedEntity.name,
-            targetId: lastInteractedEntity.id,
-            dialogueHistory: [...currentDialogueHistory, `Action: ${currentText}`],
-            playerAction: currentText
-          })
+        const data = await generateInteraction({
+          identity: worldScenario.identity,
+          theme: worldScenario.theme,
+          targetType: lastInteractedEntity.type,
+          targetName: lastInteractedEntity.name,
+          targetId: lastInteractedEntity.id,
+          dialogueHistory: [...currentDialogueHistory, `Action: ${currentText}`],
+          playerAction: currentText
         });
-
-        if (!response.ok) {
-          throw new Error();
-        }
-
-        const data = await response.json();
 
         // Log custom reaction
         setHistoryLog(prev => [
@@ -603,24 +561,14 @@ export default function App() {
     audio.playSound("explosion");
 
     try {
-      const response = await fetch("/api/boss/generate-ending", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          identity: worldScenario?.identity || selectedPreset.name,
-          theme: worldScenario?.theme || "一分钟富豪试炼",
-          spentTime: 60 - timer,
-          interactionLog: historyLog,
-          actionSequence: actionSequence,
-          fixedEndings: worldScenario?.fixedEndings || []
-        })
+      const data = await generateEnding({
+        identity: worldScenario?.identity || selectedPreset.name,
+        theme: worldScenario?.theme || "一分钟富豪试炼",
+        spentTime: 60 - timer,
+        interactionLog: historyLog,
+        actionSequence: actionSequence,
+        fixedEndings: worldScenario?.fixedEndings || []
       });
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      const data = await response.json();
       setEndingResult(data);
 
       // Save to Collection in localStorage

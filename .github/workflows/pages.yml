@@ -1,0 +1,61 @@
+name: 发布 GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 写入运行时配置
+        env:
+          SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
+          SILICONFLOW_MODEL: deepseek-ai/DeepSeek-V4-Flash
+        run: |
+          node -e "const fs=require('fs'); fs.mkdirSync('public',{recursive:true}); fs.writeFileSync('public/runtime-config.js', 'window.__ONE_MIN_CEO_CONFIG__ = ' + JSON.stringify({ siliconFlowApiKey: process.env.SILICONFLOW_API_KEY || '', siliconFlowModel: process.env.SILICONFLOW_MODEL || 'deepseek-ai/DeepSeek-V4-Flash' }) + ';\\n');"
+
+      - name: 类型检查
+        run: npm run lint
+
+      - name: 构建
+        run: npm run build
+
+      - name: 上传 Pages 构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 发布
+        id: deployment
+        uses: actions/deploy-pages@v4
