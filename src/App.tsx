@@ -31,7 +31,9 @@ import {
   Github,
   ScanLine,
   CheckCircle2,
-  Settings
+  Settings,
+  Wifi,
+  WifiOff
 } from "lucide-react";
 import { PixelMap } from "./components/PixelMap";
 import { SpriteRenderer } from "./components/SpriteRenderer";
@@ -84,11 +86,13 @@ export default function App() {
   const [customIdentityInput, setCustomIdentityInput] = useState<string>("");
   const [hasApiKey, setHasApiKey] = useState<boolean>(true);
   const [showSettingsModal, setShowSettingsModal] = useState<boolean>(false);
-  const [settingsProvider, setSettingsProvider] = useState<"siliconflow" | "minimax">("siliconflow");
+  const [settingsProvider, setSettingsProvider] = useState<"siliconflow" | "minimax" | "deepseek">("siliconflow");
   const [sfApiKey, setSfApiKey] = useState<string>("");
   const [sfModel, setSfModel] = useState<string>("");
   const [mmApiKey, setMmApiKey] = useState<string>("");
   const [mmModel, setMmModel] = useState<string>("");
+  const [dsApiKey, setDsApiKey] = useState<string>("");
+  const [dsModel, setDsModel] = useState<string>("");
   const [isTesting, setIsTesting] = useState<boolean>(false);
   const [testResult, setTestResult] = useState<{ success: boolean; message: string } | null>(null);
   
@@ -100,6 +104,7 @@ export default function App() {
   const [loadingText, setLoadingText] = useState<string>("时空波阵预热中...");
   const [wangDuoyuConcept, setWangDuoyuConcept] = useState<string>("");
   const [enableThinking, setEnableThinking] = useState<boolean>(false);
+  const [localMode, setLocalMode] = useState<boolean>(false);
   const [isStreamingConcept, setIsStreamingConcept] = useState<boolean>(false);
 
   // Game Play States
@@ -171,7 +176,10 @@ export default function App() {
     setSfModel(stored.siliconFlowModel || "");
     setMmApiKey(stored.minimaxApiKey || "");
     setMmModel(stored.minimaxModel || "");
+    setDsApiKey(stored.deepseekApiKey || "");
+    setDsModel(stored.deepseekModel || "");
     setEnableThinking(stored.enableThinking !== undefined ? stored.enableThinking : false);
+    setLocalMode(stored.localMode || false);
 
     // Load saved ending cards
     const cached = localStorage.getItem("boss_minute_endings");
@@ -900,7 +908,10 @@ export default function App() {
       siliconFlowModel: sfModel.trim() || "deepseek-ai/DeepSeek-V4-Flash",
       minimaxApiKey: mmApiKey.trim(),
       minimaxModel: mmModel.trim() || "MiniMax-M2.5",
+      deepseekApiKey: dsApiKey.trim(),
+      deepseekModel: dsModel.trim() || "deepseek-chat",
       enableThinking,
+      localMode,
     };
     saveApiSettings(currentSettings);
     setHasApiKey(hasSiliconFlowKey());
@@ -973,13 +984,44 @@ export default function App() {
 
             <button
               onClick={() => {
+                const nextMode = !localMode;
+                setLocalMode(nextMode);
+                const settings = getRawStoredSettings();
+                saveApiSettings({
+                  provider: settings.provider || "siliconflow",
+                  siliconFlowApiKey: settings.siliconFlowApiKey || "",
+                  siliconFlowModel: settings.siliconFlowModel || "",
+                  minimaxApiKey: settings.minimaxApiKey || "",
+                  minimaxModel: settings.minimaxModel || "",
+                  deepseekApiKey: settings.deepseekApiKey || "",
+                  deepseekModel: settings.deepseekModel || "",
+                  enableThinking: settings.enableThinking || false,
+                  localMode: nextMode,
+                });
+                audio.playSound("walk");
+              }}
+              className={`p-2 rounded-xl border transition duration-150 active:scale-90 cursor-pointer flex items-center justify-center ${
+                localMode
+                  ? "bg-amber-950/40 text-amber-400 border-amber-800/80"
+                  : "bg-violet-950/40 text-violet-400 border-violet-800/80"
+              }`}
+              title={localMode ? "本地模式 (离线秒开)" : "AI模式 (联网生成)"}
+            >
+              {localMode ? <WifiOff size={18} /> : <Wifi size={18} />}
+            </button>
+
+            <button
+              onClick={() => {
                 const stored = getRawStoredSettings();
                 setSettingsProvider(stored.provider || "siliconflow");
                 setSfApiKey(stored.siliconFlowApiKey || "");
                 setSfModel(stored.siliconFlowModel || "");
                 setMmApiKey(stored.minimaxApiKey || "");
                 setMmModel(stored.minimaxModel || "");
+                setDsApiKey(stored.deepseekApiKey || "");
+                setDsModel(stored.deepseekModel || "");
                 setEnableThinking(stored.enableThinking !== undefined ? stored.enableThinking : false);
+                setLocalMode(stored.localMode || false);
                 setTestResult(null);
                 setIsTesting(false);
                 setShowSettingsModal(true);
@@ -1876,7 +1918,7 @@ export default function App() {
                                   value={customActionValue}
                                   onChange={(e) => setCustomActionValue(e.target.value)}
                                   placeholder="输入自定义荒诞动作..."
-                                  className="flex-1 bg-white border-2 border-[#2D3436] rounded-xl px-3 py-2 font-mono text-xs text-[#2D3436] focus:outline-none focus:border-[#4D96FF] transition shadow-inner font-bold"
+                                  className="flex-1 bg-[#ffffff] border-2 border-[#2D3436] rounded-xl px-3 py-2 font-mono text-xs text-[#2D3436] focus:outline-none focus:border-[#4D96FF] transition shadow-inner font-bold"
                                   onKeyDown={(e) => {
                                     if (e.key === "Enter" && customActionValue.trim()) {
                                       handleResolveAction(customActionValue.trim(), "custom");
@@ -2271,32 +2313,45 @@ export default function App() {
               {/* Provider Selection */}
               <div className="space-y-2">
                 <label className="text-xs font-black text-[#2D3436] block">时空网关提供商：</label>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-3 gap-2">
                   <button
                     onClick={() => {
                       setSettingsProvider("siliconflow");
                       audio.playSound("walk");
                     }}
-                    className={`py-2 px-3 border-2 border-[#2D3436] rounded-xl font-bold text-xs transition duration-150 active:scale-95 shadow-[2px_2px_0px_#2D3436] cursor-pointer text-center ${
+                    className={`py-2 px-2 border-2 border-[#2D3436] rounded-xl font-bold text-xs transition duration-150 active:scale-95 shadow-[2px_2px_0px_#2D3436] cursor-pointer text-center ${
                       settingsProvider === "siliconflow"
                         ? "bg-[#FFD93D] text-[#2D3436]"
                         : "bg-white text-slate-650 hover:bg-slate-50"
                     }`}
                   >
-                    ⚡ SiliconFlow (硅基流动)
+                    ⚡ SiliconFlow
                   </button>
                   <button
                     onClick={() => {
                       setSettingsProvider("minimax");
                       audio.playSound("walk");
                     }}
-                    className={`py-2 px-3 border-2 border-[#2D3436] rounded-xl font-bold text-xs transition duration-150 active:scale-95 shadow-[2px_2px_0px_#2D3436] cursor-pointer text-center ${
+                    className={`py-2 px-2 border-2 border-[#2D3436] rounded-xl font-bold text-xs transition duration-150 active:scale-95 shadow-[2px_2px_0px_#2D3436] cursor-pointer text-center ${
                       settingsProvider === "minimax"
                         ? "bg-[#FFD93D] text-[#2D3436]"
                         : "bg-white text-slate-650 hover:bg-slate-50"
                     }`}
                   >
-                    🚀 MiniMax (海螺AI)
+                    🚀 MiniMax
+                  </button>
+                  <button
+                    onClick={() => {
+                      setSettingsProvider("deepseek");
+                      audio.playSound("walk");
+                    }}
+                    className={`py-2 px-2 border-2 border-[#2D3436] rounded-xl font-bold text-xs transition duration-150 active:scale-95 shadow-[2px_2px_0px_#2D3436] cursor-pointer text-center ${
+                      settingsProvider === "deepseek"
+                        ? "bg-[#FFD93D] text-[#2D3436]"
+                        : "bg-white text-slate-650 hover:bg-slate-50"
+                    }`}
+                  >
+                    🐋 DeepSeek
                   </button>
                 </div>
               </div>
@@ -2323,7 +2378,7 @@ export default function App() {
                             ? "系统已配环境变量（隐藏保护中），在此输入可覆盖"
                             : "sk-..."
                         }
-                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-white text-[#2D3436]"
+                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-[#ffffff] text-[#2D3436]"
                       />
                     </div>
                     <div className="space-y-1">
@@ -2333,7 +2388,7 @@ export default function App() {
                         value={sfModel}
                         onChange={(e) => setSfModel(e.target.value)}
                         placeholder="deepseek-ai/DeepSeek-V4-Flash"
-                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-white text-[#2D3436]"
+                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-[#ffffff] text-[#2D3436]"
                       />
                     </div>
                     <label className="flex items-center gap-2.5 p-2.5 bg-slate-50 border border-[#2D3436]/15 rounded-xl cursor-pointer select-none hover:bg-amber-50 transition">
@@ -2349,7 +2404,7 @@ export default function App() {
                       </span>
                     </label>
                   </div>
-                ) : (
+                ) : settingsProvider === "minimax" ? (
                   <div className="space-y-3">
                     <div className="space-y-1">
                       <div className="flex justify-between items-center">
@@ -2369,7 +2424,7 @@ export default function App() {
                             ? "系统已配环境变量（隐藏保护中），在此输入可覆盖"
                             : "输入你的 MiniMax API 秘钥"
                         }
-                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-white text-[#2D3436]"
+                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-[#ffffff] text-[#2D3436]"
                       />
                     </div>
                     <div className="space-y-1">
@@ -2379,9 +2434,59 @@ export default function App() {
                         value={mmModel}
                         onChange={(e) => setMmModel(e.target.value)}
                         placeholder="MiniMax-M2.5"
-                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-white text-[#2D3436]"
+                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-[#ffffff] text-[#2D3436]"
                       />
                     </div>
+                  </div>
+                ) : (
+                  /* DeepSeek direct provider */
+                  <div className="space-y-3">
+                    <div className="space-y-1">
+                      <div className="flex justify-between items-center">
+                        <label className="text-[11px] font-black text-[#2D3436]">DeepSeek API Key</label>
+                        {hasEnvApiKey("deepseek") ? (
+                          <span className="text-[9px] text-[#117A65] font-mono font-bold">🟢 已从环境变量安全载入</span>
+                        ) : (
+                          <span className="text-[9px] text-slate-400 font-mono">优先级: 本地配置优先</span>
+                        )}
+                      </div>
+                      <input
+                        type="password"
+                        value={dsApiKey}
+                        onChange={(e) => setDsApiKey(e.target.value)}
+                        placeholder={
+                          hasEnvApiKey("deepseek")
+                            ? "系统已配环境变量（隐藏保护中），在此输入可覆盖"
+                            : "sk-..."
+                        }
+                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-[#ffffff] text-[#2D3436]"
+                      />
+                      <p className="text-[9px] text-slate-400 font-mono mt-1">
+                        直连 api.deepseek.com，无需中转，支持 deepseek-chat / deepseek-reasoner
+                      </p>
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-[11px] font-black text-[#2D3436] block">DeepSeek Model</label>
+                      <input
+                        type="text"
+                        value={dsModel}
+                        onChange={(e) => setDsModel(e.target.value)}
+                        placeholder="deepseek-chat"
+                        className="w-full p-2.5 text-xs border-2 border-[#2D3436] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFD93D] font-mono bg-[#ffffff] text-[#2D3436]"
+                      />
+                    </div>
+                    <label className="flex items-center gap-2.5 p-2.5 bg-slate-50 border border-[#2D3436]/15 rounded-xl cursor-pointer select-none hover:bg-amber-50 transition">
+                      <input
+                        type="checkbox"
+                        checked={enableThinking}
+                        onChange={(e) => setEnableThinking(e.target.checked)}
+                        className="w-3.5 h-3.5 accent-amber-500 cursor-pointer"
+                      />
+                      <span className="text-[11px] font-bold text-[#2D3436] leading-tight">
+                        启用思考模式 (Reasoner)<br />
+                        <span className="text-[9px] font-normal text-slate-500">使用 deepseek-reasoner 时建议开启，deepseek-chat 无需开启。</span>
+                      </span>
+                    </label>
                   </div>
                 )}
               </div>
@@ -2439,13 +2544,20 @@ export default function App() {
                       siliconFlowModel: sfModel.trim() || "deepseek-ai/DeepSeek-V4-Flash",
                       minimaxApiKey: mmApiKey.trim(),
                       minimaxModel: mmModel.trim() || "MiniMax-M2.5",
+                      deepseekApiKey: dsApiKey.trim(),
+                      deepseekModel: dsModel.trim() || "deepseek-chat",
                       enableThinking,
+                      localMode,
                     };
                     saveApiSettings(settingsToSave);
                     setHasApiKey(hasSiliconFlowKey());
                     setShowSettingsModal(false);
                     audio.playSound("bling");
-                    setSystemAlertMessage(`🎉 网关配置更新成功！当前已切换至：${settingsProvider === "minimax" ? "MiniMax (海螺AI)" : "SiliconFlow (硅基流动)"}。`);
+                    setSystemAlertMessage(`🎉 网关配置更新成功！当前已切换至：${
+                      settingsProvider === "minimax" ? "MiniMax (海螺AI)"
+                      : settingsProvider === "deepseek" ? "DeepSeek (深度求索)"
+                      : "SiliconFlow (硅基流动)"
+                    }。`);
                   }}
                   className="w-full py-3 bg-[#6BCB77] hover:bg-[#52a35e] text-white text-xs font-black border-2 border-[#2D3436] rounded-xl transition shadow-[3px_3px_0px_#2D3436] active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
                 >

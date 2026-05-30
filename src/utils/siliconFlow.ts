@@ -3,9 +3,10 @@ import { getFallbackScenario } from "./fallbackScenario";
 import { buildResourceGenerationGuide, getResourcePack } from "./resourceKit";
 
 const SILICONFLOW_ENDPOINT = "https://api.siliconflow.cn/v1/chat/completions";
-const DEFAULT_MODEL = "Qwen/Qwen2.5-14B-Instruct";
+const DEFAULT_MODEL = "deepseek-ai/DeepSeek-V4-Flash";
+const DEEPSEEK_ENDPOINT = "https://api.deepseek.com/v1/chat/completions";
 
-export type ApiProvider = "siliconflow" | "minimax";
+export type ApiProvider = "siliconflow" | "minimax" | "deepseek";
 
 export interface ApiSettings {
   provider: ApiProvider;
@@ -13,11 +14,15 @@ export interface ApiSettings {
   siliconFlowModel: string;
   minimaxApiKey: string;
   minimaxModel: string;
+  deepseekApiKey: string;
+  deepseekModel: string;
   enableThinking: boolean;
+  localMode: boolean;
 }
 
-const DEFAULT_SILICONFLOW_MODEL = "Qwen/Qwen2.5-14B-Instruct";
+const DEFAULT_SILICONFLOW_MODEL = "deepseek-ai/DeepSeek-V4-Flash";
 const DEFAULT_MINIMAX_MODEL = "MiniMax-M2.5";
+const DEFAULT_DEEPSEEK_MODEL = "deepseek-chat";
 const MINIMAX_ENDPOINT = "https://api.minimax.io/v1/chat/completions";
 
 type RuntimeConfig = {
@@ -25,8 +30,11 @@ type RuntimeConfig = {
   siliconFlowModel?: string;
   minimaxApiKey?: string;
   minimaxModel?: string;
+  deepseekApiKey?: string;
+  deepseekModel?: string;
   provider?: ApiProvider;
   enableThinking?: boolean;
+  localMode?: boolean;
 };
 
 declare global {
@@ -50,8 +58,10 @@ export const getRawStoredSettings = (): Partial<ApiSettings> => {
 export const hasEnvApiKey = (provider: ApiProvider): boolean => {
   if (provider === "siliconflow") {
     return !!(window.__ONE_MIN_CEO_CONFIG__?.siliconFlowApiKey || import.meta.env.VITE_SILICONFLOW_API_KEY);
-  } else {
+  } else if (provider === "minimax") {
     return !!(window.__ONE_MIN_CEO_CONFIG__?.minimaxApiKey || import.meta.env.VITE_MINIMAX_API_KEY);
+  } else {
+    return !!(window.__ONE_MIN_CEO_CONFIG__?.deepseekApiKey || import.meta.env.VITE_DEEPSEEK_API_KEY);
   }
 };
 
@@ -68,11 +78,18 @@ export const getApiSettings = (): ApiSettings => {
                 import.meta.env.VITE_MINIMAX_API_KEY ||
                 "";
 
+  const dsKey = stored.deepseekApiKey ||
+                window.__ONE_MIN_CEO_CONFIG__?.deepseekApiKey ||
+                import.meta.env.VITE_DEEPSEEK_API_KEY ||
+                "";
+
   let defaultProvider: ApiProvider = "siliconflow";
   if (stored.provider) {
     defaultProvider = stored.provider;
-  } else if (mmKey && !sfKey) {
+  } else if (mmKey && !sfKey && !dsKey) {
     defaultProvider = "minimax";
+  } else if (dsKey && !sfKey) {
+    defaultProvider = "deepseek";
   }
 
   return {
@@ -81,7 +98,10 @@ export const getApiSettings = (): ApiSettings => {
     siliconFlowModel: stored.siliconFlowModel || window.__ONE_MIN_CEO_CONFIG__?.siliconFlowModel || import.meta.env.VITE_SILICONFLOW_MODEL || DEFAULT_SILICONFLOW_MODEL,
     minimaxApiKey: mmKey,
     minimaxModel: stored.minimaxModel || window.__ONE_MIN_CEO_CONFIG__?.minimaxModel || import.meta.env.VITE_MINIMAX_MODEL || DEFAULT_MINIMAX_MODEL,
+    deepseekApiKey: dsKey,
+    deepseekModel: stored.deepseekModel || window.__ONE_MIN_CEO_CONFIG__?.deepseekModel || import.meta.env.VITE_DEEPSEEK_MODEL || DEFAULT_DEEPSEEK_MODEL,
     enableThinking: stored.enableThinking !== undefined ? stored.enableThinking : false,
+    localMode: stored.localMode || false,
   };
 };
 
@@ -95,8 +115,11 @@ export const saveApiSettings = (settings: ApiSettings) => {
     window.__ONE_MIN_CEO_CONFIG__.siliconFlowModel = settings.siliconFlowModel;
     window.__ONE_MIN_CEO_CONFIG__.minimaxApiKey = settings.minimaxApiKey;
     window.__ONE_MIN_CEO_CONFIG__.minimaxModel = settings.minimaxModel;
+    window.__ONE_MIN_CEO_CONFIG__.deepseekApiKey = settings.deepseekApiKey;
+    window.__ONE_MIN_CEO_CONFIG__.deepseekModel = settings.deepseekModel;
     window.__ONE_MIN_CEO_CONFIG__.provider = settings.provider;
     window.__ONE_MIN_CEO_CONFIG__.enableThinking = settings.enableThinking;
+    window.__ONE_MIN_CEO_CONFIG__.localMode = settings.localMode;
   } catch (e) {
     console.error("保存 API 设置失败", e);
   }
@@ -106,6 +129,9 @@ export const hasSiliconFlowKey = (): boolean => {
   const settings = getApiSettings();
   if (settings.provider === "minimax") {
     return !!settings.minimaxApiKey;
+  }
+  if (settings.provider === "deepseek") {
+    return !!settings.deepseekApiKey;
   }
   return !!settings.siliconFlowApiKey;
 };
@@ -131,14 +157,40 @@ const callSiliconFlowJson = async <T>(
   signal?: AbortSignal
 ): Promise<T> => {
   const settings = getApiSettings();
-  const isMiniMax = settings.provider === "minimax" && !overrideModel;
-  
-  const apiKey = overrideModel ? settings.siliconFlowApiKey : (isMiniMax ? settings.minimaxApiKey : settings.siliconFlowApiKey);
-  const model = overrideModel || (isMiniMax ? settings.minimaxModel : settings.siliconFlowModel);
-  const endpoint = overrideModel ? SILICONFLOW_ENDPOINT : (isMiniMax ? MINIMAX_ENDPOINT : SILICONFLOW_ENDPOINT);
+  const isOverride = !!overrideModel;
+  const isMiniMax = settings.provider === "minimax" && !isOverride;
+  const isDeepSeek = settings.provider === "deepseek" && !isOverride;
+
+  let apiKey: string;
+  let model: string;
+  let endpoint: string;
+  let providerLabel: string;
+
+  if (isOverride) {
+    // Force SiliconFlow when an override model is given (for concept streaming etc.)
+    apiKey = settings.siliconFlowApiKey;
+    model = overrideModel!;
+    endpoint = SILICONFLOW_ENDPOINT;
+    providerLabel = "SiliconFlow";
+  } else if (isMiniMax) {
+    apiKey = settings.minimaxApiKey;
+    model = settings.minimaxModel;
+    endpoint = MINIMAX_ENDPOINT;
+    providerLabel = "MiniMax";
+  } else if (isDeepSeek) {
+    apiKey = settings.deepseekApiKey;
+    model = settings.deepseekModel;
+    endpoint = DEEPSEEK_ENDPOINT;
+    providerLabel = "DeepSeek";
+  } else {
+    apiKey = settings.siliconFlowApiKey;
+    model = settings.siliconFlowModel;
+    endpoint = SILICONFLOW_ENDPOINT;
+    providerLabel = "SiliconFlow";
+  }
 
   if (!apiKey) {
-    throw new Error(`未配置 ${isMiniMax ? "MiniMax" : "SiliconFlow"} API Key，请点击右上角 [⚙️ API设置] 进行配置。`);
+    throw new Error(`未配置 ${providerLabel} API Key，请点击右上角 [⚙️ API设置] 进行配置。`);
   }
 
   const startTime = performance.now();
@@ -159,6 +211,7 @@ const callSiliconFlowJson = async <T>(
       ],
       temperature: 0.9,
       max_tokens: maxTokens,
+      response_format: { type: "json_object" },
     };
 
     const finalEnableThinking = overrideEnableThinking !== undefined
@@ -167,6 +220,11 @@ const callSiliconFlowJson = async <T>(
 
     if (model.toLowerCase().includes("deepseek")) {
       bodyParams.enable_thinking = finalEnableThinking;
+    }
+
+    // MiniMax and DeepSeek direct do not support response_format, remove it
+    if (isMiniMax || isDeepSeek) {
+      delete bodyParams.response_format;
     }
 
     const response = await fetch(endpoint, {
@@ -181,7 +239,7 @@ const callSiliconFlowJson = async <T>(
 
     if (!response.ok) {
       const errorText = await response.text().catch(() => "");
-      throw new Error(errorText || `${isMiniMax ? "MiniMax" : "SiliconFlow"} 请求失败：${response.status}`);
+      throw new Error(errorText || `${providerLabel} 请求失败：${response.status}`);
     }
 
     const data = await response.json();
@@ -191,7 +249,7 @@ const callSiliconFlowJson = async <T>(
       if (reasoningContent && typeof reasoningContent === "string") {
         content = reasoningContent;
       } else {
-        throw new Error(`${isMiniMax ? "MiniMax" : "SiliconFlow"} 返回内容为空`);
+        throw new Error(`${providerLabel} 返回内容为空`);
       }
     }
 
@@ -329,15 +387,34 @@ export interface ConnectionTestResult {
 export const testApiConnection = async (): Promise<ConnectionTestResult> => {
   const settings = getApiSettings();
   const isMiniMax = settings.provider === "minimax";
-  
-  const apiKey = isMiniMax ? settings.minimaxApiKey : settings.siliconFlowApiKey;
-  const model = isMiniMax ? settings.minimaxModel : settings.siliconFlowModel;
-  const endpoint = isMiniMax ? MINIMAX_ENDPOINT : SILICONFLOW_ENDPOINT;
+  const isDeepSeek = settings.provider === "deepseek";
+
+  let apiKey: string;
+  let model: string;
+  let endpoint: string;
+  let providerLabel: string;
+
+  if (isMiniMax) {
+    apiKey = settings.minimaxApiKey;
+    model = settings.minimaxModel;
+    endpoint = MINIMAX_ENDPOINT;
+    providerLabel = "MiniMax";
+  } else if (isDeepSeek) {
+    apiKey = settings.deepseekApiKey;
+    model = settings.deepseekModel;
+    endpoint = DEEPSEEK_ENDPOINT;
+    providerLabel = "DeepSeek";
+  } else {
+    apiKey = settings.siliconFlowApiKey;
+    model = settings.siliconFlowModel;
+    endpoint = SILICONFLOW_ENDPOINT;
+    providerLabel = "SiliconFlow";
+  }
 
   if (!apiKey) {
     return {
       success: false,
-      message: `未配置 ${isMiniMax ? "MiniMax" : "SiliconFlow"} API Key，请先配置。`
+      message: `未配置 ${providerLabel} API Key，请先配置。`
     };
   }
 
@@ -362,7 +439,7 @@ export const testApiConnection = async (): Promise<ConnectionTestResult> => {
 
     if (!response.ok) {
       const errorText = await response.text().catch(() => "");
-      let detail = `HTTP ${response.status}`;
+      let detail = `[${providerLabel}] HTTP ${response.status}`;
       if (response.status === 401) {
         detail = "API Key 校验失败 (401 Unauthorized)，请检查 Key 是否填写正确。";
       } else if (response.status === 402) {
@@ -449,6 +526,11 @@ export const generateWorld = async (
 ): Promise<WorldScenario> => {
   const skeleton = getFallbackScenario(identity);
 
+  const settings = getApiSettings();
+  if (settings.localMode) {
+    return withFallbackIdentity(skeleton, identity);
+  }
+
   const systemPrompt = `你是《一分钟老板》的荒诞文案生成器，为身份「${identity || "CEO"}」编写剧情。只返回 JSON，不要 Markdown。
 
 返回格式：
@@ -496,7 +578,7 @@ ${JSON.stringify(skeletonDataForPrompt, null, 2)}`;
     const worldResult = await callSiliconFlowJson<ModelWorldResponse>(
       systemPrompt,
       userPrompt,
-      2048,
+      4096,
       overrideModel,
       overrideEnableThinking,
       signal
@@ -635,6 +717,25 @@ export const generateInteraction = async (payload: {
   dialogueHistory: string[];
   playerAction: string;
 }, signal?: AbortSignal): Promise<InteractionResult> => {
+  const settings = getApiSettings();
+  if (settings.localMode) {
+    const npcNames = ["秘书", "特工狗", "但以理", "保安", "Rob", "机器人"];
+    const itemNames = ["咖啡机", "黄金笔", "核按钮", "滑雪装备", "氧气瓶"];
+    const isKnown = [...npcNames, ...itemNames].some(n => payload.targetName?.includes(n));
+    return {
+      text: isKnown
+        ? `【${payload.targetName}】「时空管理局档案」：该因果锚点已在离线档案中完全记录，你的行动已被量子自动书记官忠实记下。`
+        : `你走向了「${payload.targetName}」，在这个离线高维时空中，你的每个选择都会被蝴蝶效应永久铭刻在星盟数据库中。`,
+      options: [
+        { label: "👌 完成因果 (继续探索)", action: "close_after_advance" }
+      ],
+      allowsFreeInput: false,
+      soundHint: "bling",
+      timeDelta: 0,
+      isEarlyEnd: false,
+    };
+  }
+
   const systemPrompt = `你是《一分钟老板》的荒诞互动导演。只返回 JSON，不要 Markdown。
 JSON 必须包含：text, options, allowsFreeInput, soundHint, timeDelta, isEarlyEnd。
 options 是 1 到 3 个选项，每项包含 label 和 action.timeDelta 是 0 或负整数。请尽量避免返回 isEarlyEnd: true，除非玩家做出了极其自毁或彻底毁灭整个时空线的不合理动作。`;
@@ -713,6 +814,11 @@ export const generateEnding = async (payload: {
   actionSequence: string[];
   fixedEndings?: FixedEnding[];
 }, signal?: AbortSignal): Promise<EndingResult> => {
+  const settings = getApiSettings();
+  if (settings.localMode) {
+    return offlineEnding(payload);
+  }
+
   const matchedEnding = findMatchedEnding(payload.fixedEndings, payload.actionSequence);
   const systemPrompt = `你是《一分钟老板》的终局评估官。只返回 JSON，不要 Markdown。
 JSON 必须包含：id, title, rank, endingText, achievements, stats。
