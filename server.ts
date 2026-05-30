@@ -3,6 +3,7 @@ import path from "path";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import dotenv from "dotenv";
+import { getFallbackScenario } from "./serverFallback";
 
 dotenv.config();
 
@@ -53,10 +54,16 @@ Ensure you place 2 to 4 NPCs and 2 to 4 interactive items with proper coordinate
 The map grid is 16 columns (x from 0 to 15) and 12 rows (y from 0 to 11).
 Tiles must contain keywords: 'floor', 'wall', 'carpet', 'grass', 'snow', 'water', 'deck', 'road', 'metal_plate'. Keep tiles visually matched to the scene (e.g. Ski Champion gets snow/floor, CEO gets floor/carpet/wall, Diver gets deck/water, Space Traveler gets metal_plate/wall, etc.).
 
-CRITICAL RULE:
-For EVERY SINGLE NPC and Item, you MUST pre-generate their entire interactive branching storyline (storyline array of exactly 3 sequential StorySteps: e.g. "stage1", "stage2", "stage3").
-Each StoryStep/Event across the whole scenario must be COMPLETELY UNIQUE and NEVER repeat themes or narratives.
-Each option inside options array of each StoryStep must have a completely unique label, outcomeText consequence narrative, timeDelta, and optional isEarlyEnd / soundHint. No options or option actions must repeat across any stage of any entity.
+CRITICAL RESOLUTION RULES:
+1. For EVERY SINGLE NPC and Item, pre-generate their entire interactive branching storyline (exactly 3 sequential StorySteps).
+2. For EVERY option inside options array of each StoryStep, assigning a unique, highly descriptive semantic code to "actionId" (e.g. "kick_dog", "pet_dog", "beat_investor", "soothe_investor", "ignite_fire", "open_sprinkler", "dial_alien"). This actionId tracks choices and triggers ending combinations.
+3. Pre-generate 4 to 6 completely unique "fixedEndings" (固定结局) for this scenario!
+   These fixed endings reflect the combinations and chronological order of choices chosen by the player.
+   Define specific outcomes with 'triggerRules':
+     - Single key action trigger (e.g., mustInclude contains "kick_dog").
+     - Multi-action combination (e.g., mustInclude contains "beat_investor" AND "kick_dog").
+     - Sequential order trigger (e.g., requiredSequence is ["ignite_fire", "open_sprinkler"] triggers "firefighting hero ending", while requiredSequence is ["open_sprinkler", "ignite_fire"] triggers "foolish drowned engine ending").
+     - Define "priority" score: priority is 1-2 for simple single triggers, and 3+ for combinations or sequence triggers. Higher priority matches first!
 
 Reference assets from design sources:
 - NPCs: 'secretary' (助理), 'butler' (管家/保镖), 'investor' (投资人), 'robot' (机器人/哈士奇), 'alien' (外星人/科学家), 'guard' (保卫员).
@@ -65,7 +72,7 @@ Ensure everything returned is structured, funny, and full of butterfly effects!`
 
     const userPrompt = `Generate a world. Identity selected: "${identity || "random"}". Custom modifiers: "${customPrompt || "None"}".
 Choose an exact awesome theme based on this (e.g., IPO上市前60秒, 滑雪比赛开始前60秒, 深海潜水前60秒, 私人飞机起降前60秒, etc.).
-Make it full of bizarre twists and pre-generate 3 unique stages of story choices for every NPC/Item.`;
+Make it full of bizarre twists, pre-generate 3 unique stages of story choices with custom actionIds, and 4 to 6 logical fixedEndings defining sequential/combinational butterfly effects.`;
 
     const storyStepSchema = {
       type: Type.OBJECT,
@@ -79,11 +86,12 @@ Make it full of bizarre twists and pre-generate 3 unique stages of story choices
           description: "Exactly 2 or 3 completely unique, creative choice options",
           items: {
             type: Type.OBJECT,
-            required: ["label", "outcomeText", "timeDelta"],
+            required: ["label", "outcomeText", "timeDelta", "actionId"],
             properties: {
               label: { type: Type.STRING, description: "Unique choice text/action" },
               outcomeText: { type: Type.STRING, description: "Unique consequence narrative" },
               timeDelta: { type: Type.INTEGER, description: "Time impact (0 or negative integer representing cost e.g. -5, -10)" },
+              actionId: { type: Type.STRING, description: "Descriptive semantic slug, e.g., 'kick_dog', 'soothe_investor', 'beat_investor', 'ignite_fire', 'open_sprinkler'" },
               isEarlyEnd: { type: Type.BOOLEAN },
               soundHint: { type: Type.STRING }
             }
@@ -100,7 +108,7 @@ Make it full of bizarre twists and pre-generate 3 unique stages of story choices
         responseMimeType: "application/json",
         responseSchema: {
           type: Type.OBJECT,
-          required: ["identity", "theme", "mapLayout", "playerPosition", "npcs", "items", "introText", "ambientMusic"],
+          required: ["identity", "theme", "mapLayout", "playerPosition", "npcs", "items", "introText", "ambientMusic", "fixedEndings"],
           properties: {
             identity: { type: Type.STRING, description: "The specific career/rich identity of the player (e.g., 纳斯达克终极老板)" },
             theme: { type: Type.STRING, description: "The core challenge theme (e.g., IPO上市前倒计时60秒)" },
@@ -168,6 +176,41 @@ Make it full of bizarre twists and pre-generate 3 unique stages of story choices
                 }
               }
             },
+            fixedEndings: {
+              type: Type.ARRAY,
+              description: "A list of 4 to 6 logical predetermined endings with specific action rules, combination patterns, and order sequences",
+              items: {
+                type: Type.OBJECT,
+                required: ["endingId", "title", "description", "priority", "triggerRules"],
+                properties: {
+                  endingId: { type: Type.STRING },
+                  title: { type: Type.STRING, description: "E.g. '公司破产且流落街头', '救火英雄宇宙功臣'" },
+                  description: { type: Type.STRING, description: "Highly cinematic description explaining the ironic outcome based on the specific combination of actions" },
+                  priority: { type: Type.INTEGER, description: "Priority score (e.g. 1 for simple triggers, 3 for combination or sequence triggers, higher priority match overrides lower ones)" },
+                  triggerRules: {
+                    type: Type.OBJECT,
+                    required: ["mustInclude"],
+                    properties: {
+                      mustInclude: {
+                        type: Type.ARRAY,
+                        description: "List of actionId strings that must have been selected to trigger",
+                        items: { type: Type.STRING }
+                      },
+                      forbidInclude: {
+                        type: Type.ARRAY,
+                        description: "List of actionId strings that must NOT have been selected to trigger",
+                        items: { type: Type.STRING }
+                      },
+                      requiredSequence: {
+                        type: Type.ARRAY,
+                        description: "List of actionId strings in chronological relative order. E.g. ['ignite_fire', 'open_sprinkler']. If present, they must be triggered in this exact order.",
+                        items: { type: Type.STRING }
+                      }
+                    }
+                  }
+                }
+              }
+            },
             introText: { type: Type.STRING, description: "Dramatic scrolling introduction setting the stage for the 60-second choice" },
             ambientMusic: { type: Type.STRING, description: "Style of chiptune generated, e.g. 'corporate-jazz', 'yacht-relax', 'alpine-speed', 'space-ambient'" }
           }
@@ -178,8 +221,14 @@ Make it full of bizarre twists and pre-generate 3 unique stages of story choices
     const worldData = JSON.parse(response.text || "{}");
     res.json(worldData);
   } catch (error: any) {
-    console.error("Generate World Error:", error);
-    res.status(500).json({ error: error.message || "Failed to generate world scenario." });
+    console.warn("Generate World Error (using high-quality offline fallback scenario due to API rate limits):", error);
+    try {
+      const fallbackData = getFallbackScenario(req.body.identity);
+      res.json(fallbackData);
+    } catch (fallbackErr: any) {
+      console.error("Critical Fallback Error:", fallbackErr);
+      res.status(500).json({ error: error.message || "Failed to generate world scenario. Please check API Key and try again." });
+    }
   }
 });
 
@@ -243,8 +292,17 @@ Player custom or selected action chosen: "${playerAction || "First touch/Greetin
     const interactionData = JSON.parse(response.text || "{}");
     res.json(interactionData);
   } catch (error: any) {
-    console.error("Interact Error:", error);
-    res.status(500).json({ error: error.message || "Failed to process interaction." });
+    console.warn("Interact API Error (falling back to hilarious generic response):", error);
+    res.json({
+      text: `由于纳斯达克大楼网络信号瞬间极其拥堵（或者是你的宇宙粒子天线信号欠费，服务端429限制），你刚才草率说出的「${req.body.playerAction || "想做点奇奇怪怪的事"}」引起了整个量子宇宙安全局的信息流警报！不过，你的总裁光环保护了你！`,
+      options: [
+        { label: "🧘 回归当下，继续一分钟最后的狂野试炼", action: "continue_trial" }
+      ],
+      allowsFreeInput: true,
+      soundHint: "alert",
+      timeDelta: -5,
+      isEarlyEnd: false
+    });
   }
 });
 
@@ -253,26 +311,88 @@ Player custom or selected action chosen: "${playerAction || "First touch/Greetin
 // ==========================================
 app.post("/api/boss/generate-ending", async (req, res) => {
   try {
-    const { identity, theme, spentTime, interactionLog } = req.body;
+    const { identity, theme, spentTime, interactionLog, actionSequence, fixedEndings } = req.body;
     const ai = getGeminiClient();
 
-    const systemPrompt = `You are the chief legacy assessor of "One Minute Boss" (一分钟老板).
+    let matchedEnding = null;
+    if (fixedEndings && Array.isArray(fixedEndings) && actionSequence && Array.isArray(actionSequence)) {
+      // Sort endings by descending priority to check complex combinations first
+      const sorted = [...fixedEndings].sort((a, b) => (b.priority || 0) - (a.priority || 0));
+      for (const ending of sorted) {
+        if (!ending.triggerRules) continue;
+        let isMatch = true;
+
+        // 1. Check mustInclude rules (All must be present)
+        if (Array.isArray(ending.triggerRules.mustInclude) && ending.triggerRules.mustInclude.length > 0) {
+          for (const requiredAct of ending.triggerRules.mustInclude) {
+            if (!actionSequence.includes(requiredAct)) {
+              isMatch = false;
+              break;
+            }
+          }
+        }
+
+        // 2. Check forbidInclude rules (None must be present)
+        if (isMatch && Array.isArray(ending.triggerRules.forbidInclude) && ending.triggerRules.forbidInclude.length > 0) {
+          for (const forbiddenAct of ending.triggerRules.forbidInclude) {
+            if (actionSequence.includes(forbiddenAct)) {
+              isMatch = false;
+              break;
+            }
+          }
+        }
+
+        // 3. Check requiredSequence rules (Order matching)
+        if (isMatch && Array.isArray(ending.triggerRules.requiredSequence) && ending.triggerRules.requiredSequence.length >= 2) {
+          for (let i = 0; i < ending.triggerRules.requiredSequence.length - 1; i++) {
+            const first = ending.triggerRules.requiredSequence[i];
+            const second = ending.triggerRules.requiredSequence[i + 1];
+            const idx1 = actionSequence.indexOf(first);
+            const idx2 = actionSequence.indexOf(second);
+            if (idx1 === -1 || idx2 === -1 || idx1 >= idx2) {
+              isMatch = false;
+              break;
+            }
+          }
+        }
+
+        if (isMatch) {
+          matchedEnding = ending;
+          break; // Since sorted by descending priority, the highest priority match is our official outcome!
+        }
+      }
+    }
+
+    let systemPrompt = `You are the chief legacy assessor of "One Minute Boss" (一分钟老板).
 Assess the player's final fate based on what occurred to them during their super rich 60-second life.
 Theme: "${theme}"
 Identity: "${identity}"
 Survived/Surrendered: ${spentTime} seconds.
 Here is the interaction trace log of the player's actions in this life:
 ${JSON.stringify(interactionLog || [])}
+`;
 
-Generate:
+    if (matchedEnding) {
+      systemPrompt += `\nCRITICAL RULE TRIGGERED MATCH:
+The player's exact sequence of choices triggers a predetermined FIXED ENDING!
+Ending ID: ${matchedEnding.endingId}
+Ending Title: "${matchedEnding.title}"
+Outcome Script / core storyline: "${matchedEnding.description}"
+
+You MUST write the 'endingText' strictly aligning with the matched fixed ending. Explain and narrative describe how their choice combo/sequence (${actionSequence.join(" -> ")}) produced this exact ironic outcome! Maintain the dramatic, comedic, or disastrous spirit of this outcome.`;
+    } else {
+      systemPrompt += `\nNo specific fixed ending rules match. Write a hilarious, retrospective ending summarizing the butterfly effect of their bizarre choices. Show how they succeeded or catastrophically failed in spending their money/time.`;
+    }
+
+    systemPrompt += `\n\nGenerate:
 1. A unique ID code starting with identity shorthand and a randomized hex tag: (e.g., CEO #F941, HELI #Z302, CHEF #B771).
-2. A glorious, wacky, cosmic title (e.g., '超时空流浪汉', '被外星狗绑架的首席执行官', '无心滑雪的黑洞观测员').
-3. A funny, dramatic, retrospective ending summarizing the butterfly effect of their bizarre choices. Show how they succeeded or catastrophically failed in spending their money/time.
+2. A glorious, wacky, cosmic title (If matchedEnding is present, you should reuse or beautify their title: "${matchedEnding ? matchedEnding.title : ""}").
+3. A funny, dramatic, retrospective ending in 'endingText' based on the guidelines above.
 4. An absurd S-Class/A-Class/B-Class/Wait-what Rank rating for their life.
 5. Stats representation (Butterfly Index, Wealth Splutters).
 6. Absurd achievements unlocked (e.g., "踢了特工狗一脚", "用百亿钢笔撕裂虚空").`;
 
-    const userPrompt = `Compute the final destiny of this 60 seconds of wealth.`;
+    const userPrompt = `Compute the final destiny of this 60 seconds of wealth. Player actions sequence: ${JSON.stringify(actionSequence || [])}`;
 
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
@@ -309,8 +429,96 @@ Generate:
     const endingData = JSON.parse(response.text || "{}");
     res.json(endingData);
   } catch (error: any) {
-    console.error("Ending Gen Error:", error);
-    res.status(500).json({ error: error.message || "Failed to generate your unique ending story." });
+    console.warn("Ending Gen Error (using local high-fidelity rules-based evaluator fallback):", error);
+    try {
+      const { identity, theme, spentTime, actionSequence, fixedEndings } = req.body;
+      
+      let matchedEnding = null;
+      if (fixedEndings && Array.isArray(fixedEndings) && actionSequence && Array.isArray(actionSequence)) {
+        const sorted = [...fixedEndings].sort((a, b) => (b.priority || 0) - (a.priority || 0));
+        for (const ending of sorted) {
+          if (!ending.triggerRules) continue;
+          let isMatch = true;
+
+          // 1. check mustInclude rules
+          if (Array.isArray(ending.triggerRules.mustInclude) && ending.triggerRules.mustInclude.length > 0) {
+            for (const requiredAct of ending.triggerRules.mustInclude) {
+              if (!actionSequence.includes(requiredAct)) {
+                isMatch = false;
+                break;
+              }
+            }
+          }
+
+          // 2. check forbidInclude rules
+          if (isMatch && Array.isArray(ending.triggerRules.forbidInclude) && ending.triggerRules.forbidInclude.length > 0) {
+            for (const forbiddenAct of ending.triggerRules.forbidInclude) {
+              if (actionSequence.includes(forbiddenAct)) {
+                isMatch = false;
+                break;
+              }
+            }
+          }
+
+          // 3. check requiredSequence rules
+          if (isMatch && Array.isArray(ending.triggerRules.requiredSequence) && ending.triggerRules.requiredSequence.length >= 2) {
+            for (let i = 0; i < ending.triggerRules.requiredSequence.length - 1; i++) {
+              const first = ending.triggerRules.requiredSequence[i];
+              const second = ending.triggerRules.requiredSequence[i + 1];
+              const idx1 = actionSequence.indexOf(first);
+              const idx2 = actionSequence.indexOf(second);
+              if (idx1 === -1 || idx2 === -1 || idx1 >= idx2) {
+                isMatch = false;
+                break;
+              }
+            }
+          }
+
+          if (isMatch) {
+            matchedEnding = ending;
+            break;
+          }
+        }
+      }
+
+      // Generate funny offline telemetry
+      const randTag = Math.floor(Math.random() * 8999 + 1000).toString(16).toUpperCase();
+      const shorthand = (identity || "BOSS").slice(0, 3).toUpperCase();
+      const computedId = `${shorthand} #${randTag}`;
+
+      const title = matchedEnding ? matchedEnding.title : "【平平无奇的星际富豪】";
+      const endingText = matchedEnding 
+        ? matchedEnding.description 
+        : `你在「${theme}」的这场大混乱中，共坚持探索了 ${spentTime} 秒。由于你的行动轨迹（${actionSequence.join(" -> ") || "平稳摸鱼"}）巧妙地避开了所有的主因果宇宙灾难，管理局给你判定“功过参半”，你拍拍身上的灰尘，继续戴着大钻戒过快活富豪生活！`;
+
+      const rank = matchedEnding 
+        ? (matchedEnding.priority >= 4 ? "SSS 降维打击级" : "SS 荒诞传奇级") 
+        : "A- 稳扎稳打级";
+
+      const localAchievements = [
+        "因果线的织梦者",
+        matchedEnding ? `达成特定结局：${matchedEnding.title.replace(/[【】]/g, "")}` : "避开宿命的过客"
+      ];
+      if (actionSequence.includes("kick_dog")) localAchievements.push("踢狗特工勋章");
+      if (actionSequence.includes("beat_investor")) localAchievements.push("暴揍李总的铁拳");
+      if (actionSequence.includes("open_sprinkler")) localAchievements.push("消防系统浇灌达人");
+
+      res.json({
+        id: computedId,
+        title,
+        rank,
+        endingText,
+        achievements: localAchievements,
+        stats: {
+          wealthWasted: matchedEnding ? "100% 满重力耗损" : "30% 适度花销",
+          butterflyEffectIndex: matchedEnding ? "999% (爆表)" : "120% (微澜)",
+          insanityLevel: matchedEnding ? "星际观测级" : "循规蹈矩"
+        }
+      });
+    } catch (fallbackErr: any) {
+      console.error("Critical Ending Fallback Error:", fallbackErr);
+      res.status(500).json({ error: error.message || "Failed to generate your unique ending story." });
+    }
   }
 });
 

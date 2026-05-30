@@ -17,8 +17,23 @@ export interface StoryOption {
   label: string;
   outcomeText: string;
   timeDelta: number;
+  actionId: string;
   isEarlyEnd?: boolean;
   soundHint?: string;
+}
+
+export interface TriggerRules {
+  mustInclude: string[];
+  forbidInclude?: string[];
+  requiredSequence?: string[];
+}
+
+export interface FixedEnding {
+  endingId: string;
+  title: string;
+  description: string;
+  priority: number;
+  triggerRules: TriggerRules;
 }
 
 export interface StoryStep {
@@ -64,6 +79,7 @@ export interface WorldScenario {
   items: Item[];
   introText: string;
   ambientMusic: string;
+  fixedEndings?: FixedEnding[];
 }
 
 export interface InteractionChoice {

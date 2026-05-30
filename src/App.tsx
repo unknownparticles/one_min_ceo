@@ -75,6 +75,7 @@ export default function App() {
   const [lastInteractedEntity, setLastInteractedEntity] = useState<{ type: "NPC" | "Item", id: string, name: string } | null>(null);
   const [interactionResult, setInteractionResult] = useState<InteractionResult | null>(null);
   const [entityStageMap, setEntityStageMap] = useState<Record<string, number>>({});
+  const [actionSequence, setActionSequence] = useState<string[]>([]);
   
   // AI query loading triggers
   const [isAiLoading, setIsAiLoading] = useState<boolean>(false);
@@ -181,6 +182,7 @@ export default function App() {
     setLastInteractedEntity(null);
     setInteractionResult(null);
     setEntityStageMap({});
+    setActionSequence([]);
 
     const chosenIdentity = dailyType || selectedPreset.type;
     const finalPrompt = dailyPrompt || customIdentityInput;
@@ -441,6 +443,11 @@ export default function App() {
 
         const opt = step.options[optIndex >= 0 ? optIndex : 0];
 
+        // Track choices for predetermined sequence and compound endings
+        if (opt.actionId) {
+          setActionSequence(prev => [...prev, opt.actionId]);
+        }
+
         // Deduct time
         if (opt.timeDelta) {
           setTimer(t => {
@@ -529,7 +536,9 @@ export default function App() {
           identity: worldScenario?.identity || selectedPreset.name,
           theme: worldScenario?.theme || "一分钟富豪试炼",
           spentTime: 60 - timer,
-          interactionLog: historyLog
+          interactionLog: historyLog,
+          actionSequence: actionSequence,
+          fixedEndings: worldScenario?.fixedEndings || []
         })
       });
 
