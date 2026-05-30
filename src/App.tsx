@@ -37,6 +37,7 @@ import { getDailyChallenge } from "./utils/dailyPresets";
 import { audio } from "./utils/audio";
 import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey } from "./utils/siliconFlow";
 import { getResourcePack } from "./utils/resourceKit";
+import logoUrl from "../assets/logo.png";
 
 // Ticker lines for the header to increase high-contrast satire & immersive feeling
 const METADATA_TICKERS = [
@@ -686,7 +687,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3 cursor-pointer select-none active:scale-95 transition-all" onClick={handleBackToLobby}>
             <div className="w-11 h-11 rounded-xl flex items-center justify-center border border-emerald-300/70 bg-slate-950 shadow neon-glow-emerald overflow-hidden">
-              <img src="/logo.svg" alt="一分钟老板 Logo" className="w-full h-full object-cover" />
+              <img src={logoUrl} alt="一分钟老板 Logo" className="w-full h-full object-cover" />
             </div>
             <div>
               <h1 className="font-mono text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
@@ -1211,7 +1212,7 @@ export default function App() {
                   <div className="bg-slate-950 border-2 border-slate-850 rounded-xl relative overflow-hidden p-4 group">
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.04)_1px,transparent_1px)] bg-[size:16px_16px]"></div>
                     <div className="relative z-10 flex items-start gap-4">
-                      <img src="/logo.svg" alt="一分钟老板资源标识" className="w-20 h-20 rounded-2xl border border-emerald-500/40 shadow-lg shadow-emerald-950/60 shrink-0" />
+                      <img src={logoUrl} alt="一分钟老板资源标识" className="w-20 h-20 rounded-2xl border border-emerald-500/40 shadow-lg shadow-emerald-950/60 shrink-0 object-cover" />
                       <div className="min-w-0">
                         <span className="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded uppercase">
                           RESOURCE KIT
@@ -1278,7 +1279,7 @@ export default function App() {
             <div className="bg-slate-900 border border-slate-800 rounded-3xl p-12 shadow-2xl text-center max-w-md mx-auto space-y-8 animate-pulse">
               <div className="relative inline-block">
                 <div className="w-16 h-16 rounded-full border-4 border-slate-850 border-t-emerald-500 animate-spin"></div>
-                <img src="/logo.svg" alt="一分钟老板 Logo" className="absolute inset-2 rounded-full" />
+                <img src={logoUrl} alt="一分钟老板 Logo" className="absolute inset-2 rounded-full object-cover" />
               </div>
               <div className="space-y-3">
                 <h3 className="font-mono text-lg font-bold text-white">时空资源包正在链上组装...</h3>
