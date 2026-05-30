@@ -67,6 +67,8 @@ const PRESETS = [
   { type: "TYCOON", name: "世界首富大班", icon: "👑", difficulty: 2, description: "名利场晚宴天台上，一枚神秘黑色按钮和虚浮的游艇秘密" }
 ];
 
+const DEFAULT_RANDOM_CONCEPT = "把北极融化的冰用游艇运到沙特卖，顺便推行减肥放电脂肪险";
+
 const normalizeTimeDelta = (value: unknown): number => {
   const parsed = Number(value);
   if (!Number.isFinite(parsed)) return 0;
@@ -248,32 +250,60 @@ export default function App() {
     }
 
     // No input: stream a short random concept before entering the game.
+    // If that optional request is unavailable, keep the start flow moving.
     setIsStreamingConcept(true);
     const setter = isNormalTab ? setWangDuoyuConcept : setCustomIdentityInput;
     setter("");
     let accumulated = "";
+    let settled = false;
+    let cancelStream = () => {};
 
-    const cancel = streamBusinessConcept(
+    const startWithConcept = (concept: string, useFlashOverrides: boolean) => {
+      setter(concept);
+      setIsStreamingConcept(false);
+      const activeProvider = getApiSettings().provider;
+      const overrideModel = useFlashOverrides && activeProvider === "siliconflow" ? FLASH_MODEL : undefined;
+      const overrideThinking = useFlashOverrides && activeProvider === "siliconflow" ? false : undefined;
+      handleStartGame(undefined, undefined, concept, overrideModel, overrideThinking);
+    };
+
+    if (!hasSiliconFlowKey()) {
+      setSystemAlertMessage("⚠️ 未配置可用 API Key，已使用默认构想直接进入本地随机世界。");
+      startWithConcept(DEFAULT_RANDOM_CONCEPT, false);
+      return;
+    }
+
+    const streamTimeout = window.setTimeout(() => {
+      if (settled) return;
+      settled = true;
+      cancelStream();
+      setSystemAlertMessage("⚠️ 随机构想生成超时，已使用默认构想继续进入世界。");
+      startWithConcept(accumulated.trim() || DEFAULT_RANDOM_CONCEPT, false);
+    }, 8000);
+
+    cancelStream = streamBusinessConcept(
       (chunk) => {
+        if (settled) return;
         accumulated += chunk;
         setter(accumulated);
       },
       (fullText) => {
-        setter(fullText);
-        setIsStreamingConcept(false);
-        const activeProvider = getApiSettings().provider;
-        const overrideModel = activeProvider === "siliconflow" ? FLASH_MODEL : undefined;
-        const overrideThinking = activeProvider === "siliconflow" ? false : undefined;
-        handleStartGame(undefined, undefined, fullText, overrideModel, overrideThinking);
+        if (settled) return;
+        settled = true;
+        window.clearTimeout(streamTimeout);
+        startWithConcept(fullText.trim() || DEFAULT_RANDOM_CONCEPT, true);
       },
       (err) => {
-        setIsStreamingConcept(false);
-        setSystemAlertMessage(`⚠️ 流式生成失败：${err.message}`);
+        if (settled) return;
+        settled = true;
+        window.clearTimeout(streamTimeout);
+        setSystemAlertMessage(`⚠️ 流式生成失败：${err.message} 已使用默认构想继续进入世界。`);
+        startWithConcept(accumulated.trim() || DEFAULT_RANDOM_CONCEPT, false);
       }
     );
 
     // Safety: cancel stream if component unmounts
-    return cancel;
+    return cancelStream;
   };
 
   const handleStartGame = async (dailyPrompt?: string, dailyType?: BossIdentityType, forcedConcept?: string, overrideModel?: string, overrideEnableThinking?: boolean) => {

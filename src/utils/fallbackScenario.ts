@@ -80,13 +80,15 @@ export interface FallbackScenario {
 
 interface WorldJson {
   matchKeywords: string[];
-  identity: string;
+  identity: string | { title?: string; description?: string };
   theme: string;
-  mapLayout: {
-    width: number;
-    height: number;
-    tileRules: Record<string, string>;
-  };
+  mapLayout:
+    | {
+        width: number;
+        height: number;
+        tileRules: Record<string, string>;
+      }
+    | string[][];
   playerPosition: { x: number; y: number };
   npcs: FallbackNPC[];
   items: FallbackItem[];
@@ -160,11 +162,39 @@ const worldModules = import.meta.glob<WorldJson>(
   { eager: true }
 );
 
+function isWorldJson(value: unknown): value is WorldJson {
+  const candidate = value as Partial<WorldJson> | null;
+  const mapLayout = candidate?.mapLayout;
+  const hasRuleMap = !!(
+    mapLayout &&
+    !Array.isArray(mapLayout) &&
+    typeof mapLayout.width === "number" &&
+    typeof mapLayout.height === "number" &&
+    mapLayout.tileRules
+  );
+  const hasTileMap = Array.isArray(mapLayout) && Array.isArray(mapLayout[0]);
+
+  return !!(
+    candidate &&
+    Array.isArray(candidate.matchKeywords) &&
+    (typeof candidate.identity === "string" ||
+      (typeof candidate.identity === "object" && typeof candidate.identity?.title === "string")) &&
+    (hasRuleMap || hasTileMap) &&
+    Array.isArray(candidate.npcs) &&
+    Array.isArray(candidate.items)
+  );
+}
+
 function loadAllWorlds(): WorldJson[] {
   const worlds: WorldJson[] = [];
   for (const filePath in worldModules) {
     try {
-      worlds.push(worldModules[filePath] as WorldJson);
+      const world = worldModules[filePath] as unknown;
+      if (isWorldJson(world)) {
+        worlds.push(world);
+      } else {
+        console.warn(`[Fallback] Skipped non-world JSON file "${filePath}"`);
+      }
     } catch (err) {
       console.warn(`[Fallback] Failed to load world file "${filePath}":`, err);
     }
@@ -184,14 +214,25 @@ function getWorlds(): WorldJson[] {
 }
 
 function worldJsonToScenario(w: WorldJson): FallbackScenario {
+  const identity = typeof w.identity === "string"
+    ? w.identity
+    : w.identity.title || "一分钟老板";
+  const mapLayout = Array.isArray(w.mapLayout)
+    ? {
+        width: w.mapLayout[0]?.length || 0,
+        height: w.mapLayout.length,
+        tiles: w.mapLayout,
+      }
+    : {
+        width: w.mapLayout.width,
+        height: w.mapLayout.height,
+        tiles: buildTiles(w.mapLayout.width, w.mapLayout.height, w.mapLayout.tileRules),
+      };
+
   return {
-    identity: w.identity,
+    identity,
     theme: w.theme,
-    mapLayout: {
-      width: w.mapLayout.width,
-      height: w.mapLayout.height,
-      tiles: buildTiles(w.mapLayout.width, w.mapLayout.height, w.mapLayout.tileRules),
-    },
+    mapLayout,
     playerPosition: w.playerPosition,
     npcs: w.npcs,
     items: w.items,
@@ -217,7 +258,7 @@ export function getFallbackScenario(identity: string): FallbackScenario {
   // 1. Try to match by keyword
   if (norm.length > 0) {
     for (const world of worlds) {
-      if (world.matchKeywords.some((kw) => norm.includes(kw.toLowerCase()))) {
+      if (world.matchKeywords.some((kw) => norm.includes(String(kw).toLowerCase()))) {
         return worldJsonToScenario(world);
       }
     }
