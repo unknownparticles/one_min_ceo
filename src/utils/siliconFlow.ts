@@ -120,9 +120,15 @@ const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, 
 
   const startTime = performance.now();
   
-  // Set up 30-second request timeout controller
+  // Set up 5-second request timeout controller and Promise.race for double-insurance
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 30000);
+  let timeoutId: any = null;
+  const timeoutPromise = new Promise<never>((_, reject) => {
+    timeoutId = setTimeout(() => {
+      controller.abort(); // Attempt to abort underlying network request
+      reject(new DOMException("The user aborted a request.", "AbortError"));
+    }, 5000);
+  });
 
   // Initialize timing placeholder in case of early errors
   (callSiliconFlowJson as any).lastTiming = {
@@ -133,26 +139,31 @@ const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, 
   };
 
   try {
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: model,
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: userPrompt },
-        ],
-        response_format: { type: "json_object" },
-        temperature: 0.9,
-        max_tokens: maxTokens,
+    const response = await Promise.race([
+      fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: model,
+          messages: [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: userPrompt },
+          ],
+          response_format: { type: "json_object" },
+          temperature: 0.9,
+          max_tokens: maxTokens,
+        }),
+        signal: controller.signal
       }),
-      signal: controller.signal
-    });
+      timeoutPromise
+    ]);
 
-    clearTimeout(timeoutId);
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
 
     if (!response.ok) {
       const errorText = await response.text().catch(() => "");
@@ -182,7 +193,10 @@ const callSiliconFlowJson = async <T>(systemPrompt: string, userPrompt: string, 
 
     return parsed;
   } catch (error: any) {
-    clearTimeout(timeoutId);
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    controller.abort();
     const totalDuration = performance.now() - startTime;
     (callSiliconFlowJson as any).lastTiming = {
       networkDuration: totalDuration,
