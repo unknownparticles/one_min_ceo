@@ -70,9 +70,17 @@ export function getFallbackScenario(identity: string): FallbackScenario {
   const norm = (identity || "CEO").toLowerCase();
 
   // =========================================================================
-  // 1. DEFAULT: CEO / NASDAG IPO BLOCKBUSTERS (纳斯达克敲钟倒计时60秒)
+  // ROUTING SCENARIOS FOR NORMAL / RANDOM MOMENTS
   // =========================================================================
-  if (norm.includes("ski") || norm.includes("雪") || norm.includes("champion")) {
+  if (norm.includes("meeting") || norm.includes("会议") || norm.includes("开会")) {
+    return getMeetingScenario();
+  } else if (norm.includes("toilet") || norm.includes("厕所") || norm.includes("上厕所")) {
+    return getToiletScenario();
+  } else if (norm.includes("layoff") || norm.includes("裁员") || norm.includes("发裁员")) {
+    return getLayoffScenario();
+  } else if (norm.includes("duoyu") || norm.includes("王多鱼") || norm.includes("normal") || norm.includes("random")) {
+    return getWangDuoyuScenario();
+  } else if (norm.includes("ski") || norm.includes("雪") || norm.includes("champion")) {
     // Skiing Champion Scenario
     return getSkiingScenario();
   } else if (norm.includes("diver") || norm.includes("潜水") || norm.includes("sea")) {
@@ -953,5 +961,374 @@ function getSpaceScenario(): FallbackScenario {
     ],
     introText: "你拥有全仙女星系最奢华的太空港及无数折叠战列舰，号称星河元帅。然而遭遇星际帝国及不公债权高管李总的恶人清算，决定你是否破产并撞毁黑洞的核心星门跃迁系统只保留最后的60秒可自毁！科学家ALIEN在一旁狂吼大叫，汪汪间谍在虎视眈眈，所有的时空风暴都正伴随着你的前进路线飞速盘旋开裂。做出抉择，星际逃离！",
     ambientMusic: "space-ambient"
+  };
+}
+
+function getMeetingScenario(): FallbackScenario {
+  const width = 16;
+  const height = 12;
+  const tiles: string[][] = [];
+
+  for (let r = 0; r < height; r++) {
+    const row: string[] = [];
+    for (let c = 0; c < width; c++) {
+      if (r === 0 || r === height - 1 || c === 0 || c === width - 1) {
+        row.push("wall");
+      } else if (r === 4 && c > 1 && c < 14) {
+        row.push("carpet");
+      } else {
+        row.push("floor");
+      }
+    }
+    tiles.push(row);
+  }
+
+  return {
+    identity: "王多鱼 (开会瞬间)",
+    theme: "董事会狂澜与商业构想最后60秒",
+    mapLayout: { width, height, tiles },
+    playerPosition: { x: 3, y: 5 },
+    npcs: [
+      {
+        id: "npc_investor_meeting",
+        name: "刁难董事 钱总",
+        sprite: "investor",
+        x: 8,
+        y: 4,
+        dialogue: "王多鱼！二爷留下这笔三百万，你居然想投资‘给月球西红柿建遮阳伞’这种荒唐构想？签字作废合同吧！",
+        storyline: [
+          {
+            id: "meeting_stage1",
+            text: "钱总把合同拍在红木会议桌上，满脸嘲讽：『你要么乖乖签字（sign_deal）自愿退出，要么你就用你的三百万去买下一块月球地皮！』",
+            allowsFreeInput: true,
+            options: [
+              { label: "✍️ 冲动买下月球三万亩沙地", outcomeText: "你狂放签字！将150万资金当场转给地皮买手，获得一张印满外星乱码的电子地券！钱总面色铁青说你疯了！", timeDelta: -10, actionId: "buy_moon" },
+              { label: "🤜 把刁难合同团成球塞进他衣服里", outcomeText: "你揪住钱总的高级领带，把合同粗暴塞进他的定制衬衫肚皮里，他当场发出尖叫并大声呼唤保安！", timeDelta: -12, actionId: "beat_investor" }
+            ]
+          }
+        ]
+      }
+    ],
+    items: [
+      {
+        id: "item_coffee_meeting",
+        name: "百亿高能咖啡杯",
+        sprite: "coffee",
+        x: 10,
+        y: 6,
+        description: "高管们喝剩下的滚烫浓缩咖啡，蕴藏着一万倍的荒唐元气！",
+        storyline: [
+          {
+            id: "coffee_meeting_stage1",
+            text: "咖啡杯闪着棕色微光。你是顺热泼到满脸不屑的钱总头顶，还是自己一饮而尽？",
+            options: [
+              { label: "☕ 愤倒咖啡浇董事一身", outcomeText: "你抄起杯子将高热浓缩汁优雅而精准地浇在董事新做的地中海发型上，烫得他像只烤鸭般尖叫原地旋转！", timeDelta: -8, actionId: "pour_coffee" },
+              { label: "🤤 自己壮烈干了这两大杯", outcomeText: "你一饮而尽，心脏像一台V12引擎一样雷鸣巨响！脑海中突然多出十八个无厘头投资草案！", timeDelta: -5, actionId: "drink_coffee" }
+            ]
+          }
+        ]
+      }
+    ],
+    fixedEndings: [
+      {
+        endingId: "ending_meeting_beat_ceo",
+        title: "【董事会格斗赛的总冠军】",
+        description: "本年度最狂野的董事会决议！你不仅把合同揉成一团妥妥塞进了死板的钱总怀里（beat_investor），更是用高热高能咖啡给他来了一次闪电头顶洗礼（pour_coffee）！保安们进门时都被你的气势震慑住，合伙人惊叹你甚至发明了‘咖啡格斗新流派’！二爷的信托不仅未能取消，还被你无序的王霸之气瞬间吓倒，直接宣布你获得了完美的千亿神豪继承冠冕！",
+        priority: 4,
+        triggerRules: { mustInclude: ["beat_investor", "pour_coffee"] }
+      },
+      {
+        endingId: "ending_meeting_moon_ceo",
+        title: "【月球西红柿王国的星际领主】",
+        description: "你把资产全押在了买地球之外的荒漠地皮（buy_moon）！那些唯利是图的古板董事（beat_investor）骂你是个败家不中用的土狗。可就在倒计时结束前一秒，火星开拓团队宣布在月球你买下的那个废坑挖到了超纯金矿陨石！你瞬间成为人类首个外太空矿山主人！二爷显灵狂喜：‘我只是想让你花光，你小子竟然直接通关了宇宙大奖！’",
+        priority: 3,
+        triggerRules: { mustInclude: ["buy_moon"] }
+      }
+    ],
+    introText: "你作为普通人王多鱼，怀揣三百万败家目标，突然被卷入刁难的全球合伙人董事会议室。高管们敲着桌子要你退还第二继承人位置。这绝对是充满压力、狂饮咖啡、砸爆文件并做出最荒谬商业大构想的紧张瞬间！",
+    ambientMusic: "corporate-jazz"
+  };
+}
+
+function getToiletScenario(): FallbackScenario {
+  const width = 16;
+  const height = 12;
+  const tiles: string[][] = [];
+
+  for (let r = 0; r < height; r++) {
+    const row: string[] = [];
+    for (let c = 0; c < width; c++) {
+      if (r === 0 || r === height - 1 || c === 0 || c === width - 1) {
+        row.push("wall");
+      } else if (c % 4 === 0) {
+        row.push("water");
+      } else {
+        row.push("floor");
+      }
+    }
+    tiles.push(row);
+  }
+
+  return {
+    identity: "王多鱼 (困于厕所)",
+    theme: "在全大厦停水加纸巾告零的悲惨瞬间",
+    mapLayout: { width, height, tiles },
+    playerPosition: { x: 2, y: 3 },
+    npcs: [
+      {
+        id: "npc_shite_neighbor",
+        name: "神秘邻座老哥",
+        sprite: "butler",
+        x: 6,
+        y: 5,
+        dialogue: "兄弟，别叹气了……我这也卡在这个死胡同了。我这里只有一份二爷遗留的‘保密商业信托备忘录’，纸质粗糙，你要不要拿去凑合？",
+        storyline: [
+          {
+            id: "toilet_stage1",
+            text: "老哥隔着木板缝递过来那页价值千金的粗糙纸卷：『一千万遗产和一包高级柔顺面纸，不可兼得。你究竟是用这份百亿备忘录擦拉（use_sharp_paper），还是决意保留它？』",
+            allowsFreeInput: true,
+            options: [
+              { label: "🧻 拿二爷的百亿备忘录擦屁股", outcomeText: "刺啦！你咬紧牙关把那张价值巨额资金的旧文书给霍霍了！你感到无比清爽，但隐隐听到九重天上二爷心痛得直哼哼！", timeDelta: -12, actionId: "use_sharp_paper" },
+              { label: "👔 拒绝老哥，用阿玛尼名牌西装袖口解决", outcomeText: "真男人就要狠！你手起刀落反手刺拉一声撕扯了自己的高定西服袖子，面不改色完成清洗操作！", timeDelta: -15, actionId: "clean_cloth" }
+            ]
+          }
+        ]
+      }
+    ],
+    items: [
+      {
+        id: "item_lever_toilet",
+        name: "应急全大厦消防喷淋总闸",
+        sprite: "lever",
+        x: 10,
+        y: 4,
+        description: "锈迹斑斑的一个超巨拉闸，千万别在拉完前按它，会爆发出雷霆万钧之水！",
+        storyline: [
+          {
+            id: "lever_toilet_stage1",
+            text: "总闸发出不祥的红光，拉动它能洗去耻辱吗？",
+            options: [
+              { label: "🚨 狠拉消防总闸！给整层楼下一场极乐暴雨", outcomeText: "你不管不顾用吃奶的劲狠拽拉闸！轰！全楼300个干眼消防喷嘴齐刷刷高密度喷淋，大水铺天盖地而来！", timeDelta: -15, actionId: "open_sprinkler" },
+              { label: "👟 奋起怒踹这个垃圾消防闸机", outcomeText: "你大长腿反手一记旋风一脚！把闸机外壳爆拆，发出一顿火花和警笛啸叫！", timeDelta: -10, actionId: "kick_dog" }
+            ]
+          }
+        ]
+      }
+    ],
+    fixedEndings: [
+      {
+        endingId: "ending_toilet_drown",
+        title: "【海王附体之厕所怒涛救世主】",
+        description: "你真是一个不按套路出牌的奇客！在纸巾和水源双重枯竭时，你撕扯下了自己最昂贵的名牌西服袖衣（clean_cloth），更在一烈怒之下拉开并爆裂了应急消防总水闸（open_sprinkler）！整个大厦的干旱管道瞬时引爆，三百万大水冲流，你顺路洗去满面污垢并让大厦全体职员享受了一把漂流皮划艇之乐！二爷叹赏不已，封你为极速清洁千亿之主！",
+        priority: 4,
+        triggerRules: { mustInclude: ["clean_cloth", "open_sprinkler"] }
+      },
+      {
+        endingId: "ending_paper_ruined",
+        title: "【失去高纯股份的优雅赤贫汉】",
+        description: "你选择了用二爷留下的原始高保全备忘录完成最终揉擦手续（use_sharp_paper）。结果那张合同纸里由于含油墨高纯金元素导致屁股沾了金。更糟糕的是，你签署股权信托的唯一防伪页就这样在马桶流走，大好前程一落千丈，你只能作为最贵的废纸擦拭达人退役归乡！",
+        priority: 3,
+        triggerRules: { mustInclude: ["use_sharp_paper"] }
+      }
+    ],
+    introText: "人在江湖飘，哪有不挨刀。王多鱼突然在败家大业紧要关头遭遇了终极困境：人在豪华写字楼三十层的厕所最深处，屁股尚未处理完，而此时大楼广播宣布由于供水管网维修，全楼断水且保洁阿姨忘带卫生纸！你手心里汗珠滚滚，倒计时60秒，做出艰难决断吧！",
+    ambientMusic: "corporate-jazz"
+  };
+}
+
+function getLayoffScenario(): FallbackScenario {
+  const width = 16;
+  const height = 12;
+  const tiles: string[][] = [];
+
+  for (let r = 0; r < height; r++) {
+    const row: string[] = [];
+    for (let c = 0; c < width; c++) {
+      if (r === 0 || r === height - 1 || c === 0 || c === width - 1) {
+        row.push("wall");
+      } else if (r === height - 2) {
+        row.push("deck");
+      } else {
+        row.push("floor");
+      }
+    }
+    tiles.push(row);
+  }
+
+  return {
+    identity: "王多鱼 (发裁员信中)",
+    theme: "在给骨干大壮发裁员不给赔偿通知的极限拉扯瞬间",
+    mapLayout: { width, height, tiles },
+    playerPosition: { x: 5, y: 5 },
+    npcs: [
+      {
+        id: "npc_dev_dazhuang",
+        name: "首席软件工程师 大壮",
+        sprite: "robot",
+        x: 8,
+        y: 4,
+        dialogue: "我的代码跑了整个星系！你特么居然在这个最后60秒，要不给一分赔偿开除我？你信不信我直接按下删库大按钮？",
+        storyline: [
+          {
+            id: "layoff_stage1",
+            text: "大壮从背包掏出带一排闪亮警报的机自爆硬盘：『只要我按下去，公司核心数据库立刻物理超度！你是要用三百万投资打通阻隔（sign_deal），还是怒斥他是个刺头？』",
+            allowsFreeInput: true,
+            options: [
+              { label: "🤝 全款补偿300万！大肆注资买下他的代码库", outcomeText: "你不仅不逃避，还大喜过望全款豪掷补偿！大壮当场惊呆，痛哭流涕表示要为你死心塌地写满500年汇编指令！", timeDelta: -10, actionId: "sign_deal" },
+              { label: "🐕 一怒之下：大喊『小狗咬他』并驱逐它", outcomeText: "你暴跳如雷拒绝出钱！顺势一脚飞踹了身旁正在昏睡的宠物保镖‘富贵’（kick_dog）！富贵一声厉嚎竟然爆射咬破了大壮的自爆起爆机！", timeDelta: -12, actionId: "kick_dog" }
+            ]
+          }
+        ]
+      }
+    ],
+    items: [
+      {
+        id: "item_shredder",
+        name: "绝密粉碎办公碎纸机",
+        sprite: "chest",
+        x: 3,
+        y: 3,
+        description: "一个疯狂吞噬一切白纸和信件的轰鸣机器！",
+        storyline: [
+          {
+            id: "shredder_stage1",
+            text: "碎纸机在咔嚓鸣叫，你是要把这该死的非法裁员判决合同喂进去（press_rocket），还是引火自焚制造火灾？",
+            options: [
+              { label: "📝 优雅塞入并粉碎整个离职合同", outcomeText: "刺刺咔咔！无理的劳务判定当场化为细白雪花屑，大壮愣在原地，两人的矛盾瞬间变得非常无厘头！", timeDelta: -8, actionId: "press_rocket" },
+              { label: "🔥 塞进电池引燃碎纸机制造火海", outcomeText: "你大笑着往高密粉碎齿轮里塞了一块干电池，伴随一阵乱响火光闪过，碎纸机轰然爆燃起熊熊烈火！", timeDelta: -10, actionId: "ignite_fire" }
+            ]
+          }
+        ]
+      }
+    ],
+    fixedEndings: [
+      {
+        endingId: "ending_layoff_hack",
+        title: "【重获尊严的代码宇宙保卫元帅】",
+        description: "你把资金全额拿来做离职包退注资代码库（sign_deal），更粉碎了劳民伤财的不合理契约（press_rocket）！大壮感动得表示虽然这极度混乱，但他要一往无前地为您架构大聪明商业引擎！你完美花光了拖后腿的三百万，还额外白捡了一支顶级极客团队！二爷在梦里直接颁发给你‘科技败家王’荣誉！",
+        priority: 4,
+        triggerRules: { mustInclude: ["sign_deal", "press_rocket"] }
+      },
+      {
+        endingId: "ending_layoff_war",
+        title: "【灰飞烟灭的劳动总裁刺头】",
+        description: "你竟然又放狗咬大壮（kick_dog）又自研干电池引燃碎纸柜（ignite_fire）！大楼里狗在跑、火在烧、数据大坝整体脱焊漏水！你不仅钱一毛没花掉，整个人还被大批赶到的劳纠特工一屁股锁拿到了看守所里吹冷风反省。",
+        priority: 4,
+        triggerRules: { mustInclude: ["kick_dog", "ignite_fire"] }
+      }
+    ],
+    introText: "你突遇无礼合伙人强制指派：在60秒内开退首席大壮。大壮极度愤怒扬言要删库跑路。这是一次充满灰色嘲讽与职场智慧的精彩离索较量！",
+    ambientMusic: "corporate-jazz"
+  };
+}
+
+function getWangDuoyuScenario(): FallbackScenario {
+  const width = 16;
+  const height = 12;
+  const tiles: string[][] = [];
+
+  for (let r = 0; r < height; r++) {
+    const row: string[] = [];
+    for (let c = 0; c < width; c++) {
+      if (r === 0 || r === height - 1 || c === 0 || c === width - 1) {
+        row.push("wall");
+      } else if (r === 6 && c > 1 && c < 14) {
+        row.push("carpet");
+      } else {
+        row.push("floor");
+      }
+    }
+    tiles.push(row);
+  }
+
+  return {
+    identity: "王多鱼 (败家挑战)",
+    theme: "限时花光三百万巨额遗产的生死较量",
+    mapLayout: { width, height, tiles },
+    playerPosition: { x: 3, y: 4 },
+    npcs: [
+      {
+        id: "npc_advisor_daming",
+        name: "超脑总顾问 大聪明",
+        sprite: "butler",
+        x: 6,
+        y: 3,
+        dialogue: "老板！我刚刚领悟了无厘头败家商业的真谛：发明‘北极融化的冰全款运往赤道撒哈拉降温计划’！预算只要150万！要立刻开工投产吗？",
+        storyline: [
+          {
+            id: "advisor_daming_stage1",
+            text: "大聪明甩了甩他浓密的刘海：『只要您同意签署这项荒诞投资协议，我们立刻组织全球海运游艇拉冷开水，绝对能让您的资产在一分钟内产生惊天动地的巨额折损亏空！』",
+            allowsFreeInput: true,
+            options: [
+              { label: "🤝 豪掷150万！开辟撒哈拉运冰冷饮冷航线", outcomeText: "你狂放挥笔全签了！大聪明热泪盈眶大吼：‘人类商业史上最具毁灭性亏蚀之大手笔诞生了！’ 150万元瞬间从你的理财锁中划拨流去！", timeDelta: -10, actionId: "invest_desert_ice" },
+              { label: "🧐 拒斥大聪明，我要搞更败家的‘全民减肥脂肪险’", outcomeText: "你高瞻远瞩，提出让市民全民减肥越减越送黄金的极品亏空保险协议，大聪明震怒佩服：『妙啊！老板的败家造诣居然远胜我千倍！』 再次把150万成功败走！", timeDelta: -10, actionId: "invest_fat_insurance" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "npc_trap_investor",
+        name: "死对头保险理财师 李总",
+        sprite: "investor",
+        x: 10,
+        y: 5,
+        dialogue: "王多鱼！二爷的巨额财产应该安全吃复利生息！我这里有一份稳赚不亏的年化15%保本理财，一键签署，让你直接多赚30万收益！哈哈哈哈！",
+        storyline: [
+          {
+            id: "trap_investor_stage1",
+            text: "李总提着密码箱，不怀好意地拦在通往资本出逃拉闸旁：『你若是不买定期寿险（buy_savings），那就是在跟钱过不去，我会向二爷信托委员会举报你违规恶意弃款！』",
+            options: [
+              { label: "💰 签了！一键买下保障大礼和定期生息理财", outcomeText: "坏了！你随手签了定期高额理财合同，看着账户余额瞬间不仅没有砸光，反而额外多出好多万利息红利，你直接哭出了声音！", timeDelta: -15, actionId: "buy_savings" },
+              { label: "🤜 狠狠反手暴扁这个不怀好意让你赚利息的李总", outcomeText: "打得好！你一拳直勾勾暴打破他的势利鼻扣，金条撒了一地。打完虽爽，但耽搁了十几秒败家大好时光！", timeDelta: -10, actionId: "beat_investor" }
+            ]
+          }
+        ]
+      }
+    ],
+    items: [
+      {
+        id: "item_rocket_burner",
+        name: "三级高能高空烟火发射拉杆",
+        sprite: "lever",
+        x: 12,
+        y: 4,
+        description: "一次可以烧掉二十五万吨高端镁合金燃油燃料的不祥红色闸阀！",
+        storyline: [
+          {
+            id: "rocket_burner_stage1",
+            text: "发射阀正在空转轰鸣。你是要大力拉满一键往大气层燃放两百万空空烟花（open_sprinkler），还是把路过巡视的资产守卫狗踢一顿？",
+            options: [
+              { label: "🔥 狂拉点火闸！制造全城两百万黄金融资礼花大秀", outcomeText: "轰隆隆！五彩的高纯金属合金礼炮从三十层天台怒冲向夜空，全城天空都在为你挥金泼银，大批网友高呼‘王总真乃夜空中最亮的星！’", timeDelta: -15, actionId: "open_sprinkler" },
+              { label: "🐕 顺脚一踹资产狗撕碎整个安全总线", outcomeText: "你一脚把一旁阻水吊起的看家哈士奇踢了屁股（kick_dog）！小狗一口咬烂了防灾总线，全区电力发生奇妙大停摆！", timeDelta: -10, actionId: "kick_dog" }
+            ]
+          }
+        ]
+      }
+    ],
+    fixedEndings: [
+      {
+        endingId: "ending_trap_saving_fail",
+        title: "【因发财太快被取消资格的悲情普通人】",
+        description: "二爷显灵，震怒咆哮！由于你在关键时候轻信了老奸巨猾的理财师李总，竟然购买了年化15%的保本理财信托（buy_savings）！在清算瞬间你的资本多出整整几万利息红利！本应该继承的千亿万亿遗产当场扣免，你被迫在大气层跑路流离！",
+        priority: 5,
+        triggerRules: { mustInclude: ["buy_savings"] }
+      },
+      {
+        endingId: "ending_duoyu_great_success",
+        title: "【横跨星际时代的终极败家财阀主宰】",
+        description: "真正的败家魔术师！千秋万代第一天才！你用完了全部遗产注入神荒的商业大谋划中（invest_desert_ice / invest_fat_insurance），更燃放了两百万的璀璨干雨礼花炮（open_sprinkler），把钱花得精光！二爷托梦老泪众横狂点五个赞！你当场继承王氏千亿联合财阀！",
+        priority: 4,
+        triggerRules: { mustInclude: ["invest_desert_ice", "open_sprinkler"] }
+      },
+      {
+        endingId: "ending_layoff_beaten",
+        title: "【无缘遗产并背负因果案底的狂放人】",
+        description: "你的动作确实非常狂野，你一拳擂烂了送财李总的牙齿（beat_investor），更踢了大闸口的看家哈士奇（kick_dog）！你不仅钱一毛没花掉，整个人还被带到了太空收留所反省错失千亿大奖的悔泪滋味。",
+        priority: 4,
+        triggerRules: { mustInclude: ["beat_investor", "kick_dog"] }
+      }
+    ],
+    introText: "你是普通人王多鱼！天降惊雷，你的二爷给你留下了巨额资产，但根据协议，你需要先在一分钟里面把这手头的三百万砸得干干净净才能合法拥有金山，去挥金泼银败光一切吧！",
+    ambientMusic: "corporate-jazz"
   };
 }

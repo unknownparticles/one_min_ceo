@@ -66,7 +66,9 @@ export default function App() {
   const [hasApiKey, setHasApiKey] = useState<boolean>(true);
   
   // Lobby Subtabs
-  const [activeTab, setActiveTab] = useState<"presets" | "album" | "daily" | "vip">("presets");
+  const [activeTab, setActiveTab] = useState<"normal" | "presets" | "album" | "daily" | "vip">("normal");
+  const [isVip, setIsVip] = useState<boolean>(false);
+  const [wangDuoyuConcept, setWangDuoyuConcept] = useState<string>("");
 
   // Game Play States
   const [worldScenario, setWorldScenario] = useState<WorldScenario | null>(null);
@@ -184,8 +186,25 @@ export default function App() {
     setEntityStageMap({});
     setActionSequence([]);
 
-    const chosenIdentity = dailyType || selectedPreset.type;
-    const finalPrompt = dailyPrompt || customIdentityInput;
+    const isNormal = activeTab === "normal" && !dailyType;
+    let chosenIdentity = "";
+    let finalPrompt = "";
+
+    if (isNormal) {
+      const NORMAL_MOMENTS = [
+        { id: "MEETING", title: "董事会开会瞬间" },
+        { id: "SKI", title: "滑雪绝境" },
+        { id: "TOILET", title: "上厕所停水无纸" },
+        { id: "LAYOFF", title: "给刁难骨干发裁员通知" },
+        { id: "WANG_DUOYU", title: "继承二爷遗产限时败光三百万" }
+      ];
+      const randMoment = NORMAL_MOMENTS[Math.floor(Math.random() * NORMAL_MOMENTS.length)];
+      chosenIdentity = randMoment.id;
+      finalPrompt = `你是普通人王多鱼，大发横财需要败光三百万！当前的随机时间瞬间落在：『${randMoment.title}』，你的创业败家商业构思是：${wangDuoyuConcept.trim() || '把北极融化的冰用游艇运到沙特卖，或者推行减肥放电脂肪险'}`;
+    } else {
+      chosenIdentity = dailyType || selectedPreset.type;
+      finalPrompt = dailyPrompt || customIdentityInput;
+    }
 
     window.localStorage.setItem("currentIdentityType", chosenIdentity);
 
@@ -670,7 +689,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <button
               onClick={toggleMute}
-              className="p-2 bg-slate-850 hover:bg-slate-800 text-slate-300 hover:text-emerald-400 rounded-lg border border-slate-700 transition cursor-pointer"
+              className="p-2 bg-slate-850 hover:bg-slate-800 text-slate-300 hover:text-emerald-400 rounded-lg border border-slate-700 transition cursor-pointer flex items-center justify-center"
               title={isAudioMuted ? "播放声音" : "静音"}
             >
               {isAudioMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
@@ -705,7 +724,7 @@ export default function App() {
 
           {/* 1. LOBBY STATE */}
           {gameState === "lobby" && (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start animate-fade-in">
               
               {/* Left Column: Selector and prompt */}
               <div className="lg:col-span-7 bg-slate-900 rounded-2xl border border-slate-800/80 p-6 md:p-8 shadow-xl relative overflow-hidden">
@@ -726,41 +745,66 @@ export default function App() {
                 {/* Tab layout selectors */}
                 <div className="flex border-b border-slate-800 mb-6 font-mono text-xs overflow-x-auto whitespace-nowrap gap-2 scrollbar-none">
                   <button
-                    onClick={() => setActiveTab("presets")}
+                    onClick={() => {
+                      setActiveTab("normal");
+                      audio.playSound("walk");
+                    }}
+                    className={`pb-3 px-2 font-bold transition border-b-2 cursor-pointer flex items-center gap-1.5 ${
+                      activeTab === "normal"
+                        ? "border-emerald-400 text-emerald-400"
+                        : "border-transparent text-slate-400 hover:text-slate-205"
+                    }`}
+                  >
+                    🌱 普通人随机人生
+                  </button>
+                  <button
+                    onClick={() => {
+                      setActiveTab("presets");
+                      audio.playSound("walk");
+                    }}
                     className={`pb-3 px-2 font-bold transition border-b-2 cursor-pointer flex items-center gap-1.5 ${
                       activeTab === "presets"
                         ? "border-emerald-400 text-emerald-400"
-                        : "border-transparent text-slate-400 hover:text-slate-250"
+                        : "border-transparent text-slate-400 hover:text-slate-205"
                     }`}
                   >
-                    <Crown size={14} /> 世袭尊贵身份
+                    <Crown size={14} /> 世袭尊贵身份 {!isVip && "🔒"}
                   </button>
                   <button
-                    onClick={() => setActiveTab("daily")}
+                    onClick={() => {
+                      setActiveTab("daily");
+                      audio.playSound("walk");
+                    }}
                     className={`pb-3 px-2 font-bold transition border-b-2 cursor-pointer flex items-center gap-1.5 ${
                       activeTab === "daily"
                         ? "border-emerald-400 text-emerald-400"
-                        : "border-transparent text-slate-400 hover:text-slate-250"
+                        : "border-transparent text-slate-400 hover:text-slate-205"
                     }`}
                   >
-                    <Clock size={14} /> 每日特色人生
+                    <Clock size={14} /> 每日特色人生 {!isVip && "🔒"}
                   </button>
                   <button
-                    onClick={() => setActiveTab("album")}
+                    onClick={() => {
+                      setActiveTab("album");
+                      audio.playSound("walk");
+                    }}
                     className={`pb-3 px-2 font-bold transition border-b-2 cursor-pointer flex items-center gap-1.5 ${
                       activeTab === "album"
                         ? "border-emerald-400 text-emerald-400"
-                        : "border-transparent text-slate-400 hover:text-slate-250"
+                        : "border-transparent text-slate-400 hover:text-slate-205"
                     }`}
                   >
-                    <BookOpen size={14} /> 人生传承卡券 ({savedEndings.length})
+                    <BookOpen size={14} /> 人生传承馆 ({savedEndings.length})
                   </button>
                   <button
-                    onClick={() => setActiveTab("vip")}
+                    onClick={() => {
+                      setActiveTab("vip");
+                      audio.playSound("walk");
+                    }}
                     className={`pb-3 px-2 font-bold transition border-b-2 cursor-pointer flex items-center gap-1.5 ${
                       activeTab === "vip"
                         ? "border-emerald-400 text-emerald-400"
-                        : "border-transparent text-slate-400 hover:text-slate-250"
+                        : "border-transparent text-slate-400 hover:text-slate-205"
                     }`}
                   >
                     <Coins size={14} /> 商业权力特许
@@ -768,6 +812,50 @@ export default function App() {
                 </div>
 
                 <AnimatePresence mode="wait">
+                  {/* TAB 0: ORDINARY NORMAL PERSON */}
+                  {activeTab === "normal" && (
+                    <motion.div
+                      key="normal"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      className="space-y-4"
+                    >
+                      <div className="p-4 bg-slate-950/60 border border-slate-800 rounded-xl space-y-4 relative overflow-hidden">
+                        <div className="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-mono font-bold absolute top-3 right-3 uppercase">
+                          🌱 默认普通通道
+                        </div>
+                        <span className="text-2xl block animate-bounce mt-1">🤵</span>
+                        <h3 className="font-mono text-xs font-bold text-white uppercase tracking-wider">
+                          普通人背景：花光三百万败家对赌
+                        </h3>
+                        
+                        <p className="text-xs text-slate-300 leading-relaxed font-serif bg-slate-900 border border-slate-850 p-4 rounded-xl shadow-inner">
+                          你是王多鱼，你的二爷给你留下了巨额遗产，但很不幸，你需要先花光这三百万才能继承，现在，放手一搏吧！
+                        </p>
+
+                        {/* Interactive custom business input */}
+                        <div className="space-y-2 pt-2">
+                          <label className="block text-xs font-mono font-bold text-slate-300 uppercase tracking-widest flex items-center justify-between">
+                            <span>开启你的商业构想输入框:</span>
+                            <span className="text-[9px] text-emerald-400 font-semibold uppercase font-mono">写下你的败家构想</span>
+                          </label>
+                          <textarea
+                            value={wangDuoyuConcept}
+                            onChange={(e) => setWangDuoyuConcept(e.target.value)}
+                            placeholder="输入让大聪明和钱总目瞪口呆的项目：如“北极冰川海水航拉至撒哈拉”、“推行全城减肥放电脂肪保险”、“组建首富太空哈士奇间谍队”！"
+                            className="w-full h-24 bg-slate-900 border border-slate-800 rounded-xl p-3 font-mono text-xs text-white focus:outline-none focus:border-emerald-500 placeholder-slate-650 resize-none"
+                          />
+                        </div>
+
+                        <div className="flex items-center gap-2.5 p-3 bg-slate-900/60 border border-slate-850 rounded-xl text-[10px] text-slate-400 font-mono">
+                          <Info size={14} className="text-emerald-500 shrink-0" />
+                          <span>游戏开始后，你将完全随机零时传送到以下一个精彩瞬间：开会、滑雪、上厕所、给员工发裁员通知！</span>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+
                   {/* TAB 1: PRESETS */}
                   {activeTab === "presets" && (
                     <motion.div
@@ -777,48 +865,74 @@ export default function App() {
                       exit={{ opacity: 0 }}
                       className="space-y-4"
                     >
-                      <label className="block text-xs font-mono font-bold text-slate-300 uppercase tracking-widest">
-                        选择你的天生神豪血脉:
-                      </label>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                        {PRESETS.map((p) => (
+                      {!isVip ? (
+                        <div className="text-center py-8 px-4 bg-slate-950/85 border border-rose-500/20 rounded-xl space-y-4">
+                          <div className="w-12 h-12 bg-rose-500/10 rounded-full flex items-center justify-center border border-rose-500/30 mx-auto animate-pulse">
+                            <Crown size={24} className="text-rose-450" />
+                          </div>
+                          <div className="space-y-1.5">
+                            <h4 className="font-mono text-xs font-bold text-white">🔒 世袭尊贵血脉已锁定</h4>
+                            <p className="text-[10px] font-mono text-slate-400 max-w-sm mx-auto leading-relaxed">
+                              世袭神豪身份（如米其林名厨、太空旅行富商等）为尊贵的 VIP 会员特权。普通人默认开启王多鱼随机人生！
+                            </p>
+                          </div>
                           <button
-                            key={p.type}
                             onClick={() => {
-                              setSelectedPreset(p);
-                              audio.playSound("walk");
+                              setIsVip(true);
+                              audio.playSound("bling");
+                              setSystemAlertMessage("📣 恭喜！您已成功假冒并一键激活【永久尊贵VIP特权】！世袭权贵选项已可以自由调遣！");
                             }}
-                            className={`p-3 rounded-xl border text-left transition active:scale-95 cursor-pointer relative overflow-hidden group ${
-                              selectedPreset.type === p.type
-                                ? "bg-slate-800 border-emerald-400 shadow-md shadow-emerald-900/10 text-emerald-300"
-                                : "bg-slate-850/60 border-slate-800 hover:border-slate-720 text-slate-320 hover:bg-slate-850"
-                            }`}
+                            className="px-4 py-2 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-950 font-mono font-bold text-[10px] rounded-xl transition duration-150 active:scale-95 shadow-md shadow-amber-900/40 cursor-pointer inline-block"
                           >
-                            <span className="text-xl inline-block mb-1 group-hover:scale-120 transition-transform">{p.icon}</span>
-                            <h4 className="font-mono font-bold text-xs block text-white">{p.name}</h4>
-                            <p className="text-[9px] text-slate-450 mt-1 line-clamp-1">{p.type}</p>
+                            💳 零元尊享：一键免费升级 VIP
                           </button>
-                        ))}
-                      </div>
+                        </div>
+                      ) : (
+                        <>
+                          <label className="block text-xs font-mono font-bold text-slate-300 uppercase tracking-widest">
+                            选择你的天生神豪血脉:
+                          </label>
+                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                            {PRESETS.map((p) => (
+                              <button
+                                key={p.type}
+                                onClick={() => {
+                                  setSelectedPreset(p);
+                                  audio.playSound("walk");
+                                }}
+                                className={`p-3 rounded-xl border text-left transition active:scale-95 cursor-pointer relative overflow-hidden group ${
+                                  selectedPreset.type === p.type
+                                    ? "bg-slate-800 border-emerald-400 shadow-md shadow-emerald-900/10 text-emerald-300"
+                                    : "bg-slate-850/60 border-slate-800 hover:border-slate-720 text-slate-320 hover:bg-slate-850"
+                                }`}
+                              >
+                                <span className="text-xl inline-block mb-1 group-hover:scale-120 transition-transform">{p.icon}</span>
+                                <h4 className="font-mono font-bold text-xs block text-white">{p.name}</h4>
+                                <p className="text-[9px] text-slate-450 mt-1 line-clamp-1">{p.type}</p>
+                              </button>
+                            ))}
+                          </div>
 
-                      <div className="mt-4 p-3 bg-slate-850 rounded-xl border border-slate-800 text-xs text-slate-300 leading-snug font-mono">
-                        <span className="text-emerald-400 font-bold block mb-1">🔍 首领背景故事:</span>
-                        {selectedPreset.description}
-                      </div>
+                          <div className="mt-4 p-3 bg-slate-850 rounded-xl border border-slate-800 text-xs text-slate-300 leading-snug font-mono">
+                            <span className="text-emerald-400 font-bold block mb-1">🔍 首领背景故事:</span>
+                            {selectedPreset.description}
+                          </div>
 
-                      {/* Custom Identity Prompt modifier */}
-                      <div className="space-y-2 pt-3">
-                        <label className="block text-xs font-mono font-bold text-slate-300 uppercase tracking-widest flex items-center justify-between">
-                          <span>自定义神豪特征 (AI专属定制线):</span>
-                          <span className="text-[9px] text-emerald-400">高度自由</span>
-                        </label>
-                        <textarea
-                          value={customIdentityInput}
-                          onChange={(e) => setCustomIdentityInput(e.target.value)}
-                          placeholder="例如: 此时他兜里揣着一颗在月球捡到的巧克力豆、或者这艘游艇其实是他昨天用1美分在垃圾场换的高科技宇宙飞艇..."
-                          className="w-full h-20 bg-slate-950 border border-slate-800 rounded-xl p-3 font-mono text-xs text-white focus:outline-none focus:border-emerald-500 placeholder-slate-650 resize-none"
-                        />
-                      </div>
+                          {/* Custom Identity Prompt modifier */}
+                          <div className="space-y-2 pt-3">
+                            <label className="block text-xs font-mono font-bold text-slate-300 uppercase tracking-widest flex items-center justify-between">
+                              <span>自定义神豪特征 (AI专属定制线):</span>
+                              <span className="text-[9px] text-emerald-400">高度自由</span>
+                            </label>
+                            <textarea
+                              value={customIdentityInput}
+                              onChange={(e) => setCustomIdentityInput(e.target.value)}
+                              placeholder="例如: 此时他兜里揣着一颗在月球捡到的巧克力豆、或者这艘游艇其实是他昨天用1美分在垃圾场换的高科技宇宙飞艇..."
+                              className="w-full h-20 bg-slate-950 border border-slate-800 rounded-xl p-3 font-mono text-xs text-white focus:outline-none focus:border-emerald-500 placeholder-slate-650 resize-none"
+                            />
+                          </div>
+                        </>
+                      )}
                     </motion.div>
                   )}
 
@@ -831,36 +945,62 @@ export default function App() {
                       exit={{ opacity: 0 }}
                       className="space-y-4"
                     >
-                      <div className="p-4 bg-gradient-to-r from-emerald-950/40 to-slate-950 border border-emerald-500/20 rounded-xl">
-                        <span className="text-[9px] bg-emerald-400 text-slate-950 font-bold px-1.5 py-0.5 rounded uppercase font-mono tracking-wider">
-                          DAILY PRESET
-                        </span>
-                        <h3 className="text-lg font-mono font-bold text-white mt-2">
-                          {getDailyChallenge().title}
-                        </h3>
-                        <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                          {getDailyChallenge().description}
-                        </p>
-                        
-                        <div className="mt-4 p-3 bg-slate-900 border border-slate-800 rounded-lg">
-                          <span className="text-[10px] text-amber-300 block font-mono">⚡ 推荐AI演进线:</span>
-                          <p className="text-xs font-mono italic text-slate-300 mt-1">
-                            &quot;{getDailyChallenge().customPrompt}&quot;
-                          </p>
+                      {!isVip ? (
+                        <div className="text-center py-8 px-4 bg-slate-950/85 border border-rose-500/20 rounded-xl space-y-4">
+                          <div className="w-12 h-12 bg-rose-500/10 rounded-full flex items-center justify-center border border-rose-500/30 mx-auto animate-pulse">
+                            <Clock size={24} className="text-rose-450" />
+                          </div>
+                          <div className="space-y-1.5">
+                            <h4 className="font-mono text-xs font-bold text-white">🔒 每日特色人生已锁定</h4>
+                            <p className="text-[10px] font-mono text-slate-400 max-w-sm mx-auto leading-relaxed">
+                              每日特色对决剧本为尊贵的 VIP 会员专属特权组合。普通市民可在“普通人”中爽快败家！
+                            </p>
+                          </div>
+                          <button
+                            onClick={() => {
+                              setIsVip(true);
+                              audio.playSound("bling");
+                              setSystemAlertMessage("📣 恭喜！您已成功开通并在时空法庭冒充【永久尊贵VIP超级勋爵】！每日挑战剧本包已完全解锁！");
+                            }}
+                            className="px-4 py-2 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-slate-950 font-mono font-bold text-[10px] rounded-xl transition duration-150 active:scale-95 shadow-md shadow-amber-900/40 cursor-pointer inline-block"
+                          >
+                            💳 零元尊享：一键免费升级 VIP
+                          </button>
                         </div>
+                      ) : (
+                        <>
+                          <div className="p-4 bg-gradient-to-r from-emerald-950/40 to-slate-950 border border-emerald-500/20 rounded-xl">
+                            <span className="text-[9px] bg-emerald-400 text-slate-950 font-bold px-1.5 py-0.5 rounded uppercase font-mono tracking-wider">
+                              DAILY PRESET
+                            </span>
+                            <h3 className="text-lg font-mono font-bold text-white mt-2">
+                              {getDailyChallenge().title}
+                            </h3>
+                            <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                              {getDailyChallenge().description}
+                            </p>
+                            
+                            <div className="mt-4 p-3 bg-slate-900 border border-slate-800 rounded-lg">
+                              <span className="text-[10px] text-amber-300 block font-mono">⚡ 推荐AI演进线:</span>
+                              <p className="text-xs font-mono italic text-slate-300 mt-1">
+                                &quot;{getDailyChallenge().customPrompt}&quot;
+                              </p>
+                            </div>
 
-                        <button
-                          onClick={() => handleStartGame(getDailyChallenge().customPrompt, getDailyChallenge().identityType)}
-                          className="w-full mt-4 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-mono font-bold rounded-lg transition active:scale-95 select-none cursor-pointer flex items-center justify-center gap-1 text-xs"
-                        >
-                          <Play size={14} className="fill-current" /> 接受今日推荐人生挑战
-                        </button>
-                      </div>
+                            <button
+                              onClick={() => handleStartGame(getDailyChallenge().customPrompt, getDailyChallenge().identityType)}
+                              className="w-full mt-4 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-mono font-bold rounded-lg transition active:scale-95 select-none cursor-pointer flex items-center justify-center gap-1 text-xs"
+                            >
+                              <Play size={14} className="fill-current" /> 接受今日推荐人生挑战
+                            </button>
+                          </div>
 
-                      <div className="flex items-center gap-2 p-2 bg-slate-950 border border-slate-850 rounded text-[10px] text-slate-400 font-mono">
-                        <Info size={12} className="text-emerald-500" />
-                        <span>每日挑战根据当前真实世界重构，通关可直接解锁收藏殿堂专属绝版徽章。</span>
-                      </div>
+                          <div className="flex items-center gap-2 p-2 bg-slate-950 border border-slate-850 rounded text-[10px] text-slate-400 font-mono">
+                            <Info size={12} className="text-emerald-500" />
+                            <span>每日挑战根据真实世界突发事件重组，成功通关可解锁世界树纪念馆卡券。</span>
+                          </div>
+                        </>
+                      )}
                     </motion.div>
                   )}
 
@@ -875,8 +1015,8 @@ export default function App() {
                     >
                       {savedEndings.length === 0 ? (
                         <div className="text-center py-12 bg-slate-950 border border-slate-850 rounded-xl font-mono text-xs text-slate-500 space-y-2">
-                          <span>🌌 你的“人生世界收藏馆”目前空空如也呢。</span>
-                          <p className="text-[10px] text-slate-600">完成第一次1分钟神豪探索，即可在此永久收集你的因果法则卡！</p>
+                          <span>🌌 你的“人生传承馆”目前空空如也呢。</span>
+                          <p className="text-[10px] text-slate-600">完成一次一分钟神豪失败或救世探索，即可在此永久收集你的命运纪念卡牌！</p>
                         </div>
                       ) : (
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[360px] overflow-y-auto pr-1">
@@ -899,8 +1039,8 @@ export default function App() {
                               </p>
 
                               <div className="mt-2.5 flex items-center justify-between text-[8px] font-mono border-t border-slate-800/80 pt-2">
-                                <span className="text-slate-500">降维评级: <span className="text-rose-400 font-bold">{save.rank}</span></span>
-                                <span className="text-slate-500">挥霍值: <span className="text-white">{save.stats.wealthWasted}</span></span>
+                                <span className="text-slate-500">评级: <span className="text-rose-400 font-bold">{save.rank}</span></span>
+                                <span className="text-slate-500">累计挥霍: <span className="text-white">{save.stats.wealthWasted}</span></span>
                               </div>
                             </div>
                           ))}
@@ -918,6 +1058,40 @@ export default function App() {
                       exit={{ opacity: 0 }}
                       className="space-y-4"
                     >
+                      <div className="p-4 bg-slate-950 border border-slate-800 rounded-xl space-y-4">
+                        <div className="flex items-center justify-between border-b border-slate-900 pb-2.5">
+                          <span className="text-xs font-mono font-bold text-slate-300 uppercase tracking-widest">
+                            👑 VIP 尊尚特权大厅
+                          </span>
+                          <span className={`text-[10px] px-2.5 py-0.5 rounded-full font-mono font-extrabold ${isVip ? "bg-amber-400 text-slate-950 shadow-sm animate-pulse" : "bg-slate-800 text-slate-500"}`}>
+                            {isVip ? "★ PREMIUM VIP 尊贵会员" : "普通市民"}
+                          </span>
+                        </div>
+
+                        <div className="p-4 bg-gradient-to-r from-amber-500/10 to-yellow-600/5 border border-amber-500/25 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                          <div>
+                            <h4 className="text-xs font-mono font-bold text-amber-400">一键升级永久「星际特许 VIP」大王卡</h4>
+                            <p className="text-[10px] text-slate-400 mt-1 leading-relaxed">
+                              彻底解放“世袭尊贵身份”以及“每日定制推荐剧本”，获得无上败家气势，神豪光环普照宇宙！
+                            </p>
+                          </div>
+                          <button
+                            onClick={() => {
+                              setIsVip(!isVip);
+                              audio.playSound("bling");
+                              setSystemAlertMessage(isVip ? "🔇 已回到质朴可亲的普通人视角。" : "📣 极速尊享！已开启永久高级VIP特许契约！");
+                            }}
+                            className={`px-4 py-2 font-mono font-extrabold text-[10px] rounded-xl shrink-0 transition active:scale-95 cursor-pointer ${
+                              isVip
+                                ? "bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700"
+                                : "bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 shadow shadow-amber-900/40"
+                            }`}
+                          >
+                            {isVip ? "🔒 注销回到市民身份" : "✨ 一键免费激活永久 VIP"}
+                          </button>
+                        </div>
+                      </div>
+
                       <div className="p-4 bg-slate-950 border border-slate-800 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="p-3 bg-slate-900 border border-emerald-500/20 rounded-lg relative overflow-hidden">
                           <span className="absolute top-1 right-2 font-mono text-[8px] text-emerald-400 animate-pulse bg-emerald-950 px-1 rounded">
@@ -943,8 +1117,8 @@ export default function App() {
                       </div>
 
                       <div className="p-3 bg-slate-900/60 border border-slate-800 rounded-xl text-[11px] font-mono text-slate-400 space-y-1">
-                        <span className="text-white block font-bold">🛒 【后悔经济学】商业底层逻辑:</span>
-                        <p>传统游戏强退挫败感，我们提供：看广告极速回到30秒前改写大局、或者看广告直接窥探NPC背后的私密备忘录！</p>
+                        <span className="text-white block font-bold">🛒 【商业折旧法】超级福利:</span>
+                        <p>让每一笔失败人生都可以封装成数字藏品收藏或时光回转！</p>
                       </div>
                     </motion.div>
                   )}
@@ -1365,6 +1539,14 @@ export default function App() {
                   ONE MINUTE BOSS ARCHIVE CODE
                 </div>
               </motion.div>
+
+              {/* Philosophical End Statement */}
+              <div className="p-4 bg-slate-950/80 border border-slate-850 rounded-2xl text-center space-y-1.5 shadow-inner">
+                <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-slate-500 block">时空终末观察判定</span>
+                <p className="text-xs md:text-sm font-serif italic text-amber-300 font-medium">
+                  “ 此人生已经结束。你无法再次踏入同一条时间河流（除非你有时光机）。 ”
+                </p>
+              </div>
 
               {/* Action grid dashboard */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
