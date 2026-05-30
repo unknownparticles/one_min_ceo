@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
   Sparkles,
@@ -129,6 +129,14 @@ export default function App() {
 
   // Ticker text cycles
   const [tickerIndex, setTickerIndex] = useState<number>(0);
+  const abortControllerRef = useRef<AbortController | null>(null);
+
+  const getAbortSignal = (): AbortSignal => {
+    abortControllerRef.current?.abort();
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+    return controller.signal;
+  };
   
   // Check if all storyline stages for all NPCs and Items have been completed
   const checkIfAllExhausted = (currentStageMap: Record<string, number>): boolean => {
@@ -180,7 +188,10 @@ export default function App() {
       setTickerIndex(prev => (prev + 1) % METADATA_TICKERS.length);
     }, 6000);
 
-    return () => clearInterval(tInterval);
+    return () => {
+      clearInterval(tInterval);
+      abortControllerRef.current?.abort();
+    };
   }, []);
 
   // Timer Countdown loop during gameplay (stops if dialogue or ad triggers)
@@ -314,11 +325,13 @@ export default function App() {
     window.localStorage.setItem("currentIdentityType", chosenIdentity);
 
     try {
+      const signal = getAbortSignal();
       const worldData = await generateWorld(
         chosenIdentity,
         finalPrompt,
         overrideModel,
-        overrideEnableThinking
+        overrideEnableThinking,
+        signal
       );
       
       clearInterval(progressTimer);
@@ -450,6 +463,7 @@ export default function App() {
           : (entity as Item).description) || "空气中回荡起时空乱流的鸣响...";
 
         // Fetch options and dialogue progression from the interaction generation API
+        const signal = getAbortSignal();
         const data = await generateInteraction({
           identity: worldScenario?.identity,
           theme: worldScenario?.theme,
@@ -458,7 +472,7 @@ export default function App() {
           targetId: id,
           dialogueHistory: currentDialogueHistory,
           playerAction: `First approach (实体初次见面台词: "${greetingText}")`
-        });
+        }, signal);
 
         setInteractionResult({
           text: `🎬 【${name}】：${greetingText}\n\n${data.text}`,
@@ -530,6 +544,7 @@ export default function App() {
     // 2. Custom text input
     if (actionKey === "custom") {
       try {
+        const signal = getAbortSignal();
         const data = await generateInteraction({
           identity: worldScenario.identity,
           theme: worldScenario.theme,
@@ -538,7 +553,7 @@ export default function App() {
           targetId: lastInteractedEntity.id,
           dialogueHistory: [...currentDialogueHistory, `Action: ${currentText}`],
           playerAction: currentText
-        });
+        }, signal);
 
         // Log custom reaction
         setHistoryLog(prev => [
@@ -678,6 +693,7 @@ export default function App() {
         // AI dynamic lazyloading chain for entities without storylines
         const isLastStep = stageIndex + 1 >= 3;
 
+        const signal = getAbortSignal();
         const data = await generateInteraction({
           identity: worldScenario.identity,
           theme: worldScenario.theme,
@@ -686,7 +702,7 @@ export default function App() {
           targetId: lastInteractedEntity.id,
           dialogueHistory: [...currentDialogueHistory, `选择: ${currentText}`],
           playerAction: currentText
-        });
+        }, signal);
 
         const finalActionId = data.options?.[0]?.action || `action_${lastInteractedEntity.id}_${stageIndex}`;
         setActionSequence(prev => [...prev, finalActionId]);
@@ -765,8 +781,10 @@ export default function App() {
   // Dialogue closet
   const handleCloseDialogue = () => {
     audio.playSound("bling");
+    abortControllerRef.current?.abort();
     setInteractionResult(null);
     setLastInteractedEntity(null);
+    setIsAiLoading(false);
   };
 
   // Render Ending Assessment Screen
@@ -776,6 +794,7 @@ export default function App() {
     audio.playSound("explosion");
 
     try {
+      const signal = getAbortSignal();
       const data = await generateEnding({
         identity: worldScenario?.identity || selectedPreset.name,
         theme: worldScenario?.theme || "一分钟富豪试炼",
@@ -783,7 +802,7 @@ export default function App() {
         interactionLog: historyLog,
         actionSequence: actionSequence,
         fixedEndings: worldScenario?.fixedEndings || []
-      });
+      }, signal);
       setEndingResult(data);
 
       // Save to Collection in localStorage
@@ -862,6 +881,8 @@ export default function App() {
   const handleBackToLobby = () => {
     audio.stopBGM();
     audio.playSound("bling");
+    abortControllerRef.current?.abort();
+    setIsAiLoading(false);
     setGameState("lobby");
     setWorldScenario(null);
     setInteractionResult(null);
