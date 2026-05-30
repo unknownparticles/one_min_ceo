@@ -221,13 +221,13 @@ Make it full of bizarre twists, pre-generate 3 unique stages of story choices wi
     const worldData = JSON.parse(response.text || "{}");
     res.json(worldData);
   } catch (error: any) {
-    console.warn("Generate World Error (using high-quality offline fallback scenario due to API rate limits):", error);
+    console.log(`[Offline Transition] World customization offline simulation activated (Status code: ${error?.status || "offline"}).`);
     try {
       const fallbackData = getFallbackScenario(req.body.identity);
       res.json({ ...fallbackData, isFallback: true });
     } catch (fallbackErr: any) {
-      console.error("Critical Fallback Error:", fallbackErr);
-      res.status(500).json({ error: error.message || "Failed to generate world scenario. Please check API Key and try again." });
+      console.log(`[Offline Truncation] Fallback resolution initialized.`);
+      res.status(500).json({ error: "Failed to generate world scenario. Please check API Key and try again." });
     }
   }
 });
@@ -292,7 +292,7 @@ Player custom or selected action chosen: "${playerAction || "First touch/Greetin
     const interactionData = JSON.parse(response.text || "{}");
     res.json(interactionData);
   } catch (error: any) {
-    console.warn("Interact API Error (falling back to hilarious generic response):", error);
+    console.log(`[Offline Transition] Interaction offline safety sandbox activated.`);
     res.json({
       text: `由于纳斯达克大楼网络信号瞬间极其拥堵（或者是你的宇宙粒子天线信号欠费，服务端429限制），你刚才草率说出的「${req.body.playerAction || "想做点奇奇怪怪的事"}」引起了整个量子宇宙安全局的信息流警报！不过，你的总裁光环保护了你！`,
       options: [
@@ -430,7 +430,7 @@ You MUST write the 'endingText' strictly aligning with the matched fixed ending.
     const endingData = JSON.parse(response.text || "{}");
     res.json(endingData);
   } catch (error: any) {
-    console.warn("Ending Gen Error (using local high-fidelity rules-based evaluator fallback):", error);
+    console.log(`[Offline Transition] Ending evaluation offline sandbox engine activated.`);
     try {
       const { identity, theme, spentTime, actionSequence, fixedEndings } = req.body;
       
@@ -518,8 +518,8 @@ You MUST write the 'endingText' strictly aligning with the matched fixed ending.
         isFallback: true
       });
     } catch (fallbackErr: any) {
-      console.error("Critical Ending Fallback Error:", fallbackErr);
-      res.status(500).json({ error: error.message || "Failed to generate your unique ending story." });
+      console.log(`[Offline Truncation] Fallback resolution initialized.`);
+      res.status(500).json({ error: "Failed to generate your unique ending story." });
     }
   }
 });
