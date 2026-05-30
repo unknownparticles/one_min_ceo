@@ -1267,9 +1267,35 @@ export default function App() {
             <div className="max-w-2xl mx-auto space-y-6">
               
               {/* Glorious high-contrast pixel collectible trading card */}
-              <div className="bg-slate-900 border-4 border-double border-emerald-500/80 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
+              <motion.div
+                initial={{ 
+                  opacity: 0, 
+                  scale: 0.94, 
+                  y: 35,
+                  filter: "contrast(40%) sepia(80%) brightness(1.4) saturate(20%)" 
+                }}
+                animate={{ 
+                  opacity: 1, 
+                  scale: 1, 
+                  y: 0,
+                  filter: "contrast(100%) sepia(0%) brightness(1) saturate(100%)"
+                }}
+                transition={{ 
+                  duration: 2.2, 
+                  ease: "easeOut" 
+                }}
+                className="bg-slate-900 border-4 border-double border-emerald-500/80 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden"
+              >
                 {/* CRT screen glow overlay */}
                 <div className="absolute inset-0 bg-radial-gradient from-transparent to-black pointer-events-none opacity-30"></div>
+                
+                {/* Holographic light sweeping effect */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl z-30">
+                  <div 
+                    className="absolute -inset-[100%] bg-gradient-to-tr from-transparent via-white/15 to-transparent opacity-75 animate-sweep" 
+                    style={{ mixBlendMode: "overlay" }}
+                  ></div>
+                </div>
                 
                 <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4 mb-4">
                   <div className="space-y-0.5">
@@ -1329,7 +1355,7 @@ export default function App() {
                 <div className="absolute top-2 right-4 text-[9px] font-mono text-slate-700 select-none">
                   ONE MINUTE BOSS ARCHIVE CODE
                 </div>
-              </div>
+              </motion.div>
 
               {/* Action grid dashboard */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">

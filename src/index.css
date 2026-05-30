@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@keyframes holographic-sweep {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(25deg);
+  }
+  35% {
+    transform: translate3d(50%, 50%, 0) rotate(25deg);
+  }
+  100% {
+    transform: translate3d(50%, 50%, 0) rotate(25deg);
+  }
+}
+
+.animate-sweep {
+  animation: holographic-sweep 5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
