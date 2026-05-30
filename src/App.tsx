@@ -40,7 +40,7 @@ import { SpriteRenderer } from "./components/SpriteRenderer";
 import { Position, NPC, Item, WorldScenario, InteractionResult, EndingResult, SavedLife, DailyChallenge, BossIdentityType } from "./types";
 import { getDailyChallenge } from "./utils/dailyPresets";
 import { audio } from "./utils/audio";
-import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey, getApiSettings, saveApiSettings, testApiConnection, getRawStoredSettings, hasEnvApiKey, streamBusinessConcept, FLASH_MODEL } from "./utils/siliconFlow";
+import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey, getApiSettings, saveApiSettings, testApiConnection, getRawStoredSettings, hasEnvApiKey, streamBusinessConcept, FLASH_MODEL, type ApiSettings } from "./utils/siliconFlow";
 import { getResourcePack } from "./utils/resourceKit";
 import logoUrl from "../assets/logo.png";
 import douyinQrUrl from "../assets/douyin.JPG";
@@ -901,8 +901,8 @@ export default function App() {
     setTestResult(null);
     audio.playSound("walk");
     
-    // Save current modal inputs temporarily so test can pick them up
-    const currentSettings = {
+    // Pass current modal inputs directly to test without saving
+    const currentSettings: ApiSettings = {
       provider: settingsProvider,
       siliconFlowApiKey: sfApiKey.trim(),
       siliconFlowModel: sfModel.trim() || "deepseek-ai/DeepSeek-V4-Flash",
@@ -913,11 +913,9 @@ export default function App() {
       enableThinking,
       localMode,
     };
-    saveApiSettings(currentSettings);
-    setHasApiKey(hasSiliconFlowKey());
     
     try {
-      const res = await testApiConnection();
+      const res = await testApiConnection(currentSettings);
       setTestResult({
         success: res.success,
         message: res.message
@@ -1012,8 +1010,9 @@ export default function App() {
 
             <button
               onClick={() => {
+                const resolved = getApiSettings();
                 const stored = getRawStoredSettings();
-                setSettingsProvider(stored.provider || "siliconflow");
+                setSettingsProvider(resolved.provider || "siliconflow");
                 setSfApiKey(stored.siliconFlowApiKey || "");
                 setSfModel(stored.siliconFlowModel || "");
                 setMmApiKey(stored.minimaxApiKey || "");

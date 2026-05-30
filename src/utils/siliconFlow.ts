@@ -331,7 +331,7 @@ const printPerformanceReport = (actionName: string, customDuration = 0, isFallba
   if (!timing) return;
   
   const settings = getApiSettings();
-  const providerLabel = settings.provider === "minimax" ? "MiniMax (海螺AI)" : "SiliconFlow (硅基流动)";
+  const providerLabel = settings.provider === "minimax" ? "MiniMax (海螺AI)" : settings.provider === "deepseek" ? "DeepSeek (深度求索)" : "SiliconFlow (硅基流动)";
   
   const labelStyle = "color: #FF9F1C; font-weight: bold;";
   const valueStyle = "color: #6BCB77; font-weight: bold;";
@@ -384,8 +384,8 @@ export interface ConnectionTestResult {
   latency?: number;
 }
 
-export const testApiConnection = async (): Promise<ConnectionTestResult> => {
-  const settings = getApiSettings();
+export const testApiConnection = async (settingsOverride?: ApiSettings): Promise<ConnectionTestResult> => {
+  const settings = settingsOverride || getApiSettings();
   const isMiniMax = settings.provider === "minimax";
   const isDeepSeek = settings.provider === "deepseek";
 
