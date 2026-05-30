@@ -27,6 +27,15 @@ const WORLD_GENERATION_MAX_TOKENS = 1000;
 const INTERACTION_MAX_TOKENS = 900;
 const ENDING_MAX_TOKENS = 1400;
 
+type ResolvedProviderConfig = {
+  apiKey: string;
+  model: string;
+  endpoint: string;
+  providerLabel: string;
+  isMiniMax: boolean;
+  isDeepSeek: boolean;
+};
+
 type RuntimeConfig = {
   siliconFlowApiKey?: string;
   siliconFlowModel?: string;
@@ -138,6 +147,63 @@ export const hasSiliconFlowKey = (): boolean => {
   return !!settings.siliconFlowApiKey;
 };
 
+export const getProviderDisplayName = (provider: ApiProvider): string => {
+  if (provider === "minimax") return "MiniMax (海螺AI)";
+  if (provider === "deepseek") return "DeepSeek (深度求索)";
+  return "SiliconFlow (硅基流动)";
+};
+
+const resolveProviderConfig = (
+  settings: ApiSettings,
+  overrideModel?: string
+): ResolvedProviderConfig => {
+  const isOverride = !!overrideModel;
+  const isMiniMax = settings.provider === "minimax" && !isOverride;
+  const isDeepSeek = settings.provider === "deepseek" && !isOverride;
+
+  if (isOverride) {
+    return {
+      apiKey: settings.siliconFlowApiKey,
+      model: overrideModel!,
+      endpoint: SILICONFLOW_ENDPOINT,
+      providerLabel: "SiliconFlow",
+      isMiniMax: false,
+      isDeepSeek: false,
+    };
+  }
+
+  if (isMiniMax) {
+    return {
+      apiKey: settings.minimaxApiKey,
+      model: settings.minimaxModel,
+      endpoint: MINIMAX_ENDPOINT,
+      providerLabel: "MiniMax",
+      isMiniMax: true,
+      isDeepSeek: false,
+    };
+  }
+
+  if (isDeepSeek) {
+    return {
+      apiKey: settings.deepseekApiKey,
+      model: settings.deepseekModel,
+      endpoint: DEEPSEEK_ENDPOINT,
+      providerLabel: "DeepSeek",
+      isMiniMax: false,
+      isDeepSeek: true,
+    };
+  }
+
+  return {
+    apiKey: settings.siliconFlowApiKey,
+    model: settings.siliconFlowModel,
+    endpoint: SILICONFLOW_ENDPOINT,
+    providerLabel: "SiliconFlow",
+    isMiniMax: false,
+    isDeepSeek: false,
+  };
+};
+
 const parseJsonObject = <T>(content: string): T => {
   const trimmed = content.trim();
   const fenced = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/i);
@@ -212,37 +278,7 @@ const callSiliconFlowJson = async <T>(
   signal?: AbortSignal
 ): Promise<T> => {
   const settings = getApiSettings();
-  const isOverride = !!overrideModel;
-  const isMiniMax = settings.provider === "minimax" && !isOverride;
-  const isDeepSeek = settings.provider === "deepseek" && !isOverride;
-
-  let apiKey: string;
-  let model: string;
-  let endpoint: string;
-  let providerLabel: string;
-
-  if (isOverride) {
-    // Force SiliconFlow when an override model is given (for concept streaming etc.)
-    apiKey = settings.siliconFlowApiKey;
-    model = overrideModel!;
-    endpoint = SILICONFLOW_ENDPOINT;
-    providerLabel = "SiliconFlow";
-  } else if (isMiniMax) {
-    apiKey = settings.minimaxApiKey;
-    model = settings.minimaxModel;
-    endpoint = MINIMAX_ENDPOINT;
-    providerLabel = "MiniMax";
-  } else if (isDeepSeek) {
-    apiKey = settings.deepseekApiKey;
-    model = settings.deepseekModel;
-    endpoint = DEEPSEEK_ENDPOINT;
-    providerLabel = "DeepSeek";
-  } else {
-    apiKey = settings.siliconFlowApiKey;
-    model = settings.siliconFlowModel;
-    endpoint = SILICONFLOW_ENDPOINT;
-    providerLabel = "SiliconFlow";
-  }
+  const { apiKey, model, endpoint, providerLabel, isMiniMax, isDeepSeek } = resolveProviderConfig(settings, overrideModel);
 
   if (!apiKey) {
     throw new Error(`未配置 ${providerLabel} API Key，请点击右上角 [⚙️ API设置] 进行配置。`);
@@ -386,7 +422,7 @@ const printPerformanceReport = (actionName: string, customDuration = 0, isFallba
   if (!timing) return;
   
   const settings = getApiSettings();
-  const providerLabel = settings.provider === "minimax" ? "MiniMax (海螺AI)" : settings.provider === "deepseek" ? "DeepSeek (深度求索)" : "SiliconFlow (硅基流动)";
+  const providerLabel = getProviderDisplayName(settings.provider);
   
   const labelStyle = "color: #FF9F1C; font-weight: bold;";
   const valueStyle = "color: #6BCB77; font-weight: bold;";
@@ -441,30 +477,7 @@ export interface ConnectionTestResult {
 
 export const testApiConnection = async (settingsOverride?: ApiSettings): Promise<ConnectionTestResult> => {
   const settings = settingsOverride || getApiSettings();
-  const isMiniMax = settings.provider === "minimax";
-  const isDeepSeek = settings.provider === "deepseek";
-
-  let apiKey: string;
-  let model: string;
-  let endpoint: string;
-  let providerLabel: string;
-
-  if (isMiniMax) {
-    apiKey = settings.minimaxApiKey;
-    model = settings.minimaxModel;
-    endpoint = MINIMAX_ENDPOINT;
-    providerLabel = "MiniMax";
-  } else if (isDeepSeek) {
-    apiKey = settings.deepseekApiKey;
-    model = settings.deepseekModel;
-    endpoint = DEEPSEEK_ENDPOINT;
-    providerLabel = "DeepSeek";
-  } else {
-    apiKey = settings.siliconFlowApiKey;
-    model = settings.siliconFlowModel;
-    endpoint = SILICONFLOW_ENDPOINT;
-    providerLabel = "SiliconFlow";
-  }
+  const { apiKey, model, endpoint, providerLabel } = resolveProviderConfig(settings);
 
   if (!apiKey) {
     return {
@@ -907,10 +920,14 @@ export const streamBusinessConcept = (
   onError: (err: Error) => void
 ): (() => void) => {
   const settings = getApiSettings();
-  const apiKey = settings.siliconFlowApiKey;
+  const useSiliconFlowFlash = settings.provider === "siliconflow";
+  const { apiKey, model, endpoint, providerLabel } = resolveProviderConfig(
+    settings,
+    useSiliconFlowFlash ? FLASH_MODEL : undefined
+  );
 
   if (!apiKey) {
-    onError(new Error("未配置 SiliconFlow API Key，请点击右上角 [⚙️ API设置] 进行配置。"));
+    onError(new Error(`未配置 ${providerLabel} API Key，请点击右上角 [⚙️ API设置] 进行配置。`));
     return () => {};
   }
 
@@ -918,35 +935,40 @@ export const streamBusinessConcept = (
 
   const run = async () => {
     try {
-      const response = await fetch(SILICONFLOW_ENDPOINT, {
+      const bodyParams: any = {
+        model,
+        messages: [
+          {
+            role: "system",
+            content: "你是一个天马行空的创业导师。直接输出一个不超过30个汉字的荒诞商业构想，不要解释，不要标点符号之外的格式，只输出构想本身。",
+          },
+          {
+            role: "user",
+            content: "给我一个让所有人都目瞪口呆的奇特创业构想，30字以内。",
+          },
+        ],
+        stream: true,
+        temperature: 1.0,
+        max_tokens: 60,
+      };
+
+      if (model.toLowerCase().includes("deepseek")) {
+        bodyParams.enable_thinking = false;
+      }
+
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${apiKey}`,
         },
-        body: JSON.stringify({
-          model: FLASH_MODEL,
-          messages: [
-            {
-              role: "system",
-              content: "你是一个天马行空的创业导师。直接输出一个不超过30个汉字的荒诞商业构想，不要解释，不要标点符号之外的格式，只输出构想本身。",
-            },
-            {
-              role: "user",
-              content: "给我一个让所有人都目瞪口呆的奇特创业构想，30字以内。",
-            },
-          ],
-          stream: true,
-          enable_thinking: false,
-          temperature: 1.0,
-          max_tokens: 60,
-        }),
+        body: JSON.stringify(bodyParams),
         signal: controller.signal,
       });
 
       if (!response.ok) {
         const errText = await response.text().catch(() => "");
-        throw new Error(`SiliconFlow 流式请求失败：${response.status} ${errText}`);
+        throw new Error(`${providerLabel} 流式请求失败：${response.status} ${errText}`);
       }
 
       const reader = response.body?.getReader();

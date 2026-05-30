@@ -40,7 +40,7 @@ import { SpriteRenderer } from "./components/SpriteRenderer";
 import { Position, NPC, Item, WorldScenario, InteractionResult, EndingResult, SavedLife, DailyChallenge, BossIdentityType } from "./types";
 import { getDailyChallenge } from "./utils/dailyPresets";
 import { audio } from "./utils/audio";
-import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey, getApiSettings, saveApiSettings, testApiConnection, getRawStoredSettings, hasEnvApiKey, streamBusinessConcept, FLASH_MODEL, DEFAULT_SILICONFLOW_MODEL, type ApiSettings } from "./utils/siliconFlow";
+import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey, getApiSettings, saveApiSettings, testApiConnection, getRawStoredSettings, hasEnvApiKey, streamBusinessConcept, FLASH_MODEL, DEFAULT_SILICONFLOW_MODEL, getProviderDisplayName, type ApiSettings } from "./utils/siliconFlow";
 import { getResourcePack } from "./utils/resourceKit";
 import logoUrl from "../assets/logo.png";
 import douyinQrUrl from "../assets/douyin.JPG";
@@ -261,8 +261,10 @@ export default function App() {
       (fullText) => {
         setter(fullText);
         setIsStreamingConcept(false);
-        // Auto-enter game with the generated concept, forced model & non-thinking mode
-        handleStartGame(undefined, undefined, fullText, FLASH_MODEL, false);
+        const activeProvider = getApiSettings().provider;
+        const overrideModel = activeProvider === "siliconflow" ? FLASH_MODEL : undefined;
+        const overrideThinking = activeProvider === "siliconflow" ? false : undefined;
+        handleStartGame(undefined, undefined, fullText, overrideModel, overrideThinking);
       },
       (err) => {
         setIsStreamingConcept(false);
@@ -940,6 +942,14 @@ export default function App() {
     activeTab === "normal" ? "CEO" : selectedPreset.type,
     worldScenario?.theme || selectedPreset.name
   );
+  const activeApiSettings = getApiSettings();
+  const activeProviderDisplayName = getProviderDisplayName(activeApiSettings.provider);
+  const activeWorldDescription = activeApiSettings.localMode
+    ? "本产品当前使用本地离线引擎运行像素世界动态生成，无剧情限制。"
+    : `本产品使用 ${activeProviderDisplayName} 模型在云端运行全量像素世界动态生成，无剧情限制。`;
+  const activeWorldEngineLabel = activeApiSettings.localMode
+    ? "Local Offline Dynamic World"
+    : `${activeProviderDisplayName} Dynamic World`;
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans flex flex-col justify-between overflow-x-hidden relative selection:bg-emerald-500 selection:text-black">
@@ -1542,7 +1552,7 @@ export default function App() {
                     );
                   })()}
                   <p className="text-center font-mono text-[9px] text-slate-500 mt-3">
-                    *本产品使用 SiliconFlow 模型在云端运行全量像素世界动态生成，无剧情限制。
+                    *{activeWorldDescription}
                   </p>
                 </div>
 
@@ -2583,7 +2593,7 @@ export default function App() {
           <p>© 2026 《一分钟老板》AI探索实验室. 有钱人的快乐往往比你想象得更无厘头。</p>
           <div className="flex justify-center items-center gap-3">
             <span className="text-[10px] bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Coded in Cloud Run</span>
-            <span className="text-[10px] bg-slate-950 px-2 py-0.5 rounded border border-slate-800">SiliconFlow Dynamic World</span>
+            <span className="text-[10px] bg-slate-950 px-2 py-0.5 rounded border border-slate-800">{activeWorldEngineLabel}</span>
           </div>
         </div>
       </footer>
