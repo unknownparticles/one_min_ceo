@@ -355,27 +355,75 @@ export default function App() {
           setIsAiLoading(false);
           return;
         }
-      }
+      } else if (entity && (!entity.storyline || entity.storyline.length === 0)) {
+        // AI dynamic lazy-loading path for entities without pre-generated storyline
+        const stageIndex = entityStageMap[id] || 0;
+        if (stageIndex >= 3) {
+          const allExhausted = checkIfAllExhausted(entityStageMap);
+          if (allExhausted) {
+            setInteractionResult({
+              text: `【时空维度闭合】「${name}」以及此处的其他因果极点已经全部通盘探索完毕（阶段均已完美收官），量子宇宙已没有更深层的随机选项。时光不待，直接开始最终极的时空评级与成就清算吧！`,
+              options: [
+                { label: "👑 进行终极神豪财富与宿命评估", action: "trigger_ending_via_exhaustion" }
+              ],
+              allowsFreeInput: false,
+              soundHint: "alert",
+              timeDelta: 0,
+              isEarlyEnd: false
+            });
+          } else {
+            setInteractionResult({
+              text: `【时空波动稳定】「${name}」背后的因果世界线已被彻底固化（3个阶段已全部完美收官）。去寻找其他的因果锚点吧，时间一分一秒正在流逝！`,
+              options: [
+                { label: "👌 完成因果 (继续探索)", action: "close_after_advance" }
+              ],
+              allowsFreeInput: false,
+              soundHint: "bling",
+              timeDelta: 0,
+              isEarlyEnd: false
+            });
+          }
+          setIsAiLoading(false);
+          return;
+        }
 
-      const data = await generateInteraction({
-        identity: worldScenario?.identity,
-        theme: worldScenario?.theme,
-        targetType: type,
-        targetName: name,
-        targetId: id,
-        dialogueHistory: currentDialogueHistory,
-        playerAction: "First approach"
-      });
-      setInteractionResult(data);
+        // Use pre-saved greeting dialogue/description from the model as the starting point
+        const greetingText = (type === "NPC"
+          ? (entity as NPC).dialogue
+          : (entity as Item).description) || "空气中回荡起时空乱流的鸣响...";
 
-      if (data.soundHint) {
-        audio.playSound(data.soundHint);
-      }
+        // Fetch options and dialogue progression from the interaction generation API
+        const data = await generateInteraction({
+          identity: worldScenario?.identity,
+          theme: worldScenario?.theme,
+          targetType: type,
+          targetName: name,
+          targetId: id,
+          dialogueHistory: currentDialogueHistory,
+          playerAction: `First approach (实体初次见面台词: "${greetingText}")`
+        });
 
-      if (data.isEarlyEnd) {
-        setTimeout(() => {
-          handleTriggerEnding();
-        }, 3500);
+        setInteractionResult({
+          text: `🎬 【${name}】：${greetingText}\n\n${data.text}`,
+          options: data.options.map((opt: any, idx: number) => ({
+            label: opt.label,
+            action: opt.action || `option_${idx}`
+          })),
+          allowsFreeInput: !!data.allowsFreeInput,
+          soundHint: data.soundHint || "",
+          timeDelta: 0,
+          isEarlyEnd: !!data.isEarlyEnd
+        });
+
+        if (data.soundHint) {
+          audio.playSound(data.soundHint);
+        }
+
+        if (data.isEarlyEnd) {
+          setTimeout(() => {
+            handleTriggerEnding();
+          }, 3500);
+        }
       }
     } catch (e) {
       setInteractionResult({
@@ -501,7 +549,7 @@ export default function App() {
       return;
     }
 
-    // 3. Local pre-generated options
+    // 3. Local pre-generated options OR dynamic AI lazy-loaded options
     try {
       const npc = worldScenario.npcs.find(n => n.id === lastInteractedEntity.id);
       const item = worldScenario.items.find(i => i.id === lastInteractedEntity.id);
@@ -565,6 +613,72 @@ export default function App() {
         setCurrentDialogueHistory(h => [...h, `你选择: ${opt.label}`, `反馈: ${opt.outcomeText}`]);
 
         if (opt.isEarlyEnd) {
+          setTimeout(() => {
+            handleTriggerEnding();
+          }, 3500);
+        }
+      } else if (entity && (!entity.storyline || entity.storyline.length === 0) && stageIndex < 3) {
+        // AI dynamic lazyloading chain for entities without storylines
+        const isLastStep = stageIndex + 1 >= 3;
+
+        const data = await generateInteraction({
+          identity: worldScenario.identity,
+          theme: worldScenario.theme,
+          targetType: lastInteractedEntity.type,
+          targetName: lastInteractedEntity.name,
+          targetId: lastInteractedEntity.id,
+          dialogueHistory: [...currentDialogueHistory, `选择: ${currentText}`],
+          playerAction: currentText
+        });
+
+        const finalActionId = data.options?.[0]?.action || `action_${lastInteractedEntity.id}_${stageIndex}`;
+        setActionSequence(prev => [...prev, finalActionId]);
+
+        const timeDelta = normalizeTimeDelta(data.timeDelta);
+        if (timeDelta) {
+          setTimer(t => {
+            return clampTimer(t + timeDelta);
+          });
+        }
+
+        // Log choice
+        setHistoryLog(prev => [
+          ...prev,
+          {
+            entity: lastInteractedEntity.name,
+            action: currentText,
+            outcome: data.text
+          }
+        ]);
+
+        const nextStageMap = {
+          ...entityStageMap,
+          [lastInteractedEntity.id]: stageIndex + 1
+        };
+        const allCompleted = checkIfAllExhausted(nextStageMap) || isLastStep;
+
+        setInteractionResult({
+          text: `👉 【你选择】：${currentText}\n\n🎬 【时空后果】：${data.text}`,
+          options: allCompleted ? [
+            { label: "👑 精选选项已全部探索，直接开始神豪宿命评估结算", action: "trigger_ending_via_exhaustion" }
+          ] : [
+            { label: "👌 完成因果 (继续探索)", action: "close_after_advance" }
+          ],
+          allowsFreeInput: !isLastStep && !!data.allowsFreeInput,
+          soundHint: data.soundHint || "bling",
+          timeDelta,
+          isEarlyEnd: !!data.isEarlyEnd
+        });
+
+        setEntityStageMap(nextStageMap);
+
+        setCurrentDialogueHistory(h => [...h, `你选择: ${currentText}`, `反馈: ${data.text}`]);
+
+        if (data.soundHint) {
+          audio.playSound(data.soundHint);
+        }
+
+        if (data.isEarlyEnd) {
           setTimeout(() => {
             handleTriggerEnding();
           }, 3500);

@@ -309,21 +309,19 @@ const printPerformanceReport = (actionName: string, customDuration = 0, isFallba
 
 export const generateWorld = async (identity: string, customPrompt: string): Promise<WorldScenario> => {
   const systemPrompt = `你是像素世界生成器，为游戏《一分钟老板》生成完整可玩的 JSON 场景。只返回 JSON，不要 Markdown。
-JSON 必须包含字段：identity, identityType, theme, mapLayout, playerPosition, npcs, items, introText, ambientMusic, fixedEndings, resourcePack。
+JSON 必须包含字段：identity, identityType, theme, mapLayout, playerPosition, npcs, items, introText, ambientMusic, fixedEndings。
 mapLayout.width 必须是 16，height 必须是 12，tiles 是 12x16 字符串矩阵，边界用 wall，其余可用 floor/carpet/grass/snow/water/deck/road/metal_plate。
 npcs 生成 4 到 6 个，items 生成 4 到 6 个，坐标不能重叠，x 在 1 到 14，y 在 1 到 10。
-每个 NPC 和 Item 都必须有 storyline，storyline 正好 3 步；每步包含 id, text, allowsFreeInput, options；每个 options 需要 label, outcomeText, timeDelta, actionId, 可选 isEarlyEnd 和 soundHint。注意，前两步 storyline 的 options 绝对不能设置 isEarlyEnd: true，只有在第三步也就是终结选择时才可以有条件地启用。
-timeDelta 表示消耗剩余时间，必须是 0 或负整数，绝对不能返回正数。
+每个 NPC 必须包含：id, name, sprite, x, y, dialogue（一句极具角色荒诞特色的见面首句台词/问候语）。
+每个 Item 必须包含：id, name, sprite, x, y, description（关于该荒诞道具的一行详细说明文本）。
+NPC 和 Item 均不需要包含任何 storyline 剧情故事线字段，因为剧情交互将由时空引擎后续动态懒加载生成！
 fixedEndings 生成 4 到 6 个，每个包含 endingId, title, description, priority, triggerRules；triggerRules 至少包含 mustInclude，可选 forbidInclude 和 requiredSequence。
-resourcePack.palette 必须包含 primary, secondary, accent, surface 四个十六进制色值。
-resourcePack.tileSet/propSet/spriteSet/ambiance 每项至少 4 个元素。
-${buildResourceGenerationGuide(identity)}
 语气要荒诞、中文、节奏快，适合 60 秒倒计时互动。`;
 
   const userPrompt = `身份类型：${identity || "CEO"}。自定义设定：${customPrompt || "无"}。请生成一个完整场景 JSON。`;
 
   try {
-    const world = await callSiliconFlowJson<WorldScenario>(systemPrompt, userPrompt, 8192, 35000);
+    const world = await callSiliconFlowJson<WorldScenario>(systemPrompt, userPrompt, 2048, 35000);
     
     const startNormalize = performance.now();
     // Verify and normalize mapLayout structure to avoid empty map or runtime error
