@@ -4,30 +4,70 @@
 
 # One Min CEO
 
-This contains everything you need to run your app locally.
+一分钟老板是一个 60 秒像素人生互动游戏。玩家会被随机投放到富豪、CEO、冠军、太空旅客等荒诞身份里，通过选择和自由输入触发蝴蝶效应结局。
 
-The app is built as a static Vite site for GitHub Pages. AI calls use the
-SiliconFlow OpenAI-compatible chat completions API with
-`deepseek-ai/DeepSeek-V4-Flash`.
+项目已经改造成可直接部署到 GitHub Pages 的静态 Vite 应用。AI 生成能力通过 SiliconFlow OpenAI-compatible Chat Completions API 提供，默认模型为 `deepseek-ai/DeepSeek-V4-Flash`。
 
-## Run Locally
+## 本地运行
 
-**Prerequisites:**  Node.js
+**环境要求：** Node.js 22 或更高版本
 
+1. 安装依赖：
 
-1. Install dependencies:
-   `npm install`
-2. Set `VITE_SILICONFLOW_API_KEY` in `.env.local` to your SiliconFlow API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
 
-## Deploy to GitHub Pages
+2. 创建 `.env.local` 并配置 SiliconFlow 密钥：
 
-1. Enable GitHub Pages with “GitHub Actions” as the source.
-2. Add repository secret `SILICONFLOW_API_KEY`.
-3. Push to `main` or run the “发布 GitHub Pages” workflow manually.
+   ```bash
+   VITE_SILICONFLOW_API_KEY="你的 SiliconFlow API Key"
+   VITE_SILICONFLOW_MODEL="deepseek-ai/DeepSeek-V4-Flash"
+   ```
 
-The workflow writes the key into `public/runtime-config.js` during build so the
-key is not committed to git. Because GitHub Pages is static hosting, the key is
-still visible to browser users at runtime; use only short-lived or restricted
-keys for this deployment mode.
+3. 启动开发服务器：
+
+   ```bash
+   npm run dev
+   ```
+
+4. 类型检查和构建：
+
+   ```bash
+   npm run lint
+   npm run build
+   ```
+
+## GitHub Pages 发布
+
+项目内置 GitHub Actions 工作流：`.github/workflows/pages.yml`。
+
+1. 在仓库 Settings -> Pages 中将 Source 设置为 `GitHub Actions`。
+2. 在仓库 Settings -> Secrets and variables -> Actions 中新增 secret：
+
+   ```text
+   SILICONFLOW_API_KEY
+   ```
+
+3. 推送到 `main`，或手动运行 “发布 GitHub Pages” 工作流。
+4. 默认访问地址：
+
+   ```text
+   https://unknownparticles.github.io/one_min_ceo/
+   ```
+
+## 密钥说明
+
+GitHub Actions 会在构建时把 `SILICONFLOW_API_KEY` 写入 `public/runtime-config.js`，避免密钥进入 git 提交历史。
+
+但 GitHub Pages 是纯静态托管，浏览器运行时必须能读取这个配置文件，所以该密钥仍会对页面访问者可见。建议只使用短期、低额度、受限范围的临时密钥；长期生产密钥应放在后端代理服务中调用。
+
+## API 配置
+
+当前默认配置：
+
+```text
+Endpoint: https://api.siliconflow.cn/v1/chat/completions
+Model: deepseek-ai/DeepSeek-V4-Flash
+Authorization: Bearer <SILICONFLOW_API_KEY>
+```
