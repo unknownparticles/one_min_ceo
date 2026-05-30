@@ -31,6 +31,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import { PixelMap } from "./components/PixelMap";
+import { SpriteRenderer } from "./components/SpriteRenderer";
 import { Position, NPC, Item, WorldScenario, InteractionResult, EndingResult, SavedLife, DailyChallenge, BossIdentityType } from "./types";
 import { getDailyChallenge } from "./utils/dailyPresets";
 import { audio } from "./utils/audio";
@@ -108,6 +109,28 @@ export default function App() {
     "💼 【开曼群岛保密信托：后悔良药版】: 只要看5秒广告，您的资产就能在宇宙大爆炸中完美转移，不可追溯！",
     "🛸 【天星观察狗狗零食商】: 为隐藏在地球各个角落的智能外星特工狗制造的奢华零食。喂它一颗，拯救地球的一分钟！"
   ];
+
+  // Check if all storyline stages for all NPCs and Items have been completed
+  const checkIfAllExhausted = (currentStageMap: Record<string, number>): boolean => {
+    if (!worldScenario) return false;
+    const hasNpcStorylines = worldScenario.npcs.some(npc => npc.storyline && npc.storyline.length > 0);
+    const hasItemStorylines = worldScenario.items.some(item => item.storyline && item.storyline.length > 0);
+    if (!hasNpcStorylines && !hasItemStorylines) return false;
+
+    const npcExhausted = worldScenario.npcs.every(npc => {
+      if (!npc.storyline || npc.storyline.length === 0) return true;
+      const stage = currentStageMap[npc.id] || 0;
+      return stage >= npc.storyline.length;
+    });
+
+    const itemExhausted = worldScenario.items.every(itm => {
+      if (!itm.storyline || itm.storyline.length === 0) return true;
+      const stage = currentStageMap[itm.id] || 0;
+      return stage >= itm.storyline.length;
+    });
+
+    return npcExhausted && itemExhausted;
+  };
 
   // Fetch local collection and config checks
   useEffect(() => {
@@ -280,17 +303,31 @@ export default function App() {
           setIsAiLoading(false);
           return;
         } else {
-          // Exhausted stages
-          setInteractionResult({
-            text: `【时空波动稳定】「${name}」背后的因果世界线已被彻底固化（3个阶段已全部完美收官）。去寻找其他的因果锚点吧，时间一分一秒正在流逝！`,
-            options: [
-              { label: "👌 完成因果 (继续探索)", action: "close_after_advance" }
-            ],
-            allowsFreeInput: false,
-            soundHint: "bling",
-            timeDelta: 0,
-            isEarlyEnd: false
-          });
+          // Exhausted stages. Check if all other entities are also exhausted!
+          const allExhausted = checkIfAllExhausted(entityStageMap);
+          if (allExhausted) {
+            setInteractionResult({
+              text: `【时空维度闭合】「${name}」以及此处的其他因果极点已经全部通盘探索完毕（阶段均已完美收官），量子宇宙已没有更深层的随机选项。时光不待，直接开始最终极的时空评级与成就清算吧！`,
+              options: [
+                { label: "👑 进行终极神豪财富与宿命评估", action: "trigger_ending_via_exhaustion" }
+              ],
+              allowsFreeInput: false,
+              soundHint: "alert",
+              timeDelta: 0,
+              isEarlyEnd: false
+            });
+          } else {
+            setInteractionResult({
+              text: `【时空波动稳定】「${name}」背后的因果世界线已被彻底固化（3个阶段已全部完美收官）。去寻找其他的因果锚点吧，时间一分一秒正在流逝！`,
+              options: [
+                { label: "👌 完成因果 (继续探索)", action: "close_after_advance" }
+              ],
+              allowsFreeInput: false,
+              soundHint: "bling",
+              timeDelta: 0,
+              isEarlyEnd: false
+            });
+          }
           setIsAiLoading(false);
           return;
         }
@@ -356,11 +393,19 @@ export default function App() {
 
     const stageIndex = entityStageMap[lastInteractedEntity.id] || 0;
 
-    // 1. Close overlay
+    // 1. Close overlay or trigger settlement
     if (actionKey === "close_after_advance") {
       setInteractionResult(null);
       setLastInteractedEntity(null);
       setIsAiLoading(false);
+      return;
+    }
+
+    if (actionKey === "trigger_ending_via_exhaustion") {
+      setInteractionResult(null);
+      setLastInteractedEntity(null);
+      setIsAiLoading(false);
+      handleTriggerEnding();
       return;
     }
 
@@ -404,9 +449,17 @@ export default function App() {
           });
         }
 
+        const nextStageMap = {
+          ...entityStageMap,
+          [lastInteractedEntity.id]: stageIndex + 1
+        };
+        const allCompleted = checkIfAllExhausted(nextStageMap);
+
         setInteractionResult({
           text: `👉 【你自定义动作为】：${currentText}\n\n🎬 【时空后果】：${data.text}`,
-          options: [
+          options: allCompleted ? [
+            { label: "👑 精选选项已全部探索，直接开始神豪宿命评估结算", action: "trigger_ending_via_exhaustion" }
+          ] : [
             { label: "👌 完成因果 (继续探索)", action: "close_after_advance" }
           ],
           allowsFreeInput: false,
@@ -415,10 +468,7 @@ export default function App() {
           isEarlyEnd: !!data.isEarlyEnd
         });
 
-        setEntityStageMap(prev => ({
-          ...prev,
-          [lastInteractedEntity.id]: stageIndex + 1
-        }));
+        setEntityStageMap(nextStageMap);
 
         setCurrentDialogueHistory(h => [...h, `你选择: ${currentText}`, `反馈: ${data.text}`]);
 
@@ -489,9 +539,17 @@ export default function App() {
           }
         ]);
 
+        const nextStageMap = {
+          ...entityStageMap,
+          [lastInteractedEntity.id]: stageIndex + 1
+        };
+        const allCompleted = checkIfAllExhausted(nextStageMap);
+
         setInteractionResult({
           text: `👉 【你选择】：${opt.label}\n\n🎬 【时空后果】：${opt.outcomeText}`,
-          options: [
+          options: allCompleted ? [
+            { label: "👑 精选选项已全部探索，直接开始神豪宿命评估结算", action: "trigger_ending_via_exhaustion" }
+          ] : [
             { label: "👌 完成因果 (继续探索)", action: "close_after_advance" }
           ],
           allowsFreeInput: false,
@@ -500,10 +558,7 @@ export default function App() {
           isEarlyEnd: !!opt.isEarlyEnd
         });
 
-        setEntityStageMap(prev => ({
-          ...prev,
-          [lastInteractedEntity.id]: stageIndex + 1
-        }));
+        setEntityStageMap(nextStageMap);
 
         setCurrentDialogueHistory(h => [...h, `你选择: ${opt.label}`, `反馈: ${opt.outcomeText}`]);
 
@@ -755,7 +810,7 @@ export default function App() {
                         : "border-transparent text-slate-400 hover:text-slate-205"
                     }`}
                   >
-                    🌱 普通人随机人生
+                    <Compass size={14} /> 普通人随机人生
                   </button>
                   <button
                     onClick={() => {
@@ -825,7 +880,9 @@ export default function App() {
                         <div className="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-mono font-bold absolute top-3 right-3 uppercase">
                           🌱 默认普通通道
                         </div>
-                        <span className="text-2xl block animate-bounce mt-1">🤵</span>
+                        <div className="w-11 h-11 rounded-lg flex items-center justify-center border border-emerald-500/25 bg-slate-905 shadow-md">
+                          <SpriteRenderer type="ceo" size={32} className="animate-[bounce_2s_infinite]" />
+                        </div>
                         <h3 className="font-mono text-xs font-bold text-white uppercase tracking-wider">
                           普通人背景：花光三百万败家对赌
                         </h3>
@@ -892,7 +949,7 @@ export default function App() {
                           <label className="block text-xs font-mono font-bold text-slate-300 uppercase tracking-widest">
                             选择你的天生神豪血脉:
                           </label>
-                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pb-1">
                             {PRESETS.map((p) => (
                               <button
                                 key={p.type}
@@ -900,22 +957,53 @@ export default function App() {
                                   setSelectedPreset(p);
                                   audio.playSound("walk");
                                 }}
-                                className={`p-3 rounded-xl border text-left transition active:scale-95 cursor-pointer relative overflow-hidden group ${
+                                className={`p-4 rounded-xl border text-left transition duration-200 active:scale-95 cursor-pointer relative overflow-hidden group flex items-start gap-4 ${
                                   selectedPreset.type === p.type
-                                    ? "bg-slate-800 border-emerald-400 shadow-md shadow-emerald-900/10 text-emerald-300"
-                                    : "bg-slate-850/60 border-slate-800 hover:border-slate-720 text-slate-320 hover:bg-slate-850"
+                                    ? "bg-slate-800/90 border-emerald-400 shadow-lg shadow-emerald-900/20 text-emerald-300"
+                                    : "bg-slate-850/40 border-slate-800 hover:border-slate-700 text-slate-300 hover:bg-slate-850"
                                 }`}
                               >
-                                <span className="text-xl inline-block mb-1 group-hover:scale-120 transition-transform">{p.icon}</span>
-                                <h4 className="font-mono font-bold text-xs block text-white">{p.name}</h4>
-                                <p className="text-[9px] text-slate-450 mt-1 line-clamp-1">{p.type}</p>
+                                {/* Absolute subtle decorative background glow */}
+                                <div className={`absolute top-0 right-0 w-16 h-16 -mr-4 -mt-4 rounded-full blur-xl transition-all duration-300 ${
+                                  selectedPreset.type === p.type ? "bg-emerald-500/15" : "bg-transparent group-hover:bg-slate-700/10"
+                                }`} />
+
+                                {/* Left Side: Pixel Art character slot */}
+                                <div className={`w-11 h-11 rounded-lg flex items-center justify-center shrink-0 border transition-all duration-300 ${
+                                  selectedPreset.type === p.type
+                                    ? "bg-slate-950 border-emerald-450/50 scale-105 shadow-inner"
+                                    : "bg-slate-900 border-slate-800 group-hover:border-slate-600 shadow"
+                                }`}>
+                                  <SpriteRenderer type={p.type.toLowerCase()} size={32} className="group-hover:scale-110 transition-transform duration-200" />
+                                </div>
+
+                                {/* Right Side: metadata & naming */}
+                                <div className="flex-1 min-w-0">
+                                  <div className="flex items-center gap-1.5 justify-between">
+                                    <h4 className="font-mono font-bold text-xs truncate text-white group-hover:text-emerald-350 transition-colors">
+                                      {p.name}
+                                    </h4>
+                                    <span className="text-[8px] bg-slate-950 px-1 border border-slate-800 font-mono text-slate-500 rounded uppercase">
+                                      {p.type}
+                                    </span>
+                                  </div>
+                                  <p className="text-[9px] text-slate-450 mt-1 lines-clamp-2 leading-relaxed">
+                                    {p.description}
+                                  </p>
+                                </div>
                               </button>
                             ))}
                           </div>
 
-                          <div className="mt-4 p-3 bg-slate-850 rounded-xl border border-slate-800 text-xs text-slate-300 leading-snug font-mono">
-                            <span className="text-emerald-400 font-bold block mb-1">🔍 首领背景故事:</span>
-                            {selectedPreset.description}
+                          {/* Beautiful dedicated narrative lore container */}
+                          <div className="mt-4 p-4 bg-gradient-to-r from-slate-950 to-slate-900 rounded-xl border border-slate-800/90 text-xs text-slate-400 leading-relaxed font-mono relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full filter blur-xl pointer-events-none" />
+                            <span className="text-[10px] bg-emerald-400/10 text-emerald-300 border border-emerald-500/20 px-2 py-0.5 rounded font-bold uppercase tracking-wider block w-fit mb-2">
+                              🔮 极尊特权时空画卷 (Active Identity Lore)
+                            </span>
+                            <p className="text-slate-300">
+                              时空穿梭已锚定扮演：<span className="text-emerald-450 font-extrabold underline decoration-emerald-500/40 underline-offset-4">{selectedPreset.name}</span>。{selectedPreset.description}。AI 时空天线将基于您的多重交互来推演专属的富豪六十秒微缩景观。
+                            </p>
                           </div>
 
                           {/* Custom Identity Prompt modifier */}
