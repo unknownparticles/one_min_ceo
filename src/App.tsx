@@ -48,9 +48,27 @@ import { getAllAvailableScenarios } from "./utils/fallbackScenario";
 import { audio } from "./utils/audio";
 import { generateEnding, generateInteraction, generateWorld, hasSiliconFlowKey, getApiSettings, saveApiSettings, testApiConnection, getRawStoredSettings, hasEnvApiKey, streamBusinessConcept, FLASH_MODEL, DEFAULT_SILICONFLOW_MODEL, getProviderDisplayName, type ApiSettings } from "./utils/siliconFlow";
 import { getResourcePack } from "./utils/resourceKit";
-import logoUrl from "../assets/logo.png";
-import douyinQrUrl from "../assets/douyin.JPG";
-import xiaohongshuQrUrl from "../assets/xiaohongshu.JPG";
+import logoUrl from "../assets/logo.svg";
+import douyinQrUrl from "../assets/douyin.svg";
+import xiaohongshuQrUrl from "../assets/xiaohongshu.svg";
+import {
+  DEFAULT_METERS,
+  METER_LABELS,
+  applyMeterDelta,
+  buildLocalEndingText,
+  checkMeterCrash,
+  computeRunGrade,
+  createEmptyDelta,
+  estimateMeterImpact,
+  findBestNextTarget,
+  formatDelta,
+  getMeterPressureHint,
+  hasAnyDelta,
+  type BossMeters,
+  type InteractableTarget,
+  type MeterCrash,
+  type MeterDelta,
+} from "./utils/gameLoop";
 
 // Ticker lines for the header to increase high-contrast satire & immersive feeling
 const METADATA_TICKERS = [
@@ -166,6 +184,13 @@ export default function App() {
   const [interactionResult, setInteractionResult] = useState<InteractionResult | null>(null);
   const [entityStageMap, setEntityStageMap] = useState<Record<string, number>>({});
   const [actionSequence, setActionSequence] = useState<string[]>([]);
+  const [bossMeters, setBossMeters] = useState<BossMeters>(DEFAULT_METERS);
+  const [lastMeterDelta, setLastMeterDelta] = useState<MeterDelta>(createEmptyDelta());
+  const [comboCount, setComboCount] = useState<number>(0);
+  const [maxCombo, setMaxCombo] = useState<number>(0);
+  const [meterCrash, setMeterCrash] = useState<MeterCrash | null>(null);
+  const [nextTargetHint, setNextTargetHint] = useState<InteractableTarget | null>(null);
+  const [floatTips, setFloatTips] = useState<string[]>([]);
   
   // AI query loading triggers
   const [isAiLoading, setIsAiLoading] = useState<boolean>(false);
@@ -242,6 +267,89 @@ export default function App() {
       return next;
     });
   };
+
+  const pushFloatTip = (tip: string) => {
+    setFloatTips(prev => [...prev.slice(-3), tip]);
+    window.setTimeout(() => {
+      setFloatTips(prev => prev.filter(item => item !== tip));
+    }, 2600);
+  };
+
+  const refreshNextTargetHint = (
+    stageMap: Record<string, number>,
+    pos: Position = playerPos,
+    excludeId?: string
+  ) => {
+    if (!worldScenario) {
+      setNextTargetHint(null);
+      return null;
+    }
+    const target = findBestNextTarget(worldScenario, pos, stageMap, excludeId);
+    setNextTargetHint(target);
+    return target;
+  };
+
+  const applyChoiceImpact = (
+    actionText: string,
+    outcomeText: string,
+    timeDelta: number,
+    actionId = ""
+  ): { meters: BossMeters; delta: MeterDelta; crash: MeterCrash | null; combo: number } => {
+    const delta = estimateMeterImpact(actionText, outcomeText, timeDelta, actionId);
+    const nextMeters = applyMeterDelta(bossMeters, delta);
+    const crash = checkMeterCrash(nextMeters);
+    const nextCombo = comboCount + 1;
+    setBossMeters(nextMeters);
+    setLastMeterDelta(delta);
+    setComboCount(nextCombo);
+    setMaxCombo(prev => Math.max(prev, nextCombo));
+    if (hasAnyDelta(delta)) {
+      const tip = Object.entries(delta)
+        .filter(([, v]) => v !== 0)
+        .map(([k, v]) => `${METER_LABELS[k as keyof BossMeters].icon}${formatDelta(v as number)}`)
+        .join(" ");
+      pushFloatTip(`连击 x${nextCombo}  ${tip}`);
+    }
+    if (crash) {
+      setMeterCrash(crash);
+      pushFloatTip(`⚠ ${crash.title}`);
+      window.setTimeout(() => {
+        handleTriggerEnding();
+      }, 900);
+    }
+    return { meters: nextMeters, delta, crash, combo: nextCombo };
+  };
+
+  const jumpToTarget = (target: InteractableTarget, options?: { force?: boolean }) => {
+    if (!worldScenario || (!options?.force && (isAiLoading || interactionResult))) return;
+    // stand adjacent to target when possible
+    const candidates = [
+      { x: target.x, y: target.y },
+      { x: target.x - 1, y: target.y },
+      { x: target.x + 1, y: target.y },
+      { x: target.x, y: target.y - 1 },
+      { x: target.x, y: target.y + 1 },
+    ];
+    const width = worldScenario.mapLayout.width;
+    const height = worldScenario.mapLayout.height;
+    const tiles = worldScenario.mapLayout.tiles;
+    let stand = { x: target.x, y: target.y };
+    for (const c of candidates) {
+      if (c.x < 0 || c.y < 0 || c.x >= width || c.y >= height) continue;
+      if (tiles[c.y]?.[c.x] === "wall") continue;
+      const blockedNpc = worldScenario.npcs.some(n => n.id !== target.id && n.x === c.x && n.y === c.y);
+      const blockedItem = worldScenario.items.some(it => it.id !== target.id && it.x === c.x && it.y === c.y);
+      if (!blockedNpc && !blockedItem) {
+        stand = c;
+        break;
+      }
+    }
+    setPlayerPos(stand);
+    setComboCount(prev => prev); // keep combo when using destiny jump
+    audio.playSound("bling");
+    handleInteractionDetected(target.type, target.id, target.name);
+  };
+
 
   const handleLogoClick = () => {
     handleBackToLobby();
@@ -341,18 +449,19 @@ export default function App() {
     };
   }, []);
 
-  // Timer Countdown loop during gameplay (stops if dialogue or ad triggers)
+  // Timer keeps draining even during dialogue (soft speed), so urgency is real like 60 Seconds!
   useEffect(() => {
-    if (gameState !== "playing" || interactionResult) return;
+    if (gameState !== "playing") return;
 
+    const drain = interactionResult ? 0.04 : 0.1; // dialogue: 0.4x speed
     const timerInterval = setInterval(() => {
       setTimer(prev => {
-        if (prev <= 0.1) {
+        if (prev <= drain) {
           clearInterval(timerInterval);
           handleTriggerEnding();
           return 0;
         }
-        return parseFloat((prev - 0.1).toFixed(1));
+        return parseFloat((prev - drain).toFixed(1));
       });
     }, 100);
 
@@ -364,6 +473,13 @@ export default function App() {
       unlockEasterEgg("lucky_timer");
     }
   }, [gameState, timer]);
+  // Keep destiny compass updated while exploring / mid-dialogue
+  useEffect(() => {
+    if (gameState !== "playing" || !worldScenario) return;
+    refreshNextTargetHint(entityStageMap, playerPos, lastInteractedEntity?.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gameState, worldScenario, entityStageMap, playerPos, lastInteractedEntity, interactionResult]);
+
 
   // Handle Mute Toggle
   const toggleMute = () => {
@@ -462,6 +578,13 @@ export default function App() {
     setInteractionResult(null);
     setEntityStageMap({});
     setActionSequence([]);
+    setBossMeters({ ...DEFAULT_METERS });
+    setLastMeterDelta(createEmptyDelta());
+    setComboCount(0);
+    setMaxCombo(0);
+    setMeterCrash(null);
+    setNextTargetHint(null);
+    setFloatTips([]);
     unlockAchievement("first_world");
 
     const LOADING_HINTS = [
@@ -851,23 +974,30 @@ export default function App() {
     // 1. Close overlay or trigger settlement
     if (actionKey === "close_and_advance_stage") {
       setInteractionResult(null);
+      let nextMap = entityStageMap;
+      let excludeId: string | undefined;
       if (lastInteractedEntity) {
         const entityId = lastInteractedEntity.id;
+        excludeId = entityId;
         const currentStage = entityStageMap[entityId] || 0;
-        setEntityStageMap(prev => ({
-          ...prev,
+        nextMap = {
+          ...entityStageMap,
           [entityId]: currentStage + 1
-        }));
+        };
+        setEntityStageMap(nextMap);
       }
       setLastInteractedEntity(null);
       setIsAiLoading(false);
+      refreshNextTargetHint(nextMap, playerPos, excludeId);
       return;
     }
 
     if (actionKey === "close_after_advance") {
+      const excludeId = lastInteractedEntity?.id;
       setInteractionResult(null);
       setLastInteractedEntity(null);
       setIsAiLoading(false);
+      refreshNextTargetHint(entityStageMap, playerPos, excludeId);
       return;
     }
 
@@ -896,6 +1026,7 @@ export default function App() {
         action: "钞能力救赎",
         outcome: "你用一笔看不清位数的时空过路费买下了继续探索的资格，但倒计时被狠狠切走一大截。"
       });
+      applyChoiceImpact("钞能力救赎", "钞能力续命", -15, "bailout");
       setInteractionResult(null);
       setLastInteractedEntity(null);
       setIsAiLoading(false);
@@ -924,6 +1055,7 @@ export default function App() {
         });
 
         const timeDelta = normalizeTimeDelta(data.timeDelta);
+        applyChoiceImpact(currentText, data.text, timeDelta, "custom");
         if (timeDelta) {
           setTimer(t => {
             return clampTimer(t + timeDelta);
@@ -1015,6 +1147,7 @@ export default function App() {
             action: currentText,
             outcome: data.text
           });
+        applyChoiceImpact(currentText, data.text, timeDelta, actionKey || "");
 
           const nextStageMap = {
             ...entityStageMap,
@@ -1085,6 +1218,7 @@ export default function App() {
           action: opt.label,
           outcome: opt.outcomeText
         });
+        applyChoiceImpact(opt.label, opt.outcomeText, timeDelta, opt.actionId || "");
 
         let targetNextStage = stageIndex + 1;
         if (opt.nextStage !== undefined) {
@@ -1175,6 +1309,7 @@ export default function App() {
           action: currentText,
           outcome: data.text
         });
+        applyChoiceImpact(currentText, data.text, timeDelta, actionKey || "");
 
         const nextStageMap = {
           ...entityStageMap,
@@ -1231,9 +1366,15 @@ export default function App() {
   const handleCloseDialogue = () => {
     audio.playSound("bling");
     abortControllerRef.current?.abort();
+    const excludeId = lastInteractedEntity?.id;
     setInteractionResult(null);
     setLastInteractedEntity(null);
+    setCustomActionValue("");
+    setCurrentDialogueHistory([]);
     setIsAiLoading(false);
+    // 走神会打断连击，逼玩家连续做决定
+    setComboCount(0);
+    refreshNextTargetHint(entityStageMap, playerPos, excludeId);
   };
 
   // Render Ending Assessment Screen
@@ -1273,7 +1414,17 @@ export default function App() {
         fixedEndings: worldScenario?.fixedEndings || []
       }, signal);
       
-      const endingWithScreenshot = { ...data, screenshot: screenshotUrl };
+      const grade = computeRunGrade(bossMeters, maxCombo, historyLog.length, timer);
+      const endingWithScreenshot = {
+        ...data,
+        screenshot: screenshotUrl,
+        rank: data.rank || `${grade.rank} 级 · 连击${maxCombo}`,
+        achievements: Array.from(new Set([
+          ...(data.achievements || []),
+          `最高连击 x${maxCombo}`,
+          `资产${bossMeters.wealth}/声望${bossMeters.fame}/理智${bossMeters.sanity}/荒诞${bossMeters.chaos}`
+        ]))
+      };
       setEndingResult(endingWithScreenshot);
 
       // Save to Collection in localStorage
@@ -1295,17 +1446,30 @@ export default function App() {
 
       setGameState("ending");
     } catch (e) {
-      // Fallback wacky ending
+      // Fallback ending driven by meters/combo hooks
+      const grade = computeRunGrade(bossMeters, maxCombo, historyLog.length, timer);
+      const crash = meterCrash || checkMeterCrash(bossMeters);
       const fallbackEnd: EndingResult = {
-        id: "BOSS #E404",
-        title: "高登神豪的虚空归宿",
-        rank: "SSS 级: 降维打击",
-        endingText: "在最后的几秒钟里，你既没有敲钟也没有完成滑雪。你把所有的资产换算成金条，一股脑堆在了公司门前。然而看门犬直接开启了时空巨型漩涡，将所有的美元和你吸入了虚无！你在高维度的像素迷宫里，继续做着你的百亿老板大梦。",
-        achievements: ["时间浪费专家", "外星狗的干饭人"],
+        id: crash ? `BOSS #${String(crash.key).toUpperCase()}` : "BOSS #METER",
+        title: crash?.title || grade.title,
+        rank: `${grade.rank} 级 · 连击${maxCombo}`,
+        endingText: buildLocalEndingText(
+          worldScenario?.identity || (selectedPreset?.name || "科技公司创始人"),
+          bossMeters,
+          historyLog,
+          crash,
+          maxCombo
+        ),
+        achievements: [
+          `最高连击 x${maxCombo}`,
+          `因果印记 ${historyLog.length} 条`,
+          crash ? crash.title : "活过分钟审判",
+          `荒诞指数 ${bossMeters.chaos}`
+        ],
         stats: {
-          wealthWasted: "$100,000,000,000",
-          butterflyEffectIndex: "999% (超负荷)",
-          insanityLevel: "无可救药级"
+          wealthWasted: `$${(100 - bossMeters.wealth) * 1300000000}`,
+          butterflyEffectIndex: `${Math.min(999, Math.round(grade.score))}%`,
+          insanityLevel: `理智${bossMeters.sanity}/荒诞${bossMeters.chaos}`
         },
         screenshot: screenshotUrl
       };
@@ -2300,15 +2464,82 @@ export default function App() {
 
                 {/* Ticking Tense Countdown Clock widget */}
                 <div className="flex items-center gap-3 bg-slate-950 rounded-xl px-4 py-2 border border-slate-800/80 shadow-inner">
+                  <div className="text-center pr-2 border-r border-slate-800">
+                    <span className="text-[8px] text-slate-500 block uppercase">连击</span>
+                    <strong className={`font-mono text-lg ${comboCount > 0 ? "text-emerald-400" : "text-slate-500"}`}>x{comboCount}</strong>
+                  </div>
                   <Timer className={`w-5 h-5 ${timer < 15 ? "text-rose-500 animate-pulse" : "text-amber-400"}`} />
                   <div className="font-mono text-right">
                     <span className={`text-xl md:text-2xl font-bold tracking-widest ${timer < 15 ? "text-rose-500 font-black animate-ping-once" : "text-amber-300"}`}>
                       {timer.toFixed(1)}s
                     </span>
-                    <span className="text-[8px] text-slate-500 block uppercase">时间余存</span>
+                    <span className="text-[8px] text-slate-500 block uppercase">{interactionResult ? "对话软流逝" : "时间余存"}</span>
                   </div>
                 </div>
               </div>
+
+              {/* Reigns-like resource meters */}
+              <div className="rounded-2xl p-3 border-2 border-[#2D3436] bg-[#FFF8E7] shadow-[3px_3px_0_#2D3436] space-y-2">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-mono text-[10px] font-black text-[#2D3436]">老板四维仪表盘</span>
+                  <span className="font-mono text-[9px] text-slate-600">{getMeterPressureHint(bossMeters)}</span>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                  {(Object.keys(METER_LABELS) as Array<keyof typeof METER_LABELS>).map((key) => {
+                    const meta = METER_LABELS[key];
+                    const value = bossMeters[key];
+                    const delta = lastMeterDelta[key];
+                    const danger = key === "chaos" ? value >= 75 : value <= 25;
+                    return (
+                      <div key={key} className={`rounded-xl border-2 border-[#2D3436] bg-white p-2 shadow-[2px_2px_0_#2D3436] ${danger ? "ring-2 ring-rose-400" : ""}`}>
+                        <div className="flex items-center justify-between text-[10px] font-black text-[#2D3436]">
+                          <span>{meta.icon} {meta.name}</span>
+                          <span className="font-mono">{value}{delta ? ` (${formatDelta(delta)})` : ""}</span>
+                        </div>
+                        <div className="mt-1 h-2 rounded-full border border-[#2D3436] bg-slate-100 overflow-hidden">
+                          <div className="h-full transition-all duration-300" style={{ width: `${value}%`, background: meta.color }} />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                {meterCrash && (
+                  <div className="text-[11px] font-mono font-bold text-rose-600 animate-pulse">
+                    ⚠ {meterCrash.title}：{meterCrash.description}
+                  </div>
+                )}
+              </div>
+
+              {/* Destiny compass: reduce walking filler */}
+              {nextTargetHint && !interactionResult && (
+                <div className="rounded-2xl p-3 border-2 border-[#2D3436] bg-[#EAF6FF] shadow-[3px_3px_0_#2D3436] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div className="space-y-1">
+                    <div className="font-mono text-[10px] font-black text-[#2D3436] uppercase">命运罗盘 · 下一钩子</div>
+                    <div className="text-sm font-bold text-[#2D3436]">
+                      {nextTargetHint.type === "NPC" ? "👤" : "📦"} {nextTargetHint.name}
+                      <span className="ml-2 text-[11px] font-mono text-slate-500">距离 {nextTargetHint.distance} · 进度 {nextTargetHint.stage}/{nextTargetHint.total}</span>
+                    </div>
+                    <p className="text-[11px] text-slate-600">别在地图上空转。点一下直接咬合下一条因果，连击不会因赶路清零。</p>
+                  </div>
+                  <button
+                    onClick={() => jumpToTarget(nextTargetHint)}
+                    className="px-4 py-2 rounded-xl bg-[#FF9F1C] hover:bg-[#f08c00] text-[#2D3436] border-2 border-[#2D3436] font-mono text-xs font-black shadow-[2px_2px_0_#2D3436] active:translate-y-0.5 cursor-pointer"
+                  >
+                    ⚡ 立刻触发
+                  </button>
+                </div>
+              )}
+
+              {/* Floating impact tips */}
+              {floatTips.length > 0 && (
+                <div className="fixed top-24 right-4 z-40 space-y-2 pointer-events-none">
+                  {floatTips.map((tip, i) => (
+                    <div key={`${tip}-${i}`} className="px-3 py-2 rounded-xl bg-slate-950/90 text-emerald-300 border border-emerald-400/40 font-mono text-[11px] shadow-xl animate-fade-in">
+                      {tip}
+                    </div>
+                  ))}
+                </div>
+              )}
 
               {/* Optional Local Quantum Fallback Engine Warning Banner */}
               {worldScenario.isFallback && (
@@ -2331,7 +2562,10 @@ export default function App() {
                     playerPosition={playerPos}
                     npcs={worldScenario.npcs}
                     items={worldScenario.items}
-                    onMove={(pos) => setPlayerPos(pos)}
+                    onMove={(pos) => {
+                      setPlayerPos(pos);
+                      setComboCount(0);
+                    }}
                     onInteract={(type, id, name) => handleInteractionDetected(type, id, name)}
                     activeInteractionId={interactionResult ? lastInteractedEntity?.id || "dialogue" : null}
                   />
@@ -2481,6 +2715,16 @@ export default function App() {
                         </div>
                       )}
 
+                      {hasAnyDelta(lastMeterDelta) && (
+                        <div className="flex flex-wrap gap-1.5">
+                          {(Object.keys(lastMeterDelta) as Array<keyof typeof lastMeterDelta>).filter((k) => lastMeterDelta[k] !== 0).map((k) => (
+                            <span key={k} className="text-[10px] font-mono font-black px-2 py-1 rounded-full border border-[#2D3436] bg-white shadow-[1px_1px_0_#2D3436]">
+                              {METER_LABELS[k].icon} {METER_LABELS[k].name} {formatDelta(lastMeterDelta[k])}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
                       {/* Interactive Branches options */}
                       <div className="space-y-3">
                         {interactionResult.isEarlyEnd ? (
@@ -2559,11 +2803,25 @@ export default function App() {
                               </div>
                             )}
 
+                            {nextTargetHint && !isAiLoading && (
+                              <button
+                                onClick={() => {
+                                  const target = nextTargetHint;
+                                  setInteractionResult(null);
+                                  setLastInteractedEntity(null);
+                                  setIsAiLoading(false);
+                                  jumpToTarget(target, { force: true });
+                                }}
+                                className="w-full py-2 bg-[#6BCB77] hover:bg-[#57b865] text-[#2D3436] border-2 border-[#2D3436] rounded-xl text-[10px] font-mono font-black shadow-[2px_2px_0px_#2D3436] mt-1 cursor-pointer transition select-none"
+                              >
+                                ⚡ 下一条因果：{nextTargetHint.name}
+                              </button>
+                            )}
                             <button
                               onClick={handleCloseDialogue}
                               className="w-full py-2 bg-white hover:bg-slate-50 text-[#2D3436] border-2 border-[#2D3436] rounded-xl text-[10px] font-mono font-black shadow-[2px_2px_0px_#2D3436] mt-1 cursor-pointer transition select-none"
                             >
-                              回到探索地图
+                              回到探索地图（打断连击）
                             </button>
                           </>
                         )}

@@ -1,5 +1,5 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="./assets/banner.JPG" />
+<img width="1200" height="475" alt="GHBanner" src="./assets/banner.svg" />
 </div>
 
 # One Min CEO
@@ -71,3 +71,14 @@ Endpoint: https://api.siliconflow.cn/v1/chat/completions
 Model: Qwen/Qwen2.5-14B-Instruct
 Authorization: Bearer <SILICONFLOW_API_KEY>
 ```
+
+
+## 玩法钩子优化（2026-07）
+
+针对“不好玩”的核心问题做了短局体验改造：
+
+- **真实软倒计时**：对话中时间仍以 0.4x 流逝，恢复 `60 Seconds!` 式压迫感。
+- **四维资源条**：资产 / 声望 / 理智 / 荒诞，对标 `Reigns` 的平衡崩溃乐趣。
+- **连击与命运罗盘**：连续决策累积连击；一键跳到下一未完成节点，减少地图空跑。
+- **极端结算**：资源触顶/触底会提前爆出荒诞结局，强化“再来一局”。
+- **资源 SVG 化**：Logo / Banner / 关注二维码改为 SVG，加载更清晰。
