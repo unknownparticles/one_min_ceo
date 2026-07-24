@@ -55,6 +55,7 @@ import {
   DEFAULT_METERS,
   METER_LABELS,
   applyMeterDelta,
+  buildDestinyIntroCard,
   buildLocalEndingText,
   checkMeterCrash,
   computeRunGrade,
@@ -62,9 +63,19 @@ import {
   estimateMeterImpact,
   findBestNextTarget,
   formatDelta,
+  getDailyBestScore,
+  getDailySeed,
   getMeterPressureHint,
   hasAnyDelta,
+  loadDailyBoard,
+  previewOptionImpact,
+  submitDailyScore,
+  topDeltaArrows,
+  getExtremeOption,
+  withExtremeBranches,
   type BossMeters,
+  type DailyScoreEntry,
+  type DestinyIntroCard,
   type InteractableTarget,
   type MeterCrash,
   type MeterDelta,
@@ -191,6 +202,11 @@ export default function App() {
   const [meterCrash, setMeterCrash] = useState<MeterCrash | null>(null);
   const [nextTargetHint, setNextTargetHint] = useState<InteractableTarget | null>(null);
   const [floatTips, setFloatTips] = useState<string[]>([]);
+  const [destinyIntro, setDestinyIntro] = useState<DestinyIntroCard | null>(null);
+  const [destinyCountdown, setDestinyCountdown] = useState<number>(0);
+  const [dailyBoard, setDailyBoard] = useState<DailyScoreEntry[]>([]);
+  const [dailySeed, setDailySeed] = useState<string>(getDailySeed());
+  const [lastDailySubmitScore, setLastDailySubmitScore] = useState<number | null>(null);
   
   // AI query loading triggers
   const [isAiLoading, setIsAiLoading] = useState<boolean>(false);
@@ -434,6 +450,9 @@ export default function App() {
     }
     setUnlockedAchievementIds(readStoredIds("boss_minute_achievements"));
     setUnlockedEasterEggIds(readStoredIds("boss_minute_easter_eggs"));
+    const seed = getDailySeed();
+    setDailySeed(seed);
+    setDailyBoard(loadDailyBoard(seed));
 
     // Ticker timer interval
     const tInterval = setInterval(() => {
@@ -451,7 +470,7 @@ export default function App() {
 
   // Timer keeps draining even during dialogue (soft speed), so urgency is real like 60 Seconds!
   useEffect(() => {
-    if (gameState !== "playing") return;
+    if (gameState !== "playing" || destinyIntro) return;
 
     const drain = interactionResult ? 0.04 : 0.1; // dialogue: 0.4x speed
     const timerInterval = setInterval(() => {
@@ -466,13 +485,26 @@ export default function App() {
     }, 100);
 
     return () => clearInterval(timerInterval);
-  }, [gameState, interactionResult]);
+  }, [gameState, interactionResult, destinyIntro]);
 
   useEffect(() => {
     if (gameState === "playing" && timer > 0 && timer <= 6.6) {
       unlockEasterEgg("lucky_timer");
     }
   }, [gameState, timer]);
+
+  // 开局命运卡 3 秒教程钩子
+  useEffect(() => {
+    if (!destinyIntro) return;
+    if (destinyCountdown <= 0) {
+      setDestinyIntro(null);
+      return;
+    }
+    const t = window.setTimeout(() => {
+      setDestinyCountdown((c) => c - 1);
+    }, 1000);
+    return () => window.clearTimeout(t);
+  }, [destinyIntro, destinyCountdown]);
   // Keep destiny compass updated while exploring / mid-dialogue
   useEffect(() => {
     if (gameState !== "playing" || !worldScenario) return;
@@ -585,6 +617,9 @@ export default function App() {
     setMeterCrash(null);
     setNextTargetHint(null);
     setFloatTips([]);
+    setDestinyIntro(null);
+    setDestinyCountdown(0);
+    setLastDailySubmitScore(null);
     unlockAchievement("first_world");
 
     const LOADING_HINTS = [
@@ -651,6 +686,8 @@ export default function App() {
       setTimeout(() => {
         setWorldScenario(worldData);
         setPlayerPos(worldData.playerPosition);
+        setDestinyIntro(buildDestinyIntroCard(worldData.identity, worldData.theme));
+        setDestinyCountdown(3);
         setGameState("playing");
         // Play thematic BGM synthesiser
         audio.playBGM(worldData.ambientMusic || "corporate-jazz");
@@ -769,6 +806,12 @@ export default function App() {
               action: "close_and_advance_stage"
             });
           }
+          {
+            const extremeChoices = withExtremeBranches([], name, `${id || name}:ai`)
+              .filter((o) => (o.actionId || "").startsWith("extreme_"))
+              .map((o) => ({ label: o.label, action: o.actionId || "extreme" }));
+            finalOptions = [...finalOptions, ...extremeChoices].slice(0, 5);
+          }
 
           setInteractionResult({
             text: currentDialogueHistory.length === 0
@@ -802,9 +845,10 @@ export default function App() {
         const stageIndex = entityStageMap[id] || 0;
         if (stageIndex < entity.storyline.length) {
           const step = entity.storyline[stageIndex];
-          let stepOptions = step.options.map((opt: any, idx: number) => ({
+          const boostedOptions = withExtremeBranches(step.options || [], name, `${id}:${stageIndex}`);
+          let stepOptions = boostedOptions.map((opt: any, idx: number) => ({
             label: opt.label,
-            action: `option_${idx}`
+            action: opt.actionId || `option_${idx}`
           }));
 
           if (stepOptions.length === 0 && !step.allowsFreeInput) {
@@ -922,6 +966,12 @@ export default function App() {
             action: "close_and_advance_stage"
           });
         }
+        {
+          const extremeChoices = withExtremeBranches([], name, `${id || name}:ai2`)
+            .filter((o) => (o.actionId || "").startsWith("extreme_"))
+            .map((o) => ({ label: o.label, action: o.actionId || "extreme" }));
+          finalOptions = [...finalOptions, ...extremeChoices].slice(0, 5);
+        }
 
         setInteractionResult({
           text: `🎬 【${name}】：${greetingText}\n\n${data.text}`,
@@ -1031,6 +1081,40 @@ export default function App() {
       setLastInteractedEntity(null);
       setIsAiLoading(false);
       return;
+    }
+
+    // 1.5 Extreme dual branches (local instant, no AI wait)
+    if (actionKey && actionKey.startsWith("extreme_")) {
+      const extreme = getExtremeOption(actionKey, lastInteractedEntity.name);
+      if (extreme) {
+        const timeDelta = normalizeTimeDelta(extreme.timeDelta);
+        if (timeDelta) setTimer((t) => clampTimer(t + timeDelta));
+        if (extreme.soundHint) audio.playSound(extreme.soundHint);
+        appendHistoryLog({
+          entity: lastInteractedEntity.name,
+          action: extreme.label,
+          outcome: extreme.outcomeText,
+        });
+        applyChoiceImpact(extreme.label, extreme.outcomeText, timeDelta, extreme.actionId);
+        const nextStageMap = {
+          ...entityStageMap,
+          [lastInteractedEntity.id]: stageIndex + 1,
+        };
+        const allCompleted = checkIfAllExhausted(nextStageMap);
+        setEntityStageMap(nextStageMap);
+        setInteractionResult({
+          text: `👉 【你选择】：${extreme.label}\n\n🎬 【时空后果】：${extreme.outcomeText}`,
+          options: allCompleted
+            ? [{ label: "👑 精选选项已全部探索，直接开始神豪宿命评估结算", action: "trigger_ending_via_exhaustion" }]
+            : [{ label: "👌 完成因果 (继续探索)", action: "close_after_advance" }],
+          allowsFreeInput: false,
+          soundHint: extreme.soundHint || "bling",
+          timeDelta,
+          isEarlyEnd: !!extreme.isEarlyEnd,
+        });
+        setIsAiLoading(false);
+        return;
+      }
     }
 
     // 2. Custom text input
@@ -1191,14 +1275,16 @@ export default function App() {
 
       if (entity && entity.storyline && stageIndex < entity.storyline.length) {
         const step = entity.storyline[stageIndex];
+        const boosted = withExtremeBranches(step.options || [], lastInteractedEntity.name, `${lastInteractedEntity.id}:${stageIndex}`);
         const optIndex = actionKey && actionKey.startsWith("option_")
-          ? parseInt(actionKey.split("_")[1])
-          : step.options.findIndex((o: any) => o.label === chosenActionText);
+          ? parseInt(actionKey.split("_")[1], 10)
+          : boosted.findIndex((o: any) => o.label === chosenActionText || o.actionId === actionKey);
 
-        const opt = step.options[optIndex >= 0 ? optIndex : 0];
+        const byAction = actionKey ? boosted.find((o: any) => o.actionId === actionKey) : undefined;
+        const opt = byAction || boosted[optIndex >= 0 ? optIndex : 0] || step.options[0];
 
         // Track choices for predetermined sequence and compound endings
-        if (opt.actionId) {
+        if (opt?.actionId) {
           setActionSequence(prev => [...prev, opt.actionId]);
         }
 
@@ -1378,6 +1464,21 @@ export default function App() {
   };
 
   // Render Ending Assessment Screen
+
+  const commitDailyLeaderboard = (identityName: string, rankLabel?: string) => {
+    const { board, entry } = submitDailyScore({
+      identity: identityName,
+      meters: bossMeters,
+      combo: maxCombo,
+      historyCount: historyLog.length,
+      timerLeft: timer,
+      rank: rankLabel,
+      seed: dailySeed,
+    });
+    setDailyBoard(board);
+    setLastDailySubmitScore(entry.score);
+  };
+
   const handleTriggerEnding = async () => {
     if (timer <= 10) {
       unlockAchievement("last_second");
@@ -1444,6 +1545,7 @@ export default function App() {
         unlockEasterEgg("archive_hoarder");
       }
 
+      commitDailyLeaderboard(newSavedEnding.identityName, endingWithScreenshot.rank);
       setGameState("ending");
     } catch (e) {
       // Fallback ending driven by meters/combo hooks
@@ -1490,6 +1592,7 @@ export default function App() {
         unlockEasterEgg("archive_hoarder");
       }
 
+      commitDailyLeaderboard(cachedEnd.identityName, fallbackEnd.rank);
       setGameState("ending");
     }
   };
@@ -2112,6 +2215,26 @@ export default function App() {
                             >
                               <Play size={14} className="fill-current" /> 接受今日推荐人生挑战
                             </button>
+
+                            <div className="mt-4 rounded-xl border border-slate-700 bg-slate-950/70 p-3 space-y-2">
+                              <div className="flex items-center justify-between">
+                                <span className="font-mono text-[10px] font-black text-amber-300">今日荒诞分榜 · {dailySeed}</span>
+                                <span className="font-mono text-[10px] text-slate-400">榜首 {getDailyBestScore(dailySeed) || 0}</span>
+                              </div>
+                              {dailyBoard.length === 0 ? (
+                                <p className="text-[11px] text-slate-500 font-mono">还没有成绩。先打一局，把荒诞分写进今天的种子榜。</p>
+                              ) : (
+                                <div className="space-y-1.5 max-h-40 overflow-y-auto">
+                                  {dailyBoard.slice(0, 8).map((row, idx) => (
+                                    <div key={row.id} className="flex items-center justify-between text-[11px] font-mono bg-slate-900/80 border border-slate-800 rounded-lg px-2 py-1.5">
+                                      <span className="text-slate-300 truncate mr-2">#{idx + 1} {row.identity}</span>
+                                      <span className="text-emerald-400 shrink-0">{row.score} · {row.rank} · 连击{row.combo}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                              <p className="text-[10px] text-slate-500 font-mono">同日种子可反复刷分；分数=资源极端度+连击+印记+荒诞。</p>
+                            </div>
                           </div>
 
                           <div className="flex items-center gap-2 p-3 bg-slate-955 border border-slate-850 rounded-xl text-[10px] text-slate-455 font-mono">
@@ -2449,8 +2572,37 @@ export default function App() {
 
           {/* 3. PLAYING STATE */}
           {gameState === "playing" && worldScenario && (
-            <div className="space-y-4">
-              
+            <div className="space-y-4 relative">
+              {destinyIntro && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+                  <div className="max-w-lg w-full rounded-3xl border-4 border-[#2D3436] bg-[#FFF8E7] shadow-[8px_8px_0_#2D3436] p-5 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[10px] font-black px-2 py-1 rounded-full bg-[#FF9F1C] border-2 border-[#2D3436]">命运卡</span>
+                      <span className="font-mono text-sm font-black text-[#2D3436]">{destinyCountdown}s</span>
+                    </div>
+                    <h3 className="text-xl font-black text-[#2D3436]">{destinyIntro.title}</h3>
+                    <p className="text-xs font-mono text-slate-600">{destinyIntro.subtitle}</p>
+                    <div className="p-3 rounded-2xl border-2 border-[#2D3436] bg-white text-sm font-bold text-[#2D3436]">
+                      {destinyIntro.joke}
+                    </div>
+                    <div className="p-3 rounded-2xl border-2 border-emerald-600 bg-emerald-50 text-sm font-black text-emerald-800">
+                      🎯 {destinyIntro.goal}
+                    </div>
+                    <ul className="space-y-1">
+                      {destinyIntro.tips.map((tip) => (
+                        <li key={tip} className="text-[11px] font-mono text-slate-700">• {tip}</li>
+                      ))}
+                    </ul>
+                    <button
+                      onClick={() => { setDestinyIntro(null); setDestinyCountdown(0); }}
+                      className="w-full py-3 rounded-xl bg-[#6BCB77] border-2 border-[#2D3436] font-mono font-black text-[#2D3436] shadow-[3px_3px_0_#2D3436] cursor-pointer"
+                    >
+                      立刻开干（跳过）
+                    </button>
+                  </div>
+                </div>
+              )}
+
               {/* Gameplay Top Status HUD */}
               <div className="rounded-2xl p-4 flex items-center justify-between shadow-lg glass-panel">
                 <div className="space-y-0.5">
@@ -2762,16 +2914,34 @@ export default function App() {
                               </div>
                             ) : (
                               <div className="space-y-2">
-                                {interactionResult.options.map((opt, i) => (
+                                {interactionResult.options.map((opt, i) => {
+                                  const preview = topDeltaArrows(previewOptionImpact(opt.label, opt.action), 3);
+                                  return (
                                   <button
                                     key={i}
                                     onClick={() => handleResolveAction(opt.label, opt.action)}
-                                    className="w-full text-left p-3 bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#2D3436] text-xs font-bold border-2 border-[#2D3436] rounded-xl transition-all duration-200 shadow-[3px_3px_0px_#2D3436] active:scale-95 flex items-center justify-between group cursor-pointer"
+                                    className="w-full text-left p-3 bg-[#FFD93D] hover:bg-[#FF9F1C] text-[#2D3436] text-xs font-bold border-2 border-[#2D3436] rounded-xl transition-all duration-200 shadow-[3px_3px_0px_#2D3436] active:scale-95 flex items-center justify-between gap-2 group cursor-pointer"
                                   >
-                                    <span className="group-hover:translate-x-1 transition-all">{opt.label}</span>
-                                    <ChevronRight size={14} />
+                                    <div className="min-w-0 flex-1 space-y-1">
+                                      <span className="block group-hover:translate-x-1 transition-all">{opt.label}</span>
+                                      {preview.length > 0 && (
+                                        <div className="flex flex-wrap gap-1">
+                                          {preview.map((p) => (
+                                            <span
+                                              key={p.key}
+                                              className={`text-[9px] font-mono px-1.5 py-0.5 rounded-md border border-[#2D3436]/40 bg-white/80 ${p.value > 0 ? "text-emerald-700" : "text-rose-600"}`}
+                                              title={`${p.name} ${formatDelta(p.value)}`}
+                                            >
+                                              {p.icon}{p.value > 0 ? "↑" : "↓"}{Math.abs(p.value)}
+                                            </span>
+                                          ))}
+                                        </div>
+                                      )}
+                                    </div>
+                                    <ChevronRight size={14} className="shrink-0" />
                                   </button>
-                                ))}
+                                  );
+                                })}
                               </div>
                             )}
 
@@ -3026,6 +3196,13 @@ export default function App() {
                   ONE MINUTE BOSS ARCHIVE CODE
                 </div>
               </motion.div>
+
+              {lastDailySubmitScore !== null && (
+                <div className="p-3 rounded-2xl border border-amber-400/40 bg-amber-500/10 text-amber-200 font-mono text-xs flex items-center justify-between gap-2">
+                  <span>今日种子榜已写入 · {dailySeed}</span>
+                  <strong>得分 {lastDailySubmitScore} · 榜首 {dailyBoard[0]?.score ?? lastDailySubmitScore}</strong>
+                </div>
+              )}
 
               {/* Philosophical End Statement */}
               <div className="p-4 bg-slate-950/80 border border-slate-850 rounded-2xl text-center space-y-1.5 shadow-inner">
